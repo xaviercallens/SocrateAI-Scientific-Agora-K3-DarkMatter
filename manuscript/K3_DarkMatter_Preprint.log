@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.6.13)  24 JUN 2026 18:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.6.13)  25 JUN 2026 12:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -391,7 +391,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 54.
 
-[3] [4] (./K3_DarkMatter_Preprint.aux)
+[3] (./K3_DarkMatter_Preprint.bbl [4] [5]) [6] (./K3_DarkMatter_Preprint.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
@@ -401,13 +401,13 @@ Package rerunfilecheck Info: File `K3_DarkMatter_Preprint.out' has not changed.
 (rerunfilecheck)             Checksum: 6C92383EC9D7BC90D71FF1009BBD05E9;2095.
  ) 
 Here is how much of TeX's memory you used:
- 10162 strings out of 469006
- 154166 string characters out of 5454813
- 576025 words of memory out of 5000000
- 38728 multiletter control sequences out of 15000+600000
- 638297 words of font info for 81 fonts, out of 8000000 for 9000
+ 10221 strings out of 469006
+ 155338 string characters out of 5454813
+ 576852 words of memory out of 5000000
+ 38757 multiletter control sequences out of 15000+600000
+ 638811 words of font info for 83 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 75i,10n,79p,1870b,471s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,10n,79p,1870b,561s stack positions out of 10000i,1000n,20000p,200000b,200000s
  </Users/xcallens/Library/texlive/2026basic/texmf-var/fonts/pk/ljfour/jknappe
 n/ec/tcrm1095.600pk></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public
 /amsfonts/cm/cmbx10.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/pu
@@ -425,14 +425,16 @@ basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/20
 2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texl
 ive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/t
 exlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/loca
-l/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/
-local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></
-usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm
-10.pfb>
-Output written on K3_DarkMatter_Preprint.pdf (4 pages, 216142 bytes).
+l/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/
+local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></
+usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pf
+b></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt1
+2.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/symb
+ols/msbm10.pfb>
+Output written on K3_DarkMatter_Preprint.pdf (6 pages, 250561 bytes).
 PDF statistics:
- 173 PDF objects out of 1000 (max. 8388607)
- 128 compressed objects within 2 object streams
- 22 named destinations out of 1000 (max. 500000)
+ 225 PDF objects out of 1000 (max. 8388607)
+ 174 compressed objects within 2 object streams
+ 47 named destinations out of 1000 (max. 500000)
  81 words of extra memory for PDF output out of 10000 (max. 10000000)
 

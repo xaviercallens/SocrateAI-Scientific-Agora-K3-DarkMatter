@@ -43,6 +43,18 @@ def true_growth_rate(m_a_eV, M_bh_Msun, a_star, chameleon=True):
     Returns
     -------
     Gamma : float  Growth rate in rad/s  (0.0 if not superradiant)
+
+    Physical Significance
+    ---------------------
+    Superradiance is a Penrose-process instability where a bosonic field extracts 
+    rotational energy from a Kerr black hole. The l=m=1, n=2 mode dominates the 
+    instability for scalar fields (axions) when the Compton wavelength is comparable 
+    to the black hole horizon size. By calculating the exact Detweiler growth rate 
+    (scaling as alpha^8), this function determines whether a given axion mass would 
+    spin down observed rapidly-rotating black holes (like M87*). A characteristic 
+    timescale (tau = 1/Gamma) shorter than the age of the universe rules out that 
+    bare axion mass unless environmental effects (like the Chameleon mechanism) 
+    intervene to shift the effective mass.
     """
     # --- Convert to SI ---
     M_bh_kg = M_bh_Msun * M_sun_kg

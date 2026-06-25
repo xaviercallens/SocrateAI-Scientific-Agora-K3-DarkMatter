@@ -59,6 +59,15 @@ def compute_mass(tau, V, q_seq):
     Returns
     -------
     m_a : float  Axion mass in eV (0.0 if instanton sum is non-positive)
+
+    Physical Significance
+    ---------------------
+    This formula extracts the mass of an axion arising from a K3-fibred Calabi-Yau
+    manifold. The topology of the underlying K3 surface encodes the precise values 
+    of the instanton coefficients (q_seq), providing a rigid mathematical bridge 
+    between string compactification geometry and the measurable macroscopic axion mass.
+    However, without a specific dynamical mechanism to stabilize the moduli (tau and V), 
+    the absolute mass remains a parameterized function rather than a unique prediction.
     """
     instanton_sum = sum(
         (d**2) * q_d * np.exp(-2.0 * np.pi * d * tau)
