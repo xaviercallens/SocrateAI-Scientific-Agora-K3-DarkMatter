@@ -1,5 +1,7 @@
-# GD-1 Stellar Stream Constraints
-# Velocity dispersion limits based on Gaia EDR3
+# SYNTHETIC PLACEHOLDER — NOT OBSERVATIONAL DATA
+# Approximate GD-1 velocity dispersions inspired by Bonaca et al. (2019, ApJ 881, L37).
+# For real constraints, see Price-Whelan & Bonaca (2018), Malhan et al. (2019).
+
 Stream,Phi1_deg,Velocity_Dispersion_km_s,Upper_Limit_95CL_km_s
 GD-1,-40.0,1.5,2.0
 GD-1,-30.0,1.4,1.9

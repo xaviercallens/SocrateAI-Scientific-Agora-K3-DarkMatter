@@ -1,4 +1,7 @@
-# Event Horizon Telescope (EHT) M87* Spin Bounds
-# Constraint on dimensionless spin parameter a*
+# SYNTHETIC PLACEHOLDER — NOT OBSERVATIONAL DATA
+# M87* mass from EHT 2019 (ApJL 875). Spin is model-dependent;
+# a* ~ 0.9 is consistent with jet power models (Cui et al. 2023, Nature)
+# but NOT a direct EHT 2019 measurement. True spin uncertainty is much larger.
+# For real constraints, see: Arvanitaki et al. 2017, Baryakhtar et al. 2017
 BlackHole,Mass_Msun,errMass,Spin_a_star,errSpin,Reference
-M87*,6.5e9,0.7e9,0.90,0.05,"EHT Collaboration 2019"
+M87*,6.5e9,0.7e9,0.90,0.10,"SYNTHETIC: Mass from EHT 2019; Spin approximate from jet models"
