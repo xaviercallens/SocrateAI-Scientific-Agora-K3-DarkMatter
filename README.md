@@ -1,18 +1,58 @@
-# SocrateAI-Scientific-Agora-K3-DarkMatter
+# SocrateAI-Scientific-Agora: K3 Dark Matter & Dark Energy
 
-**Automated Algebraic Derivation and Formal Verification of Asymmetric 4D K3 String Vacua for Fuzzy Dark Matter.**
+This repository contains the public artifacts, papers, mathematical formalizations, and simulation code for the **K3 String Vacua, Dark Matter, and Dark Energy** project, developed within the SocrateAI Scientific Agora ecosystem.
 
-This repository serves two distinct audiences:
+This repository serves as the definitive reference for the scientific community to review, reproduce, and critically analyze the findings.
 
-## 🔭 For Scientists (Rigor & Reproducibility)
-We house a rigorous theoretical mathematical derivation using automated exact algebra and formal Lean 4 verification to propose the $S_{1,2}$ and $S_{2,1}$ K3 surfaces as viable String Dark Matter vacua. We present the exact macroscopic oscillation frequencies ($\sim 10^{-7}$ Hz) as testable predictions.
+## Papers and Preprints
 
-- **Reproduce the Findings**: See [scientific_protocol/REPRODUCE.md](scientific_protocol/REPRODUCE.md) for step-by-step terminal commands.
-- **Scientific Guidelines**: See [GUIDELINES.md](GUIDELINES.md) to understand our epistemic stance and how to contribute to the hunt.
-- **The Manuscript**: Read the compiled PDF [manuscript/K3_DarkMatter_Preprint.pdf](manuscript/K3_DarkMatter_Preprint.pdf).
+The exact theoretical results and dynamics have been documented in the following preprints, which are available on Zenodo:
 
-## 🌍 For the General Public (La Chasse aux Trésors)
-Science belongs to everyone! Discover how we used AI to unfold the hidden geometric "origami" of the universe, and how the answer might be hiding right in front of us.
+- **Part I: Exact Algebraic Identification of K3 String Vacua with Dark Matter**
+  - **DOI/Link:** [10.5281/zenodo.20863378](https://zenodo.org/deposit/20863378)
+  - **File:** `manuscript/K3_DarkMatter_Preprint.pdf`
+- **Part II: Project Vafa-Continuity: $K3 \times T^2$ Moduli Dynamics & The Dark Energy Equation of State**
+  - **DOI/Link:** [10.5281/zenodo.20863381](https://zenodo.org/deposit/20863381)
+  - **File:** `manuscript/Vafa_Continuity_Monograph.pdf`
 
-- **Read the Story**: See [grand_public/GRAND_PUBLIC.md](grand_public/GRAND_PUBLIC.md) to start the cosmic treasure hunt.
-- **Interactive Visuals**: Open [grand_public/interactive_visuals.ipynb](grand_public/interactive_visuals.ipynb) to play with the galactic simulator, the Chameleon shield, and the 15-day hiding trick.
+## Directory Structure
+
+- `manuscript/`: Contains the PDF preprints and monographs of the theoretical work.
+- `Agora/`: Contains the **Lean 4** formalization of the mathematical proofs. We strictly adhere to the 'No Simulation' rule, relying on formal theorem proving to establish mathematical truths.
+- `simulations/`: Contains the exact numerical physics scripts (e.g., SymPy exact integration, Vlasov equation solvers) to track the time evolution of the dark energy fluid and dark matter candidates.
+- `vlasov_data/`: Contains the `Vlasov` simulation datasets (`Linear_Landau_Damping_training_data.mat`, `Noninear_Landau_Damping_training_data.mat`) used for benchmark verifications.
+- `.agents/`: Contains the configurations, skills, and prompts for the autonomous AI agents (e.g., Galois, Socrates) that assisted in exploring and validating these theories within the strict mathematical boundaries established by the workspace rules.
+
+## Reproduction Procedure
+
+We welcome scientific peer review, controversy analysis, and robust criticism. To reproduce the mathematical and numerical results in this repository:
+
+### 1. Mathematical Formalization (Lean 4)
+All theorems and definitions have been mechanically verified without any `sorry` stubs.
+1. Install [Lean 4](https://leanprover.github.io/lean4/doc/setup.html) and `lake`.
+2. Ensure the `lean-toolchain` is respected.
+3. Run the following command from the repository root:
+   ```bash
+   lake build Agora
+   ```
+   A successful build with zero errors validates the proofs.
+
+### 2. Numerical Physics (Python/SymPy)
+Physical benchmarking is strictly backed by execution data.
+1. Install Python 3.12 or newer.
+2. Install the required dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. Execute the simulation solvers located in the `simulations/` directory (e.g., `python simulations/vlasov_solver.py` or equivalent ODE integrators). The simulation scripts will precisely reproduce the sequence generation and physical parameters referenced in the papers.
+
+## AI Agents and Rules
+
+This project employed autonomous AI agents governed by strict rules, notably:
+- **No Simulation Rule:** Never report benchmark or performance metrics without hard execution data.
+- **Strict Formalization Rule:** Never consider a mathematical theorem 'proven' unless verified by the Lean 4 kernel.
+
+The configurations for these agents can be explored in the `.agents/` directory.
+
+## License and Contribution
+Open for scientific scrutiny. Please open issues or submit pull requests with formal Lean 4 counter-proofs or corrections to the numerical solvers.
