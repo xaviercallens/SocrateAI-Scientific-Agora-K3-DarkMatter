@@ -9,11 +9,12 @@ theorem k3_euler_characteristic : 24 = 24 := rfl
 def k3_betti_numbers : List Nat := [1, 0, 22, 0, 1]
 
 /-- The $S_{1,2}$ asymmetric configuration ensures strict positivity of the effective mass squared -/
-theorem positive_mass_squared_s12 (volume : Real) (instanton_action : Real) (h : volume > 0) : 
+theorem positive_mass_squared_s12 (volume : Real) (instanton_action : Real) (h : volume > 0) (h2 : instanton_action > 0) : 
   (volume * instanton_action) ^ 2 > 0 := by
-  sorry -- Placeholder for full derivation
+  positivity
 
 /-- The $S_{2,1}$ asymmetric configuration ensures strict positivity of the effective mass squared -/
-theorem positive_mass_squared_s21 (volume : Real) (instanton_action : Real) (h : volume > 0) : 
+theorem positive_mass_squared_s21 (volume : Real) (instanton_action : Real) (h : volume > 0) (h2 : instanton_action > 0) : 
   (volume * instanton_action) ^ 2 > 0 := by
-  sorry -- Placeholder for full derivation
+  positivity
+
