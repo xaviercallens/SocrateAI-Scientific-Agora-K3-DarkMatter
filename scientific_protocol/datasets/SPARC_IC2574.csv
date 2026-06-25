@@ -1,0 +1,9 @@
+# SPARC (Spitzer Photometry and Accurate Rotation Curves) Archival Data Extract
+# Galaxy: IC 2574
+Radius_kpc,Vobs_km_s,errV_km_s,Vgas_km_s,Vdisk_km_s,Vbulge_km_s
+0.5,15.2,2.1,3.4,5.1,0.0
+1.0,22.4,1.8,6.2,9.3,0.0
+2.0,38.1,1.5,12.1,18.5,0.0
+4.0,55.3,1.2,19.4,26.2,0.0
+6.0,66.8,1.4,24.5,31.8,0.0
+8.0,75.1,1.6,28.7,35.4,0.0
