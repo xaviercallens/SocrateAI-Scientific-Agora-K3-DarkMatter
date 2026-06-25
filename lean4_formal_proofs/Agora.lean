@@ -12,6 +12,7 @@ import Agora.Discovery.ChameleonStability
 import Agora.Discovery.S20Cosmology
 import Agora.Discovery.CYBenchmarks
 import Agora.Discovery.UniversalScaling
+import Agora.Discovery.Monodromy
 
 -- Conjectures (stated as axioms, not sorry)
 import Agora.Conjectures.MirrorSymmetry
