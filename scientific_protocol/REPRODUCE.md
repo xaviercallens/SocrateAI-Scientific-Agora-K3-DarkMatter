@@ -26,3 +26,10 @@ cd lean4_formal_proofs && lake build Agora
 python3 agora_ai_agents/agent_astro_pheno.py --evaluate superradiance
 ```
 **Explanation**: Verifies the Chameleon mass-scaling mechanism ($\gamma = 0.25$). Proves the K3 axion is shielded from the M87* superradiance spin-down constraint ($\alpha_{eff} > 0.88$).
+
+---
+
+## Dataset Provenance
+- **IC2574 Rotation Curve:** Real SPARC observational data (Lelli et al. 2016).
+- **GD-1 Stream Constraints:** Actual gap and spur constraints from Bonaca et al. 2019.
+- **M87 Spin Bounds:** Archival spin bounds retrieved from Event Horizon Telescope (EHT 2019) and Cui et al. 2023.

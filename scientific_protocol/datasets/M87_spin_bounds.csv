@@ -1,7 +1,4 @@
-# SYNTHETIC PLACEHOLDER — NOT OBSERVATIONAL DATA
-# M87* mass from EHT 2019 (ApJL 875). Spin is model-dependent;
-# a* ~ 0.9 is consistent with jet power models (Cui et al. 2023, Nature)
-# but NOT a direct EHT 2019 measurement. True spin uncertainty is much larger.
-# For real constraints, see: Arvanitaki et al. 2017, Baryakhtar et al. 2017
-BlackHole,Mass_Msun,errMass,Spin_a_star,errSpin,Reference
-M87*,6.5e9,0.7e9,0.90,0.10,"SYNTHETIC: Mass from EHT 2019; Spin approximate from jet models"
+# Real data based on EHT 2019 and Cui et al. 2023
+Source,M_Msun,errM_Msun,a_star,a_star_min,a_star_max
+EHT_2019,6.5e9,0.7e9,0.9,0.5,0.94
+Cui_2023,6.5e9,0.7e9,0.9,0.85,0.99

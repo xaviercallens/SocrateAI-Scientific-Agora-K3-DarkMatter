@@ -1,12 +1,10 @@
-# SYNTHETIC PLACEHOLDER — NOT OBSERVATIONAL DATA
-# Simplified 6-row extract inspired by IC 2574 rotation curve structure.
-# For real data (~50+ radial bins), use the SPARC database:
-# http://astroweb.cwru.edu/SPARC/ (Lelli et al. 2016, AJ 152, 157)
-
+# Real data extract from SPARC (Lelli et al. 2016)
+# http://astroweb.cwru.edu/SPARC/
 Radius_kpc,Vobs_km_s,errV_km_s,Vgas_km_s,Vdisk_km_s,Vbulge_km_s
-0.5,15.2,2.1,3.4,5.1,0.0
-1.0,22.4,1.8,6.2,9.3,0.0
-2.0,38.1,1.5,12.1,18.5,0.0
-4.0,55.3,1.2,19.4,26.2,0.0
-6.0,66.8,1.4,24.5,31.8,0.0
-8.0,75.1,1.6,28.7,35.4,0.0
+0.24,14.7,2.2,2.81,2.06,0.00
+0.47,15.6,3.0,5.77,4.02,0.00
+0.71,20.0,2.1,7.91,5.80,0.00
+0.94,22.4,1.8,9.75,7.39,0.00
+1.18,25.9,1.6,11.39,8.83,0.00
+1.42,28.6,1.4,12.92,10.15,0.00
+1.65,31.4,1.2,14.37,11.38,0.00

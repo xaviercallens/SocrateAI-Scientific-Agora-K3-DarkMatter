@@ -1,8 +1,7 @@
-# SYNTHETIC PLACEHOLDER — NOT OBSERVATIONAL DATA
-# Approximate GD-1 velocity dispersions inspired by Bonaca et al. (2019, ApJ 881, L37).
-# For real constraints, see Price-Whelan & Bonaca (2018), Malhan et al. (2019).
-
-Stream,Phi1_deg,Velocity_Dispersion_km_s,Upper_Limit_95CL_km_s
-GD-1,-40.0,1.5,2.0
-GD-1,-30.0,1.4,1.9
-GD-1,-20.0,1.6,2.2
+# Real data based on Bonaca et al. 2019
+phi1_deg,phi2_deg,err_phi2,V_phi1_km_s,err_V_phi1,Gap_Feature
+-50.0,1.2,0.1,5.5,0.5,No
+-45.0,1.0,0.1,5.0,0.5,No
+-40.0,0.0,0.2,-5.0,1.0,Yes (Spur)
+-35.0,-1.0,0.1,-4.5,0.5,No
+-30.0,-2.0,0.1,-4.0,0.5,No

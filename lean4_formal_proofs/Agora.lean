@@ -15,3 +15,4 @@ import Agora.Discovery.UniversalScaling
 
 -- Conjectures (stated as axioms, not sorry)
 import Agora.Conjectures.MirrorSymmetry
+import Agora.MassFromInstanton

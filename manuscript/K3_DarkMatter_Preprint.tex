@@ -23,7 +23,7 @@ The ultralight axion (Fuzzy Dark Matter) hypothesis is tightly constrained by th
 \section{Introduction}
 The Fuzzy Dark Matter (FDM) paradigm is currently navigating a profound "Valley of Death" between competing astrophysical constraints. To resolve the Core-Cusp problem observed in dwarf galaxies like IC 2574, the dark matter particle must be an ultralight boson with a mass near $m_a \sim 10^{-23}$ eV, allowing quantum pressure to stabilize the galactic core. Conversely, preserving the kinematic coherence of cold stellar streams (such as GD-1) and evading the Lyman-$\alpha$ forest structural cutoff strictly requires a heavier mass, $m_a \ge 10^{-21}$ eV. 
 
-Within string phenomenology, the axion mass is not an arbitrary free parameter; it is topologically determined by the volume and structure of the hidden extra dimensions. The mass scales exponentially with the instanton action, which is governed by the topological stiffness of the compactification manifold (e.g., Calabi-Yau 3-folds vs. K3 surfaces). 
+Within string phenomenology, the axion mass is not an arbitrary free parameter; it is topologically determined by the volume and structure of the hidden extra dimensions \cite{svrcek2006axions}. The mass scales exponentially with the instanton action, which is governed by the topological stiffness of the compactification manifold (e.g., Calabi-Yau 3-folds vs. K3 surfaces). 
 
 In this work, we deploy the automated computational architecture of the SocrateAI Agora Framework. We utilize automated computational algebraic geometry to search existing geometric families, specifically the generalized Ap\'{e}ry hypergeometric landscape, to identify mathematically viable string moduli that natively satisfy these competing bounds.
 
@@ -55,9 +55,9 @@ We subjected the $S_{1,2}$ and $S_{2,1}$ K3 vacua to a rigorous phenomenological
 For $S_{1,2}$ ($m_a = 3.18 \times 10^{-21}$ eV) and $S_{2,1}$ ($m_a = 1.83 \times 10^{-21}$ eV), the induced velocity dispersions on the GD-1 stream drop to $\sigma = 0.71$ km/s and $1.62$ km/s, respectively. Both are safely below the observational $2.0$ km/s strict upper bound. Furthermore, these masses safely pass the Lyman-$\alpha$ and JWST high-redshift structural cutoff constraints.
 
 \subsection{The M87* Superradiance Escape}
-The most stringent test of an axion in the $10^{-21}$ eV regime is the superradiant instability bound from supermassive black holes. For M87* ($M_{BH} \approx 6.5 \times 10^9 M_\odot$), an axion cloud can rapidly extract angular momentum if the gravitational coupling parameter $\alpha \equiv G M_{BH} m_a / \hbar c$ is small ($\alpha < 0.5 \times a^*$). 
+The most stringent test of an axion in the $10^{-21}$ eV regime is the superradiant instability bound from supermassive black holes \cite{detweiler1980klein, arvanitaki2010string}. For M87* ($M_{BH} \approx 6.5 \times 10^9 M_\odot$) \cite{eht2019first}, an axion cloud can rapidly extract angular momentum if the gravitational coupling parameter $\alpha \equiv G M_{BH} m_a / \hbar c$ is small ($\alpha < 0.5 \times a^*$). 
 
-Using the correct physical parameters, the bare coupling constants for our K3 geometries evaluate to $\alpha \approx 0.155$ (for $S_{1,2}$) and $\alpha \approx 0.089$ (for $S_{2,1}$). While these bare values lie in the superradiant spin-down regime, we introduce a density-dependent (Chameleon) mass mechanism to rescue the vacua. In this model, the axion mass scales with the local energy density $\rho$:
+Using the correct physical parameters, the bare coupling constants for our K3 geometries evaluate to $\alpha \approx 0.155$ (for $S_{1,2}$) and $\alpha \approx 0.089$ (for $S_{2,1}$). While these bare values lie in the superradiant spin-down regime, we introduce a density-dependent (Chameleon) mass mechanism \cite{khoury2004chameleon} to rescue the vacua. In this model, the axion mass scales with the local energy density $\rho$:
 \begin{equation}
 m_{\text{eff}}(\rho) = m_a \left(1 + \frac{\rho}{\rho_{\text{crit}}}\right)^\gamma
 \end{equation}
@@ -89,6 +89,9 @@ To decouple the true K3 axion signal from environmental systematics, we propose 
 
 \section{Conclusion}
 The tension between galactic core formation and stellar stream heating has severely challenged the ultralight axion framework. We have shown that by transitioning from approximate numerics to exact algebraic sieving and formal verification, the underlying geometric asymmetry of 4D K3 surfaces ($S_{1,2}$ and $S_{2,1}$) naturally sources topological masses in the phenomenologically viable $\sim 10^{-21}$ eV window, resolving the GD-1 and Lyman-$\alpha$ constraints. Evading the M87* superradiance bound additionally requires a density-dependent (Chameleon) mass mechanism; the parameters of this mechanism ($\gamma$, $\rho_{\text{crit}}$) remain free and must be independently constrained or derived from the compactification geometry. These K3 vacua constitute testable targets for future PTA and optical clock observations, pending the resolution of the mass calibration and Chameleon parameter degeneracies identified in our accompanying caveats document.
+
+\bibliographystyle{plain}
+\bibliography{k3_axion_bibliography}
 
 \end{document}
 
