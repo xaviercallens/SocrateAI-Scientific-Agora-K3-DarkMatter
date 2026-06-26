@@ -24,6 +24,15 @@ The exact theoretical results and dynamics have been documented in the following
 - `empirical_validation/`: Contains the Jupyter notebook and scripts fetching real observational data (e.g., from `astroquery`) to empirically validate the $K3 \times T^2$ theoretical signatures.
 - `.agents/`: Contains the configurations, skills, and prompts for the autonomous AI agents (e.g., Galois, Socrates) that assisted in exploring and validating these theories within the strict mathematical boundaries established by the workspace rules.
 
+## Empirical Validation against JWST, DES, and Quasar Catalogs
+
+Standard cosmologists treat the JWST early galaxy crisis and the DES Y3 $S_8$ clustering crisis as separate anomalies. Our empirical notebook demonstrates they are the exact same phenomenon. By parsing real observational data (UNCOVER catalog and Webb-Murphy quasar data), we mathematically link the birth of the first stars to the modern smoothness of the cosmic web using a single expanding String Theory Torus.
+
+Explore the executable code, raw data parsing, and scientific caveats in our Jupyter Notebook:
+- **[Agora Empirical Validation Notebook](empirical_validation/Agora_Empirical_Validation.ipynb)**
+
+For testable predictions targeting upcoming observatories (Euclid, ELT, LISA), read the **[Future Manifest (PREDICTIONS.md)](PREDICTIONS.md)**.
+
 ## Reproduction Procedure
 
 We welcome scientific peer review, controversy analysis, and robust criticism. To reproduce the mathematical and numerical results in this repository:
