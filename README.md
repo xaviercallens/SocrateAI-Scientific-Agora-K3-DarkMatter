@@ -21,6 +21,7 @@ The exact theoretical results and dynamics have been documented in the following
 - `Agora/`: Contains the **Lean 4** formalization of the mathematical proofs. We strictly adhere to the 'No Simulation' rule, relying on formal theorem proving to establish mathematical truths.
 - `simulations/`: Contains the exact numerical physics scripts (e.g., SymPy exact integration, Vlasov equation solvers) to track the time evolution of the dark energy fluid and dark matter candidates.
 - `vlasov_data/`: Contains the `Vlasov` simulation datasets (`Linear_Landau_Damping_training_data.mat`, `Noninear_Landau_Damping_training_data.mat`) used for benchmark verifications.
+- `empirical_validation/`: Contains the Jupyter notebook and scripts fetching real observational data (e.g., from `astroquery`) to empirically validate the $K3 \times T^2$ theoretical signatures.
 - `.agents/`: Contains the configurations, skills, and prompts for the autonomous AI agents (e.g., Galois, Socrates) that assisted in exploring and validating these theories within the strict mathematical boundaries established by the workspace rules.
 
 ## Reproduction Procedure
