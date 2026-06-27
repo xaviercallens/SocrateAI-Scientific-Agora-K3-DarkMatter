@@ -72,3 +72,6 @@ The configurations for these agents can be explored in the `.agents/` directory.
 
 ## License and Contribution
 Open for scientific scrutiny. Please open issues or submit pull requests with formal Lean 4 counter-proofs or corrections to the numerical solvers.
+
+Copyright (C) 2026 Xavier Callens (SocrateAI Scientific Agora).
+All rights reserved. No part of this work may be reproduced, distributed, or transmitted in any form or by any means without prior written permission from the author.
