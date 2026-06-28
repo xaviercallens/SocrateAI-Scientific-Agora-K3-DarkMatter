@@ -13,6 +13,11 @@ B. Algebraic Geometry (Singular ideal computation)
 
 These are stated as axioms (known conjectures from the CCGK classification)
 rather than sorry'd theorems, following the project convention.
+
+### ⚠️ DISCLAIMER: UNVERIFIED AXIOMS
+The use of `axiom` in this file means that the connection between the sequence
+and the geometric properties (Euler characteristic, Hodge numbers) is ASSUMED BY FIAT 
+rather than proven from first principles in Lean 4.
 -/
 
 namespace CalabiYau

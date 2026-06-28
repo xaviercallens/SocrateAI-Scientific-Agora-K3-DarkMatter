@@ -3,3 +3,13 @@
 build/
 *.olean
 *.ilean
+
+# LaTeX build artifacts (regenerable; .bbl kept for arXiv)
+*.aux
+*.log
+*.blg
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz

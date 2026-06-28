@@ -26,6 +26,10 @@ by
 /-- 
   If the volume modulus is positive and the instanton sum is positive, 
   the axion mass is strictly positive.
+  
+  ⚠️ DISCLAIMER: This theorem only formally proves that the product of positive real 
+  numbers is positive (`positivity` tactic over `ℝ`). It does NOT formally extract 
+  or establish any specific physical mass value from the Picard-Fuchs operators.
 -/
 theorem axion_mass_pos {M_pl V inst_sum : ℝ} 
   (hM : M_pl > 0) (hV : V > 0) (h_inst : inst_sum > 0) :

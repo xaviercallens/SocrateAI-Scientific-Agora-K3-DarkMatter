@@ -1,9 +1,4 @@
-\begin{thebibliography}{10}
-
-\bibitem{almkvist2011tables}
-Gert Almkvist, Christian van Enckevort, Duco van Straten, and Wadim Zudilin.
-\newblock Tables of calabi-yau equations.
-\newblock {\em arXiv preprint math/0507430}, 2011.
+\begin{thebibliography}{1}
 
 \bibitem{arvanitaki2010string}
 Asimina Arvanitaki, Savas Dimopoulos, Sergei Dubovsky, Nemanja Kaloper, and
@@ -11,103 +6,21 @@ Asimina Arvanitaki, Savas Dimopoulos, Sergei Dubovsky, Nemanja Kaloper, and
 \newblock String axiverse.
 \newblock {\em Physical Review D}, 81(12):123530, 2010.
 
-\bibitem{arvanitaki2017superradiance}
-Asimina Arvanitaki, Savas Dimopoulos, Marios Galanis, Luis Lehner, Joshua~O
-  Nee, and Vasileios Sherbrooke.
-\newblock Black hole superradiance signatures of ultralight vectors.
-\newblock {\em Physical Review D}, 95(4):043001, 2017.
-
-\bibitem{bonaca2019spur}
-Ana Bonaca, David~W Hogg, Adrian~M Price-Whelan, and Charlie Conroy.
-\newblock The spur and the gap in gd-1: dynamical evidence for a dark
-  substructure in the milky way halo.
-\newblock {\em The Astrophysical Journal}, 880(1):38, 2019.
-
 \bibitem{eht2019first}
 Event Horizon~Telescope Collaboration.
 \newblock First m87 event horizon telescope results. i. the shadow of the
   supermassive black hole.
 \newblock {\em The Astrophysical Journal Letters}, 875(1):L1, 2019.
 
-\bibitem{conlon2006kahler}
-Joseph~P Conlon and Fernando Quevedo.
-\newblock K{\"a}hler moduli stabilisation and the gravitino mass problem.
-\newblock {\em Journal of High Energy Physics}, 2006(01):146, 2006.
-
 \bibitem{detweiler1980klein}
 Steven Detweiler.
 \newblock Klein-gordon equation and rotating black holes.
 \newblock {\em Physical Review D}, 22(10):2323, 1980.
 
-\bibitem{dolan2007instability}
-Sam~R Dolan.
-\newblock Instability of the massive klein-gordon field on the kerr spacetime.
-\newblock {\em Physical Review D}, 76(8):084001, 2007.
-
-\bibitem{hui2017ultralight}
-Lam Hui, Jeremiah~P Ostriker, Scott Tremaine, and Edward Witten.
-\newblock Ultralight axions in astronomy and cosmology.
-\newblock {\em Physical Review D}, 95(4):043541, 2017.
-
-\bibitem{irsic2017first}
-Vid Ir\v{s}i\v{c}, Matteo Viel, Martin~G Haehnelt, James~S Bolton, and George~D
-  Becker.
-\newblock First constraints on fuzzy dark matter from lyman-alpha forest data
-  and hydrodynamical simulations.
-\newblock {\em Physical Review Letters}, 119(3):031302, 2017.
-
-\bibitem{khoury2004chameleon2}
-Justin Khoury and Amanda Weltman.
-\newblock Chameleon cosmology.
-\newblock {\em Physical Review D}, 69(4):044026, 2004.
-
 \bibitem{khoury2004chameleon}
 Justin Khoury and Amanda Weltman.
 \newblock Chameleon fields: awaiting surprises for tests of gravity in space.
 \newblock {\em Physical Review Letters}, 93(17):171104, 2004.
-
-\bibitem{lelli2016sparc}
-Federico Lelli, Stacy~S McGaugh, and James~M Schombert.
-\newblock Sparc: mass models for 175 disk galaxies with spitzer photometry and
-  accurate rotation curves.
-\newblock {\em The Astronomical Journal}, 152(6):157, 2016.
-
-\bibitem{marsh2016axion}
-David~JE Marsh.
-\newblock Axion cosmology.
-\newblock {\em Physics Reports}, 643:1--79, 2016.
-
-\bibitem{mathlib2020}
-The mathlib Community.
-\newblock The lean mathematical library.
-\newblock pages 367--381, 2020.
-
-\bibitem{moura2021lean4}
-Leonardo~de Moura and Sebastian Ullrich.
-\newblock The lean 4 theorem prover and programming language.
-\newblock pages 625--635, 2021.
-
-\bibitem{rogers2021fuzzy}
-Keir~K Rogers and Hiranya~V Peiris.
-\newblock Fuzzy dark matter and the dark energy survey year 1 data.
-\newblock {\em Physical Review Letters}, 126(7):071302, 2021.
-
-\bibitem{schive2014cosmic}
-Hsi-Yu Schive, Tzihong Chiueh, and Tom Broadhurst.
-\newblock Cosmic structure as the quantum interference of a coherent dark wave.
-\newblock {\em Nature Physics}, 10(7):496--499, 2014.
-
-\bibitem{stienstra2006mahler}
-Jan Stienstra.
-\newblock Mahler measure variations, eisenstein series and instanton
-  expansions.
-\newblock {\em Mirror Symmetry V, AMS/IP Studies in Advanced Mathematics},
-  38:139--150, 2006.
-
-\bibitem{stienstra2007picard}
-Jan Stienstra and Frits Beukers.
-\newblock Picard-fuchs equations and mirror maps for hypersurfaces.
-\newblock {\em Essays on Mirror Manifolds}, 1992.
 
 \bibitem{svrcek2006axions}
 Peter Svrcek and Edward Witten.

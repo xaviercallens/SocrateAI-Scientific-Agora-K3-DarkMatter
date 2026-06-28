@@ -1,7 +1,9 @@
-# Agora Unified Dark Sector: $K3 \times T^2$ Moduli Dynamics
-**Automated Derivation of Fuzzy Dark Matter ($K3$) and Thawing Dark Energy ($T^2$) via Exact Algebraic Sieving, Formal Verification, and Empirical Validation.**
+# Agora Dark Sector: A String-Inspired $K3 \times T^2$ Phenomenological Model
+**String-inspired effective field theories (EFTs) for Fuzzy Dark Matter ($K3$) and thawing quintessence ($T^2$), built via exact algebraic sieving, targeted Lean 4 formal verification, and empirical validation.**
 
-**Update (June 26, 2026):** The framework has been successfully extended from Part I (Dark Matter) to Part II (Dark Energy). By coupling the rigid K3 axion to an expanding $T^2$ Torus, we introduce a mass-varying dark matter model that simultaneously resolves the Hubble Tension, the DESI 2024 Quintessence anomaly, the JWST early-galaxy density crisis, and the $S_8$ clustering tension. See the `empirical_crucible` folder for real-data Jupyter validations.
+**Scope note:** This is a *string-inspired phenomenological model*, not a top-down string compactification. We identify K3-surface EFT candidates by an exact-rational algebraic sieve; we do **not** claim a complete vacuum (orientifold/flux/tadpole) construction. See `OPEN_PROBLEMS.md` for the precise list of what is and is not established.
+
+**Update (June 28, 2026):** The framework spans Part I (Dark Matter) and Part II (Dark Energy). Coupling the rigid K3 axion to an expanding $T^2$ modulus gives a mass-varying dark-matter model that is *suggestive* for the Hubble, JWST early-galaxy, and $S_8$ tensions. For the DESI 2024 quintessence data the best-fit trajectory is thawing but lies **outside** the 1$\sigma$ contour — and, more importantly, the model exhibits a genuine **Swampland tension with stable dark energy** (quintessence here is necessarily transient). See `empirical_crucible` for real-data Jupyter validations and `scripts/` for the exact-arithmetic checks.
 
 This repository contains the public artifacts, papers, mathematical formalizations, and simulation code for the unified Dark Sector project developed within the SocrateAI Scientific Agora ecosystem.
 
@@ -11,10 +13,10 @@ This repository serves as the definitive reference for the scientific community 
 
 The exact theoretical results and dynamics have been documented in the following preprints, which are available on Zenodo:
 
-- **Part I: Exact Algebraic Identification of K3 String Vacua with Dark Matter**
+- **Part I: String-Inspired Effective Field Theories from K3 Surfaces: Resolving Fuzzy Dark Matter Tensions via Exact Algebraic Sieving**
   - **DOI/Link:** [10.5281/zenodo.20863378](https://zenodo.org/deposit/20863378)
   - **File:** `manuscripts_and_proofs/Part_I_K3_DarkMatter.pdf`
-- **Part II: Project Vafa-Continuity: $K3 \times T^2$ Moduli Dynamics & The Dark Energy Equation of State**
+- **Part II: Project Vafa-Continuity: A String-Inspired $K3 \times T^2$ Quintessence Model and the Swampland Obstruction to Stable Dark Energy**
   - **DOI/Link:** [10.5281/zenodo.20863381](https://zenodo.org/deposit/20863381)
   - **File:** `manuscripts_and_proofs/Part_II_Vafa_DarkEnergy.pdf`
 
@@ -44,7 +46,7 @@ For testable predictions targeting upcoming observatories (Euclid, ELT, LISA), r
 We welcome scientific peer review, controversy analysis, and robust criticism. To reproduce the mathematical and numerical results in this repository:
 
 ### 1. Mathematical Formalization (Lean 4)
-All theorems and definitions have been mechanically verified without any `sorry` stubs.
+All theorems are kernel-verified and the repository is free of `sorry` stubs. A small number of clearly-labelled results remain as explicit `axiom` declarations (the general-$n$ $S_{20}$ Picard–Fuchs recurrence, the CCGK Hodge data, and the Fano supercongruences); these are disclosed in `CAVEATS.md` and `OPEN_PROBLEMS.md`. The $S_{20}$ recurrence is additionally kernel-verified for $n\le 8$ and exact-checked for $n\in[0,60]$ (`scripts/verify_s20_recurrence.py`).
 1. Install [Lean 4](https://leanprover.github.io/lean4/doc/setup.html) and `lake`.
 2. Ensure the `lean-toolchain` is respected.
 3. Run the following command from the repository root:
@@ -72,3 +74,6 @@ The configurations for these agents can be explored in the `.agents/` directory.
 
 ## License and Contribution
 Open for scientific scrutiny. Please open issues or submit pull requests with formal Lean 4 counter-proofs or corrections to the numerical solvers.
+
+Copyright (C) 2026 Xavier Callens (SocrateAI Scientific Agora).
+All rights reserved. No part of this work may be reproduced, distributed, or transmitted in any form or by any means without prior written permission from the author.

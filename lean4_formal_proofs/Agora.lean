@@ -4,6 +4,7 @@
 -- Core K3 topology and stability proofs
 import Agora.K3_Topology
 import Agora.BimodalStability
+import Agora.GaugeCoupling
 
 -- Discovery proofs from the full Agora pipeline
 import Agora.Discovery.FuzzyDarkMatter

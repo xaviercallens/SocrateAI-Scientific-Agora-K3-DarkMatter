@@ -1,12 +1,24 @@
 # The Future Manifest: K3 × T² Falsifiable Predictions
 
-A physical theory is only as robust as its falsifiable predictions. Having aligned the $K3 \times T^2$ Moduli Dynamics with historical and present-day telescope data (JWST, DES Y3, Keck/VLT), we boldly publish the specific, testable signatures that the next generation of observatories will find between 2025 and 2035.
+A model is only as useful as its falsifiable predictions. Below we state the specific, testable signatures of the $K3\times T^2$ moduli-dynamics model for observatories operating 2025--2035, **together with the conditions under which each prediction would falsify the model**.
 
-## 1. Euclid's Dynamic $S_8$ Gradient
-We predict that as the Euclid Space Telescope maps the dark universe, it will not find a flat, static $S_8$ (matter clustering) value. It will discover a **temporal gradient**. The "clumpiness" of the universe will mathematically shift along our precise decay curve ($\epsilon \approx 0.0251$) depending on the redshift they look at. The tension between early and late universe clustering is not a measurement error; it is the physical smearing of the axion wavelength.
+> **Honest framing.** These are *model-dependent forecasts*, contingent on the open theoretical problems listed in `OPEN_PROBLEMS.md` (no derived compactification, instanton action still phenomenological). The current best-fit trajectory already lies **outside** the DESI 2024 1$\sigma$ contour, so the model is in tension with present data; the forecasts below are the sharp targets by which it should be confirmed or ruled out, not claims of established fact.
 
-## 2. The ELT's Sandage-Loeb Real-Time Drift
-In the late 2020s, the Extremely Large Telescope (ELT) will measure the universe expanding in real-time over a decade via the Sandage-Loeb test. We predict they will measure a dynamic acceleration curve of $w_0 \approx -0.548$ and $w_a \approx -0.396$, definitively disproving Einstein's static Cosmological Constant ($\Lambda$). Dark energy is a thawing quintessence field driven by Torus expansion, not vacuum energy.
+## 1. Euclid's redshift-dependent $S_8$
+**Prediction.** Euclid weak-lensing tomography should measure a *redshift-dependent* $S_8(z)$ rather than a single static value, evolving along the mass-varying-dark-matter decay curve set by $\epsilon\approx0.0251$ (the best-fit value from Part II). In this picture the early/late $S_8$ tension reflects physical smearing of the axion de Broglie scale, not measurement error.
 
-## 3. LISA's Standard Sirens
-When the Laser Interferometer Space Antenna (LISA) detects gravitational waves from merging black holes at the dawn of time, their "loudness" (luminosity distance) will deviate slightly from General Relativity. Because the $T^2$ volume is expanding, gravitational waves will "leak" fractionally into the extra dimensions. This specific fractional attenuation over immense distances will serve as a direct measurement of the string moduli dynamics.
+**Falsification.** If Euclid finds an $S_8(z)$ consistent with a single, redshift-independent $\Lambda$CDM value across its tomographic bins (within errors), this prediction fails.
+
+## 2. ELT Sandage--Loeb redshift drift
+**Prediction.** Over a $\sim$decade baseline the Extremely Large Telescope (ELT) Sandage--Loeb test probes the expansion history directly. The model's best-fit thawing trajectory ($w_0\approx-0.55$, $w_a\approx-0.40$) predicts a redshift-drift signal measurably distinct from a cosmological constant ($w=-1$).
+
+**Falsification.** A measured drift consistent with $w=-1$ (static $\Lambda$) at the achieved precision would exclude this trajectory. Note the model's best-fit is already in tension with DESI 2024, so this is a stringent test, not a safe bet.
+
+## 3. LISA standard sirens (most speculative)
+**Prediction (speculative).** If the $T^2$ volume modulus evolves cosmologically, gravitational-wave propagation over cosmological distances could acquire a small modification relative to General Relativity (a GW-vs-EM luminosity-distance offset for standard sirens detected by LISA).
+
+**Caveat.** This is the **least developed** prediction: it requires a derived modified GW propagation equation for the specific $K3\times T^2$ geometry, which is *not yet computed* (see `OPEN_PROBLEMS.md`). The magnitude and even the sign of any effect are presently undetermined, so this should be read as a research direction, not a quantitative forecast.
+
+---
+
+*All forecasts above are conditional on resolving the open problems in `OPEN_PROBLEMS.md`. The model is presented as a falsifiable, string-inspired phenomenology, not an established description of nature.*
