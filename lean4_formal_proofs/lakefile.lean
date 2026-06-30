@@ -13,5 +13,9 @@ lean_lib Agora {
   -- Fano supercongruences and mirror symmetry conjectures
 }
 
+lean_lib neuro_symbolic {
+  -- Neuro-symbolic integration and S20 Recurrence proofs
+}
+
 require mathlib from git
   "https://github.com/leanprover-community/mathlib4.git"

@@ -41,7 +41,8 @@ def main():
         coeffs = operator.listofpoly
         with open('data/sieve_operator_output.txt', 'w') as f:
             for coeff in coeffs:
-                f.write(f"{str(sp.sympify(coeff))}\n")
+                expr = sp.Poly.from_dict(coeff.to_sympy_dict(), x).as_expr()
+                f.write(f"{str(expr)}\n")
         print("Agent A: Operator exported to data/sieve_operator_output.txt")
     else:
         sys.exit(1)

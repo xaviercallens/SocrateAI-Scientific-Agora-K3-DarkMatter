@@ -1,0 +1,32 @@
+name: Lean 4 Proofs - S20 Recurrence
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'lean4_formal_proofs/neuro_symbolic/**'
+      - 'lean4_formal_proofs/lakefile.lean'
+  pull_request:
+    paths:
+      - 'lean4_formal_proofs/neuro_symbolic/**'
+      - 'lean4_formal_proofs/lakefile.lean'
+
+jobs:
+  build_proofs:
+    name: Build S20 Recurrence Proofs
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Elan
+        run: |
+          curl https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -sSf | sh -s -- -y --default-toolchain leanprover/lean4:v4.31.0
+          echo "$HOME/.elan/bin" >> $GITHUB_PATH
+
+      - name: Build Lean 4 proofs
+        run: |
+          cd lean4_formal_proofs
+          lake exe cache get || true
+          lake build neuro_symbolic
