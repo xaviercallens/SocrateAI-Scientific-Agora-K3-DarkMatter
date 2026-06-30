@@ -18,3 +18,9 @@ build/
 .env
 .env.*
 
+# Python virtual environment
+venv/
+.venv/
+empirical_crucible/venv/
+__pycache__/
+*.pyc
