@@ -4,6 +4,7 @@ import Mathlib.Data.Real.Basic
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.FieldSimp
 import Structures.S20Recurrence
+import Structures.S20Decomposition
 
 set_option maxHeartbeats 10000000
 set_option maxRecDepth 10000000

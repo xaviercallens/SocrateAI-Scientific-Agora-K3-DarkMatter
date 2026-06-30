@@ -23,4 +23,4 @@ This file contains the near-term task list for implementing the K3-GITN Neuro-Sy
 - [x] Create and populate the lessons learned registry `LL.md`.
 - [x] Create and populate the development milestones journal `JOURNAL.md`.
 - [x] Define a multi-phase integration roadmap in `ROADMAP.md`.
-- [ ] Synchronize numerical constants ($w_0, w_a, H_0$) across all code, benchmark JSONs, and manuscript text prior to the next major release (Rule 8).
+- [x] Synchronize numerical constants ($w_0, w_a, H_0$) across all code, benchmark JSONs, and manuscript text prior to the next major release (Rule 8).

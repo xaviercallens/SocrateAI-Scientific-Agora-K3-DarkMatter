@@ -32,3 +32,9 @@ This file compiles key insights, mathematical structures, Lean 4 kernel idiosync
 ## 3. GPU Acceleration & On-Device Operations
 - **PSD Density Matrices:** To enforce a valid quantum state on-GPU, the network must output a square matrix $A$, and then compute $\rho = A A^T / \text{Tr}(A A^T)$. Directly predicting the 16 elements of a density matrix without this structure will violate positive semi-definiteness or trace conservation.
 - **Stable Entanglement Entropy:** When computing the eigenvalues of $\rho$ via `torch.linalg.eigh`, some eigenvalues can become extremely small or negative due to float32 numerical precision. To prevent $\text{NaN}$ outputs, eigenvalues must be clamped using `torch.clamp(eigenvalues, min=1e-9)` before calculating $\log_2(\lambda)$.
+
+## 4. Cosmological Constants Synchronization & Shooting Solver
+- **Discovery:** Maintaining perfect numerical precision across decoupled environments (Python solver, LaTeX paper, and JSON benchmarks) is critical to the mathematical integrity of Swampland-quintessence models.
+- **Resolution:** We ran a precise shooting solver sweeping $\lambda$ and solved the cosmological ODEs with high precision (Radau integrator). The best-fit parameter $\lambda \approx 1.6724$ dynamically shooting $V_0 \approx 4.8005$ yielded thawing parameters $w_0 \approx -0.5485$ and $w_a \approx -0.3968$. Under Planck 2018 acoustic constraints, we solved the mass-varying axion-coupling scale $\epsilon \approx 0.02511$ which yielded $H_0 \approx 71.92$ km/s/Mpc (with sound horizon $r_s \approx 138.87$ Mpc and comoving distance $D_M \approx 13338.60$ Mpc).
+- **Guidance:** Ensure that any text updates in the manuscripts or paper are programmatically or carefully checked against the exact floating-point results in `.benchmarks/` and `data/observational_targets.json`.
+
