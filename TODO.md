@@ -26,8 +26,8 @@ This file contains the near-term task list for implementing the K3-GITN Neuro-Sy
 - [x] Synchronize numerical constants ($w_0, w_a, H_0$) across all code, benchmark JSONs, and manuscript text prior to the next major release (Rule 8).
 
 ### 4. Operation Lambda-Falsification
-- [ ] Ingest DESI DR1 BAO data and compute $\Delta \chi^2$ for the $T^2$ rolling Torus versus flat $\Lambda$CDM.
-- [ ] Ingest Pantheon+ Supernova dataset and overlay theoretical $T^2$ distance modulus $\mu_{\text{th}}(z)$ on the high-redshift scatter plot.
-- [ ] Calculate the Late-Time ISW temperature depression ($\Delta T$) for the $T^2$ trajectory to cross-reference with the CMB Cold Spot.
-- [ ] Compute the Sandage-Loeb real-time redshift drift ($\Delta z / \Delta t$) for $z=2$ to $z=5$.
-- [ ] Generate `Agora_Lambda_Falsification.ipynb` with final plots, BIC evaluation, and formal penalization calculations.
+- [x] Ingest DESI DR1 BAO data and compute $\Delta \chi^2$ for the $T^2$ rolling Torus versus flat $\Lambda$CDM.
+- [x] Ingest Pantheon+ Supernova dataset and overlay theoretical $T^2$ distance modulus $\mu_{\text{th}}(z)$ on the high-redshift scatter plot.
+- [x] Calculate the Late-Time ISW temperature depression ($\Delta T$) for the $T^2$ trajectory to cross-reference with the CMB Cold Spot.
+- [x] Compute the Sandage-Loeb real-time redshift drift ($\Delta z / \Delta t$) for $z=2$ to $z=5$.
+- [x] Generate `Agora_Lambda_Falsification.ipynb` with final plots, BIC evaluation, and formal penalization calculations.
