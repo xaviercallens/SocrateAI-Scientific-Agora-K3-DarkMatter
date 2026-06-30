@@ -147,17 +147,17 @@ lemma wz_difference_identity (n k : ℕ) :
   -- This hit a timeout.
   sorry
 
-/-- Boundary collapse at lower limit k = 0 -/
 lemma G_q_zero (n : ℕ) : G_q n 0 = 0 := by
   unfold G_q R_q t_q
-  -- Since k^5 term at k=0 is 0, the rational value evaluates to 0.
-  sorry
+  simp only [Nat.cast_zero, zero_pow, MulZeroClass.zero_mul, MulZeroClass.mul_zero, zero_div]
 
-/-- Boundary collapse at upper limit k = n + 5 -/
+
 lemma G_q_upper (n : ℕ) : G_q n (n + 5) = 0 := by
   unfold G_q t_q
-  -- Since Nat.choose n (n + 5) evaluates to 0, t_q n (n+5) = 0.
-  sorry
+  have h : n < n + 5 := by omega
+  have h2 : Nat.choose n (n + 5) = 0 := Nat.choose_eq_zero_of_lt h
+  simp [h2]
+
 
 -- ==============================================================================
 -- 5. Finite Telescoping Sum & Casting Back to ℤ

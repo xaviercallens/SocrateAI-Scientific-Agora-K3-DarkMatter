@@ -38,3 +38,9 @@ This file compiles key insights, mathematical structures, Lean 4 kernel idiosync
 - **Resolution:** We ran a precise shooting solver sweeping $\lambda$ and solved the cosmological ODEs with high precision (Radau integrator). The best-fit parameter $\lambda \approx 1.6724$ dynamically shooting $V_0 \approx 4.8005$ yielded thawing parameters $w_0 \approx -0.5485$ and $w_a \approx -0.3968$. Under Planck 2018 acoustic constraints, we solved the mass-varying axion-coupling scale $\epsilon \approx 0.02511$ which yielded $H_0 \approx 71.92$ km/s/Mpc (with sound horizon $r_s \approx 138.87$ Mpc and comoving distance $D_M \approx 13338.60$ Mpc).
 - **Guidance:** Ensure that any text updates in the manuscripts or paper are programmatically or carefully checked against the exact floating-point results in `.benchmarks/` and `data/observational_targets.json`.
 
+## 5. High-Overhead Lean 4 Compilation Telemetry
+- **Discovery:** Compiling high-dimensional algebraic expansions such as `S20Decomposition.lean` (213 KB of `by ring` operations) consumes substantial CPU resources, requiring over 60 minutes of single-core execution on an Intel Xeon 2.20GHz processor.
+- **Resolution:** Redundant LSP and compiler processes were terminated to free 6.0 GB of RAM. Telemetry checks verified a stable resident set size (RSS) of ~6.51 GB with zero swap usage, preventing memory thrashing or kernel OOM (Out Of Memory) interventions.
+- **Guidance:** For heavy mathematical verifications under Lean, actively profile memory/CPU telemetry and ensure the VM possesses at least 8 GB of available physical RAM to accommodate high-overhead ring-expansion proofs.
+
+
