@@ -23,9 +23,10 @@ cd lean4_formal_proofs && lake build Agora
 ### 3. Phenomenological Crucible (Astrophysics)
 **Command**: 
 ```bash
-python3 agora_ai_agents/agent_astro_pheno.py --evaluate superradiance
+python3 agora_ai_agents/agent_empirica.py
 ```
-**Explanation**: Verifies the Chameleon mass-scaling mechanism ($\gamma = 0.25$). Proves the K3 axion is shielded from the M87* superradiance spin-down constraint ($\alpha_{eff} > 0.88$).
+**Explanation**: Verifies the Chameleon mass-scaling mechanism ($\gamma = 0.25$). Proves the K3 axion is shielded from the M87* superradiance spin-down constraint ($\alpha_{\text{eff}} > 0.88$).
+
 
 ---
 
