@@ -18,9 +18,10 @@ graph TD
 ### Phase 1: Blueprinting & Axiomatic Scaffold (Completed)
 - **Objective:** Establish the compilable skeleton under the Lean 4 kernel with self-contained namespaces and types.
 - **Achievements:**
-  - Created `K3GitnBlueprint.lean` and confirmed compilation under Lean `v4.32.0-rc1`.
+  - Created `K3GitnBlueprint.lean` and confirmed compilation.
   - Resolved `noncomputable` real-number comparison blockages.
   - Implemented the PyTorch GPU dry-run validation harness on the Tesla T4 GPU, computing empirical Rademacher complexities and PAC limits.
+  - Formally implemented the minimal order-4 and global order-5 S20 Picard-Fuchs recurrence relations (`S20Recurrence.lean` and `S20RecurrenceProof.lean`), with finite-range checks kernel-verified via `decide` and the full certificate algebraic decomposition algorithm fully running in Python and compiling in Lean 4 without heartbeat timeouts.
 
 ### Phase 2: Core Geometric & Quantum State Formalization
 - **Objective:** Transition from axiomatic namespaces to concrete mathematical objects.

@@ -12,9 +12,13 @@ This file compiles key insights, mathematical structures, Lean 4 kernel idiosync
 - **Discovery:** Compiling high-dimensional algebra and analytical tactics (like `field_simp` and `ring`) inside Mathlib 4 from source is highly resource-intensive and will exceed time or memory limits on standard virtual environments.
 - **Resolution:** Always execute `/home/callensxavier_gmail_com/.elan/bin/lake exe cache get` as a precursor to any major compilation run. This retrieves pre-compiled Mathlib binaries, resolving dependency deadlocks and speeding up builds.
 
-### Typeclass Synthesis Limits on Massive Polynomials
-- **Discovery:** The Lean 4 typeclass synthesizer can reach maximum recursion depth limits (e.g., `error: failed to synthesize HPow ℚ`) when compiling extremely large rational polynomials (such as creative-telescoping WZ certificates `cert_poly` in `S20RecurrenceProof.lean`).
-- **Guidance:** To prevent recursive depth failure, split massive polynomials into smaller sub-polynomials or scale coefficients to avoid fraction-clearing overhead during tactic execution.
+### Typeclass Synthesis Limits & Heartbeat Timeouts on Massive Polynomials
+- **Discovery:** The Lean 4 typeclass synthesizer can reach maximum recursion depth limits (e.g., `error: failed to synthesize HPow ℚ`) or trigger deterministic heartbeat timeouts (e.g., `maximum number of heartbeats (200000) has been reached`) when compiling extremely large rational polynomials (such as creative-telescoping WZ certificates `cert_poly` in `S20RecurrenceProof.lean`).
+- **Resolution:** 
+  1. We implemented `empirical_crucible/generate_wz_decomposition.py` to automatically compute common denominators and split massive bivariate degree-21 polynomials from the Wilf-Zeilberger certificate into 7 distinct chunk lemmas (`expand_T0` to `expand_T6`) proving $T_i = E_i$ separately via `by ring`.
+  2. We configured the generator script to inject `set_option maxHeartbeats 0` and `set_option maxRecDepth 10000000` at the head of the generated `S20Decomposition.lean` file, disabling the conservative heartbeat limits for these high-overhead expansions.
+  3. We resolved a Python script `NameError` by correctly defining `R_neg_kp1 = R_neg.subs(k, k + 1)` using SymPy's algebraic substitution to handle the shifted certificate term.
+- **Guidance:** To prevent recursive depth and heartbeat failures on extremely high-degree algebraic identities, split the core polynomial equation into atomic chunk lemmas and bypass heartbeat checks for those modules using local `set_option` overrides.
 
 ## 2. Statistical Learning Theory Reference
 - **Repository Reference:** `YuanheZ/lean-stat-learning-theory` (ICML 2026) located locally at `/home/callensxavier_gmail_com/lean-stat-learning-theory`.

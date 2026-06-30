@@ -7,7 +7,7 @@ This file contains the near-term task list for implementing the K3-GITN Neuro-Sy
 ### 1. Lean 4 Formalization
 - [x] Apply the `noncomputable` specifier to `dark_energy_density` and `dark_sector_loss` in `lean4_formal_proofs/Structures/K3GitnBlueprint.lean`.
 - [x] Run compilation checks under the Lean 4 kernel to verify that `K3GitnBlueprint.lean` compiles with 0 errors and 0 warnings (except the expected linter warning for the terminal `sorry` stub).
-- [ ] Investigate the recursion limit and typeclass synthesis failures (e.g. `HPow ℚ`) in `Structures/S20RecurrenceProof.lean` and apply standard scaling or polynomial decomposition strategies.
+- [x] Apply compilation options (`maxHeartbeats 0`) and generate a bivariate polynomial chunk decomposition (`Structures/S20Decomposition.lean`) to successfully resolve typeclass synthesis limits and ring timeouts in `Structures/S20RecurrenceProof.lean`.
 - [ ] Connect `K3_to_GITN_Map` hypothesis class with concrete Covering Number bounds inside `lean-stat-learning-theory`.
 
 ### 2. Empirical Validation Suite
