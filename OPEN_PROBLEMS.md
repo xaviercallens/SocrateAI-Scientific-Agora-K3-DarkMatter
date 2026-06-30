@@ -14,7 +14,7 @@ These are the items a second-round referee (string-theory / Swampland) identifie
 |:-:|:---|:---|:---|
 | 1 | **Compactification / vacuum data** | A concrete Type IIB/IIA orientifold of $K3\times T^2$: D-brane content, integer flux quanta $(F_3,H_3)$, and explicit tadpole/anomaly cancellation. Needs Kreuzer–Skarke-scale topological databases and string-phenomenology judgement. | **Seeking Theoretical Collaborators** |
 | 2 | **Genuine instanton action** | Derivation of the axion mass from a true Euclidean (E3/ED3) brane-instanton action wrapping a definite cycle — replacing the current phenomenological fit of $\tau$ and $\mathcal V$. | **Seeking Theoretical Collaborators** |
-| 3 | **$S_{20}$ Picard–Fuchs recurrence (all $n$)** | A general-$n$ kernel proof of the order-5 recurrence via a Wilf–Zeilberger certificate $G(n,k)$ compiled into Lean. (Now exact-verified $n\in[0,60]$, kernel-verified $n\le 8$, general law an explicit `axiom`.) | **Agora Phase 4 Roadmap (WZ Certificate Generation)** |
+| 3 | **$S_{20}$ Picard–Fuchs recurrence (all $n$)** | A general-$n$ kernel proof of the order-4 minimal recurrence via a Wilf–Zeilberger certificate $G(n,k)$ compiled into Lean. (Now algebraically verified for all $n$ via SymPy symbolic certificate checking, numerically verified for $n \in [0,60]$, kernel-verified $n\le 8$ via `decide`, general law is an explicit `axiom`.) | **Agora Phase 4 Roadmap (WZ Lean Compilation)** |
 | 4 | **Moduli stabilisation** | A mechanism (GVW flux superpotential / $\mathcal N=2$ attractor) that fixes the dilaton and complex-structure moduli. Our exact analysis (`scripts/alpha_topology.py`) shows the stabilised values are functions of free integer fluxes/charges — i.e. not yet determined. | **Seeking Theoretical Collaborators** |
 | 5 | **Quintessence–Swampland tension resolution** | An explicit accelerating-epoch mechanism (multi-field, hilltop/plateau, or transient-DE embedding) consistent with $\lambda_\mathrm{fit}=1.6724>\sqrt2$. Currently reported honestly as a *tension/obstruction*, not resolved. | **Agora + Collaboration** |
 
@@ -30,11 +30,13 @@ The Agora pipeline **cannot** and **will not** hallucinate orientifold/flux/tadp
 
 In exchange, the Agora contributes: an exact-rational algebraic sieve, a reproducible Lean 4 verification harness, and an empirical-validation notebook against JWST/DES/quasar archives.
 
-### 3 — Agora Phase 4 Roadmap (WZ Certificate Generation)
+### 3 — Agora Phase 4 Roadmap (WZ Lean Compilation)
 This is the one open item the Agora can close on its own.
-- **Done:** `scripts/verify_s20_recurrence.py` confirms the order-5 recurrence exactly for all $n\in[0,60]$ (61 independent checks + negative control); `Structures/S20Recurrence.lean` kernel-verifies it for each concrete $n\le 8$ via `decide`; the `sorry` is removed; the general law is an explicit, auditable `axiom`.
-- **Phase 4:** generate the rational WZ certificate $G(n,k)$ in SymPy/SageMath such that
-  $\sum_{j=0}^5 P_j(n)\,F(n+j,k) = G(n,k+1)-G(n,k)$ with $F(n,k)=\binom nk^4\binom{n+k}{k}$, then compile the resulting polynomial/rational identity into a Lean `field_simp; ring` proof to replace the `axiom` with a `theorem`. This would be the first fully kernel-verified order-5 Picard–Fuchs extraction of its kind.
+- **Done:**
+  - **Numerical Verification:** Both the order-5 and minimal order-4 recurrences have been verified exactly for all $n\in[0,60]$ using arbitrary-precision integers with negative control checks (`verify_s20_recurrence.py` and `verify_s20_order_4.py`).
+  - **Lean 4 Formalization:** Both recurrences, their polynomials, their left-hand sides, and kernel-verified checks for $n \le 8$ via `decide` are fully formalized in `Structures/S20Recurrence.lean` (sorry-free and admit-free). The general laws are declared as explicit, auditable `axiom`s.
+  - **WZ Certificate Verification:** The bivariate rational creative-telescoping certificate $R(n,k)$ from Maxima/SageMath has been algebraically verified for all $n$ and $k$ via exact SymPy symbolic evaluation (`verify_wz_certificate.py`), simplifying the WZ relation difference to exactly `0` (`diff = 0`).
+- **Phase 4 (WZ Lean Compilation):** Map the algebraically verified bivariate polynomial identity into a formal Lean 4 algebraic proof (using `field_simp; ring`) to prove the telescoping relation and replace the general-n `axiom s20_recurrence_order_4` with a fully compiled `theorem`. This would establish the first kernel-certified order-4 minimal Picard-Fuchs recurrence on the entire range.
 
 ### 4 — Moduli stabilisation (exact null result on record)
 `scripts/alpha_topology.py` tests three geometric origins (GVW flux / dilaton, $\mathcal N=2$ attractor, D7-volume + $\chi=24$ threshold) for the bare gauge coupling. **Verdict: topologically unconstrained** — every candidate value depends on free integer fluxes/charges or on the (uncomputed) $S_{1,2}$ transcendental-lattice Gram matrix. Deriving an absolute coupling needs the item-1 vacuum data. The only defensible geometric output is the *relative* ratio $\sqrt{1014/336}\approx1.74$ (kernel-verified in `Agora.GaugeCoupling`).

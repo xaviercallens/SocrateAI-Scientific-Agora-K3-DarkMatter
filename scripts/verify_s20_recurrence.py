@@ -20,8 +20,9 @@ import sys
 from math import comb
 import sympy as sp
 
-LEAN = ("/Users/xcallens/xdev/SocrateAI-Scientific-Agora-K3-DarkMatter/"
-        "lean4_formal_proofs/Structures/S20Recurrence.lean")
+import os
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+LEAN = os.path.join(SCRIPT_DIR, "..", "lean4_formal_proofs", "Structures", "S20Recurrence.lean")
 
 
 def S20(n: int) -> int:

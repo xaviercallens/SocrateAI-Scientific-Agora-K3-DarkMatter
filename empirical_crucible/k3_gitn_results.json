@@ -1,0 +1,23 @@
+{
+  "device": "cuda",
+  "gpu_name": "Tesla T4",
+  "num_samples": 128,
+  "epochs": 200,
+  "training_time_seconds": 1.5856311321258545,
+  "final_empirical_loss": 0.1034887284040451,
+  "final_dm_loss": 0.10339555889368057,
+  "final_de_loss": 9.316585783381015e-05,
+  "rademacher_trials": 5,
+  "individual_rademacher_correlations": [
+    0.26907312870025635,
+    0.2572956085205078,
+    0.24713221192359924,
+    0.22655776143074036,
+    0.22311219573020935
+  ],
+  "mean_rademacher_complexity": 0.24463418126106262,
+  "delta": 0.05,
+  "confidence_term": 0.36012104674497025,
+  "expected_loss_bound_upper_limit": 0.708243956410078,
+  "status": "VERIFIED_ON_HARDWARE"
+}

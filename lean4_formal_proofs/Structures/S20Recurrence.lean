@@ -79,4 +79,46 @@ theorem s20_recurrence_checked :
     obligation; replacing this `axiom` with a `theorem` is Agora Phase-4 work. -/
 axiom s20_recurrence (n : ℕ) : s20_lhs n = 0
 
+
+-- ==============================================================================
+-- MINIMAL ORDER-4 PICARD-FUCHS RECURRENCE (Degree 13)
+-- ==============================================================================
+
+/-- Minimal order-4 polynomials of degree 13 extracted from WZ certificate -/
+def Q0 (n : ℤ) : ℤ :=
+  -3 * (n + 1)^4 * (3 * n + 4) * (3 * n + 5) * (8535643 * n^7 + 169469658 * n^6 + 1436623360 * n^5 + 6740299644 * n^4 + 18902585197 * n^3 + 31686619162 * n^2 + 29399194280 * n + 11647125056)
+
+def Q1 (n : ℤ) : ℤ :=
+  -(55063432993 * n^13 + 1588819660695 * n^12 + 20963891132894 * n^11 + 167468366956203 * n^10 + 903613284556839 * n^9 + 3477557072410390 * n^8 + 9820711443781882 * n^7 + 20606199948403839 * n^6 + 32126707298278818 * n^5 + 36761444179589385 * n^4 + 30012007177436894 * n^3 + 16556660879488928 * n^2 + 5532868382941920 * n + 846052269753600)
+
+def Q2 (n : ℤ) : ℤ :=
+  -(6819978757 * n^13 + 210426023069 * n^12 + 2975530787671 * n^11 + 25526125026989 * n^10 + 148183325103510 * n^9 + 614551146955742 * n^8 + 1872743330919213 * n^7 + 4244605360330637 * n^6 + 7153495812783439 * n^5 + 8851419391630559 * n^4 + 7814133099256906 * n^3 + 4659741954049164 * n^2 + 1681997842192584 * n + 277519882765920)
+
+def Q3 (n : ℤ) : ℤ :=
+  -(n + 3)^2 * (179248503 * n^11 + 4813602339 * n^10 + 57994210309 * n^9 + 413646681628 * n^8 + 1940244739916 * n^7 + 6283318000170 * n^6 + 14334249392454 * n^5 + 23036916744307 * n^4 + 25562518558626 * n^3 + 18654645293596 * n^2 + 8059295555832 * n + 1561898457120)
+
+def Q4 (n : ℤ) : ℤ :=
+  (n + 3)^2 * (n + 4)^4 * (8535643 * n^7 + 109720157 * n^6 + 599053915 * n^5 + 1800480209 * n^4 + 3216974566 * n^3 + 3417224202 * n^2 + 1998561324 * n + 496575040)
+
+/-- Left-hand side of the minimal order-4 recurrence at index `n`. -/
+def s20_lhs_order_4 (n : ℕ) : ℤ :=
+  Q0 n * S20 n + Q1 n * S20 (n+1) + Q2 n * S20 (n+2)
+    + Q3 n * S20 (n+3) + Q4 n * S20 (n+4)
+
+/-- KERNEL-VERIFIED (no `sorry`): the order-4 recurrence holds as an exact integer
+    identity for each concrete `n ∈ {0,…,8}`. Verified by the Lean 4 kernel via `decide`. -/
+theorem s20_recurrence_order_4_checked :
+    s20_lhs_order_4 0 = 0 ∧ s20_lhs_order_4 1 = 0 ∧ s20_lhs_order_4 2 = 0 ∧ s20_lhs_order_4 3 = 0
+      ∧ s20_lhs_order_4 4 = 0 ∧ s20_lhs_order_4 5 = 0 ∧ s20_lhs_order_4 6 = 0 ∧ s20_lhs_order_4 7 = 0
+      ∧ s20_lhs_order_4 8 = 0 := by
+  refine ⟨?_, ?_, ?_, ?_, ?_, ?_, ?_, ?_, ?_⟩ <;>
+    simp only [s20_lhs_order_4, S20, s20_term,
+               Finset.sum_range_succ, Finset.sum_range_zero] <;>
+    decide
+
+/-- The general (all-`n`) minimal order-4 Picard-Fuchs recurrence for `S20`.
+    Declared as an explicit `axiom` pending complete WZ certificate proof verification in Lean. -/
+axiom s20_recurrence_order_4 (n : ℕ) : s20_lhs_order_4 n = 0
+
 end S20
+

@@ -78,7 +78,9 @@ The CSV files in `scientific_protocol/datasets/` have been improved from fully s
 | S₁₂ sequence: 20 exact values + Weil bounds | ✅ Kernel-verified (`S12RecurrenceVerification.lean`) |
 | Relative gauge-coupling ratio $\alpha^{-1}_{S_{1,2}}/\alpha^{-1}_{S_{2,1}}=\sqrt{1014/336}\in(1.73,1.75)$ | ✅ Kernel-verified (`GaugeCoupling.lean`, exact ℚ) |
 | $S_{20}$ order-5 recurrence, concrete $n\le8$ | ✅ Kernel-verified (`S20Recurrence.lean`, `decide`) |
-| $S_{20}$ order-5 recurrence, general $n$ | ⚠️ Explicit `axiom` (was `sorry`); exact-verified $n\in[0,60]$; WZ proof = open |
+| $S_{20}$ order-4 minimal recurrence, concrete $n\le8$ | ✅ Kernel-verified (`S20Recurrence.lean`, `decide`) |
+| $S_{20}$ order-4 minimal recurrence, general $n$ | ⚠️ Explicit `axiom`; algebraically verified for all $n$ via exact symbolic WZ certificate evaluation (SymPy check: `diff = 0`); numerically verified for all $n \in [0,60]$ |
+| $S_{20}$ order-5 recurrence, general $n$ | ⚠️ Explicit `axiom` (was `sorry`); exact-verified $n\in[0,60]$ |
 | K3 surface identification for $S_{1,2}$, $S_{2,1}$ | ❌ Not formalized |
 | Monodromy connection matrix computation | ❌ Not formalized |
 | Mirror map coefficient extraction | ❌ Not formalized (hardcoded) |
