@@ -5,6 +5,7 @@
 import Agora.K3_Topology
 import Agora.BimodalStability
 import Agora.GaugeCoupling
+import Agora.FeynmanSieveEquivalence
 
 -- Discovery proofs from the full Agora pipeline
 import Agora.Discovery.FuzzyDarkMatter
