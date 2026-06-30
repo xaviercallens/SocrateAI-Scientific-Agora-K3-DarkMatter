@@ -13,3 +13,8 @@ build/
 *.fls
 *.fdb_latexmk
 *.synctex.gz
+
+# Environment variables & secrets
+.env
+.env.*
+
