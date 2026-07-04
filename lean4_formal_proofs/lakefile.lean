@@ -1,7 +1,7 @@
 import Lake
 open Lake DSL
 
-package «socrate-ai» {
+package socrate-ai {
   -- add package configuration options here
 }
 
@@ -11,6 +11,7 @@ lean_lib Structures {
 
 lean_lib Agora {
   -- Fano supercongruences and mirror symmetry conjectures
+  -- Now includes Part IV formal proofs
 }
 
 lean_lib neuro_symbolic {

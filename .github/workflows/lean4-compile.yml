@@ -1,0 +1,145 @@
+name: Lean 4 Compilation and Proof Verification
+
+on:
+  push:
+    branches: [ main, vibe/** ]
+    paths:
+      - 'lean4_formal_proofs/**'
+      - '.github/workflows/lean4-compile-fixed.yml'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'lean4_formal_proofs/**'
+      - '.github/workflows/lean4-compile-fixed.yml'
+
+jobs:
+  compile-lean4:
+    name: Compile Lean 4 Proofs
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+        submodules: recursive
+
+    - name: Install Lean 4 and Lake
+      run: |
+        echo "🔧 Installing Lean 4 and Lake..."
+        # Download and install Lean 4
+        curl -L https://raw.githubusercontent.com/leanprover/lean4/master/scripts/install.sh | bash
+        echo "✅ Lean 4 installed"
+        
+        # Add Lean to PATH
+        echo "$HOME/.elan/bin" >> $GITHUB_PATH
+        echo "$HOME/.local/bin" >> $GITHUB_PATH
+        
+        # Verify installation
+        lean --version
+        lake --version
+
+    - name: Install Mathlib4
+      run: |
+        echo "📚 Installing Mathlib4..."
+        cd lean4_formal_proofs
+        lake exe cache get
+        echo "✅ Mathlib4 installed"
+
+    - name: Compile Lean 4 proofs
+      run: |
+        cd lean4_formal_proofs
+        echo "🔍 Compiling Lean 4 proofs..."
+        lake build 2>&1 | tee compilation.log
+        
+        # Check if compilation succeeded
+        if grep -q "error" compilation.log; then
+          echo "❌ Compilation failed with errors"
+          exit 1
+        fi
+        
+        if grep -q "warning" compilation.log; then
+          echo "⚠️  Compilation succeeded with warnings"
+        else
+          echo "✅ Compilation succeeded without errors or warnings"
+        fi
+
+    - name: Verify Part IV proofs specifically
+      run: |
+        cd lean4_formal_proofs
+        echo "🎯 Verifying Part IV formal proofs..."
+        lake build Agora.PartIV.Part_IV_Formal_Proofs 2>&1 | tee part4_verification.log
+        
+        # Check for specific Part IV compilation
+        if grep -q "error" part4_verification.log; then
+          echo "❌ Part IV proof verification failed"
+          exit 1
+        else
+          echo "✅ Part IV proofs compiled successfully"
+        fi
+
+    - name: Run Part IV tests
+      run: |
+        cd lean4_formal_proofs
+        echo "🧪 Running Part IV test cases..."
+        lake build Agora.PartIV.Test 2>&1 | tee part4_tests.log
+        
+        if grep -q "error" part4_tests.log; then
+          echo "❌ Part IV tests failed"
+          exit 1
+        else
+          echo "✅ Part IV tests passed"
+        fi
+
+    - name: Check for sorry statements
+      run: |
+        cd lean4_formal_proofs
+        echo "🔍 Checking for sorry statements..."
+        SORRY_COUNT=$(grep -r "sorry" --include="*.lean" Agora/ | wc -l)
+        
+        if [ "$SORRY_COUNT" -gt 0 ]; then
+          echo "❌ Found $SORRY_COUNT sorry statements:"
+          grep -r "sorry" --include="*.lean" Agora/
+          exit 1
+        else
+          echo "✅ No sorry statements found"
+        fi
+
+    - name: Upload compilation logs
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: lean4-compilation-logs
+        path: |
+          lean4_formal_proofs/compilation.log
+          lean4_formal_proofs/part4_verification.log
+          lean4_formal_proofs/part4_tests.log
+        retention-days: 30
+
+    - name: Verify all Agora proofs
+      run: |
+        cd lean4_formal_proofs
+        echo "🔍 Verifying all Agora module proofs..."
+        lake build Agora 2>&1 | tee agora_verification.log
+        
+        if grep -q "error" agora_verification.log; then
+          echo "❌ Agora module verification failed"
+          exit 1
+        else
+          echo "✅ All Agora proofs compiled successfully"
+        fi
+
+    - name: Summary
+      run: |
+        echo ""
+        echo "=== Lean 4 Compilation Summary ==="
+        echo "✅ Repository checked out"
+        echo "✅ Lean 4 and Lake installed"
+        echo "✅ Mathlib4 installed"
+        echo "✅ Lean 4 proofs compiled"
+        echo "✅ Part IV proofs verified"
+        echo "✅ Part IV tests passed"
+        echo "✅ All Agora proofs verified"
+        echo "✅ No sorry statements found"
+        echo ""
+        echo "All Lean 4 proofs have been successfully kernel-verified!"
