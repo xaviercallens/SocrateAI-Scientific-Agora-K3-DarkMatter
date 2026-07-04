@@ -25,31 +25,25 @@ jobs:
         fetch-depth: 0
         submodules: recursive
 
-    - name: Set up Lean 4
-      uses: leanprover/setup-lean4@v1
-      with:
-        lean-version: '4.15.0'
-
-    - name: Cache dependencies
-      uses: actions/cache@v3
-      with:
-        path: |
-          ~/.cache/lean
-          lean4_formal_proofs/lake-packages
-        key: ${{ runner.os }}-lean4-${{ hashFiles('lean4_formal_proofs/lakefile.lean') }}
-        restore-keys: |
-          ${{ runner.os }}-lean4-
-
-    - name: Install dependencies
+    - name: Install Lean 4 and Lake
       run: |
+        echo "🔧 Installing Lean 4 and Lake..."
+        curl -L https://raw.githubusercontent.com/leanprover/lean4/master/scripts/install.sh | bash
+        echo "$HOME/.elan/bin" >> $GITHUB_PATH
+        echo "$HOME/.local/bin" >> $GITHUB_PATH
+        lean --version
+        lake --version
+
+    - name: Install Mathlib4
+      run: |
+        echo "📚 Installing Mathlib4..."
         cd lean4_formal_proofs
         lake exe cache get
-        lake build -Kenv=dev 2>&1 | tail -20
 
     - name: Compile all proofs
       run: |
         cd lean4_formal_proofs
-        echo "Compiling all Lean 4 proofs..."
+        echo "🔍 Compiling all Lean 4 proofs..."
         lake build 2>&1 | tee full_compilation.log
         
         if grep -q "error" full_compilation.log; then
@@ -62,7 +56,7 @@ jobs:
     - name: Check for sorry statements
       run: |
         cd lean4_formal_proofs
-        echo "Checking for sorry statements..."
+        echo "🔍 Checking for sorry statements..."
         SORRY_COUNT=$(grep -r "sorry" --include="*.lean" . | wc -l)
         
         if [ "$SORRY_COUNT" -gt 0 ]; then
@@ -76,7 +70,7 @@ jobs:
     - name: Verify Part IV specifically
       run: |
         cd lean4_formal_proofs
-        echo "Verifying Part IV proofs..."
+        echo "🎯 Verifying Part IV proofs..."
         lake build Agora.PartIV 2>&1 | tail -10
 
     - name: Upload results

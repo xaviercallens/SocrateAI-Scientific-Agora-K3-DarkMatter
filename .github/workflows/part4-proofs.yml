@@ -5,12 +5,12 @@ on:
     branches: [ main, vibe/** ]
     paths:
       - 'lean4_formal_proofs/Agora/Part_IV/**'
-      - '.github/workflows/part4-proofs.yml'
+      - '.github/workflows/part4-proofs-fixed.yml'
   pull_request:
     branches: [ main ]
     paths:
       - 'lean4_formal_proofs/Agora/Part_IV/**'
-      - '.github/workflows/part4-proofs.yml'
+      - '.github/workflows/part4-proofs-fixed.yml'
 
 jobs:
   part4-kernel-compilation:
@@ -24,26 +24,20 @@ jobs:
         fetch-depth: 0
         submodules: recursive
 
-    - name: Set up Lean 4
-      uses: leanprover/setup-lean4@v1
-      with:
-        lean-version: '4.15.0'
-
-    - name: Cache Lean dependencies
-      uses: actions/cache@v3
-      with:
-        path: |
-          ~/.cache/lean
-          lean4_formal_proofs/lake-packages
-        key: ${{ runner.os }}-lean4-${{ hashFiles('lean4_formal_proofs/lakefile.lean') }}
-        restore-keys: |
-          ${{ runner.os }}-lean4-
+    - name: Install Lean 4 and Lake
+      run: |
+        echo "🔧 Installing Lean 4 and Lake..."
+        curl -L https://raw.githubusercontent.com/leanprover/lean4/master/scripts/install.sh | bash
+        echo "$HOME/.elan/bin" >> $GITHUB_PATH
+        echo "$HOME/.local/bin" >> $GITHUB_PATH
+        lean --version
+        lake --version
 
     - name: Install Mathlib4
       run: |
+        echo "📚 Installing Mathlib4..."
         cd lean4_formal_proofs
         lake exe cache get
-        echo "Mathlib4 and dependencies installed"
 
     - name: Compile Part IV Formal Proofs
       run: |
@@ -145,7 +139,7 @@ jobs:
         echo "## Summary" >> compilation_report.md
         echo "- **Status**: ✅ All Part IV proofs compiled successfully" >> compilation_report.md
         echo "- **Date**: $(date)" >> compilation_report.md
-        echo "- **Lean Version**: 4.15.0" >> compilation_report.md
+        echo "- **Lean Version**: $(lean --version)" >> compilation_report.md
         echo "" >> compilation_report.md
         echo "## Theorems Verified" >> compilation_report.md
         echo "1. ✅ Tadpole Cancellation and Swampland Evasion" >> compilation_report.md
