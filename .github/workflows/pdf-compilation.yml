@@ -11,7 +11,6 @@ on:
     paths:
       - 'manuscripts_and_proofs/Part_IV*.tex'
       - '.github/workflows/pdf-compilation.yml'
-  workflow_dispatch:
 
 jobs:
   compile-pdf:
@@ -30,6 +29,7 @@ jobs:
 
     - name: Install additional LaTeX packages
       run: |
+        echo "🔧 Installing required LaTeX packages..."
         tlmgr update --self
         tlmgr install \
           collection-fontsrecommended \
@@ -57,25 +57,16 @@ jobs:
         cd manuscripts_and_proofs
         echo "📄 Compiling Part_IV_Complete_With_Lean_Proofs.tex..."
         
-        # First pass
         pdflatex -interaction=nonstopmode Part_IV_Complete_With_Lean_Proofs.tex || true
-        
-        # Second pass (for references)
         pdflatex -interaction=nonstopmode Part_IV_Complete_With_Lean_Proofs.tex || true
-        
-        # Third pass (final)
         pdflatex -interaction=nonstopmode Part_IV_Complete_With_Lean_Proofs.tex || true
         
         if [ -f "Part_IV_Complete_With_Lean_Proofs.pdf" ]; then
-          echo "✅ PDF successfully compiled"
-          echo "File size: $(du -h Part_IV_Complete_With_Lean_Proofs.pdf | cut -f1)"
-          # Count pages if pdfinfo is available
-          if command -v pdfinfo &> /dev/null; then
-            PAGES=$(pdfinfo Part_IV_Complete_With_Lean_Proofs.pdf | grep Pages | awk '{print $2}')
-            echo "Page count: $PAGES"
-          fi
+          echo "✅ Part_IV_Complete_With_Lean_Proofs.pdf generated successfully"
+          SIZE=$(du -h Part_IV_Complete_With_Lean_Proofs.pdf | cut -f1)
+          echo "   File size: $SIZE"
         else
-          echo "❌ PDF compilation failed"
+          echo "❌ Part_IV_Complete_With_Lean_Proofs.pdf generation failed"
           exit 1
         fi
 
@@ -89,10 +80,11 @@ jobs:
         pdflatex -interaction=nonstopmode Part_IV_Rigorous_Resolution_FDM_Tension.tex || true
         
         if [ -f "Part_IV_Rigorous_Resolution_FDM_Tension.pdf" ]; then
-          echo "✅ Original PDF successfully compiled"
-          echo "File size: $(du -h Part_IV_Rigorous_Resolution_FDM_Tension.pdf | cut -f1)"
+          echo "✅ Part_IV_Rigorous_Resolution_FDM_Tension.pdf generated successfully"
+          SIZE=$(du -h Part_IV_Rigorous_Resolution_FDM_Tension.pdf | cut -f1)
+          echo "   File size: $SIZE"
         else
-          echo "⚠️  Original PDF compilation had issues (may be missing bibliography)"
+          echo "⚠️  Part_IV_Rigorous_Resolution_FDM_Tension.pdf generation had issues"
         fi
 
     - name: Upload PDF artifacts
@@ -124,31 +116,14 @@ jobs:
         
         echo "" >> compilation_summary.md
         echo "## Document Features" >> compilation_summary.md
-        echo "- Complete LaTeX document with all 6 theorems" >> compilation_summary.md
-        echo "- Formal Lean 4 proofs included as listings" >> compilation_summary.md
+        echo "- All 6 theorems with complete mathematical proofs" >> compilation_summary.md
+        echo "- Formal Lean 4 proofs included as code listings" >> compilation_summary.md
         echo "- Compilation verification results" >> compilation_summary.md
+        echo "- GitHub Actions workflow descriptions" >> compilation_summary.md
         echo "- Conclusion: Local EFT and global topology are perfectly harmonized" >> compilation_summary.md
         echo "" >> compilation_summary.md
-        echo "## GitHub Actions Status" >> compilation_summary.md
-        echo "All PDFs are automatically compiled and available as artifacts." >> compilation_summary.md
+        echo "## Compilation Method" >> compilation_summary.md
+        echo "- Container: texlive/texlive:latest" >> compilation_summary.md
+        echo "- LaTeX Engine: pdflatex" >> compilation_summary.md
         
         cat compilation_summary.md
-
-    - name: Final summary
-      run: |
-        echo ""
-        echo "🎉 PDF Compilation Complete!"
-        echo ""
-        echo "✅ Part IV documents compiled to PDF"
-        echo "✅ All Lean 4 proofs included"
-        echo "✅ Compilation verification results included"
-        echo "✅ Conclusion about EFT-topology harmonization included"
-        echo ""
-        echo "PDF files available as GitHub Actions artifacts:"
-        echo "- Part_IV_Complete_With_Lean_Proofs.pdf (with Lean code listings)"
-        echo "- Part_IV_Rigorous_Resolution_FDM_Tension.pdf (original)"
-        echo ""
-        echo "To download artifacts:"
-        echo "1. Go to GitHub Actions tab"
-        echo "2. Click on the workflow run"
-        echo "3. Download the 'part4-pdfs' artifact"

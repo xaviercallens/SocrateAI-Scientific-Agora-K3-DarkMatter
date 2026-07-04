@@ -14,11 +14,6 @@ on:
       - 'manuscripts_and_proofs/compile_part4_pdf.sh'
       - '.github/workflows/generate-pdf.yml'
   workflow_dispatch:
-    inputs:
-      force:
-        description: 'Force PDF regeneration'
-        required: false
-        default: 'false'
 
 jobs:
   generate-pdf:
@@ -70,20 +65,12 @@ jobs:
         echo "📄 Generating PDF using compile_part4_pdf.sh..."
         cd manuscripts_and_proofs
         
-        # Run the compilation script
         ./compile_part4_pdf.sh
         
-        # Check if PDF was generated
         if [ -f "Part_IV_Complete_With_Lean_Proofs.pdf" ]; then
           echo "✅ Part_IV_Complete_With_Lean_Proofs.pdf generated successfully"
           SIZE=$(du -h Part_IV_Complete_With_Lean_Proofs.pdf | cut -f1)
           echo "   File size: $SIZE"
-          
-          # Try to get page count
-          if command -v pdfinfo &> /dev/null; then
-            PAGES=$(pdfinfo Part_IV_Complete_With_Lean_Proofs.pdf | grep Pages | awk '{print $2}')
-            echo "   Page count: $PAGES"
-          fi
         else
           echo "❌ Part_IV_Complete_With_Lean_Proofs.pdf was not generated"
           exit 1
@@ -94,7 +81,6 @@ jobs:
         echo "📄 Compiling original Part IV document..."
         cd manuscripts_and_proofs
         
-        # Simple compilation for the original document
         pdflatex -interaction=nonstopmode Part_IV_Rigorous_Resolution_FDM_Tension.tex || true
         pdflatex -interaction=nonstopmode Part_IV_Rigorous_Resolution_FDM_Tension.tex || true
         pdflatex -interaction=nonstopmode Part_IV_Rigorous_Resolution_FDM_Tension.tex || true
@@ -124,10 +110,6 @@ jobs:
           SIZE1=$(du -h Part_IV_Complete_With_Lean_Proofs.pdf | cut -f1)
           echo "- ✅ **Part_IV_Complete_With_Lean_Proofs.pdf**" >> pdf_summary.md
           echo "  - Size: $SIZE1" >> pdf_summary.md
-          if command -v pdfinfo &> /dev/null; then
-            PAGES1=$(pdfinfo Part_IV_Complete_With_Lean_Proofs.pdf | grep Pages | awk '{print $2}')
-            echo "  - Pages: $PAGES1" >> pdf_summary.md
-          fi
           echo "  - Content: Complete document with Lean 4 code listings" >> pdf_summary.md
           echo "" >> pdf_summary.md
         fi
@@ -136,10 +118,6 @@ jobs:
           SIZE2=$(du -h Part_IV_Rigorous_Resolution_FDM_Tension.pdf | cut -f1)
           echo "- ✅ **Part_IV_Rigorous_Resolution_FDM_Tension.pdf**" >> pdf_summary.md
           echo "  - Size: $SIZE2" >> pdf_summary.md
-          if command -v pdfinfo &> /dev/null; then
-            PAGES2=$(pdfinfo Part_IV_Rigorous_Resolution_FDM_Tension.pdf | grep Pages | awk '{print $2}')
-            echo "  - Pages: $PAGES2" >> pdf_summary.md
-          fi
           echo "  - Content: Original LaTeX document" >> pdf_summary.md
           echo "" >> pdf_summary.md
         fi
@@ -168,13 +146,6 @@ jobs:
           manuscripts_and_proofs/pdf_summary.md
         retention-days: 30
 
-    - name: Upload PDF summary as artifact
-      uses: actions/upload-artifact@v4
-      with:
-        name: pdf-summary
-        path: manuscripts_and_proofs/pdf_summary.md
-        retention-days: 30
-
     - name: Final success message
       run: |
         echo ""
@@ -186,15 +157,8 @@ jobs:
         echo ""
         echo "📦 Artifacts uploaded:"
         echo "   - part4-pdfs: Contains both PDF documents"
-        echo "   - pdf-summary: Contains generation summary"
         echo ""
         echo "📥 To download:"
         echo "   1. Go to GitHub Actions tab"
         echo "   2. Click on this workflow run"
         echo "   3. Download the artifacts"
-        echo ""
-        echo "📄 PDFs include:"
-        echo "   - All 6 theorems with complete proofs"
-        echo "   - Lean 4 formal proofs as code listings"
-        echo "   - Compilation verification results"
-        echo "   - Conclusion: Local EFT and global topology are perfectly harmonized"

@@ -5,12 +5,12 @@ on:
     branches: [ main, vibe/** ]
     paths:
       - 'lean4_formal_proofs/Agora/Part_IV/**'
-      - '.github/workflows/part4-proofs-fixed.yml'
+      - '.github/workflows/part4-proofs.yml'
   pull_request:
     branches: [ main ]
     paths:
       - 'lean4_formal_proofs/Agora/Part_IV/**'
-      - '.github/workflows/part4-proofs-fixed.yml'
+      - '.github/workflows/part4-proofs.yml'
 
 jobs:
   part4-kernel-compilation:
@@ -22,7 +22,6 @@ jobs:
       uses: actions/checkout@v4
       with:
         fetch-depth: 0
-        submodules: recursive
 
     - name: Install Lean 4 and Lake
       run: |
@@ -44,10 +43,8 @@ jobs:
         cd lean4_formal_proofs
         echo "🔍 Compiling Part IV formal proofs with kernel verification..."
         
-        # Compile the main Part IV proofs
         lake build Agora.PartIV.Part_IV_Formal_Proofs 2>&1 | tee part4_compilation.log
         
-        # Check compilation result
         if grep -q "error" part4_compilation.log; then
           echo "❌ Part IV compilation failed"
           cat part4_compilation.log

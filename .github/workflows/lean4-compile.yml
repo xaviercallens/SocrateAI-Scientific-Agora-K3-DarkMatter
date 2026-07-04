@@ -5,12 +5,12 @@ on:
     branches: [ main, vibe/** ]
     paths:
       - 'lean4_formal_proofs/**'
-      - '.github/workflows/lean4-compile-fixed.yml'
+      - '.github/workflows/lean4-compile.yml'
   pull_request:
     branches: [ main ]
     paths:
       - 'lean4_formal_proofs/**'
-      - '.github/workflows/lean4-compile-fixed.yml'
+      - '.github/workflows/lean4-compile.yml'
 
 jobs:
   compile-lean4:
@@ -22,20 +22,13 @@ jobs:
       uses: actions/checkout@v4
       with:
         fetch-depth: 0
-        submodules: recursive
 
     - name: Install Lean 4 and Lake
       run: |
         echo "🔧 Installing Lean 4 and Lake..."
-        # Download and install Lean 4
         curl -L https://raw.githubusercontent.com/leanprover/lean4/master/scripts/install.sh | bash
-        echo "✅ Lean 4 installed"
-        
-        # Add Lean to PATH
         echo "$HOME/.elan/bin" >> $GITHUB_PATH
         echo "$HOME/.local/bin" >> $GITHUB_PATH
-        
-        # Verify installation
         lean --version
         lake --version
 
@@ -52,7 +45,6 @@ jobs:
         echo "🔍 Compiling Lean 4 proofs..."
         lake build 2>&1 | tee compilation.log
         
-        # Check if compilation succeeded
         if grep -q "error" compilation.log; then
           echo "❌ Compilation failed with errors"
           exit 1
@@ -70,7 +62,6 @@ jobs:
         echo "🎯 Verifying Part IV formal proofs..."
         lake build Agora.PartIV.Part_IV_Formal_Proofs 2>&1 | tee part4_verification.log
         
-        # Check for specific Part IV compilation
         if grep -q "error" part4_verification.log; then
           echo "❌ Part IV proof verification failed"
           exit 1
