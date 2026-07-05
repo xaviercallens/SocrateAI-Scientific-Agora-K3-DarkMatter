@@ -7,6 +7,12 @@ import Agora.BimodalStability
 import Agora.GaugeCoupling
 import Agora.FeynmanSieveEquivalence
 
+-- New submodules from Agora Implementation Plan
+import Agora.Phenomenology.SymmetryBreaking
+import Agora.Swampland.LVS_Stability
+import Agora.Topology.AtiyahSinger
+
+
 -- Discovery proofs from the full Agora pipeline
 import Agora.Discovery.FuzzyDarkMatter
 import Agora.Discovery.HubbleTension
