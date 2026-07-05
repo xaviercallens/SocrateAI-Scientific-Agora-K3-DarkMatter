@@ -24,11 +24,12 @@ These are the items a second-round referee (string-theory / Swampland) identifie
 
 ### 1 & 2 — Seeking Theoretical Collaborators (top-down string data)
 The Agora pipeline **cannot** and **will not** hallucinate orientifold/flux/tadpole data or an instanton action. These are precisely the inputs that turn a *string-inspired EFT* into a *string vacuum*. We are looking to partner with string phenomenologists (e.g. groups at **OCA Nice**, **LUPM Montpellier**, or internationally) who can:
-- propose a concrete $K3\times T^2$ orientifold whose K3 fibre is in the $S_{1,2}$/$S_{2,1}$ algebraic family;
+- propose a concrete $K3\times T^2$ orientifold whose K3 fibre is in the $S_{1,2}$/$S_{2,1}$ algebraic family (see structural template: [`orientifold_dbranes_template.json`](file:///home/callensxavier_gmail_com/SocrateAI-Scientific-Agora-K3-DarkMatter/data/theory_inputs/orientifold_dbranes_template.json));
 - specify integer flux quanta and verify tadpole cancellation;
-- write down the Euclidean brane-instanton action that would *derive* (not fit) the axion mass scale.
+- write down the Euclidean brane-instanton action that would *derive* (not fit) the axion mass scale (see submission template: [`euclidean_instantons_template.json`](file:///home/callensxavier_gmail_com/SocrateAI-Scientific-Agora-K3-DarkMatter/data/theory_inputs/euclidean_instantons_template.json)).
 
 In exchange, the Agora contributes: an exact-rational algebraic sieve, a reproducible Lean 4 verification harness, and an empirical-validation notebook against JWST/DES/quasar archives.
+
 
 ### 3 — Agora Phase 4 Roadmap (WZ Lean Compilation)
 This is the one open item the Agora can close on its own.
@@ -62,6 +63,8 @@ With $\lambda_\mathrm{fit}=1.6724>\sqrt2$ the scaling attractor gives $w_\phi\ap
 | `s20_recurrence` (general $n$) | `Structures.S20Recurrence` | Exact-verified $n\in[0,60]$; WZ certificate not yet compiled |
 | Hodge / Euler data | `Agora.Conjectures.MirrorSymmetry` | CCGK classification data, not derived here |
 | 13 Fano supercongruences | `Agora.Discovery.FanoSupercongruences` | Computationally verified conjectures |
+| `atiyah_singer_trace_anomaly_coupling` | `Agora.Topology.AtiyahSinger` | Audited coupling of chiral trace anomaly to macroscopic stress-energy |
+
 
 ---
 
