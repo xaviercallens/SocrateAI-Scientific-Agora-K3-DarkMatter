@@ -1,7 +1,7 @@
 import Lake
 open Lake DSL
 
-package socrate-ai {
+package "socrate-ai" {
   -- add package configuration options here
 }
 

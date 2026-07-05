@@ -384,6 +384,38 @@
         .control-panel::-webkit-scrollbar-thumb:hover {
             background: rgba(255, 255, 255, 0.25);
         }
+
+        /* Language Selector styling */
+        .language-selector {
+            display: flex;
+            gap: 6px;
+            margin-right: 16px;
+        }
+
+        .lang-btn {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 8px;
+            color: var(--text-secondary);
+            font-family: var(--font-mono);
+            font-size: 11px;
+            font-weight: 600;
+            padding: 6px 10px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .lang-btn:hover {
+            background: rgba(255, 255, 255, 0.08);
+            color: var(--text-primary);
+        }
+
+        .lang-btn.active {
+            background: rgba(6, 182, 212, 0.15);
+            border-color: var(--color-cyan);
+            color: var(--color-cyan);
+            box-shadow: inset 0 0 8px rgba(6, 182, 212, 0.1);
+        }
     </style>
 </head>
 <body>
@@ -397,34 +429,42 @@
         <header class="interactive">
             <div class="header-title-container">
                 <div class="logo-glow"></div>
-                <h1>The Cosmic Loom</h1>
+                <h1 id="header-title">The Cosmic Loom</h1>
             </div>
-            <div class="meta-badge">TDA K3-SDSS Sieve Verified</div>
+            
+            <div class="language-selector">
+                <button onclick="setLanguage('en')" class="lang-btn active" id="lang-btn-en">EN</button>
+                <button onclick="setLanguage('fr')" class="lang-btn" id="lang-btn-fr">FR</button>
+                <button onclick="setLanguage('es')" class="lang-btn" id="lang-btn-es">ES</button>
+                <button onclick="setLanguage('de')" class="lang-btn" id="lang-btn-de">DE</button>
+            </div>
+
+            <div class="meta-badge" id="meta-badge-text">TDA K3-SDSS Sieve Verified</div>
         </header>
 
         <!-- Control Navigation Menu (Left) -->
         <div class="control-panel interactive">
             <div>
-                <h2 class="panel-section-title">Visual Acts</h2>
+                <h2 class="panel-section-title" id="sec-title-visual-acts">Visual Acts</h2>
                 
                 <button class="act-button active" onclick="triggerAct(1)" id="act1-btn">
-                    <span>Act I: The Invisible Threads</span>
-                    <span class="subtitle">The S1,2 K3 period integration paths</span>
+                    <span id="act1-title">Act I: The Invisible Threads</span>
+                    <span class="subtitle" id="act1-sub">The S1,2 K3 period integration paths</span>
                 </button>
 
                 <button class="act-button" onclick="triggerAct(2)" id="act2-btn">
-                    <span>Act II: The Cosmic Web</span>
-                    <span class="subtitle">SDSS 3D galaxy distributions</span>
+                    <span id="act2-title">Act II: The Cosmic Web</span>
+                    <span class="subtitle" id="act2-sub">SDSS 3D galaxy distributions</span>
                 </button>
 
                 <button class="act-button" onclick="triggerAct(3)" id="act3-btn">
-                    <span>Act III: The Rosetta Stone</span>
-                    <span class="subtitle">The math-observation overlay</span>
+                    <span id="act3-title">Act III: The Rosetta Stone</span>
+                    <span class="subtitle" id="act3-sub">The math-observation overlay</span>
                 </button>
             </div>
 
             <div>
-                <h2 class="panel-section-title">Narration</h2>
+                <h2 class="panel-section-title" id="sec-title-narration">Narration</h2>
                 <div class="narration-box" id="narration-text">
                     Loading telemetry states and configuring neural sieve models...
                 </div>
@@ -434,28 +474,28 @@
         <!-- Telemetry & Science Dashboard (Right) -->
         <div class="telemetry-panel interactive">
             <div>
-                <h2 class="panel-section-title">Topological Telemetry</h2>
+                <h2 class="panel-section-title" id="sec-title-telemetry">Topological Telemetry</h2>
                 <table class="telemetry-table">
                     <thead>
                         <tr>
-                            <th>Betti Dimension</th>
-                            <th>K3 Knot ($S_{1,2}$)</th>
-                            <th>Cosmic Web</th>
+                            <th id="th-betti">Betti Dimension</th>
+                            <th id="th-knot">K3 Knot ($S_{1,2}$)</th>
+                            <th id="th-web">Cosmic Web</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>$\beta_0$ (Clusters)</td>
+                            <td id="td-b0">$\beta_0$ (Clusters)</td>
                             <td><span class="metric-badge badge-gold">1</span></td>
                             <td><span class="metric-badge badge-cyan" id="cosmic-b0">14</span></td>
                         </tr>
                         <tr>
-                            <td>$\beta_1$ (Filaments)</td>
+                            <td id="td-b1">$\beta_1$ (Filaments)</td>
                             <td><span class="metric-badge badge-gold">1</span></td>
                             <td><span class="metric-badge badge-cyan" id="cosmic-b1">28</span></td>
                         </tr>
                         <tr>
-                            <td>$\beta_2$ (Voids)</td>
+                            <td id="td-b2">$\beta_2$ (Voids)</td>
                             <td><span class="metric-badge badge-gold">0</span></td>
                             <td><span class="metric-badge badge-cyan" id="cosmic-b2">4</span></td>
                         </tr>
@@ -464,19 +504,19 @@
             </div>
 
             <div>
-                <h2 class="panel-section-title">Sieve Divergence</h2>
+                <h2 class="panel-section-title" id="sec-title-divergence">Sieve Divergence</h2>
                 <div style="font-family: var(--font-mono); font-size: 13px; display: flex; flex-direction: column; gap: 8px;">
                     <div style="display: flex; justify-content: space-between;">
-                        <span>Wasserstein Dist:</span>
+                        <span id="lbl-wasserstein">Wasserstein Dist:</span>
                         <span style="color: var(--color-emerald); font-weight: bold;" id="wasserstein-val">0.041283</span>
                     </div>
                     <div style="display: flex; justify-content: space-between;">
-                        <span>Match Probability:</span>
+                        <span id="lbl-probability">Match Probability:</span>
                         <span style="color: var(--color-cyan); font-weight: bold;" id="match-prob-val">99.9587%</span>
                     </div>
                     <div style="display: flex; justify-content: space-between;">
-                        <span>Calibration:</span>
-                        <span style="color: var(--color-gold);">IllustrisTNG Grid</span>
+                        <span id="lbl-calibration">Calibration:</span>
+                        <span style="color: var(--color-gold);" id="lbl-calibration-val">IllustrisTNG Grid</span>
                     </div>
                 </div>
             </div>
@@ -494,7 +534,7 @@
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M23 4v6h-6M1 20v-6h6"></path><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
             </button>
             <div class="slider-container">
-                <span>ROTATION</span>
+                <span id="lbl-rotation">ROTATION</span>
                 <input type="range" id="rotation-slider" min="0" max="2" step="0.1" value="0.5" oninput="updateRotation(this.value)">
             </div>
         </div>
@@ -514,12 +554,130 @@
         let knotData = [];
         let currentAct = 1;
         let animationFrameId;
+        let currentLang = 'en';
 
-        // Narration texts for the 3 acts
-        const actsNarration = {
-            1: "<strong>Act I: The Invisible Threads (The Pure Math)</strong><br><br>On screen is a single glowing 3D trajectory—the exact topological integration path of the $S_{1,2}$ sequence. It twists and loops over itself, forming a highly complex algebraic knot. This is the first-principles shape our neuro-symbolic AI uncovered.",
-            2: "<strong>Act II: The Cosmic Web (The Observation)</strong><br><br>Behold the 3D distribution of 2,500 Luminous Red Galaxies mapped by the Sloan Digital Sky Survey (SDSS). Notice the vast filaments connecting dense nodes, surrounding massive, empty space regions known as cosmic voids.",
-            3: "<strong>Act III: The Rosetta Stone (The Perfect Overlay)</strong><br><br>We now overlay the golden algebraic knot of the $S_{1,2}$ K3 periods with the SDSS galaxies. Notice how the glowing threads align with the dark matter filaments, and the algebraic holes correspond with the supervoids. As above, so below."
+        // Multi-language Translation Dictionary
+        const translations = {
+            en: {
+                headerTitle: "The Cosmic Loom",
+                metaBadge: "TDA K3-SDSS Sieve Verified",
+                secTitleVisualActs: "Visual Acts",
+                act1Title: "Act I: The Invisible Threads",
+                act1Sub: "The S1,2 K3 period integration paths",
+                act2Title: "Act II: The Cosmic Web",
+                act2Sub: "SDSS 3D galaxy distributions",
+                act3Title: "Act III: The Rosetta Stone",
+                act3Sub: "The math-observation overlay",
+                secTitleNarration: "Narration",
+                secTitleTelemetry: "Topological Telemetry",
+                thBetti: "Betti Dimension",
+                thKnot: "K3 Knot ($S_{1,2}$)",
+                thWeb: "Cosmic Web",
+                tdB0: "$\\beta_0$ (Clusters)",
+                tdB1: "$\\beta_1$ (Filaments)",
+                tdB2: "$\\beta_2$ (Voids)",
+                secTitleDivergence: "Sieve Divergence",
+                lblWasserstein: "Wasserstein Dist:",
+                lblProbability: "Match Probability:",
+                lblCalibration: "Calibration:",
+                lblCalibrationVal: "IllustrisTNG Grid",
+                lblRotation: "ROTATION",
+                actsNarration: {
+                    1: "<strong>Act I: The Invisible Threads (The Pure Math)</strong><br><br>On screen is a single glowing 3D trajectory—the exact topological integration path of the $S_{1,2}$ sequence. It twists and loops over itself, forming a highly complex algebraic knot. This is the first-principles shape our neuro-symbolic AI uncovered.",
+                    2: "<strong>Act II: The Cosmic Web (The Observation)</strong><br><br>Behold the 3D distribution of 2,500 Luminous Red Galaxies mapped by the Sloan Digital Sky Survey (SDSS). Notice the vast filaments connecting dense nodes, surrounding massive, empty space regions known as cosmic voids.",
+                    3: "<strong>Act III: The Rosetta Stone (The Perfect Overlay)</strong><br><br>We now overlay the golden algebraic knot of the $S_{1,2}$ K3 periods with the SDSS galaxies. Notice how the glowing threads align with the dark matter filaments, and the algebraic holes correspond with the supervoids. As above, so below."
+                }
+            },
+            fr: {
+                headerTitle: "Le Métier à Tisser Cosmique",
+                metaBadge: "Crible TDA K3-SDSS Vérifié",
+                secTitleVisualActs: "Actes Visuels",
+                act1Title: "Acte I : Les Fils Invisibles",
+                act1Sub: "Les chemins d'intégration de période S1,2 K3",
+                act2Title: "Acte II : La Toile Cosmique",
+                act2Sub: "Distributions 3D de galaxies SDSS",
+                act3Title: "Acte III : La Pierre de Rosette",
+                act3Sub: "Superposition math-observation",
+                secTitleNarration: "Narration",
+                secTitleTelemetry: "Télémétrie Topologique",
+                thBetti: "Dimension de Betti",
+                thKnot: "Nœud K3 ($S_{1,2}$)",
+                thWeb: "Toile Cosmique",
+                tdB0: "$\\beta_0$ (Amas)",
+                tdB1: "$\\beta_1$ (Filaments)",
+                tdB2: "$\\beta_2$ (Vides)",
+                secTitleDivergence: "Divergence du Crible",
+                lblWasserstein: "Dist. de Wasserstein :",
+                lblProbability: "Probabilité d'Accord :",
+                lblCalibration: "Étalonnage :",
+                lblCalibrationVal: "Grille IllustrisTNG",
+                lblRotation: "ROTATION",
+                actsNarration: {
+                    1: "<strong>Acte I : Les Fils Invisibles (La Mathématique Pure)</strong><br><br>Sur l'écran apparaît une trajectoire 3D lumineuse — le chemin d'intégration topologique exact de la séquence $S_{1,2}$. Elle s'enroule et boucle sur elle-même, formant un nœud algébrique hautement complexe. C'est la forme fondamentale découverte par notre IA neuro-symbolique.",
+                    2: "<strong>Acte II : La Toile Cosmique (L'Observation)</strong><br><br>Voici la distribution 3D de 2 500 galaxies rouges lumineuses cartographiées par le Sloan Digital Sky Survey (SDSS). Remarquez les vastes filaments reliant les nœuds denses, entourant de gigantesques régions de vide cosmique.",
+                    3: "<strong>Acte III : La Pierre de Rosette (La Superposition Parfaite)</strong><br><br>Nous superposons maintenant le nœud algébrique doré des périodes K3 de $S_{1,2}$ avec les galaxies SDSS. Observez comment les fils brillants s'alignent avec les filaments de matière noire, et comment les trous algébriques correspondent aux supervides. Tout ce qui est en haut est comme ce qui est en bas."
+                }
+            },
+            es: {
+                headerTitle: "El Telar Cósmico",
+                metaBadge: "Criba TDA K3-SDSS Verificada",
+                secTitleVisualActs: "Actos Visuales",
+                act1Title: "Acto I: Los Hilos Invisibles",
+                act1Sub: "Caminos de integración de período S1,2 K3",
+                act2Title: "Acto II: La Red Cósmica",
+                act2Sub: "Distribución 3D de galaxias de SDSS",
+                act3Title: "Acto III: La Piedra de Rosetta",
+                act3Sub: "Superposición matemática-observacional",
+                secTitleNarration: "Narración",
+                secTitleTelemetry: "Telemetría Topológica",
+                thBetti: "Dimensión de Betti",
+                thKnot: "Nudo K3 ($S_{1,2}$)",
+                thWeb: "Red Cósmica",
+                tdB0: "$\\beta_0$ (Cúmulos)",
+                tdB1: "$\\beta_1$ (Filamentos)",
+                tdB2: "$\\beta_2$ (Vacíos)",
+                secTitleDivergence: "Divergencia de Criba",
+                lblWasserstein: "Dist. de Wasserstein:",
+                lblProbability: "Probabilidad de Ajuste:",
+                lblCalibration: "Calibración:",
+                lblCalibrationVal: "Red IllustrisTNG",
+                lblRotation: "ROTACIÓN",
+                actsNarration: {
+                    1: "<strong>Acto I: Los Hilos Invisibles (Matemática Pura)</strong><br><br>En la pantalla hay una única trayectoria 3D brillante: el camino de integración topológico exacto de la secuencia $S_{1,2}$. Se tuerce y se enrosca sobre sí misma, formando un nudo algebraico de alta complejidad. Esta es la forma fundamental descubierta por nuestra IA neuro-simbólica.",
+                    2: "<strong>Acto II: La Red Cósmica (La Observación)</strong><br><br>Contemple la distribución 3D de 2.500 galaxias rojas luminosas cartografiadas por el Sloan Digital Sky Survey (SDSS). Observe los grandes filamentos que conectan nodos densos, rodeando regiones masivas y vacías conocidas como vacíos cósmicos.",
+                    3: "<strong>Acto III: La Piedra de Rosetta (La Superposición Perfecta)</strong><br><br>Ahora superponemos el nudo algebraico dorado de los períodos K3 de $S_{1,2}$ con las galaxias de SDSS. Observe cómo los hilos brillantes se alinean con los filamentos de materia oscura, y los agujeros algebraicos corresponden con los supervacíos. Como es arriba, es abajo."
+                }
+            },
+            de: {
+                headerTitle: "Der Kosmische Webstuhl",
+                metaBadge: "TDA K3-SDSS Sieb Verifiziert",
+                secTitleVisualActs: "Visuelle Akte",
+                act1Title: "Akt I: Die Unsichtbaren Fäden",
+                act1Sub: "Die S1,2 K3 Periodenintegrationspfade",
+                act2Title: "Akt II: Das Kosmische Netz",
+                act2Sub: "SDSS 3D Galaxienverteilungen",
+                act3Title: "Akt III: Der Stein von Rosetta",
+                act3Sub: "Die Mathe-Beobachtungs-Überlagerung",
+                secTitleNarration: "Erläuterung",
+                secTitleTelemetry: "Topologische Telemetrie",
+                thBetti: "Betti-Dimension",
+                thKnot: "K3-Knoten ($S_{1,2}$)",
+                thWeb: "Kosmisches Netz",
+                tdB0: "$\\beta_0$ (Haufen)",
+                tdB1: "$\\beta_1$ (Filamente)",
+                tdB2: "$\\beta_2$ (Leerräume)",
+                secTitleDivergence: "Siebdivergenz",
+                lblWasserstein: "Wasserstein-Distanz:",
+                lblProbability: "Übereinstimmungswahr.:",
+                lblCalibration: "Kalibrierung:",
+                lblCalibrationVal: "IllustrisTNG Gitter",
+                lblRotation: "ROTATION",
+                actsNarration: {
+                    1: "<strong>Akt I: Die Unsichtbaren Fäden (Die Reine Mathematik)</strong><br><br>Auf dem Bildschirm sehen Sie eine leuchtende 3D-Trajektorie – den exakten topologischen Integrationspfad der $S_{1,2}$-Sequenz. Er windet und schleift sich um sich selbst und bildet einen hochkomplexen algebraischen Knoten. Dies ist die fundamentale Form, die unsere neuro-symbolische KI enthüllt hat.",
+                    2: "<strong>Akt II: Das Kosmische Netz (Die Beobachtung)</strong><br><br>Betrachten Sie die 3D-Verteilung von 2.500 leuchtenden roten Galaxien, die vom Sloan Digital Sky Survey (SDSS) kartiert wurden. Beachten Sie die gewaltigen Filamente, die dichte Knoten verbinden und riesige Leerräume umgeben.",
+                    3: "<strong>Akt III: Der Stein von Rosetta (Die Perfekte Überlagerung)</strong><br><br>Wir überlagern nun den goldenen algebraischen Knoten der $S_{1,2}$ K3-Perioden mit den SDSS-Galaxien. Sehen Sie, wie sich die leuchtenden Fäden an den Filamenten der dunklen Materie ausrichten und die algebraischen Löcher den Superleerräumen entsprechen. Wie oben, so unten."
+                }
+            }
         };
 
         // Initialize WebGL Application
@@ -556,6 +714,53 @@
             // Start Animation Loop
             animate();
             triggerAct(1); // Default to Act 1
+            setLanguage('en'); // Default to English
+        }
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            
+            // Toggle active state on language buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            const activeBtn = document.getElementById(`lang-btn-${lang}`);
+            if (activeBtn) activeBtn.classList.add('active');
+            
+            // Translate direct elements
+            const dict = translations[lang];
+            if (!dict) return;
+            
+            document.getElementById('header-title').innerText = dict.headerTitle;
+            document.getElementById('meta-badge-text').innerText = dict.metaBadge;
+            document.getElementById('sec-title-visual-acts').innerText = dict.secTitleVisualActs;
+            
+            document.getElementById('act1-title').innerText = dict.act1Title;
+            document.getElementById('act1-sub').innerText = dict.act1Sub;
+            document.getElementById('act2-title').innerText = dict.act2Title;
+            document.getElementById('act2-sub').innerText = dict.act2Sub;
+            document.getElementById('act3-title').innerText = dict.act3Title;
+            document.getElementById('act3-sub').innerText = dict.act3Sub;
+            
+            document.getElementById('sec-title-narration').innerText = dict.secTitleNarration;
+            document.getElementById('sec-title-telemetry').innerText = dict.secTitleTelemetry;
+            
+            document.getElementById('th-betti').innerText = dict.thBetti;
+            document.getElementById('th-knot').innerHTML = dict.thKnot;
+            document.getElementById('th-web').innerText = dict.thWeb;
+            
+            document.getElementById('td-b0').innerHTML = dict.tdB0;
+            document.getElementById('td-b1').innerHTML = dict.tdB1;
+            document.getElementById('td-b2').innerHTML = dict.tdB2;
+            
+            document.getElementById('sec-title-divergence').innerText = dict.secTitleDivergence;
+            document.getElementById('lbl-wasserstein').innerText = dict.lblWasserstein;
+            document.getElementById('lbl-probability').innerText = dict.lblProbability;
+            document.getElementById('lbl-calibration').innerText = dict.lblCalibration;
+            document.getElementById('lbl-calibration-val').innerText = dict.lblCalibrationVal;
+            
+            document.getElementById('lbl-rotation').innerText = dict.lblRotation;
+            
+            // Update active narration text smoothly
+            document.getElementById('narration-text').innerHTML = dict.actsNarration[currentAct];
         }
 
         function loadDataAndBuildGeometry() {
@@ -663,6 +868,7 @@
         }
 
         // Animated render loop
+        // Animated render loop
         function animate() {
             animationFrameId = requestAnimationFrame(animate);
 
@@ -703,8 +909,8 @@
                 gsapTransition(galaxyParticles, 0.8);
             }
 
-            // Update narration text with typewriting-like effect
-            document.getElementById('narration-text').innerHTML = actsNarration[actNum];
+            // Update narration text smoothly based on current language
+            document.getElementById('narration-text').innerHTML = translations[currentLang].actsNarration[actNum];
         }
 
         // Simple manual linear interpolation for smooth fading without external libs

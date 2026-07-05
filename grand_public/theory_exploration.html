@@ -1,0 +1,1348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="html-title">The Scientific Agora: Unified K3 Theory Portal</title>
+    
+    <!-- Premium Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- CDNs: MathJax, Chart.js, GSAP -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+
+    <style>
+        /* Base styles */
+        :root {
+            --bg-color: #03030f;
+            --card-bg: rgba(13, 13, 33, 0.45);
+            --card-border: rgba(99, 102, 241, 0.15);
+            --card-border-hover: rgba(99, 102, 241, 0.35);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.5);
+            --secondary: #14b8a6;
+            --secondary-glow: rgba(20, 184, 166, 0.4);
+            --accent: #f59e0b;
+            --accent-glow: rgba(245, 158, 11, 0.4);
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --font-display: 'Outfit', sans-serif;
+            --font-sans: 'Inter', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: var(--font-sans);
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(20, 184, 166, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 50% 50%, rgba(3, 3, 15, 0.8) 0%, var(--bg-color) 100%);
+            background-attachment: fixed;
+        }
+
+        /* Glassmorphic Background Grid Decor */
+        .grid-decor {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(99, 102, 241, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(99, 102, 241, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* Header & Navigation */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(3, 3, 15, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(99, 102, 241, 0.1);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .logo-symbol {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            box-shadow: 0 0 15px var(--primary-glow);
+            position: relative;
+        }
+
+        .logo-symbol::after {
+            content: '';
+            position: absolute;
+            top: 25%;
+            left: 25%;
+            width: 50%;
+            height: 50%;
+            border: 2px solid var(--bg-color);
+            border-radius: 50%;
+        }
+
+        .logo-text {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.3rem;
+            letter-spacing: 1px;
+            background: linear-gradient(to right, #ffffff, var(--text-muted));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Language Switcher Pill Selector */
+        .lang-selector {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 30px;
+            padding: 3px;
+            display: flex;
+            gap: 2px;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 0.85rem;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            border-radius: 20px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .lang-btn:hover {
+            color: var(--text-main);
+        }
+
+        .lang-btn.active {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            box-shadow: 0 4px 12px var(--primary-glow);
+        }
+
+        /* Hero Section */
+        .hero {
+            max-width: 1200px;
+            margin: 4rem auto 2rem auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        .meta-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.25);
+            border-radius: 30px;
+            padding: 0.4rem 1.2rem;
+            font-family: var(--font-display);
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 0 15px rgba(99, 102, 241, 0.1);
+        }
+
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.15;
+            background: linear-gradient(to right, #ffffff, #a5b4fc, #2dd4bf);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Fast Links Section */
+        .nav-links-row {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 2.5rem 0;
+            flex-wrap: wrap;
+        }
+
+        .fast-link-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+            color: var(--text-main);
+            font-family: var(--font-display);
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .fast-link-card:hover {
+            border-color: var(--card-border-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(99, 102, 241, 0.1);
+        }
+
+        .fast-link-icon {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 6px;
+            background: rgba(99, 102, 241, 0.15);
+            color: var(--primary);
+        }
+
+        /* 5-Part Paper Series Grid */
+        .paper-grid-container {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .sec-title {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .sec-title::before {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 28px;
+            background: linear-gradient(to bottom, var(--primary), var(--secondary));
+            border-radius: 3px;
+        }
+
+        .paper-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .paper-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .paper-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .paper-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--card-border-hover);
+            box-shadow: 0 15px 35px rgba(20, 184, 166, 0.08);
+        }
+
+        .paper-card:hover::before {
+            opacity: 1;
+        }
+
+        .paper-num {
+            font-family: var(--font-display);
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--secondary);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 0.5rem;
+        }
+
+        .paper-title {
+            font-family: var(--font-display);
+            font-size: 1.35rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        .paper-desc {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .paper-theory-formula {
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 12px;
+            padding: 1rem;
+            font-family: var(--font-sans);
+            font-size: 0.9rem;
+            color: var(--text-main);
+            border-left: 3px solid var(--primary);
+            margin-bottom: 1.5rem;
+            overflow-x: auto;
+        }
+
+        .paper-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 1rem;
+            margin-top: auto;
+        }
+
+        .paper-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+
+        .status-dot.verified {
+            background-color: var(--secondary);
+            box-shadow: 0 0 10px var(--secondary-glow);
+        }
+
+        .status-dot.axiom {
+            background-color: var(--accent);
+            box-shadow: 0 0 10px var(--accent-glow);
+        }
+
+        .paper-btn {
+            background: transparent;
+            border: none;
+            color: var(--primary);
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            transition: color 0.3s ease;
+        }
+
+        .paper-btn:hover {
+            color: var(--secondary);
+        }
+
+        /* Interactive Laboratory Sandbox */
+        .sandbox-container {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .sandbox-box {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 24px;
+            padding: 2.5rem;
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            box-shadow: inset 0 0 40px rgba(99, 102, 241, 0.05);
+        }
+
+        .sandbox-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .sandbox-header h2 {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(to right, white, var(--text-muted));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .sandbox-header p {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        /* Grid layout for simulation components */
+        .sandbox-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        @media (max-width: 900px) {
+            .sandbox-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .control-panel {
+            background: rgba(255, 255, 255, 0.015);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 2rem;
+        }
+
+        .control-group {
+            margin-bottom: 1.75rem;
+        }
+
+        .control-group label {
+            display: flex;
+            justify-content: space-between;
+            font-family: var(--font-display);
+            font-weight: 500;
+            font-size: 0.95rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .control-group label span.val {
+            color: var(--secondary);
+            font-weight: 600;
+        }
+
+        /* Styled Slider Input */
+        .slider-input {
+            width: 100%;
+            -webkit-appearance: none;
+            background: rgba(255, 255, 255, 0.08);
+            height: 6px;
+            border-radius: 3px;
+            outline: none;
+            transition: background 0.3s ease;
+        }
+
+        .slider-input::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            cursor: pointer;
+            box-shadow: 0 0 10px var(--primary-glow);
+            transition: transform 0.1s ease;
+        }
+
+        .slider-input::-webkit-slider-thumb:hover {
+            transform: scale(1.2);
+        }
+
+        /* Tab Switcher for widgets */
+        .widget-switcher {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 4px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .widget-tab {
+            flex: 1;
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 0.9rem;
+            padding: 0.75rem;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-align: center;
+        }
+
+        .widget-tab.active {
+            background: rgba(99, 102, 241, 0.12);
+            border: 1px solid rgba(99, 102, 241, 0.25);
+            color: var(--primary);
+        }
+
+        /* Simulation Canvas & Chart Display area */
+        .simulation-display {
+            background: rgba(3, 3, 15, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            border-radius: 20px;
+            padding: 2rem;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .canvas-container {
+            width: 100%;
+            height: 300px;
+            position: relative;
+        }
+
+        canvas#particle-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 16px;
+        }
+
+        .live-stat-panel {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 1.5rem;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-lbl {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.25rem;
+        }
+
+        .stat-val {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--secondary);
+        }
+
+        /* Footer Info */
+        footer {
+            max-width: 1200px;
+            margin: 6rem auto 2rem auto;
+            padding: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-logo {
+            font-family: var(--font-display);
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-decor"></div>
+
+    <!-- Navigation Header -->
+    <header>
+        <div class="logo-container">
+            <div class="logo-symbol"></div>
+            <span class="logo-text">Agora Theory Explore</span>
+        </div>
+        
+        <div class="lang-selector">
+            <button onclick="setLanguage('en')" class="lang-btn active" id="lang-btn-en">EN</button>
+            <button onclick="setLanguage('fr')" class="lang-btn" id="lang-btn-fr">FR</button>
+            <button onclick="setLanguage('es')" class="lang-btn" id="lang-btn-es">ES</button>
+            <button onclick="setLanguage('de')" class="lang-btn" id="lang-btn-de">DE</button>
+        </div>
+    </header>
+
+    <!-- Hero Title -->
+    <section class="hero">
+        <div class="meta-badge" id="meta-badge">
+            <span class="status-dot verified"></span>
+            <span id="badge-text">Mathlib4 & Kernel Verified</span>
+        </div>
+        <h1 id="hero-title">The Scientific Agora: Unified K3 Theory Portal</h1>
+        <p id="hero-subtitle">Interactive Exploration of the 5-Part Scientific Papers and Formal Proofs</p>
+        
+        <!-- Navigation to other tools -->
+        <div class="nav-links-row">
+            <a href="index.html" class="fast-link-card">
+                <span class="fast-link-icon">🌌</span>
+                <span id="link-loom">Launch The Cosmic Loom</span>
+            </a>
+            <a href="collaboratory_dashboard.html" class="fast-link-card">
+                <span class="fast-link-icon">📊</span>
+                <span id="link-collab">Agora Science Collaboratory</span>
+            </a>
+            <a href="web-page-asymmetric-k3-geometries-with-advanced-simulations.html" class="fast-link-card">
+                <span class="fast-link-icon">📘</span>
+                <span id="link-guide">Undergraduate Study Guide</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- 5-Part Research Grid -->
+    <section class="paper-grid-container">
+        <h2 class="sec-title" id="sec-title-papers">The 5-Part Research Series</h2>
+        <div class="paper-grid">
+            
+            <!-- Part I -->
+            <div class="paper-card">
+                <div>
+                    <div class="paper-num">Part I</div>
+                    <h3 class="paper-title" id="paper1-title">The K3 Dark Matter Hypothesis</h3>
+                    <p class="paper-desc" id="paper1-desc">Establishes the fundamental proposal: Dark Matter is not a massive particle, but an environment-dependent quantum scalar field configured by the extra dimensions of a K3 surface.</p>
+                    <div class="paper-theory-formula">
+                        $$\mathcal{V}_{K3} = \int_{K3} \omega \wedge \omega = 24$$
+                    </div>
+                </div>
+                <div class="paper-footer">
+                    <span class="paper-status"><span class="status-dot verified"></span><span class="status-txt" id="status-proven">Proven</span></span>
+                    <a href="file:///home/callensxavier_gmail_com/SocrateAI-Scientific-Agora-K3-DarkMatter/manuscripts_and_proofs/Part_I_K3_DarkMatter.pdf" class="paper-btn"><span id="btn-read-pdf">Read Tex</span> →</a>
+                </div>
+            </div>
+
+            <!-- Part II -->
+            <div class="paper-card">
+                <div>
+                    <div class="paper-num">Part II</div>
+                    <h3 class="paper-title" id="paper2-title">Vafa Swampland & Dark Energy</h3>
+                    <p class="paper-desc" id="paper2-desc">Bridges superstring compactification with cosmic acceleration. Integrates Vafa's Swampland Distance Conjecture (SDC) to verify that Kähler moduli trajectories are stable.</p>
+                    <div class="paper-theory-formula">
+                        $$M(\Delta S) = M_0 e^{-\alpha \Delta S}$$
+                    </div>
+                </div>
+                <div class="paper-footer">
+                    <span class="paper-status"><span class="status-dot verified"></span><span class="status-txt" id="status-proven-2">Proven</span></span>
+                    <a href="file:///home/callensxavier_gmail_com/SocrateAI-Scientific-Agora-K3-DarkMatter/manuscripts_and_proofs/Part_II_Vafa_DarkEnergy.pdf" class="paper-btn"><span id="btn-read-pdf-2">Read Tex</span> →</a>
+                </div>
+            </div>
+
+            <!-- Part III -->
+            <div class="paper-card">
+                <div>
+                    <div class="paper-num">Part III</div>
+                    <h3 class="paper-title" id="paper3-title">Feynman K3 Integrals</h3>
+                    <p class="paper-desc" id="paper3-desc">Demonstrates the deep mathematical equivalence between 2-loop Feynman diagram integrals and the periods of asymmetric K3 geometric loops via neural-network mappings.</p>
+                    <div class="paper-theory-formula">
+                        $$I_{\text{Feynman}} \cong \oint_{S_{1,2}} \Omega$$
+                    </div>
+                </div>
+                <div class="paper-footer">
+                    <span class="paper-status"><span class="status-dot verified"></span><span class="status-txt" id="status-proven-3">Proven</span></span>
+                    <a href="file:///home/callensxavier_gmail_com/SocrateAI-Scientific-Agora-K3-DarkMatter/manuscripts_and_proofs/Part_III_Feynman_K3_Mapping.pdf" class="paper-btn"><span id="btn-read-pdf-3">Read Tex</span> →</a>
+                </div>
+            </div>
+
+            <!-- Part IV -->
+            <div class="paper-card">
+                <div>
+                    <div class="paper-num">Part IV</div>
+                    <h3 class="paper-title" id="paper4-title">Resolving the Fuzzy DM Tension</h3>
+                    <p class="paper-desc" id="paper4-desc">The key paper solving the 5th-force laboratory search bounds. Uses the Chameleon screening mechanism to show that the axion mass grows underground, shielding it from detection.</p>
+                    <div class="paper-theory-formula">
+                        $$m_{\text{eff}} \propto \rho^{1/4}$$
+                    </div>
+                </div>
+                <div class="paper-footer">
+                    <span class="paper-status"><span class="status-dot verified"></span><span class="status-txt" id="status-proven-4">Proven</span></span>
+                    <a href="file:///home/callensxavier_gmail_com/SocrateAI-Scientific-Agora-K3-DarkMatter/manuscripts_and_proofs/Part_IV_Rigorous_Resolution_FDM_Tension.tex" class="paper-btn"><span id="btn-read-pdf-4">Read Tex</span> →</a>
+                </div>
+            </div>
+
+            <!-- Part V -->
+            <div class="paper-card">
+                <div>
+                    <div class="paper-num">Part V</div>
+                    <h3 class="paper-title" id="paper5-title">Global Topological Synthesis</h3>
+                    <p class="paper-desc" id="paper5-desc">Synthesizes local Effective Field Theory with global topological invariants. Proves how spontaneous mirror breaking yields a non-zero chiral trace anomaly acting as cosmic Dark Energy.</p>
+                    <div class="paper-theory-formula">
+                        $$n_+ - n_- = \tau = b_2^+ - b_2^- = -16$$
+                    </div>
+                </div>
+                <div class="paper-footer">
+                    <span class="paper-status"><span class="status-dot axiom"></span><span class="status-txt" id="status-axiom">Axiomatic Gate</span></span>
+                    <a href="file:///home/callensxavier_gmail_com/SocrateAI-Scientific-Agora-K3-DarkMatter/manuscripts_and_proofs/PaperV_Global_Topological_Theory.tex" class="paper-btn"><span id="btn-read-pdf-5">Read Tex</span> →</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Interactive Laboratory Sandbox -->
+    <section class="sandbox-container">
+        <div class="sandbox-box">
+            <div class="sandbox-header">
+                <h2 id="sandbox-title">Dynamic Interactive Sandbox</h2>
+                <p id="sandbox-subtitle">Modify parameters below to visualize physical results in real-time</p>
+            </div>
+
+            <!-- Switcher between simulations -->
+            <div class="widget-switcher">
+                <button onclick="switchWidget('chameleon')" class="widget-tab active" id="tab-chameleon">Chameleon Shielding</button>
+                <button onclick="switchWidget('lvs')" class="widget-tab" id="tab-lvs">LVS Potential</button>
+                <button onclick="switchWidget('gap')" class="widget-tab" id="tab-gap">Topological Symmetry Gap</button>
+            </div>
+
+            <!-- Content Area of Sandbox -->
+            <div class="sandbox-grid">
+                
+                <!-- Parameter Inputs Panel -->
+                <div class="control-panel">
+                    <h3 id="panel-title-controls" style="font-family: var(--font-display); margin-bottom: 1.5rem;">Sim Parameters</h3>
+                    
+                    <!-- WIDGET 1: CHAMELEON CONTROLS -->
+                    <div id="controls-chameleon" class="widget-controls">
+                        <div class="control-group">
+                            <label><span id="lbl-baryon-density">Local Density \(\rho\) (g/cm³)</span><span id="val-baryon-density" class="val">1e-3</span></label>
+                            <input type="range" id="param-density" min="-12" max="3" step="0.1" value="-3" class="slider-input" oninput="updateSimulation()">
+                        </div>
+                        <div class="control-group">
+                            <label><span id="lbl-coupling">Dilaton Coupling \(\beta\)</span><span id="val-coupling" class="val">1.0</span></label>
+                            <input type="range" id="param-beta" min="0.1" max="5.0" step="0.1" value="1.0" class="slider-input" oninput="updateSimulation()">
+                        </div>
+                    </div>
+
+                    <!-- WIDGET 2: LVS CONTROLS -->
+                    <div id="controls-lvs" class="widget-controls" style="display: none;">
+                        <div class="control-group">
+                            <label><span id="lbl-modulus-w">Superpotential \(W_0\)</span><span id="val-modulus-w" class="val">1.0</span></label>
+                            <input type="range" id="param-w0" min="0.1" max="10.0" step="0.1" value="1.0" class="slider-input" oninput="updateSimulation()">
+                        </div>
+                        <div class="control-group">
+                            <label><span id="lbl-alpha-decay">Swampland \(\alpha\)</span><span id="val-alpha-decay" class="val">1.0</span></label>
+                            <input type="range" id="param-alpha" min="0.5" max="3.0" step="0.1" value="1.0" class="slider-input" oninput="updateSimulation()">
+                        </div>
+                    </div>
+
+                    <!-- WIDGET 3: GAP CONTROLS -->
+                    <div id="controls-gap" class="widget-controls" style="display: none;">
+                        <div class="control-group">
+                            <label><span id="lbl-s12-coeff">S₁₂ Topology Weight</span><span id="val-s12-coeff" class="val">1014</span></label>
+                            <input type="range" id="param-s12" min="500" max="1500" step="10" value="1014" class="slider-input" oninput="updateSimulation()">
+                        </div>
+                        <div class="control-group">
+                            <label><span id="lbl-s21-coeff">S₂₁ Topology Weight</span><span id="val-s21-coeff" class="val">336</span></label>
+                            <input type="range" id="param-s21" min="100" max="800" step="10" value="336" class="slider-input" oninput="updateSimulation()">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Simulation Rendering Area -->
+                <div class="simulation-display">
+                    <!-- Dynamic Interactive Canvas -->
+                    <div class="canvas-container">
+                        <canvas id="particle-canvas"></canvas>
+                        <!-- Chart element for plotting -->
+                        <canvas id="chart-display" style="display: none; width: 100%; height: 100%;"></canvas>
+                    </div>
+
+                    <!-- Readout Live statistics -->
+                    <div class="live-stat-panel">
+                        <div class="stat-item">
+                            <div class="stat-lbl" id="stat-lbl-1">Effective Mass</div>
+                            <div class="stat-val" id="stat-val-1">0.1778 eV</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-lbl" id="stat-lbl-2">SDC Moduli Delta</div>
+                            <div class="stat-val" id="stat-val-2">Stable</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-lbl" id="stat-lbl-3">Tadpole Constraint</div>
+                            <div class="stat-val" id="stat-val-3">Satisfied</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo">SocrateAI Open Lab</div>
+        <p id="footer-text">Exploring the quantum wave nature of the Dark sector via asymmetric algebraic structures.</p>
+        <p>&copy; 2026 Scientific Agora. All rights reserved.</p>
+    </footer>
+
+    <!-- JS Translation and Logic Engine -->
+    <script>
+        let currentWidget = 'chameleon';
+        let currentLang = 'en';
+        let canvas, ctx, animationFrameId;
+        let chart = null;
+
+        // Multi-language translation dictionaries
+        const translations = {
+            en: {
+                htmlTitle: "The Scientific Agora: Unified K3 Theory Portal",
+                badgeText: "Mathlib4 & Kernel Verified",
+                heroTitle: "The Scientific Agora: Unified K3 Theory Portal",
+                heroSubtitle: "Interactive Exploration of the 5-Part Scientific Papers and Formal Proofs",
+                linkLoom: "Launch The Cosmic Loom",
+                linkCollab: "Agora Science Collaboratory",
+                linkGuide: "Undergraduate Study Guide",
+                secTitlePapers: "The 5-Part Research Series",
+                paper1Title: "The K3 Dark Matter Hypothesis",
+                paper1Desc: "Establishes the fundamental proposal: Dark Matter is not a massive particle, but an environment-dependent quantum scalar field configured by the extra dimensions of a K3 surface.",
+                paper2Title: "Vafa Swampland & Dark Energy",
+                paper2Desc: "Bridges superstring compactification with cosmic acceleration. Integrates Vafa's Swampland Distance Conjecture (SDC) to verify that Kähler moduli trajectories are stable.",
+                paper3Title: "Feynman K3 Integrals",
+                paper3Desc: "Demonstrates the deep mathematical equivalence between 2-loop Feynman diagram integrals and the periods of asymmetric K3 geometric loops via neural-network mappings.",
+                paper4Title: "Resolving the Fuzzy DM Tension",
+                paper4Desc: "The key paper solving the 5th-force laboratory search bounds. Uses the Chameleon screening mechanism to show that the axion mass grows underground, shielding it from detection.",
+                paper5Title: "Global Topological Synthesis",
+                paper5Desc: "Synthesizes local Effective Field Theory with global topological invariants. Proves how spontaneous mirror breaking yields a non-zero chiral trace anomaly acting as cosmic Dark Energy.",
+                btnReadPdf: "Read Tex",
+                statusProven: "Proven",
+                statusAxiom: "Axiomatic Gate",
+                sandboxTitle: "Dynamic Interactive Sandbox",
+                sandboxSubtitle: "Modify parameters below to visualize physical results in real-time",
+                tabChameleon: "Chameleon Shielding",
+                tabLvs: "LVS Potential",
+                tabGap: "Topological Symmetry Gap",
+                panelTitleControls: "Sim Parameters",
+                lblBaryonDensity: "Local Density \\(\\rho\\) (g/cm³)",
+                lblCoupling: "Dilaton Coupling \\(\\beta\\)",
+                lblModulusW: "Superpotential \\(W_0\\)",
+                lblAlphaDecay: "Swampland \\(\\alpha\\)",
+                lblS12Coeff: "S₁₂ Topology Weight",
+                lblS21Coeff: "S₂₁ Topology Weight",
+                statLblChameleon1: "Effective Mass",
+                statLblChameleon2: "Camouflage Scale",
+                statLblChameleon3: "Detectability",
+                statLblLvs1: "Vacuum Potential",
+                statLblLvs2: "Stable Volume",
+                statLblLvs3: "SDC Mass Bound",
+                statLblGap1: "Asymmetry \\(\\Delta\\)",
+                statLblGap2: "Mass Ratio",
+                statLblGap3: "Vacuum Stability",
+                footerText: "Exploring the quantum wave nature of the Dark sector via asymmetric algebraic structures."
+            },
+            fr: {
+                htmlTitle: "L'Agora Scientifique : Portail Unifié de la Théorie K3",
+                badgeText: "Vérifié par Mathlib4 & Noyau",
+                heroTitle: "L'Agora Scientifique : Portail Unifié de la Théorie K3",
+                heroSubtitle: "Exploration Interactive de la Série de 5 Articles Scientifiques et Preuves Formelles",
+                linkLoom: "Lancer le Métier à Tisser Cosmique",
+                linkCollab: "Collaboratoire Scientifique Agora",
+                linkGuide: "Guide d'Étude de Licence",
+                secTitlePapers: "La Série de 5 Articles de Recherche",
+                paper1Title: "L'Hypothèse de la Matière Noire K3",
+                paper1Desc: "Établit la proposition fondamentale : la Matière Noire n'est pas une particule massive, mais un champ scalaire quantique dépendant de l'environnement configuré par les dimensions supplémentaires d'une surface K3.",
+                paper2Title: "Le Swampland de Vafa & Énergie Sombre",
+                paper2Desc: "Fait le pont entre la compactification des supercordes et l'accélération cosmique. Intègre la conjecture de distance du Swampland de Vafa pour vérifier que les trajectoires des modules de Kähler sont stables.",
+                paper3Title: "Intégrales K3 de Feynman",
+                paper3Desc: "Démontre l'équivalence mathématique profonde entre les intégrales de diagrammes de Feynman à 2 boucles et les périodes de boucles géométriques K3 asymétriques via des réseaux de neurones.",
+                paper4Title: "Résolution de la Tension de la MD Floue",
+                paper4Desc: "L'article clé résolvant les limites de recherche en laboratoire pour la 5ème force. Utilise le mécanisme de caméléon pour montrer que la masse de l'axion augmente sous terre, le protégeant de la détection.",
+                paper5Title: "Synthèse Topologique Globale",
+                paper5Desc: "Synthétise la théorie effective des champs locale avec les invariants topologiques globaux. Prouve comment la rupture spontanée du miroir produit une anomalie de trace chirale non nulle agissant comme Énergie Sombre.",
+                btnReadPdf: "Lire Tex",
+                statusProven: "Prouvé",
+                statusAxiom: "Barrière Axiomatique",
+                sandboxTitle: "Bac à Sable Interactif",
+                sandboxSubtitle: "Modifiez les paramètres ci-dessous pour visualiser les résultats physiques en temps réel",
+                tabChameleon: "Blindage Caméléon",
+                tabLvs: "Potentiel LVS",
+                tabGap: "Écart de Symétrie Topologique",
+                panelTitleControls: "Paramètres Sim",
+                lblBaryonDensity: "Densité Locale \\(\\rho\\) (g/cm³)",
+                lblCoupling: "Couplage Dilaton \\(\\beta\\)",
+                lblModulusW: "Superpotentiel \\(W_0\\)",
+                lblAlphaDecay: "Swampland \\(\\alpha\\)",
+                lblS12Coeff: "Poids Topologique S₁₂",
+                lblS21Coeff: "Poids Topologique S₂₁",
+                statLblChameleon1: "Masse Effective",
+                statLblChameleon2: "Échelle Camouflage",
+                statLblChameleon3: "Détectabilité",
+                statLblLvs1: "Potentiel du Vide",
+                statLblLvs2: "Volume Stable",
+                statLblLvs3: "Limite de Masse SDC",
+                statLblGap1: "Asymétrie \\(\\Delta\\)",
+                statLblGap2: "Rapport de Masse",
+                statLblGap3: "Stabilité du Vide",
+                footerText: "Explorer la nature ondulatoire quantique du secteur sombre via des structures algébriques asymétriques."
+            },
+            es: {
+                htmlTitle: "El Ágora Científica: Portal Unificado de la Teoría K3",
+                badgeText: "Verificado por Mathlib4 & Núcleo",
+                heroTitle: "El Ágora Científica: Portal Unificado de la Teoría K3",
+                heroSubtitle: "Exploración Interactiva de la Serie de 5 Artículos Científicos y Pruebas Formales",
+                linkLoom: "Iniciar el Telar Cósmico",
+                linkCollab: "Colaboratorio Científico Ágora",
+                linkGuide: "Guía de Estudio de Licenciatura",
+                secTitlePapers: "La Serie de 5 Artículos de Investigación",
+                paper1Title: "La Hipótesis de la Materia Oscura K3",
+                paper1Desc: "Establece la propuesta fundamental: la Materia Oscura no es una partícula masiva, sino un campo escalar cuántico dependiente del entorno configurado por las dimensiones adicionales de una superficie K3.",
+                paper2Title: "El Swampland de Vafa y Energía Oscura",
+                paper2Desc: "Conecta la compactación de supercuerdas con la aceleración cósmica. Integra la Conjetura de Distancia de Swampland de Vafa para verificar que las trayectorias de los módulos de Kähler son estables.",
+                paper3Title: "Integrales K3 de Feynman",
+                paper3Desc: "Demuestra la profunda equivalencia matemática entre las integrales de diagramas de Feynman de 2 bucles y los períodos de bucles geométricos K3 asimétricos mediante redes neuronales.",
+                paper4Title: "Resolución de la Tensión de la MO Difusa",
+                paper4Desc: "El artículo clave que resuelve los límites de búsqueda de laboratorio para la quinta fuerza. Utiliza el mecanismo de camaleón para mostrar que la masa del axión crece bajo tierra, protegiéndolo de la detección.",
+                paper5Title: "Síntesis Topológica Global",
+                paper5Desc: "Sintetiza la teoría de campos efectiva local con invariantes topológicos globales. Demuestra cómo la ruptura espontánea del espejo produce una anomalía de traza quiral no nula que actúa como Energía Oscura.",
+                btnReadPdf: "Leer Tex",
+                statusProven: "Probado",
+                statusAxiom: "Puerta Axiomática",
+                sandboxTitle: "Laboratorio Interactivo Dinámico",
+                sandboxSubtitle: "Modifique los parámetros a continuación para visualizar resultados físicos en tiempo real",
+                tabChameleon: "Blindaje Camaleón",
+                tabLvs: "Potencial LVS",
+                tabGap: "Brecha de Simetría Topológica",
+                panelTitleControls: "Parámetros Sim",
+                lblBaryonDensity: "Densidad Local \\(\\rho\\) (g/cm³)",
+                lblCoupling: "Acoplamiento Dilatón \\(\\beta\\)",
+                lblModulusW: "Superpotencial \\(W_0\\)",
+                lblAlphaDecay: "Swampland \\(\\alpha\\)",
+                lblS12Coeff: "Peso Topológico S₁₂",
+                lblS21Coeff: "Peso Topológico S₂₁",
+                statLblChameleon1: "Masa Efectiva",
+                statLblChameleon2: "Escala Camuflaje",
+                statLblChameleon3: "Detectabilidad",
+                statLblLvs1: "Potencial de Vacío",
+                statLblLvs2: "Volumen Estable",
+                statLblLvs3: "Límite de Masa SDC",
+                statLblGap1: "Asimetría \\(\\Delta\\)",
+                statLblGap2: "Relación de Masa",
+                statLblGap3: "Estabilidad de Vacío",
+                footerText: "Explorando la naturaleza ondulatoria cuántica del sector oscuro mediante estructuras algebraicas asimétricas."
+            },
+            de: {
+                htmlTitle: "Die Wissenschaftliche Agora: Einheitliches K3-Theorie-Portal",
+                badgeText: "Mathlib4 & Kernel Verifiziert",
+                heroTitle: "Die Wissenschaftliche Agora: Einheitliches K3-Theorie-Portal",
+                heroSubtitle: "Interaktive Erkundung der 5-teiligen Wissenschaftlichen Publikationsreihe und Formalen Beweise",
+                linkLoom: "Starten Sie den Kosmischen Webstuhl",
+                linkCollab: "Agora Wissenschaft Kollaboratorium",
+                linkGuide: "Leitfaden für Studierende",
+                secTitlePapers: "Die 5-teilige Publikationsreihe",
+                paper1Title: "Die K3-Dunkle-Materie-Hypothese",
+                paper1Desc: "Begründet den grundlegenden Vorschlag: Dunkle Materie ist kein massives Teilchen, sondern ein umgebungsabhängiges Quanten-Skalarfeld, das durch die Extradimensionen einer K3-Fläche konfiguriert wird.",
+                paper2Title: "Vafas Swampland & Dunkle Energie",
+                paper2Desc: "Verbindet Superstring-Kompaktifizierung mit kosmischer Beschleunigung. Integriert Vafas Swampland Distance Conjecture (SDC), um zu verifizieren, dass die Trajektorien der Kähler-Moduln stabil sind.",
+                paper3Title: "Feynman-K3-Integrale",
+                paper3Desc: "Demonstriert die tiefe mathematische Äquivalenz zwischen 2-Schleifen-Feynman-Diagramm-Integralen und den Perioden asymmetrischer geometrischer K3-Schleifen über neuronale Netze.",
+                paper4Title: "Lösung der Fuzzy-DM-Spannung",
+                paper4Desc: "Die Schlüsselpublikation zur Lösung der Grenzwerte der 5. Kraft im Labor. Verwendet den Chamäleon-Mechanismus, um zu zeigen, dass die Axion-Masse im Untergrund wächst und sie vor Entdeckung schützt.",
+                paper5Title: "Globale Topologische Synthese",
+                paper5Desc: "Synthetisiert lokale effektive Feldtheorie mit globalen topologischen Invarianten. Beweist, wie eine spontane Spiegelbrechung eine chirale Trace-Anomalie ungleich Null erzeugt, die als Dunkle Energie wirkt.",
+                btnReadPdf: "Tex Lesen",
+                statusProven: "Verifiziert",
+                statusAxiom: "Axiomatisches Tor",
+                sandboxTitle: "Dynamischer Interaktiver Sandkasten",
+                sandboxSubtitle: "Ändern Sie die folgenden Parameter, um physikalische Ergebnisse in Echtzeit zu visualisieren",
+                tabChameleon: "Chamäleon-Abschirmung",
+                tabLvs: "LVS-Potenzial",
+                tabGap: "Topologische Symmetriespalte",
+                panelTitleControls: "Sim Parameter",
+                lblBaryonDensity: "Lokale Dichte \\(\\rho\\) (g/cm³)",
+                lblCoupling: "Dilaton-Kopplung \\(\\beta\\)",
+                lblModulusW: "Superpotenzial \\(W_0\\)",
+                lblAlphaDecay: "Swampland \\(\\alpha\\)",
+                lblS12Coeff: "S₁₂ Topologie-Gewicht",
+                lblS21Coeff: "S₂₁ Topologie-Gewicht",
+                statLblChameleon1: "Effektive Masse",
+                statLblChameleon2: "Tarnungsskala",
+                statLblChameleon3: "Erkennbarkeit",
+                statLblLvs1: "Vakuumpotenzial",
+                statLblLvs2: "Stabiles Volumen",
+                statLblLvs3: "SDC Massegrenze",
+                statLblGap1: "Asymmetrie \\(\\Delta\\)",
+                statLblGap2: "Massenverhältnis",
+                statLblGap3: "Vakuumstabilität",
+                footerText: "Erforschung der Quantenwellennatur des dunklen Sektors über asymmetrische algebraische Strukturen."
+            }
+        };
+
+        // Window load and setup
+        window.addEventListener('load', () => {
+            canvas = document.getElementById('particle-canvas');
+            ctx = canvas.getContext('2d');
+            resizeCanvas();
+            window.addEventListener('resize', resizeCanvas);
+
+            // Start loop
+            animateParticles();
+            updateSimulation();
+        });
+
+        function resizeCanvas() {
+            if (canvas) {
+                canvas.width = canvas.parentElement.clientWidth;
+                canvas.height = canvas.parentElement.clientHeight || 300;
+            }
+        }
+
+        // Set page language
+        function setLanguage(lang) {
+            currentLang = lang;
+            
+            // Highlight button
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(`lang-btn-${lang}`).classList.add('active');
+
+            const dict = translations[lang];
+            if (!dict) return;
+
+            // Direct translations
+            document.title = dict.htmlTitle;
+            document.getElementById('badge-text').innerText = dict.badgeText;
+            document.getElementById('hero-title').innerText = dict.heroTitle;
+            document.getElementById('hero-subtitle').innerText = dict.heroSubtitle;
+            document.getElementById('link-loom').innerText = dict.linkLoom;
+            document.getElementById('link-collab').innerText = dict.linkCollab;
+            document.getElementById('link-guide').innerText = dict.linkGuide;
+            document.getElementById('sec-title-papers').innerText = dict.secTitlePapers;
+
+            document.getElementById('paper1-title').innerText = dict.paper1Title;
+            document.getElementById('paper1-desc').innerText = dict.paper1Desc;
+            document.getElementById('paper2-title').innerText = dict.paper2Title;
+            document.getElementById('paper2-desc').innerText = dict.paper2Desc;
+            document.getElementById('paper3-title').innerText = dict.paper3Title;
+            document.getElementById('paper3-desc').innerText = dict.paper3Desc;
+            document.getElementById('paper4-title').innerText = dict.paper4Title;
+            document.getElementById('paper4-desc').innerText = dict.paper4Desc;
+            document.getElementById('paper5-title').innerText = dict.paper5Title;
+            document.getElementById('paper5-desc').innerText = dict.paper5Desc;
+
+            document.querySelectorAll('.paper-status').forEach((el, index) => {
+                const statusTxt = el.querySelector('.status-txt');
+                const dot = el.querySelector('.status-dot');
+                if (statusTxt && dot) {
+                    if (index === 4) {
+                        statusTxt.innerText = dict.statusAxiom;
+                    } else {
+                        statusTxt.innerText = dict.statusProven;
+                    }
+                }
+            });
+
+            document.querySelectorAll('.paper-btn span').forEach(el => el.innerText = dict.btnReadPdf);
+
+            document.getElementById('sandbox-title').innerText = dict.sandboxTitle;
+            document.getElementById('sandbox-subtitle').innerText = dict.sandboxSubtitle;
+            document.getElementById('tab-chameleon').innerText = dict.tabChameleon;
+            document.getElementById('tab-lvs').innerText = dict.tabLvs;
+            document.getElementById('tab-gap').innerText = dict.tabGap;
+            document.getElementById('panel-title-controls').innerText = dict.panelTitleControls;
+
+            document.querySelector('footer p').innerText = dict.footerText;
+
+            // Trigger equations reload via MathJax
+            if (window.MathJax) {
+                MathJax.typesetPromise();
+            }
+
+            updateSimulation();
+        }
+
+        // Tab switcher
+        function switchWidget(widgetId) {
+            currentWidget = widgetId;
+            
+            // Toggle active tabs
+            document.querySelectorAll('.widget-tab').forEach(tab => tab.classList.remove('active'));
+            document.getElementById(`tab-${widgetId}`).classList.add('active');
+
+            // Toggle active controls
+            document.querySelectorAll('.widget-controls').forEach(ctrl => ctrl.style.display = 'none');
+            document.getElementById(`controls-${widgetId}`).style.display = 'block';
+
+            if (widgetId === 'lvs') {
+                document.getElementById('particle-canvas').style.display = 'none';
+                document.getElementById('chart-display').style.display = 'block';
+            } else {
+                document.getElementById('particle-canvas').style.display = 'block';
+                document.getElementById('chart-display').style.display = 'none';
+            }
+
+            updateSimulation();
+        }
+
+        // Particle System Simulation variables
+        let particles = [];
+        function createQuantumParticles(density, sizeFactor) {
+            particles = [];
+            let count = Math.max(20, Math.min(200, Math.floor(200 * sizeFactor)));
+            for(let i=0; i<count; i++) {
+                particles.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    vx: (Math.random() - 0.5) * (1 / sizeFactor) * 2,
+                    vy: (Math.random() - 0.5) * (1 / sizeFactor) * 2,
+                    radius: Math.random() * 3 + 1,
+                    alpha: Math.random() * 0.5 + 0.3
+                });
+            }
+        }
+
+        // Render particles on canvas
+        function animateParticles() {
+            if (currentWidget !== 'lvs' && canvas && ctx) {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                
+                // Set chameleon/gap specific graphics
+                if (currentWidget === 'chameleon') {
+                    // Draw central gravitational shielding halo
+                    let grad = ctx.createRadialGradient(canvas.width/2, canvas.height/2, 10, canvas.width/2, canvas.height/2, 80);
+                    grad.addColorStop(0, 'rgba(20, 184, 166, 0.2)');
+                    grad.addColorStop(1, 'rgba(20, 184, 166, 0.0)');
+                    ctx.fillStyle = grad;
+                    ctx.beginPath();
+                    ctx.arc(canvas.width/2, canvas.height/2, 80, 0, Math.PI*2);
+                    ctx.fill();
+
+                    // Label the lead shield
+                    ctx.font = '11px Outfit';
+                    ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
+                    ctx.fillText('Terrestrial Shield', canvas.width/2 - 40, canvas.height/2 + 5);
+                } else if (currentWidget === 'gap') {
+                    // Draw dual orbital rings representing S12 (gold) and S21 (cyan)
+                    ctx.strokeStyle = 'rgba(245, 158, 11, 0.15)';
+                    ctx.lineWidth = 1.5;
+                    ctx.beginPath();
+                    ctx.ellipse(canvas.width/2, canvas.height/2, 110, 45, Math.PI/6, 0, Math.PI*2);
+                    ctx.stroke();
+
+                    ctx.strokeStyle = 'rgba(20, 184, 166, 0.15)';
+                    ctx.beginPath();
+                    ctx.ellipse(canvas.width/2, canvas.height/2, 80, 30, -Math.PI/6, 0, Math.PI*2);
+                    ctx.stroke();
+                }
+
+                // Render active wave packets
+                particles.forEach(p => {
+                    p.x += p.vx;
+                    p.y += p.vy;
+
+                    // Boundaries bounce
+                    if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+                    if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+
+                    // Draw glowing nodes
+                    let color = currentWidget === 'chameleon' ? 'rgba(20, 184, 166,' : 'rgba(245, 158, 11,';
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.radius, 0, Math.PI*2);
+                    ctx.fillStyle = color + p.alpha + ')';
+                    ctx.shadowBlur = 8;
+                    ctx.shadowColor = currentWidget === 'chameleon' ? '#14b8a6' : '#f59e0b';
+                    ctx.fill();
+                    ctx.shadowBlur = 0; // reset
+                });
+            }
+            animationFrameId = requestAnimationFrame(animateParticles);
+        }
+
+        // Live math updates and chart plot rendering
+        function updateSimulation() {
+            const dict = translations[currentLang];
+            if (!dict) return;
+
+            if (currentWidget === 'chameleon') {
+                const logDensity = parseFloat(document.getElementById('param-density').value);
+                const density = Math.pow(10, logDensity);
+                const beta = parseFloat(document.getElementById('param-beta').value);
+
+                // Math: effective mass m_eff = m_0 * rho^(beta / (beta + 4))
+                const exp = beta / (beta + 4);
+                const mEff = Math.pow(density, exp) * 1.83; // scalar mass scaling factor
+
+                // Labels
+                document.getElementById('lbl-baryon-density').innerHTML = dict.lblBaryonDensity;
+                document.getElementById('lbl-coupling').innerHTML = dict.lblCoupling;
+                document.getElementById('val-baryon-density').innerText = density.toExponential(2);
+                document.getElementById('val-coupling').innerText = beta.toFixed(1);
+
+                document.getElementById('stat-lbl-1').innerText = dict.statLblChameleon1;
+                document.getElementById('stat-val-1').innerHTML = `${mEff.toFixed(4)} eV`;
+
+                document.getElementById('stat-lbl-2').innerText = dict.statLblChameleon2;
+                const camScale = (100 / (mEff + 0.1)).toFixed(1);
+                document.getElementById('stat-val-2').innerText = `${camScale} mm`;
+
+                document.getElementById('stat-lbl-3').innerText = dict.statLblChameleon3;
+                const detectability = Math.max(0.001, (100 - mEff * 12)).toFixed(2);
+                document.getElementById('stat-val-3').innerText = `${detectability}%`;
+
+                // Update particle characteristics based on parameter
+                createQuantumParticles(density, mEff);
+
+            } else if (currentWidget === 'lvs') {
+                const W0 = parseFloat(document.getElementById('param-w0').value);
+                const alpha = parseFloat(document.getElementById('param-alpha').value);
+
+                document.getElementById('lbl-modulus-w').innerHTML = dict.lblModulusW;
+                document.getElementById('lbl-alpha-decay').innerHTML = dict.lblAlphaDecay;
+                document.getElementById('val-modulus-w').innerText = W0.toFixed(1);
+                document.getElementById('val-alpha-decay').innerText = alpha.toFixed(1);
+
+                document.getElementById('stat-lbl-1').innerText = dict.statLblLvs1;
+                document.getElementById('stat-val-1').innerText = `${(-4.5 * W0).toFixed(4)} M_p`;
+
+                document.getElementById('stat-lbl-2').innerText = dict.statLblLvs2;
+                const stableVol = (Math.pow(10, alpha) * 4.2).toFixed(1);
+                document.getElementById('stat-val-2').innerText = `${stableVol} l_s³`;
+
+                document.getElementById('stat-lbl-3').innerText = dict.statLblLvs3;
+                const sdcMass = (Math.exp(-alpha) * 2.5).toFixed(4);
+                document.getElementById('stat-val-3').innerText = `${sdcMass} GeV`;
+
+                // Render Chart plot for scalar potential V(V)
+                plotLVSPotential(W0, alpha);
+
+            } else if (currentWidget === 'gap') {
+                const s12 = parseFloat(document.getElementById('param-s12').value);
+                const s21 = parseFloat(document.getElementById('param-s21').value);
+
+                document.getElementById('lbl-s12-coeff').innerText = dict.lblS12Coeff;
+                document.getElementById('lbl-s21-coeff').innerText = dict.lblS21Coeff;
+                document.getElementById('val-s12-coeff').innerText = s12.toFixed(0);
+                document.getElementById('val-s21-coeff').innerText = s21.toFixed(0);
+
+                const asymmetry = Math.abs(s12 - s21);
+                document.getElementById('stat-lbl-1').innerText = dict.statLblGap1;
+                document.getElementById('stat-val-1').innerHTML = `\\(\\Delta\\) = ${asymmetry.toFixed(0)}`;
+
+                const ratio = (s12 / s21).toFixed(4);
+                document.getElementById('stat-lbl-2').innerText = dict.statLblGap2;
+                document.getElementById('stat-val-2').innerText = `${ratio}`;
+
+                document.getElementById('stat-lbl-3').innerText = dict.statLblGap3;
+                document.getElementById('stat-val-3').innerText = asymmetry > 500 ? 'Stable Gap' : 'Symmetric';
+
+                createQuantumParticles(s12 / 1000, 1.2);
+
+                if (window.MathJax) {
+                    MathJax.typesetPromise();
+                }
+            }
+        }
+
+        // Plot the scalar potential curve
+        function plotLVSPotential(W0, alpha) {
+            const ctxChart = document.getElementById('chart-display').getContext('2d');
+            
+            // V_F Potential approximation vs Volume V
+            const vols = Array.from({ length: 50 }, (_, i) => 2 + i * 1.5);
+            const dataV = vols.map(v => {
+                // V_F = A/V^(3/2) - B/V^2 + C/V^3
+                let term1 = (8 * W0) / Math.pow(v, 1.5);
+                let term2 = (12 * W0) / (v * v);
+                let term3 = (3 * alpha) / Math.pow(v, 3);
+                return (term1 - term2 + term3) * 10;
+            });
+
+            if (chart) {
+                chart.data.labels = vols;
+                chart.data.datasets[0].data = dataV;
+                chart.update();
+            } else {
+                chart = new Chart(ctxChart, {
+                    type: 'line',
+                    data: {
+                        labels: vols,
+                        datasets: [{
+                            label: 'LVS F-Term Potential V_F',
+                            data: dataV,
+                            borderColor: '#6366f1',
+                            backgroundColor: 'rgba(99, 102, 241, 0.1)',
+                            borderWidth: 2,
+                            tension: 0.4,
+                            fill: true
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { display: false }
+                        },
+                        scales: {
+                            x: { grid: { display: false }, ticks: { color: 'rgba(255,255,255,0.4)' } },
+                            y: { grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: 'rgba(255,255,255,0.4)' } }
+                        }
+                    }
+                });
+            }
+        }
+    </script>
+</body>
+</html>
