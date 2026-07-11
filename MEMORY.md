@@ -80,6 +80,21 @@ This file maintains the long-term context, state representation, architectural b
   - Proves the exact Hodge and Euler characteristic theorems (`S20_hodge_1_1`, `S20_hodge_2_1`, and `S20_euler_char`) for the $S_{20}$ rigid Calabi-Yau variety.
   - **Compilation Status**: Compiled with **0 errors and 0 warnings** under the Lean 4 kernel (`lake build Agora`).
 
+## 10. Scientific Validation Program v2.0.0 (2026-07-11)
+
+- **Referee review + task plan:** `scientificplan.md` (repo root) ranks six load-bearing gaps between "string-inspired phenomenology" and "candidate physics" for the K3 (S₁,₂/S₂,₁) × T² theory, with an executable task breakdown tiered by executor capability:
+  - **GAP-1** K3 identification conjectural (monodromy/modularity) · **GAP-2** stiffness V''(0)=1014/336 has no PF→potential derivation · **GAP-3** superradiance uses small-α formula out of range · **GAP-4** chameleon γ=0.25 → unphysical KW index n=−3 · **GAP-5** cosmology pre-Boltzmann · **GAP-6** general-n S₂₀ recurrence still a Lean `axiom`.
+- **Tracking:** `ROADMAP.md` §2 Phase 6 (8 workstreams, milestones M1–M6); `TODO.md` §0 (active, tasks tagged `[HAIKU]`/`[SONNET+]`/`[HUMAN]`).
+- **Rigor skills:** six new skills in `.agents/skills/` operationalize the 8 rules — claim-classification-audit, falsifiability-audit, axiom-gap-disclosure, empirical-data-validation, honest-alternatives-generator, cross-consistency-gate (index: `.agents/SKILLS_INDEX.md`, cheat sheet: `.agents/SKILL_QUICK_REFERENCE.md`).
+- **Sharpest parameter-free test:** if both PTA lines are detected, their frequency ratio must lie in (1.73, 1.75) = √(1014/336) independently of all moduli.
+- **Honest probability assessment:** P(plan executed) ~60–80%; P(theory survives as coherent non-falsified EFT candidate) ~15–25%; P(observational confirmation) ~1–5%. Negative results are legitimate outcomes (Rule 4).
+
+## 11. Session Restart & Auto-Accept Setup
+
+- **Fast resume:** `bash scripts/agora_restart.sh` — read-only briefing (8 rules, 6 skills, 6 gaps, tier-routed plan, key files, standing instructions) + live health checks (git status, real `sorry` stubs, axiom count, cross-consistency gate, lake, ledger). Flags: `--brief`, `--health`. Start every session with it.
+- **Auto-accept permissions:** durable non-destructive/read-only allowlist in committed `.claude/settings.json` (66 allow, 3 deny); machine-specific/incremental approvals accumulate in gitignored `.claude/settings.local.json` (runtime-managed — do not hand-edit).
+- **⚠️ Honesty finding (Rule 4):** `Structures/S20RecurrenceProof.lean` holds 3 real `sorry` stubs but is **orphaned** (imported by no module), so `lake build Agora` never compiles it and no kernel claim is affected. It is a half-finished WZ-certificate attempt = task T4.1 / GAP-6. The phrase "the repository is free of sorry stubs" is accurate for the *build graph* but not the *repo tree*; qualify it, or finish/remove that file when closing GAP-6.
+
 ## 9. Projet Caméléon Citizen Science Kit
 - **BOM Guide (`citizen_science_kit/BOM.md`)**:
   - Complete, low-cost assembly blueprint ($<80$ EUR) for a basement Michelson Interferometer to track Chameleon wave phase shifts under concrete-block shielding.
