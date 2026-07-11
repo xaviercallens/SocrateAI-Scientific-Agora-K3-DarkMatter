@@ -45,17 +45,24 @@ uses $\gamma$ and $\rho/\rho_{\text{crit}}$ as **free phenomenological parameter
 
 **Status**: The superradiance evasion relies on a density-dependent mechanism with **tunable parameters not derived from the K3 compactification geometry**. The MCMC posterior on $\gamma$ is the honest representation of our knowledge.
 
+> **2026-07-11 update (Task T3.2):** the unphysical-$n=-3$ problem is now moot **for $S_{2,1}$ specifically** — see §4 below. $S_{2,1}$'s bare coupling survives M87*-type spin-down without any Chameleon screening at all, so this GAP-4 caveat now applies only if $S_{1,2}$'s bare coupling is the one that needs to be screened (its bare $\alpha=0.155$ does NOT survive unscreened at M87*, per §4).
+
 ---
 
-## 4. Superradiance Growth Rate (GAP-3) (Updated Phase 12)
+## 4. Superradiance Growth Rate (GAP-3) (Updated 2026-07-11, Task T3.1/T3.2)
 
-The code now uses the correct **Detweiler (1980) / Dolan (2007) growth rate** for the dominant $l=m=1$, $n=2$ mode:
+**The small-$\alpha$ approximation has been replaced with an exact method, validated against real published data.** `scripts/dolan_continued_fraction.py` implements Dolan's (2007) Leaver-type continued-fraction solver for the exact complex bound-state frequency $\omega$ of the $l=m=1$ mode on Kerr, valid at any coupling (not just $\alpha\ll1$). It is validated against all 6 published maximum-growth-rate points in Dolan (2007) Table I (transcribed via `pdftotext` from the arXiv PDF, not typed from memory) to **<0.4% error**, comfortably inside the 5% tolerance required by task T3.1 — see `docs/superradiance/dolan_validation.md`.
 
-$$\Gamma_{211} \approx \frac{1}{24} a_* \alpha^8 \mu_{\text{eff}}$$
+The previous small-$\alpha$ (Detweiler 1980) formula, $\Gamma_{211}\approx\frac{1}{24}a_*\alpha^8\mu_{\text{eff}}$, remains in `scripts/superradiance_growth_rate.py` for the low-$\alpha$ regime where it is accurate and cheap, but is **no longer used for the physically relevant bare/effective couplings** ($\alpha=0.089$–$1.55$), which are now evaluated exactly.
 
-(Previously incorrectly used $\alpha^5$; corrected in Phase 12, see `scripts/superradiance_growth_rate.py`.)
+**Task T3.2 result (`scripts/s21_bare_analysis.py`, `docs/superradiance/s21_bare_survival.md`):** evaluating the exact growth rate at M87* (EHT 2019 mass $6.5\times10^9\,M_\odot$; spin $a_*=0.90$ is an illustrative literature value, **not** an EHT measurement):
+- **$S_{2,1}$ bare** ($\alpha=0.089$): $\tau_{\text{instability}}\approx 380$ Myr, **longer** than the Salpeter accretion-spinup time ($\approx50$ Myr, Salpeter 1964) by a factor $\approx7.6$ → **SURVIVES without any Chameleon screening.**
+- **$S_{1,2}$ bare** ($\alpha=0.155$): $\tau_{\text{instability}}\approx4.6$ Myr, **shorter** than the Salpeter time by a factor $\approx11$ → **does NOT survive unscreened**; still needs Chameleon (or an alternative) screening, i.e. GAP-4 remains open for $S_{1,2}$.
+- 5 additional real high-spin SMBHs (Reynolds 2013 X-ray reflection sample: NGC 4051, IRAS 13224-3809, MCG-6-30-15, 1H0707-495, Ark 564) are all $\approx$1000–6000$\times$ less massive than M87*, giving bare $\alpha\sim10^{-5}$–$10^{-4}$ for both sequences — both sequences are essentially perfectly stable there (cross-checked against the small-$\alpha$ Detweiler formula, which gives $\tau_{\text{instability}}\sim10^{33}$–$10^{38}$ yr, vastly longer than the age of the universe).
 
-**Remaining caveat**: This formula is valid in the small-$\alpha$ limit. For $\alpha_{\text{eff}} \gg 1$ (deep in the Chameleon-boosted regime), the Detweiler approximation breaks down and the full Teukolsky equation solution (Dolan 2007) is required. The current code uses the small-$\alpha$ formula even outside its regime of validity.
+**Correction relative to an earlier draft narrative:** a previously-circulated description of this result quoted $\tau_{\text{instability}}\approx86.6$ Myr for $S_{2,1}$/M87* — that number was never produced by any script in this repository. The actual computed value (above) is $\approx380$ Myr. The qualitative conclusion ($S_{2,1}$ survives unscreened) is unchanged, but the number itself should be cited from `docs/superradiance/s21_bare_survival.md`, not from memory.
+
+**Remaining caveats:** (1) the survival argument compares instantaneous instability/accretion timescales, not a full GRMHD spin-evolution history; (2) M87*'s spin is not directly measured; (3) the angular eigenvalue $\Lambda_{lm}$ uses $\mathrm{Re}(\omega)$ only (an excellent approximation given $\mathrm{Im}(\omega)/\mathrm{Re}(\omega)\sim10^{-7}$–$10^{-9}$ here, but not exact).
 
 ---
 

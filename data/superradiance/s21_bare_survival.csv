@@ -1,0 +1,13 @@
+bh_name,M_bh_Msun,a_star,spin_is_lower_bound,sequence,m_a_eV,alpha_bare,tau_instability_yr,t_salpeter_yr,tau_over_t_sal,verdict,source
+M87*,6500000000.0,0.9,False,S12,3.18e-21,0.15472236941010353,4590750.928022538,50054490.24782447,0.09171506702582127,AT RISK,"EHT Collaboration 2019 (mass); a*=0.90 is a commonly-assumed illustrative spin, NOT an EHT measurement -- the 2019 image alone does not tightly constrain spin."
+M87*,6500000000.0,0.9,False,S21,1.83e-21,0.08903834466053129,379891957.10024965,50054490.24782447,7.589567993188403,SURVIVES,"EHT Collaboration 2019 (mass); a*=0.90 is a commonly-assumed illustrative spin, NOT an EHT measurement -- the 2019 image alone does not tightly constrain spin."
+NGC 4051,1910000.0,0.99,True,S12,3.18e-21,4.5464573165122735e-05,inf,50054490.24782447,inf,SURVIVES,"Reynolds (2013) Table 1: M=(1.91+/-0.78)e6 Msun (Peterson+2004), spin > 0.99 (Patrick+2012)."
+NGC 4051,1910000.0,0.99,True,S21,1.83e-21,2.6163575123325347e-05,inf,50054490.24782447,inf,SURVIVES,"Reynolds (2013) Table 1: M=(1.91+/-0.78)e6 Msun (Peterson+2004), spin > 0.99 (Patrick+2012)."
+IRAS 13224-3809,6300000.0,0.987,True,S12,3.18e-21,0.00014996168112056186,inf,50054490.24782447,inf,SURVIVES,"Reynolds (2013) Table 1: M~6.3e6 Msun (Gonzalez-Martin & Vaughan 2012), spin > 0.987 (Fabian+2013)."
+IRAS 13224-3809,6300000.0,0.987,True,S21,1.83e-21,8.629870328636108e-05,inf,50054490.24782447,inf,SURVIVES,"Reynolds (2013) Table 1: M~6.3e6 Msun (Gonzalez-Martin & Vaughan 2012), spin > 0.987 (Fabian+2013)."
+MCG-6-30-15,2900000.0,0.98,True,S12,3.18e-21,6.902998019835389e-05,inf,50054490.24782447,inf,SURVIVES,"Reynolds (2013) Table 1: M=2.9(+1.8/-1.6)e6 Msun (McHardy+2005), spin > 0.98 (Brenneman & Reynolds 2006)."
+MCG-6-30-15,2900000.0,0.98,True,S21,1.83e-21,3.9724799925467805e-05,inf,50054490.24782447,inf,SURVIVES,"Reynolds (2013) Table 1: M=2.9(+1.8/-1.6)e6 Msun (McHardy+2005), spin > 0.98 (Brenneman & Reynolds 2006)."
+1H0707-495,2300000.0,0.97,True,S12,3.18e-21,5.474791532972894e-05,inf,50054490.24782447,inf,SURVIVES,"Reynolds (2013) Table 1: M~2.3e6 Msun (Zhou & Wang 2005), spin > 0.97 (Zoghbi+2010)."
+1H0707-495,2300000.0,0.97,True,S21,1.83e-21,3.150587580295722e-05,inf,50054490.24782447,inf,SURVIVES,"Reynolds (2013) Table 1: M~2.3e6 Msun (Zhou & Wang 2005), spin > 0.97 (Zoghbi+2010)."
+Ark 564,1100000.0,0.96,False,S12,3.18e-21,2.6183785592479056e-05,inf,50054490.24782447,inf,SURVIVES,"Reynolds (2013) Table 1: M~1.1e6 Msun (Zhou & Wang 2005), spin 0.96(+0.01/-0.11) (Walton+2013)."
+Ark 564,1100000.0,0.96,False,S21,1.83e-21,1.5068027557936062e-05,inf,50054490.24782447,inf,SURVIVES,"Reynolds (2013) Table 1: M~1.1e6 Msun (Zhou & Wang 2005), spin 0.96(+0.01/-0.11) (Walton+2013)."

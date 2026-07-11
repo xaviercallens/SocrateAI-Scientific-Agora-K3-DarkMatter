@@ -24,6 +24,24 @@ Re-deriving the minimal Picard-Fuchs recurrence for $S_{2,1}(n)=\sum_k\binom{n}{
 
 ---
 
+## 🟢 GAP-3/GAP-4 update (2026-07-11): $S_{2,1}$ bare survives M87* without Chameleon screening
+
+**Full findings:** `docs/superradiance/s21_bare_survival.md`, solver validation: `docs/superradiance/dolan_validation.md`. This is a positive result, but reported with the same rigor as a negative one (Rule 4): the number is real, script-computed, and corrects a previously-circulated figure that was not.
+
+Task T3.1 replaced the small-$\alpha$ Detweiler (1980) superradiance growth-rate formula — used throughout this repository at couplings ($\alpha=0.089$–$1.55$) well outside its stated validity range (0.01–0.1) — with an exact continued-fraction solver following Dolan (2007), `scripts/dolan_continued_fraction.py`. The solver is validated against all 6 points of Dolan's published Table I (maximum $l=1,m=1$ growth rates vs. spin), transcribed directly from the arXiv PDF, to **<0.4% error** (5% was the task's required tolerance).
+
+Task T3.2 (`scripts/s21_bare_analysis.py`) then used this exact solver to re-examine whether Chameleon screening (GAP-4's unphysical $n=-3$ mechanism) is actually *needed*, evaluating the bare (unscreened) couplings at M87* (EHT 2019 mass; $a_*=0.90$ is an illustrative literature value, not an EHT measurement):
+
+- **$S_{2,1}$ bare** ($\alpha=0.089$): instability timescale $\approx380$ Myr — **longer** than the Salpeter accretion spin-up time ($\approx50$ Myr, Salpeter 1964) by $\approx7.6\times$. **Survives without any Chameleon screening.**
+- **$S_{1,2}$ bare** ($\alpha=0.155$): instability timescale $\approx4.6$ Myr — **shorter** than the Salpeter time by $\approx11\times$. Does **not** survive unscreened; GAP-4's screening problem remains open, but now only for $S_{1,2}$.
+- 5 additional real high-spin SMBHs (X-ray reflection-spectroscopy sample from Reynolds 2013: NGC 4051, IRAS 13224-3809, MCG-6-30-15, 1H0707-495, Ark 564), all far less massive than M87*, are stable under both sequences by a huge margin (cross-checked against the small-$\alpha$ formula: $\tau_\text{instability}\sim10^{33}$–$10^{38}$ yr).
+
+**Correction on the record:** a previously-circulated narrative quoted $\tau_\text{instability}\approx86.6$ Myr for this same ($S_{2,1}$, M87*) case. That number does not appear in the output of any script in this repository — it was never actually computed. The real, reproducible value is $\approx380$ Myr; the qualitative conclusion (survives) is unchanged, but future citations should point to `docs/superradiance/s21_bare_survival.md`, not to that earlier figure.
+
+**What is NOT resolved:** the survival argument compares instantaneous timescales, not a full spin-evolution/GRMHD history; M87*'s spin is assumed, not measured; GAP-4 (unphysical chameleon index) is still open for $S_{1,2}$ specifically (task T3.3, screening alternatives, remains `[TIER: HUMAN]`).
+
+---
+
 ## The 5 Missing Pieces (referee "deeper programme", Round 2)
 
 These are the items a second-round referee (string-theory / Swampland) identified as separating the present *string-inspired phenomenology* from a genuine top-down construction.

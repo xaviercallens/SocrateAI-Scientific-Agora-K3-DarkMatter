@@ -108,16 +108,16 @@ parameters:
     tag: "[FITTED]"
     source: "K3_DISCOVERY_REPORT.md, ROADMAP.md:70"
     description: "Effective superradiance coupling for S₁,₂ with Chameleon screening (ρ-dependent mass boost ×10)."
-    caveat: "GAP-3: Detweiler small-α formula is used outside stated validity range (0.01 ≤ α ≤ 0.1)."
-    reference: "K3_DISCOVERY_REPORT.md:§Chameleon Shielding"
+    caveat: "GAP-3 (2026-07-11, T3.1): the Detweiler small-α formula is superseded for physics conclusions by the exact Dolan (2007) continued-fraction solver (scripts/dolan_continued_fraction.py, validated to <0.4% against Dolan's Table I). The Detweiler formula remains in scripts/superradiance_growth_rate.py for the small-α regime where it is valid and cheap."
+    reference: "K3_DISCOVERY_REPORT.md:§Chameleon Shielding, docs/superradiance/dolan_validation.md"
 
   alpha_eff_S21:
     value: 0.89
     tag: "[FITTED]"
     source: "K3_DISCOVERY_REPORT.md, ROADMAP.md:70"
     description: "Effective superradiance coupling for S₂,₁ with Chameleon screening (ρ-dependent mass boost ×10)."
-    caveat: "GAP-3: Detweiler small-α formula is used outside stated validity range (0.01 ≤ α ≤ 0.1)."
-    reference: "K3_DISCOVERY_REPORT.md:§Chameleon Shielding"
+    caveat: "GAP-3 (2026-07-11, T3.1): superseded for physics conclusions by the exact Dolan (2007) CF solver — see alpha_eff_S12 caveat. Also: T3.2 shows S₂,₁ survives M87* at its BARE coupling (see alpha_bare_S21), so this chameleon-boosted value is no longer load-bearing for S₂,₁'s survival argument."
+    reference: "K3_DISCOVERY_REPORT.md:§Chameleon Shielding, docs/superradiance/dolan_validation.md"
 
   alpha_bare_S12:
     value: 0.155
@@ -125,6 +125,8 @@ parameters:
     source: "K3_DISCOVERY_REPORT.md:§The Physics"
     description: "Bare superradiance coupling for S₁,₂ (without Chameleon screening)."
     note: "Would cause spin-down of M87* if unshielded."
+    caveat: "GAP-3/GAP-4 (2026-07-11, T3.2, exact Dolan CF method): CONFIRMED does NOT survive at M87* — τ_instability≈4.6 Myr, shorter than the Salpeter accretion-spinup time (≈50 Myr) by ~11×. S₁,₂ still needs Chameleon (or an alternative) screening; GAP-4 remains open for this sequence."
+    reference: "docs/superradiance/s21_bare_survival.md"
 
   alpha_bare_S21:
     value: 0.089
@@ -132,6 +134,8 @@ parameters:
     source: "K3_DISCOVERY_REPORT.md:§The Physics"
     description: "Bare superradiance coupling for S₂,₁ (without Chameleon screening)."
     note: "Would cause spin-down of M87* if unshielded."
+    caveat: "GAP-3/GAP-4 (2026-07-11, T3.2, exact Dolan CF method): CONFIRMED SURVIVES at M87* without any Chameleon screening — τ_instability≈380 Myr, longer than the Salpeter accretion-spinup time (≈50 Myr) by ~7.6×. Corrects an earlier draft narrative that quoted 86.6 Myr (never actually computed by any script); the real, script-verified value is ≈380 Myr. Conclusion (S₂,₁ survives) unchanged."
+    reference: "docs/superradiance/s21_bare_survival.md"
 
   chameleon_gamma:
     value: 0.25
@@ -221,18 +225,18 @@ caveats:
     task: "T2.1, T2.2"
 
   - id: "GAP-3"
-    severity: "Serious"
+    severity: "Resolved for S₂,₁; open for S₁,₂"
     title: "Superradiance Formula Out of Range"
-    description: "Detweiler α-small formula used at α_eff ≈ 0.89–1.55 (beyond valid range 0.01–0.1)."
-    tracked_in: ["CAVEATS.md:§3", "OPEN_PROBLEMS.md", "Part_I_K3xT2_Cosmology.tex:§Limitations"]
+    description: "2026-07-11 (T3.1/T3.2): Detweiler small-α formula replaced by exact Dolan (2007) continued-fraction solver (validated <0.4% vs Table I). S₂,₁ bare (α=0.089) CONFIRMED survives M87* unscreened (τ_inst≈380 Myr > Salpeter≈50 Myr). S₁,₂ bare (α=0.155) does NOT survive unscreened (τ_inst≈4.6 Myr < Salpeter) — still needs screening."
+    tracked_in: ["CAVEATS.md:§4", "OPEN_PROBLEMS.md", "docs/superradiance/s21_bare_survival.md", "Part_I_K3xT2_Cosmology.tex:§Limitations"]
     workstream: "WS3"
-    task: "T3.1"
+    task: "T3.1, T3.2"
 
   - id: "GAP-4"
-    severity: "Serious"
+    severity: "Serious (narrowed to S₁,₂ only, 2026-07-11)"
     title: "Chameleon Khoury-Weltman Tension"
-    description: "γ=0.25 maps to unphysical KW index n=-3; screening mechanism physically questionable."
-    tracked_in: ["CAVEATS.md:§4", "OPEN_PROBLEMS.md", "Part_I_K3xT2_Cosmology.tex:§Limitations"]
+    description: "γ=0.25 maps to unphysical KW index n=-3; screening mechanism physically questionable. 2026-07-11 (T3.2): moot for S₂,₁, which now survives at its bare (unscreened) coupling — see GAP-3. Still applies to S₁,₂, which does need screening."
+    tracked_in: ["CAVEATS.md:§3", "OPEN_PROBLEMS.md", "Part_I_K3xT2_Cosmology.tex:§Limitations"]
     workstream: "WS3"
     task: "T3.3"
 
