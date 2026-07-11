@@ -72,9 +72,9 @@ parameters:
     value: 336
     tag: "[VERIFIED]"
     source: "lean4_formal_proofs/Agora/GaugeCoupling.lean:45"
-    description: "Topological stiffness V''(0) for S₂,₁ K3 surface."
-    caveat: "Derivation from Picard-Fuchs data is unverified (GAP-2); numerical value is conjectural pending PF→potential-curvature mapping."
-    reference: "K3_DISCOVERY_REPORT.md, VISION.md"
+    description: "Recurrence-derived invariant for S₂,₁ (NOT a K3 stiffness — see caveat)."
+    caveat: "GAP-1 (2026-07-11, CONFIRMED): S₂,₁ is an order-2 (elliptic curve) recurrence, not order-3 (K3), per docs/gap1/ORDER_VERIFICATION_FINDINGS.md — the fixed scripts/k3_sieve_analysis.py sieve re-run finds only S₁,₂ survives as K3. The integer 336 remains an exact recurrence-extracted number, but calling it a 'K3 topological stiffness' is no longer supported. Also GAP-2: derivation from Picard-Fuchs data to a potential curvature is separately unverified regardless of the K3 question."
+    reference: "K3_DISCOVERY_REPORT.md, VISION.md, docs/gap1/ORDER_VERIFICATION_FINDINGS.md"
 
   stiffness_ratio:
     value: 1014/336
@@ -207,9 +207,9 @@ consistency_checks:
 caveats:
   - id: "GAP-1"
     severity: "Critical"
-    title: "K3 Identification Unverified"
-    description: "S₁,₂ and S₂,₁ identification relies on monodromy matrices and modularity screens; not yet kernel-verified."
-    tracked_in: ["CAVEATS.md:§1", "OPEN_PROBLEMS.md", "Part_I_K3xT2_Cosmology.tex:§Limitations"]
+    title: "K3 Identification — S₂,₁ CONFIRMED non-K3 (elliptic); S₁,₂ remains sole surviving candidate"
+    description: "2026-07-11: S₂,₁ genuinely satisfies an order-2 (elliptic curve) recurrence, not order-3 (K3), confirmed by fixing a bug in scripts/k3_sieve_analysis.py and re-running the full A,B∈[1,5] sieve (only S₁,₂ survives as K3). S₁,₂'s Weil bound (44/44 primes) and mirror-map integrality (30/30 coefficients) both pass; monodromy matrices for S₁,₂ still pending (separate classifier bug in k3_monodromy_verification.py, not yet fixed)."
+    tracked_in: ["CAVEATS.md:§2", "OPEN_PROBLEMS.md", "docs/gap1/ORDER_VERIFICATION_FINDINGS.md", "Part_I_K3xT2_Cosmology.tex:§Limitations"]
     workstream: "WS1"
 
   - id: "GAP-2"

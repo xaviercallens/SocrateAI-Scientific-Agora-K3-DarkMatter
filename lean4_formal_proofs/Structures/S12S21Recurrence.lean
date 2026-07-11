@@ -3,17 +3,33 @@ import Mathlib.Tactic
 
 namespace Agora.Structures.S12S21Recurrence
 
-/-! # S_{1,2} and S_{2,1} Order-3 Picard-Fuchs Sequences
+/-! # S_{1,2} and S_{2,1} Hypergeometric Period Sequences
 
 This module kernel-verifies exact integer values of both hypergeometric period
 sequences S₁,₂ and S₂,₁ via `decide`/`native_decide` proofs for all n ≤ 19
 (20 terms each), together with positivity, monotonicity, and modular-residue
 facts used by the GAP-1 Weil-bound screen.
 
+## ⚠️ GAP-1 finding (2026-07-11): S₂,₁ is order-2, NOT order-3
+
+Task T4.2 was originally specified assuming BOTH sequences satisfy order-3
+Picard-Fuchs recurrences (the K3-surface signature). Independent re-derivation
+(see `docs/gap1/ORDER_VERIFICATION_FINDINGS.md`) shows S₂,₁ genuinely
+satisfies only an **order-2** recurrence (validated against 149 held-out
+values), which is the signature of an elliptic curve period, not a K3
+surface. S₁,₂ was checked against the same order-2 ansatz and has none — it
+remains genuinely order-3. This module still kernel-verifies concrete VALUES
+of both sequences (that part is unaffected and correct), but it does **not**
+prove either sequence's recurrence order in Lean — the "order-3 for both"
+framing in the original task spec is now known to be wrong for S₂,₁, and the
+theorems below make no claim about recurrence order at all, only about
+individual values, positivity, monotonicity, and modular residues.
+
 ## Task Reference
 - **Task:** T4.2 (Scientific Validation Program v2.0.0)
-- **Specification:** Kernel-verify S₁,₂/S₂,₁ order-3 recurrences for n ≤ 20 via `decide`
-- **Status:** KERNEL-VERIFIED (0 sorry stubs, all proofs compile)
+- **Specification:** Kernel-verify S₁,₂/S₂,₁ finite-range (n ≤ 20) exact values via `decide`
+- **Status:** KERNEL-VERIFIED (0 sorry stubs, all proofs compile). Does NOT
+  certify recurrence order for either sequence — see GAP-1 finding above.
 
 ## ⚠️ Correction (2026-07-11)
 

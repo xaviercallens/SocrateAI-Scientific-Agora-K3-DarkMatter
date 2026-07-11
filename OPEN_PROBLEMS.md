@@ -6,6 +6,24 @@
 
 ---
 
+## 🔴 GAP-1 update (2026-07-11): S₂,₁ is CONFIRMED not a K3 surface
+
+**Full findings:** `docs/gap1/ORDER_VERIFICATION_FINDINGS.md`. This is placed first because it is a negative result bearing directly on the model's central premise (Rule 4 — negative results go at the top, not buried).
+
+Re-deriving the minimal Picard-Fuchs recurrence for $S_{2,1}(n)=\sum_k\binom{n}{k}^2\binom{n+k}{k}$ from scratch, and validating the candidate against 149 held-out exact-integer values, shows it satisfies a genuine **order-2** recurrence — the signature of an **elliptic curve period**, not a K3 surface (which needs order-3). $S_{1,2}$ was checked against the same order-2 ansatz and has none; it remains genuinely order-3. This directly contradicted the "$S_{2,1}$: K3 Surface (Order-3)" label previously asserted in `K3_DISCOVERY_REPORT.md` and used as a load-bearing premise throughout the manuscripts.
+
+**Root cause traced to two independent bugs**, both pre-existing (not introduced by this finding):
+1. `scripts/k3_sieve_analysis.py::find_minimal_order` returned a polynomial-coefficient-degree quantity mislabeled as "order" (conflated with the true recurrence shift-order that actually determines the geometry class), and its existence check validated candidates against only 3 equations beyond the bare minimum — no held-out validation. This script also could not execute at all prior to this session due to a Python-version-incompatible f-string.
+2. `scripts/k3_monodromy_verification.py::classify_singular_points` (the Fuchs-criterion regularity check) is missing the leading-coefficient's own vanishing-order offset in its threshold, which **systematically misclassifies every singular point it has ever tested as irregular** — including the presumed MUM point at z=0 for both sequences. Consequence: **no numeric monodromy matrix has ever actually been computed** by this script, despite being the cited implementation for Task T1.1. (This second bug is documented but **not yet fixed** — flagged as SONNET+ follow-up.)
+
+**Bug #1 has been fixed and the full $A,B\in[1,5]$ sieve re-run in this session** (70 held-out checks, $n_{\max}=110$): with the corrected classifier, **only $(A,B)=(1,2)=S_{1,2}$ survives as a K3 candidate**; $(2,1)=S_{2,1}$ and $(2,2)$ both come back **Elliptic Curve (Order-2)**. No replacement K3 candidate appears elsewhere in the searched range.
+
+**What is NOT yet settled** (a physics-judgement call, `[TIER: HUMAN]`, not resolved by this fix): whether to (a) drop $S_{2,1}$ and search for a genuine second K3 candidate outside $A,B\in[1,5]$, (b) keep $S_{2,1}$ as a non-K3 "recurrence invariant" (the downgrade-in-language escalation clause scientificplan.md already anticipates for GAP-2), or (c) rebuild the two-vacuum narrative entirely around a different second object. The mass-ratio prediction $\sqrt{1014/336}$ and the GAP-2 PTA ratio test remain arithmetically true as rational-number statements, but their interpretation as "two K3 vacua" no longer holds for the $S_{2,1}$ side.
+
+**Status:** confirmed, not a suspicion. Do not cite "$S_{2,1}$ is a verified K3 surface candidate" going forward — see the findings doc for full detail and the open physics-judgement question.
+
+---
+
 ## The 5 Missing Pieces (referee "deeper programme", Round 2)
 
 These are the items a second-round referee (string-theory / Swampland) identified as separating the present *string-inspired phenomenology* from a genuine top-down construction.
@@ -49,7 +67,7 @@ With $\lambda_\mathrm{fit}=1.6724>\sqrt2$ the scaling attractor gives $w_\phi\ap
 
 ## What IS established (so collaborators know the starting point)
 
-- **Exact algebraic sieve** over $\mathbb Q$ isolating $S_{1,2}$, $S_{2,1}$ as the order-3 survivors in $A,B\in[1,5]$.
+- **Exact algebraic sieve** over $\mathbb Q$ isolating $S_{1,2}$, $S_{2,1}$ as candidates in $A,B\in[1,5]$. **⚠️ 2026-07-11: $S_{1,2}$ is confirmed order-3; $S_{2,1}$ is now shown to be order-2 (elliptic signature), disputing its K3 label — see the GAP-1 update above and `docs/gap1/ORDER_VERIFICATION_FINDINGS.md`.**
 - **GD-1 No-Go** (`cy_axion_no_go`): kernel-verified exact-rational exclusion of the symmetric-geometry masses.
 - **Mass ratio** $\sqrt{1014/336}\in(1.73,1.75)$ and **relative inverse-coupling ratio** (same interval): kernel-verified over $\mathbb Q$.
 - **Swampland tension lemmas** (`lambda_fit_exceeds_sqrt2`, `attractor_not_dark_energy`): kernel-verified.

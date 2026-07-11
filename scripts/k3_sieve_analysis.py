@@ -65,38 +65,88 @@ def get_u_exact(A, B, n_max=35):
         u.append(u_val)
     return u
 
-def detect_recurrence_exact(u, num_terms, degree):
+def detect_recurrence_exact(u, num_terms, degree, held_out=40):
+    """
+    BUG FIX (2026-07-11, see docs/gap1/ORDER_VERIFICATION_FINDINGS.md):
+    The original version of this function only checked that a nullspace
+    EXISTS for a matrix built from `num_unknowns + 3` equations — 3 slack
+    equations beyond the bare minimum needed to pin down the unknowns, and
+    NO validation against additional held-out values. This produced false
+    positives (e.g. classifying S_{2,1} as order-3/"K3" when it is actually
+    order-2/"elliptic" — independently re-verified against 149 held-out
+    values in this session). Fixed to require `held_out` additional exact
+    checks (default 40) before accepting a candidate, mirroring the
+    validated methodology in k3_monodromy_verification.py::find_recurrence.
+    Returns the found polynomial coefficients on success (or None), so the
+    caller can distinguish "no candidate" from "found but degenerate".
+    """
     num_unknowns = num_terms * (degree + 1)
-    if len(u) < num_unknowns + num_terms:
-        return False
-        
+    n_max_needed = num_unknowns + num_terms + held_out
+    if len(u) < n_max_needed:
+        return None
+
+    num_eqs = num_unknowns + 3
     matrix = []
-    num_eqs = min(len(u) - num_terms, num_unknowns + 3)
-    if num_eqs < num_unknowns:
-        return False
-        
     for n in range(num_eqs):
         row = []
         for i in range(num_terms):
             for j in range(degree + 1):
-                row.append( (n**j) * u[n+i] )
+                row.append((n ** j) * u[n + i])
         matrix.append(row)
-        
+
     M = sympy_sp.Matrix(matrix)
     null_space = M.nullspace()
-    return len(null_space) > 0
+    if not null_space:
+        return None
 
-def find_minimal_order(A, B):
-    u = get_u_exact(A, B, n_max=35)
-    for degree in range(1, 4):
-        for num_terms in range(2, 6):
-            if detect_recurrence_exact(u, num_terms, degree):
-                return degree + 1, num_terms
+    v = null_space[0]
+    denoms = [sympy_sp.fraction(sympy_sp.Rational(c))[1] for c in v]
+    lcm_denom = sympy_sp.ilcm(*denoms) if len(denoms) > 1 else denoms[0]
+    v_int = [sympy_sp.Integer(c * lcm_denom) for c in v]
+
+    n_sym = sympy_sp.Symbol('n')
+    polys = []
+    for i in range(num_terms):
+        expr = sum(v_int[i * (degree + 1) + j] * n_sym ** j for j in range(degree + 1))
+        polys.append(sympy_sp.Poly(expr, n_sym))
+    if polys[num_terms - 1].is_zero:
+        return None
+
+    # HELD-OUT VALIDATION (the missing piece in the original bug).
+    for nn in range(num_eqs, num_eqs + held_out):
+        if nn + num_terms - 1 >= len(u):
+            break
+        chk = sum(int(polys[i].subs(n_sym, nn)) * u[nn + i] for i in range(num_terms))
+        if chk != 0:
+            return None  # candidate rejected: fails held-out check
+
+    return polys
+
+
+def find_minimal_order(A, B, n_max=90, held_out=40):
+    """
+    BUG FIX (2026-07-11): now loops over `num_terms` (the true recurrence
+    shift-order, which is what actually determines the geometry class) as
+    the PRIMARY search variable, and returns the genuinely minimal, held-out
+    -validated num_terms. The old version returned `degree+1` (a polynomial
+    coefficient degree, unrelated to geometry class) mislabeled as "order".
+    Returns (order, degree_used) where order = num_terms - 1 is the true
+    Picard-Fuchs ODE order (2 -> elliptic, 3 -> K3, 4 -> CY3, per the
+    standard classification used throughout this repository).
+    """
+    u = get_u_exact(A, B, n_max=n_max)
+    for num_terms in range(2, 6):
+        for degree in range(1, 4):
+            polys = detect_recurrence_exact(u, num_terms, degree, held_out=held_out)
+            if polys is not None:
+                return num_terms - 1, degree
     return -1, -1
 
 def get_geometry_class(A, B):
     order, _ = find_minimal_order(A, B)
-    if order == 1 or order == 2:
+    if order == 1:
+        return "Rank-1 / degenerate (Order-1)"
+    elif order == 2:
         return "Elliptic Curve (Order-2)"
     elif order == 3:
         return "K3 Surface (Order-3)"
@@ -121,7 +171,8 @@ def compute_delta_sigma(f_fdm, m_a):
 
 print("=== PROJECT K3-RESCUE: Exact Math Landscape Sieve ===")
 print("Sweeping Apéry family S_{A,B}(n) for A, B in [1, 5]")
-print(f"{'A':<3} | {'B':<3} | {'Geometry':<20} | {'V\'\'(0)':<10} | {'m_a (eV)':<12} | {'GD-1 σ (km/s)':<15} | {'Status'}")
+vpp_header = "V''(0)"
+print(f"{'A':<3} | {'B':<3} | {'Geometry':<20} | {vpp_header:<10} | {'m_a (eV)':<12} | {'GD-1 σ (km/s)':<15} | {'Status'}")
 print("-" * 95)
 
 k3_candidates = []
