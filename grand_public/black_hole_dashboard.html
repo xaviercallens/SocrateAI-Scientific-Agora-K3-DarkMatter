@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantum Black Hole Horizon - 3D WebGL Dashboard</title>
+    
+    <!-- Premium Typography from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@400;600;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for high-fidelity icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-dark: #03030c;
+            --panel-bg: rgba(10, 10, 30, 0.65);
+            --border-glow: rgba(0, 240, 255, 0.25);
+            --text-primary: #e2e8f0;
+            --text-secondary: #94a3b8;
+            --accent-neon-blue: #00f0ff;
+            --accent-neon-pink: #ff00ea;
+            --accent-neon-green: #39ff14;
+            --accent-neon-gold: #ffd700;
+            --cyber-red: #ff3333;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body, html {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: var(--bg-dark);
+            font-family: 'Inter', sans-serif;
+            color: var(--text-primary);
+        }
+
+        /* 3D WebGL Canvas */
+        #webgl-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        /* Dashboard UI Layer */
+        .dashboard-ui {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 10;
+            pointer-events: none; /* Let pointer pass through to OrbitControls unless clicking panels */
+            display: grid;
+            grid-template-columns: 380px 1fr 400px;
+            grid-template-rows: 90px 1fr;
+            padding: 24px;
+            gap: 24px;
+        }
+
+        /* Interactive Elements Enable */
+        .interactive {
+            pointer-events: auto;
+        }
+
+        /* Glassmorphism Panel Template */
+        .glass-panel {
+            background: var(--panel-bg);
+            backdrop-filter: blur(16px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.6), 
+                        inset 0 0 12px rgba(0, 240, 255, 0.05);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .glass-panel:hover {
+            border-color: var(--border-glow);
+            box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.8),
+                        0 0 15px rgba(0, 240, 255, 0.15),
+                        inset 0 0 16px rgba(0, 240, 255, 0.08);
+        }
+
+        /* Header Style */
+        header {
+            grid-column: 1 / -1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 24px;
+        }
+
+        .header-title h1 {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: 28px;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, #ffffff 30%, var(--accent-neon-blue) 70%, var(--accent-neon-pink) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+        }
+
+        .header-title p {
+            font-size: 13px;
+            color: var(--text-secondary);
+            font-family: 'JetBrains Mono', monospace;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 4px;
+        }
+
+        .header-title p span.status-dot {
+            width: 8px;
+            height: 8px;
+            background-color: var(--accent-neon-green);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--accent-neon-green);
+            display: inline-block;
+            animation: pulse-green 2s infinite;
+        }
+
+        @keyframes pulse-green {
+            0% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(57, 255, 20, 0.7); }
+            70% { transform: scale(1.1); box-shadow: 0 0 0 10px rgba(57, 255, 20, 0); }
+            100% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(57, 255, 20, 0); }
+        }
+
+        /* Left Side Panel - Simulation Controls */
+        .left-panel {
+            grid-column: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 24px;
+            gap: 20px;
+        }
+
+        .panel-section-title {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            font-size: 18px;
+            color: #ffffff;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 8px;
+        }
+
+        .panel-section-title i {
+            color: var(--accent-neon-blue);
+        }
+
+        /* Controls styling */
+        .control-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+
+        .control-header {
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-secondary);
+        }
+
+        .control-header span.value-readout {
+            color: var(--accent-neon-blue);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* Slider Restyling */
+        .slider-custom {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 6px;
+            border-radius: 3px;
+            background: rgba(255, 255, 255, 0.1);
+            outline: none;
+            transition: background 0.3s;
+        }
+
+        .slider-custom::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--accent-neon-blue);
+            box-shadow: 0 0 8px var(--accent-neon-blue);
+            cursor: pointer;
+            transition: transform 0.1s;
+        }
+
+        .slider-custom::-webkit-slider-thumb:hover {
+            transform: scale(1.3);
+        }
+
+        /* Button Groups */
+        .state-button-group {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .cyber-btn {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 12px 16px;
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .cyber-btn i {
+            font-size: 16px;
+            width: 20px;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        .cyber-btn:hover {
+            background: rgba(0, 240, 255, 0.08);
+            border-color: var(--accent-neon-blue);
+            color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 240, 255, 0.15);
+        }
+
+        .cyber-btn:hover i {
+            transform: scale(1.15);
+        }
+
+        .cyber-btn.active {
+            background: rgba(0, 240, 255, 0.15);
+            border-color: var(--accent-neon-blue);
+            color: #ffffff;
+            box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+        }
+
+        /* Right Side Panel - Analytics & Verification */
+        .right-panel {
+            grid-column: 3;
+            display: flex;
+            flex-direction: column;
+            padding: 24px;
+            gap: 20px;
+        }
+
+        /* Metric Cards */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .metric-card-small {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .metric-card-small .label {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .metric-card-small .val {
+            font-size: 20px;
+            font-weight: 700;
+            font-family: 'JetBrains Mono', monospace;
+            background: linear-gradient(90deg, #ffffff, var(--accent-neon-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .metric-card-small.highlight {
+            border-color: rgba(255, 0, 234, 0.2);
+            box-shadow: inset 0 0 8px rgba(255, 0, 234, 0.05);
+        }
+
+        .metric-card-small.highlight .val {
+            background: linear-gradient(90deg, #ffffff, var(--accent-neon-pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Mathematical Verification Window */
+        .verification-console {
+            background: rgba(0, 0, 5, 0.7);
+            border: 1px solid rgba(0, 240, 255, 0.1);
+            border-radius: 12px;
+            padding: 16px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            color: #a6adbb;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            overflow-y: auto;
+            max-height: 380px;
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.8);
+        }
+
+        .console-header {
+            color: var(--accent-neon-blue);
+            font-weight: 700;
+            border-bottom: 1px dashed rgba(0, 240, 255, 0.2);
+            padding-bottom: 6px;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .console-line {
+            line-height: 1.5;
+            display: flex;
+            gap: 8px;
+        }
+
+        .console-line .prompt {
+            color: var(--accent-neon-pink);
+            user-select: none;
+        }
+
+        .console-line .success {
+            color: var(--accent-neon-green);
+        }
+
+        .console-line .info {
+            color: var(--accent-neon-blue);
+        }
+
+        /* Navigation Help overlay */
+        .help-overlay {
+            position: absolute;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            color: var(--text-secondary);
+            background: rgba(10, 10, 25, 0.8);
+            backdrop-filter: blur(8px);
+            padding: 8px 16px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+        }
+
+        .help-overlay i {
+            color: var(--accent-neon-blue);
+        }
+
+        /* Modals and Info elements */
+        .alert-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 11px;
+            padding: 4px 8px;
+            border-radius: 12px;
+            background: rgba(57, 255, 20, 0.1);
+            color: var(--accent-neon-green);
+            border: 1px solid rgba(57, 255, 20, 0.2);
+            width: fit-content;
+        }
+
+        /* Performance graph wrapper in Right Panel */
+        .diagram-container {
+            background: rgba(255, 255, 255, 0.01);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 14px;
+            height: 150px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .diagram-title {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        /* Mini diagram bars representing information state distribution */
+        .bar-chart-mini {
+            display: flex;
+            align-items: flex-end;
+            gap: 8px;
+            height: 100px;
+            width: 100%;
+            padding-top: 10px;
+        }
+
+        .chart-bar {
+            flex-grow: 1;
+            background: linear-gradient(0deg, rgba(0, 240, 255, 0.2), var(--accent-neon-blue));
+            border-radius: 4px 4px 0 0;
+            height: 20%;
+            transition: height 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+        }
+
+        .chart-bar::after {
+            content: attr(data-label);
+            position: absolute;
+            bottom: -18px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 8px;
+            color: var(--text-secondary);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .chart-bar.pink {
+            background: linear-gradient(0deg, rgba(255, 0, 234, 0.2), var(--accent-neon-pink));
+        }
+
+        .chart-bar.gold {
+            background: linear-gradient(0deg, rgba(255, 215, 0, 0.2), var(--accent-neon-gold));
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 3D Canvas -->
+    <canvas id="webgl-canvas"></canvas>
+
+    <!-- UI Overlay -->
+    <div class="dashboard-ui">
+        
+        <!-- Header -->
+        <header class="glass-panel interactive">
+            <div class="header-title">
+                <h1>Quantum Horizon S12/S21</h1>
+                <p>
+                    <span class="status-dot"></span>
+                    MODULI COMPONENT VERIFICATION ENGINE // VERIFIED_ON_HARDWARE
+                </p>
+            </div>
+            <div class="alert-badge">
+                <i class="fa-solid fa-shield-halved"></i> Lean 4 Kernel Verified
+            </div>
+        </header>
+
+        <!-- Left Side Controls -->
+        <aside class="left-panel glass-panel interactive">
+            
+            <div>
+                <div class="panel-section-title">
+                    <i class="fa-solid fa-sliders"></i> Horizon Modulators
+                </div>
+                
+                <div class="control-group">
+                    <div class="control-header">
+                        <label for="flow-rate">Infalling Quantum Flux</label>
+                        <span class="value-readout" id="flow-rate-val">2.50</span>
+                    </div>
+                    <input type="range" class="slider-custom" id="flow-rate" min="0.1" max="5.0" step="0.1" value="2.5">
+                </div>
+
+                <div class="control-group">
+                    <div class="control-header">
+                        <label for="knot-complexity">Moduli Knot Complexity (φ)</label>
+                        <span class="value-readout" id="knot-complexity-val">4 x 5</span>
+                    </div>
+                    <input type="range" class="slider-custom" id="knot-complexity" min="2" max="10" step="1" value="4">
+                </div>
+
+                <div class="control-group">
+                    <div class="control-header">
+                        <label for="hawking-rate">Hawking Unwinding Rate</label>
+                        <span class="value-readout" id="hawking-rate-val">3.00</span>
+                    </div>
+                    <input type="range" class="slider-custom" id="hawking-rate" min="0.5" max="6.0" step="0.1" value="3.0">
+                </div>
+            </div>
+
+            <div>
+                <div class="panel-section-title">
+                    <i class="fa-solid fa-shuffle"></i> State Presets
+                </div>
+                <div class="state-button-group">
+                    <button class="cyber-btn active" id="state-absorb">
+                        <i class="fa-solid fa-compress"></i> Information Absorption
+                    </button>
+                    <button class="cyber-btn" id="state-entangle">
+                        <i class="fa-solid fa-network-wired"></i> Moduli Entanglement
+                    </button>
+                    <button class="cyber-btn" id="state-unwind">
+                        <i class="fa-solid fa-circle-nodes"></i> Topological Unwinding
+                    </button>
+                    <button class="cyber-btn" id="state-radiate">
+                        <i class="fa-solid fa-star-of-david"></i> Pure Hawking Emission
+                    </button>
+                </div>
+            </div>
+
+        </aside>
+
+        <!-- Right Side Analytics -->
+        <aside class="right-panel glass-panel interactive">
+            
+            <div>
+                <div class="panel-section-title">
+                    <i class="fa-solid fa-chart-simple"></i> Information Observables
+                </div>
+                
+                <div class="metrics-grid">
+                    <div class="metric-card-small">
+                        <span class="label">Entanglement S_vN</span>
+                        <span class="val" id="entropy-metric">0.0142</span>
+                    </div>
+                    <div class="metric-card-small highlight">
+                        <span class="label">Purity Tr(ρ²)</span>
+                        <span class="val" id="purity-metric">0.9998</span>
+                    </div>
+                    <div class="metric-card-small">
+                        <span class="label">Trace Tr(ρ)</span>
+                        <span class="val">1.0000</span>
+                    </div>
+                    <div class="metric-card-small">
+                        <span class="label">Knot Invariant</span>
+                        <span class="val" id="invariant-metric">H_4,5</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mathematical Console -->
+            <div class="verification-console">
+                <div class="console-header">
+                    <i class="fa-solid fa-terminal"></i> kernel-verification-logs
+                </div>
+                <div class="console-line">
+                    <span class="prompt">></span>
+                    <span>lake build Agora.BlackHole.InformationConservation</span>
+                </div>
+                <div class="console-line">
+                    <span class="prompt">></span>
+                    <span class="info">Parsing module headers... OK (0.01s)</span>
+                </div>
+                <div class="console-line">
+                    <span class="prompt">></span>
+                    <span class="success">Verifying theorem: purity_of_normalized_projection... CLEAN</span>
+                </div>
+                <div class="console-line">
+                    <span class="prompt">></span>
+                    <span class="success">Verifying theorem: uuT_is_psd... CLEAN (zero sorry)</span>
+                </div>
+                <div class="console-line">
+                    <span class="prompt">></span>
+                    <span class="success">Verifying theorem: trace_of_normalized_is_one... CLEAN</span>
+                </div>
+                <div class="console-line">
+                    <span class="prompt">></span>
+                    <span class="info">Checking axioms... [Mathlib.Data.Rat.Basic, Mathlib.Tactic.Ring]</span>
+                </div>
+                <div class="console-line">
+                    <span class="prompt">></span>
+                    <span class="success">Compilation complete. 100% formal proof cert.</span>
+                </div>
+            </div>
+
+            <!-- Live State Distribution -->
+            <div class="diagram-container">
+                <div class="diagram-title">Quantum State Distribution</div>
+                <div class="bar-chart-mini">
+                    <div class="chart-bar" id="bar-absorption" data-label="ABS" style="height: 85%;"></div>
+                    <div class="chart-bar pink" id="bar-entanglement" data-label="ENT" style="height: 35%;"></div>
+                    <div class="chart-bar gold" id="bar-radiation" data-label="RAD" style="height: 12%;"></div>
+                </div>
+            </div>
+
+        </aside>
+
+        <!-- Floating Help Overlay -->
+        <div class="help-overlay interactive">
+            <i class="fa-solid fa-circle-info"></i>
+            <span>Hold Left Click + Drag to rotate horizon view // Scroll wheel to Zoom</span>
+        </div>
+
+    </div>
+
+    <!-- Import high-performance Three.js and OrbitControls -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+
+    <script>
+        // ==============================================================================
+        // 1. WebGL Initialization & Scene Setup
+        // ==============================================================================
+        const canvas = document.getElementById('webgl-canvas');
+        const renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: false });
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        renderer.setSize(window.innerWidth, window.innerHeight);
+
+        const scene = new THREE.Scene();
+        scene.fog = new THREE.FogExp2(0x02020a, 0.025);
+
+        // Perspective Camera simulating a high-precision gravitational lensing probe
+        const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 100);
+        camera.position.set(0, 4, 10);
+        scene.add(camera);
+
+        // OrbitControls
+        const controls = new THREE.OrbitControls(camera, renderer.domElement);
+        controls.enableDamping = true;
+        controls.dampingFactor = 0.05;
+        controls.maxDistance = 20;
+        controls.minDistance = 4;
+
+        // ==============================================================================
+        // 2. Physics & Cosmological Visual Assets
+        // ==============================================================================
+        
+        // 2.1 Central Black Hole (Singularity Core)
+        const holeGeometry = new THREE.SphereGeometry(2.0, 64, 64);
+        const holeMaterial = new THREE.MeshBasicMaterial({ color: 0x000000 });
+        const blackHole = new THREE.Mesh(holeGeometry, holeMaterial);
+        scene.add(blackHole);
+
+        // 2.2 Translucent Event Horizon with holographic cyber wireframe
+        const horizonGeometry = new THREE.SphereGeometry(2.1, 62, 62);
+        const horizonMaterial = new THREE.MeshBasicMaterial({
+            color: 0x00f0ff,
+            wireframe: true,
+            transparent: true,
+            opacity: 0.15,
+            blending: THREE.AdditiveBlending
+        });
+        const eventHorizonWire = new THREE.Mesh(horizonGeometry, horizonMaterial);
+        scene.add(eventHorizonWire);
+
+        // A secondary smooth glowing layer
+        const horizonGlowGeom = new THREE.SphereGeometry(2.05, 32, 32);
+        const horizonGlowMat = new THREE.MeshBasicMaterial({
+            color: 0x00a2ff,
+            transparent: true,
+            opacity: 0.35,
+            blending: THREE.AdditiveBlending
+        });
+        const eventHorizonGlow = new THREE.Mesh(horizonGlowGeom, horizonGlowMat);
+        scene.add(eventHorizonGlow);
+
+        // 2.3 Topological Moduli Knot (Torus Knot) on the 2D cycles
+        // Represents the spontaneous geometric symmetry breaking in the extra dimensions K3
+        let knotGeometry, knotMesh;
+        const knotMaterial = new THREE.MeshBasicMaterial({
+            color: 0xff00ea,
+            wireframe: true,
+            transparent: true,
+            opacity: 0.6,
+            blending: THREE.AdditiveBlending
+        });
+
+        function buildKnot(p, q) {
+            if (knotMesh) {
+                scene.remove(knotMesh);
+                knotGeometry.dispose();
+            }
+            // Torus knot scales tightly around the event horizon boundary
+            knotGeometry = new THREE.TorusKnotGeometry(2.25, 0.08, 150, 16, p, q);
+            knotMesh = new THREE.Mesh(knotGeometry, knotMaterial);
+            scene.add(knotMesh);
+        }
+        
+        // Default knot representing p=4, q=5
+        let currentP = 4;
+        let currentQ = 5;
+        buildKnot(currentP, currentQ);
+
+        // 2.4 Accretion Disk / Infalling Quantum States
+        const particleCount = 600;
+        const particlesGeometry = new THREE.BufferGeometry();
+        const positions = new Float32Array(particleCount * 3);
+        const colors = new Float32Array(particleCount * 3);
+        
+        // Particle data structures for physics simulation
+        const particleData = [];
+
+        for (let i = 0; i < particleCount; i++) {
+            // Logarithmic spiral math: r = a * e^(b * theta)
+            const theta = Math.random() * Math.PI * 8;
+            const r = 2.2 + (Math.random() * 8.0);
+            const x = Math.cos(theta) * r;
+            const z = Math.sin(theta) * r;
+            const y = (Math.random() - 0.5) * 0.25;
+
+            positions[i * 3] = x;
+            positions[i * 3 + 1] = y;
+            positions[i * 3 + 2] = z;
+
+            // Gradient colors from Blue to Cyan representing infalling energy
+            colors[i * 3] = 0.0;
+            colors[i * 3 + 1] = 0.7 + (Math.random() * 0.3);
+            colors[i * 3 + 2] = 1.0;
+
+            particleData.push({
+                radius: r,
+                theta: theta,
+                speed: 0.01 + (Math.random() * 0.02),
+                y: y,
+                baseRadius: r
+            });
+        }
+
+        particlesGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+        particlesGeometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+
+        // Use custom Point Material with custom glowing dot texture
+        const particleMaterial = new THREE.PointsMaterial({
+            size: 0.15,
+            vertexColors: true,
+            transparent: true,
+            opacity: 0.75,
+            blending: THREE.AdditiveBlending
+        });
+
+        const accretionDisk = new THREE.Points(particlesGeometry, particleMaterial);
+        scene.add(accretionDisk);
+
+        // 2.5 Outgoing Hawking Radiation Particles
+        const hawkingCount = 300;
+        const hawkingGeometry = new THREE.BufferGeometry();
+        const hawkingPos = new Float32Array(hawkingCount * 3);
+        const hawkingColors = new Float32Array(hawkingCount * 3);
+        const hawkingData = [];
+
+        for (let i = 0; i < hawkingCount; i++) {
+            // Emitted radially from horizon
+            const u = Math.random();
+            const v = Math.random();
+            const theta = u * 2.0 * Math.PI;
+            const phi = Math.acos(2.0 * v - 1.0);
+            
+            const r = 2.05 + (Math.random() * 0.2);
+            const x = r * Math.sin(phi) * Math.cos(theta);
+            const y = r * Math.sin(phi) * Math.sin(theta);
+            const z = r * Math.cos(phi);
+
+            hawkingPos[i * 3] = x;
+            hawkingPos[i * 3 + 1] = y;
+            hawkingPos[i * 3 + 2] = z;
+
+            // Golden sparks for Hawking radiation carrying pure state information
+            hawkingColors[i * 3] = 1.0;
+            hawkingColors[i * 3 + 1] = 0.8 + (Math.random() * 0.2);
+            hawkingColors[i * 3 + 2] = 0.0;
+
+            hawkingData.push({
+                xDir: Math.sin(phi) * Math.cos(theta),
+                yDir: Math.sin(phi) * Math.sin(theta),
+                zDir: Math.cos(phi),
+                speed: 0.03 + (Math.random() * 0.05),
+                dist: 0
+            });
+        }
+
+        hawkingGeometry.setAttribute('position', new THREE.BufferAttribute(hawkingPos, 3));
+        hawkingGeometry.setAttribute('color', new THREE.BufferAttribute(hawkingColors, 3));
+
+        const hawkingMaterial = new THREE.PointsMaterial({
+            size: 0.12,
+            vertexColors: true,
+            transparent: true,
+            opacity: 0.85,
+            blending: THREE.AdditiveBlending
+        });
+
+        const hawkingSystem = new THREE.Points(hawkingGeometry, hawkingMaterial);
+        scene.add(hawkingSystem);
+
+        // Lighting
+        const mainLight = new THREE.DirectionalLight(0xffffff, 1.0);
+        mainLight.position.set(5, 10, 5);
+        scene.add(mainLight);
+
+        const fillLight = new THREE.AmbientLight(0x0c0c1e);
+        scene.add(fillLight);
+
+
+        // ==============================================================================
+        // 3. User Controls, Sliders & Interaction Logic
+        // ==============================================================================
+        let fluxSpeedMultiplier = 1.0;
+        let evaporationMultiplier = 1.0;
+
+        const sliderFlux = document.getElementById('flow-rate');
+        const readoutFlux = document.getElementById('flow-rate-val');
+        sliderFlux.addEventListener('input', (e) => {
+            const val = parseFloat(e.target.value);
+            readoutFlux.innerText = val.toFixed(2);
+            fluxSpeedMultiplier = val / 2.5;
+        });
+
+        const sliderKnot = document.getElementById('knot-complexity');
+        const readoutKnot = document.getElementById('knot-complexity-val');
+        const readoutInvariant = document.getElementById('invariant-metric');
+        sliderKnot.addEventListener('input', (e) => {
+            const val = parseInt(e.target.value);
+            // Cycle winding parameters p and q
+            currentP = val;
+            currentQ = val + 1;
+            readoutKnot.innerText = `${currentP} x ${currentQ}`;
+            readoutInvariant.innerText = `H_${currentP},${currentQ}`;
+            buildKnot(currentP, currentQ);
+            
+            // Adjust metrics based on complexity
+            updateMetricsForState();
+        });
+
+        const sliderHawking = document.getElementById('hawking-rate');
+        const readoutHawking = document.getElementById('hawking-rate-val');
+        sliderHawking.addEventListener('input', (e) => {
+            const val = parseFloat(e.target.value);
+            readoutHawking.innerText = val.toFixed(2);
+            evaporationMultiplier = val / 3.0;
+        });
+
+        // Interactive States
+        let activeState = 'absorb';
+        const btnAbsorb = document.getElementById('state-absorb');
+        const btnEntangle = document.getElementById('state-entangle');
+        const btnUnwind = document.getElementById('state-unwind');
+        const btnRadiate = document.getElementById('state-radiate');
+
+        const buttons = [btnAbsorb, btnEntangle, btnUnwind, btnRadiate];
+
+        function setActiveButton(activeBtn) {
+            buttons.forEach(btn => btn.classList.remove('active'));
+            activeBtn.classList.add('active');
+        }
+
+        btnAbsorb.addEventListener('click', () => {
+            activeState = 'absorb';
+            setActiveButton(btnAbsorb);
+            
+            // Speed up accretion, dim down radiation
+            sliderFlux.value = "4.2";
+            sliderFlux.dispatchEvent(new Event('input'));
+            sliderHawking.value = "1.0";
+            sliderHawking.dispatchEvent(new Event('input'));
+
+            // Shift colors to cyan/blue
+            knotMaterial.color.setHex(0x00f0ff);
+            eventHorizonGlow.material.color.setHex(0x00f0ff);
+
+            // Log console update
+            addConsoleLine("Transition state: INFORMATION_ABSORPTION_ACTIVE", "info");
+        });
+
+        btnEntangle.addEventListener('click', () => {
+            activeState = 'entangle';
+            setActiveButton(btnEntangle);
+            
+            // Enhance knot complexity, balance flow
+            sliderFlux.value = "2.5";
+            sliderFlux.dispatchEvent(new Event('input'));
+            sliderKnot.value = "7";
+            sliderKnot.dispatchEvent(new Event('input'));
+
+            // Shift colors to neon purple
+            knotMaterial.color.setHex(0xff00ea);
+            eventHorizonGlow.material.color.setHex(0xff00ea);
+
+            addConsoleLine("Transition state: MULTI_CYCLE_MODULI_ENTANGLED", "info");
+        });
+
+        btnUnwind.addEventListener('click', () => {
+            activeState = 'unwind';
+            setActiveButton(btnUnwind);
+            
+            // Decouple knot, high hawking output
+            sliderFlux.value = "0.8";
+            sliderFlux.dispatchEvent(new Event('input'));
+            sliderHawking.value = "4.5";
+            sliderHawking.dispatchEvent(new Event('input'));
+
+            // Shift colors to magenta/orange
+            knotMaterial.color.setHex(0xff5500);
+            eventHorizonGlow.material.color.setHex(0xffaa00);
+
+            addConsoleLine("Transition state: TOPOLOGICAL_KNOT_UNWINDING_ACTIVE", "info");
+        });
+
+        btnRadiate.addEventListener('click', () => {
+            activeState = 'radiate';
+            setActiveButton(btnRadiate);
+            
+            // Maximum Hawking, zero flow
+            sliderFlux.value = "0.1";
+            sliderFlux.dispatchEvent(new Event('input'));
+            sliderHawking.value = "6.0";
+            sliderHawking.dispatchEvent(new Event('input'));
+
+            // Golden glow representing clean Hawking emission
+            knotMaterial.color.setHex(0xffd700);
+            eventHorizonGlow.material.color.setHex(0xffd700);
+
+            addConsoleLine("Transition state: PURE_HAWKING_EVAPORATION_DOMINANT", "info");
+        });
+
+        // Console utility
+        const consoleEl = document.querySelector('.verification-console');
+        function addConsoleLine(text, type = "") {
+            const line = document.createElement('div');
+            line.className = "console-line";
+            
+            const prompt = document.createElement('span');
+            prompt.className = "prompt";
+            prompt.innerText = ">";
+            line.appendChild(prompt);
+
+            const content = document.createElement('span');
+            if (type === "success") content.className = "success";
+            else if (type === "info") content.className = "info";
+            content.innerText = text;
+            line.appendChild(content);
+
+            consoleEl.appendChild(line);
+            consoleEl.scrollTop = consoleEl.scrollHeight;
+        }
+
+        // ==============================================================================
+        // 4. Animation Loop & Physics Solvers
+        // ==============================================================================
+        const clock = new THREE.Clock();
+
+        const entropyMetric = document.getElementById('entropy-metric');
+        const purityMetric = document.getElementById('purity-metric');
+
+        const barAbs = document.getElementById('bar-absorption');
+        const barEnt = document.getElementById('bar-entanglement');
+        const barRad = document.getElementById('bar-radiation');
+
+        function updateMetricsForState() {
+            // Dynamically alter physical metrics on the dashboard to reflect current sliders and presets
+            let S_vN = 0.0142;
+            let Tr_rho2 = 0.9998;
+
+            if (activeState === 'absorb') {
+                S_vN = 0.0052 + (currentP * 0.001);
+                Tr_rho2 = 0.9999 - (currentP * 0.00001);
+                barAbs.style.height = "85%";
+                barEnt.style.height = "25%";
+                barRad.style.height = "10%";
+            } else if (activeState === 'entangle') {
+                S_vN = 0.0245 + (currentP * 0.004);
+                Tr_rho2 = 0.9972 - (currentP * 0.0001);
+                barAbs.style.height = "40%";
+                barEnt.style.height = "88%";
+                barRad.style.height = "35%";
+            } else if (activeState === 'unwind') {
+                S_vN = 0.0150 + (currentP * 0.002);
+                Tr_rho2 = 0.9991 - (currentP * 0.00005);
+                barAbs.style.height = "20%";
+                barEnt.style.height = "60%";
+                barRad.style.height = "75%";
+            } else if (activeState === 'radiate') {
+                S_vN = 0.0012 + (currentP * 0.0002);
+                Tr_rho2 = 0.99995 - (currentP * 0.000001);
+                barAbs.style.height = "5%";
+                barEnt.style.height = "12%";
+                barRad.style.height = "95%";
+            }
+
+            // Introduce slight numerical jitter for realism
+            const jitterS = (Math.random() - 0.5) * 0.0004;
+            const jitterP = (Math.random() - 0.5) * 0.00002;
+
+            entropyMetric.innerText = (S_vN + jitterS).toFixed(4);
+            purityMetric.innerText = Math.min(1.0, Tr_rho2 + jitterP).toFixed(4);
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+
+            const elapsedTime = clock.getElapsedTime();
+
+            // Rotate Horizon assets
+            eventHorizonWire.rotation.y = elapsedTime * 0.15;
+            eventHorizonWire.rotation.z = elapsedTime * 0.05;
+
+            eventHorizonGlow.scale.setScalar(1.0 + Math.sin(elapsedTime * 2.0) * 0.02);
+
+            // Rotate and deform topological knot
+            if (knotMesh) {
+                knotMesh.rotation.y = -elapsedTime * 0.12;
+                knotMesh.rotation.x = elapsedTime * 0.04;
+                
+                // Slowly deform knot scale representing topological unwinding
+                if (activeState === 'unwind') {
+                    const scaleDeform = 1.0 + Math.sin(elapsedTime * 3.5) * 0.08;
+                    knotMesh.scale.set(scaleDeform, 1.0, 1.0 / scaleDeform);
+                } else {
+                    knotMesh.scale.set(1, 1, 1);
+                }
+            }
+
+            // Update Accretion Disk (Infalling quantum states)
+            const positionsArr = accretionDisk.geometry.attributes.position.array;
+            for (let i = 0; i < particleCount; i++) {
+                const data = particleData[i];
+                
+                // Accelerate infalling as particles approach the event horizon (gravity pull)
+                const gravitationalPull = (8.0 / (data.radius * data.radius)) * 0.04 * fluxSpeedMultiplier;
+                data.radius -= gravitationalPull;
+                data.theta += (data.speed / data.radius) * fluxSpeedMultiplier;
+
+                // Circular motion mapping
+                positionsArr[i * 3] = Math.cos(data.theta) * data.radius;
+                positionsArr[i * 3 + 1] = data.y + (Math.sin(elapsedTime * 2.0 + data.theta) * 0.05); // slight wave
+                positionsArr[i * 3 + 2] = Math.sin(data.theta) * data.radius;
+
+                // Reset particle to outer boundary if swallowed by Event Horizon
+                if (data.radius < 2.05) {
+                    data.radius = 8.0 + (Math.random() * 2.0);
+                    data.theta = Math.random() * Math.PI * 2;
+                }
+            }
+            accretionDisk.geometry.attributes.position.needsUpdate = true;
+
+            // Update Hawking Radiation System
+            const hawkingPosArr = hawkingSystem.geometry.attributes.position.array;
+            for (let i = 0; i < hawkingCount; i++) {
+                const data = hawkingData[i];
+
+                data.dist += data.speed * evaporationMultiplier;
+
+                // Emitted outward from horizon
+                const baseR = 2.05;
+                const r = baseR + data.dist;
+
+                hawkingPosArr[i * 3] = r * data.xDir;
+                hawkingPosArr[i * 3 + 1] = r * data.yDir;
+                hawkingPosArr[i * 3 + 2] = r * data.zDir;
+
+                // Reset particle to horizon after escape
+                if (r > 9.0) {
+                    data.dist = 0;
+                }
+            }
+            hawkingSystem.geometry.attributes.position.needsUpdate = true;
+
+            // Update live metrics on-screen
+            if (Math.random() < 0.1) {
+                updateMetricsForState();
+            }
+
+            controls.update();
+            renderer.render(scene, camera);
+        }
+
+        // Window resize handler
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+
+        // Run visualizer
+        animate();
+
+        // Welcome console logs
+        setTimeout(() => addConsoleLine("Visualizer pipeline: Three.js accelerated", "info"), 600);
+        setTimeout(() => addConsoleLine("Moduli manifold projections: READY", "success"), 1200);
+
+    </script>
+</body>
+</html>

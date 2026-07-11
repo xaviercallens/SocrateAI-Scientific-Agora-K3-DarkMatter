@@ -25,3 +25,5 @@ import Agora.Discovery.Monodromy
 -- Conjectures (stated as axioms, not sorry)
 import Agora.Conjectures.MirrorSymmetry
 import Agora.MassFromInstanton
+import Agora.BlackHole.InformationConservation
+

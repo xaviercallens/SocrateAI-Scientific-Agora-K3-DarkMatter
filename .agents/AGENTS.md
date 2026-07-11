@@ -44,3 +44,21 @@ These rules apply strictly to all agents operating within the SocrateAI-Scientif
 **Before any release tag, every numerical value (e.g., $(w_0, w_a)$, $H_0$, $\lambda$, GD-1 bound) must be verified to be identical across all code, benchmark JSONs, and manuscript text.**
 - Discrepancies are release-blocking.
 
+---
+
+## Associated Skills
+
+These 8 rules are operationalized via a suite of specialized skills in `skills/`. Each skill provides concrete workflows and checklists for enforcing the rules:
+
+| Skill | Rule(s) Enforced | Use Case |
+|-------|------------------|----------|
+| **strict-math-verification** | Rules 2, 3 | Before approving Lean proofs or benchmark claims |
+| **claim-classification-audit** | Rules 3, 4 | Writing or reviewing manuscripts; labeling claims [VERIFIED/FITTED/PREDICTED] |
+| **falsifiability-audit** | Rules 4, 7 | Proposing [PREDICTED] claims; ensuring they have real falsification gates |
+| **axiom-gap-disclosure** | Rules 2, 6 | Adding unproven assumptions; ensuring they appear in code, caveats, and manuscripts |
+| **empirical-data-validation** | Rules 1, 5, 6 | Before reporting empirical results; validating data lineage and reproducibility |
+| **honest-alternatives-generator** | Rules 3, 4, 7 | When [PREDICTED] is falsified or [FITTED] produces tension; proposing rigorous alternatives |
+| **cross-consistency-gate** | Rule 8 | Before release tags; automated consistency checking across code, papers, configs |
+
+See `SKILLS_INDEX.md` for detailed workflows and examples for each skill.
+
