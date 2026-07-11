@@ -38,12 +38,16 @@ parameters:
     source: "LL.md:94, ROADMAP.md:43"
     description: "Hubble constant under mass-varying axion + T² rolling torus model."
     constraints: "Synchronized across empirical_crucible/jax_inference.py, .benchmarks/*.json, and LaTeX manuscripts."
+    caveat: "GAP-5 (2026-07-11, T5.2): a real-CLASS-validated (<0.002% integrator error), self-consistent recomputation applying ε to BOTH the sound-horizon and comoving-distance integrals gives H₀≈75.8 km/s/Mpc for this same ε, not 71.92 — a real, unreconciled discrepancy that overshoots even SH0ES. This 71.92 value is NOT changed here pending a manuscript-wide decision (would require synchronized updates across empirical_crucible/jax_inference.py, .benchmarks/*.json, and LaTeX per the constraints above); see docs/cosmology/class_fork_validation.md."
+    reference: "docs/cosmology/class_fork_validation.md"
 
   epsilon:
     value: 0.02511
     tag: "[FITTED]"
     source: "LL.md:94"
     description: "Mass-varying axion-coupling scale ε; derived from Planck 2018 acoustic constraints."
+    caveat: "GAP-5 (2026-07-11, T5.2/T5.3): CLASS's public fld module architecturally rejects w=ε/3>0 fluids (confirmed live), so this ε has never been run through a genuine perturbation-level Boltzmann code — only the background/acoustic-scale physics has now been checked (see H_0 caveat). scientificplan.md T5.2 also describes this value as 'reverse-engineered' (tuned to a target H_0), not independently fit. T5.3's S8-side independent check (empirical_crucible/joint_epsilon_likelihood.py) is NEGATIVE: neither the FDM quantum-pressure channel (negligible at these axion masses) nor the ε-background growth channel (wrong sign, +4%) reproduces the S8-suppression this ε is supposed to help explain; the JWST-side of the independent fit was not executable with validated rigor this session."
+    reference: "docs/cosmology/class_fork_validation.md, docs/cosmology/joint_epsilon_likelihood.md"
 
   r_s:
     value: 138.87
@@ -241,12 +245,12 @@ caveats:
     task: "T3.3"
 
   - id: "GAP-5"
-    severity: "Moderate"
+    severity: "Moderate (T5.1/T5.2/T5.3-S8-side executed 2026-07-11; still open)"
     title: "Cosmology Pre-Boltzmann"
-    description: "Cosmological pipeline uses rest-ICs and reverse-engineered ε; not CLASS-grade Boltzmann-solver integrated."
-    tracked_in: ["CAVEATS.md:§5", "OPEN_PROBLEMS.md"]
+    description: "T5.1: tracker ICs implemented (empirical_crucible/tracker_ics.py), converge close to rest ICs. T5.2: real-CLASS-validated background recomputation finds H₀≈75.8 for ε=0.02511, not the claimed 71.92 (real discrepancy, not yet reconciled); CLASS's public fld module architecturally cannot represent this model's w=ε/3>0 fluid, so a true perturbation-level Cl^TT still requires a genuine CLASS C-source fork (not attempted, no independent benchmark available). T5.3: S8 side executed (empirical_crucible/joint_epsilon_likelihood.py) — the FDM quantum-pressure suppression mechanism gives negligible effect (<0.001%) at this model's own axion masses, and the epsilon-background growth channel gives the WRONG SIGN (+4%, not a decrease); JWST side not quantitatively executed (no validated likelihood available), so the full >3σ mutual-exclusion falsification test is incomplete, but the S8 side alone is a real negative result."
+    tracked_in: ["CAVEATS.md:§5", "OPEN_PROBLEMS.md", "docs/cosmology/class_fork_validation.md", "docs/cosmology/ic_sensitivity.md", "docs/cosmology/joint_epsilon_likelihood.md"]
     workstream: "WS5"
-    task: "T5.1, T5.2"
+    task: "T5.1, T5.2, T5.3"
 
   - id: "GAP-6"
     severity: "Moderate (Mechanical)"

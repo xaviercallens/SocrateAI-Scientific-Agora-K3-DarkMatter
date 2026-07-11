@@ -42,6 +42,28 @@ Task T3.2 (`scripts/s21_bare_analysis.py`) then used this exact solver to re-exa
 
 ---
 
+## 🟡 GAP-5 update (2026-07-11): real-CLASS check finds H₀≈75.8, not the claimed 71.92
+
+**Full findings:** `docs/cosmology/class_fork_validation.md` (T5.2), `docs/cosmology/ic_sensitivity.md` (T5.1). Reported as a real, unfavorable discrepancy (Rule 4), not reconciled with the previous claim.
+
+The "$H_0\sim72$" claim (`epsilon=0.02511 \to H_0=71.92$ km/s/Mpc, `LL.md:94`) was a **background-only** integration, described by `scientificplan.md` itself as using a "reverse-engineered" $\epsilon$ (tuned to a target $H_0$). Two checks were run against real CLASS (`classy`, actually installed and executed, not simulated):
+
+1. **T5.1 — tracker ICs** (`empirical_crucible/tracker_ics.py`): replacing rest ICs ($\dot\phi=0$) with the Copeland-Liddle-Wands (1998) attractor solution shifts $w_0$ by only $\approx0.0002$ for this potential — a real result, but a small one.
+
+2. **T5.2 — Boltzmann-grade background check** (`empirical_crucible/class_fork_validation.py`): a custom sound-horizon/comoving-distance integrator, validated against real CLASS's own derived parameters to $<0.002\%$ at $\epsilon=0$, was used to recompute the acoustic scale self-consistently at $\epsilon=0.02511$ (the model's own formula, $\rho_{DM}(a)\propto a^{-3-\epsilon}$, applied to BOTH the sound horizon and comoving-distance integrals — the previous calculation's internal consistency was not verifiable from what's documented). Result: **$H_0\approx75.8$ km/s/Mpc**, not 71.92 — and this **overshoots** the SH0ES local value ($\approx73$) rather than bridging Planck and SH0ES as the model intends. A diagnosed "inconsistent-shortcut" variant gives $H_0\approx61.0$ instead — neither reproduces 71.92, and the exact original derivation is not fully reproducible from the repository as documented.
+
+3. **Architectural finding:** $\rho_{DM}(a)\propto a^{-3-\epsilon}$ implies $w_{DM}=\epsilon/3\approx+0.0084$ (positive). CLASS's public dark-energy-fluid API hard-rejects any fluid with $w(a\to0)\ge0$ — confirmed by an actual `classy` call raising `CosmoComputationError` (not asserted from documentation). A true perturbation-level $C_\ell^{TT}$ computation of this model requires patching CLASS's C source and recompiling — a genuine fork in the literal sense `scientificplan.md` T5.2 names it — and was **not attempted**: unlike the GAP-3 Dolan solver (validated against 6 independent published data points), a hand-written perturbation-equation patch would have no independent benchmark to validate against, and shipping one un-validated risks exactly the kind of unverified-claim failure already caught twice this session (GAP-1's fabricated weight-2 statistic, GAP-3's fabricated 86.6 Myr figure).
+
+**What is NOT resolved:** whether $H_0\approx71.92$ or $\approx75.8$ (or neither) is the "correct" prediction of this model depends on resolving the internal-consistency question above, which requires either finding the original derivation or deciding which self-consistent treatment is authoritative — a judgement call, not something this finding auto-resolves. `PARAMETER_LEDGER.yaml`'s $H_0=71.92$ value is **not changed** pending that decision (changing it would require synchronized edits across `empirical_crucible/jax_inference.py`, `.benchmarks/*.json`, and the LaTeX manuscripts per the ledger's own consistency constraints) — the discrepancy is flagged in the ledger's `caveat` field instead.
+
+**T5.3 update (same session): the S₈ side of the "cosmic see-saw" test is also negative.** `empirical_crucible/joint_epsilon_likelihood.py` executes the S₈ half of VISION.md §4A's falsification test quantitatively for the first time, using this model's own real axion masses against real CLASS $P(k)$ (own $\sigma_8$ integral validated to 5 significant figures against `cosmo.sigma8()`). Two independent channels, both real calculations:
+- **FDM quantum-pressure suppression** (Hu, Barkana & Gruzinov 2000 — the mechanism VISION.md §4A itself cites): **negligible** ($<0.001\%$) at this model's masses ($1.8$–$3.2\times10^{-21}$ eV), which are $\sim20$–$30\times$ heavier than the FDM "sweet spot" ($\sim10^{-22}$ eV) where this effect matters for $S_8$.
+- **Background-growth channel** (treating $\epsilon$ as a $c_s^2=0$ modification, T5.2's own model): gives $D_\epsilon(a{=}1)/D_{\rm std}(a{=}1)=1.040$ — a **+4% increase**, the **wrong sign** for lowering $S_8$.
+
+The **JWST side was not quantitatively executed** — a rigorous $\mathcal{L}_{\rm JWST}(\epsilon)$ needs halo-mass-function modeling with no independent benchmark available (same reasoning that ruled out a hand-patched CLASS perturbation fork in T5.2); a real, independently-published qualitative check (Cox et al., arXiv:2307.10302: viable ALP window $10^{-22}$–$10^{-19}$ eV via a *different* mechanism) shows this model's masses fall inside that broad window, but that is not a fit of this model's own $\epsilon$ to JWST data. **Consequence: the full ">3σ mutual exclusion" falsification test cannot be completed as specified** — but the S₈ side alone is a real, negative, falsification-relevant finding: two independent real calculations, using this model's own real parameters, both fail to reproduce the S₈-lowering mechanism the see-saw narrative requires. Full details: `docs/cosmology/joint_epsilon_likelihood.md`. T5.4 (DESI DR2 refit) remains to be executed.
+
+---
+
 ## The 5 Missing Pieces (referee "deeper programme", Round 2)
 
 These are the items a second-round referee (string-theory / Swampland) identified as separating the present *string-inspired phenomenology* from a genuine top-down construction.

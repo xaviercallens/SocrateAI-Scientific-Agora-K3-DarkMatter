@@ -66,7 +66,90 @@ The previous small-$\alpha$ (Detweiler 1980) formula, $\Gamma_{211}\approx\frac{
 
 ---
 
-## 5. Datasets: Partially Archival, Partially Simplified (GAP-5) (Updated Phase 12)
+## 5. Cosmology Pipeline Is Pre-Boltzmann (GAP-5) (Updated 2026-07-11, Task T5.1/T5.2)
+
+**Note on numbering:** an earlier version of this document also used the "(GAP-5)" tag for a
+*different* topic (dataset provenance); that content has been retitled "Datasets: Partially
+Archival, Partially Simplified" below (no GAP tag) to avoid collision with `scientificplan.md`'s
+canonical GAP-5 ("cosmology pipeline is pre-Boltzmann"), which is what this section now covers.
+
+The original "H₀ ~ 72" claim (`PARAMETER_LEDGER.yaml`: ε=0.02511 → H₀=71.92 km/s/Mpc) was
+computed by a **background-only integration** (`LL.md:94`) with **rest initial conditions**
+(field at potential minimum) and an ε value described in `scientificplan.md` itself as
+"reverse-engineered" (tuned to hit a target H₀, not independently fit). Two of the three fixes
+scientificplan.md's WS5 calls for have now been attempted:
+
+- **T5.1 (tracker ICs):** `empirical_crucible/tracker_ics.py` replaces rest ICs with the
+  Copeland-Liddle-Wands (1998) attractor solution. Result: for this potential (V(φ)∝φ², n=2),
+  the tracker and rest ICs converge to nearly the same late-time w (Δw₀≈0.0002) — a genuine,
+  if modest, finding. See `docs/cosmology/ic_sensitivity.md`.
+
+- **T5.2 (Boltzmann-grade check):** `empirical_crucible/class_fork_validation.py` uses real
+  CLASS (`classy`) as ground truth. Two real findings:
+  1. **Architectural blocker (confirmed live, not asserted):** the model's own formula,
+     $\rho_{DM}(a)\propto a^{-3-\epsilon}$, implies $w_{DM}=\epsilon/3\approx+0.0084$ (positive).
+     CLASS's public dark-energy fluid API (`Omega_fld`/`w0_fld`/`cs2_fld`) **hard-rejects any
+     fluid with $w(a\to0)\ge0$** — confirmed by an actual `classy` call raising
+     `CosmoComputationError`, not asserted from documentation. A literal implementation of this
+     model in CLASS requires patching the C source (`background.c`, `perturbations.c`) and
+     recompiling — a genuine fork, not a parameter choice — and is **not attempted** here: unlike
+     the GAP-3 Dolan solver (validated against 6 independent published points), a hand-written
+     perturbation-equation patch would have no independent benchmark to validate against.
+  2. **Self-consistent background recomputation finds a materially different H₀.** A custom
+     sound-horizon/comoving-distance integrator (validated to <0.002% against CLASS's own
+     `rs_rec`/`ra_rec`/`100*theta_s` at ε=0) applied the SAME ε-modified $H(a)$ consistently to
+     both integrals and solved for the $H_0$ that preserves the CMB acoustic scale. Result:
+     **$H_0\approx75.8$ km/s/Mpc**, not 71.92. This is a real discrepancy (~+3.9 km/s/Mpc) and
+     notably **overshoots** the SH0ES local value (~73) rather than bridging Planck and SH0ES as
+     intended. Neither this self-consistent calculation nor a diagnosed "inconsistent shortcut"
+     variant (H₀≈60.95) reproduces the ledger's 71.92; the exact original method is not fully
+     reproducible from what's documented in the repository (`LL.md:94` gives the result but not
+     the full derivation). Per Rule 1, this is reported rather than silently reconciled.
+  3. A supplementary "effective-ΛCDM" proxy (matching only $r_s,D_M$, run through real CLASS to
+     get an actual $C_\ell^{TT}$) requires boosting $\omega_{cdm}$ by 22% above the true model's
+     own value to match — demonstrating that this shortcut conflates a redshift-*scaling* change
+     with a density-*normalization* change and should **not** be read as a genuine peak-height
+     prediction. Its 17% max $C_\ell^{TT}$ deviation is reported only as an illustration of why
+     the shortcut is untrustworthy, not as the model's real Boltzmann-level prediction.
+
+Full details: `docs/cosmology/class_fork_validation.md`, `docs/cosmology/ic_sensitivity.md`.
+
+**T5.3 (Cosmic See-Saw, VISION.md §4A):** `empirical_crucible/joint_epsilon_likelihood.py`
+executes the **S₈ side** quantitatively (two independent, real calculations against this
+model's own axion masses and real CLASS $P(k)$; own $\sigma_8$ integral validated to
+5 significant figures against `cosmo.sigma8()`):
+1. The standard FDM quantum-pressure suppression mechanism (Hu, Barkana & Gruzinov 2000 —
+   the mechanism VISION.md §4A itself invokes) gives **negligible suppression (<0.001%)** at
+   this model's masses ($1.8$–$3.2\times10^{-21}$ eV) — they are $\sim20$–$30\times$ heavier
+   than the FDM "sweet spot" ($\sim10^{-22}$ eV) where this effect matters at the $S_8$-relevant
+   scale.
+2. Treating ε as a $c_s^2=0$ background modification (T5.2's model) instead gives $D_\epsilon(a{=}1)/D_{\rm std}(a{=}1)=1.040$,
+   i.e. a **+4% increase** in growth/$S_8$ — the **wrong sign** for helping the $S_8$ tension.
+
+Both real, validated channels fail to reproduce the "lighter axion suppresses $S_8$" mechanism
+the see-saw narrative requires. The **JWST side was not quantitatively executed** (would need
+halo-mass-function modeling with no independent benchmark available — flagged rather than
+fabricated, per the same reasoning as T5.2's un-attempted CLASS perturbation fork); a real,
+independently-published qualitative check (Cox et al., arXiv:2307.10302: viable ALP window
+$10^{-22}$–$10^{-19}$ eV via a *different* mechanism) shows both masses fall inside that broad
+window, but this is not a fit of this model's own ε to JWST data. **Consequence: VISION.md
+§4A's full ">3σ mutual exclusion" falsification test cannot be completed as specified — but the
+S₈ side alone is a real, negative result reported per Rule 4.** Full details:
+`docs/cosmology/joint_epsilon_likelihood.md`.
+
+**Status:** GAP-5 remains open. T5.1 is complete; T5.2 replaced an unverifiable background
+formula with a real-CLASS-validated one and surfaced a genuine, unfavorable discrepancy
+(H₀≈75.8, not 71.92) rather than confirming the original claim; T5.3's S₈ side is complete and
+also unfavorable (the see-saw suppression mechanism does not work at this model's own masses).
+A true perturbation-level Boltzmann computation (T5.2's full scope) and a quantitative JWST
+likelihood (T5.3's remaining scope) both require substantial further work — genuine CLASS
+C-source fork and halo-mass-function modeling respectively, correctly flagged by
+`scientificplan.md` as `[TIER: SONNET+]` and not completed in one session. T5.4 (DESI DR2
+refit) remains to be executed.
+
+---
+
+## 5b. Datasets: Partially Archival, Partially Simplified (Updated Phase 12)
 
 The CSV files in `scientific_protocol/datasets/` have been improved from fully synthetic placeholders:
 

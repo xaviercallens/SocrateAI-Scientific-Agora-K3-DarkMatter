@@ -1,0 +1,8 @@
+quantity,value,note
+sigma8_CDM_baseline,0.8229095389645031,validated vs CLASS sigma8()
+sigma8_FDM_S12,0.8229095353252305,"m_a=3.180e-21 eV, ratio=1.000000"
+sigma8_FDM_S21,0.8229095281612469,"m_a=1.830e-21 eV, ratio=1.000000"
+growth_factor_ratio_eps_over_std,1.0403414540363995,"epsilon=0.02511, cs2=0 GDM background channel"
+"S8_Planck 2018 (TT,TE,EE+lowE)",0.834,+/-0.016
+S8_KiDS-1000 (2023 cosmic shear),0.776,+/-0.028
+S8_DES Y3 + KiDS-1000 joint,0.79,+/-0.016
