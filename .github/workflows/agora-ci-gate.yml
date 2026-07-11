@@ -1,0 +1,276 @@
+name: Agora CI Gate (T8.2 - Scientific Validation v2.0.0)
+
+# Gate A (Lean Kernel Check): lake build Agora must return 0 errors
+# Gate B (Cross-Consistency): Parameter ledger in sync, caveats propagated
+# Gate C (Sorry-free core): No sorry stubs in build graph
+# Blocks merge on failure per SocrateAI AGORA_GUIDELINES.md §3
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  gate-a-lean-kernel:
+    name: "Gate A: Lean 4 Kernel Check"
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Install Lean 4 and Lake
+      run: |
+        echo "Installing Lean 4 and Lake..."
+        curl -L https://raw.githubusercontent.com/leanprover/lean4/master/scripts/install.sh | bash
+        echo "$HOME/.elan/bin" >> $GITHUB_PATH
+        echo "$HOME/.local/bin" >> $GITHUB_PATH
+        lean --version
+        lake --version
+
+    - name: Install Mathlib4 pre-compiled binaries
+      run: |
+        echo "Installing Mathlib4 (cached)..."
+        cd lean4_formal_proofs
+        lake exe cache get || echo "Cache download failed, will rebuild"
+
+    - name: Compile Agora namespace
+      run: |
+        cd lean4_formal_proofs
+        echo "Compiling lean4_formal_proofs/Agora..."
+        lake build Agora 2>&1 | tee gate_a_compilation.log
+
+        # Check for compilation errors
+        if grep -q "error:" gate_a_compilation.log; then
+          echo "❌ GATE A FAILED: Lean 4 compilation errors detected"
+          cat gate_a_compilation.log
+          exit 1
+        fi
+
+        # Check for critical warnings
+        if grep -qE "error|Error" gate_a_compilation.log; then
+          echo "❌ GATE A FAILED"
+          exit 1
+        fi
+
+        echo "✅ GATE A PASSED: lake build Agora compiled successfully (0 errors)"
+
+    - name: Upload Lean compilation log
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: gate-a-lean-log
+        path: lean4_formal_proofs/gate_a_compilation.log
+        retention-days: 7
+
+  gate-b-consistency:
+    name: "Gate B: Cross-Consistency Check"
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Run cross-consistency check
+      run: |
+        echo "Running Parameter Ledger cross-consistency check..."
+        bash scripts/cross_consistency_check.sh > gate_b_consistency.log 2>&1
+        EXIT_CODE=$?
+
+        echo "--- Cross-Consistency Results ---"
+        cat gate_b_consistency.log
+
+        if [ $EXIT_CODE -ne 0 ]; then
+          echo "❌ GATE B FAILED: Parameter consistency violations detected"
+          exit 1
+        fi
+
+        echo "✅ GATE B PASSED: All parameters consistent (Rule 8 compliance)"
+
+    - name: Verify PARAMETER_LEDGER.yaml exists
+      run: |
+        if [ ! -f PARAMETER_LEDGER.yaml ]; then
+          echo "❌ GATE B FAILED: PARAMETER_LEDGER.yaml not found"
+          exit 1
+        fi
+        echo "✅ PARAMETER_LEDGER.yaml verified"
+
+    - name: Verify caveat propagation (Rule 6)
+      run: |
+        echo "Checking caveat propagation across documentation..."
+        CAVEATS_FILE="CAVEATS.md"
+
+        # Check that all GAP-X labels are documented
+        for gap in GAP-1 GAP-2 GAP-3 GAP-4 GAP-5 GAP-6; do
+          if ! grep -q "$gap" "$CAVEATS_FILE"; then
+            echo "❌ GATE B FAILED: $gap not documented in $CAVEATS_FILE"
+            exit 1
+          fi
+        done
+
+        echo "✅ All caveats (GAP-1 through GAP-6) properly documented"
+
+    - name: Upload consistency log
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: gate-b-consistency-log
+        path: gate_b_consistency.log
+        retention-days: 7
+
+  gate-c-sorry-free:
+    name: "Gate C: Sorry-Free Core"
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Check for sorry statements in build graph
+      run: |
+        echo "Scanning for sorry stubs in Agora core build graph..."
+        CORE_PATH="lean4_formal_proofs/Agora"
+
+        # Find all imported modules by traversing imports
+        echo "Checking core Agora namespace..."
+
+        # Count sorry stubs
+        SORRY_COUNT=$(find "$CORE_PATH" -name "*.lean" -exec grep -l "^[[:space:]]*sorry" {} \; 2>/dev/null | wc -l)
+
+        if [ "$SORRY_COUNT" -gt 0 ]; then
+          echo "❌ GATE C WARNING: Found $SORRY_COUNT file(s) with sorry stubs"
+          echo "Files with sorry:"
+          find "$CORE_PATH" -name "*.lean" -exec grep -l "^[[:space:]]*sorry" {} \;
+
+          # Check if orphaned (not imported)
+          ORPHAN_COUNT=0
+          for file in $(find "$CORE_PATH" -name "*.lean" -exec grep -l "^[[:space:]]*sorry" {} \;); do
+            # Extract module name
+            MODULE=$(basename "$file" .lean)
+
+            # Check if imported elsewhere
+            if ! grep -r "import.*$MODULE" "$CORE_PATH" --include="*.lean" > /dev/null 2>&1; then
+              echo "  (orphaned, not imported): $file"
+              ((ORPHAN_COUNT++))
+            else
+              echo "  (imported, needs attention): $file"
+            fi
+          done
+
+          if [ "$ORPHAN_COUNT" -gt 0 ]; then
+            echo "⚠️  GATE C: $ORPHAN_COUNT orphaned file(s) with sorry (not blocking per MEMORY.md §11)"
+          else
+            echo "❌ GATE C FAILED: Sorry stubs in active build modules"
+            exit 1
+          fi
+        else
+          echo "✅ GATE C PASSED: No sorry stubs in Agora core build graph"
+        fi
+
+    - name: Check Structures directory for orphaned files
+      run: |
+        echo "Checking for orphaned sorry stubs in Structures/ (non-blocking)..."
+        if [ -f "lean4_formal_proofs/Structures/S20RecurrenceProof.lean" ]; then
+          if grep -q "sorry" "lean4_formal_proofs/Structures/S20RecurrenceProof.lean"; then
+            echo "⚠️  Note: S20RecurrenceProof.lean contains sorry but is orphaned (task T4.1/GAP-6)"
+            echo "     Status: Non-blocking (not in build graph per MEMORY.md §11)"
+          fi
+        fi
+
+  gate-pytest:
+    name: "Gate D: Unit Tests (pytest)"
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+
+    - name: Install Python dependencies
+      run: |
+        python -m pip install --upgrade pip
+        if [ -f requirements.txt ]; then
+          pip install -r requirements.txt
+        fi
+        pip install pytest pytest-cov
+
+    - name: Run pytest
+      run: |
+        echo "Running unit tests..."
+        if [ -d "tests" ]; then
+          pytest tests/ -v --tb=short 2>&1 | tee gate_d_pytest.log || {
+            echo "❌ GATE D FAILED: pytest detected failures"
+            exit 1
+          }
+          echo "✅ GATE D PASSED: All unit tests passed"
+        else
+          echo "⚠️  No tests/ directory found (skipping pytest)"
+        fi
+
+    - name: Upload test results
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: gate-d-pytest-log
+        path: gate_d_pytest.log
+        retention-days: 7
+
+  merge-gate:
+    name: "Merge Gate - All Checks Required"
+    runs-on: ubuntu-latest
+    needs: [gate-a-lean-kernel, gate-b-consistency, gate-c-sorry-free, gate-pytest]
+    if: always()
+
+    steps:
+    - name: Check all gates passed
+      run: |
+        echo "Evaluating all gates..."
+
+        if [ "${{ needs.gate-a-lean-kernel.result }}" != "success" ]; then
+          echo "❌ Gate A (Lean Kernel) FAILED"
+          exit 1
+        fi
+
+        if [ "${{ needs.gate-b-consistency.result }}" != "success" ]; then
+          echo "❌ Gate B (Cross-Consistency) FAILED"
+          exit 1
+        fi
+
+        if [ "${{ needs.gate-c-sorry-free.result }}" != "success" ]; then
+          echo "❌ Gate C (Sorry-Free) FAILED"
+          exit 1
+        fi
+
+        if [ "${{ needs.gate-pytest.result }}" != "success" ] && [ "${{ needs.gate-pytest.result }}" != "skipped" ]; then
+          echo "❌ Gate D (pytest) FAILED"
+          exit 1
+        fi
+
+        echo "✅ ALL GATES PASSED"
+        echo "✅ Repository is clean and ready for merge"
+        echo "✅ Rule 2 (Strict Formalization): lake build Agora = 0 errors"
+        echo "✅ Rule 8 (Atomic Synchronization): Parameter ledger consistent"
+        echo "✅ Rule 6 (Caveat Propagation): All gaps documented"
+
+    - name: Summary
+      run: |
+        echo "## CI Gate Summary" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "✅ **Gate A (Lean 4):** ${{ needs.gate-a-lean-kernel.result }}" >> $GITHUB_STEP_SUMMARY
+        echo "✅ **Gate B (Consistency):** ${{ needs.gate-b-consistency.result }}" >> $GITHUB_STEP_SUMMARY
+        echo "✅ **Gate C (Sorry-Free):** ${{ needs.gate-c-sorry-free.result }}" >> $GITHUB_STEP_SUMMARY
+        echo "✅ **Gate D (pytest):** ${{ needs.gate-pytest.result }}" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "**Merge Eligible:** YES" >> $GITHUB_STEP_SUMMARY
