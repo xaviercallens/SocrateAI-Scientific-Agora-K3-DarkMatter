@@ -19,6 +19,16 @@ A model is only as useful as its falsifiable predictions. Below we state the spe
 
 **Caveat.** This is the **least developed** prediction: it requires a derived modified GW propagation equation for the specific $K3\times T^2$ geometry, which is *not yet computed* (see `OPEN_PROBLEMS.md`). The magnitude and even the sign of any effect are presently undetermined, so this should be read as a research direction, not a quantitative forecast.
 
+## 4a. Dual PTA scalar-monopole lines
+**Prediction.** Pulsar Timing Arrays (NANOGrav, EPTA, SKA) should detect two scalar-monopole signal lines at periods $T\approx7.52$ days ($S_{1,2}$) and $T\approx13.08$ days ($S_{2,1}$), per `K3_DarkMatter_Preprint.tex` §Observational Predictions and §Systematics and Proposed PTA Searches. Because these periods fall near common terrestrial/instrumental cadences, the key discriminant is galactic-frame phase coherence rather than raw periodogram detection (see `docs/pta/galactic_frame_test.md`, Task T6.2).
+
+**Falsification.** Absence of both lines at the predicted periods (with adequate sensitivity and galactic-frame discrimination) after a full PTA observing campaign would falsify the corresponding vacuum's axion-mass prediction.
+
+## 4b. The PTA ratio test (parameter-free — sharpest falsification criterion)
+**Prediction.** Both absolute periods above depend on the free Kähler modulus $\tau$ and volume $\mathcal{V}$ — but their **ratio** does not: $f(S_{1,2})/f(S_{2,1}) = m(S_{1,2})/m(S_{2,1}) = \sqrt{1014/336}$, which is kernel-verified (`lean4_formal_proofs/Agora/Phenomenology/PTAFrequencyRatio.lean`, theorem `pta_frequency_ratio_in_interval`) to lie in the exact-rational interval $(1.73, 1.75)$, reusing the same certified bound as the axion mass ratio (`Agora.K3_Topology.mass_ratio_in_interval`). The free moduli cancel exactly in this ratio.
+
+**The ratio test (falsification).** If Pulsar Timing Arrays ever jointly detect *both* lines, the measured frequency ratio **must** fall in $(1.73, 1.75)$. A ratio measured outside this interval falsifies the two-vacuum K3 interpretation **independently of all moduli parameters** — no future stabilization-mechanism result could rescue it, since the ratio does not depend on $\tau$ or $\mathcal{V}$ in the first place. This is the single sharpest, parameter-free test the theory owns; see Task T2.3, `scientificplan.md` §WORKSTREAM 2.
+
 ---
 
 *All forecasts above are conditional on resolving the open problems in `OPEN_PROBLEMS.md`. The model is presented as a falsifiable, string-inspired phenomenology, not an established description of nature.*

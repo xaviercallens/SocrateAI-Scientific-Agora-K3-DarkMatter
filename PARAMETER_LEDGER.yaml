@@ -161,22 +161,22 @@ parameters:
   pta_frequency_ratio_lower:
     value: 1.73
     tag: "[VERIFIED]"
-    source: "lean4_formal_proofs/Agora/GaugeCoupling.lean:theorem pta_frequency_bounds_lower"
+    source: "lean4_formal_proofs/Agora/Phenomenology/PTAFrequencyRatio.lean:theorem pta_frequency_ratio_in_interval"
     description: "Lower bound on √(1014/336) = √(stiffness_S12/stiffness_S21)."
-    note: "Parameter-free; independent of all moduli and astrophysical assumptions."
+    note: "Parameter-free; independent of all moduli and astrophysical assumptions. Reuses Agora.K3_Topology.mass_ratio_in_interval (task T2.3)."
 
   pta_frequency_ratio_upper:
     value: 1.75
     tag: "[VERIFIED]"
-    source: "lean4_formal_proofs/Agora/GaugeCoupling.lean:theorem pta_frequency_bounds_upper"
+    source: "lean4_formal_proofs/Agora/Phenomenology/PTAFrequencyRatio.lean:theorem pta_frequency_ratio_in_interval"
     description: "Upper bound on √(1014/336)."
-    note: "Parameter-free; independent of all moduli and astrophysical assumptions."
+    note: "Parameter-free; independent of all moduli and astrophysical assumptions. Reuses Agora.K3_Topology.mass_ratio_in_interval (task T2.3)."
 
   pta_frequency_ratio_interval:
     lower: 1.73
     upper: 1.75
     tag: "[VERIFIED]"
-    source: "lean4_formal_proofs/Agora/GaugeCoupling.lean"
+    source: "lean4_formal_proofs/Agora/Phenomenology/PTAFrequencyRatio.lean, lean4_formal_proofs/Agora/GaugeCoupling.lean, lean4_formal_proofs/Structures/S12S21Recurrence.lean"
     description: "Parameter-free PTA falsification test: if both lines detected, ratio must lie in (1.73, 1.75)."
     prediction: "Prediction 4b, scientificplan.md:§Falsifiability Roadmap"
     reference: "MEMORY.md:§10, PREDICTIONS.md"

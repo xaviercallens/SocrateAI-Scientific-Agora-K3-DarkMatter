@@ -9,6 +9,7 @@ import Agora.FeynmanSieveEquivalence
 
 -- New submodules from Agora Implementation Plan
 import Agora.Phenomenology.SymmetryBreaking
+import Agora.Phenomenology.PTAFrequencyRatio
 import Agora.Swampland.LVS_Stability
 import Agora.Topology.AtiyahSinger
 
