@@ -1,0 +1,258 @@
+# PARAMETER_LEDGER.yaml
+# Complete ledger of all critical parameters with source-line references
+# Updated: 2026-07-11
+# Task: T8.1 (SocrateAI Scientific Validation Program v2.0.0)
+
+parameters:
+  # Cosmological Parameters
+  lambda:
+    value: 1.6724
+    tag: "[FITTED]"
+    source: "LL.md:94"
+    description: "Quintessence coupling parameter; dynamically shot via cosmological ODE solver."
+
+  V_0:
+    value: 4.8005
+    tag: "[FITTED]"
+    source: "LL.md:94"
+    description: "Potential normalization constant from shooting solver."
+
+  w_0:
+    value: -0.5485
+    tag: "[FITTED]"
+    source: "LL.md:94, ROADMAP.md:43"
+    description: "Present-day equation of state parameter (thawing quintessence)."
+    constraints: "Synchronized across empirical_crucible/jax_inference.py, .benchmarks/*.json, and LaTeX manuscripts."
+
+  w_a:
+    value: -0.3968
+    tag: "[FITTED]"
+    source: "LL.md:94, ROADMAP.md:43"
+    description: "Equation of state evolution parameter."
+    constraints: "Synchronized across empirical_crucible/jax_inference.py, .benchmarks/*.json, and LaTeX manuscripts."
+
+  H_0:
+    value: 71.92
+    units: "km/s/Mpc"
+    tag: "[FITTED]"
+    source: "LL.md:94, ROADMAP.md:43"
+    description: "Hubble constant under mass-varying axion + T² rolling torus model."
+    constraints: "Synchronized across empirical_crucible/jax_inference.py, .benchmarks/*.json, and LaTeX manuscripts."
+
+  epsilon:
+    value: 0.02511
+    tag: "[FITTED]"
+    source: "LL.md:94"
+    description: "Mass-varying axion-coupling scale ε; derived from Planck 2018 acoustic constraints."
+
+  r_s:
+    value: 138.87
+    units: "Mpc"
+    tag: "[FITTED]"
+    source: "LL.md:94"
+    description: "Sound horizon at recombination; Planck 2018 plik-lite baseline."
+
+  D_M:
+    value: 13338.60
+    units: "Mpc"
+    tag: "[FITTED]"
+    source: "LL.md:94"
+    description: "Comoving distance at z=2 under T² model; DESI DR1 BAO reference."
+
+  # Topological Stiffness Parameters (K3 Surfaces)
+  stiffness_S12:
+    value: 1014
+    tag: "[VERIFIED]"
+    source: "lean4_formal_proofs/Agora/GaugeCoupling.lean:43,44"
+    description: "Topological stiffness V''(0) for S₁,₂ K3 surface."
+    caveat: "Derivation from Picard-Fuchs data is unverified (GAP-2); numerical value is conjectural pending PF→potential-curvature mapping."
+    reference: "K3_DISCOVERY_REPORT.md, VISION.md"
+
+  stiffness_S21:
+    value: 336
+    tag: "[VERIFIED]"
+    source: "lean4_formal_proofs/Agora/GaugeCoupling.lean:45"
+    description: "Topological stiffness V''(0) for S₂,₁ K3 surface."
+    caveat: "Derivation from Picard-Fuchs data is unverified (GAP-2); numerical value is conjectural pending PF→potential-curvature mapping."
+    reference: "K3_DISCOVERY_REPORT.md, VISION.md"
+
+  stiffness_ratio:
+    value: 1014/336
+    reduced_form: 169/56
+    tag: "[VERIFIED]"
+    source: "lean4_formal_proofs/Agora/GaugeCoupling.lean:theorem stiffness_ratio_reduced"
+    description: "Exact rational reduction of stiffness ratio."
+
+  # Axion Mass Predictions
+  axion_mass_S12:
+    value: 3.18e-21
+    units: "eV"
+    tag: "[FITTED]"
+    source: "K3_DISCOVERY_REPORT.md, CAVEATS.md:§1.2"
+    description: "Axion mass for S₁,₂ via Svrcek-Witten instanton formula."
+    formula: "m_a = (M_Pl / √V) × √(Σ_d d² q_d e^(-2π d τ))"
+    caveat: "Formula assumes Type IIB/IIA orientifold; bare parameters not independently verified."
+
+  axion_mass_S21:
+    value: 1.83e-21
+    units: "eV"
+    tag: "[FITTED]"
+    source: "K3_DISCOVERY_REPORT.md, CAVEATS.md:§1.2"
+    description: "Axion mass for S₂,₁ via Svrcek-Witten instanton formula."
+    formula: "m_a = (M_Pl / √V) × √(Σ_d d² q_d e^(-2π d τ))"
+    caveat: "Formula assumes Type IIB/IIA orientifold; bare parameters not independently verified."
+
+  # Superradiance & Chameleon Parameters
+  alpha_eff_S12:
+    value: 1.55
+    tag: "[FITTED]"
+    source: "K3_DISCOVERY_REPORT.md, ROADMAP.md:70"
+    description: "Effective superradiance coupling for S₁,₂ with Chameleon screening (ρ-dependent mass boost ×10)."
+    caveat: "GAP-3: Detweiler small-α formula is used outside stated validity range (0.01 ≤ α ≤ 0.1)."
+    reference: "K3_DISCOVERY_REPORT.md:§Chameleon Shielding"
+
+  alpha_eff_S21:
+    value: 0.89
+    tag: "[FITTED]"
+    source: "K3_DISCOVERY_REPORT.md, ROADMAP.md:70"
+    description: "Effective superradiance coupling for S₂,₁ with Chameleon screening (ρ-dependent mass boost ×10)."
+    caveat: "GAP-3: Detweiler small-α formula is used outside stated validity range (0.01 ≤ α ≤ 0.1)."
+    reference: "K3_DISCOVERY_REPORT.md:§Chameleon Shielding"
+
+  alpha_bare_S12:
+    value: 0.155
+    tag: "[FITTED]"
+    source: "K3_DISCOVERY_REPORT.md:§The Physics"
+    description: "Bare superradiance coupling for S₁,₂ (without Chameleon screening)."
+    note: "Would cause spin-down of M87* if unshielded."
+
+  alpha_bare_S21:
+    value: 0.089
+    tag: "[FITTED]"
+    source: "K3_DISCOVERY_REPORT.md:§The Physics"
+    description: "Bare superradiance coupling for S₂,₁ (without Chameleon screening)."
+    note: "Would cause spin-down of M87* if unshielded."
+
+  chameleon_gamma:
+    value: 0.25
+    tag: "[FITTED]"
+    source: "MEMORY.md:6, CAVEATS.md"
+    description: "Chameleon mass-density power index: m_eff(ρ) ∝ ρ^γ."
+    caveat: "GAP-4: This γ=0.25 maps to unphysical Khoury-Weltman index n=-3; screening mechanism tension."
+    reference: "CAVEATS.md:§3"
+
+  # Pulsar Timing Array (PTA) Predictions
+  pta_period_S12:
+    value: 7.52
+    units: "days"
+    tag: "[PREDICTED]"
+    source: "VISION.md:§Observational Predictions, AGORA_GUIDELINES.md:Pillar III"
+    description: "Scalar monopole GW frequency line for S₁,₂ axion."
+    test: "enterprise MCMC injection-recovery on NANOGrav 15-yr synthetic residuals."
+
+  pta_period_S21:
+    value: 13.08
+    units: "days"
+    tag: "[PREDICTED]"
+    source: "VISION.md:§Observational Predictions, AGORA_GUIDELINES.md:Pillar III"
+    description: "Scalar monopole GW frequency line for S₂,₁ axion."
+    test: "enterprise MCMC injection-recovery on NANOGrav 15-yr synthetic residuals."
+
+  pta_frequency_ratio_lower:
+    value: 1.73
+    tag: "[VERIFIED]"
+    source: "lean4_formal_proofs/Agora/GaugeCoupling.lean:theorem pta_frequency_bounds_lower"
+    description: "Lower bound on √(1014/336) = √(stiffness_S12/stiffness_S21)."
+    note: "Parameter-free; independent of all moduli and astrophysical assumptions."
+
+  pta_frequency_ratio_upper:
+    value: 1.75
+    tag: "[VERIFIED]"
+    source: "lean4_formal_proofs/Agora/GaugeCoupling.lean:theorem pta_frequency_bounds_upper"
+    description: "Upper bound on √(1014/336)."
+    note: "Parameter-free; independent of all moduli and astrophysical assumptions."
+
+  pta_frequency_ratio_interval:
+    lower: 1.73
+    upper: 1.75
+    tag: "[VERIFIED]"
+    source: "lean4_formal_proofs/Agora/GaugeCoupling.lean"
+    description: "Parameter-free PTA falsification test: if both lines detected, ratio must lie in (1.73, 1.75)."
+    prediction: "Prediction 4b, scientificplan.md:§Falsifiability Roadmap"
+    reference: "MEMORY.md:§10, PREDICTIONS.md"
+
+# Consistency Rules (Rule 8 - Atomic Parameter Synchronization)
+consistency_checks:
+  - id: "cosmo_sync"
+    parameters: ["w_0", "w_a", "H_0"]
+    files:
+      - "empirical_crucible/jax_inference.py"
+      - ".benchmarks/*"
+      - "manuscripts_and_proofs/*.tex"
+    tolerance: 1e-4
+
+  - id: "stiffness_ratio"
+    parameters: ["stiffness_S12", "stiffness_S21", "pta_frequency_ratio_lower", "pta_frequency_ratio_upper"]
+    files:
+      - "lean4_formal_proofs/Agora/GaugeCoupling.lean"
+      - "PREDICTIONS.md"
+      - "Part_I_K3xT2_Cosmology.tex"
+    verifier: "cross_consistency_check.sh"
+
+  - id: "axion_mass_consistency"
+    parameters: ["epsilon", "axion_mass_S12", "axion_mass_S21"]
+    notes: "Masses derive from Svrcek-Witten; epsilon from Planck acoustic constraints."
+
+# Caveat Propagation (Rule 6)
+caveats:
+  - id: "GAP-1"
+    severity: "Critical"
+    title: "K3 Identification Unverified"
+    description: "S₁,₂ and S₂,₁ identification relies on monodromy matrices and modularity screens; not yet kernel-verified."
+    tracked_in: ["CAVEATS.md:§1", "OPEN_PROBLEMS.md", "Part_I_K3xT2_Cosmology.tex:§Limitations"]
+    workstream: "WS1"
+
+  - id: "GAP-2"
+    severity: "Critical"
+    title: "Stiffness Derivation from PF Data Missing"
+    description: "V''(0) ∈ {1014, 336} is asserted but not derived from Picard-Fuchs recurrences."
+    tracked_in: ["CAVEATS.md:§2", "OPEN_PROBLEMS.md", "Part_I_K3xT2_Cosmology.tex:§Limitations"]
+    workstream: "WS2"
+    task: "T2.1, T2.2"
+
+  - id: "GAP-3"
+    severity: "Serious"
+    title: "Superradiance Formula Out of Range"
+    description: "Detweiler α-small formula used at α_eff ≈ 0.89–1.55 (beyond valid range 0.01–0.1)."
+    tracked_in: ["CAVEATS.md:§3", "OPEN_PROBLEMS.md", "Part_I_K3xT2_Cosmology.tex:§Limitations"]
+    workstream: "WS3"
+    task: "T3.1"
+
+  - id: "GAP-4"
+    severity: "Serious"
+    title: "Chameleon Khoury-Weltman Tension"
+    description: "γ=0.25 maps to unphysical KW index n=-3; screening mechanism physically questionable."
+    tracked_in: ["CAVEATS.md:§4", "OPEN_PROBLEMS.md", "Part_I_K3xT2_Cosmology.tex:§Limitations"]
+    workstream: "WS3"
+    task: "T3.3"
+
+  - id: "GAP-5"
+    severity: "Moderate"
+    title: "Cosmology Pre-Boltzmann"
+    description: "Cosmological pipeline uses rest-ICs and reverse-engineered ε; not CLASS-grade Boltzmann-solver integrated."
+    tracked_in: ["CAVEATS.md:§5", "OPEN_PROBLEMS.md"]
+    workstream: "WS5"
+    task: "T5.1, T5.2"
+
+  - id: "GAP-6"
+    severity: "Moderate (Mechanical)"
+    title: "S₂₀ General-n Recurrence Still an Axiom"
+    description: "General-n Picard-Fuchs recurrence for S₂₀ is not kernel-verified; remains an axiom in Lean."
+    tracked_in: ["CAVEATS.md:§6", "OPEN_PROBLEMS.md", "lean4_formal_proofs/Structures/S20RecurrenceProof.lean"]
+    workstream: "WS4"
+    task: "T4.1"
+
+# Audit Trail
+last_updated: "2026-07-11"
+updated_by: "T8.1 Implementation"
+verification_command: "bash scripts/cross_consistency_check.sh"

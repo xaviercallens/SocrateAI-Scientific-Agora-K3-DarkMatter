@@ -6,7 +6,7 @@
 
 ---
 
-## 1. Mass Calibration Is Parameterized, Not Uniquely Predicted
+## 1. Mass Calibration Is Parameterized, Not Uniquely Predicted (GAP-2)
 
 The axion mass predictions ($m_a = 3.18 \times 10^{-21}$ eV for $S_{1,2}$ and $1.83 \times 10^{-21}$ eV for $S_{2,1}$) are derived using the Svrcek-Witten (2006) instanton formula:
 
@@ -18,7 +18,7 @@ However, **the Kähler modulus $\tau$ and volume $\mathcal{V}$ are not uniquely 
 
 ---
 
-## 2. K3 Surface Identification Is Conjectural
+## 2. K3 Surface Identification Is Conjectural (GAP-1)
 
 The classification of $S_{1,2}$ and $S_{2,1}$ as "K3 surfaces" is based on detecting Order-3 Picard-Fuchs recurrences via exact nullspace extraction. However:
 
@@ -30,7 +30,7 @@ The classification of $S_{1,2}$ and $S_{2,1}$ as "K3 surfaces" is based on detec
 
 ---
 
-## 3. Chameleon Mechanism Parameters Are Free
+## 3. Chameleon Mechanism Parameters Are Free (GAP-4)
 
 The Chameleon mass scaling:
 
@@ -42,7 +42,7 @@ uses $\gamma$ and $\rho/\rho_{\text{crit}}$ as **free phenomenological parameter
 
 ---
 
-## 4. Superradiance Growth Rate (Updated Phase 12)
+## 4. Superradiance Growth Rate (GAP-3) (Updated Phase 12)
 
 The code now uses the correct **Detweiler (1980) / Dolan (2007) growth rate** for the dominant $l=m=1$, $n=2$ mode:
 
@@ -54,7 +54,7 @@ $$\Gamma_{211} \approx \frac{1}{24} a_* \alpha^8 \mu_{\text{eff}}$$
 
 ---
 
-## 5. Datasets: Partially Archival, Partially Simplified (Updated Phase 12)
+## 5. Datasets: Partially Archival, Partially Simplified (GAP-5) (Updated Phase 12)
 
 The CSV files in `scientific_protocol/datasets/` have been improved from fully synthetic placeholders:
 
@@ -66,7 +66,7 @@ The CSV files in `scientific_protocol/datasets/` have been improved from fully s
 
 ---
 
-## 6. Lean 4 Proofs: What Is vs. What Is Not Formally Verified
+## 6. Lean 4 Proofs: What Is vs. What Is Not Formally Verified (GAP-6)
 
 | Claim | Lean Status |
 |:---|:---|
