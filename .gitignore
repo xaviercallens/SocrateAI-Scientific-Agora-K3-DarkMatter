@@ -18,6 +18,9 @@ build/
 .env
 .env.*
 
+# Claude Code personal/local overrides (contains machine-specific permission allowlist)
+.claude/settings.local.json
+
 # Python virtual environment
 venv/
 .venv/
