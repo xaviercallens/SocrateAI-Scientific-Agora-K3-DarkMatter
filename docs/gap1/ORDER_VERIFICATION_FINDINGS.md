@@ -233,6 +233,65 @@ every singular point due to this misclassification, meaning:
    should be scoped as `[TIER: SONNET+]`, not the `[TIER: HAIKU]` originally
    assigned in `scientificplan.md` T1.1.
 
+### Step 1 (fix + re-run) completed 2026-07-11 — a new, honest non-result
+
+The offset bug is fixed (see script diff: `_order_of_vanishing` → replaced by
+factor-based `_divisibility_order`, which is both correct and, unlike the
+first attempted fix, computationally tractable — testing exact polynomial
+divisibility of `Q_k` by the irreducible factors of `Q_order` over $\mathbb
+Q[z]$, rather than repeatedly evaluating `sp.simplify` on individual
+`CRootOf` algebraic roots, which took >10 minutes per sequence and did not
+finish before this fix). The corrected classifier now actually runs to
+completion. Real output (`data/monodromy/S12_monodromy.json`,
+`data/monodromy/S21_monodromy.json`):
+
+| Sequence | ODE order | $z=0$ (MUM) | Other finite singular points |
+|---|---|---|---|
+| $S_{1,2}$ | 3 | REGULAR (as expected) | 3 points (1 real + 2 complex conjugate, roots of an irreducible cubic factor of $Q_3$) — **all IRREGULAR** |
+| $S_{2,1}$ | 2 | REGULAR (as expected) | 2 points ($11/2\pm5\sqrt5/2$) — **both IRREGULAR** |
+
+This is an exact, reproducible, kernel-of-arithmetic result (polynomial
+divisibility over $\mathbb Q$, not a numerical approximation) — not a repeat
+of the original bug. **But it is a new negative result, not a clean win:**
+$z=0$ correctly comes back regular for both sequences (consistent with MUM
+theory), but *every other* finite singular point of *both* extracted
+operators — including $S_{2,1}$'s, independently established elliptic —
+comes back irregular. Genuine Picard–Fuchs operators of algebraic families
+(Gauss–Manin connections) are always Fuchsian — regular singular at *every*
+finite point — by Deligne's regularity theorem. Finding irregular points
+here therefore means one of two things, and **this script cannot currently
+tell you which**:
+
+1. **The nullspace-extracted recurrence is not the canonical minimal
+   Picard-Fuchs operator.** `find_recurrence` (Step 1) accepts the first
+   `(order, deg)` pair whose nullspace vector satisfies the sequence on 15
+   held-out terms — this is sufficient to certify the recurrence *holds*, but
+   not that it is free of "apparent singularities": extra, non-geometric
+   roots that a genuinely minimal (in the Ore-algebra / D-module sense)
+   operator would not have. Recurrence-to-ODE conversion via the theta
+   operator is a known source of such artifacts in the holonomic-function
+   literature. If so, the irregular points are computational artifacts, not
+   evidence about the geometry.
+2. **A genuine anomaly.** If the extracted operator *is* minimal, irregular
+   finite singular points would be inconsistent with either sequence having
+   a geometric (algebraic-family) origin at all — which, notably, would not
+   be new evidence specifically against $S_{1,2}$'s K3 status (both
+   sequences show the identical pattern, including $S_{2,1}$, whose non-K3
+   status was already established independently in Finding 1 above by a
+   completely different method). A shared pattern across both sequences is
+   more consistent with explanation (1) than with a K3-specific problem.
+
+**Practical consequence for T1.1's stated deliverable:** even with the bug
+fixed, **no numeric RK4 monodromy matrix has still been computed** — not
+because integration is silently skipped by a broken check, but because the
+(corrected) check finds no finite regular point to integrate around. The
+only monodromy data available remains the exact, analytic $z=0$ MUM matrix
+from Frobenius theory (`mum_monodromy_frobenius`, unconditionally correct
+algebra, unaffected by any of this). Distinguishing explanation 1 from 2
+above — e.g. by computing the operator's genuine minimal order via
+Ore-algebra reduction, or checking for right-factors — is scoped as a new
+`[TIER: SONNET+]` follow-up, not attempted here.
+
 ---
 
 ## Summary verdict for GAP-1 (as of this session)
@@ -243,7 +302,7 @@ every singular point due to this misclassification, meaning:
 | T1.2 Modularity match (4 LMFDB candidates) | ⚪ No match found among the 4 checked (inconclusive, small sample) |
 | T1.3 Mirror-map integrality | ✅ Both pass (30/30 coefficients integral) |
 | **T1.1 recurrence order** | 🔴 **CONFIRMED: S₂,₁ is order-2 (elliptic), not order-3. Fixed sieve script re-run finds only S₁,₂ survives as K3 in the full A,B∈[1,5] search.** |
-| **T1.1 monodromy computation** | 🔴 Classifier bug fixed is a separate, still-open item — genuine numeric monodromy matrices for S₁,₂ (the surviving candidate) have not yet been (re-)computed with the corrected classifier; scoped as SONNET+ follow-up. |
+| **T1.1 monodromy computation** | 🟡 Classifier bug fixed and re-run 2026-07-11 (real, exact output now produced — see "Step 1 completed" above). Result: $z=0$ correctly regular (MUM) for both sequences; every *other* finite singular point of both extracted operators is genuinely IRREGULAR, so no numeric RK4 monodromy matrix exists yet for either sequence. Whether this reflects a non-minimal (apparent-singularity-bearing) extracted operator or a real anomaly is unresolved; scoped as a new SONNET+ follow-up (Ore-algebra minimality check). |
 
 The two positive results (Weil bound, mirror-map integrality) are necessary
 conditions that S₁,₂ and S₂,₁ both happened to pass — but Finding 1 is a

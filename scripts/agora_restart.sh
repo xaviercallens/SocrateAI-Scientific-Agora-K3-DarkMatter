@@ -58,47 +58,61 @@ EOF
 
   sec "🎯 SIX LOAD-BEARING GAPS  (full review: scientificplan.md)"
   cat <<'EOF'
-  GAP-1 [critical]  K3 identification conjectural (monodromy/modularity)   -> WS1
-  GAP-2 [critical]  stiffness V''(0)=1014/336 has no PF->potential deriv.   -> WS2
-  GAP-3 [serious]   superradiance uses small-alpha formula out of range     -> WS3
-  GAP-4 [serious]   chameleon gamma=0.25 -> unphysical KW index n=-3        -> WS3
-  GAP-5 [moderate]  cosmology pre-Boltzmann, rest-IC, reverse-eng. epsilon  -> WS5
-  GAP-6 [mechanical] general-n S20 recurrence still a Lean `axiom`          -> WS4
+  GAP-1 [advanced 07-12] S2,1 confirmed non-K3 (elliptic); monodromy classifier
+                          bug fixed, real result: only z=0 regular, other pts
+                          irregular for BOTH sequences (likely non-minimal
+                          operator, not K3-specific) -> WS1, see gap1 findings
+  GAP-2 [advanced 07-12] T2.2 done: stiffness ratio != mass ratio in this
+                          model's own numbers; PTA ratio-test claim downgraded
+                          from unconditional to conditional in 5 locations -> WS2
+  GAP-3 [advanced]  Dolan solver done; S2,1 bare survives M87*, S1,2 doesn't  -> WS3
+  GAP-4 [advanced 07-12] T3.3 memo: gamma=0.25 structurally excluded for ANY
+                          physical n; gamma=1/2 may suffice instead           -> WS3
+  GAP-5 [moderate]  cosmology pre-Boltzmann; H0=75.8 not 71.92 (unreconciled) -> WS5
+  GAP-6 [mechanical, CONFIRMED NON-BLOCKING 07-12] general-n S20 recurrence
+         still a Lean `axiom`, BUT cy_axion_no_go (the actual physics use of
+         S20) is self-contained and does NOT depend on it. Do not cite the
+         2026-07-12 Mirror-Map-Sieve "Horner reduction" as having closed this
+         -- it proves `True`, not the recurrence. See VALIDATION_GUIDE.md.  -> WS4
 
   Sharpest parameter-free test: if BOTH PTA lines detected, their frequency
-  ratio must be in (1.73,1.75)=sqrt(1014/336); moduli tau,V cancel.
+  ratio must be in (1.73,1.75)=sqrt(1014/336) IF mass ratio = stiffness ratio
+  exactly (T2.2, 2026-07-12: not established by this model's own numbers --
+  see PREDICTIONS.md Prediction 4b for the corrected, conditional framing).
 EOF
 
-  sec "🧭 IMPLEMENTATION PLAN — TASKS BY EXECUTOR TIER  (TODO.md §0)"
+  sec "🧭 IMPLEMENTATION PLAN — TASKS BY EXECUTOR TIER  (TODO.md §0, updated 2026-07-12)"
   cat <<'EOF'
-  [HAIKU] mechanical, fully specified — run on Haiku:
-    T8.1 cross_consistency_check.sh + PARAMETER_LEDGER.yaml   (do first)
-    T8.2 CI gate (lake build / pytest / no-sorry / consistency)
-    T4.2 finite-range decide proofs for S1,2 / S2,1
-    T2.1 document V''(0) pipeline + regression test
-    T2.3 kernel-verify PTA frequency-ratio lemma
-    T1.1 monodromy matrices   T1.2 Weil/modularity   T1.3 mirror-map integrality
-    T1.4 propagate WS1 outcomes to caveats/manuscripts
-    T5.1 tracker-IC lambda sweep    T3.2 S2,1-bare superradiance survival
-    T6.2 galactic-frame PTA spec    T7.1 compactification §1.5 scaffold
-    T5.4 DESI DR2 refit (when public)
+  DONE this session (2026-07-11/12), not just checked off but VERIFIED:
+    T8.1/T8.2/T4.2 (prior session)   T2.1 (found already done, uncommitted)
+    T1.1 monodromy: bug fixed, real (if inconclusive) result obtained
+    T2.2 stiffness->potential memo: found & propagated a real inconsistency
+    T2.3 (prior session)             T3.1/T3.2 (prior session)
+    T3.3 screening-alternatives memo (SONNET+ draft; human sign-off still req'd)
+    T6.2 galactic-frame PTA spec      T7.1 compactification scaffold + Lean axiom
+    GAP-6 scope clarification: cy_axion_no_go confirmed non-blocking
 
-  [SONNET+] multi-step derivation / non-trivial debugging:
-    T2.2 PF->potential-curvature derivation memo
-    T3.1 Dolan (2007) continued-fraction growth rates
-    T4.1 compile WZ certificate into Lean (chunkable to Haiku)
-    T5.2 CLASS-fork mass-varying-axion ingestion
-    T5.3 joint epsilon likelihood (JWST x S8 see-saw test)
-    T6.1 PTA injection-recovery forecast (enterprise)
+  STILL OPEN / BLOCKED (not formalities -- genuinely unresolved):
+    T4.1 [SONNET+] compile WZ cert into Lean -- HALTED: verify_wz_certificate.py
+         does not exist in this repo; do not attempt to fabricate one under
+         time pressure. See OPEN_PROBLEMS.md item 3 for the full finding and
+         the companion Mirror-Map-Sieve correction (2026-07-12).
+    T5.4 [HAIKU] DESI DR2 refit -- blocked, no DR2 data file present locally
+    T6.1 [SONNET+] PTA injection-recovery forecast -- blocked, `enterprise`
+         python package fails to install (missing libsuitesparse-dev)
+    T5.1/T5.2/T5.3 [prior session, partially done -- see CAVEATS.md GAP-5]
+    T3.3 [HUMAN] sign-off still required before any manuscript change
+    T7.2 [HUMAN] tadpole feasibility -- needs external string phenomenologist
 
   [HUMAN] domain judgement / external collaborator (OPEN_PROBLEMS.md 1-2):
     T3.3 screening-alternatives sign-off
     T7.2 tadpole feasibility (seeking string phenomenologists)
 
-  Recommended solo-Haiku order:
-    T8.1 -> T8.2 -> T4.2 -> T2.1 -> T2.3 -> T1.1 -> T1.2 -> T1.3 -> T1.4
-       -> T5.1 -> T3.2 -> T6.2 -> T7.1 -> T5.4
-  Skip & report if an upstream SONNET+/data dependency is unmet.
+  Recommended next-session order: T4.1 (if a real certificate can be located/
+  re-derived) OR skip to T5.4/T6.1 if their blockers clear (DESI DR2 release,
+  libsuitesparse-dev installed) OR pursue GAP-1's new open question (is the
+  S1,2/S2,1 monodromy "irregular" finding an operator-minimality artifact?
+  see docs/gap1/ORDER_VERIFICATION_FINDINGS.md "Step 1 completed").
 EOF
 
   sec "📁 KEY FILES"
@@ -167,6 +181,14 @@ health() {
 
   echo "• PARAMETER_LEDGER.yaml:"
   if [ -f PARAMETER_LEDGER.yaml ]; then echo "    ✓ present"; else echo "    ⧗ not yet created (task T8.1)"; fi
+  echo
+
+  echo "• 2026-07-12 session artifacts (should all be present):"
+  for f in data/monodromy/S12_monodromy.json data/monodromy/S21_monodromy.json \
+           docs/derivations/stiffness_to_potential.md docs/pta/galactic_frame_test.md \
+           docs/screening/alternatives.md; do
+    if [ -f "$f" ]; then echo "    ✓ ${f}"; else echo "    ⚠ MISSING: ${f}"; fi
+  done
 }
 
 case "${MODE}" in

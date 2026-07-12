@@ -14,7 +14,7 @@ Re-deriving the minimal Picard-Fuchs recurrence for $S_{2,1}(n)=\sum_k\binom{n}{
 
 **Root cause traced to two independent bugs**, both pre-existing (not introduced by this finding):
 1. `scripts/k3_sieve_analysis.py::find_minimal_order` returned a polynomial-coefficient-degree quantity mislabeled as "order" (conflated with the true recurrence shift-order that actually determines the geometry class), and its existence check validated candidates against only 3 equations beyond the bare minimum — no held-out validation. This script also could not execute at all prior to this session due to a Python-version-incompatible f-string.
-2. `scripts/k3_monodromy_verification.py::classify_singular_points` (the Fuchs-criterion regularity check) is missing the leading-coefficient's own vanishing-order offset in its threshold, which **systematically misclassifies every singular point it has ever tested as irregular** — including the presumed MUM point at z=0 for both sequences. Consequence: **no numeric monodromy matrix has ever actually been computed** by this script, despite being the cited implementation for Task T1.1. (This second bug is documented but **not yet fixed** — flagged as SONNET+ follow-up.)
+2. `scripts/k3_monodromy_verification.py::classify_singular_points` (the Fuchs-criterion regularity check) was missing the leading-coefficient's own vanishing-order offset in its threshold, which **systematically misclassified every singular point it was ever tested on as irregular** — including the presumed MUM point at z=0 for both sequences. **This bug is now fixed (2026-07-11)**, together with a performance rewrite (exact factor-based divisibility over $\mathbb Q[z]$, replacing a per-root symbolic-simplify loop that did not finish in reasonable time on the corrected but naive version). The corrected classifier now runs to completion and gives real, exact output: $z=0$ correctly comes back REGULAR (MUM) for both sequences, but *every other* finite singular point of both extracted operators comes back genuinely IRREGULAR — so a numeric RK4 monodromy matrix still does not exist for either sequence, now because the (correct) classifier finds no regular point to integrate around, not because of a bug. Since genuine Picard–Fuchs operators of algebraic families are always Fuchsian (Deligne's regularity theorem), and the *same* pattern appears for $S_{2,1}$ (independently established non-K3/elliptic above) as for $S_{1,2}$, the more likely explanation is that the nullspace-extracted recurrence used throughout this pipeline is not the canonical minimal operator (apparent-singularity artifacts from the fitting/theta-conversion procedure) rather than a K3-specific anomaly — but this is not proven either way. Full argument: `docs/gap1/ORDER_VERIFICATION_FINDINGS.md` "Step 1 completed." New follow-up scoped as `[TIER: SONNET+]`: check the extracted operator's Ore-algebra minimality / right-factors.
 
 **Bug #1 has been fixed and the full $A,B\in[1,5]$ sieve re-run in this session** (70 held-out checks, $n_{\max}=110$): with the corrected classifier, **only $(A,B)=(1,2)=S_{1,2}$ survives as a K3 candidate**; $(2,1)=S_{2,1}$ and $(2,2)$ both come back **Elliptic Curve (Order-2)**. No replacement K3 candidate appears elsewhere in the searched range.
 
@@ -64,6 +64,18 @@ The **JWST side was not quantitatively executed** — a rigorous $\mathcal{L}_{\
 
 ---
 
+## 🟡 GAP-2 update (2026-07-11): the stiffness ratio and the physical mass ratio are not the same claim
+
+**Full findings:** `docs/derivations/stiffness_to_potential.md` (T2.2). Task T2.1's pipeline trace already flagged the $q_d\to$"instanton weight" re-interpretation as an unproven assumption; T2.2 finds a second, independent problem by tracing where the repository's *actual* cited masses ($3.18\times10^{-21}$, $1.83\times10^{-21}$ eV) come from in the live code.
+
+`scripts/k3_sieve_analysis.py` computes the "stiffness" $V''(0)=1014/336$ **without** the $e^{-2\pi d\tau}$ instanton suppression, but computes the masses it actually reports **with** that suppression at hardcoded $\tau\approx33.6$–$33.8$ per vacuum. At those $\tau$ values the instanton sum is dominated by the $d=1$ term to ~90 decimal places (since $q_1=1$ for both sequences) — so $1014$ vs. $336$ (which get ~95–97% of their value from $d=2,3$) are numerically irrelevant to the masses actually reported. The observed agreement between $\sqrt{1014/336}=1.7372$ and the real mass ratio $1.7378$ traces almost entirely to the specific, **undocumented** $\tau$ pair $(33.6255, 33.8014)$ — values with no derivation or citation anywhere in the script, that happen to reproduce the pre-assumed target masses to 3 significant figures, the same practice `scripts/mass_from_first_principles.py`'s own header explicitly disavows as circular. Whether these particular $\tau$ values were obtained that way is flagged as an **open provenance question**, not confirmed.
+
+**Consequence:** `lean4_formal_proofs/Agora/Phenomenology/PTAFrequencyRatio.lean`'s claim that the PTA ratio test is a prediction "independent of every uncertain modelling choice upstream" is not established by this model's own current numbers — the mass ratio is governed almost entirely by the free, undocumented $\tau$ difference, not by the K3 topology. The kernel-verified *arithmetic* fact $1014/336\in(1.73^2,1.75^2)$ remains true and unaffected; what is undermined is the physical chain connecting it to an observable PTA frequency ratio. See the memo for the recommended (not yet applied) docstring downgrade.
+
+**What is NOT resolved** (`[TIER: HUMAN]` provenance question + `[TIER: SONNET+/HUMAN]` moduli derivation): where `k3_sieve_analysis.py`'s $\tau_{12},\tau_{21}$ actually came from, and whether a genuine moduli-stabilisation mechanism (OPEN_PROBLEMS.md item 4, still open) could independently fix them.
+
+---
+
 ## The 5 Missing Pieces (referee "deeper programme", Round 2)
 
 These are the items a second-round referee (string-theory / Swampland) identified as separating the present *string-inspired phenomenology* from a genuine top-down construction.
@@ -96,6 +108,30 @@ This is the one open item the Agora can close on its own.
   - **Lean 4 Formalization:** Both recurrences, their polynomials, their left-hand sides, and kernel-verified checks for $n \le 8$ via `decide` are fully formalized in `Structures/S20Recurrence.lean` (sorry-free and admit-free). The general laws are declared as explicit, auditable `axiom`s.
   - **WZ Certificate Verification:** The bivariate rational creative-telescoping certificate $R(n,k)$ from Maxima/SageMath has been algebraically verified for all $n$ and $k$ via exact SymPy symbolic evaluation (`verify_wz_certificate.py`), simplifying the WZ relation difference to exactly `0` (`diff = 0`).
 - **Phase 4 (WZ Lean Compilation):** Map the algebraically verified bivariate polynomial identity into a formal Lean 4 algebraic proof (using `field_simp; ring`) to prove the telescoping relation and replace the general-n `axiom s20_recurrence_order_4` with a fully compiled `theorem`. This would establish the first kernel-certified order-4 minimal Picard-Fuchs recurrence on the entire range.
+
+> **🔴 2026-07-11 finding (attempted Task T4.1 start):** `scripts/verify_wz_certificate.py`, cited immediately above as the source of the "diff = 0" verification, **does not exist anywhere in this repository** (checked by exhaustive filename search, including the `.claude/worktrees/` copy). `scripts/gen_wz_lean.py` (T4.1's own first sub-step) also does not exist. What *does* exist is `empirical_crucible/generate_wz_decomposition.py`, which defines telescoper coefficients $Q_0$–$Q_4$ and a large bivariate polynomial in $(n,k)$, but this script transcompiles a polynomial identity into Lean chunk syntax — it does not itself verify that the identity is `0`, and its output (Lean chunk files) is not present in `lean4_formal_proofs/` either. **The "WZ Certificate Verification: done" claim above is therefore not currently reproducible from this repository as it stands** — the same category of problem this project has already caught twice this session (GAP-1's fabricated weight-2 statistic, GAP-3's fabricated 86.6 Myr figure). Per Rule 1 ("never invent numbers") and scientificplan.md's own standing instruction 5 ("missing data file → halt, write a BLOCKED note, do not improvise"), Task T4.1 is **halted here, not attempted further**: reconstructing a multi-thousand-term creative-telescoping certificate from scratch and re-verifying it symbolically, under time pressure, risks producing exactly the kind of unverified claim this note is flagging in the first place. **Recommended next step (not completed):** either locate the original `verify_wz_certificate.py` output/session (if it once existed and was lost) or restart the WZ certificate derivation from `empirical_crucible/generate_wz_decomposition.py`'s polynomial data as a documented `[TIER: SONNET+]` task in its own session, with the verification script committed alongside its output, not merely asserted.
+
+> **🟢 2026-07-12 scope clarification: this does not block the physics paper.**
+> `Agora.Discovery.FuzzyDarkMatter.cy_axion_no_go` (the GD-1 No-Go theorem —
+> $S_{20}$'s only load-bearing role in the Agora K3×T2 model) takes the
+> candidate mass as an explicit hypothesis and is self-contained: verified
+> directly that its proof term does not import or depend on
+> `axiom s20_recurrence`/`s20_recurrence_order_4` at all. GAP-6 remains open
+> (the axiom is still an axiom) but is confirmed **non-blocking** for
+> everything downstream in this repository. Full detail: `VALIDATION_GUIDE.md`
+> GAP-6 section, same date.
+>
+> **Also 2026-07-12:** a same-day session in the companion `Mirror-Map-Sieve`
+> repo attempted to discharge the general-$n$ axiom via an "integer Horner
+> reduction," initially reported as "100% sorry-free, axiom-free." Direct
+> inspection found the result proves the vacuous proposition `True` from a
+> 3-element placeholder list `[1,2,3]`, not the real ~150-term certificate —
+> the same category of overclaim as this section's own `verify_wz_certificate.py`
+> finding above. Corrected in that repo (`docs/PHASE4_FINDINGS.md`); the deep
+> geometric-identification work ($L_6=L_4\cdot L_2$, Yukawa coupling, AESZ
+> match — none needed by `cy_axion_no_go`) has been forked there into
+> `S20_MATH_SIDE_PROJECT.md` as an independent, non-blocking pure-math track.
+> **Do not cite the Horner-reduction attempt as having discharged this axiom.**
 
 ### 4 — Moduli stabilisation (exact null result on record)
 `scripts/alpha_topology.py` tests three geometric origins (GVW flux / dilaton, $\mathcal N=2$ attractor, D7-volume + $\chi=24$ threshold) for the bare gauge coupling. **Verdict: topologically unconstrained** — every candidate value depends on free integer fluxes/charges or on the (uncomputed) $S_{1,2}$ transcendental-lattice Gram matrix. Deriving an absolute coupling needs the item-1 vacuum data. The only defensible geometric output is the *relative* ratio $\sqrt{1014/336}\approx1.74$ (kernel-verified in `Agora.GaugeCoupling`).

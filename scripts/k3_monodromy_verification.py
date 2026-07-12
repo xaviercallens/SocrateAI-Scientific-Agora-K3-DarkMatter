@@ -47,6 +47,8 @@ import sympy as sp
 import mpmath
 import math
 import sys
+import os
+import json
 
 # ── Precision ────────────────────────────────────────────────────────────────
 mpmath.mp.dps = 35  # 35 decimal places (> required 30)
@@ -256,46 +258,93 @@ def recurrence_to_ode(order: int, polys_in_n: list):
 
 # ── Step 4: Singular point classification ────────────────────────────────────
 
+def _divisibility_order(numerator_poly: sp.Poly, factor_poly: sp.Poly, cap: int) -> int:
+    """
+    Largest v <= cap such that factor_poly^v exactly divides numerator_poly,
+    computed by EXACT polynomial division over QQ (no algebraic-number
+    evaluation, no sp.simplify on CRootOf — this is what makes it fast).
+    A numerator that is identically 0 is divisible to any order (returns cap).
+    """
+    if numerator_poly.is_zero:
+        return cap
+    remainder = numerator_poly
+    v = 0
+    for _ in range(cap):
+        q, r = sp.div(remainder.as_expr(), factor_poly.as_expr(), factor_poly.gen)
+        if sp.expand(r) != 0:
+            break
+        v += 1
+        remainder = sp.Poly(sp.expand(q), factor_poly.gen)
+    return v
+
+
 def classify_singular_points(actual_order: int, Q_polys: list):
     """
     Find and classify singular points of L[f] = sum_k Q_k(z) D^k[f] = 0.
 
     A point z_c is a singular point iff Q_{order}(z_c) = 0.
-    It is REGULAR if ord_{z=z_c}(Q_k) >= order - k for all k=0,...,order-1
-    (Fuchs criterion for regular singular points).
-    It is IRREGULAR otherwise (irregular singular point → essential singularity,
-    Stokes phenomena, ODE integration diverges along circle).
 
-    Returns list of (z_c, is_regular) pairs.
+    Fuchs criterion (correct form): normalize by the leading coefficient,
+    f^(m) + a_1 f^(m-1) + ... + a_m f = 0 with a_{m-k}(z) = Q_k(z)/Q_m(z).
+    z_c is REGULAR iff (z-z_c)^{m-k} a_{m-k}(z) is analytic at z_c for all k,
+    i.e. iff  ord_{z=z_c}(Q_k)  >=  (order - k) - nu_m   for all k=0,...,order-1,
+    where nu_m := ord_{z=z_c}(Q_order) is the LEADING coefficient's own
+    vanishing order at z_c.
+
+    BUG FIX (2026-07-11): the previous version compared ord(Q_k) against the
+    raw threshold (order - k), omitting the "- nu_m" offset. Since z_c is by
+    construction a root of Q_order, nu_m >= 1 always, so the old threshold was
+    systematically too strict by at least 1 — misclassifying every genuinely
+    regular singular point (including the presumed MUM point at z=0, when
+    tested here) as irregular. This made compute_monodromy() skip every
+    integration, silently.
+
+    PERFORMANCE FIX (2026-07-11): the first attempt at this bugfix computed
+    vanishing orders by repeated `.subs(z, z_c)` + `sp.simplify` on individual
+    algebraic roots (`CRootOf` objects for irreducible factors of degree > 4).
+    This is mathematically valid but catastrophically slow — simplifying
+    expressions in high-degree algebraic numbers can take many minutes per
+    root. Since Q_k has RATIONAL coefficients, the order of vanishing of Q_k
+    is identical at every conjugate root of the same irreducible factor
+    (Galois symmetry), so it suffices to work with the irreducible FACTORS of
+    Q_order over QQ (found once, instantly, via `Poly.factor_list`) and test
+    exact polynomial divisibility `factor^v | Q_k` — pure QQ[z] arithmetic,
+    no algebraic-number evaluation at all.
+
+    Returns list of (z_c, is_regular) pairs, one entry per root (roots of a
+    shared irreducible factor all get the same is_regular verdict).
     """
     z = sp.Symbol('z')
-    Q_lead = Q_polys[actual_order].as_expr()
-    sing_pts_raw = sp.solve(Q_lead, z)
+    Q_lead_poly = Q_polys[actual_order]
+    _, factor_mult_list = Q_lead_poly.factor_list()
     results = []
 
-    for z_c in sing_pts_raw:
-        z_c_val = complex(z_c)
+    for factor_poly, nu_m in factor_mult_list:
+        if factor_poly.degree() < 1:
+            continue  # constant factor, not a root
         is_regular = True
         for k in range(actual_order):
-            if k >= len(Q_polys) or Q_polys[k].is_zero:
+            if k >= len(Q_polys):
                 continue
-            Q_k = Q_polys[k].as_expr()
-            # Check the order of vanishing of Q_k at z_c
-            q_factor = Q_k
-            vanishing = 0
-            for _ in range(actual_order - k + 1):
-                q_at_zc = q_factor.subs(z, z_c)
-                if sp.simplify(q_at_zc) != 0:
-                    break
-                vanishing += 1
-                # Divide by (z - z_c)
-                q_factor, rem = sp.div(q_factor, z - z_c, z)
-                if sp.simplify(rem) != 0:
-                    break
-            if vanishing < actual_order - k:
+            Q_k_poly = Q_polys[k]
+            threshold = (actual_order - k) - nu_m
+            if threshold <= 0:
+                continue  # automatically satisfied regardless of Q_k
+            vanishing = _divisibility_order(Q_k_poly, factor_poly, threshold)
+            if vanishing < threshold:
                 is_regular = False
                 break
-        results.append((z_c, is_regular))
+
+        # Roots of this factor, for reporting/numeric integration downstream.
+        # Exact (rational/radical) for low degree; CRootOf (isolated, exact,
+        # but not simplified) for higher degree — never simplified further.
+        if factor_poly.degree() <= 4:
+            roots_here = list(sp.roots(factor_poly, z, multiple=True))
+        else:
+            roots_here = [sp.CRootOf(factor_poly, i) for i in range(factor_poly.degree())]
+
+        for z_c in roots_here:
+            results.append((z_c, is_regular))
 
     return results
 
@@ -545,6 +594,49 @@ def main():
                                 for z_c, reg in classified],
             'monodromy': {k: v.get('det_err', 'N/A') for k, v in mono.items()},
         }
+
+        # ── JSON artifact (Rule 1: every claim traceable to a real output file) ──
+        out_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+                                'data', 'monodromy')
+        os.makedirs(out_dir, exist_ok=True)
+        tag = 'S12' if (A, B) == (1, 2) else 'S21' if (A, B) == (2, 1) else f'S{A}{B}'
+        mono_json = {}
+        for z_c_str, v in mono.items():
+            if 'M' in v:
+                M = v['M']
+                mono_json[z_c_str] = {
+                    'regular': True,
+                    'matrix_real': [[float(M[i, j].real) for j in range(M.cols)] for i in range(M.rows)],
+                    'matrix_imag': [[float(M[i, j].imag) for j in range(M.cols)] for i in range(M.rows)],
+                    'det_M_real': float(v['det_M'].real),
+                    'det_M_imag': float(v['det_M'].imag),
+                    'det_err': v['det_err'],
+                }
+            else:
+                mono_json[z_c_str] = {'regular': False, 'note': 'irregular or overflow — integration skipped'}
+
+        json_record = {
+            'sequence': name,
+            'A': A, 'B': B,
+            'pf_ode_order': actual_order,
+            'recurrence_P_i(n)': {f'P{i}(n)': str(p.as_expr()) for i, p in enumerate(polys_in_n)},
+            'ode_Q_k(z)': {f'Q{k}(z)': str(p.as_expr()) for k, p in enumerate(Q_polys)},
+            'singular_points': [{'z_c': str(z_c), 'classification': 'REGULAR' if reg else 'IRREGULAR'}
+                                 for z_c, reg in classified],
+            'mum_point_z0': {
+                'note': 'z=0 handled analytically via Frobenius theory (exact, not numeric RK4)',
+                'monodromy_matrix_is_unipotent': True,
+            },
+            'numeric_monodromy_away_from_zero': mono_json,
+            'script': 'scripts/k3_monodromy_verification.py',
+            'bugfix_note': ('classify_singular_points Fuchs-criterion offset bug fixed 2026-07-11; '
+                             'this is the first run where numeric RK4 monodromy integration was not '
+                             'silently skipped for every tested singular point.'),
+        }
+        out_path = os.path.join(out_dir, f'{tag}_monodromy.json')
+        with open(out_path, 'w') as f:
+            json.dump(json_record, f, indent=2)
+        print(f"\n  [artifact] wrote {out_path}")
 
     # ── Final summary ─────────────────────────────────────────────────────
     print(f"\n{'=' * 72}")

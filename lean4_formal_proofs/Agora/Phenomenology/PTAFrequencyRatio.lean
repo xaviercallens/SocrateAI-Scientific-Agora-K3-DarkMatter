@@ -15,13 +15,21 @@ ratio applies directly to the two predicted PTA line frequencies:
 
     f(S₁,₂) / f(S₂,₁) = m(S₁,₂) / m(S₂,₁) = √(1014/336) ∈ (1.73, 1.75)
 
-This is a genuine **parameter-free** prediction: the free moduli (τ, 𝒱) that
-set the *absolute* mass scale (§GAP-2, `docs/derivations/stiffness_to_potential.md`)
-cancel exactly in the ratio, leaving only the topological stiffness ratio
-1014/336. If both PTA lines (predicted periods ≈7.52 d for S₁,₂ and ≈13.08 d
-for S₂,₁ — see `PREDICTIONS.md` Prediction 4) were ever jointly detected with
-a frequency ratio outside (1.73, 1.75), the two-vacuum K3 interpretation would
-be falsified independently of every uncertain modelling choice upstream.
+**Conditional, not unconditional (corrected 2026-07-11, Task T2.2):** IF the mass
+ratio m(S₁,₂)/m(S₂,₁) equals the topological stiffness ratio √(1014/336) exactly,
+THEN the free moduli (τ, 𝒱) cancel and the PTA ratio inherits a parameter-free
+bound. `docs/derivations/stiffness_to_potential.md` (T2.2) shows this antecedent is
+**not established** by the model's own current numbers: the masses actually cited
+in CAVEATS.md/PARAMETER_LEDGER.yaml are computed WITH e^{-2πdτ} instanton
+suppression at hardcoded, undocumented τ values (τ_S12=33.6255, τ_S21=33.8014),
+under which the sum is single-instanton-dominated to ~90 decimal places — making
+1014 vs. 336 numerically irrelevant to those masses. The ≈0.03% agreement between
+√(1014/336) and the real mass ratio traces almost entirely to the specific,
+unexplained τ pair, not to the stiffness integers. A jointly detected PTA ratio
+outside (1.73, 1.75) would still falsify the arithmetic-plus-antecedent package
+below, but a ratio landing *inside* the interval would not, by itself, confirm the
+two-vacuum interpretation is parameter-free, since nothing currently derives
+τ_S12−τ_S21 from geometry rather than from an undocumented fit.
 
 ## Scope
 
@@ -65,9 +73,13 @@ theorem pta_frequency_ratio_in_interval :
   mass_ratio_in_interval
 
 /-- Restated as a standalone falsification statement: any measured squared
-    frequency ratio (f₁/f₂)² landing outside (1.73², 1.75²) is inconsistent
-    with the two-vacuum K3 topology, independently of τ, 𝒱, or any other free
-    modulus (they cancel in the ratio by `freq_ratio_eq_mass_ratio`). -/
+    frequency ratio (f₁/f₂)² landing outside (1.73², 1.75²) is inconsistent with
+    `mass(S₁,₂)/mass(S₂,₁) = √(1014/336)` exactly (`freq_ratio_eq_mass_ratio`'s
+    hypothesis) — the arithmetic half of the claim, which IS kernel-verified. It
+    is NOT, by itself, evidence that τ/𝒱-independence actually holds physically:
+    see `docs/derivations/stiffness_to_potential.md` (T2.2) for why the equality
+    this theorem's name presupposes is not established by the model's own
+    current mass values. -/
 theorem ratio_outside_interval_falsifies
     (r_sq : ℚ) (h : r_sq ≤ (173 : ℚ) / 100 * (173 / 100) ∨
                      (175 : ℚ) / 100 * (175 / 100) ≤ r_sq) :

@@ -294,7 +294,30 @@ Tension: 0.74σ (COMPATIBLE ✅)
 **The Vulnerability:**  
 $S_{20}$ Picard-Fuchs general-$n$ recurrence was an unverified axiom due to massive rational polynomials.
 
-**Resolution:** Transcompile exact-rational Wilf-Zeilberger certificates into Lean 4.
+**2026-07-12 scope clarification (does not close the axiom — narrows what it blocks):**
+`Agora.Discovery.FuzzyDarkMatter.cy_axion_no_go` — the GD-1 No-Go theorem that
+is $S_{20}$'s actual load-bearing role in this paper — is **self-contained**:
+it takes the candidate rigid-geometry axion mass (incl. $S_{20}$'s
+$\approx1.71\times10^{-23}$ eV) as an explicit hypothesis and proves exclusion
+by exact-rational arithmetic (`norm_num`). Checked directly (2026-07-12): its
+proof term does **not** import or depend on `S20Recurrence.lean`'s
+`axiom s20_recurrence`/`s20_recurrence_order_4` at all. **So GAP-6 does not
+block the No-Go theorem or anything downstream of it in this paper** — that
+part of the physics is fine as-is.
+
+What GAP-6 still means, unchanged: the general-$n$ recurrence itself remains
+an explicit, disclosed `axiom`, not a `theorem`. A companion-repo session
+(`Mirror-Map-Sieve`) attempted to discharge it via an "integer Horner
+reduction" bypass and initially reported success; on direct inspection the
+result was a theorem proving `True` from a 3-element placeholder list, not
+the real certificate — corrected same-day, see that repo's
+`docs/PHASE4_FINDINGS.md` and `S20_MATH_SIDE_PROJECT.md`. **Do not cite that
+attempt as having discharged this axiom.** The deeper geometric-identification
+work this axiom would eventually support ($L_6=L_4\cdot L_2$ factorization,
+Yukawa coupling, AESZ match — none of which this paper needs) has been forked
+to that repo's `S20_MATH_SIDE_PROJECT.md` as an independent pure-math track.
+
+**Resolution (still open, now correctly scoped as non-blocking):** Transcompile exact-rational Wilf-Zeilberger certificates into Lean 4.
 
 #### 6.1 Polynomial Chunking & Transcompilation
 **Script:** `scripts/gen_wz_lean.py`  
@@ -313,7 +336,11 @@ cd lean4_formal_proofs && lake build Agora
 - ✅ Terminal `sorry` stubs in orphaned files (per MEMORY.md §11) remain non-blocking
 
 **Task:** T4.1 (chunked HAIKU)  
-**Status:** Awaits exact SymPy WZ certificate extraction
+**Status:** Non-blocking (see scope clarification above), still genuinely open.
+`scripts/gen_wz_lean.py` referenced above does not currently exist in this
+repository (checked 2026-07-11/12) — see `OPEN_PROBLEMS.md` item 3 for the
+full finding. Do not run this section's commands expecting them to work as
+written; they describe the intended pipeline, not its current state.
 
 ---
 

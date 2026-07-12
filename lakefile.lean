@@ -15,3 +15,6 @@ lean_lib Agora {
 
 require mathlib from git
   "https://github.com/leanprover-community/mathlib4.git"
+
+-- `quantumInfo`/`slt` deliberately NOT required here (reverted 2026-07-11):
+-- see lean4_formal_proofs/lakefile.lean for why.

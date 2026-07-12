@@ -27,8 +27,8 @@ Full referee review and task specs: **[`scientificplan.md`](scientificplan.md)**
 - [ ] `[HAIKU]` **T3.2** (after T3.1) S₂,₁-bare survival table across M87* + 5 highest-spin SMBHs; propagate conclusion to Part I §Limitations.
 - [ ] `[HUMAN]` + `[SONNET+ draft]` **T3.3** Screening-alternatives memo (chameleon $n>0$, symmetron, native $T^2$-coupling density-dependence); human sign-off required before manuscript change.
 
-### 0.5 WS4 — Formal Verification Closure (GAP-6, mechanical)
-- [ ] `[SONNET+]` (chunked `[HAIKU]`) **T4.1** Compile WZ certificate into Lean; discharge `axiom s20_recurrence`; update all 5 disclosure locations (OPEN_PROBLEMS.md, CAVEATS.md §6, README.md, both manuscript §2/AI-Methodology blocks).
+### 0.5 WS4 — Formal Verification Closure (GAP-6, mechanical; non-blocking as of 2026-07-12 — see VALIDATION_GUIDE.md)
+- [ ] `[SONNET+]` (chunked `[HAIKU]`) **T4.1** Compile WZ certificate into Lean; discharge `axiom s20_recurrence`; update all 5 disclosure locations (OPEN_PROBLEMS.md, CAVEATS.md §6, README.md, both manuscript §2/AI-Methodology blocks). **Confirmed non-blocking for the physics paper:** `cy_axion_no_go` (the GD-1 No-Go theorem, S20's only load-bearing role here) is self-contained and does not depend on this axiom. Still genuinely open as a formal-verification goal in its own right — `scripts/gen_wz_lean.py`/`verify_wz_certificate.py` referenced elsewhere do not exist yet; a same-day attempt in the companion Mirror-Map-Sieve repo to discharge this via "Horner reduction" produced a vacuous `True` theorem, not a real proof (corrected there 2026-07-12).
 
 ### 0.6 WS5 — Cosmology to Boltzmann Grade (GAP-5, moderate)
 - [ ] `[HAIKU]` **T5.1** Replace rest ICs with tracker/scaling ICs (Copeland–Liddle–Wands 1998); re-run λ sweep; write `docs/cosmology/ic_sensitivity.md`; trigger `cross-consistency-gate` if (w₀,wₐ) moves >0.01.

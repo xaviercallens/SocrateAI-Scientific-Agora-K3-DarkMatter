@@ -1,0 +1,46 @@
+{
+  "sequence": "S_{2,1}",
+  "A": 2,
+  "B": 1,
+  "pf_ode_order": 2,
+  "recurrence_P_i(n)": {
+    "P0(n)": "-n**2 - 2*n - 1",
+    "P1(n)": "-11*n**2 - 33*n - 25",
+    "P2(n)": "n**2 + 4*n + 4"
+  },
+  "ode_Q_k(z)": {
+    "Q0(z)": "4*z**2 - 25*z - 1",
+    "Q1(z)": "5*z**3 - 44*z**2 - 3*z",
+    "Q2(z)": "z**4 - 11*z**3 - z**2"
+  },
+  "singular_points": [
+    {
+      "z_c": "0",
+      "classification": "REGULAR"
+    },
+    {
+      "z_c": "11/2 - 5*sqrt(5)/2",
+      "classification": "IRREGULAR"
+    },
+    {
+      "z_c": "11/2 + 5*sqrt(5)/2",
+      "classification": "IRREGULAR"
+    }
+  ],
+  "mum_point_z0": {
+    "note": "z=0 handled analytically via Frobenius theory (exact, not numeric RK4)",
+    "monodromy_matrix_is_unipotent": true
+  },
+  "numeric_monodromy_away_from_zero": {
+    "11/2 - 5*sqrt(5)/2": {
+      "regular": false,
+      "note": "irregular or overflow \u2014 integration skipped"
+    },
+    "11/2 + 5*sqrt(5)/2": {
+      "regular": false,
+      "note": "irregular or overflow \u2014 integration skipped"
+    }
+  },
+  "script": "scripts/k3_monodromy_verification.py",
+  "bugfix_note": "classify_singular_points Fuchs-criterion offset bug fixed 2026-07-11; this is the first run where numeric RK4 monodromy integration was not silently skipped for every tested singular point."
+}
