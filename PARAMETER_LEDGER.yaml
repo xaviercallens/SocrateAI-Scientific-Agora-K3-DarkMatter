@@ -96,7 +96,8 @@ parameters:
     source: "K3_DISCOVERY_REPORT.md, CAVEATS.md:§1.2"
     description: "Axion mass for S₁,₂ via Svrcek-Witten instanton formula."
     formula: "m_a = (M_Pl / √V) × √(Σ_d d² q_d e^(-2π d τ))"
-    caveat: "Formula assumes Type IIB/IIA orientifold; bare parameters not independently verified."
+    caveat: "GAP-2 CONFIRMED (2026-07-14, T-Interp-2): the τ=33.6255 used to compute this value in scripts/k3_sieve_analysis.py is not derived from geometry — git archaeology (commit c98b7ec, scripts/mass_from_first_principles.py's original scipy.optimize.minimize call) confirms τ was reverse-engineered by curve-fitting to this exact pre-chosen target mass. A later commit (400ecdd) disavowed this exact procedure as 'logically circular' but the fix never propagated to k3_sieve_analysis.py. Treat this value as an achievability demonstration, not a prediction."
+    reference: "OPEN_PROBLEMS.md:GAP-2_TAU_PROVENANCE_RESOLUTION_2026-07-14"
 
   axion_mass_S21:
     value: 1.83e-21
@@ -105,7 +106,8 @@ parameters:
     source: "K3_DISCOVERY_REPORT.md, CAVEATS.md:§1.2"
     description: "Axion mass for S₂,₁ via Svrcek-Witten instanton formula."
     formula: "m_a = (M_Pl / √V) × √(Σ_d d² q_d e^(-2π d τ))"
-    caveat: "Formula assumes Type IIB/IIA orientifold; bare parameters not independently verified."
+    caveat: "GAP-2 CONFIRMED (2026-07-14, T-Interp-2): the τ=33.8014 used to compute this value in scripts/k3_sieve_analysis.py is not derived from geometry — same reverse-engineering finding as axion_mass_S12 (see that entry). Additionally, S₂,₁ itself is confirmed non-K3 (GAP-1); this mass is now framed as belonging to a 'recurrence-invariant' companion object, not a second K3 vacuum."
+    reference: "OPEN_PROBLEMS.md:GAP-2_TAU_PROVENANCE_RESOLUTION_2026-07-14, OPEN_PROBLEMS.md:GAP-1_RESOLUTION_2026-07-14"
 
   # Superradiance & Chameleon Parameters
   alpha_eff_S12:

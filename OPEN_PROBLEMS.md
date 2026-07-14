@@ -131,6 +131,27 @@ The **JWST side was not quantitatively executed** — a rigorous $\mathcal{L}_{\
 
 **What is NOT resolved** (`[TIER: HUMAN]` provenance question + `[TIER: SONNET+/HUMAN]` moduli derivation): where `k3_sieve_analysis.py`'s $\tau_{12},\tau_{21}$ actually came from, and whether a genuine moduli-stabilisation mechanism (OPEN_PROBLEMS.md item 4, still open) could independently fix them.
 
+### 🔴 GAP-2 τ-PROVENANCE RESOLUTION (2026-07-14, Phase 3, Task T-Interp-2): CONFIRMED reverse-engineered, not derived
+
+**Full git-archaeology trail** (all commits inspected directly, not from memory):
+
+1. **Origin commit** `c98b7ec` (2026-06-25, "Phase 11 remediation sprint") introduces the exact hardcoded pair $(\tau_{S_{1,2}},\tau_{S_{2,1}})=(33.6255,\,33.8014)$ into `scripts/k3_sieve_analysis.py`, replacing a simpler placeholder scaling ($m_a = 1.0\times10^{-21}\sqrt{V''(0)/100}$). The same commit adds `scientific_protocol/mass_calibration.json` containing the identical $\tau$ pair alongside `derived_mass_eV` fields that reproduce the pre-chosen targets to 6+ significant figures, and adds `scripts/mass_from_first_principles.py`.
+
+2. **`scripts/mass_from_first_principles.py` at that commit is the smoking gun.** Its own code (not a later interpretation) does the following, in order: fixes `target_mass_S12 = 3.18e-21` and `target_mass_S21 = 1.83e-21` as literals; fixes `V_fixed = 1e4`; then calls `scipy.optimize.minimize` on a log-loss between the Svrcek-Witten formula's output and these fixed targets, **solving for the $\tau$ that reproduces the pre-chosen mass**. The resulting $\tau_{S_{1,2}}=33.6255$, $\tau_{S_{2,1}}=33.8014$ are written to `mass_calibration.json` — the exact values later hardcoded into `k3_sieve_analysis.py`. This is optimization *to* a target, not derivation *from* geometry: the causality is backwards from what "$m_a$ predicted by the K3 topology" would require.
+
+3. **A later commit, `400ecdd`** (same day, 2026-06-25, "remove circular fitting, show honest parameter sweep"), rewrites `scripts/mass_from_first_principles.py` to explicitly disavow this exact procedure: *"The circular fitting against pre-assumed targets... has been REMOVED. Those targets originated from spin-down phenomenology; using them to back-calibrate (tau, V) and then claiming the model 'predicts' the masses is logically circular."* This fix, however, **only touched `mass_from_first_principles.py`, `agent_astro_pheno.py`, and `superradiance_growth_rate.py`** — it never propagated to `scripts/k3_sieve_analysis.py`, which to this day (2026-07-14) still hardcodes the exact tainted $\tau$ values the disavowal was written about.
+
+**Verdict:** This is **Outcome B** from the Phase 3 execution plan — "reverse-engineered" is now **confirmed**, not merely suspected. The $\tau$ values used throughout the live pipeline (`k3_sieve_analysis.py`, and hence every downstream mass/PTA-ratio claim that cites $3.18\times10^{-21}$/$1.83\times10^{-21}$ eV) are the direct output of a curve-fit against pre-chosen target masses, using a procedure the repository's own later commit explicitly labels "logically circular." This is the **same category of problem** as GAP-5's reverse-engineered $\epsilon$ (§ above) — not a new failure mode, but now traced to its exact origin commit and mechanism.
+
+**What this does NOT affect:** the kernel-verified *arithmetic* fact $1014/336=169/56\in(1.73^2,1.75^2)$ is a statement about integers extracted from the recurrences and remains true regardless of $\tau$. What it **does** affect: any claim that the reported axion masses ($3.18\times10^{-21}$, $1.83\times10^{-21}$ eV) are *predictions* of the K3 geometry — they are targets the $\tau$ search was pointed at, not outputs of an independent calculation.
+
+**Remediation applied this session:**
+- `PARAMETER_LEDGER.yaml`: `axion_mass_S12`/`axion_mass_S21` caveats updated to cite this confirmed finding directly (see entries).
+- `scripts/k3_sieve_analysis.py`: flagged for a follow-up patch (not applied this session, to avoid silently changing a script whose numeric output other artifacts may still reference) — recommended next step: either (a) remove the hardcoded $\tau$ pair and reproduce `mass_from_first_principles.py`'s honest parameter-sweep framing, or (b) add an explicit code comment citing this resolution, matching the disavowal already present in `mass_from_first_principles.py`.
+- Manuscript (`K3_DarkMatter_Preprint.tex` line 115 area): caveat upgraded from "nothing in this repository currently derives that τ difference from geometry" (accurate but incomplete) to cite the confirmed reverse-engineering mechanism directly.
+
+**What remains open** (`[TIER: SONNET+/HUMAN]`): whether a genuine moduli-stabilisation mechanism (item 4, `OPEN_PROBLEMS.md` "The 5 Missing Pieces") could independently fix $\tau$ from first principles, replacing the circular fit entirely.
+
 ---
 
 ## The 5 Missing Pieces (referee "deeper programme", Round 2)
