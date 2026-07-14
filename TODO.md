@@ -16,17 +16,19 @@ A gate-driven evolutionary hypothesis search. Reuses validation infrastructure a
 - [x] **LR-3** DONE — extended sieve $(A,B)\in[1,8]^2$ + 3-factor: **S(2,2)=A005259 is the ONLY K3-type in the 2-factor landscape**; 4 new K3-type in 3-factor family (A079727, T011, T103, T112). `data/autoresearch_v2/phase_a_{anchors,scan2,scan3}.json`
 - [x] **LR-4** DONE — `docs/reference/lee_tsai_2026.md`, `el_naschie_2013.md` (numerology-class boundary marker), + companion-repo Phase III report & bridge plan archived in `docs/reference/dmk3_home/`
 - [x] **LR-5** DONE — `docs/autoresearch_v2/lee_tsai_bridge.md` (breaks section ≥ alignment; OI-1 m_eff form inconsistency flagged)
-- [ ] `[HUMAN]` **LR-6 / GATE-A** — pool of 13 PROPOSED in `data/autoresearch_v2/candidate_pool.yaml`; **awaiting HUMAN sign-off to freeze**
+- [x] `[HUMAN]` **LR-6 / GATE-A** APPROVED (user, 2026-07-14) — pool of 13 FROZEN in `data/autoresearch_v2/candidate_pool.yaml` (`frozen: true`; YAML quoting root-caused & fixed same day — the file field is authoritative, the marker file is a redundant copy)
 
-### Phase 8.B — G1/G2 Exact-Arithmetic + Physics Gates (weeks 3–4): 13 → 5
-- [ ] `[HAIKU batch]` **G1-1** Classify order per candidate (corrected classifier on 13); **control fail → halt**
-- [ ] `[HAIKU batch]` **G1-2** Weil bounds (44 primes) + weight-2/3 status (recorded, not eliminatory)
-- [ ] `[HAIKU batch]` **G1-3** Mirror-map integrality (30 coefficients per candidate)
-- [ ] `[HAIKU batch]` **G1-4** Fuchs criterion + monodromy attempt; computable monodromy → auto-elevate
-- [ ] `[HAIKU batch]` **G2-1** Stiffness contours $(\tau,\mathcal{V})$ per candidate (never point masses)
-- [ ] `[HAIKU batch]` **G2-2** GD-1 No-Go check (pinned to $10^{-23}$ eV → eliminate)
-- [ ] `[HAIKU batch]` **G2-3** Dolan superradiance solver (achievable windows, bare-survival asymmetry)
-- [ ] `[HUMAN]` **GATE-B-SELECT** Score composite (G1/G2 completeness + monodromy + No-Go + superradiance + control sanity) → pick top 5
+### Phase 8.B — G1/G2 Exact-Arithmetic + Physics Gates (weeks 3–4): 13 → 5 — ✅ BATCH EXECUTED 2026-07-14
+All batch gates run with REAL tools (`scripts/autoresearch_v2_phase_b_all_gates.py`, 78 s; findings negative-first in `docs/autoresearch_v2/PHASE_B_FINDINGS.md`, incl. Fuchs-criterion sign-bug fix N1 and S₁,₂ wrong-operator mirror-map artifact N2):
+- [x] **G1-1** DONE — 13/13 classified, controls PASS (A005259→K3, A005258→elliptic); A006077 → elliptic (literature tag falsified); s18 → order-4 in window. `g1_1_order_classification.json`
+- [x] **G1-2** DONE — real Stienstra–Beukers a_p, 44 primes, both bounds + LMFDB subset; all 13 pass weight-3 Weil. `g1_2_weil_modularity.json` + `ap_tables/`
+- [x] **G1-3** DONE — Frobenius log-solution on the MINIMAL operator (validated exactly vs Beukers controls, 31 coeffs); 10 integral; **s12 FAILS (q₂=81/8 — v1's pass was a non-minimal-operator artifact)**; t011/s18 BLOCKED (non-MUM). `g1_3_mirror_integrality.json`
+- [x] **G1-4** DONE — Fuchs-criterion SIGN BUG in `k3_monodromy_verification.py` found & fixed (verified on the classical Apéry operator); all 13 Fuchsian, **monodromy computed for all 13**. `g1_4_monodromy_status.json`
+- [x] **G2-1** DONE — contours computed; STRUCTURAL FINDING: identical mass for all candidates at any common (τ,𝒱) (single-instanton domination — GAP-2 degeneracy now pool-wide) → G2 non-discriminating. `g2_1_stiffness_contours.json`
+- [x] **G2-2** DONE — GD-1 survival floor 1.59e-21 eV (K_heating exact from FuzzyDarkMatter.lean); no candidate pinned; all survive at reference. `g2_2_no_go_status.json`
+- [x] **G2-3** DONE — Dolan solver (Table-I revalidated 6/6); at common reference α=0.168 NO bare M87* survival (τ≈2.5 Myr < Salpeter), pool-uniform. `g2_3_superradiance_bands.json`
+- [x] **G2-4** (added per user Phase B directive) — PTA/NANOGrav + Lyman-α screens: reference mass outside PTA band; Lyman-α tension if all-DM. `g2_4_obs_screens.json`
+- [ ] `[HUMAN]` **GATE-B-SELECT** — recommendation READY in `data/autoresearch_v2/selection_13to5_rationale.md`: **promote apery_zeta3, domb, cooper_s7, cooper_s10, almkvist_zagier_second** (optional swap for t103 if novelty preferred); s12 killed (N2), s21 retained as control — **awaiting HUMAN pick of top 5**
 
 ### Phase 8.C — Quick Data Tests (weeks 5–7): 5 → 3
 - [ ] `[HAIKU]` **EU-1** Euclid Q1 acquisition (ESA archive); if blocked → BLOCKED note (Rule 1)

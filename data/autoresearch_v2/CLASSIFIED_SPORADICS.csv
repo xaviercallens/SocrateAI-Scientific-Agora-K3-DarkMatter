@@ -4,15 +4,16 @@ Apery_zeta2_S21,A005258,sum C(n:k)^2 C(n+k:k),2,2,2,3,elliptic,in-session exact 
 S12_v1_primary,A112019,sum C(n:k) C(n+k:k)^2,3,3,2,5,elliptic-type (RECLASSIFIED),in-session exact (80/74 held-out),OEIS A112019 (rational-function diagonal; no K3 attribution)
 Domb,A002895,sum C(n:k)^2 C(2k:k) C(2n-2k:n-k),2,3,3,4,K3-type,in-session exact (85/72 held-out),Almkvist-Zagier sporadic class
 T003_partial_central_cubes,A079727,sum_{k<=n} C(2k:k)^3,2,3,3,4,K3-type,in-session exact,related to 3F2(1/2 1/2 1/2;1 1;64z) weight-3 hypergeometric
-T011,TBD,sum C(n+k:k) C(2k:k),,,3,6,K3-type,in-session exact,new sieve discovery (Phase B OEIS resolution)
-T103,TBD,sum C(n:k) C(2k:k)^3,,,3,6,K3-type,in-session exact,new sieve discovery (Phase B OEIS resolution)
-T112,TBD,sum C(n:k) C(n+k:k) C(2k:k)^2,,,3,8,K3-type,in-session exact,new sieve discovery (Phase B OEIS resolution)
+T011,none (no OEIS match; searched 2026-07-14),sum C(n+k:k) C(2k:k),,,3,6,K3-type (non-MUM at 0),in-session exact (62 held-out),Phase B G1-1 verified; mirror gates BLOCKED (indicial roots 0 0 1)
+T103,A276536,sum C(n:k) C(2k:k)^3,,,3,6,K3-type,in-session exact (62 held-out),OEIS A276536; Phase B G1-1..G1-4 pass
+T112,A274789,sum C(n:k) C(n+k:k) C(2k:k)^2,,,3,8,K3-type,in-session exact (52 held-out),OEIS A274789; Phase B G1-1..G1-4 pass
 T201_zagier_class,A002893(expected),sum C(n:k)^2 C(2k:k),2,2,2,3,elliptic,in-session exact,Zagier sporadic class (id to confirm in B)
 T111,TBD,sum C(n:k) C(n+k:k) C(2k:k),3,3,2,5,elliptic,in-session exact,Phase B OEIS resolution
 T002_partial_central_squares,TBD,sum_{k<=n} C(2k:k)^2,2,2,2,3,elliptic,in-session exact,Phase B OEIS resolution
 T102,TBD,sum C(n:k) C(2k:k)^2,3,2,2,4,elliptic,in-session exact,Phase B OEIS resolution
 S11_Delannoy,A001850(expected),sum C(n:k) C(n+k:k),2,1,1,2,rational(algebraic gf),in-session exact,central Delannoy numbers
-AZ_sporadic_A006077,A006077,see OEIS,,,,,K3-class per literature,verify_in B,Almkvist-Zagier
-Cooper_s7,TBD,Cooper 2012 level-7,,,,,weight-3 class per literature,verify_in B,Cooper 2012
-Cooper_s10,TBD,Cooper 2012 level-10,,,,,weight-3 class per literature,verify_in B,Cooper 2012
-Cooper_s18,TBD,Cooper 2012 level-18,,,,,weight-3 class per literature,verify_in B,Cooper 2012
+AZ_sporadic_A006077,A006077,sum (-1)^k 3^(n-3k) C(n:3k) C(2k:k) C(3k:k),2,2,2,3,elliptic (RECLASSIFIED from literature K3 tag),in-session exact (82 held-out),Phase B G1-1; Zagier zeta(2) class per (n+1)^2 recurrence
+Cooper_s7,A183204,sum C(n:j)^2 C(2j:n) C(j+n:j),2,3,3,4,K3-type,in-session exact (72 held-out),Cooper 2012 level-7; OEIS comment s_7; Phase B verified
+Cooper_s10,A005260,sum C(n:k)^4,2,3,3,4,K3-type,in-session exact (72 held-out),Cooper 2012 level-10; OEIS comment s_10; Phase B verified
+Cooper_s18,A219692,sum (-1)^j C(n:j) C(2j:j) C(2n-2j:n-j) (C(2n-3j-1:n)+C(2n-3j:n)),2,4,4,5,CY3-shape in window (NOT weight-3; non-MUM),in-session exact (60 held-out),Cooper 2012 level-18; order-3 op with degree>8 not excluded
+Almkvist_Zudilin_second,A125143,sum (-1)^(n-k) 3^(n-3k) ((3k)!/k!^3) C(n:3k) C(n+k:k),2,3,3,4,K3-type,in-session exact (72 held-out),AZ zeta(3) class; Phase B G1-1..G1-4 pass
