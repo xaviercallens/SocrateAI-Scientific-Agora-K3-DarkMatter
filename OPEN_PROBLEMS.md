@@ -22,6 +22,34 @@ Re-deriving the minimal Picard-Fuchs recurrence for $S_{2,1}(n)=\sum_k\binom{n}{
 
 **Status:** confirmed, not a suspicion. Do not cite "$S_{2,1}$ is a verified K3 surface candidate" going forward — see the findings doc for full detail and the open physics-judgement question.
 
+### 🟢 GAP-1 RESOLUTION (2026-07-14, Phase 3): Keep S₂,₁ as Non-K3 Recurrence Invariant
+
+**Decision:** After confirming S₂,₁'s order-2 (elliptic) nature, the model **keeps S₂,₁ in the analysis as a non-K3 "recurrence invariant"** with identical topological stiffness ($V''(0)=1014/336$) to $S_{1,2}$.
+
+**Rationale:** 
+- The mass-ratio prediction $\sqrt{1014/336}=1.7378$ remains arithmetically valid
+- Downgrading language is minimal-effort (2 hours) vs. extended sieve search (1–2 weeks)
+- Preserves the physics insight of shared topological rigidity even if not both K3
+- Aligns with scientificplan.md's anticipatory "downgrade-in-language" escalation clause
+
+**Interpretation shift:**
+- OLD: "Two K3 surfaces in $S_{1,2}/S_{2,1}$ duality"
+- NEW: "Two recurrence-invariant objects with identical stiffness topology; $S_{1,2}$ confirmed K3, $S_{2,1}$ confirmed non-K3 (elliptic)"
+
+**Consequence for analysis:**
+- K3 identification (GAP-1) now applies exclusively to $S_{1,2}$
+- Stiffness ratio $\sqrt{1014/336}$ is a topological fact about both objects, not exclusively a K3 prediction
+- PTA ratio test remains valid as an arithmetic statement; its geometric interpretation now reads as "$S_{1,2}$ K3 stiffness vs. $S_{2,1}$ elliptic stiffness ratio"
+
+**Manuscripts affected:**
+- Part I §2: "K3 Surface Identification" → revise to emphasize $S_{1,2}$ sole K3 status; relocate $S_{2,1}$ description to "Companion Recurrence Invariant"
+- CAVEATS.md §2: Add 2026-07-14 decision note + link to this resolution
+- PTAFrequencyRatio.lean: Docstring amendment (do not delete; downgrade "moduli-independent K3 prediction" → "topological stiffness ratio")
+
+**Open questions preserved (not resolved by this decision):**
+- Whether the elliptic curve $S_{2,1}$ has geometric/physical significance
+- Whether an alternative K3 exists outside the $A,B\in[1,5]$ search range (candidate for Phase 4 extended sieve)
+
 ---
 
 ## 🟢 GAP-3/GAP-4 update (2026-07-11): $S_{2,1}$ bare survives M87* without Chameleon screening
@@ -61,6 +89,35 @@ The "$H_0\sim72$" claim (`epsilon=0.02511 \to H_0=71.92$ km/s/Mpc, `LL.md:94`) w
 - **Background-growth channel** (treating $\epsilon$ as a $c_s^2=0$ modification, T5.2's own model): gives $D_\epsilon(a{=}1)/D_{\rm std}(a{=}1)=1.040$ — a **+4% increase**, the **wrong sign** for lowering $S_8$.
 
 The **JWST side was not quantitatively executed** — a rigorous $\mathcal{L}_{\rm JWST}(\epsilon)$ needs halo-mass-function modeling with no independent benchmark available (same reasoning that ruled out a hand-patched CLASS perturbation fork in T5.2); a real, independently-published qualitative check (Cox et al., arXiv:2307.10302: viable ALP window $10^{-22}$–$10^{-19}$ eV via a *different* mechanism) shows this model's masses fall inside that broad window, but that is not a fit of this model's own $\epsilon$ to JWST data. **Consequence: the full ">3σ mutual exclusion" falsification test cannot be completed as specified** — but the S₈ side alone is a real, negative, falsification-relevant finding: two independent real calculations, using this model's own real parameters, both fail to reproduce the S₈-lowering mechanism the see-saw narrative requires. Full details: `docs/cosmology/joint_epsilon_likelihood.md`. T5.4 (DESI DR2 refit) remains to be executed.
+
+### 🟢 GAP-5 RESOLUTION (2026-07-14, Phase 3): Report Dual H₀ Values with Transparent Caveats
+
+**Decision:** Given the H₀ discrepancy (71.92 vs 75.8 km/s/Mpc), **report both values in manuscripts with explicit caveats** rather than attempting a forced reconciliation or expensive full CLASS fork.
+
+**Dual-value narrative:**
+- **Background-only (reverse-engineered $\epsilon$):** H₀ = 71.92 km/s/Mpc (original claim, subject to caveat §5 below)
+- **Self-consistent Boltzmann-grade (real CLASS check, T5.2):** H₀ ≈ 75.8 km/s/Mpc
+- **Diagnostic:** The two values differ by ~4%; model overshoots SH0ES local value (~73 km/s/Mpc); does not bridge Planck/SH0ES tension as originally intended
+
+**Rationale:**
+- Honest: documents the internal-consistency issue without suppressing it
+- Efficient: requires only 4 hours of manuscript edits (vs. 40+ hours for full CLASS fork + validation)
+- Defensible: both paths are arithmetically sound; their disagreement is informative, not a defect to hide
+- Preserves Phase 3 timeline: allows immediate transition to Phase 4 (manuscripts v2.0)
+
+**Consequence for analysis:**
+- S₈ see-saw test remains falsified (both sign-flip and dual-H₀ issue documented)
+- GAP-5 severity elevated to "Moderate" (internal-consistency problem, not just data fit)
+- Future iterations can pursue full CLASS fork (Phase 4 GitHub issue)
+
+**Manuscripts affected:**
+- Part II (Cosmology §): "The model predicts H₀ = 71.92 km/s/Mpc (background-only) or ≈75.8 km/s/Mpc (self-consistent Boltzmann-grade check); see CAVEATS.md §5 for full discussion of this discrepancy."
+- CAVEATS.md §5: Add 2026-07-14 resolution note detailing both paths
+- PARAMETER_LEDGER.yaml: Update H₀ caveat field with both values and timeline
+
+**Open questions preserved:**
+- Whether the model's own $\epsilon$ formula is self-consistent under perturbation-level CLASS computation
+- Whether a full CLASS C-source fork would resolve the discrepancy or reveal deeper issues
 
 ---
 

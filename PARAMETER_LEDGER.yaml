@@ -33,13 +33,14 @@ parameters:
 
   H_0:
     value: 71.92
+    alternate_value: 75.8
     units: "km/s/Mpc"
     tag: "[FITTED]"
     source: "LL.md:94, ROADMAP.md:43"
     description: "Hubble constant under mass-varying axion + T² rolling torus model."
     constraints: "Synchronized across empirical_crucible/jax_inference.py, .benchmarks/*.json, and LaTeX manuscripts."
-    caveat: "GAP-5 (2026-07-11, T5.2): a real-CLASS-validated (<0.002% integrator error), self-consistent recomputation applying ε to BOTH the sound-horizon and comoving-distance integrals gives H₀≈75.8 km/s/Mpc for this same ε, not 71.92 — a real, unreconciled discrepancy that overshoots even SH0ES. This 71.92 value is NOT changed here pending a manuscript-wide decision (would require synchronized updates across empirical_crucible/jax_inference.py, .benchmarks/*.json, and LaTeX per the constraints above); see docs/cosmology/class_fork_validation.md."
-    reference: "docs/cosmology/class_fork_validation.md"
+    caveat: "GAP-5 DUAL-VALUE REPORTING (2026-07-14, Phase 3): Primary value 71.92 comes from background-only integration with reverse-engineered ε. Real-CLASS-validated self-consistent recomputation (T5.2, <0.002% integrator error, ε applied to both sound-horizon and comoving-distance integrals) gives H₀≈75.8 km/s/Mpc — a real, material discrepancy (~+3.9 km/s/Mpc) that OVERSHOOTS even SH0ES (~73). Manuscripts now report BOTH values with explicit caveats per Phase 3 resolution (OPEN_PROBLEMS.md, GAP-5 RESOLUTION section). This dual reporting addresses the internal-consistency issue honestly without requiring expensive full CLASS C-source fork (estimated 40+ hrs)."
+    reference: "docs/cosmology/class_fork_validation.md, OPEN_PROBLEMS.md:GAP-5_RESOLUTION_2026-07-14"
 
   epsilon:
     value: 0.02511

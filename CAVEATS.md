@@ -37,7 +37,9 @@ The classification of $S_{1,2}$ as a "K3 surface" is based on detecting an Order
 - The Weil bound check (`|a_p| ≤ 2p`, weight-3) is computed for both sequences over 44 primes (p∈[5,200]) and **passes for both** (`scripts/modularity_screen.py`, `docs/modularity_report.md`) — a necessary but not sufficient condition. **Correction (2026-07-11, self-audit):** an earlier draft of this note claimed the weight-2 bound $|a_p|\le2\sqrt p$ "fails at 6/23 checked primes" for $S_{2,1}$ — that figure was never actually computed by any script and did not match the data on disk. The weight-2 check has now been added to `scripts/modularity_screen.py` and run for real: it fails at **11/44** primes for $S_{2,1}$ (p = 29, 41, 53, 61, 73, 97, 109, 113, 137, 149, 181) and, notably, **also fails at 9/44** primes for $S_{1,2}$ (p = 43, 59, 89, 107, 131, 137, 139, 179, 193) — the sequence independently confirmed to be genuinely order-3/K3. Because both sequences fail the weight-2 bound at broadly similar rates, **this check does not actually discriminate between the two sequences** and should not be cited as evidence for the order-2 reclassification; the order-2 finding rests entirely on the held-out recurrence-order re-derivation in `docs/gap1/ORDER_VERIFICATION_FINDINGS.md`, not on this Weil-bound comparison.
 - The mirror-map integrality check (`scripts/mirror_map_integrality.py`, task T1.3) passes for both sequences: all 30 checked coefficients of $q(z)/z$ are exact integers for both $S_{1,2}$ and $S_{2,1}$ (`data/mirror_map/S12_qcoeffs.json`, `S21_qcoeffs.json`). Integrality is a necessary condition for many arithmetic period sequences (not exclusively K3), so this pass does not contradict $S_{2,1}$'s reclassification as elliptic.
 
-**Status**: $S_{1,2}$ remains a **computationally supported conjecture** (order-3 confirmed as the unique K3 survivor of the corrected sieve, Weil bound + integrality both pass, no strong modularity match yet found; monodromy computation still pending due to the separate classifier bug). $S_{2,1}$ is **confirmed non-K3** (elliptic, order-2) — see `docs/gap1/ORDER_VERIFICATION_FINDINGS.md` for the full resolution path and open physics-judgement question.
+**2026-07-14 Phase 3 resolution:** $S_{2,₁}$ is kept in the model as a **non-K3 recurrence-invariant** with identical topological stiffness to $S_{1,2}$. The mass-ratio prediction $\sqrt{1014/336}$ remains arithmetically valid; its interpretation shifts from "two K3 surfaces" to "two objects with shared stiffness topology, one confirmed K3, one elliptic." See OPEN_PROBLEMS.md "GAP-1 RESOLUTION (2026-07-14)" for rationale and manuscript updates.
+
+**Status**: $S_{1,2}$ remains a **computationally supported conjecture** (order-3 confirmed as the unique K3 survivor of the corrected sieve, Weil bound + integrality both pass, no strong modularity match yet found; monodromy computation still pending due to the separate classifier bug). $S_{2,₁}$ is **confirmed non-K3** (elliptic, order-2) and **reframed as recurrence-invariant** — see `docs/gap1/ORDER_VERIFICATION_FINDINGS.md` for technical details and OPEN_PROBLEMS.md for the Phase 3 resolution.
 
 ---
 
@@ -152,6 +154,12 @@ likelihood (T5.3's remaining scope) both require substantial further work — ge
 C-source fork and halo-mass-function modeling respectively, correctly flagged by
 `scientificplan.md` as `[TIER: SONNET+]` and not completed in one session. T5.4 (DESI DR2
 refit) remains to be executed.
+
+> **2026-07-14 Phase 3 resolution:** Given the H₀ discrepancy (background-only 71.92 vs. 
+> self-consistent 75.8 km/s/Mpc), manuscripts will **report both values** rather than 
+> suppressing the discrepancy or attempting an expensive full CLASS C-source fork (estimated 
+> 40+ hours + validation risk). Rationale and manuscript-update details in OPEN_PROBLEMS.md 
+> "GAP-5 RESOLUTION (2026-07-14)".
 
 ---
 
