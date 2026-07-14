@@ -6,49 +6,48 @@
 
 ---
 
-## 🔴 GAP-1 update (2026-07-11): S₂,₁ is CONFIRMED not a K3 surface
+## 🔴 GAP-1 update (2026-07-14): S₁,₂ and S₂,₁ are both CONFIRMED elliptic, not K3 surfaces
 
-**Full findings:** `docs/gap1/ORDER_VERIFICATION_FINDINGS.md`. This is placed first because it is a negative result bearing directly on the model's central premise (Rule 4 — negative results go at the top, not buried).
+**Full findings:** `docs/autoresearch_v2/PHASE_8_AUTOEVOLVE_RECTIFICATION.md`. This is placed first because it is a negative result bearing directly on the model's central premise (Rule 4 — negative results go at the top, not buried).
 
-Re-deriving the minimal Picard-Fuchs recurrence for $S_{2,1}(n)=\sum_k\binom{n}{k}^2\binom{n+k}{k}$ from scratch, and validating the candidate against 149 held-out exact-integer values, shows it satisfies a genuine **order-2** recurrence — the signature of an **elliptic curve period**, not a K3 surface (which needs order-3). $S_{1,2}$ was checked against the same order-2 ansatz and has none; it remains genuinely order-3. This directly contradicted the "$S_{2,1}$: K3 Surface (Order-3)" label previously asserted in `K3_DISCOVERY_REPORT.md` and used as a load-bearing premise throughout the manuscripts.
+The Phase 8 exact-rational sieve re-derived the minimal generating-function Picard–Fuchs operators for the candidate sequences and found:
 
-**Root cause traced to two independent bugs**, both pre-existing (not introduced by this finding):
-1. `scripts/k3_sieve_analysis.py::find_minimal_order` returned a polynomial-coefficient-degree quantity mislabeled as "order" (conflated with the true recurrence shift-order that actually determines the geometry class), and its existence check validated candidates against only 3 equations beyond the bare minimum — no held-out validation. This script also could not execute at all prior to this session due to a Python-version-incompatible f-string.
-2. `scripts/k3_monodromy_verification.py::classify_singular_points` (the Fuchs-criterion regularity check) was missing the leading-coefficient's own vanishing-order offset in its threshold, which **systematically misclassified every singular point it was ever tested on as irregular** — including the presumed MUM point at z=0 for both sequences. **This bug is now fixed (2026-07-11)**, together with a performance rewrite (exact factor-based divisibility over $\mathbb Q[z]$, replacing a per-root symbolic-simplify loop that did not finish in reasonable time on the corrected but naive version). The corrected classifier now runs to completion and gives real, exact output: $z=0$ correctly comes back REGULAR (MUM) for both sequences, but *every other* finite singular point of both extracted operators comes back genuinely IRREGULAR — so a numeric RK4 monodromy matrix still does not exist for either sequence, now because the (correct) classifier finds no regular point to integrate around, not because of a bug. Since genuine Picard–Fuchs operators of algebraic families are always Fuchsian (Deligne's regularity theorem), and the *same* pattern appears for $S_{2,1}$ (independently established non-K3/elliptic above) as for $S_{1,2}$, the more likely explanation is that the nullspace-extracted recurrence used throughout this pipeline is not the canonical minimal operator (apparent-singularity artifacts from the fitting/theta-conversion procedure) rather than a K3-specific anomaly — but this is not proven either way. Full argument: `docs/gap1/ORDER_VERIFICATION_FINDINGS.md` "Step 1 completed." New follow-up scoped as `[TIER: SONNET+]`: check the extracted operator's Ore-algebra minimality / right-factors.
+* $S_{2,1} = \sum_k \binom{n}{k}^2 \binom{n+k}{k}$ (OEIS A005258) has a minimal **order-2** ODE — the signature of an **elliptic curve period**.
+* $S_{1,2} = \sum_k \binom{n}{k} \binom{n+k}{k}^2$ (OEIS A112019) also has a minimal **order-2** ODE (degree 5), validated against 74 held-out exact-integer terms. It is therefore **elliptic-type**, not K3-type.
+* Phase 8.B G1-3 independently confirmed the failure for $S_{1,2}$: recomputing the mirror map on the minimal operator gives a non-integral second coefficient **$q_2 = 81/8$**, which violates the K3-period integrality condition. The earlier `scripts/mirror_map_integrality.py` integral pass was an artifact of using the non-minimal order-3 shift operator.
 
-**Bug #1 has been fixed and the full $A,B\in[1,5]$ sieve re-run in this session** (70 held-out checks, $n_{\max}=110$): with the corrected classifier, **only $(A,B)=(1,2)=S_{1,2}$ survives as a K3 candidate**; $(2,1)=S_{2,1}$ and $(2,2)$ both come back **Elliptic Curve (Order-2)**. No replacement K3 candidate appears elsewhere in the searched range.
+The literature-certified K3 anchor in the $(A,B)$ family is **$S(2,2)$ = A005259** (Apéry $\zeta(3)$, Beukers–Peters 1984), whose minimal generating-function ODE is **order 3**. The full exact-rational classifier (shift recurrence + ODE order + mirror-map integrality) correctly recovers both controls.
 
-**What is NOT yet settled** (a physics-judgement call, `[TIER: HUMAN]`, not resolved by this fix): whether to (a) drop $S_{2,1}$ and search for a genuine second K3 candidate outside $A,B\in[1,5]$, (b) keep $S_{2,1}$ as a non-K3 "recurrence invariant" (the downgrade-in-language escalation clause scientificplan.md already anticipates for GAP-2), or (c) rebuild the two-vacuum narrative entirely around a different second object. The mass-ratio prediction $\sqrt{1014/336}$ and the GAP-2 PTA ratio test remain arithmetically true as rational-number statements, but their interpretation as "two K3 vacua" no longer holds for the $S_{2,1}$ side.
+**Root cause traced to the v1 bug:** `scripts/k3_sieve_analysis.py` used the **shift-recurrence order** as a geometry proxy, while the correct discriminator is the **generating-function ODE order**. Shift order can anti-correlate with geometry (e.g. A005259 has shift order 2 but ODE order 3), so the v1 rule promoted elliptic-type sequences and excluded genuine K3 candidates.
 
-**Status:** confirmed, not a suspicion. Do not cite "$S_{2,1}$ is a verified K3 surface candidate" going forward — see the findings doc for full detail and the open physics-judgement question.
+**Status:** confirmed. Do not cite "$S_{1,2}$ is a K3 surface" or "$S_{2,1}$ is a K3 surface" going forward. The K3 candidate pool is now the GATE-C set: **$S(2,2)$=A005259, Cooper $s_7$=A183204, Cooper $s_{10}$=A005260, t103=A276536, Domb=A002895, and Almkvist–Zagier second=A125143**.
 
-### 🟢 GAP-1 RESOLUTION (2026-07-14, Phase 3): Keep S₂,₁ as Non-K3 Recurrence Invariant
+### 🟢 GAP-1 RESOLUTION (2026-07-14): Re-anchoring to the GATE-C K3-type candidate pool
 
-**Decision:** After confirming S₂,₁'s order-2 (elliptic) nature, the model **keeps S₂,₁ in the analysis as a non-K3 "recurrence invariant"** with identical topological stiffness ($V''(0)=1014/336$) to $S_{1,2}$.
+**Decision:** After confirming both $S_{1,2}$ and $S_{2,1}$ are elliptic-type, the model **keeps both as elliptic recurrence-invariants** for the exact stiffness ratio $\sqrt{1014/336}$ and re-anchors the K3 identification to the GATE-C finalists.
 
 **Rationale:** 
-- The mass-ratio prediction $\sqrt{1014/336}=1.7378$ remains arithmetically valid
-- Downgrading language is minimal-effort (2 hours) vs. extended sieve search (1–2 weeks)
-- Preserves the physics insight of shared topological rigidity even if not both K3
-- Aligns with scientificplan.md's anticipatory "downgrade-in-language" escalation clause
+- The mass-ratio prediction $\sqrt{1014/336}=1.7378$ remains arithmetically valid as a statement about the two sequences' stiffness integers.
+- The new K3 candidates (A005259, Cooper $s_7$, Cooper $s_{10}$, t103, Domb, Almkvist–Zagier second) pass all three algebraic K3 gates: order-3 ODE, integral mirror map, and Fuchsian monodromy.
+- Re-anchoring the K3 physics on these candidates is more robust than the v1 S1,2 narrative, which is now falsified at the arithmetic level.
 
 **Interpretation shift:**
-- OLD: "Two K3 surfaces in $S_{1,2}/S_{2,1}$ duality"
-- NEW: "Two recurrence-invariant objects with identical stiffness topology; $S_{1,2}$ confirmed K3, $S_{2,1}$ confirmed non-K3 (elliptic)"
+- OLD: "$S_{1,2}$ is the sole K3 survivor; $S_{2,1}$ is a companion recurrence-invariant"
+- NEW: "$S_{1,2}$ and $S_{2,1}$ are both elliptic recurrence-invariants; the K3 candidates are the GATE-C pool"
 
 **Consequence for analysis:**
-- K3 identification (GAP-1) now applies exclusively to $S_{1,2}$
-- Stiffness ratio $\sqrt{1014/336}$ is a topological fact about both objects, not exclusively a K3 prediction
-- PTA ratio test remains valid as an arithmetic statement; its geometric interpretation now reads as "$S_{1,2}$ K3 stiffness vs. $S_{2,1}$ elliptic stiffness ratio"
+- K3 identification (GAP-1) no longer applies to $S_{1,2}$ or $S_{2,1}$.
+- The stiffness ratio $\sqrt{1014/336}$ remains a kernel-verified arithmetic fact about the $S_{1,2}$/$S_{2,1}$ sequences, but its geometric interpretation is now a ratio between two elliptic-type objects, not a K3 mass ratio.
+- PTA ratio test remains valid as an arithmetic statement; its geometric interpretation must be updated to refer to the GATE-C K3 candidates.
 
 **Manuscripts affected:**
-- Part I §2: "K3 Surface Identification" → revise to emphasize $S_{1,2}$ sole K3 status; relocate $S_{2,1}$ description to "Companion Recurrence Invariant"
-- CAVEATS.md §2: Add 2026-07-14 decision note + link to this resolution
-- PTAFrequencyRatio.lean: Docstring amendment (do not delete; downgrade "moduli-independent K3 prediction" → "topological stiffness ratio")
+- `manuscripts_and_proofs/K3_DarkMatter_Preprint.tex`: Updated with a `\section*{Update: Autonomous Sieve Rectification and the Fall of $S_{1,2}$}` and consistent limitations.
+- `CAVEATS.md` §2: Should reflect the 2026-07-14 Phase 8 rectification.
+- `PTAFrequencyRatio.lean`: Docstring amended to remove K3-specific claims for S1,2/S2,1.
 
 **Open questions preserved (not resolved by this decision):**
-- Whether the elliptic curve $S_{2,1}$ has geometric/physical significance
-- Whether an alternative K3 exists outside the $A,B\in[1,5]$ search range (candidate for Phase 4 extended sieve)
+- Which GATE-C candidate has the preferred physical phenomenology (mass, superradiance, PTA) once the chameleon/environmental-screening mechanism is specified.
+- Whether a full top-down string compactification (orientifold, flux, tadpole) can be constructed for any of the GATE-C candidates.
 
 ---
 

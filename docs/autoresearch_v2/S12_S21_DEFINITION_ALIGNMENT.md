@@ -143,7 +143,7 @@ The mass/stiffness integers `1014` and `336` are treated in `lean4_formal_proofs
 
 1. **Update `lean4_formal_proofs/Structures/S12S21Recurrence.lean` docstring** (lines 13-26) to align with Phase 8.A / `f73d2e4`: both S₁₂ and S₂₁ have generating-function ODE order 2 (elliptic-type); the file still does not prove recurrence order in Lean, but it must no longer claim S₁₂ "remains genuinely order-3".
 2. **Add this alignment document** to `docs/autoresearch_v2/` so future sessions have a single source of truth.
-3. **Add `PHASE_8_AUTOEVOLVE_RECTIFICATION.md`** at the repository root to document the S₁₂ rejection and the re-anchoring to GATE-C K3 candidates.
+3. **Add `docs/autoresearch_v2/PHASE_8_AUTOEVOLVE_RECTIFICATION.md`** to document the S₁₂ rejection and the re-anchoring to GATE-C K3 candidates.
 4. Optionally update `PARAMETER_LEDGER.yaml`, `OPEN_PROBLEMS.md`, `CAVEATS.md` and the LaTeX preprint to remove stale "S₁₂ remains sole surviving K3" language.
 
 ---

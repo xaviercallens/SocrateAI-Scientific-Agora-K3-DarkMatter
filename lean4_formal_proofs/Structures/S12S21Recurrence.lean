@@ -29,6 +29,18 @@ re-derivation (see `docs/gap1/ORDER_VERIFICATION_FINDINGS.md` and
 * The literature-certified K3 anchor in this family is **S(2,2) = A005259**
   (Apéry ζ(3)), whose generating-function ODE is **order 3**.
 
+* Phase 8.B G1-3 independently confirmed the failure for S₁₂: recomputing the
+  mirror map on the **minimal** (order-2) Picard–Fuchs operator gives a
+  non-integral second coefficient `q₂ = 81/8`, which violates the Lian–Yau
+  integrality necessary condition for K3 periods. The v1
+  `scripts/mirror_map_integrality.py` result was an artifact of using the
+  non-minimal order-3 shift operator.
+
+* The framework is re-anchored to the GATE-C K3-type candidate pool:
+  S(2,2)=A005259, Cooper s₇=A183204, Cooper s₁₀=A005260, t103=A276536,
+  Domb=A002895, and Almkvist–Zagier second=A125143. See
+  `docs/autoresearch_v2/PHASE_8_AUTOEVOLVE_RECTIFICATION.md`.
+
 This module still kernel-verifies concrete VALUES of both S₁₂ and S₂₁
 (that part is unaffected and correct), but it does **not** prove either
 sequence's recurrence order or K3 status in Lean. The theorems below make no

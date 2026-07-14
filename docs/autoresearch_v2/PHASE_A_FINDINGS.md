@@ -1,3 +1,37 @@
+# Phase A Findings: The True K3 Discriminant
+
+**Date:** 2026-07-14 · **Status:** Rectified with Phase 8.B mirror-map integrality
+
+## Key Insight
+
+The **formal geometric discriminator** for K3 manifolds is the **minimal order of the generating-function Picard-Fuchs ODE**, **not** the discrete shift-recurrence order.
+
+| **ODE Order** | **Geometry**          |
+|--------------|-----------------------|
+| **2**        | Elliptic Curve / $T^2$ |
+| **3**        | **K3 Surface**          |
+| **4**        | Calabi-Yau 3-fold      |
+
+## Rejected Candidates
+
+| Sequence | OEIS | Rejection reason |
+|---|---|---|
+| **$S_{1,2}$** | A112019 | **ODE Order 2** + **Non-integral $q_2 = 81/8$** → ❌ Elliptic Curve |
+| **$S_{2,1}$** | A005258 | **ODE Order 2** → ❌ Elliptic Curve |
+
+## Promoted Candidates
+
+| Sequence | OEIS | ODE Order | Mirror map $q_2$ | Geometry | Status |
+|---|---|---|---|---|---|
+| **$S_{2,2}$** | A005259 | **3** | integral (12) | ✅ **K3 Surface** | Promoted |
+| **Cooper $s_7$** | A183204 | **3** | integral (9) | ✅ **K3 Surface** | GATE-C finalist |
+| **Cooper $s_{10}$** | A005260 | **3** | integral (4) | ✅ **K3 Surface** | GATE-C finalist |
+| **t103** | A276536 | **3** | integral (25) | ✅ **K3 Surface** | GATE-C finalist |
+
+For the full rectification see `docs/autoresearch_v2/PHASE_8_AUTOEVOLVE_RECTIFICATION.md`.
+
+---
+
 # Phase 8.A Findings — Deep First Scan (LR-1…LR-3)
 
 **Date:** 2026-07-14 · **Executor:** Fable (deep-intelligence pass) · **Status:** Complete; GATE-A pending
