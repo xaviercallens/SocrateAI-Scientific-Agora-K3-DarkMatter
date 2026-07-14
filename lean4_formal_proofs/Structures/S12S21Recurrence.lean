@@ -10,20 +10,30 @@ sequences S₁,₂ and S₂,₁ via `decide`/`native_decide` proofs for all n �
 (20 terms each), together with positivity, monotonicity, and modular-residue
 facts used by the GAP-1 Weil-bound screen.
 
-## ⚠️ GAP-1 finding (2026-07-11): S₂,₁ is order-2, NOT order-3
+## ⚠️ GAP-1 / Phase 8.A finding (2026-07-14): both S₁₂ and S₂₁ are ODE order-2, NOT K3-type
 
 Task T4.2 was originally specified assuming BOTH sequences satisfy order-3
-Picard-Fuchs recurrences (the K3-surface signature). Independent re-derivation
-(see `docs/gap1/ORDER_VERIFICATION_FINDINGS.md`) shows S₂,₁ genuinely
-satisfies only an **order-2** recurrence (validated against 149 held-out
-values), which is the signature of an elliptic curve period, not a K3
-surface. S₁,₂ was checked against the same order-2 ansatz and has none — it
-remains genuinely order-3. This module still kernel-verifies concrete VALUES
-of both sequences (that part is unaffected and correct), but it does **not**
-prove either sequence's recurrence order in Lean — the "order-3 for both"
-framing in the original task spec is now known to be wrong for S₂,₁, and the
-theorems below make no claim about recurrence order at all, only about
-individual values, positivity, monotonicity, and modular residues.
+Picard-Fuchs recurrences (the K3-surface signature). Independent exact-rational
+re-derivation (see `docs/gap1/ORDER_VERIFICATION_FINDINGS.md` and
+`docs/autoresearch_v2/PHASE_A_FINDINGS.md`) shows:
+
+* S₂,₁ genuinely satisfies an **order-2** recurrence and a generating-function
+  **ODE of order 2** (validated against 110 held-out terms), which is the
+  signature of an elliptic curve period, not a K3 surface. It is the
+  classical Apéry ζ(2) sequence (OEIS A005258).
+
+* S₁,₂ also has a minimal generating-function **ODE of order 2** (degree 5,
+  validated against 74 held-out terms, OEIS A112019). It is therefore
+  **elliptic-type**, not K3-type.
+
+* The literature-certified K3 anchor in this family is **S(2,2) = A005259**
+  (Apéry ζ(3)), whose generating-function ODE is **order 3**.
+
+This module still kernel-verifies concrete VALUES of both S₁₂ and S₂₁
+(that part is unaffected and correct), but it does **not** prove either
+sequence's recurrence order or K3 status in Lean. The theorems below make no
+claim about recurrence order or geometry, only about individual values,
+positivity, monotonicity, and modular residues.
 
 ## Task Reference
 - **Task:** T4.2 (Scientific Validation Program v2.0.0)
