@@ -198,7 +198,7 @@ A genuine validation would require computing $\Delta$ from first principles usin
 
 \subsection{The See-Saw Hypothesis}
 
-The ``Cosmic See-Saw'' posits that the K3 geometric resonance was strongly active in the dense early universe ($z \gtrsim 9$), producing heavier effective axion masses that accelerated structure formation, but has ``frozen out'' in the dilute local universe ($z \approx 0$), where the $S_{1,2}$ geometry has settled into its perturbative ground state ($S_{1,2} \leq 1.177$).
+The ``Cosmic See-Saw'' posits that the K3 geometric resonance was strongly active in the dense early universe ($z \gtrsim 9$), producing heavier effective axion masses that accelerated structure formation, but has ``frozen out'' in the dilute local universe ($z \approx 0$), where the $S_{1,2}$ geometry has settled into its perturbative ground state ($S_{1,2} \leq 1.177$ --- a bound reported by the companion \texttt{DarkMatterK3} GPU pipeline from 327,918 SDSS DR17 galaxies; the converged run behind it is external to this repository's committed artifacts, and the bound carries the epistemic status of a reported pipeline output pending an archived reproduction script; see Paper~V, \S``Empirical Status, Provenance, and Physical Interpretation'').
 This qualitative picture is consistent with recent JWST UNCOVER observations of unexpectedly massive galaxies at $z \sim 9$--$11$ and the mature structure of the local cosmic web.
 
 \subsection{Monte Carlo Sensitivity Study}
@@ -244,6 +244,9 @@ This establishes the See-Saw as a \emph{falsifiable prediction} of the K3 resona
 \label{sec:sheffield}
 
 Table~\ref{tab:sheffield_comparison} summarizes the conceptual mapping between the Tsai et al.\ (2026) 5D framework and the K3 6D extension.
+The division of labor is deliberate: the $S^1/(Z_2 \times Z_2')$ orbifold supplies the \emph{microscopic} mass-generation mechanism (KK quantization against the radius $R$), while the TDA pipeline supplies the \emph{macroscopic} observable ($\Delta$, with the local baryonic field pinching the effective $R$).
+No simulation of the orbifold itself is required on the observatory side: the 5D physics enters only through the parameterized response $m_{\mathrm{eff}}(\Delta)$ of Eq.~(\ref{eq:meff}).
+A fuller discussion of how the reported local-universe bound $S_{1,2} \le 1.177$, the sector-level stability ($S_{1,2} < 1.3$ everywhere vs.\ the model-internal transition threshold $1.8$), and the Poisson-mock null tests relate to the Sheffield freeze-out requirement --- including the provenance limits of each number --- is given in Paper~V, \S``Empirical Status, Provenance, and Physical Interpretation.''
 
 \begin{table}[h]
 \centering
@@ -256,7 +259,7 @@ Table~\ref{tab:sheffield_comparison} summarizes the conceptual mapping between t
 Mass generation & KK quantization on $S^1/(Z_2 \times Z_2')$ & Instanton action on $S_{1,2}$ K3 fiber \\
 Density dependence & Warped extra dimension & Chameleon--KK ansatz, Eq.~(\ref{eq:meff}) \\
 Early/late dichotomy & Active resonance $\to$ freeze-out & Cosmic See-Saw (\S\ref{sec:ws11}) \\
-Observational tool & Not specified & Projected SDSS/Euclid density map (\S\ref{sec:ws9}) \\
+Observational tool & Not specified & Projected SDSS~DR17 density map (\S\ref{sec:ws9}; Euclid extension planned, no Euclid data processed to date) \\
 Free parameters & $R$, brane mass $m_B$ & $k$, $\Delta_{\max}$, $(\tau, \mathcal{V})$ \\
 \bottomrule
 \end{tabular}
