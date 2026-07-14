@@ -10,13 +10,13 @@ A gate-driven evolutionary hypothesis search. Reuses validation infrastructure a
 
 **Executor budget:** ~85% HAIKU tier, 3 HUMAN gates, <50 CPU-h, ~1,100 LLM calls, 12 weeks.
 
-### Phase 8.A — Literature Review (weeks 1–2): 13 candidates
-- [ ] `[HAIKU]` **LR-1** Cross-match $S_{1,2}$/$S_{2,1}$ OEIS + Zagier/Cooper/AESZ → confirm $S_{2,1}$ ≡ A005258 (elliptic)
-- [ ] `[HAIKU]` **LR-2** Enumerate classified sporadics (Zagier 6×order-2, Cooper order-3 pool, Domb, Almkvist–Zagier, Verrill) → ≥15 with geometry assignments
-- [ ] `[HAIKU]` **LR-3** Extended sieve: $(A,B)\in[1,8]^2$ + 3-factor $S_{A,B,C}$ with held-out validation (≥70 terms, n≤110)
-- [ ] `[HAIKU]` **LR-4** Archive Lee & Tsai 2026 PRD + El Naschie 2013 in `docs/reference/` with epistemic classification (El Naschie = numerology-class, boundary-marker only)
-- [ ] `[SONNET+]` **LR-5** Lee–Tsai bridge memo: $(R, m_B)$ resonance → $m_{\mathrm{eff}}(\Delta)$ mapping + "where the analogy breaks" section ≥alignment section
-- [ ] `[HAIKU+HUMAN]` **LR-6** Freeze pool at 13 candidates (include Apéry ζ(3) positive control + one Zagier negative control); HUMAN approves ranking
+### Phase 8.A — Literature Review (weeks 1–2): 13 candidates — ✅ EXECUTED 2026-07-14 (Fable deep scan)
+- [x] **LR-1** DONE — $S_{2,1}$ ≡ A005258 (Apéry ζ2, elliptic — GAP-1 independently confirmed); $S_{1,2}$ ≡ A112019 and **RECLASSIFIED elliptic-type** (ODE order 2, 74 held-out terms); K3 control A005259 exposes v1's shift-order rule as inverted → classifier upgraded to ODE-order rule. See `docs/autoresearch_v2/PHASE_A_FINDINGS.md`
+- [x] **LR-2** DONE — `data/autoresearch_v2/CLASSIFIED_SPORADICS.csv` (17 entries, 8 verified in-session)
+- [x] **LR-3** DONE — extended sieve $(A,B)\in[1,8]^2$ + 3-factor: **S(2,2)=A005259 is the ONLY K3-type in the 2-factor landscape**; 4 new K3-type in 3-factor family (A079727, T011, T103, T112). `data/autoresearch_v2/phase_a_{anchors,scan2,scan3}.json`
+- [x] **LR-4** DONE — `docs/reference/lee_tsai_2026.md`, `el_naschie_2013.md` (numerology-class boundary marker), + companion-repo Phase III report & bridge plan archived in `docs/reference/dmk3_home/`
+- [x] **LR-5** DONE — `docs/autoresearch_v2/lee_tsai_bridge.md` (breaks section ≥ alignment; OI-1 m_eff form inconsistency flagged)
+- [ ] `[HUMAN]` **LR-6 / GATE-A** — pool of 13 PROPOSED in `data/autoresearch_v2/candidate_pool.yaml`; **awaiting HUMAN sign-off to freeze**
 
 ### Phase 8.B — G1/G2 Exact-Arithmetic + Physics Gates (weeks 3–4): 13 → 5
 - [ ] `[HAIKU batch]` **G1-1** Classify order per candidate (corrected classifier on 13); **control fail → halt**

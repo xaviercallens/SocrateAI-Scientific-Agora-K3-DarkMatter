@@ -1,0 +1,18 @@
+name,oeis_id,binomial_form,shift_order,shift_degree,ode_order,ode_degree,geometry,verification,citation
+Apery_zeta3_S22,A005259,sum C(n:k)^2 C(n+k:k)^2,2,3,3,4,K3-type,in-session exact (85/72 held-out),Beukers-Peters 1984; Ahlgren-Ono supercongruences
+Apery_zeta2_S21,A005258,sum C(n:k)^2 C(n+k:k),2,2,2,3,elliptic,in-session exact (88/82 held-out),Beauville; Cooper 2012 (t5); Zagier class
+S12_v1_primary,A112019,sum C(n:k) C(n+k:k)^2,3,3,2,5,elliptic-type (RECLASSIFIED),in-session exact (80/74 held-out),OEIS A112019 (rational-function diagonal; no K3 attribution)
+Domb,A002895,sum C(n:k)^2 C(2k:k) C(2n-2k:n-k),2,3,3,4,K3-type,in-session exact (85/72 held-out),Almkvist-Zagier sporadic class
+T003_partial_central_cubes,A079727,sum_{k<=n} C(2k:k)^3,2,3,3,4,K3-type,in-session exact,related to 3F2(1/2 1/2 1/2;1 1;64z) weight-3 hypergeometric
+T011,TBD,sum C(n+k:k) C(2k:k),,,3,6,K3-type,in-session exact,new sieve discovery (Phase B OEIS resolution)
+T103,TBD,sum C(n:k) C(2k:k)^3,,,3,6,K3-type,in-session exact,new sieve discovery (Phase B OEIS resolution)
+T112,TBD,sum C(n:k) C(n+k:k) C(2k:k)^2,,,3,8,K3-type,in-session exact,new sieve discovery (Phase B OEIS resolution)
+T201_zagier_class,A002893(expected),sum C(n:k)^2 C(2k:k),2,2,2,3,elliptic,in-session exact,Zagier sporadic class (id to confirm in B)
+T111,TBD,sum C(n:k) C(n+k:k) C(2k:k),3,3,2,5,elliptic,in-session exact,Phase B OEIS resolution
+T002_partial_central_squares,TBD,sum_{k<=n} C(2k:k)^2,2,2,2,3,elliptic,in-session exact,Phase B OEIS resolution
+T102,TBD,sum C(n:k) C(2k:k)^2,3,2,2,4,elliptic,in-session exact,Phase B OEIS resolution
+S11_Delannoy,A001850(expected),sum C(n:k) C(n+k:k),2,1,1,2,rational(algebraic gf),in-session exact,central Delannoy numbers
+AZ_sporadic_A006077,A006077,see OEIS,,,,,K3-class per literature,verify_in B,Almkvist-Zagier
+Cooper_s7,TBD,Cooper 2012 level-7,,,,,weight-3 class per literature,verify_in B,Cooper 2012
+Cooper_s10,TBD,Cooper 2012 level-10,,,,,weight-3 class per literature,verify_in B,Cooper 2012
+Cooper_s18,TBD,Cooper 2012 level-18,,,,,weight-3 class per literature,verify_in B,Cooper 2012

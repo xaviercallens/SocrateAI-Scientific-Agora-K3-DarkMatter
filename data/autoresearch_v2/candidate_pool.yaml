@@ -1,0 +1,94 @@
+# AutoEvolve R2 — Candidate Pool (LR-6)
+# STATUS: PROPOSED — awaiting GATE-A HUMAN sign-off. Immutable after approval.
+# Classification method: exact dual detection (shift recurrence + generating-function
+# ODE), held-out validated to n=110. Geometry rule: ODE order 2=elliptic, 3=K3-type.
+# Verified in-session entries cite data/autoresearch_v2/phase_a_*.json.
+# Rule 1: literature entries not yet computed in-session are marked verify_in: B.
+
+pool_size: 13
+frozen: false
+date: 2026-07-14
+
+candidates:
+  # ---- controls (answer key) ----
+  - id: apery_zeta3
+    oeis: A005259
+    form: "sum_k C(n,k)^2 C(n+k,k)^2  [= S(2,2)]"
+    ode: [3, 4]
+    shift: [2, 3]
+    geometry: K3-type (VERIFIED in-session; literature: Beukers-Peters 1984 K3, Picard rank 19)
+    role: POSITIVE CONTROL + primary physics candidate
+    note: the only K3-type sequence in (A,B) in [1,8]^2; sat inside v1's search box, excluded by v1's inverted rule
+  - id: apery_zeta2_s21
+    oeis: A005258
+    form: "sum_k C(n,k)^2 C(n+k,k)  [= in-house S_{2,1}]"
+    ode: [2, 3]
+    shift: [2, 2]
+    geometry: elliptic (VERIFIED; literature: Beauville curve, Cooper t5)
+    role: NEGATIVE CONTROL; v1 legacy object; GAP-1 verdict independently confirmed
+
+  # ---- verified K3-type (in-session, exact held-out pass) ----
+  - id: domb
+    oeis: A002895
+    form: "sum_k C(n,k)^2 C(2k,k) C(2n-2k,n-k)"
+    ode: [3, 4]
+    shift: [2, 3]
+    geometry: K3-type (VERIFIED; Almkvist-Zagier sporadic class)
+    role: second literature-anchored K3 candidate
+  - id: t003_csum_central_cubes
+    oeis: A079727
+    form: "sum_{k<=n} C(2k,k)^3"
+    ode: [3, 4]
+    shift: [2, 3]
+    geometry: K3-type (VERIFIED)
+    role: sieve discovery; related to the 3F2(1/2,1/2,1/2;1,1;64z) weight-3 hypergeometric
+  - id: t011
+    oeis: TBD
+    form: "sum_k C(n+k,k) C(2k,k)"
+    ode: [3, 6]
+    geometry: K3-type (VERIFIED)
+    role: sieve discovery (3-factor family)
+  - id: t103
+    oeis: TBD
+    form: "sum_k C(n,k) C(2k,k)^3"
+    ode: [3, 6]
+    geometry: K3-type (VERIFIED)
+    role: sieve discovery (3-factor family)
+  - id: t112
+    oeis: TBD
+    form: "sum_k C(n,k) C(n+k,k) C(2k,k)^2"
+    ode: [3, 8]
+    geometry: K3-type (VERIFIED)
+    role: sieve discovery (3-factor family)
+
+  # ---- literature K3-class sporadics (verify_in: B per Rule 1) ----
+  - id: az_sporadic_a006077
+    oeis: A006077
+    form: "Almkvist-Zagier sporadic (formula to be pulled from OEIS in G1-1)"
+    geometry: K3-class per literature; verify_in: B
+    role: literature candidate
+  - id: cooper_s7
+    oeis: TBD (Cooper 2012, level-7 sporadic)
+    geometry: weight-3 class per literature; verify_in: B
+    role: literature candidate
+  - id: cooper_s10
+    oeis: TBD (Cooper 2012, level-10 sporadic)
+    geometry: weight-3 class per literature; verify_in: B
+    role: literature candidate
+  - id: cooper_s18
+    oeis: TBD (Cooper 2012, level-18 sporadic)
+    geometry: weight-3 class per literature; verify_in: B
+    role: literature candidate
+  - id: almkvist_zagier_second
+    oeis: TBD (second AZ sporadic distinct from Domb/A006077)
+    geometry: K3-class per literature; verify_in: B
+    role: literature candidate
+
+  # ---- v1 legacy (closure documentation) ----
+  - id: s12_v1_primary
+    oeis: A112019
+    form: "sum_k C(n,k) C(n+k,k)^2  [= in-house S_{1,2}]"
+    ode: [2, 5]
+    shift: [3, 3]
+    geometry: elliptic-type (VERIFIED — RECLASSIFIED this session; v1 called it K3 via shift-order rule)
+    role: v1 primary candidate retained for honest closure; entire v1 physics pipeline was built on it
