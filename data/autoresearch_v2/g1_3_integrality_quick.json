@@ -1,0 +1,18 @@
+{
+ "apery_zeta3": {
+  "first_5_exact": true,
+  "note": "full mirror-map deferred to G1-3 detailed"
+ },
+ "apery_zeta2_s21": {
+  "first_5_exact": true,
+  "note": "full mirror-map deferred to G1-3 detailed"
+ },
+ "s12_v1_primary": {
+  "first_5_exact": true,
+  "note": "full mirror-map deferred to G1-3 detailed"
+ },
+ "domb": {
+  "first_5_exact": true,
+  "note": "full mirror-map deferred to G1-3 detailed"
+ }
+}
