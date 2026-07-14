@@ -1,0 +1,369 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{xcolor}
+
+\newtheorem{proposition}{Proposition}
+\newtheorem{remark}{Remark}
+
+\title{\textbf{Part VI: Phenomenological Projections for Extra-Dimensional Geometric Resonance \\[4pt] from K3-Fibered Calabi--Yau Compactifications}}
+\author{\textbf{Xavier Callens} \\ \textit{SocrateAI Scientific Agora (independent, non-profit)} \\ \texttt{callensxavier@gmail.com}}
+\date{July 2026 \\[0.3cm]
+\textbf{DOI:} \href{https://doi.org/10.5281/zenodo.21350629}{10.5281/zenodo.21350629} \\
+\textbf{Repository:} \href{https://github.com/xaviercallens/SocrateAI-Scientific-Agora-K3-DarkMatter}{SocrateAI-Scientific-Agora-K3-DarkMatter}}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+We explore the phenomenological consequences of identifying ultralight axion dark matter with the lowest Kaluza--Klein (KK) resonance mode of a $K3$-fibered Calabi--Yau compactification, extending the 5D orbifold dark-photon framework of Tsai, Qu, and collaborators (Sheffield, Phys.\ Rev.\ D, 2026) to an exact 6D string geometry.
+We construct a parameterized effective field theory (EFT) in which the KK mass depends on a local baryonic asymmetry parameter $\Delta$ through an exponential warping relation $m_{\mathrm{eff}}(\Delta) = m_0 \exp(k\Delta)$, where $m_0 = 1.83 \times 10^{-21}$~eV and $k$ are \emph{phenomenological} parameters not yet derived from moduli stabilization.
+Three sensitivity analyses are presented:
+(i)~reprocessing 500 SDSS~DR17 spectroscopic galaxies through this ansatz to project a macroscopic KK resonance map;
+(ii)~an achievability demonstration that the Chameleon-type geometric pinching near M87* can shift the effective axion mass above the superradiance exclusion window ($10^{-21}$--$10^{-20}$~eV);
+(iii)~a Monte Carlo sensitivity study showing that the ``Cosmic See-Saw'' --- the predicted mass differential between the dense early universe ($z \sim 9$) and the frozen local universe --- would be statistically detectable at $> 5\sigma$ if the underlying density--asymmetry mapping holds.
+We emphasize throughout that these results are \emph{illustrative projections} within a parameterized EFT framework, not direct empirical validations.
+The free parameters, mock-data assumptions, and open problems requiring top-down string-theoretic input are explicitly enumerated.
+All code is publicly available and kernel-verified where applicable.
+\end{abstract}
+
+\tableofcontents
+
+%% ====================================================================
+\section{Introduction}
+\label{sec:intro}
+
+The hypothesis that dark matter (DM) arises as a macroscopic manifestation of particles resonating through a compactified extra dimension has gained renewed theoretical interest with the proposal by Tsai, Qu, and collaborators~\cite{tsai2026} of a 5D $S^1/(Z_2 \times Z_2')$ orbifold model in which a dark photon acquires mass through Kaluza--Klein (KK) quantization.
+Their framework demonstrates that the compactification radius $R$ directly dictates the KK mass spectrum,
+\begin{equation}
+\label{eq:kk_mass_tsai}
+m_E^{(n)} = \sqrt{m_B^2 + \frac{n^2}{R^2}}\,,
+\end{equation}
+where $m_B$ is the brane-localized mass and $n$ indexes the tower of resonances.
+This establishes a concrete mechanism by which geometry \emph{creates} mass.
+
+In the present work, we investigate the observational projections that arise when one replaces the Sheffield group's simplified 5D toy geometry with a specific 6D string-theoretic compactification: a $K3 \times T^2$ fibration over a Calabi--Yau threefold, as developed in Parts~I--V of this series~\cite{callens2026partI, callens2026partII}.
+The $S_{1,2}$ Picard--Fuchs operator, identified in Part~I as the unique surviving K3 surface candidate under the exact-rational algebraic sieve (with $S_{2,1}$ reclassified as elliptic; see~\cite{callens2026partI}, \S2 and Appendix~A), provides a specific topological rigidity that maps onto the KK resonance structure of Eq.~(\ref{eq:kk_mass_tsai}).
+
+\begin{remark}[Scope and epistemic status]
+This paper presents \textbf{phenomenological projections}, not empirical discoveries.
+The mapping between the Sheffield 5D framework and our 6D geometry is a physically motivated \emph{ansatz}.
+The coupling parameters governing the density-dependent mass variation are free and not derived from moduli stabilization.
+We adopt this framing throughout to maintain scientific integrity while exploring the observational consequences of extra-dimensional resonance physics.
+\end{remark}
+
+%% ====================================================================
+\section{Theoretical Framework}
+\label{sec:theory}
+
+\subsection{From 5D Orbifold to 6D K3 Fibration}
+
+The Sheffield model~\cite{tsai2026} compactifies a single extra dimension on $S^1/(Z_2 \times Z_2')$ with radius $R$.
+Our framework promotes this to a Type~IIB orientifold on $K3 \times T^2 / \mathbb{Z}_2$, where the $K3$ fiber provides the topological rigidity that fixes the lowest-lying resonance mode, and the $T^2$ torus provides a rolling quintessence modulus (Part~II,~\cite{callens2026partII}).
+
+The $S_{1,2}$ K3 surface is characterized by a third-order Picard--Fuchs recurrence with topological stiffness invariant $V''(0) = 1014$, kernel-verified in Lean~4~\cite{callens2026partI}.
+The instanton-generated axion mass is given by the Svrcek--Witten formula~\cite{svrcek2006}:
+\begin{equation}
+\label{eq:svrcek_witten}
+m_a = \frac{M_{\mathrm{Pl}}}{\sqrt{\mathcal{V}}} \sqrt{\sum_d d^2 \, q_d \, e^{-2\pi d \tau}}\,,
+\end{equation}
+where $\tau$ is the K\"ahler modulus and $\mathcal{V}$ the internal volume.
+
+\begin{remark}[Mass calibration caveat]
+\label{rem:mass_caveat}
+The axion mass $m_0 \equiv m_a(S_{1,2}) = 3.18 \times 10^{-21}$~eV (and $m_a(S_{2,1}) = 1.83 \times 10^{-21}$~eV) are computed using specific K\"ahler modulus values ($\tau_{12} = 33.6255$, $\tau_{21} = 33.8014$) whose provenance is undocumented --- they reproduce the target masses to 3 significant figures via Eq.~(\ref{eq:svrcek_witten}), raising the possibility of circular calibration.
+This is an open provenance question; see Part~I, \S1.2 and \texttt{CAVEATS.md}, \S1.
+The masses should be understood as \emph{achievability demonstrations} within a two-parameter $(\tau, \mathcal{V})$ family, not unique predictions.
+\end{remark}
+
+\subsection{Density-Dependent Mass Variation: The Chameleon--KK Ansatz}
+\label{sec:chameleon_ansatz}
+
+Motivated by the Khoury--Weltman chameleon mechanism~\cite{khoury2004a, khoury2004b} and the density-dependent ``shape-shifting'' proposed by Tsai et al.~\cite{tsai2026}, we parameterize the effective KK resonance mass as:
+\begin{equation}
+\label{eq:meff}
+m_{\mathrm{eff}}(\Delta) = m_0 \, \exp\!\left(k \, \Delta\right)\,,
+\end{equation}
+where $\Delta \geq 0$ is a dimensionless baryonic asymmetry parameter encoding the local departure from the cosmological mean density, and $k > 0$ is a coupling constant.
+Physically, increasing $\Delta$ corresponds to the baryonic environment ``pinching'' the K3 extra dimension, shrinking the effective compactification radius $R$ and thereby increasing the KK resonance frequency.
+
+\begin{remark}[Free parameters]
+\label{rem:free_params}
+Both $k$ and the mapping $\rho_b \mapsto \Delta$ are \textbf{phenomenological}.
+In particular:
+\begin{itemize}
+\item The coupling $k = 0.048$ used in our numerical projections is not derived from K3 moduli stabilization, Type~IIB flux compactification, or any top-down string construction.
+\item The standard Khoury--Weltman chameleon scaling $m_{\mathrm{eff}} \propto \rho^{\gamma}$ with $\gamma = 1/4$ maps to an unphysical KW potential index $n = -3$ (see Part~I, \S3 and \texttt{CAVEATS.md}, \S3).
+\item A rigorous derivation of $k$ would require the explicit D-brane configuration, moduli stabilization mechanism, and the backreaction of baryonic stress-energy on the K3 metric --- all of which remain open problems (see \texttt{OPEN\_PROBLEMS.md}).
+\end{itemize}
+This ansatz should therefore be understood as an \emph{effective parameterization} whose top-down embedding is an explicit target for future work.
+\end{remark}
+
+%% ====================================================================
+\section{Sensitivity Analysis I: Macroscopic KK Resonance Map (WS9)}
+\label{sec:ws9}
+
+\subsection{Data and Methodology}
+
+To project how the density-dependent mass ansatz of Eq.~(\ref{eq:meff}) would manifest across a representative galaxy sample, we query the SDSS~DR17 spectroscopic database~\cite{sdss_dr17} for 500 luminous galaxies satisfying:
+\begin{itemize}
+\item Spectroscopic redshift $0.01 \leq z \leq 0.15$ (local universe);
+\item Spectral classification \texttt{GALAXY};
+\item Petrosian radius $r_{\mathrm{petro}} > 0$.
+\end{itemize}
+For each galaxy, we compute a baryonic density proxy:
+\begin{equation}
+\label{eq:density_proxy}
+\tilde{\rho} \equiv \frac{F_r}{r_{\mathrm{petro}}^2}\,, \qquad F_r = 10^{(22.5 - m_r)/2.5}\,,
+\end{equation}
+where $m_r$ is the extinction-corrected $r$-band magnitude.
+The asymmetry parameter is then obtained by linear normalization:
+\begin{equation}
+\label{eq:delta_normalization}
+\Delta_i = \frac{\tilde{\rho}_i}{\max_j \tilde{\rho}_j} \times \Delta_{\max}\,,
+\end{equation}
+where $\Delta_{\max} = 60$ is chosen to keep $m_{\mathrm{eff}}$ within the astrophysically relevant range.
+
+\begin{remark}[Normalization is arbitrary]
+\label{rem:ws9_normalization}
+The linear normalization in Eq.~(\ref{eq:delta_normalization}) and the choice $\Delta_{\max} = 60$ are phenomenological prescriptions, not physical derivations.
+A different $\Delta_{\max}$ would rescale the entire projected mass map.
+This projection demonstrates the \emph{structure} of the density--mass mapping, not its absolute calibration.
+\end{remark}
+
+\subsection{Results}
+
+Applying Eq.~(\ref{eq:meff}) with $m_0 = 1.83 \times 10^{-21}$~eV and $k = 0.048$ to the SDSS~DR17 sample yields:
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+\textbf{Quantity} & \textbf{Value} \\
+\midrule
+Mean projected KK mass (local universe) & $1.95 \times 10^{-21}$~eV \\
+Peak projected KK mass (highest density) & $3.26 \times 10^{-20}$~eV \\
+Galaxies processed & 500 (live SDSS DR17 query) \\
+\bottomrule
+\end{tabular}
+\end{center}
+The mean projected mass is close to the base mass $m_0$, reflecting the fact that most galaxies in the local universe reside in relatively low-density environments.
+The peak mass, occurring at the densest galaxy core in the sample, is shifted by approximately one order of magnitude --- consistent with the qualitative expectation that baryonic overdensities would drive the KK resonance to higher frequencies.
+
+The full projected map (500 galaxies with coordinates, redshifts, density proxies, and KK masses) is archived at \texttt{data/ws9\_sdss\_kk\_map.csv}.
+
+%% ====================================================================
+\section{Sensitivity Analysis II: Superradiance Achievability at M87* (WS10)}
+\label{sec:ws10}
+
+\subsection{The Superradiance Constraint}
+
+Ultralight bosons with Compton wavelengths comparable to a black hole's gravitational radius trigger superradiant instabilities that spin down the black hole on astrophysically short timescales~\cite{detweiler1980, dolan2007, arvanitaki2010}.
+For M87* ($M = 6.5 \times 10^9 \, M_\odot$; EHT~2019~\cite{eht2019}; $a_* = 0.90$ illustrative, not an EHT measurement), the exclusion window for scalar bosons is approximately $10^{-21}$--$10^{-20}$~eV.
+
+This is precisely the mass range occupied by the $S_{1,2}$ and $S_{2,1}$ axion candidates.
+Part~I established via the exact Dolan (2007) continued-fraction method (validated to $<0.4\%$ against published Table~I) that:
+\begin{itemize}
+\item $S_{2,1}$ ($\alpha_{\mathrm{bare}} = 0.089$): $\tau_{\mathrm{inst}} \approx 380$~Myr $> \tau_{\mathrm{Salpeter}} \approx 50$~Myr --- \textbf{survives unscreened}~\cite{callens2026partI}.
+\item $S_{1,2}$ ($\alpha_{\mathrm{bare}} = 0.155$): $\tau_{\mathrm{inst}} \approx 4.6$~Myr $< \tau_{\mathrm{Salpeter}}$ --- \textbf{requires screening}.
+\end{itemize}
+
+\subsection{Chameleon Achievability Demonstration}
+
+We ask: \emph{does there exist a physically plausible value of $\Delta$ near M87* such that the Chameleon--KK shift of Eq.~(\ref{eq:meff}) moves $S_{1,2}$ above the exclusion window?}
+
+Setting $\Delta_{\mathrm{M87*}} = 150$ (intended to represent the extreme baryonic overdensity of the accretion environment), Eq.~(\ref{eq:meff}) yields:
+\begin{equation}
+m_{\mathrm{eff}}(\Delta = 150) = 1.83 \times 10^{-21} \times e^{0.048 \times 150} \approx 2.45 \times 10^{-18}~\text{eV}\,,
+\end{equation}
+which lies approximately two orders of magnitude above the superradiance exclusion window.
+
+\begin{remark}[Circularity disclosure]
+\label{rem:ws10_circularity}
+The value $\Delta = 150$ is \textbf{not computed} from the gas density profile, accretion rate, or GRMHD modeling of M87*.
+It is chosen to demonstrate that the exponential form of Eq.~(\ref{eq:meff}) can, in principle, produce sufficient mass uplift.
+This is an \emph{achievability check} --- it establishes that the Chameleon--KK mechanism is not trivially excluded, but it does not constitute a prediction that M87*'s environment actually induces $\Delta = 150$.
+A genuine validation would require computing $\Delta$ from first principles using the baryonic stress-energy tensor of a realistic accretion flow and its backreaction on the K3 metric, which is beyond the scope of this work.
+\end{remark}
+
+%% ====================================================================
+\section{Sensitivity Analysis III: Cosmic See-Saw Detectability (WS11)}
+\label{sec:ws11}
+
+\subsection{The See-Saw Hypothesis}
+
+The ``Cosmic See-Saw'' posits that the K3 geometric resonance was strongly active in the dense early universe ($z \gtrsim 9$), producing heavier effective axion masses that accelerated structure formation, but has ``frozen out'' in the dilute local universe ($z \approx 0$), where the $S_{1,2}$ geometry has settled into its perturbative ground state ($S_{1,2} \leq 1.177$).
+This qualitative picture is consistent with recent JWST UNCOVER observations of unexpectedly massive galaxies at $z \sim 9$--$11$ and the mature structure of the local cosmic web.
+
+\subsection{Monte Carlo Sensitivity Study}
+
+To quantify whether such a mass differential would be statistically detectable, we construct synthetic $\Delta$ distributions designed to represent the two epochs:
+\begin{align}
+\Delta_{\mathrm{local}} &\sim \mathcal{N}(\mu = 5, \sigma = 2), \quad N = 1000 \quad \text{(local freeze-out)}\,, \label{eq:delta_local} \\
+\Delta_{\mathrm{early}} &\sim \mathcal{N}(\mu = 45, \sigma = 10), \quad N = 1000 \quad \text{(early-universe active resonance)}\,. \label{eq:delta_early}
+\end{align}
+These choices reflect the qualitative astrophysical expectation that early-universe structures are $\sim 10\times$ denser than local ones, but they are \textbf{not fits to observational data}.
+
+\begin{remark}[Mock data disclosure]
+\label{rem:ws11_mock}
+The distributions in Eqs.~(\ref{eq:delta_local})--(\ref{eq:delta_early}) are \textbf{entirely synthetic}.
+They are constructed to model the qualitative density contrast between the JWST UNCOVER epoch and the local SDSS universe, not derived from photometric or spectroscopic measurements of individual high-$z$ galaxies.
+Because the two distributions have well-separated means, a Welch $t$-test is \emph{guaranteed} to return an extremely low $p$-value.
+This analysis therefore quantifies the \emph{projected statistical power} of a See-Saw detection given a hypothesized density contrast --- it does not constitute an empirical validation of the See-Saw hypothesis.
+\end{remark}
+
+\subsection{Results}
+
+Applying Eq.~(\ref{eq:meff}) to both synthetic samples and performing a two-sided Welch's $t$-test on $\log_{10}(m_{\mathrm{eff}})$:
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+\textbf{Statistic} & \textbf{Value} \\
+\midrule
+Mean $m_{\mathrm{eff}}$ (local, $z \approx 0$) & $2.34 \times 10^{-21}$~eV \\
+Mean $m_{\mathrm{eff}}$ (early, $z \approx 9$) & $1.84 \times 10^{-20}$~eV \\
+Welch $t$-statistic & 126.53 \\
+$p$-value & $< 10^{-300}$ (numerically zero) \\
+Projected confidence & $> 10\sigma$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\noindent \textbf{Interpretation:}
+If the density--asymmetry mapping of Eq.~(\ref{eq:meff}) is correct and the true $\Delta$ distributions at $z \sim 0$ and $z \sim 9$ are qualitatively as modeled, the Cosmic See-Saw signature would be overwhelmingly detectable.
+This establishes the See-Saw as a \emph{falsifiable prediction} of the K3 resonance framework: future surveys (Euclid, Rubin LSST) mapping baryonic density across redshift could test whether the required density contrast exists and whether it correlates with dark matter phenomenology as predicted.
+
+%% ====================================================================
+\section{Relationship to the Sheffield Framework}
+\label{sec:sheffield}
+
+Table~\ref{tab:sheffield_comparison} summarizes the conceptual mapping between the Tsai et al.\ (2026) 5D framework and the K3 6D extension.
+
+\begin{table}[h]
+\centering
+\caption{Conceptual bridge: Sheffield 5D $\to$ K3 6D.}
+\label{tab:sheffield_comparison}
+\begin{tabular}{p{3cm}p{5cm}p{5cm}}
+\toprule
+\textbf{Mechanism} & \textbf{Sheffield 5D} & \textbf{K3 $\times$ $T^2$ 6D (this work)} \\
+\midrule
+Mass generation & KK quantization on $S^1/(Z_2 \times Z_2')$ & Instanton action on $S_{1,2}$ K3 fiber \\
+Density dependence & Warped extra dimension & Chameleon--KK ansatz, Eq.~(\ref{eq:meff}) \\
+Early/late dichotomy & Active resonance $\to$ freeze-out & Cosmic See-Saw (\S\ref{sec:ws11}) \\
+Observational tool & Not specified & Projected SDSS/Euclid density map (\S\ref{sec:ws9}) \\
+Free parameters & $R$, brane mass $m_B$ & $k$, $\Delta_{\max}$, $(\tau, \mathcal{V})$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+%% ====================================================================
+\section{Open Problems and Required Inputs}
+\label{sec:open_problems}
+
+The following problems must be resolved before the phenomenological projections of this paper can be promoted to quantitative predictions.
+We publish them here to establish priority and to invite collaboration from the string phenomenology and observational cosmology communities.
+
+\begin{enumerate}
+\item \textbf{Top-down derivation of $k$.} The coupling constant in Eq.~(\ref{eq:meff}) must be derived from the backreaction of baryonic stress-energy on the K3 metric within a stabilized Type~IIB compactification.
+This requires the explicit D-brane configuration, which is not established (see \texttt{OPEN\_PROBLEMS.md}).
+
+\item \textbf{$\Delta$ from GRMHD.} The baryonic asymmetry parameter near M87* must be computed from realistic accretion-flow simulations (e.g., the EHT GRMHD library), not assumed.
+
+\item \textbf{$S_{2,1}$ reclassification.} The $S_{2,1}$ sequence is confirmed non-K3 (elliptic, order-2; see~\cite{callens2026partI}, Appendix~A).
+A genuine K3 replacement or a principled argument for retaining $S_{2,1}$ as a ``recurrence invariant'' in the framework is needed.
+
+\item \textbf{Chameleon $\gamma$ tension.} The fitted $\gamma = 0.25$ maps to unphysical KW index $n = -3$.
+A physically admissible screening mechanism (symmetron, native-modulus, or $\gamma = 1/2$ with boosted density ratio) must be identified.
+
+\item \textbf{Boltzmann-level cosmology.} The $H_0$ and $S_8$ predictions require a genuine CLASS C-source fork, not background-only integration (see Part~II, \S5 and \texttt{CAVEATS.md}, \S5).
+The self-consistent background recomputation yields $H_0 \approx 75.8$~km/s/Mpc, not the originally reported 71.92.
+
+\item \textbf{JWST UNCOVER fit.} The early-universe ($z \sim 9$) $\Delta$ distribution (Eq.~\ref{eq:delta_early}) must be replaced with a fit to actual JWST UNCOVER photometric/spectroscopic data.
+\end{enumerate}
+
+%% ====================================================================
+\section{Conclusions}
+\label{sec:conclusions}
+
+We have presented three phenomenological sensitivity analyses exploring the observational consequences of identifying ultralight axion dark matter with the Kaluza--Klein resonance of a K3-fibered Calabi--Yau compactification, extending the recent Sheffield 5D framework to a concrete 6D string geometry.
+
+The results demonstrate that:
+\begin{itemize}
+\item The density-dependent mass ansatz $m_{\mathrm{eff}} = m_0 \exp(k\Delta)$ produces a physically structured macroscopic mass map when applied to real SDSS~DR17 galaxy data (\S\ref{sec:ws9}).
+\item The Chameleon--KK mechanism can, in principle, shift the axion mass sufficiently to evade M87* superradiance bounds, though the required environmental parameters are not yet derived from first principles (\S\ref{sec:ws10}).
+\item The Cosmic See-Saw signature would be overwhelmingly detectable ($> 10\sigma$) if the hypothesized density contrast between the early and local universe maps onto the assumed $\Delta$ distributions (\S\ref{sec:ws11}).
+\end{itemize}
+
+We emphasize that these are \emph{projections within a parameterized EFT}, not empirical discoveries.
+The free parameters $(k, \Delta_{\max}, \gamma)$ and the mock distributions (Eqs.~\ref{eq:delta_local}--\ref{eq:delta_early}) are explicitly disclosed.
+Promoting these projections to predictions requires the top-down string-theoretic inputs enumerated in \S\ref{sec:open_problems}.
+
+All code, data, and Lean~4 formal proofs are publicly available at the repository listed on the title page.
+
+%% ====================================================================
+\section*{Acknowledgments}
+
+The author thanks the Sheffield group (Tsai, Qu, and collaborators) for the theoretical inspiration provided by their extra-dimensional resonance framework, and the SDSS~DR17 collaboration for public data access.
+This work was conducted within the SocrateAI Scientific Agora framework.
+The author is an independent researcher and this work is not affiliated with any university or national laboratory.
+
+%% ====================================================================
+\begin{thebibliography}{99}
+
+\bibitem{tsai2026}
+Y.-D.~Tsai, H.~Qu et al., ``Dark matter could resonate through a hidden fifth dimension,''
+\textit{Phys.\ Rev.\ D} (2026); University of Sheffield press release (July 2026).
+
+\bibitem{callens2026partI}
+X.~Callens, ``Part I: String-Inspired Effective Field Theories from K3 Surfaces: Resolving Fuzzy Dark Matter Tensions via Exact Algebraic Sieving,''
+Zenodo, \href{https://doi.org/10.5281/zenodo.21350629}{10.5281/zenodo.21350629} (2026).
+
+\bibitem{callens2026partII}
+X.~Callens, ``Part II: Project Vafa-Continuity: A String-Inspired $K3 \times T^2$ Quintessence Model and the Swampland Obstruction to Stable Dark Energy,''
+Zenodo, \href{https://doi.org/10.5281/zenodo.21350629}{10.5281/zenodo.21350629} (2026).
+
+\bibitem{svrcek2006}
+P.~Svrcek and E.~Witten, ``Axions in string theory,''
+\textit{JHEP} \textbf{0606}, 051 (2006);
+\href{https://arxiv.org/abs/hep-th/0605206}{hep-th/0605206}.
+
+\bibitem{khoury2004a}
+J.~Khoury and A.~Weltman, ``Chameleon fields: Awaiting surprises for tests of gravity in space,''
+\textit{Phys.\ Rev.\ Lett.} \textbf{93}, 171104 (2004).
+
+\bibitem{khoury2004b}
+J.~Khoury and A.~Weltman, ``Chameleon cosmology,''
+\textit{Phys.\ Rev.\ D} \textbf{69}, 044026 (2004).
+
+\bibitem{sdss_dr17}
+SDSS Collaboration, ``Sloan Digital Sky Survey Data Release 17,''
+\textit{ApJS} \textbf{259}, 35 (2022).
+
+\bibitem{detweiler1980}
+S.~Detweiler, ``Klein-Gordon equation and rotating black holes,''
+\textit{Phys.\ Rev.\ D} \textbf{22}, 2323 (1980).
+
+\bibitem{dolan2007}
+S.~R.~Dolan, ``Instability of the massive Klein-Gordon field on the Kerr spacetime,''
+\textit{Phys.\ Rev.\ D} \textbf{76}, 084001 (2007).
+
+\bibitem{arvanitaki2010}
+A.~Arvanitaki, S.~Dimopoulos, S.~Dubovsky, N.~Kaloper, and J.~March-Russell,
+``String axiverse,''
+\textit{Phys.\ Rev.\ D} \textbf{81}, 123530 (2010).
+
+\bibitem{eht2019}
+Event Horizon Telescope Collaboration, ``First M87 Event Horizon Telescope Results. I.,''
+\textit{ApJL} \textbf{875}, L1 (2019).
+
+\bibitem{planck2018}
+Planck Collaboration, ``Planck 2018 results. VI. Cosmological parameters,''
+\textit{A\&A} \textbf{641}, A6 (2020).
+
+\end{thebibliography}
+
+\end{document}
