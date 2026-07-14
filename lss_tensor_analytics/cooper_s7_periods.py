@@ -18,33 +18,50 @@ import numpy as np
 import logging
 from typing import Tuple, Optional
 import warnings
+from math import comb
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("cooper_s7_periods")
 
 # ============================================================================
 # COOPER S₇ EXACT INTEGER SEQUENCE (OEIS A183204)
+#
+# CRITICAL FIX (2026-07-15, Sonnet GATE D-1 session): the array previously
+# hardcoded here was WRONG — it did not satisfy the Lean-verified Picard-Fuchs
+# recurrence (Structures/CooperS7Recurrence.lean) and did not match the OEIS
+# A183204 b-file (confirmed by direct fetch: 1,4,48,760,13840,...). This was a
+# Rule-1 violation (hand-typed, unverified numbers) that silently invalidated
+# every "Δ_s7" statistic computed in the prior Phase-1 session (commit
+# c704833), including the "Δ_s7 = 663.4" figure. Root-cause fix: terms are now
+# ALWAYS computed from the exact combinatorial definition
+# a(n) = Σ_j C(n,j)² C(2j,n) C(j+n,j), matching the Lean formalization
+# term-for-term, never hardcoded as a literal array. See
+# lss_tensor_analytics/k3_kernel_engine.py for the generalized, multi-kernel
+# version of this engine (used by GATE D-1 onward).
 # ============================================================================
 
-COOPER_S7_EXACT = np.array([
-    1,               # a(0)
-    13,              # a(1)
-    271,             # a(2)
-    6721,            # a(3)
-    184561,          # a(4)
-    5373583,         # a(5)
-    163473991,       # a(6)
-    5161158913,      # a(7)
-    166510177921,    # a(8)
-    5478644458261,   # a(9)
-    182370435607831, # a(10)
-], dtype=np.float64)
+def _cooper_s7_term(n: int, j: int) -> int:
+    return comb(n, j) ** 2 * comb(2 * j, n) * comb(j + n, j)
+
+def _cooper_s7_exact(n: int) -> int:
+    return sum(_cooper_s7_term(n, j) for j in range(n + 1))
+
+COOPER_S7_EXACT = np.array([_cooper_s7_exact(n) for n in range(11)], dtype=np.float64)
+
+# Self-check at import time: verify the Lean-committed recurrence holds.
+def _verify_recurrence() -> None:
+    def P0(n): return -24 - 78*n - 81*n**2 - 27*n**3
+    def P1(n): return -90 - 177*n - 117*n**2 - 26*n**3
+    def P2(n): return (n + 2)**3
+    a = [_cooper_s7_exact(n) for n in range(23)]
+    for n in range(21):
+        lhs = P0(n)*a[n] + P1(n)*a[n+1] + P2(n)*a[n+2]
+        assert lhs == 0, f"Cooper s7 recurrence self-check FAILED at n={n}: lhs={lhs}"
+
+_verify_recurrence()
 
 # Normalized for power series convergence (precomputed via direct computation)
-COOPER_S7_NORMALIZED = COOPER_S7_EXACT / (np.array([1, 13, 271, 6721, 184561,
-                                                       5373583, 163473991, 5161158913,
-                                                       166510177921, 5478644458261,
-                                                       182370435607831], dtype=np.float64).max())
+COOPER_S7_NORMALIZED = COOPER_S7_EXACT / COOPER_S7_EXACT.max()
 
 # ============================================================================
 # PICARD-FUCHS POLYNOMIAL COEFFICIENTS (Phase 8.D Lean-Verified)
