@@ -1,0 +1,226 @@
+{
+ "apery_zeta3": {
+  "status": "OK",
+  "all_integral": true,
+  "first_non_integral_index": null,
+  "n_coefficients": 31,
+  "q_over_z_first10": [
+   "1",
+   "12",
+   "222",
+   "4900",
+   "119133",
+   "3079152",
+   "83016292",
+   "2308425024",
+   "65723270226",
+   "1906379233880"
+  ],
+  "core_used": false
+ },
+ "apery_zeta2_s21": {
+  "status": "OK",
+  "all_integral": true,
+  "first_non_integral_index": null,
+  "n_coefficients": 31,
+  "q_over_z_first10": [
+   "1",
+   "5",
+   "35",
+   "280",
+   "2410",
+   "21726",
+   "202220",
+   "1926790",
+   "18690145",
+   "183874215"
+  ],
+  "core_used": false
+ },
+ "s12_v1_primary": {
+  "status": "OK",
+  "all_integral": false,
+  "first_non_integral_index": 1,
+  "n_coefficients": 31,
+  "q_over_z_first10": [
+   "1",
+   "81/8",
+   "16717/128",
+   "1938567/1024",
+   "960299091/32768",
+   "124053333751/262144",
+   "33008251969465/4194304",
+   "4487764416799143/33554432",
+   "4963227970429509443/2147483648",
+   "695250541229883137915/17179869184"
+  ],
+  "core_used": false,
+  "v1_provenance_diagnostic": {
+   "v1_harmonic_log_solution_matches_minimal_operator": false,
+   "first_differing_index": 1,
+   "note": "v1's S12 mirror map (mirror_map_integrality.py, A=1,B=2) used the log solution of the NON-minimal order-3 operator; the minimal (Picard-Fuchs) operator is order 2 and its log solution differs from index 1 on. v1's S12 stiffness chain therefore did not use the Picard-Fuchs second solution."
+  }
+ },
+ "domb": {
+  "status": "OK",
+  "all_integral": true,
+  "first_non_integral_index": null,
+  "n_coefficients": 31,
+  "q_over_z_first10": [
+   "1",
+   "6",
+   "51",
+   "518",
+   "5841",
+   "70398",
+   "887908",
+   "11572728",
+   "154625928",
+   "2106521392"
+  ],
+  "core_used": false
+ },
+ "t003_csum_central_cubes": {
+  "status": "OK",
+  "all_integral": true,
+  "first_non_integral_index": null,
+  "n_coefficients": 31,
+  "q_over_z_first10": [
+   "1",
+   "24",
+   "852",
+   "35744",
+   "1645794",
+   "80415216",
+   "4094489992",
+   "214888573248",
+   "11542515402255",
+   "631467591949480"
+  ],
+  "core_used": true
+ },
+ "t011": {
+  "status": "BLOCKED",
+  "reason": "z=0 not MUM (indicial ['0', '0', '-126', '126']); mirror map undefined in standard normalization"
+ },
+ "t103": {
+  "status": "OK",
+  "all_integral": true,
+  "first_non_integral_index": null,
+  "n_coefficients": 31,
+  "q_over_z_first10": [
+   "1",
+   "25",
+   "901",
+   "38373",
+   "1793979",
+   "89010267",
+   "4602396003",
+   "245297594619",
+   "13380890191404",
+   "743440499086676"
+  ],
+  "core_used": false
+ },
+ "t112": {
+  "status": "OK",
+  "all_integral": true,
+  "first_non_integral_index": null,
+  "n_coefficients": 31,
+  "q_over_z_first10": [
+   "1",
+   "26",
+   "951",
+   "41100",
+   "1950123",
+   "98208498",
+   "5154389237",
+   "278857906912",
+   "15441130610478",
+   "870863753212204"
+  ],
+  "core_used": false
+ },
+ "cooper_s7": {
+  "status": "OK",
+  "all_integral": true,
+  "first_non_integral_index": null,
+  "n_coefficients": 31,
+  "q_over_z_first10": [
+   "1",
+   "9",
+   "132",
+   "2310",
+   "44574",
+   "914790",
+   "19589099",
+   "432716025",
+   "9787969764",
+   "225581825864"
+  ],
+  "core_used": false
+ },
+ "cooper_s10": {
+  "status": "OK",
+  "all_integral": true,
+  "first_non_integral_index": null,
+  "n_coefficients": 31,
+  "q_over_z_first10": [
+   "1",
+   "4",
+   "38",
+   "384",
+   "4409",
+   "53476",
+   "678226",
+   "8871120",
+   "118849608",
+   "1622452528"
+  ],
+  "core_used": false
+ },
+ "cooper_s18": {
+  "status": "BLOCKED",
+  "reason": "z=0 not MUM (indicial ['0', '0', '0', '1', '-1']); mirror map undefined in standard normalization"
+ },
+ "az_sporadic_a006077": {
+  "status": "OK",
+  "all_integral": true,
+  "first_non_integral_index": null,
+  "n_coefficients": 31,
+  "q_over_z_first10": [
+   "1",
+   "3",
+   "9",
+   "22",
+   "21",
+   "-207",
+   "-1903",
+   "-10560",
+   "-44343",
+   "-133461"
+  ],
+  "core_used": false,
+  "normalization_note": "uniform 3^n/(-1)^n prefactors act as z-rescalings; integrality verdict is rescaling-invariant"
+ },
+ "almkvist_zagier_second": {
+  "status": "OK",
+  "all_integral": true,
+  "first_non_integral_index": null,
+  "n_coefficients": 31,
+  "q_over_z_first10": [
+   "1",
+   "-4",
+   "14",
+   "-12",
+   "-403",
+   "4784",
+   "-33244",
+   "128576",
+   "338258",
+   "-11469512"
+  ],
+  "core_used": false,
+  "normalization_note": "uniform 3^n/(-1)^n prefactors act as z-rescalings; integrality verdict is rescaling-invariant"
+ }
+}

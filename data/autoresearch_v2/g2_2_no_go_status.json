@@ -1,0 +1,153 @@
+{
+ "apery_zeta3": {
+  "status": "OK",
+  "gd1_min_mass_eV": 1.5933512789220444e-21,
+  "K_heating_exact": "1767536958744805434168971349684711858135967900077048903830247659838900585247501698622839/109238043302650238933440000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+  "mass_window_eV": [
+   6.384943933243096e-31,
+   5.899325992954331e-09
+  ],
+  "pinned_to_no_go_regime": false,
+  "survives_at_reference_point": true,
+  "reference_m_a_eV": 3.44481380277283e-21,
+  "note": "with (tau,V) free on the grid the window is broad, so pinned=false is expected for all candidates; the discriminating number is survives_at_reference_point at the common GAP-2 normalization"
+ },
+ "apery_zeta2_s21": {
+  "status": "OK",
+  "gd1_min_mass_eV": 1.5933512789220444e-21,
+  "K_heating_exact": "1767536958744805434168971349684711858135967900077048903830247659838900585247501698622839/109238043302650238933440000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+  "mass_window_eV": [
+   6.384943933243096e-31,
+   5.899325992954331e-09
+  ],
+  "pinned_to_no_go_regime": false,
+  "survives_at_reference_point": true,
+  "reference_m_a_eV": 3.44481380277283e-21,
+  "note": "with (tau,V) free on the grid the window is broad, so pinned=false is expected for all candidates; the discriminating number is survives_at_reference_point at the common GAP-2 normalization"
+ },
+ "s12_v1_primary": {
+  "status": "OK",
+  "gd1_min_mass_eV": 1.5933512789220444e-21,
+  "K_heating_exact": "1767536958744805434168971349684711858135967900077048903830247659838900585247501698622839/109238043302650238933440000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+  "mass_window_eV": [
+   6.384943933243096e-31,
+   5.899325992954331e-09
+  ],
+  "pinned_to_no_go_regime": false,
+  "survives_at_reference_point": true,
+  "reference_m_a_eV": 3.44481380277283e-21,
+  "note": "with (tau,V) free on the grid the window is broad, so pinned=false is expected for all candidates; the discriminating number is survives_at_reference_point at the common GAP-2 normalization"
+ },
+ "domb": {
+  "status": "OK",
+  "gd1_min_mass_eV": 1.5933512789220444e-21,
+  "K_heating_exact": "1767536958744805434168971349684711858135967900077048903830247659838900585247501698622839/109238043302650238933440000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+  "mass_window_eV": [
+   6.384943933243096e-31,
+   5.899325992954331e-09
+  ],
+  "pinned_to_no_go_regime": false,
+  "survives_at_reference_point": true,
+  "reference_m_a_eV": 3.44481380277283e-21,
+  "note": "with (tau,V) free on the grid the window is broad, so pinned=false is expected for all candidates; the discriminating number is survives_at_reference_point at the common GAP-2 normalization"
+ },
+ "t003_csum_central_cubes": {
+  "status": "OK",
+  "gd1_min_mass_eV": 1.5933512789220444e-21,
+  "K_heating_exact": "1767536958744805434168971349684711858135967900077048903830247659838900585247501698622839/109238043302650238933440000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+  "mass_window_eV": [
+   6.384943933243096e-31,
+   5.899325992954331e-09
+  ],
+  "pinned_to_no_go_regime": false,
+  "survives_at_reference_point": true,
+  "reference_m_a_eV": 3.44481380277283e-21,
+  "note": "with (tau,V) free on the grid the window is broad, so pinned=false is expected for all candidates; the discriminating number is survives_at_reference_point at the common GAP-2 normalization"
+ },
+ "t011": {
+  "status": "BLOCKED",
+  "reason": "no G2-1 mass window"
+ },
+ "t103": {
+  "status": "OK",
+  "gd1_min_mass_eV": 1.5933512789220444e-21,
+  "K_heating_exact": "1767536958744805434168971349684711858135967900077048903830247659838900585247501698622839/109238043302650238933440000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+  "mass_window_eV": [
+   6.384943933243096e-31,
+   5.899325992954331e-09
+  ],
+  "pinned_to_no_go_regime": false,
+  "survives_at_reference_point": true,
+  "reference_m_a_eV": 3.44481380277283e-21,
+  "note": "with (tau,V) free on the grid the window is broad, so pinned=false is expected for all candidates; the discriminating number is survives_at_reference_point at the common GAP-2 normalization"
+ },
+ "t112": {
+  "status": "OK",
+  "gd1_min_mass_eV": 1.5933512789220444e-21,
+  "K_heating_exact": "1767536958744805434168971349684711858135967900077048903830247659838900585247501698622839/109238043302650238933440000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+  "mass_window_eV": [
+   6.384943933243096e-31,
+   5.899325992954331e-09
+  ],
+  "pinned_to_no_go_regime": false,
+  "survives_at_reference_point": true,
+  "reference_m_a_eV": 3.44481380277283e-21,
+  "note": "with (tau,V) free on the grid the window is broad, so pinned=false is expected for all candidates; the discriminating number is survives_at_reference_point at the common GAP-2 normalization"
+ },
+ "cooper_s7": {
+  "status": "OK",
+  "gd1_min_mass_eV": 1.5933512789220444e-21,
+  "K_heating_exact": "1767536958744805434168971349684711858135967900077048903830247659838900585247501698622839/109238043302650238933440000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+  "mass_window_eV": [
+   6.384943933243096e-31,
+   5.899325992954331e-09
+  ],
+  "pinned_to_no_go_regime": false,
+  "survives_at_reference_point": true,
+  "reference_m_a_eV": 3.44481380277283e-21,
+  "note": "with (tau,V) free on the grid the window is broad, so pinned=false is expected for all candidates; the discriminating number is survives_at_reference_point at the common GAP-2 normalization"
+ },
+ "cooper_s10": {
+  "status": "OK",
+  "gd1_min_mass_eV": 1.5933512789220444e-21,
+  "K_heating_exact": "1767536958744805434168971349684711858135967900077048903830247659838900585247501698622839/109238043302650238933440000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+  "mass_window_eV": [
+   6.384943933243096e-31,
+   5.899325992954331e-09
+  ],
+  "pinned_to_no_go_regime": false,
+  "survives_at_reference_point": true,
+  "reference_m_a_eV": 3.44481380277283e-21,
+  "note": "with (tau,V) free on the grid the window is broad, so pinned=false is expected for all candidates; the discriminating number is survives_at_reference_point at the common GAP-2 normalization"
+ },
+ "cooper_s18": {
+  "status": "BLOCKED",
+  "reason": "no G2-1 mass window"
+ },
+ "az_sporadic_a006077": {
+  "status": "OK",
+  "gd1_min_mass_eV": 1.5933512789220444e-21,
+  "K_heating_exact": "1767536958744805434168971349684711858135967900077048903830247659838900585247501698622839/109238043302650238933440000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+  "mass_window_eV": [
+   6.384943933243096e-31,
+   5.899325992954331e-09
+  ],
+  "pinned_to_no_go_regime": false,
+  "survives_at_reference_point": true,
+  "reference_m_a_eV": 3.44481380277283e-21,
+  "note": "with (tau,V) free on the grid the window is broad, so pinned=false is expected for all candidates; the discriminating number is survives_at_reference_point at the common GAP-2 normalization"
+ },
+ "almkvist_zagier_second": {
+  "status": "OK",
+  "gd1_min_mass_eV": 1.5933512789220444e-21,
+  "K_heating_exact": "1767536958744805434168971349684711858135967900077048903830247659838900585247501698622839/109238043302650238933440000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+  "mass_window_eV": [
+   6.384943933243096e-31,
+   5.899325992954331e-09
+  ],
+  "pinned_to_no_go_regime": false,
+  "survives_at_reference_point": true,
+  "reference_m_a_eV": 3.44481380277283e-21,
+  "note": "with (tau,V) free on the grid the window is broad, so pinned=false is expected for all candidates; the discriminating number is survives_at_reference_point at the common GAP-2 normalization"
+ }
+}

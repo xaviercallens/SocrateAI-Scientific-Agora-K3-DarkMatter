@@ -285,19 +285,27 @@ def classify_singular_points(actual_order: int, Q_polys: list):
     A point z_c is a singular point iff Q_{order}(z_c) = 0.
 
     Fuchs criterion (correct form): normalize by the leading coefficient,
-    f^(m) + a_1 f^(m-1) + ... + a_m f = 0 with a_{m-k}(z) = Q_k(z)/Q_m(z).
-    z_c is REGULAR iff (z-z_c)^{m-k} a_{m-k}(z) is analytic at z_c for all k,
-    i.e. iff  ord_{z=z_c}(Q_k)  >=  (order - k) - nu_m   for all k=0,...,order-1,
-    where nu_m := ord_{z=z_c}(Q_order) is the LEADING coefficient's own
-    vanishing order at z_c.
+    f^(m) + p_1 f^(m-1) + ... + p_m f = 0 with p_i(z) = Q_{m-i}(z)/Q_m(z).
+    z_c is REGULAR iff (z-z_c)^i p_i(z) is analytic at z_c for all i, i.e.
+    ord(p_i) >= -i, i.e. (with k = m-i and nu_m := ord_{z=z_c}(Q_m)):
 
-    BUG FIX (2026-07-11): the previous version compared ord(Q_k) against the
-    raw threshold (order - k), omitting the "- nu_m" offset. Since z_c is by
-    construction a root of Q_order, nu_m >= 1 always, so the old threshold was
-    systematically too strict by at least 1 — misclassifying every genuinely
-    regular singular point (including the presumed MUM point at z=0, when
-    tested here) as irregular. This made compute_monodromy() skip every
-    integration, silently.
+        ord_{z=z_c}(Q_k)  >=  nu_m - (order - k)   for all k = 0,...,order-1.
+
+    In particular a SIMPLE zero of the leading coefficient (nu_m = 1) is
+    always a regular singular point (thresholds all <= 0), the standard fact
+    for Fuchsian operators with polynomial coefficients.
+
+    BUG FIX (2026-07-14, Phase 8.B): the 2026-07-11 version used the threshold
+    (order - k) - nu_m — the SIGN of the criterion was inverted. Verified
+    against the classical Apery zeta(3) Picard-Fuchs operator
+        z^2(z^2-34z+1) f''' + 3z(2z^2-51z+1) f'' + (7z^2-112z+1) f' + (z-5) f,
+    whose singular points {0, 17+-12*sqrt(2)} are all famously REGULAR (MUM at
+    z=0): the old threshold classified every one of them IRREGULAR and made
+    compute_monodromy() skip every integration. Any monodromy conclusions
+    drawn from runs before this date inherited that misclassification.
+
+    BUG FIX (2026-07-11): the version before that compared ord(Q_k) against
+    the raw threshold (order - k), also wrong.
 
     PERFORMANCE FIX (2026-07-11): the first attempt at this bugfix computed
     vanishing orders by repeated `.subs(z, z_c)` + `sp.simplify` on individual
@@ -327,7 +335,7 @@ def classify_singular_points(actual_order: int, Q_polys: list):
             if k >= len(Q_polys):
                 continue
             Q_k_poly = Q_polys[k]
-            threshold = (actual_order - k) - nu_m
+            threshold = nu_m - (actual_order - k)   # 2026-07-14 sign fix, see docstring
             if threshold <= 0:
                 continue  # automatically satisfied regardless of Q_k
             vanishing = _divisibility_order(Q_k_poly, factor_poly, threshold)
