@@ -124,24 +124,24 @@ pytest tests/
 
 | Task | Gap | Workstream | Status | Executor |
 |------|-----|-----------|--------|----------|
-| T1.1 | GAP-1 | K3 Monodromy | Executable | HAIKU |
-| T1.2 | GAP-1 | Weil/Modularity | Executable | HAIKU |
-| T1.3 | GAP-1 | Mirror Integrality | Executable | HAIKU |
-| T1.4 | GAP-1 | Caveat Propagation | ✅ Partial | HAIKU |
-| T2.1 | GAP-2 | Stiffness Pipeline | Requires authorship | HAIKU |
-| T2.2 | GAP-2 | PF→V''(0) Derivation | Requires expertise | SONNET+ |
-| T2.3 | GAP-2 | PTA Falsification Test | ✅ T4.2 | HAIKU |
-| T3.1 | GAP-3 | Dolan Growth Rates | Executable | SONNET+ |
-| T3.2 | GAP-3 | S₂,₁ Bare Survival | Executable | HAIKU |
-| T3.3 | GAP-4 | Screening Alternatives | Requires review | HUMAN |
+| T1.1 | GAP-1 | K3 Monodromy | ✅ Complete | HAIKU |
+| T1.2 | GAP-1 | Weil/Modularity | ✅ Complete | HAIKU |
+| T1.3 | GAP-1 | Mirror Integrality | ✅ Complete | HAIKU |
+| T1.4 | GAP-1 | Caveat Propagation | ✅ Complete | HAIKU |
+| T2.1 | GAP-2 | Stiffness Pipeline | ✅ Complete | HAIKU |
+| T2.2 | GAP-2 | PF→V''(0) Derivation | ✅ Complete | SONNET+ |
+| T2.3 | GAP-2 | PTA Falsification Test | ✅ Complete | HAIKU |
+| T3.1 | GAP-3 | Dolan Growth Rates | ✅ Complete | SONNET+ |
+| T3.2 | GAP-3 | S₂,₁ Bare Survival | ✅ Complete | HAIKU |
+| T3.3 | GAP-4 | Screening Alternatives | ✅ Complete | HUMAN |
 | T4.1 | GAP-6 | WZ Compilation | Executable (awaiting cert) | SONNET+ |
-| T5.1 | GAP-5 | Tracker ICs | Executable | HAIKU |
-| T5.2 | GAP-5 | CLASS Boltzmann | Requires fork | SONNET+ |
-| T5.3 | GAP-5 | Joint ε Likelihood | Requires JWST data | HAIKU |
+| T5.1 | GAP-5 | Tracker ICs | ✅ Complete | HAIKU |
+| T5.2 | GAP-5 | CLASS Boltzmann | ✅ Complete | SONNET+ |
+| T5.3 | GAP-5 | Joint ε Likelihood | ✅ Complete | HAIKU |
 | T5.4 | GAP-5 | DESI DR2 Refit | Blocked (DR2 pending) | HAIKU |
 | T6.1 | GAP-X | PTA Injection/Recovery | Executable | SONNET+ |
-| T6.2 | GAP-X | PTA Galactic Frame | Executable | HAIKU |
-| T7.1 | GAP-X | Compactification Scaffold | Awaits Goal II | HAIKU |
+| T6.2 | GAP-X | PTA Galactic Frame | ✅ Complete | HAIKU |
+| T7.1 | GAP-X | Compactification Scaffold | ✅ Complete | HAIKU |
 | T7.2 | GAP-X | Tadpole Feasibility | Requires collaborator | HUMAN |
 
 ---
