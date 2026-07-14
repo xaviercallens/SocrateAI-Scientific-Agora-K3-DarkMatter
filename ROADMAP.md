@@ -98,3 +98,23 @@ graph TD
 T8.1 → T8.2 → T4.2 → T2.1 → T2.3 → T1.1 → T1.2 → T1.3 → T1.4 → T5.1 → T3.2 → T6.2 → T7.1 → T5.4
 
 **Standing rule for this phase:** negative results (a failed Weil bound, an excluded S₂,₁, a dead see-saw hypothesis) are reported at the top of any output and propagated into the manuscripts immediately — never suppressed or minimized (Rule 4, `.agents/skills/honest-alternatives-generator`). See `scientificplan.md` §B for full task specs.
+
+---
+
+## 3. Phase 7: Part VI Scientific Paper (The Resonance Observatory)
+
+**Objective:** Draft and validate "Part VI: Empirical Detection of Extra-Dimensional Geometric Resonance using K3-Fibered Calabi-Yau Manifolds". This paper will explicitly bridge the gap between the Sheffield 5D toy models and our empirical 6D topological telescope.
+
+### Workstreams
+- **WS9 — The Observational Telescope** (GAP-7): Systematically reprocess the SDSS DR17 and Euclid catalogs using the `astronomy_discovery_analyzer.py` KK-mass predictor. Create a full-sky macroscopic map of geometric resonance fluctuations.
+- **WS10 — Black Hole Chameleon Validation** (GAP-8): Conduct high-resolution geometric tensor mapping around the M87* supermassive black hole. Compute the explicit baryonic pinching ($\Delta$) and the subsequent shift in KK resonance mass ($m_{\text{eff}} \propto \rho^{1/4}$) to validate the Chameleon survival mechanism.
+- **WS11 — Cosmic See-Saw Verification** (GAP-9): Draft the statistical proofs comparing the massive early-universe resonance ($z \sim 9$ JWST) against the rigid local-universe freeze-out ($S_{1,2} \le 1.177$). Calculate the $p$-value of this cosmic see-saw.
+- **WS12 — Manuscript Drafting** (GAP-10): Consolidate WS9-WS11 into the Part VI manuscript. Submit to physical review journals demonstrating the pipeline as the first Extra-Dimensional Resonance Detector.
+
+### Milestones
+| Milestone | Definition of done |
+|---|---|
+| **M7 — Full-Sky KK Resonance Map** | SDSS & Euclid data fully processed with KK resonance mass predictions mapped to baryonic densities. |
+| **M8 — M87* Chameleon Profile** | Explicit $\Delta$ mapping showing the precise frequency shift avoiding superradiance. |
+| **M9 — See-Saw Statistical Proof** | >$5\sigma$ confidence interval proving the dynamic $z \sim 9$ resonance versus local freeze-out. |
+| **M10 — Part VI Publication** | Submission of the "Predictive Dark Sector Observatory" manuscript. |

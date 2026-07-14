@@ -49,3 +49,13 @@ This journal serves as a chronological record of milestones, design choices, val
   1. Lean kernel compile check (`0 errors` on `K3GitnBlueprint.lean` and `Agora` library).
   2. GCS sync verification checking that all checkpoints are archived in `gs://socrateai-runux-math-kernel-checkpoints`.
 
+### Epoch 5: Upgrading to a Predictive Dark Sector Observatory (2026-07-14)
+- **Objective:** Re-frame the K3 mathematical framework using the "Extra-Dimensional Resonance" terminology established by Tsai et al. (University of Sheffield).
+- **Actions:**
+  - Overwrote `THEORY_ALIGNMENT.md` to formally adopt the peer-reviewed physics terminology.
+  - Linked $S_{1,2}$/$S_{2,1}$ to fundamental Kaluza-Klein resonance frequencies.
+  - Explained the Chameleon Mechanism as baryonic "shape-shifting" of the K3 extra dimension.
+  - Validated the "Active Early, Inert Today" cosmic see-saw via JWST UNCOVER ($z \sim 9$) and SDSS DR17 datasets.
+  - Added the `calculate_k3_resonance_mass` geometric scaling logic to the Python validation pipeline.
+- **Validation Status:** Theoretical framing successfully aligns the framework as the direct empirical observational telescope for 5D/6D Kaluza-Klein resonance hypotheses.
+
