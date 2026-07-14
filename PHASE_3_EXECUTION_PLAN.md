@@ -283,17 +283,18 @@ structure or as an artifact—remains open (see OPEN_PROBLEMS.md §1 Resolution)
 
 ## ✅ Phase 3 Completion Checklist
 
-- [ ] T6.1 status documented (blocked on `enterprise`; reclassified as optional)
-- [ ] T-Interp-1 decision made and recorded (Option A/B/C chosen + rationale)
-- [ ] T-Interp-2 τ provenance audit complete
-- [ ] T-Interp-5 H₀ reconciliation complete (71.92, 75.8, or other chosen)
-- [ ] T-Interp-3 screening narrative updated
-- [ ] OPEN_PROBLEMS.md §"GAP Resolutions" populated (timestamps on all decisions)
-- [ ] CAVEATS.md fully revised with 2026-07-14+ findings
-- [ ] PARAMETER_LEDGER.yaml caveat fields updated; consistency check passes
-- [ ] All manuscripts (Part I–VI) updated with revised parameters & footnotes
-- [ ] GitHub issues open for deferred Phase 4 items (WZ compilation, extended sieve, tadpole collaborator)
-- [ ] Phase 3 Summary commit pushed
+- [x] T6.1 status documented (blocked on `enterprise`; reclassified as optional)
+- [x] T-Interp-1 decision made and recorded (Option B chosen + rationale)
+- [x] T-Interp-2 τ provenance audit complete (Outcome B confirmed via git archaeology)
+- [x] T-Interp-5 H₀ reconciliation complete (Option A: dual-value reporting, 71.92 + 75.8)
+- [x] T-Interp-3 screening narrative updated (verified already complete from 2026-07-11 session)
+- [x] OPEN_PROBLEMS.md §"GAP Resolutions" populated (timestamps on all decisions)
+- [x] CAVEATS.md fully revised with 2026-07-14+ findings (§1, §2, §5)
+- [x] PARAMETER_LEDGER.yaml caveat fields updated; consistency check passes (23/23)
+- [x] Part I manuscript (K3_DarkMatter_Preprint.tex) updated with revised parameters & footnotes; recompiled
+- [ ] Parts II–VI manuscripts updated (deferred to Phase 4 — broader scope than Tier 1–2 gates)
+- [ ] GitHub issues open for deferred Phase 4 items (WZ compilation, extended sieve, tadpole collaborator, T6.1 retry)
+- [x] Phase 3 Tier 1–2 Summary commits pushed (63aa0cc, a1ea761, 0b7abe6)
 
 ---
 

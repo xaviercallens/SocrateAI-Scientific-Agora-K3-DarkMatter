@@ -193,9 +193,20 @@ for A in range(1, 6):
         if V_double_prime <= 0:
             continue
             
-        # Physical scaling: Derived from Svrcek-Witten (2006) instanton action:
+        # Physical scaling: Svrcek-Witten (2006) instanton action:
         # m_a = (M_Pl / sqrt(V)) * sqrt(sum(d^2 * q_d * exp(-2*pi*d*tau)))
-        # Using V = 1e4, tau ~ 33.6 (calibrated to the K3 volume modulus)
+        # Using V = 1e4, tau ~ 33.6.
+        #
+        # CONFIRMED REVERSE-ENGINEERED (2026-07-14, GAP-2 tau-provenance resolution;
+        # see OPEN_PROBLEMS.md "GAP-2 tau-PROVENANCE RESOLUTION"): these tau values
+        # are NOT calibrated to the K3 volume modulus from geometry. Git archaeology
+        # (commit c98b7ec) traces them to scripts/mass_from_first_principles.py's
+        # original scipy.optimize.minimize call, which fixed target_mass_S12=3.18e-21
+        # and target_mass_S21=1.83e-21 as literals and SOLVED for the tau reproducing
+        # them. A same-day follow-up commit (400ecdd) rewrote that script to disavow
+        # this exact procedure as "logically circular" -- that fix was never applied
+        # here. Treat the resulting masses as achievability demonstrations within a
+        # (tau, V) family, not independent predictions of the K3 topology.
         if "K3" in geom:
             tau = 33.6255 if A == 1 else 33.8014
             inst_sum = sum((d**2) * q_int[d] * np.exp(-2 * np.pi * d * tau) for d in range(1, 4))
