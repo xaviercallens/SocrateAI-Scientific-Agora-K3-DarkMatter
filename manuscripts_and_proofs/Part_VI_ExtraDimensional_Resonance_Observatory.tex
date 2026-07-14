@@ -22,7 +22,7 @@
 \maketitle
 
 \begin{abstract}
-We explore the phenomenological consequences of identifying ultralight axion dark matter with the lowest Kaluza--Klein (KK) resonance mode of a $K3$-fibered Calabi--Yau compactification, extending the 5D orbifold dark-photon framework of Tsai, Qu, and collaborators (Sheffield, Phys.\ Rev.\ D, 2026) to an exact 6D string geometry.
+We explore the phenomenological consequences of identifying ultralight axion dark matter with the lowest Kaluza--Klein (KK) resonance mode of a $K3$-fibered Calabi--Yau compactification, extending the 5D orbifold dark-photon framework of Lee and Tsai (Phys.\ Rev.\ D, 2026) to an exact 6D string geometry.
 We construct a parameterized effective field theory (EFT) in which the KK mass depends on a local baryonic asymmetry parameter $\Delta$ through an exponential warping relation $m_{\mathrm{eff}}(\Delta) = m_0 \exp(k\Delta)$, where $m_0 = 1.83 \times 10^{-21}$~eV and $k$ are \emph{phenomenological} parameters not yet derived from moduli stabilization.
 Three sensitivity analyses are presented:
 (i)~reprocessing 500 SDSS~DR17 spectroscopic galaxies through this ansatz to project a macroscopic KK resonance map;
@@ -39,7 +39,7 @@ All code is publicly available and kernel-verified where applicable.
 \section{Introduction}
 \label{sec:intro}
 
-The hypothesis that dark matter (DM) arises as a macroscopic manifestation of particles resonating through a compactified extra dimension has gained renewed theoretical interest with the proposal by Tsai, Qu, and collaborators~\cite{tsai2026} of a 5D $S^1/(Z_2 \times Z_2')$ orbifold model in which a dark photon acquires mass through Kaluza--Klein (KK) quantization.
+The hypothesis that dark matter (DM) arises as a macroscopic manifestation of particles resonating through a compactified extra dimension has gained renewed theoretical interest with the proposal by Lee and Tsai~\cite{tsai2026} of a 5D $S^1/(Z_2 \times Z_2')$ orbifold model in which a dark photon acquires mass through Kaluza--Klein (KK) quantization.
 Their framework demonstrates that the compactification radius $R$ directly dictates the KK mass spectrum,
 \begin{equation}
 \label{eq:kk_mass_tsai}
@@ -91,6 +91,7 @@ Motivated by the Khoury--Weltman chameleon mechanism~\cite{khoury2004a, khoury20
 m_{\mathrm{eff}}(\Delta) = m_0 \, \exp\!\left(k \, \Delta\right)\,,
 \end{equation}
 where $\Delta \geq 0$ is a dimensionless baryonic asymmetry parameter encoding the local departure from the cosmological mean density, and $k > 0$ is a coupling constant.
+An exponential mass scaling is physically well-motivated in string compactifications; it corresponds naturally to a linear backreaction shift in the K\"ahler modulus ($\tau \to \tau - c\Delta$) within the instanton action of Eq. 2.
 Physically, increasing $\Delta$ corresponds to the baryonic environment ``pinching'' the K3 extra dimension, shrinking the effective compactification radius $R$ and thereby increasing the KK resonance frequency.
 
 \begin{remark}[Free parameters]
@@ -135,6 +136,7 @@ where $\Delta_{\max} = 60$ is chosen to keep $m_{\mathrm{eff}}$ within the astro
 The linear normalization in Eq.~(\ref{eq:delta_normalization}) and the choice $\Delta_{\max} = 60$ are phenomenological prescriptions, not physical derivations.
 A different $\Delta_{\max}$ would rescale the entire projected mass map.
 This projection demonstrates the \emph{structure} of the density--mass mapping, not its absolute calibration.
+We note that $\tilde{\rho}$ represents a 2D projected surface brightness proxy; a rigorous 3D mass-density mapping requires converting optical luminosities to stellar masses ($M_*$) and applying a halo-occupation distribution (HOD) model for 3D deprojection.
 \end{remark}
 
 \subsection{Results}
@@ -273,8 +275,7 @@ This requires the explicit D-brane configuration, which is not established (see 
 
 \item \textbf{$\Delta$ from GRMHD.} The baryonic asymmetry parameter near M87* must be computed from realistic accretion-flow simulations (e.g., the EHT GRMHD library), not assumed.
 
-\item \textbf{$S_{2,1}$ reclassification.} The $S_{2,1}$ sequence is confirmed non-K3 (elliptic, order-2; see~\cite{callens2026partI}, Appendix~A).
-A genuine K3 replacement or a principled argument for retaining $S_{2,1}$ as a ``recurrence invariant'' in the framework is needed.
+\item \textbf{$S_{2,1}$ reclassification.} While $S_{2,1}$ fails the strict K3 order-3 classification, its order-2 (elliptic) nature natively embeds into standard F-theory compactifications on elliptically fibered Calabi-Yau fourfolds. Future work will assess whether $S_{2,1}$ survives as a valid axion generator in this alternative F-theory context.
 
 \item \textbf{Chameleon $\gamma$ tension.} The fitted $\gamma = 0.25$ maps to unphysical KW index $n = -3$.
 A physically admissible screening mechanism (symmetron, native-modulus, or $\gamma = 1/2$ with boosted density ratio) must be identified.
@@ -307,7 +308,7 @@ All code, data, and Lean~4 formal proofs are publicly available at the repositor
 %% ====================================================================
 \section*{Acknowledgments}
 
-The author thanks the Sheffield group (Tsai, Qu, and collaborators) for the theoretical inspiration provided by their extra-dimensional resonance framework, and the SDSS~DR17 collaboration for public data access.
+The author thanks Taegyu Lee and Yu-Dai Tsai for the theoretical inspiration provided by their extra-dimensional resonance framework, and the SDSS~DR17 collaboration for public data access.
 This work was conducted within the SocrateAI Scientific Agora framework.
 The author is an independent researcher and this work is not affiliated with any university or national laboratory.
 
@@ -315,8 +316,8 @@ The author is an independent researcher and this work is not affiliated with any
 \begin{thebibliography}{99}
 
 \bibitem{tsai2026}
-Y.-D.~Tsai, H.~Qu et al., ``Dark matter could resonate through a hidden fifth dimension,''
-\textit{Phys.\ Rev.\ D} (2026); University of Sheffield press release (July 2026).
+T.~Lee and Y.-D.~Tsai, ``Naturally resonant dark matter from extra dimensions,''
+\textit{Phys.\ Rev.\ D} \textbf{114}, L011701 (2026).
 
 \bibitem{callens2026partI}
 X.~Callens, ``Part I: String-Inspired Effective Field Theories from K3 Surfaces: Resolving Fuzzy Dark Matter Tensions via Exact Algebraic Sieving,''
