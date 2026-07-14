@@ -50,6 +50,18 @@ All Haiku-cost tests on 7-candidate pool (6 promoted K3-type + S₂,₁ control)
 - [ ] `[HUMAN]` **D-4** External verification invitations — **NOT executed**: outward-facing action (GitHub issues on external repos) requires explicit separate sign-off, not covered by a general "proceed" instruction.
 - [ ] `[SONNET+]` **D-5** Observatory targeting dossier (PTA ratio-test bands, lensing cross-match targets) — pending, needs g2_3/g2_4 data reformatted per-finalist.
 
+### Phase 8.D-ext — K3×T² Deep Improvement Plan (GATE R-0/D-1/D-2.4) — 2026-07-15
+Full plan: `K3xT2_DEEP_IMPROVEMENT_PLAN.md`. Cooper s₇ Phase-1 GPU pipeline (commit c704833) audited and found to contain critical errors; repaired across two sessions (Haiku then Sonnet).
+- [x] `[HAIKU]` **GATE R-0** rigor repair — broken `CooperS7_K3Geometry.lean` (claimed "compiles cleanly, zero sorry" but didn't) quarantined to `drafts/`, replaced with math-only `CooperS7_Topology.lean`; false claims corrected in V5/PHASE_1 docs; SDSS data-provenance tagging added (synthetic-cluster injection removed, discovery logging real-data-only); bounded log-normalized period observable replacing the 25-decade-dynamic-range raw field. Commit `c3a1b37`.
+- [x] `[SONNET]` **Critical fix (found during D-1 prep)** — `COOPER_S7_EXACT` array in `cooper_s7_periods.py` was **fabricated**: matched neither the Lean-verified recurrence nor OEIS A183204 (confirmed via direct b-file fetch). Invalidated the prior session's "Δ_s7=663.4 discovery." Fixed: terms now always computed from the exact combinatorial sum + self-verified at import time. New `lss_tensor_analytics/k3_kernel_engine.py` generalizes this to all 4 kernels (cooper_s7, cooper_s10, t103, random_control), each self-verified against Lean recurrence + OEIS b-file. Commit `40f2151`.
+- [x] `[SONNET]` **GATE D-1.3** kernel-swap falsification battery — preregistered rule executed for real: r(s7, random_control) = 1.0000 → **VERDICT: F1_FAILS_KERNEL_BLIND**. The FFT-contrast observable cannot distinguish any kernel from unstructured noise. GATE D-3 (empirical validation: tomography/TDA/lensing) is **FROZEN** pending observable redesign. `data/k3t2/GATE_D1_DECISION.md`, `data/k3t2/d1_3_kernel_swap.json`.
+- [x] `[SONNET]` **GATE D-2.4** exact s₇/s₁₀ singular-locus discriminant — order-2 shift recurrences translated to order-3 Picard-Fuchs ODEs via θ=z·d/dz (with correct `P1(θ−1)`, `P2(θ−2)` index-shift correction; verified against the exact truncated series, not just internal consistency). Result: cooper_s7 physical singular points z=−1, **1/27**; cooper_s10 z=−1/4, **1/16**; ratio 16/27≈0.593. Independently reproduces Phase 8.B's "order-3 ODE (K3-type)" classification via a different derivation path. `scripts/k3t2_singular_loci.py`, `data/k3t2/d2_4_singular_loci.json`.
+- [ ] `[SONNET]` **D-2.1** resolve m_eff(Δ) contradiction (exp(kΔ) vs (1+κΔ)^{1/4}) — not yet started.
+- [ ] `[SONNET]` **D-2.2** derive or parameterize ρ_b→z map — not yet started.
+- [ ] `[SONNET]` **D-2.3** T² KK-lattice module (Python + Lean math-only) — not yet started.
+- [ ] `[HAIKU/SONNET]` **Observable redesign** (new, required by D-1 verdict) — candidate directions: use phase structure of Π₀(z) rather than |Π₀(z)|; compare local z to the D-2.4 singular loci (1/27 vs 1/16) rather than generic FFT contrast.
+- [ ] `[HUMAN]` **GATE-E** — publication/outreach decision, blocked until D-2 complete + observable redesigned + D-3 rerun.
+
 ### Phase 8.E — DarkMatterK3-Home Integration
 - [ ] `[HAIKU]` **DM-1** Job spec schema (survey_tile, statistic_hash, candidate_id, seed, client_version)
 - [ ] `[HAIKU]` **DM-2** Quorum replication protocol (≥2 independent clients per tile; disagreement → quarantine)
