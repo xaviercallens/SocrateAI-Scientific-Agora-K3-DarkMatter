@@ -28,9 +28,13 @@ All batch gates run with REAL tools (`scripts/autoresearch_v2_phase_b_all_gates.
 - [x] **G2-2** DONE — GD-1 survival floor 1.59e-21 eV (K_heating exact from FuzzyDarkMatter.lean); no candidate pinned; all survive at reference. `g2_2_no_go_status.json`
 - [x] **G2-3** DONE — Dolan solver (Table-I revalidated 6/6); at common reference α=0.168 NO bare M87* survival (τ≈2.5 Myr < Salpeter), pool-uniform. `g2_3_superradiance_bands.json`
 - [x] **G2-4** (added per user Phase B directive) — PTA/NANOGrav + Lyman-α screens: reference mass outside PTA band; Lyman-α tension if all-DM. `g2_4_obs_screens.json`
-- [ ] `[HUMAN]` **GATE-B-SELECT** — recommendation READY in `data/autoresearch_v2/selection_13to5_rationale.md`: **promote apery_zeta3, domb, cooper_s7, cooper_s10, almkvist_zagier_second** (optional swap for t103 if novelty preferred); s12 killed (N2), s21 retained as control — **awaiting HUMAN pick of top 5**
+- [x] `[HUMAN]` **GATE-B-SELECT** IMPLEMENTED — 6 PROMOTED per user directive: apery_zeta3, domb, cooper_s7, cooper_s10, almkvist_zagier_second, **t103** (novel discovery included). S₁,₂ FORMALLY REJECTED with dual grounds (G1-1 elliptic ODE order 2; G1-3 non-integral PF mirror-map q₂=81/8); retained as negative control + formal archive. `data/autoresearch_v2/GATE_B_FINAL_6plus_sonnet_plan.md`, `data/autoresearch_v2/s12_formal_validation_rejection.md`
 
-### Phase 8.C — Quick Data Tests (weeks 5–7): 5 → 3
+### Phase 8.B-ext — AlphaEvolve K3 Candidate Generation (bonus, same day)
+- [x] `[HAIKU]` **AlphaEvolve sweep** — Evolutionary neighborhood search around known K3 anchors (2-factor and 3-factor families). Recovered apery_zeta3 anchor + discovered 2 new K3-type candidates queued for Phase C gates. Cost: ~100 Haiku calls. `scripts/autoresearch_v2_alphaevolve.py`, `data/autoresearch_v2/alphaevolve_gen_survivors.json`
+- [x] **Sonnet roadmap documented** — Identified Sonnet thresholds: G1-4 monodromy (50-digit RK4), Phase C robust stats if tight, Phase D Lean synthesis, manuscript. Budget: ~200–250 Sonnet calls from ~500 Haiku total. `GATE_B_FINAL_6plus_sonnet_plan.md`
+
+### Phase 8.C — Quick Data Tests (weeks 5–7): 6 → 3
 - [ ] `[HAIKU]` **EU-1** Euclid Q1 acquisition (ESA archive); if blocked → BLOCKED note (Rule 1)
 - [ ] `[HAIKU]` **JW-1** JWST UNCOVER acquisition ($z≥8.5$, same $\tilde\rho$ formula as WS9)
 - [ ] `[HAIKU]` **QT-1** KK projection per 5 candidates on SDSS DR17 + Euclid Q1 (KS test vs. $S_{1,2}$); indistinguishable at $p>0.9$ → demoted
