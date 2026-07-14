@@ -1,5 +1,6 @@
 import Mathlib.Data.Nat.Choose.Sum
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
+import Mathlib.Tactic.FinCases
 
 /-!
 # Cooper s₇ (A183204) order-2 Picard–Fuchs recurrence  (Phase 8.D, GATE-C finalist)
