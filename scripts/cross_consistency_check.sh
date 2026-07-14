@@ -64,6 +64,27 @@ for gap in GAP-1 GAP-2 GAP-3 GAP-4 GAP-5 GAP-6; do
     fi
 done
 
+log ""; log "--- Phase 8.D: GATE-C Finalist Lean Kernel Verification ---"
+LEAN_DIR="$REPO_ROOT/lean4_formal_proofs"
+for pair in "CooperS7Recurrence:CooperS7.cooper_s7_recurrence_checked" \
+            "CooperS10Recurrence:CooperS10.cooper_s10_recurrence_checked" \
+            "T103Recurrence:T103.t103_recurrence_checked"; do
+    modname="${pair%%:*}"
+    thm="${pair##*:}"
+    file="$LEAN_DIR/Structures/${modname}.lean"
+    if [ ! -f "$file" ]; then
+        ((FAIL++)); log "✗ $modname.lean missing"
+        continue
+    fi
+    if (cd "$LEAN_DIR" && timeout 300 lake build "Structures.${modname}" >/tmp/leanbuild_${modname}.log 2>&1); then
+        ((PASS++)); log "✓ $modname.lean builds (kernel-checked, $thm)"
+    else
+        ((FAIL++)); log "✗ $modname.lean FAILED to build — see /tmp/leanbuild_${modname}.log"
+    fi
+done
+check "GATE-B/C 6-candidate pool frozen" "$REPO_ROOT/data/autoresearch_v2/candidate_pool.yaml" "frozen: true"
+check "t103 in candidate pool" "$REPO_ROOT/data/autoresearch_v2/candidate_pool.yaml" "t103"
+
 log ""; log "========================================"; log "Summary: PASS=$PASS FAIL=$FAIL WARN=$WARN"; log "========================================"
 
 if [ "$FAIL" -gt 0 ]; then exit 1; fi

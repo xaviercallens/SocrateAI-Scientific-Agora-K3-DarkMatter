@@ -14,7 +14,16 @@ Scientific approach:
   5. For each REGULAR singular point, numerically compute the monodromy matrix
      by analytic continuation of independent Frobenius solutions using RK4
      integration on a complex circle (mpmath 35-digit precision, N=600 steps).
-  6. Verify |det(M) - 1| (symplecticity check).
+  6. Verify |det(M)| = 1 (unimodularity check via Abel's/Liouville's formula:
+     det(M) = exp(2*pi*i * residue of -Q_{m-1}/Q_m at z_c), so det(M) = -1 is
+     a normal, expected outcome at singular points with half-integer residue,
+     NOT a defect. This is NOT generically "symplecticity" (that term applies
+     to operators with a preserved alternating pairing, e.g. even order with
+     a compatible quadratic/Yukawa structure); the field name 'det_err' below
+     is |det(M) - 1|, which is a poor proxy when det(M) = -1 is the correct
+     answer (det_err = 2 in that case, NOT an error). Corrected 2026-07-14,
+     Phase 8.D: use |det(M)| - 1 (unimodularity) when auditing, not det_err
+     alone, to avoid misreading det(M) = -1 as a failure.
   7. Check the Weil bound for all primes p <= 97.
 
 Mathematical background:
@@ -475,7 +484,9 @@ def compute_monodromy(actual_order: int, Q_polys: list, classified_sings: list):
         det_M = mpmath.det(M_mp)
         det_err = float(abs(det_M - 1))
         print(f"  det(M) = {mpmath.nstr(det_M, 8)}")
-        print(f"  |det(M) - 1| = {det_err:.4e}  (symplecticity)")
+        print(f"  |det(M)| - 1 = {float(abs(det_M)) - 1:.4e}  (unimodularity; "
+              f"det(M)={mpmath.nstr(det_M,4)} itself may legitimately be -1, "
+              f"see docstring)")
 
         print(f"  Monodromy matrix (order={actual_order}):")
         for row in M:

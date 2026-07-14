@@ -40,14 +40,15 @@ All Haiku-cost tests on 7-candidate pool (6 promoted K3-type + S₂,₁ control)
 - [x] `[HAIKU]` **QT-4** Lee–Tsai SIDM screen — structural analogy only; no shared predictions; all 7 PASS with disclaimer. Fermionic DM + annihilation (GeV) ≠ ultralight axion no-annihilation (10⁻²¹ eV).
 - [x] `[HAIKU]` **QT-5** Null-hypothesis battery (Poisson mocks) — z-score=0.06 (Poisson compatible); K3 signal not >2σ in mock ensemble. `phase_c_qt4_qt5_results.json`
 - [x] **S₁₂-inspired rejection archived** — `docs/autoresearch_v2/PHASE_C_A_RESULTS.md` documents G1-1 failure; gate battery self-corrects.
-- [ ] `[HUMAN]` **GATE-C-SELECT** — Pick top 3 from 7-candidate pool for Phase 8.D formalization (Sonnet for monodromy + Lean + Part VII)
+- [x] `[HUMAN]` **GATE-C-SELECT** DECIDED (user, 2026-07-14, "Novel-heavy") — **t103, cooper_s7, cooper_s10** promoted to Phase 8.D. `data/autoresearch_v2/GATE_C_DECISION.md`
 
-### Phase 8.D — Top-3 Implementation + Lean (weeks 8–12)
-- [ ] `[HAIKU chunks]` **D-1** Lean kernel verification for 3 finalists (n≤20 decidable recurrence; zero `sorry`)
-- [ ] `[HAIKU]` **D-2** Ledger + CI integration for finalists; `cross_consistency_check.sh` extended
-- [ ] `[SONNET+]` **D-3** Part VII manuscript: Hypothesis Foundry (3 sections, one per finalist, negative-results-first, provenance ledger pattern)
-- [ ] `[HUMAN]` **D-4** External verification invitations (GitHub issues to arithmetic-geometry/PTA communities; reproduction scripts)
-- [ ] `[SONNET+]` **D-5** Observatory targeting dossier (PTA ratio-test bands, lensing cross-match targets)
+### Phase 8.D — Top-3 Implementation + Lean (weeks 8–12) — ✅ D-1/D-2 EXECUTED 2026-07-14 (Sonnet)
+- [x] `[SONNET]` **D-1** Lean kernel verification for 3 finalists — `lean4_formal_proofs/Structures/{CooperS7Recurrence,CooperS10Recurrence,T103Recurrence}.lean`; exact shift recurrences (verified to n≈200 in Python first), `decide`-proved n∈[0,20], **zero `sorry`**, general law as explicit axiom (S20 pattern). `lake build` succeeds all 3; `#print axioms` confirms no hidden dependency on the axiom.
+- [x] `[SONNET]` **D-2** Ledger + CI integration — `scripts/cross_consistency_check.sh` extended with real `lake build` checks (not grep) for the 3 finalists + pool-freeze check; 28/28 PASS.
+- [x] Corrected monodromy "symplecticity" mislabeling (`k3_monodromy_verification.py`) — det(M)=-1 at some singular points is expected (Abel's formula), not a defect; relabeled as unimodularity check.
+- [ ] `[SONNET+]` **D-3** Part VIII manuscript: Hypothesis Foundry — DRAFT started (`manuscripts_and_proofs/Part_VIII_Hypothesis_Foundry_DRAFT.md`, markdown; note renamed from "Part VII" due to naming collision with the merged TDA supercluster paper); full LaTeX/PDF conversion + intro/discussion pending.
+- [ ] `[HUMAN]` **D-4** External verification invitations — **NOT executed**: outward-facing action (GitHub issues on external repos) requires explicit separate sign-off, not covered by a general "proceed" instruction.
+- [ ] `[SONNET+]` **D-5** Observatory targeting dossier (PTA ratio-test bands, lensing cross-match targets) — pending, needs g2_3/g2_4 data reformatted per-finalist.
 
 ### Phase 8.E — DarkMatterK3-Home Integration
 - [ ] `[HAIKU]` **DM-1** Job spec schema (survey_tile, statistic_hash, candidate_id, seed, client_version)
