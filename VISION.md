@@ -537,6 +537,78 @@ instruments already funded and under construction.
 
 ---
 
+# PART III — AUTOEVOLVE R2: THE HYPOTHESIS FOUNDRY (2026-07-14 onwards)
+
+## Philosophy
+
+The v1 validation infrastructure that dismantled the overclaims is stronger than any single hypothesis it tests. AutoEvolve R2 turns that infrastructure from a **shield** (protecting against errors) into an **engine** (generating and filtering hypothesis candidates). Inspired by AlphaEvolve (cheap generator + ruthless evaluator) and arXiv:2506.13131 (agentic research), the Hypothesis Foundry couples low-cost LLM generation to the existing CI gates, Lean kernel verification, and anti-circularity ledger as a unified fitness function.
+
+**Core design:** Answer-key classifier controls embedded in the candidate pool. The literature already contains ground truth — Apéry ζ(2) (A005258) is elliptic, Apéry ζ(3) (A005259) is K3-type per Beukers–Peters 1984. If the classifier misidentifies these, everything halts and the classifier is fixed. This converts classifier debugging from a hidden problem into a visible, public gate.
+
+## Phase 8: AutoEvolve R2 (12 weeks, ~85% HAIKU tier, 3 HUMAN gates)
+
+A gate-driven pipeline: **Phase A** (13 candidates via literature review) → **Phase B** (13→5 via exact arithmetic + physics screens, reusing existing tools) → **Phase C** (5→3 via real data tests) → **Phase D** (top-3 implementation + Lean + manuscripts) → **Phase E** (citizen-science integration + archive propagation).
+
+Full task breakdown: **AUTORESEARCH_RELEASE_V2_PLAN.md** (detailed spec) and **TODO.md §0** (task checklist).
+
+### Phase A Deliverable (weeks 1–2)
+
+**Artifact:** `data/autoresearch_v2/candidate_pool.yaml` (13 sequences with geometry assignments, controls verified)
+
+- LR-1: Cross-match v1's $S_{1,2}$/$S_{2,1}$ against OEIS + Apéry literature
+- LR-2: Enumerate classified sporadics (Zagier 6×elliptic, Cooper order-3 pool, Domb, others) → ≥15 baseline
+- LR-3: Run extended sieve $(A,B)\in[1,8]^2$ + 3-factor family with held-out validation
+- LR-4: Archive Lee & Tsai 2026 (Sheffield 5D resonance) + El Naschie 2013 (numerology boundary marker)
+- LR-5: Lee–Tsai bridge memo: map their 5D $(R, m_B)$ resonance to our 6D $m_{\mathrm{eff}}(\Delta)$ ansatz
+- LR-6: HUMAN gate freeze at exactly 13; controls present
+
+**Kill criterion:** If LR-1 reveals $S_{1,2}$ is a known, misclassified object → adopt literature, rebuild.
+
+### Phase B Deliverable (weeks 3–4)
+
+**Artifact:** `data/autoresearch_v2/selection_13to5_rationale.md` (composite scoring; 5 survivors identified)
+
+- G1-1 to G1-4: Exact-arithmetic screens (recurrence order, Weil bounds, mirror integrality, monodromy computability) — **classifer fails control → halt**
+- G2-1 to G2-3: Physics viability (stiffness contours, No-Go check, Dolan superradiance bands)
+- GATE-B-SELECT: HUMAN composite score (G1 completeness + monodromy + No-Go + superradiance + control sanity) → rank top 5
+
+### Phase C Deliverable (weeks 5–7)
+
+**Artifact:** `data/autoresearch_v2/selection_5to3_rationale.md` (observational leverage ranking; 3 finalists picked)
+
+- EU-1, JW-1: Acquire Euclid Q1 + JWST UNCOVER (if access blocked → Rule-1 BLOCKED note, no substitute)
+- QT-1 to QT-5: Quick observational tests per candidate (KK projections, see-saw t-test with real $\Delta_{\rm early}$, PTA windows, Lee–Tsai overlap, null-hypothesis battery)
+- GATE-C-SELECT: HUMAN observational leverage ranking (# tests distinguishable × falsifiability) → pick 3; candidates indistinguishable-everywhere are explicitly disfavored
+
+### Phase D Deliverable (weeks 8–12)
+
+**Artifacts:** (i) `lean4_formal_proofs/Structures/S1X_*.lean` (3 finalist kernel-verified modules); (ii) `manuscripts_and_proofs/Part_VII_Hypothesis_Foundry.tex` (negative-results-first essay); (iii) `docs/observatories/pta_ratio_test_target_dossier.md` (falsifiable targets)
+
+- D-1: Lean kernel verification per finalist (n≤20 decidable recurrence, zero `sorry`)
+- D-2: Ledger + CI integration; `cross_consistency_check.sh` extended to finalists
+- D-3: Part VII manuscript (3 sections, one per finalist, provenance ledger pattern)
+- D-4: External verification invitations (GitHub issues to arithmetic-geometry + PTA communities)
+- D-5: Observatory targeting dossier (PTA ratio bands, lensing cross-match targets)
+
+### Phase E: DarkMatterK3-Home Citizen Integration
+
+- **DM-1, DM-2:** Job spec schema + quorum-replication protocol (≥2 independent clients per tile; disagreement → quarantine)
+- **DM-3:** Re-run v1 headline numbers (1.177, Δ=47.0) under quorum before re-citation
+- **DM-4:** Dispatch Phase C TDA jobs to volunteer network; auto-archive results
+
+### Standing Rule: Anti-Circularity Enforcement
+
+Every parameter must declare its fit target in `PARAMETER_LEDGER.yaml`. CI check: if fit_target appears in the same task's acceptance criteria → task output void. This is the GAP-2 lesson, now mechanical.
+
+## Success Metrics
+
+- **Outcome A:** A candidate with computable monodromy settling its geometry class decisively (v1 never achieved this)
+- **Outcome B:** A data-distinguishable candidate pair with a PTA-reachable ratio band whose antecedent is not circular
+- **Outcome C:** Honest kill of all 13 candidates with the answer-key-validated classifier — publishable as "closed: the S_{A,B} → dark-sector route is sterile"
+- **Methodological win:** Classifier passing controls is itself a publishable validation result (independent reproducible reconstruction of known classifications)
+
+---
+
 # APPENDIX — Current formal-methods status (as of June 2026)
 
 | Theorem | Module | Status |

@@ -2,7 +2,62 @@
 
 This file contains the near-term task list for implementing the K3-GITN Neuro-Symbolic integration blueprint and maintaining strict scientific rigor.
 
-## 0. Scientific Validation Program (v2.0.0) — ACTIVE
+## 0. AutoEvolve R2 — The Hypothesis Foundry (Phase 8) — PROPOSED
+
+**Status:** PLANNING (not yet implemented; ready for low-cost LLM execution per AUTORESEARCH_RELEASE_V2_PLAN.md)
+
+A gate-driven evolutionary hypothesis search. Reuses validation infrastructure as fitness function. AlphaEvolve-style: cheap generator + ruthless evaluator. Answer-key classifier controls: Apéry ζ(2) (A005258, elliptic, 40-year literature) and Apéry ζ(3) (A005259, Beukers–Peters K3).
+
+**Executor budget:** ~85% HAIKU tier, 3 HUMAN gates, <50 CPU-h, ~1,100 LLM calls, 12 weeks.
+
+### Phase 8.A — Literature Review (weeks 1–2): 13 candidates
+- [ ] `[HAIKU]` **LR-1** Cross-match $S_{1,2}$/$S_{2,1}$ OEIS + Zagier/Cooper/AESZ → confirm $S_{2,1}$ ≡ A005258 (elliptic)
+- [ ] `[HAIKU]` **LR-2** Enumerate classified sporadics (Zagier 6×order-2, Cooper order-3 pool, Domb, Almkvist–Zagier, Verrill) → ≥15 with geometry assignments
+- [ ] `[HAIKU]` **LR-3** Extended sieve: $(A,B)\in[1,8]^2$ + 3-factor $S_{A,B,C}$ with held-out validation (≥70 terms, n≤110)
+- [ ] `[HAIKU]` **LR-4** Archive Lee & Tsai 2026 PRD + El Naschie 2013 in `docs/reference/` with epistemic classification (El Naschie = numerology-class, boundary-marker only)
+- [ ] `[SONNET+]` **LR-5** Lee–Tsai bridge memo: $(R, m_B)$ resonance → $m_{\mathrm{eff}}(\Delta)$ mapping + "where the analogy breaks" section ≥alignment section
+- [ ] `[HAIKU+HUMAN]` **LR-6** Freeze pool at 13 candidates (include Apéry ζ(3) positive control + one Zagier negative control); HUMAN approves ranking
+
+### Phase 8.B — G1/G2 Exact-Arithmetic + Physics Gates (weeks 3–4): 13 → 5
+- [ ] `[HAIKU batch]` **G1-1** Classify order per candidate (corrected classifier on 13); **control fail → halt**
+- [ ] `[HAIKU batch]` **G1-2** Weil bounds (44 primes) + weight-2/3 status (recorded, not eliminatory)
+- [ ] `[HAIKU batch]` **G1-3** Mirror-map integrality (30 coefficients per candidate)
+- [ ] `[HAIKU batch]` **G1-4** Fuchs criterion + monodromy attempt; computable monodromy → auto-elevate
+- [ ] `[HAIKU batch]` **G2-1** Stiffness contours $(\tau,\mathcal{V})$ per candidate (never point masses)
+- [ ] `[HAIKU batch]` **G2-2** GD-1 No-Go check (pinned to $10^{-23}$ eV → eliminate)
+- [ ] `[HAIKU batch]` **G2-3** Dolan superradiance solver (achievable windows, bare-survival asymmetry)
+- [ ] `[HUMAN]` **GATE-B-SELECT** Score composite (G1/G2 completeness + monodromy + No-Go + superradiance + control sanity) → pick top 5
+
+### Phase 8.C — Quick Data Tests (weeks 5–7): 5 → 3
+- [ ] `[HAIKU]` **EU-1** Euclid Q1 acquisition (ESA archive); if blocked → BLOCKED note (Rule 1)
+- [ ] `[HAIKU]` **JW-1** JWST UNCOVER acquisition ($z≥8.5$, same $\tilde\rho$ formula as WS9)
+- [ ] `[HAIKU]` **QT-1** KK projection per 5 candidates on SDSS DR17 + Euclid Q1 (KS test vs. $S_{1,2}$); indistinguishable at $p>0.9$ → demoted
+- [ ] `[HAIKU]` **QT-2** Replace WS11 synthetic $\Delta_{\rm early}$ with JW-1 empirical; re-run see-saw t-test
+- [ ] `[HAIKU]` **QT-3** PTA window occupancy per candidate (NANOGrav 15-yr sensitivity); flag PTA-reachable ratio bands
+- [ ] `[SONNET+]` **QT-4** Lee–Tsai overlap (self-interaction SIDM band); structural analogy ≠ Lagrangian prediction disclaimer
+- [ ] `[HAIKU batch]` **QT-5** Null-hypothesis battery (Poisson mocks); stats failing separation → barred
+- [ ] `[HUMAN]` **GATE-C-SELECT** Observational leverage ranking: (# tests distinguishable) × (falsifiability); pick top 3
+
+### Phase 8.D — Top-3 Implementation + Lean (weeks 8–12)
+- [ ] `[HAIKU chunks]` **D-1** Lean kernel verification for 3 finalists (n≤20 decidable recurrence; zero `sorry`)
+- [ ] `[HAIKU]` **D-2** Ledger + CI integration for finalists; `cross_consistency_check.sh` extended
+- [ ] `[SONNET+]` **D-3** Part VII manuscript: Hypothesis Foundry (3 sections, one per finalist, negative-results-first, provenance ledger pattern)
+- [ ] `[HUMAN]` **D-4** External verification invitations (GitHub issues to arithmetic-geometry/PTA communities; reproduction scripts)
+- [ ] `[SONNET+]` **D-5** Observatory targeting dossier (PTA ratio-test bands, lensing cross-match targets)
+
+### Phase 8.E — DarkMatterK3-Home Integration
+- [ ] `[HAIKU]` **DM-1** Job spec schema (survey_tile, statistic_hash, candidate_id, seed, client_version)
+- [ ] `[HAIKU]` **DM-2** Quorum replication protocol (≥2 independent clients per tile; disagreement → quarantine)
+- [ ] `[HAIKU]` **DM-3** Re-run v1 headline numbers (1.177, Δ=47.0) under quorum; archive before re-citation
+- [ ] `[HAIKU]` **DM-4** Dispatch Phase C TDA jobs to volunteer network; quorum replication active
+
+### Phase 8.F — Anti-Circularity Enforcement (standing gate all phases)
+- [ ] Parameter fit-to-target declared in `PARAMETER_LEDGER.yaml` per task; CI check for circularity → task void
+- [ ] Audit log: `data/autoresearch_v2/anti_circularity_audit.json`
+
+---
+
+## 0. Scientific Validation Program (v2.0.0) — COMPLETE
 
 Full referee review and task specs: **[`scientificplan.md`](scientificplan.md)**. Roadmap/milestones: **[`ROADMAP.md`](ROADMAP.md) §2 Phase 6**. Every task below is tagged by executor tier — `[HAIKU]` tasks are fully specified and mechanical; `[SONNET+]` tasks need multi-step derivation; `[HUMAN]` tasks need domain judgement or an external collaborator. Task IDs (T1.1, T2.3, ...) cross-reference the full spec in `scientificplan.md` §B.
 

@@ -57,6 +57,118 @@ graph TD
 
 ## 2. Phase 6: The Scientific Validation Program (v2.0.0)
 
+**Status:** COMPLETE (2026-07-14)
+
+---
+
+## 3. Phase 8: AutoEvolve R2 — The Hypothesis Foundry (2026-07-14 onwards)
+
+**Objective:** Evolutionary, gate-driven re-evaluation of the K3 dark-sector hypothesis using the validation infrastructure as a fitness function. Structured as an AlphaEvolve-style generate→gate→promote funnel with anti-circularity as a hard rule.
+
+**Inspiration:** 
+- AlphaEvolve (DeepMind): cheap generator + ruthless evaluator
+- karpathy/autoresearch: lightweight agentic loops
+- arXiv:2506.13131: agentic-research methodology
+- v1 precedent: validation infrastructure dismantled overclaims; v2 makes that infrastructure the search engine
+
+**Key design principle:** Answer-key validation. The literature contains ground truth for our classifier:
+- Apéry ζ(2) sequence (A005258) has elliptic/weight-2 classification (40-year literature). If our corrected classifier misidentifies it, everything halts.
+- Apéry ζ(3) sequence (A005259) has Beukers–Peters K3 certification. A positive control embedded in the pool of 13.
+
+**Executor mix:** ~85% HAIKU (mechanical, fully specified), 3 HUMAN gates only (pool freeze, 13→5, 5→3).
+
+### Phase 8.A: Phase A — Deep Literature Review (weeks 1–2)
+
+**Goal:** Build candidate pool of 13 sequences with literature-assigned geometries.
+
+| Task ID | Executor | Activity | Input | Output | Acceptance |
+|---------|----------|----------|-------|--------|-----------|
+| **LR-1** | HAIKU | Cross-match $S_{1,2}$, $S_{2,1}$ against OEIS + Apéry-like literature | OEIS search API; Zagier 2009, Cooper 2012, AESZ tables | `docs/autoresearch_v2/s12_s21_oeis_match.md` + table with OEIS ids, first-10-term exact match, literature citations, geometry assignments | Confirmed: $S_{2,1}$ ≡ A005258 (elliptic, Apéry ζ(2)); $S_{1,2}$ OEIS id + geometry assigned per literature |
+| **LR-2** | HAIKU | Enumerate classified sporadic pools | Zagier 2009, Cooper 2012, Domb/Almkvist–Zagier/Verrill tables | `data/autoresearch_v2/CLASSIFIED_SPORADICS.csv` with ≥15 sequences, exact binomial forms, literature-assigned geometry | Tabulated: order-2 count ≥6, order-3 count ≥7, each with citation |
+| **LR-3** | HAIKU | Run extended sieve on $(A,B)\in[1,8]^2$ + 3-factor $S_{A,B,C}$ | Corrected `k3_sieve_analysis.py` with GAP-1 fixes; held-out validation set (≥70 terms, $n_{\max}\ge110$) | `data/autoresearch_v2/sieve_scan_extended.json` with order-3 survivors + held-out residuals | Every order-3 candidate: held-out residuals exactly 0.0 (or halt with residual report) |
+| **LR-4** | HAIKU | Archive reference documents in `docs/reference/` | Lee & Tsai 2026 PRD paper; El Naschie 2013 JQIS paper | `docs/reference/lee_tsai_2026.md`, `el_naschie_2013.md` (each with full citation, 5-line honest summary, epistemic classification, role-in-v2) | Both files present; El Naschie flagged "numerology-class, boundary-marker only" |
+| **LR-5** | SONNET+ | Lee–Tsai bridge memo: map their $(R, m_B)$ resonance to our $m_{\mathrm{eff}}(\Delta)$ ansatz | Lee & Tsai PRD + our THEORY_ALIGNMENT.md | `docs/autoresearch_v2/lee_tsai_bridge.md` with resonance-mass mapping + explicit "where the analogy breaks" section ≥ as long as alignment section | Bridge memo complete; breaks section present and ≥500 words |
+| **LR-6** | HAIKU + HUMAN | Score and freeze candidate pool at exactly 13 | LR-2/LR-3 outputs; Apéry ζ(3) positive control, one Zagier order-2 negative control | `data/autoresearch_v2/candidate_pool.yaml` with (name, OEIS id, binomial form, literature geometry, prior status, rank) for all 13 | Pool frozen; controls present; HUMAN approves ranking; pool immutable for G1/G2/G3 |
+
+**Phase A kill criterion:** If LR-1 finds $S_{1,2}$ is itself a known classified object whose literature classification contradicts K3, adopt literature, annotate, and rebuild pool.
+
+---
+
+### Phase 8.B: Phase B — Exact-Arithmetic + Physics Gates (weeks 3–4)
+
+**Goal:** 13 → 5 survivors via G1/G2 screening. Reuse existing, debugged in-repo tools.
+
+| Task ID | Executor | Activity | Input | Output | Gate kill criterion |
+|---------|----------|----------|-------|--------|-----|
+| **G1-1** | HAIKU batch | Minimal recurrence order per candidate | 13 candidates from LR-6 | `data/autoresearch_v2/g1_order_classification.json` with (candidate, order_assigned, held_out_max_residual, control_pass) | Any control (A005259 or Zagier) misclassified → **halt phase, classifier broken** |
+| **G1-2** | HAIKU batch | Weight-3 + weight-2 Weil bounds | 13 candidates; 44-prime Weil database | `data/autoresearch_v2/g1_weil_analysis.csv` with ($a_p$ table, bound verdict per candidate, weight-3/weight-2 status) | Recorded; bounds do NOT eliminate (per GAP-1 lesson: weight-2 alone ≠ elliptic verdict) |
+| **G1-3** | HAIKU batch | Mirror-map integrality check | 13 candidates; 30 coefficient exactness check | `data/autoresearch_v2/g1_mirror_integrality.json` with (candidate, integrality_pass_yes/no, failure_detail_if_any) | Recorded; failures annotated |
+| **G1-4** | HAIKU batch | Fuchs-criterion + monodromy attempt | 13 candidates; `k3_monodromy_verification.py` | `data/autoresearch_v2/g1_monodromy_status.json` with (candidate, fuchs_singular_points, monodromy_computable_yes/no, rk4_error_if_run) | Any candidate with computable monodromy auto-elevates (settle class decisively); recorded |
+| **G2-1** | HAIKU batch | Stiffness $V''(0)$ extraction + mass-achievability contour | 13 candidates | `data/autoresearch_v2/g2_stiffness_contours.json` with ($(\tau,\mathcal{V})$ family, achievable mass ranges per candidate, NOT point masses) | Contours published, never single-point claims |
+| **G2-2** | HAIKU batch | GD-1 No-Go check | 13 candidates; `cy_axion_no_go.lean` theorem | `data/autoresearch_v2/g2_no_go_status.json` with (candidate, pinned_to_10_minus_23_eV_yes/no) | Candidates pinned in No-Go window → eliminated |
+| **G2-3** | HAIKU batch | Dolan superradiance solver across achievable windows | 13 candidates; validated `dolan_continued_fraction.py` | `data/autoresearch_v2/g2_superradiance_bands.json` with (candidate, survive_bare_yes/no, screened_needed_mass_band, excluded_band) | Bands reported; M87* bare-survival asymmetry recorded |
+| **GATE-SELECT** | HUMAN | Composite score: G1 pass completeness + monodromy computability + No-Go clearance + superradiance favorability + control sanity | All G1/G2 outputs | `data/autoresearch_v2/selection_13to5_rationale.md` with scored sheet; HUMAN picks top 5 | G1/G2 gates green; HUMAN gate 1 decision locked |
+
+**Phase B kill criterion:** Control misclassification → halt and fix classifier before proceeding.
+
+---
+
+### Phase 8.C: Phase C — Quick Data Tests (weeks 5–7)
+
+**Goal:** 5 → 3 survivors via G3 observational leverage tests on existing/available data only.
+
+| Task ID | Executor | Activity | Input | Output | Gate criterion |
+|---------|----------|----------|-------|--------|-----|
+| **EU-1** | HAIKU | Euclid Q1 acquisition task | ESA archive API, IRSA search | `data/euclid_q1/euclid_q1_validation_slice.csv` (≤500 objects) + fetch script | If access blocked → BLOCKED note (Rule 1), no simulated substitute |
+| **JW-1** | HAIKU | JWST UNCOVER acquisition + $z\ge8.5$ density proxies | UNCOVER archive; same $\tilde\rho$ formula as WS9 | `data/jwst_uncover/uncover_z85plus_density_proxies.csv` + conversion-log | If blocked → BLOCKED note |
+| **QT-1** | HAIKU | Per candidate: recompute WS9 KK projection on SDSS DR17 + Euclid Q1 slice | 5 candidates from B; `ws9_observational_telescope.py` adapted | `data/autoresearch_v2/qt1_kk_projections.json` with (candidate, sdss_mean_meff, sdss_std, euclid_mean_meff, euclid_std, ks_test_p_vs_s12) | Candidates indistinguishable from $S_{1,2}$ at KS $p>0.9$ → demoted (unfalsifiable) |
+| **QT-2** | HAIKU | Replace synthetic $\Delta_{\rm early}$ (Part VI WS11) with JW-1 empirical distribution | JW-1 output; `ws11_cosmic_seesaw_verification.py` | `data/autoresearch_v2/qt2_seesaw_empirical_ttest.json` with (candidate, t_stat, p_value, early_vs_local_mean_ratio) | See-saw test re-run with real data; power assessed |
+| **QT-3** | HAIKU | PTA window occupancy: candidate achievable mass bands vs. NANOGrav 15-yr sensitivity | 5 candidates' G2-3 bands; NANOGrav 15-yr sensitivity curve | `data/autoresearch_v2/qt3_pta_window_analysis.json` with (candidate, f_band_hz, overlap_with_pta_yes/no, candidate_pair_ratio_reachable_yes/no) | Pairs flagged with PTA-reachable ratio bands |
+| **QT-4** | SONNET+ | Lee–Tsai overlap: check if any candidate lands in self-interaction band (SIDM $\sigma/m$) | LR-5 bridge memo; 5 candidates' physics parameters | `data/autoresearch_v2/qt4_lee_tsai_overlap.md` with structural analogy check + "not a shared-Lagrangian prediction" disclaimer | Overlap analysis complete; analogy vs. prediction asymmetry stated |
+| **QT-5** | HAIKU batch | Null-hypothesis battery: Poisson-mock comparison on all TDA statistics | `lss_tensor_analytics/null_hypothesis_test.py`; 5 candidates | `data/autoresearch_v2/qt5_null_hypothesis_battery.json` with (statistic, passes_separation_yes/no) per candidate | Any statistic failing separation → barred from scoring |
+| **GATE-SELECT** | HUMAN | Observational leverage ranking: (# independent G3 tests where distinguishable) × (falsifiability: could have been killed but wasn't) | All QT outputs | `data/autoresearch_v2/selection_5to3_rationale.md` with scored sheet; HUMAN picks top 3 | Candidate surviving everything indistinguishable-everywhere → disfavored explicitly |
+
+**Phase C kill criterion:** All 5 candidates indistinguishable or all tests blocked → no finalists; analysis stops with honest conclusion.
+
+---
+
+### Phase 8.D: Phase D — Top-3 Real Implementation + Lean Formalization (weeks 8–12)
+
+**Goal:** Real publication-grade implementation of the 3 finalists.
+
+| Task ID | Executor | Activity | Input | Output | Acceptance |
+|---------|----------|----------|-------|--------|-----------|
+| **D-1** | HAIKU chunks | Lean kernel verification for each finalist | `S12S21Recurrence.lean` template (n≤20 decidable recurrence) | `lean4_formal_proofs/Structures/S1X_Candidate_Nnn.lean` per finalist (3 files) | `lake build` green; zero `sorry` on core theorems |
+| **D-2** | HAIKU | Ledger + CI integration | 3 finalists' parameters | `PARAMETER_LEDGER.yaml` extended with finalists; `cross_consistency_check.sh` extended | Ledger entries complete; CI green |
+| **D-3** | SONNET+ | Part VII manuscript: Hypothesis Foundry essay | Phase A–D outputs + Lean modules | `manuscripts_and_proofs/Part_VII_Hypothesis_Foundry.tex` with one section per finalist, negative-results-first, provenance ledger pattern | Manuscript compiles cleanly; all 3 candidates covered equally |
+| **D-4** | HUMAN | External verification invitations | Candidate specs + reproduction scripts | GitHub issues (3 repos: arXiv forums, LMFDB/arithmetic-geometry community, PTA collaboration) with concrete targets | Issues posted; external invitation open |
+| **D-5** | SONNET+ | Observatory targeting dossier | Best candidate pair (G3 QT-3 result) | `docs/observatories/pta_ratio_test_target_dossier.md` + `docs/observatories/lensing_cross_match_targets.csv` | Targets concrete, falsifiable, PTA-accessible |
+
+---
+
+### Phase 8.E: DarkMatterK3-Home Integration
+
+| Task ID | Executor | Activity | Input | Output | Acceptance |
+|---------|----------|----------|-------|--------|-----------|
+| **DM-1** | HAIKU | Job spec schema | `dmk3_schema.json` template | `data/dmk3_runs/job_spec_schema.json` with (survey_tile, statistic_version_hash, candidate_id, seed, client_version) | Schema locked; all v2 runs use it |
+| **DM-2** | HAIKU | Quorum replication protocol | 2+ independent client requirement | `data/dmk3_runs/quorum_protocol.md` with (disagreement tolerance, quarantine rules) | Implemented before any v2 runs |
+| **DM-3** | HAIKU | Archive v1 numbers under quorum | Converged 327,918-galaxy run (external) | `data/dmk3_runs/v1_reproduction/` with manifest + reproduction script | v1 headline numbers (1.177, Δ=47.0) reproducible before re-citation in v2 |
+| **DM-4** | HAIKU | Phase C finalists' TDA compute dispatch | 3 finalists × SDSS DR17 + Euclid Q1 tiles | `data/dmk3_runs/phase_c_jobs.json` with job specs; volunteer network activated | Jobs dispatched; quorum replication active |
+
+---
+
+### Phase 8.F: Anti-Circularity Enforcement
+
+Standing hard gate across all phases:
+
+| Rule | Enforcement | Ledger |
+|------|-------------|--------|
+| **No parameter fit to its own validation target** | Declared in `PARAMETER_LEDGER.yaml` (fit_to_target field); CI check: grep if fit_target appears in same task's acceptance criteria → task output void | `data/autoresearch_v2/anti_circularity_audit.json` |
+
+---
+
+## 2. Phase 6: The Scientific Validation Program (v2.0.0)
+
 **Objective:** Close the six referee-identified gaps between "string-inspired phenomenology" and "candidate physics" for the $K3$ ($S_{1,2}$, $S_{2,1}$) $\times\, T^2$ theory, per the full referee review and task breakdown in **[`scientificplan.md`](scientificplan.md)**. This phase supersedes ad-hoc task tracking with a gated, milestone-driven program. Every task below is executable by an agent at the stated tier; see `scientificplan.md` for exact inputs/steps/acceptance criteria/verify commands, and `.agents/SKILLS_INDEX.md` for the rigor skills (`claim-classification-audit`, `falsifiability-audit`, `axiom-gap-disclosure`, `empirical-data-validation`, `honest-alternatives-generator`, `cross-consistency-gate`) that govern every task's output.
 
 **Executor tiers:** `HAIKU` = mechanical, fully specified, no design decisions. `SONNET+` = multi-step derivation or non-trivial debugging. `HUMAN` = domain judgement or external collaborator required (see `OPEN_PROBLEMS.md`).
