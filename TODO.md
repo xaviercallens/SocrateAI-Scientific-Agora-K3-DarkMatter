@@ -105,6 +105,9 @@ Full referee review and task specs: **[`scientificplan.md`](scientificplan.md)**
 - [x] `[HAIKU]` **T11.1** Perform Welch's t-test on synthetic local/early-universe mass distributions to establish the Cosmic See-Saw p-value (`ws11_cosmic_seesaw_verification.py`).
 - [x] `[HAIKU]` **T12.1** Consolidate all sensitivity analyses and attributions into the Part VI LaTeX manuscript and compile the preprint PDF.
 
+### 0.10 Phase 7 — Part VII (Supercluster Anomaly & DarkMatter@Home)
+- [x] `[HAIKU]` **T13.1** Ingest DarkMatter@Home pilot run results (327,918 galaxies, asymmetry 69.7, warp parameter 1.45) and the 22-node cosmic web junction at K3-DISC-0003, write the Part VII LaTeX manuscript, and compile to PDF.
+
 ---
 
 ## Near-Term Tasks

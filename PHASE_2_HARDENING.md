@@ -143,6 +143,7 @@ pytest tests/
 | T6.2 | GAP-X | PTA Galactic Frame | ✅ Complete | HAIKU |
 | T7.1 | GAP-X | Compactification Scaffold | ✅ Complete | HAIKU |
 | T7.2 | GAP-X | Tadpole Feasibility | Requires collaborator | HUMAN |
+| T13.1 | GAP-X | DarkMatter@Home Part VII | ✅ Complete | HAIKU |
 
 ---
 
