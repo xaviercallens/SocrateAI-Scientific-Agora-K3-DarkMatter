@@ -174,24 +174,28 @@ class CooperS7PeriodIntegral:
 
 def construct_k3_volume_grid(density_grid: np.ndarray,
                             rho_b_min: float = 1e-3,
-                            rho_b_max: float = 10.0) -> Tuple[np.ndarray, np.ndarray, np.ndarray]:
+                            rho_b_max: float = 10.0,
+                            use_bounded: bool = True) -> Tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
     """
     Transform a baryonic density grid into the Cooper s₇ K3 vacuum geometry.
 
     Phase 1 outputs:
     1. z_grid: Complex structure modulus at each voxel
     2. period_grid: Period integral Π₀(z) at each voxel
-    3. K3_volume: Effective K3 volume deformation from flat space
+    3. period_bounded: Bounded observable = log(|Π₀(z)|) / log(max(|Π₀(z)|))
+    4. K3_volume: Effective K3 volume deformation = |Π₀(z)|² (raw, for comparison)
 
     Args:
         density_grid: 3D array of baryonic density (from SDSS/Euclid accumulation)
         rho_b_min: Minimum density threshold
         rho_b_max: Maximum density threshold
+        use_bounded: If True, use log-normalized bounded observable; else raw |Π₀|²
 
     Returns:
         z_grid: Complex structure modulus, shape = density_grid.shape
         period_grid: Picard-Fuchs period integral Π₀(z)
-        K3_volume: K3 volume deformation = |Π₀(z)|² (squared amplitude)
+        period_bounded: Log-normalized period [0,1] for asymmetry metric (GATE D-1+)
+        K3_volume: Raw |Π₀(z)|² (archive, not recommended for analysis)
     """
     engine = CooperS7PeriodIntegral()
 
@@ -207,19 +211,31 @@ def construct_k3_volume_grid(density_grid: np.ndarray,
     # Evaluate period integral
     period_flat = engine.period_integral(z_flat)
 
-    # K3 volume deformation (magnitude squared of period integral)
-    k3_volume_flat = np.abs(period_flat) ** 2
+    # Bounded observable: log-scale normalization (dynamic range < 3 decades per R-0.4)
+    period_abs = np.abs(period_flat)
+    period_abs_max = np.max(period_abs)
+    if use_bounded and period_abs_max > 0:
+        # Log-normalized: log(p) / log(p_max), clipped to [0, 1]
+        period_bounded_flat = np.log(period_abs + 1e-30) / np.log(period_abs_max + 1e-30)
+        period_bounded_flat = np.clip(period_bounded_flat, 0, 1)
+    else:
+        period_bounded_flat = period_abs / (period_abs_max + 1e-30)
+
+    # K3 volume deformation (magnitude squared of period integral) — for archive only
+    k3_volume_flat = period_abs ** 2
 
     # Reshape back to original grid
     z_grid = z_flat.reshape(shape_orig)
     period_grid = period_flat.reshape(shape_orig)
+    period_bounded = period_bounded_flat.reshape(shape_orig)
     K3_volume = k3_volume_flat.reshape(shape_orig)
 
     logger.info(f"K3 volume grid constructed. "
                 f"z_range=[{z_grid.min():.4f}, {z_grid.max():.4f}], "
-                f"period_range=[{period_grid.min():.2e}, {period_grid.max():.2e}]")
+                f"period_range=[{period_grid.min():.2e}, {period_grid.max():.2e}], "
+                f"period_bounded_range=[{period_bounded.min():.4f}, {period_bounded.max():.4f}]")
 
-    return z_grid, period_grid, K3_volume
+    return z_grid, period_grid, period_bounded, K3_volume
 
 # ============================================================================
 # ASYMMETRY METRIC Δ_{s7}
@@ -319,11 +335,12 @@ if __name__ == "__main__":
     logger.info("\nCreating mock density grid (128³ voxels)...")
     mock_density = np.random.lognormal(mean=-1.0, sigma=1.5, size=(128, 128, 128))
 
-    z_grid, period_grid, k3_vol = construct_k3_volume_grid(mock_density)
+    z_grid, period_grid, period_bounded, k3_vol = construct_k3_volume_grid(mock_density)
 
-    # Test 4: Compute asymmetry
-    delta, mean_a, max_a = compute_cooper_s7_asymmetry(k3_vol, mock_density)
+    # Test 4: Compute asymmetry (use bounded observable per R-0.4)
+    delta, mean_a, max_a = compute_cooper_s7_asymmetry(period_bounded, mock_density)
 
     logger.info(f"\n✓ All Phase 1 tests passed.")
-    logger.info(f"  K3 Volume Grid: shape={k3_vol.shape}, range=[{k3_vol.min():.2e}, {k3_vol.max():.2e}]")
+    logger.info(f"  K3 Volume Grid: shape={k3_vol.shape}, raw range=[{k3_vol.min():.2e}, {k3_vol.max():.2e}]")
+    logger.info(f"  Bounded Observable: shape={period_bounded.shape}, range=[{period_bounded.min():.4f}, {period_bounded.max():.4f}]")
     logger.info(f"  Asymmetry Δ_s7: mean={mean_a:.6f}, max={max_a:.6f}")

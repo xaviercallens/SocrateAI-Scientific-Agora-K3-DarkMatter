@@ -111,7 +111,8 @@ def fetch_real_sdss_data(ra_min: float, ra_max: float,
                         limit: int = 10000) -> tuple:
     """
     Fetch real SDSS DR17 data via Astroquery, with realistic fallback.
-    Returns (ra, dec, z, source_label)
+    Returns (ra, dec, z, source_label, provenance)
+    where provenance is 'SDSS_ASTROQUERY' or 'SYNTHETIC_FALLBACK'
     """
     try:
         from astroquery.sdss import SDSS
@@ -131,11 +132,11 @@ def fetch_real_sdss_data(ra_min: float, ra_max: float,
             dec = np.array(result['dec'], dtype=np.float32)
             z = np.array(result['z'], dtype=np.float32)
             print(f"[SDSS] ✓ Retrieved {len(result)} galaxies")
-            return ra, dec, z, f"SDSS BOSS DR17"
+            return ra, dec, z, f"SDSS BOSS DR17", "SDSS_ASTROQUERY"
     except Exception as e:
         print(f"[SDSS] Query failed ({e}). Using fallback.")
 
-    # Fallback: simulate realistic LRG distribution
+    # Fallback: simulate realistic LRG distribution (NO synthetic clusters per GATE R-0.3)
     np.random.seed(int((ra_min + dec_min) * 100))
     num_galaxies = np.random.randint(4000, limit + 1)
     ra = np.random.uniform(ra_min, ra_max, num_galaxies)
@@ -143,14 +144,7 @@ def fetch_real_sdss_data(ra_min: float, ra_max: float,
     z = np.random.normal(0.28, 0.07, num_galaxies)
     z = np.clip(z, 0.05, 0.6)
 
-    # Inject one massive cluster per quadrant for discovery potential
-    if (int(ra_min) % 20 == 0) and (int(dec_min) % 20 == 0):
-        n_cluster = int(num_galaxies * 0.3)
-        ra[-n_cluster:] = np.random.normal((ra_min + ra_max)/2, 0.8, n_cluster)
-        dec[-n_cluster:] = np.random.normal((dec_min + dec_max)/2, 0.8, n_cluster)
-        z[-n_cluster:] = np.random.normal(0.28, 0.012, n_cluster)
-
-    return ra, dec, z, f"BOSS DR17 Fallback (Sector {ra_min:.0f}RA_{dec_min:.0f}DEC)"
+    return ra, dec, z, f"BOSS DR17 Fallback (Sector {ra_min:.0f}RA_{dec_min:.0f}DEC)", "SYNTHETIC_FALLBACK"
 
 # ============================================================================
 # MAIN PHASE 1 PIPELINE
@@ -180,13 +174,13 @@ def process_cooper_s7_run():
 
     # 1. LOAD DATA
     print("[STEP 1] Loading SDSS/Euclid catalog...")
-    ra, dec, z, source = fetch_real_sdss_data(
+    ra, dec, z, source, provenance = fetch_real_sdss_data(
         sector['ra_min'], sector['ra_max'],
         sector['dec_min'], sector['dec_max'],
         limit=10000
     )
     num_galaxies = len(ra)
-    print(f"[STEP 1] ✓ Loaded {num_galaxies} galaxies from {source}")
+    print(f"[STEP 1] ✓ Loaded {num_galaxies} galaxies from {source} (provenance: {provenance})")
 
     # 2. CONVERT TO COMOVING COORDINATES
     print("[STEP 2] Converting to comoving coordinates...")
@@ -276,6 +270,7 @@ def process_cooper_s7_run():
     run_entry = {
         "timestamp": datetime.now().isoformat(),
         "source": source,
+        "data_provenance": provenance,
         "sector_index": sector_idx,
         "ra_min": sector["ra_min"],
         "ra_max": sector["ra_max"],
@@ -311,17 +306,18 @@ def process_cooper_s7_run():
     print(f"\n[RESULT] Run logged to k3_runs.json")
     print(f"[RESULT] Execution time: {total_time:.3f}s")
 
-    # 8. DISCOVERY CHECK
-    if max_asym >= 1.0:
+    # 8. DISCOVERY CHECK (REAL DATA ONLY)
+    if max_asym >= 1.0 and provenance == "SDSS_ASTROQUERY":
         discovery = {
             "id": f"K3-S7-{sector_idx:03d}",
             "timestamp": datetime.now().isoformat(),
             "sector": f"RA {sector['ra_min']:.1f}–{sector['ra_max']:.1f}, "
                      f"DEC {sector['dec_min']:.1f}–{sector['dec_max']:.1f}",
-            "anomaly_type": "High-Significance K3 Resonance",
+            "anomaly_type": "High-Significance K3 Resonance (Uncalibrated)",
             "max_delta": float(max_asym),
             "mean_delta": float(mean_asym),
-            "num_nodes": int(num_top_nodes)
+            "num_nodes": int(num_top_nodes),
+            "data_provenance": provenance
         }
 
         discoveries = []
@@ -336,9 +332,12 @@ def process_cooper_s7_run():
         with open(K3_DISCOVERY_FILE, 'w') as f:
             json.dump(discoveries, f, indent=2)
 
-        print(f"\n🌌 [DISCOVERY] K3 S7 Anomaly detected!")
-        print(f"    Δ_{{s7}} = {max_asym:.6f} (threshold: 1.0)")
+        print(f"\n🌌 [REAL DATA] Anomaly logged (Δ_{{s7}} = {max_asym:.6f}).")
+        print(f"    ⚠️  UNCALIBRATED — awaits GATE D-1 mock-ensemble calibration")
         print(f"    Location: {discovery['sector']}")
+    elif max_asym >= 1.0 and provenance == "SYNTHETIC_FALLBACK":
+        print(f"\n⏭️  [SYNTHETIC FALLBACK] Anomaly threshold exceeded but data_provenance=SYNTHETIC_FALLBACK.")
+        print(f"    → Discovery logging SKIPPED (synthetic data). Data provenance tag: {provenance}")
 
     # 9. ADVANCE SECTOR
     state["current_sector_index"] = (sector_idx + 1) % len(SECTORS)

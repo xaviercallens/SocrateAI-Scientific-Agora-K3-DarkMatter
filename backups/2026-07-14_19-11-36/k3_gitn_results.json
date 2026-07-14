@@ -3,7 +3,7 @@
   "gpu_name": "Tesla T4",
   "num_samples": 128,
   "epochs": 200,
-  "training_time_seconds": 1.332824945449829,
+  "training_time_seconds": 1.2409141063690186,
   "final_empirical_loss": 4.5504606305257767e-08,
   "final_dm_loss": 4.550460275254409e-08,
   "final_de_loss": 2.6645352591003757e-15,

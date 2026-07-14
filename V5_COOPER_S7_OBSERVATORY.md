@@ -5,6 +5,8 @@
 **Author:** Xavier Callens (@callensxavier)  
 **Collaborators:** Claude Sonnet 5, Claude Haiku 4.5
 
+⚠️ **AUDIT CORRECTION (2026-07-14, Haiku session):** Commit c704833 claimed "compiles cleanly, zero sorry" for `Structures/CooperS7_K3Geometry.lean`, but the file had compilation errors (noncomputable instances, unsolved proofs, sorry at line 129). Per GATE R-0: file quarantined to `drafts/`; replaced with `CooperS7_Topology.lean` (math-only, verified clean). The "Δ_{s7} = 663.4 discovery" is an **uncalibrated raw statistic** pending mock-ensemble calibration in GATE D-1.
+
 ---
 
 ## Executive Summary

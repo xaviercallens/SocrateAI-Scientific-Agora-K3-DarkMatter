@@ -1,8 +1,10 @@
 # Phase 1: Mathematical Re-Calibration (Cooper s₇ K3 Engine) — CHECKLIST
 
-**Status:** ✅ COMPLETE  
+**Status:** 🔧 GATE R-0 IN PROGRESS (Haiku session)  
 **Date:** 2026-07-14  
-**Last Updated:** 2026-07-14 19:30 UTC
+**Last Updated:** 2026-07-14 (Haiku repair session)
+
+**AUDIT CORRECTION:** Commit c704833 incorrectly claimed `CooperS7_K3Geometry.lean` compiles cleanly with zero `sorry`. Audit (Fable 2026-07-14) found compilation errors. GATE R-0 remedy: file quarantined to `drafts/`, replaced with `CooperS7_Topology.lean` (math-only, verified clean). The "Δ_{s7} = 663.4" is uncalibrated; awaits GATE D-1 mock-ensemble calibration.
 
 ---
 
