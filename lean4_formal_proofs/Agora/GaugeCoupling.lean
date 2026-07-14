@@ -17,7 +17,15 @@ claim to solve it.
 What IS predicted by topology is the *ratio* of inverse gauge couplings between the
 two candidate vacua S_{1,2} and S_{2,1}, under the standard assumption that the gauge
 coupling scales with the inverse square root of a geometric volume modulus whose
-curvature is set by the topological stiffness V''(0):
+curvature is set by the topological stiffness V''(0).
+
+**Status update (2026-07-14, GAP-1 resolution):** S_{2,1} is confirmed to satisfy an
+order-2 (elliptic) recurrence, not order-3 (K3). It is retained as a non-K3
+"recurrence-invariant" companion object; only S_{1,2} is a K3 candidate. The integer
+336 below is an exact recurrence-extracted invariant of S_{2,1}, but calling it a "K3
+topological stiffness" is no longer supported — see OPEN_PROBLEMS.md (GAP-1
+RESOLUTION, 2026-07-14) and docs/gap1/ORDER_VERIFICATION_FINDINGS.md. The exact-ℚ
+arithmetic below is unaffected:
 
     α⁻¹ ∝ √(V''(0))   ⟹   α⁻¹(S_{1,2}) / α⁻¹(S_{2,1}) = √(1014 / 336) = √(169/56).
 
@@ -32,7 +40,9 @@ namespace GaugeCoupling
 /-- Topological stiffness V''(0) for the S_{1,2} vacuum (exact sympy nullspace). -/
 def stiffness_S12 : ℕ := 1014
 
-/-- Topological stiffness V''(0) for the S_{2,1} vacuum (exact sympy nullspace). -/
+/-- Recurrence-derived invariant V''(0) for the S_{2,1} sequence (exact sympy
+    nullspace). NOT a K3 stiffness: S_{2,1} is confirmed elliptic (order-2), see the
+    module header's 2026-07-14 GAP-1 status update. The integer itself is exact. -/
 def stiffness_S21 : ℕ := 336
 
 /-- Lower bound: (α⁻¹ ratio)² = 1014/336 exceeds (1.73)² = 2.9929.

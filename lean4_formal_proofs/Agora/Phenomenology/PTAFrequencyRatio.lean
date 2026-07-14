@@ -21,15 +21,27 @@ THEN the free moduli (τ, 𝒱) cancel and the PTA ratio inherits a parameter-fr
 bound. `docs/derivations/stiffness_to_potential.md` (T2.2) shows this antecedent is
 **not established** by the model's own current numbers: the masses actually cited
 in CAVEATS.md/PARAMETER_LEDGER.yaml are computed WITH e^{-2πdτ} instanton
-suppression at hardcoded, undocumented τ values (τ_S12=33.6255, τ_S21=33.8014),
-under which the sum is single-instanton-dominated to ~90 decimal places — making
-1014 vs. 336 numerically irrelevant to those masses. The ≈0.03% agreement between
-√(1014/336) and the real mass ratio traces almost entirely to the specific,
-unexplained τ pair, not to the stiffness integers. A jointly detected PTA ratio
+suppression at hardcoded τ values (τ_S12=33.6255, τ_S21=33.8014), under which the
+sum is single-instanton-dominated to ~90 decimal places — making 1014 vs. 336
+numerically irrelevant to those masses. The ≈0.03% agreement between √(1014/336)
+and the real mass ratio traces almost entirely to that specific τ pair, not to the
+stiffness integers.
+
+**Provenance CONFIRMED (2026-07-14, Phase 3 T-Interp-2):** the τ pair is no longer
+merely "undocumented" — git archaeology (commit c98b7ec) traces both values to a
+scipy.optimize.minimize fit that SOLVED for the τ reproducing the pre-chosen target
+masses (3.18e-21, 1.83e-21 eV), a procedure the repository's own later commit
+(400ecdd) disavows as "logically circular". See OPEN_PROBLEMS.md, GAP-2
+τ-PROVENANCE RESOLUTION. Consequence for this module: a jointly detected PTA ratio
 outside (1.73, 1.75) would still falsify the arithmetic-plus-antecedent package
-below, but a ratio landing *inside* the interval would not, by itself, confirm the
-two-vacuum interpretation is parameter-free, since nothing currently derives
-τ_S12−τ_S21 from geometry rather than from an undocumented fit.
+below, but a ratio landing *inside* the interval would NOT confirm a parameter-free
+two-vacuum prediction — the mass ratio's agreement with √(1014/336) is now known to
+be built in by the τ fit, not derived from geometry.
+
+**GAP-1 note (2026-07-14):** S₂,₁ is confirmed elliptic (order-2), not K3; it is
+retained as a non-K3 recurrence-invariant companion. "Two-vacuum" language in this
+file's theorem names/statements refers to the S₁,₂ (K3) / S₂,₁ (recurrence-invariant)
+pair, not to two K3 surfaces.
 
 ## Scope
 
