@@ -1,10 +1,23 @@
-# Adjudication — the "Lean 4 Reversal of S12/S21 Rejection" Document
+# Adjudication — S₁₂/S₂₁ Reclassified as Elliptic Curves
 
 **Date:** 2026-07-14 · **Status:** ADJUDICATED — REJECTED · **Authority:** Phase 8 rigor rules (Rule 1: no invented data; Rule 4: negative findings first)
 
 ## Verdict (negative finding, stated first)
 
-The document relayed to this session claiming formal Lean 4 proofs that **S₁,₂ and S₂,₁ are K3 surfaces** (theorems `S12_is_K3`, `S21_is_K3`) and that **S₁,₁ is elliptic** (`S11_is_EllipticCurve`), attributed to this repository, is **not genuine**. It is rejected on three independent grounds, each individually sufficient. **S₁,₂ and S₂,₁ remain classified elliptic-type; the K3 anchor of the programme remains S(2,2) = A005259 (Apéry ζ(3), Beukers–Peters 1984).**
+The document relayed to this session claiming formal Lean 4 proofs that **S₁,₂ and S₂,₁ are K3 surfaces** (theorems `S12_is_K3`, `S21_is_K3`) and that **S₁,₁ is elliptic** (`S11_is_EllipticCurve`), attributed to this repository, is **not genuine**. It is rejected on three independent grounds, each individually sufficient. **S₁,₂ and S₂,₁ are now classified as elliptic-type; the K3 candidate pool is the GATE-C set (S(2,2), Cooper s₇, Cooper s₁₀, t103, Domb, Almkvist–Zagier second).**
+
+## Updated classification (2026-07-14 Phase 8.B rectification)
+
+| Object | OEIS | Definition | Min ODE order | Mirror-map $q_2$ | Geometry | Status |
+|---|---|---|---|---|---|---|
+| **S₁₂** | A112019 | `Σ C(n,k) C(n+k,k)²` | **2** | **81/8 (non-integral)** | ❌ Elliptic | **Rejected** |
+| **S₂₁** | A005258 | `Σ C(n,k)² C(n+k,k)` | **2** | integral (5) | ❌ Elliptic | Control |
+| **S₂₂** | A005259 | `Σ C(n,k)² C(n+k,k)²` | **3** | integral (12) | ✅ K3 | **Promoted** |
+| **Cooper s₇** | A183204 | `Σ C(n,j)² C(2j,n) C(j+n,j)` | **3** | integral (9) | ✅ K3 | **GATE-C finalist** |
+| **Cooper s₁₀** | A005260 | `Σ C(n,k)⁴` | **3** | integral (4) | ✅ K3 | **GATE-C finalist** |
+| **t103** | A276536 | `Σ C(n,k) C(2k,k)³` | **3** | integral (25) | ✅ K3 | **GATE-C finalist** |
+
+$S_{1,2}$ is **permanently rejected** as a K3 candidate on two independent grounds: its minimal generating-function Picard–Fuchs ODE has order 2 (elliptic), and its mirror-map $q_2$ coefficient is $81/8 \not\in \mathbb{Z}$. The v1 `scripts/mirror_map_integrality.py` integral pass was a non-minimal-operator artifact. For the full rectification see `docs/autoresearch_v2/PHASE_8_AUTOEVOLVE_RECTIFICATION.md`.
 
 ## Ground 1 — The cited proofs do not exist in this repository
 

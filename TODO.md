@@ -2,6 +2,26 @@
 
 This file contains the near-term task list for implementing the K3-GITN Neuro-Symbolic integration blueprint and maintaining strict scientific rigor.
 
+## Phase 8 AutoEvolve Rectification — Final Gate Status (2026-07-14)
+
+### GATE-C Finalists (K3-Type Candidates)
+
+- [x] **$S_{2,2}$ (A005259)**: Order-3 ODE, integral mirror map ($q_2 = 12$).
+- [x] **Cooper $s_7$ (A183204)**: Order-3 ODE, integral mirror map ($q_2 = 9$).
+- [x] **Cooper $s_{10}$ (A005260)**: Order-3 ODE, integral mirror map ($q_2 = 4$).
+- [x] **t103 (A276536)**: Order-3 ODE, integral mirror map ($q_2 = 25$).
+- [x] **Domb (A002895)**: Order-3 ODE, integral mirror map ($q_2 = 6$) — promoted in GATE-B.
+- [x] **Almkvist–Zagier second (A125143)**: Order-3 ODE, integral mirror map — promoted in GATE-B.
+
+### Rejected Candidates
+
+- [x] **$S_{1,2}$ (A112019)**: Order-2 ODE, non-integral $q_2 = 81/8$ → rejected as K3.
+- [x] **$S_{2,1}$ (A005258)**: Order-2 ODE → rejected as K3 (retained as elliptic control).
+
+For the formal rectification document see `docs/autoresearch_v2/PHASE_8_AUTOEVOLVE_RECTIFICATION.md`.
+
+---
+
 ## 0. AutoEvolve R2 — The Hypothesis Foundry (Phase 8) — PROPOSED
 
 **Status:** PLANNING (not yet implemented; ready for low-cost LLM execution per AUTORESEARCH_RELEASE_V2_PLAN.md)

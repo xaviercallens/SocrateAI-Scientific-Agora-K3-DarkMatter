@@ -74,4 +74,14 @@ to n = 197 by `scripts/autoresearch_v2_phase_a_scan.py` (external, Rule 1
 compliant: real executed arithmetic, not hand-typed). -/
 axiom cooper_s7_recurrence : ∀ n : ℕ, cooper_s7_lhs n = 0
 
+-- Structural finite-range facts (kernel `native_decide`, no `sorry`)
+
+/-- All Cooper s₇ values in the checked range are strictly positive. -/
+theorem cooper_s7_pos (i : Fin 20) : CooperS7 i > 0 := by
+  fin_cases i <;> native_decide
+
+/-- Cooper s₇ is strictly monotone over the checked range. -/
+theorem cooper_s7_monotone (i : Fin 19) : CooperS7 i.castSucc < CooperS7 i.succ := by
+  fin_cases i <;> native_decide
+
 end CooperS7
