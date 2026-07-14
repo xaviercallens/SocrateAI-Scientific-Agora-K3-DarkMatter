@@ -64,4 +64,14 @@ theorem cooper_s10_recurrence_checked :
 Empirically verified to n = 197 externally (Rule 1 compliant). -/
 axiom cooper_s10_recurrence : ∀ n : ℕ, cooper_s10_lhs n = 0
 
+-- Structural finite-range facts (kernel `native_decide`, no `sorry`)
+
+/-- All Cooper s₁₀ values in the checked range are strictly positive. -/
+theorem cooper_s10_pos (i : Fin 20) : CooperS10 i > 0 := by
+  fin_cases i <;> native_decide
+
+/-- Cooper s₁₀ is strictly monotone over the checked range. -/
+theorem cooper_s10_monotone (i : Fin 19) : CooperS10 i.castSucc < CooperS10 i.succ := by
+  fin_cases i <;> native_decide
+
 end CooperS10
