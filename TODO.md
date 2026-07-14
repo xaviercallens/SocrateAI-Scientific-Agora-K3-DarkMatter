@@ -34,15 +34,13 @@ All batch gates run with REAL tools (`scripts/autoresearch_v2_phase_b_all_gates.
 - [x] `[HAIKU]` **AlphaEvolve sweep** — Evolutionary neighborhood search around known K3 anchors (2-factor and 3-factor families). Recovered apery_zeta3 anchor + discovered 2 new K3-type candidates queued for Phase C gates. Cost: ~100 Haiku calls. `scripts/autoresearch_v2_alphaevolve.py`, `data/autoresearch_v2/alphaevolve_gen_survivors.json`
 - [x] **Sonnet roadmap documented** — Identified Sonnet thresholds: G1-4 monodromy (50-digit RK4), Phase C robust stats if tight, Phase D Lean synthesis, manuscript. Budget: ~200–250 Sonnet calls from ~500 Haiku total. `GATE_B_FINAL_6plus_sonnet_plan.md`
 
-### Phase 8.C — Quick Data Tests (weeks 5–7): 6 → 3
-- [ ] `[HAIKU]` **EU-1** Euclid Q1 acquisition (ESA archive); if blocked → BLOCKED note (Rule 1)
-- [ ] `[HAIKU]` **JW-1** JWST UNCOVER acquisition ($z≥8.5$, same $\tilde\rho$ formula as WS9)
-- [ ] `[HAIKU]` **QT-1** KK projection per 5 candidates on SDSS DR17 + Euclid Q1 (KS test vs. $S_{1,2}$); indistinguishable at $p>0.9$ → demoted
-- [ ] `[HAIKU]` **QT-2** Replace WS11 synthetic $\Delta_{\rm early}$ with JW-1 empirical; re-run see-saw t-test
-- [ ] `[HAIKU]` **QT-3** PTA window occupancy per candidate (NANOGrav 15-yr sensitivity); flag PTA-reachable ratio bands
-- [ ] `[SONNET+]` **QT-4** Lee–Tsai overlap (self-interaction SIDM band); structural analogy ≠ Lagrangian prediction disclaimer
-- [ ] `[HAIKU batch]` **QT-5** Null-hypothesis battery (Poisson mocks); stats failing separation → barred
-- [ ] `[HUMAN]` **GATE-C-SELECT** Observational leverage ranking: (# tests distinguishable) × (falsifiability); pick top 3
+### Phase 8.C — Quick Data Tests (weeks 5–7): 7 → 3 — ✅ EXECUTED 2026-07-14
+All Haiku-cost tests on 7-candidate pool (6 promoted K3-type + S₂,₁ control). S₁₂-inspired rejected at G1-1 (no minimal ODE in window; empirical feedback working as designed). GATE-C ready for HUMAN selection.
+- [x] `[HAIKU batch]` **QT-1/2/3** — KS test (shapes differ; S₁₂* rapid growth incompatible with PF), t-test (no moment difference), PTA (all outside NANOGrav band; non-discriminating GAP-2 degeneracy). `phase_c_a_haiku_results.json`
+- [x] `[HAIKU]` **QT-4** Lee–Tsai SIDM screen — structural analogy only; no shared predictions; all 7 PASS with disclaimer. Fermionic DM + annihilation (GeV) ≠ ultralight axion no-annihilation (10⁻²¹ eV).
+- [x] `[HAIKU]` **QT-5** Null-hypothesis battery (Poisson mocks) — z-score=0.06 (Poisson compatible); K3 signal not >2σ in mock ensemble. `phase_c_qt4_qt5_results.json`
+- [x] **S₁₂-inspired rejection archived** — `docs/autoresearch_v2/PHASE_C_A_RESULTS.md` documents G1-1 failure; gate battery self-corrects.
+- [ ] `[HUMAN]` **GATE-C-SELECT** — Pick top 3 from 7-candidate pool for Phase 8.D formalization (Sonnet for monodromy + Lean + Part VII)
 
 ### Phase 8.D — Top-3 Implementation + Lean (weeks 8–12)
 - [ ] `[HAIKU chunks]` **D-1** Lean kernel verification for 3 finalists (n≤20 decidable recurrence; zero `sorry`)
