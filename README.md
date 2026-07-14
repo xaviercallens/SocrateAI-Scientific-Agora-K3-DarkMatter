@@ -9,15 +9,21 @@ This repository contains the public artifacts, papers, mathematical formalizatio
 
 This repository serves as the definitive reference for the scientific community to review, reproduce, and critically analyze the findings.
 
+## Official Publication & Citation
+
+The consolidated core theory has been officially published on Zenodo (July 14, 2026). Please use the following citation for the unified framework:
+
+> Callens, X. (2026). Topological Phase Cosmology (Parts I & II): Exact-Rational Sieve for K3 Fuzzy Dark Matter and Swampland Quintessence Bounds (Version 1.0.0-Core-Theory) [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.21350629
+
+**DOI:** [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21350629.svg)](https://doi.org/10.5281/zenodo.21350629)
+
 ## Papers and Preprints
 
-The exact theoretical results and dynamics have been documented in the following preprints, which are available on Zenodo:
+The exact theoretical results and dynamics are split into two major parts:
 
 - **Part I: String-Inspired Effective Field Theories from K3 Surfaces: Resolving Fuzzy Dark Matter Tensions via Exact Algebraic Sieving**
-  - **DOI/Link:** [10.5281/zenodo.20863378](https://zenodo.org/deposit/20863378)
   - **File:** `manuscripts_and_proofs/Part_I_K3_DarkMatter.pdf`
 - **Part II: Project Vafa-Continuity: A String-Inspired $K3 \times T^2$ Quintessence Model and the Swampland Obstruction to Stable Dark Energy**
-  - **DOI/Link:** [10.5281/zenodo.20863381](https://zenodo.org/deposit/20863381)
   - **File:** `manuscripts_and_proofs/Part_II_Vafa_DarkEnergy.pdf`
 
 ## Directory Structure
