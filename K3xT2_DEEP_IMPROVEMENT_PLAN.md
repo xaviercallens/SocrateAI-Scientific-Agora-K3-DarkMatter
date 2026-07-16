@@ -1,5 +1,12 @@
 # 🔬 K3×T² Deep Scientific Improvement Plan — Haiku/Sonnet Execution Tiers
 
+> **2026-07-16:** This plan is now the **Stream-2 gate machinery** of the three-stream
+> **Dual-Scale Topological Universe Model** master plan — see `DUAL_SCALE_THREE_STREAM_PLAN.md`
+> (Stream 1: F-theory Lean certification in `SocrateAI-DualScaleTopologicalUniverseModel-LeanProposal`;
+> Stream 2: this repo; Stream 3: DarkMatter@Home GPU validation in `DarkMatterK3-Home.github.io`).
+> The gate sequence below remains binding; D-2.3 (T² Lean) migrates to Stream 1 (task S1-3),
+> and Phase 8.E DarkMatter@Home tasks migrate to Stream 3.
+
 **Date:** 2026-07-14 · **Status:** ACTIVE · **Authority:** Plan drafted by Fable session; execution split Haiku/Sonnet; all gates HUMAN-decided
 **Scope:** Harden the K3×T² compactification hypothesis (Cooper s₇ primary, **cooper_s10 challenger**) from its current phenomenological state to a preregistered, mock-calibrated, Lean-anchored research program.
 

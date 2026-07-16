@@ -213,7 +213,63 @@ T8.1 → T8.2 → T4.2 → T2.1 → T2.3 → T1.1 → T1.2 → T1.3 → T1.4 →
 
 ---
 
-## 3. Phase 7: Part VI Scientific Paper (The Resonance Observatory)
+## 4. Phase 9: Dual-Scale Three-Stream Program (2026-07-16 onwards) — ACTIVE
+
+**Objective:** Reach the governing vision (`VISION.md` Part 0): certify, select, and empirically
+adjudicate the **Dual-Scale Topological Universe Model** — F-theory on an elliptically fibered
+CY₄ over base K3×T², with cooper s₇/s₁₀ as the K3 base candidates, S₁₂/S₂₁ as the elliptic
+fiber, and Δ_obs spikes hypothesized as discriminant-locus (7-brane) crossings.
+
+**Task-level plan:** `DUAL_SCALE_THREE_STREAM_PLAN.md`. Gate machinery inherited from
+`K3xT2_DEEP_IMPROVEMENT_PLAN.md` (Stream 2) remains binding.
+
+```mermaid
+graph TD
+    subgraph S2["Stream 2 — K3 Selection (this repo)"]
+        A["S2-1 Singular-locus observable<br/>+ kernel-swap battery v2"] --> B["GATE D-1v2 (HUMAN)"]
+        C["S2-2/S2-3 m_eff law + rho-to-z family"] --> B
+        D["S2-4 True-K3 newform identification"] --> E["s7 vs s10 adjudication"]
+        B --> F["S2-6 = D-3 calibrated reruns"]
+    end
+    subgraph S1["Stream 1 — Theory (LeanProposal repo)"]
+        G["S1-1 Axiom hygiene"] --> H["S1-2 Import certified loci"]
+        H --> I["S1-4 Kodaira types of s7/s10 degenerations"]
+        I --> J["GATE-T (HUMAN axiom review)"]
+    end
+    subgraph S3["Stream 3 — Experimentation (DarkMatter@Home)"]
+        K["S3-1/S3-2 Job schema + quorum protocol"] --> L["GATE-X"]
+        B --> L
+        L --> M["S3-3 Quorum re-run of v1 numbers"]
+        L --> N["S3-4 Volunteer dispatch of D-3 sweep"]
+    end
+    F --> O["F1-F5 scoreboard"]
+    M --> O
+    N --> O
+    J --> P["GATE-E (HUMAN): publication decision"]
+    O --> P
+```
+
+### Implementation phases
+
+| Phase | Window | Content | Exit milestone |
+|---|---|---|---|
+| **9.1 Foundation** | weeks 1–2 | S2-1 observable redesign (preregister thresholds first) · S1-1 axiom hygiene · S3-1/S3-2 schema + quorum protocol | **M11:** battery-v2 verdict recorded; no non-reproducible axiom remains untagged |
+| **9.2 Certification** | weeks 3–6 | S2-4 newform/K3-family identification (s₇, s₁₀, S₁₂, S₂₁) · S1-2 loci imported as proved ℚ facts · S1-3 base-geometry Lean · S1-4 Kodaira types · S2-2/S2-3 theory closure · S2-5 AutoEvolve fingerprint gate | **M12:** GATE-T passed · **M13:** GATE D-1v2 adjudicated (pass unfreezes D-3 + Stream 3) |
+| **9.3 Validation** | weeks 7–12 | S3-3 quorum re-run of v1 headline numbers (closes audit item A7) · S3-4 volunteer dispatch of the 35-sector sweep (s₇ + s₁₀ + blinded controls) · S2-6 tomography/TDA/lensing | **M14:** F1–F5 scoreboard complete with calibrated p-values |
+| **9.4 Adjudication & publication** | weeks 13+ | Dual-Scale manuscript (S1-5) · public-site honest status (S3-6, HUMAN sign-off) · GATE-E decision | **M15:** GATE-E decision doc; publish, iterate, or honorably kill |
+
+### Standing constraints (inherited)
+
+- **Critical path:** nothing empirical moves until S2-1 passes the same kernel-swap battery that
+  killed the FFT observable (preregistered: r(s7, random) < 0.5 AND r(s7, s10) < 0.95 on mocks).
+- Anti-circularity ledger, provenance tags, quorum replication, and the "discovery" vocabulary
+  rule (p < 1e-3 in both mock families, kernel-swap-passing, quorum-replicated) apply to all
+  three streams.
+- External/volunteer-facing actions remain HUMAN-gated (GATE-X, GATE-E).
+
+---
+
+## 5. Phase 7: Part VI Scientific Paper (The Resonance Observatory)
 
 **Objective:** Draft and validate "Part VI: Empirical Detection of Extra-Dimensional Geometric Resonance using K3-Fibered Calabi-Yau Manifolds". This paper will explicitly bridge the gap between the Sheffield 5D toy models and our empirical 6D topological telescope.
 

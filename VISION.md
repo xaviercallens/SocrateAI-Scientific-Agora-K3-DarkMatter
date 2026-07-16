@@ -9,6 +9,12 @@
 
 ## Contents
 
+**Part 0 — The Governing Vision: Dual-Scale Topological Universe Model (2026-07-16)**
+- §0.1 The unification statement
+- §0.2 Three parallel streams
+- §0.3 What "reaching the vision" means (north-star success criteria)
+- §0.4 How the legacy Masterwork Goals map into the streams
+
 **Part I — The Three Masterwork Goals (path to publication)**
 - Goal I — Discharge `s20_recurrence` (mechanical, highest priority)
 - Goal II — Pick a compactification (physics depth)
@@ -22,6 +28,74 @@
 - §7 Execution roadmap — predictions into deliverables
 
 **Appendix — Current formal-methods status**
+
+---
+
+# PART 0 — THE GOVERNING VISION: DUAL-SCALE TOPOLOGICAL UNIVERSE MODEL (2026-07-16)
+
+> **Operational plan:** `DUAL_SCALE_THREE_STREAM_PLAN.md` (task-level) · `ROADMAP.md` Phase 9 (milestones).
+> This section defines *where the whole program is going*; Parts I–III below remain valid as the
+> in-repo legacy goals now nested inside Stream 2.
+
+## §0.1 The unification statement
+
+The **Dual-Scale Topological Universe Model** proposes that the dark sector is the geometry of an
+**F-theory compactification**: an elliptically fibered Calabi–Yau fourfold whose **base is
+B₃ = K3 × T²** and whose **elliptic fiber degenerates along the discriminant locus**.
+
+| Physical phenomenon | F-theory geometry | Generating sequence | Evidence status (2026-07-16) |
+|---|---|---|---|
+| Dark energy / global cosmic web | K3 base (rigid, order-3 Picard–Fuchs) | Cooper s₇ (A183204) / s₁₀ (A005260) | **[PARTIAL]** — order-3, Weil weight-3, integrality, exact singular loci done; newform identification open |
+| Dark matter subhalos | Elliptic fiber (flexible, order-2 Picard–Fuchs) | S₁₂ (A112019) / S₂₁ (A005258) | **[ESTABLISHED]** at ODE/arithmetic level (GATE-B formal rejection as K3) |
+| Baryonic matter / halo centers | Discriminant locus Δ_F = 4f³ + 27g² (7-branes) | Δ_obs peaks | **[NOT SUPPORTED]** — prior observable proved kernel-blind (GATE D-1.3); reframed via exact singular-locus observable |
+
+The three-tier honesty vocabulary of Part II (**[VERIFIED] / [FITTED] / [PREDICTED]**) governs
+every claim above; the third row is the program's open front, not an achievement.
+
+## §0.2 Three parallel streams
+
+| Stream | Repository | Focus | Goal |
+|---|---|---|---|
+| **1. Theory** | `SocrateAI-DualScaleTopologicalUniverseModel-LeanProposal` | F-theory formalization in Lean 4 | Mathematically certify the Dual-Scale Model |
+| **2. K3 Selection** | `SocrateAI-Scientific-Agora-K3-DarkMatter` (this repo) | AutoEvolve for K3 sequence selection | Confirm Cooper s₇/s₁₀ as true K3 surfaces |
+| **3. Experimentation** | `DarkMatterK3-Home.github.io` (+ `SocrateAI-Scientific-Agora-Home` infra) | GPU validation vs SDSS/Euclid/PTA | Empirically validate (or falsify) the model |
+
+Streams run in parallel; they exchange only **committed, hash-referenced artifacts** (certified
+sequences, exact discriminants, preregistered observables, quorum-replicated verdicts) — never
+prose claims. See `DUAL_SCALE_THREE_STREAM_PLAN.md` §7.
+
+## §0.3 What "reaching the vision" means (north-star success criteria)
+
+The vision is **reached** when all three hold simultaneously — and it is **honestly killed** if
+any of the falsification branches fires:
+
+- **V1 (Theory certified):** the Lean dual-scale theorem chain compiles with zero `sorry` and an
+  axiom inventory in which every axiom is either discharged, or tagged `empirical_` with a
+  reproducible artifact hash, or tagged `hypothesis_`. *No axiom encodes a non-reproducible
+  number.* (Gate: **GATE-T**.)
+- **V2 (Selection decided):** cooper s₇ and s₁₀ are identified with specific K3 families
+  (weight-3 newform / literature match), and the preregistered singular-locus discriminant
+  (z_crit = 1/27 vs 1/16) either selects one or declares degeneracy publishably.
+  *Falsification branch: neither matches a K3 family → H1 dies and the base must be re-selected
+  from the AutoEvolve pool.* (Gate: **GATE D-1v2** + AutoEvolve battery.)
+- **V3 (Experiment adjudicated):** a kernel-swap-passing observable, run under quorum replication
+  on the volunteer GPU network against real SDSS/Euclid data, returns calibrated p-values for the
+  F1–F5 scoreboard. *Falsification branch: the discriminant-locus signature is absent at
+  preregistered sensitivity → H3 dies; the model survives only as mathematics.* (Gates:
+  **GATE-X** → **GATE-E**.)
+
+A killed hypothesis with this machinery is a publishable result; an unfalsifiable one is not.
+
+## §0.4 How the legacy Masterwork Goals map into the streams
+
+- **Goal I** (discharge `s20_recurrence`) → Stream 2 formal-verification backlog (WS4/T4.1); unchanged.
+- **Goal II** (pick a compactification) → **superseded and upgraded by Stream 1**: the schematic
+  Type IIA orientifold sketch below is replaced by the concrete F-theory choice (elliptically
+  fibered CY₄ over K3×T²), already formalized at v0.1 (0 sorry) in the LeanProposal repo. The
+  tadpole/flux feasibility questions (T7.2) migrate to Stream 1 task S1-4/S1-5.
+- **Goal III** (Swampland tension as the result) → unchanged, feeds the Stream 1 manuscript.
+- **Part III AutoEvolve R2** → is Stream 2's engine; its next iteration adds the singular-locus
+  fingerprint gate (task S2-5).
 
 ---
 
@@ -628,4 +702,4 @@ Every parameter must declare its fit target in `PARAMETER_LEDGER.yaml`. CI check
 ---
 
 *This vision document is a living file. Update the checklist items as goals are achieved.*
-*Last updated: June 2026.*
+*Last updated: 2026-07-16 — added Part 0 (Dual-Scale Topological Universe Model governing vision, three parallel streams).*

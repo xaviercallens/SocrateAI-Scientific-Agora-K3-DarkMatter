@@ -2,6 +2,21 @@
 
 This file contains the near-term task list for implementing the K3-GITN Neuro-Symbolic integration blueprint and maintaining strict scientific rigor.
 
+## ⭐ Dual-Scale Topological Universe Model — Three-Stream Master Plan (2026-07-16)
+
+**Master plan:** `DUAL_SCALE_THREE_STREAM_PLAN.md` — F-theory compactification (base B₃ = K3×T², elliptic fiber) unifying three parallel streams:
+1. **Theory** (`SocrateAI-DualScaleTopologicalUniverseModel-LeanProposal`) — Lean 4 F-theory certification (v0.1 done, 0 sorry; next: axiom hygiene S1-1, import D-2.4 loci S1-2).
+2. **K3 Selection** (this repo) — confirm cooper s₇/s₁₀ as true K3 surfaces; gate machinery below stays binding.
+3. **Experimentation** (`DarkMatterK3-Home.github.io` + `SocrateAI-Scientific-Agora-Home`) — DarkMatter@Home GPU validation; absorbs Phase 8.E (DM-1…DM-4).
+
+**Critical path: S2-1 observable redesign** — the FFT-contrast Δ observable is kernel-blind (GATE D-1.3 verdict F1_FAILS_KERNEL_BLIND); the replacement is the singular-locus-proximity observable built on the exact D-2.4 loci (s₇: z=1/27, s₁₀: z=1/16). It must pass the same kernel-swap battery before any empirical rerun (D-3) or volunteer dispatch (Stream 3) unfreezes.
+
+- [ ] `[SONNET design/HAIKU run]` **S2-1** singular-locus observable + kernel-swap battery v2 (preregister rule first) → `data/k3t2/d1_3b_kernel_swap_v2.json`
+- [ ] `[SONNET]` **S2-2** = D-2.1 m_eff law · **S2-3** = D-2.2 ρ→z family (see Phase 8.D-ext below)
+- [ ] `[SONNET]` **S2-4** true-K3 certification: a_p → weight-3 newform match (LMFDB) for s₇/s₁₀; weight-2/elliptic identification for S₁₂/S₂₁
+- [ ] `[HAIKU]` **S2-5** AutoEvolve sweep extended with singular-locus fingerprint gate
+- [ ] `[HUMAN]` **GATE D-1v2** — adjudicate redesigned observable; only a pass unfreezes D-3 + Stream-3 dispatch
+
 ## Phase 8 AutoEvolve Rectification — Final Gate Status (2026-07-14)
 
 ### GATE-C Finalists (K3-Type Candidates)
@@ -82,7 +97,7 @@ Full plan: `K3xT2_DEEP_IMPROVEMENT_PLAN.md`. Cooper s₇ Phase-1 GPU pipeline (c
 - [ ] `[HAIKU/SONNET]` **Observable redesign** (new, required by D-1 verdict) — candidate directions: use phase structure of Π₀(z) rather than |Π₀(z)|; compare local z to the D-2.4 singular loci (1/27 vs 1/16) rather than generic FFT contrast.
 - [ ] `[HUMAN]` **GATE-E** — publication/outreach decision, blocked until D-2 complete + observable redesigned + D-3 rerun.
 
-### Phase 8.E — DarkMatterK3-Home Integration
+### Phase 8.E — DarkMatterK3-Home Integration → **absorbed into Stream 3 of `DUAL_SCALE_THREE_STREAM_PLAN.md`** (S3-1…S3-4; dispatch blocked until GATE D-1v2 passes)
 - [ ] `[HAIKU]` **DM-1** Job spec schema (survey_tile, statistic_hash, candidate_id, seed, client_version)
 - [ ] `[HAIKU]` **DM-2** Quorum replication protocol (≥2 independent clients per tile; disagreement → quarantine)
 - [ ] `[HAIKU]` **DM-3** Re-run v1 headline numbers (1.177, Δ=47.0) under quorum; archive before re-citation
