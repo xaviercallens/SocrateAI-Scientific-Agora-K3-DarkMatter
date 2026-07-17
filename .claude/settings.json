@@ -3,8 +3,14 @@
   "permissions": {
     "allow": [
       "Read",
+      "Write",
+      "Edit",
       "Grep",
       "Glob",
+      "Bash(mkdir *)",
+      "Bash(mv *)",
+      "Bash(cp *)",
+      "Bash(touch *)",
       "Bash(ls *)",
       "Bash(cat *)",
       "Bash(head *)",
