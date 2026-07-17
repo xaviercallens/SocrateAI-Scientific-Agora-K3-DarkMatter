@@ -92,46 +92,54 @@ Therefore H3 is *reframed, not abandoned*: the F-theory picture itself supplies 
 
 ---
 
-## 5. Stream 2 — K3 Selection (this repo: AutoEvolve + gate machinery)
+## 5. Stream 2 — K3 Selection (this repo: AutoEvolve + gate machinery + MVM matching)
 
-**Tier routing unchanged:** Haiku = mechanical/binary-checkable; Sonnet = derivations + non-decide Lean; HUMAN = gates.
-**The existing gate sequence (R-0 → D-1 → D-2 → D-3 → GATE-E in `K3xT2_DEEP_IMPROVEMENT_PLAN.md`) remains binding** — this section re-scopes it under the three-stream vision.
+**Tier routing:** Haiku = mechanical/binary-checkable; Sonnet = derivations + non-decide Lean; **T0 = C3b criterion definition + MVM observable design**; HUMAN = gates.
+
+**Architecture update:** Phase 0 introduces A-SEQ, A-VOL, A-ONT, A-REL as load-bearing assumptions; S2-01 now includes **C3b (Shioda-Inose moduli map)** as a new hard criterion; S3-00 (MVM matching) becomes the true "observable design" — it must derive the P1/P2 predictions from geometric data under assumptions, not from phenomenological guessing. **The existing gate sequence (R-0 → D-1 → D-2 → D-3 → GATE-E) now feeds into the MVM calculation, not to independent empirical tests.**
 
 **Achieved:** GATE R-0 ✅ (c3a1b37) · fabricated-array fix + self-verifying kernel engine ✅ (40f2151) · GATE D-1.3 kernel-swap verdict ✅ (F1_FAILS_KERNEL_BLIND) · GATE D-2.4 exact singular loci ✅ · CI 28/28 incl. real `lake build` of the 3 finalists.
 
-**Backlog (priority order):**
+**Backlog (revised priority, critical path first):**
 
-| ID | Task | Tier | Validation |
-|---|---|---|---|
-| S2-1 | **Observable redesign** (unblocks everything empirical): implement `lss_tensor_analytics/singular_locus_observable.py` — distance of local modulus z(ρ_b) to the exact locus (1/27 vs 1/16), plus log-branch response steepening. **Must pass the same kernel-swap battery D-1.3 that killed the FFT observable:** preregistered requirement r(s7, random) < 0.5 AND r(s7, s10) < 0.95 on mocks *before* any real-data run. | Sonnet design / Haiku run | `data/k3t2/d1_3b_kernel_swap_v2.json`; preregistered rule committed first |
-| S2-2 | D-2.1: one m_eff(Δ) law (resolve exp(kΔ) vs (1+κΔ)^{1/4} from the chameleon potential; identify n in m_eff ∝ ρ^{(n+2)/(2n+2)}). | Sonnet | `docs/derivations/meff_delta_law.md` + Taylor test |
-| S2-3 | D-2.2: ρ_b → z as a declared 2-parameter family z(ρ; a, b), marginalized downstream; sensitivity grid on the S2-1 verdict. | Sonnet | API change + sensitivity table |
-| S2-4 | **True-K3 certification** (H1 closure): match s₇/s₁₀ a_p tables to specific weight-3 newforms (LMFDB), record literature identification of the Cooper level-7/level-10 K3 families; same for S₁₂/S₂₁ as weight-2/elliptic (H2 closure). | Sonnet | `data/autoresearch_v2/k3_identification.json` + doc |
-| S2-5 | AutoEvolve continuation: extend the evolutionary sweep (`autoresearch_v2_alphaevolve.py`) with the singular-locus fingerprint as a new gate — candidates now classified by (ODE order, integrality, **exact singular-locus structure**). | Haiku | survivors JSON + gate battery rerun |
-| S2-6 | D-3 empirical reruns (**FROZEN until S2-1 passes its battery**): 35-sector sweep, tomography, TDA-β₁, lensing — exactly as specced in the deep plan §5, with the new observable. | Haiku/Sonnet | per-table artifacts |
+| ID | Task | Tier | Validation | Blocking |
+|---|---|---|---|---|
+| **P0-A** | **Phase 0 gate:** Formalize ASSUMPTIONS.md with A-SEQ, A-VOL, A-ONT, A-REL | T0 + T1 | `ASSUMPTIONS.md` complete; assumption IDs grep-able; CI consistency check | **BLOCKS everything; must complete before S2-01 freeze** |
+| **S2-01b** | **Implement C3b checker** (`check_C3b_moduli_map.py`): per-candidate Shioda-Inose relation. Construct F explicitly (q-series or algebraic), validate to order N symbolically, emit certificate JSON. Golden tests required (known-good pair; known-bad pair with no F). | Sonnet design / Haiku test | Checker passes both controls; agrees with S1-04 Sym² data on top candidates | **Blocks S2-03/S2-04 ranking; gates candidate identification for MVM** |
+| **S2-1** | **Observable redesign** (now S3-00 domain, but S2's contribution is the **singular-locus fingerprint as the C3b-validated discriminant**): ensure S3-00's P1/P2 observables can distinguish s₇ from s₁₀ via the exact loci (1/27 vs 1/16). Preregister r(s7, random) < 0.5 AND r(s7, s10) < 0.95 on mocks before any real-data run. | Sonnet design / Haiku run | `data/k3t2/d1_3b_c3b_kernel_swap_v3.json`; rule committed before code | Gates S3 observable validity |
+| S2-2 | D-2.1: one m_eff(Δ) law (resolve exp(kΔ) vs (1+κΔ)^{1/4}; identify n in m_eff ∝ ρ^{(n+2)/(2n+2)}). **Required for S3-00 step 1 (m_φ derivation).** | Sonnet | `docs/derivations/meff_delta_law.md` + Taylor test; used in MVM | Input to MVM |
+| S2-3 | D-2.2: ρ_b → z as a 2-parameter family z(ρ; a, b), marginalized downstream. **Sensitivity grid on S2-1 verdict + S3-00 kill-condition test.** | Sonnet | API change + sensitivity table | Input to S3-00 kill-condition |
+| S2-4 | **True-K3 certification** (H1 closure; R3 from recommendations): match s₇/s₁₀ a_p tables to weight-3 newforms (LMFDB); independently validate D-2.4 loci. **Double-closure task: C3b validation + H1 proof.** | Sonnet | `data/autoresearch_v2/k3_identification.json` + LMFDB a_p match + independent-loci derivation | Strengthens C3b + MVM credibility |
+| S2-5 | AutoEvolve continuation: extend sweep with C3b as a hard gate (candidate fails C3b ⇒ F1 removal, no score). Survivors classified by (ODE order, integrality, C3b grade). | Haiku | survivors JSON + C3b status table | Feeds S2-04 report |
+| S2-6 | D-3 empirical reruns (**FROZEN until S3-00 MVM pins P1/P2 observables**): 35-sector sweep, tomography, TDA-β₁. Now scoped as *verification* of S3-00 predictions, not discovery. | Haiku/Sonnet | per-table artifacts matching S3-00 prediction structure | **Unfrozen only after GATE M1** |
 
-**Stream-2 gate (HUMAN): GATE D-1v2** — adjudicate the redesigned observable's kernel-swap verdict; only a pass unfreezes D-3 and authorizes Stream-3 job dispatch.
+**Stream-2 gate (HUMAN): GATE D-1v2** — (1) C3b checker validated on top pair; (2) singular-locus kernel-swap battery passed; (3) S2-04 SelectionReport complete with assumption tags and C3b grades. **Only this pass unfreezes S3-00 and identifies the candidate pair for MVM.**
 
 ---
 
-## 6. Stream 3 — Experimentation (DarkMatter@Home GPU validation)
+## 6. Stream 3 — Experimentation (MVM Matching + DarkMatter@Home Validation)
 
-**Repos:** `DarkMatterK3-Home.github.io` (volunteer-facing) + `SocrateAI-Scientific-Agora-Home` (server/API infra) · **Tier:** Haiku (mechanical protocol work), HUMAN (anything volunteer-facing/external)
+**Repos:** this repo (S3-00 MVM derivation), `DarkMatterK3-Home.github.io` (volunteer-facing), `SocrateAI-Scientific-Agora-Home` (server/API infra) · **Tier:** T0 (S3-00 MVM derivation), Haiku (protocol/mechanical), HUMAN (external communication)
 
-**Achieved:** pilot run infrastructure exists (327,918-galaxy run, K3-DISC-0003) — but per A7 its outputs are **not reproducible from committed artifacts** and per D-1.3 its statistic was kernel-blind. Stream 3's first job is therefore *re-foundation, not expansion*.
+**Architecture update:** S3-00 (MVM matching) is now the **foundational task** — it is what S3-01–S3-06 serve. The MVM calculation derives P1 (PTA ultralight) and P2 (lensing shape) observables under [A-SEQ, A-VOL, A-ONT, A-REL]; S3-01–S3-04 then **test those predictions** against public data. S3-00 output is the pre-registered prediction hash; timestamp audit ensures prediction ≤ data contact.
 
-**Backlog (absorbs Phase 8.E DM-1…DM-4 from TODO.md):**
+**Achieved:** pilot run infrastructure exists (327,918-galaxy run, K3-DISC-0003) — but per A7 its outputs are **not reproducible from committed artifacts** and per D-1.3 its statistic was kernel-blind. Stream 3's foundational job is therefore *MVM derivation + re-foundation, not expansion*.
 
-| ID | Task | Tier | Validation |
-|---|---|---|---|
-| S3-1 | (=DM-1) Job spec schema: `{survey_tile, statistic_hash, candidate_id ∈ {cooper_s7, cooper_s10, t103, random_control}, seed, client_version}`. The `statistic_hash` pins the **redesigned** observable code — no job runs the dead FFT statistic. | Haiku | schema JSON + validator test |
-| S3-2 | (=DM-2) Quorum replication: ≥2 independent clients per tile; disagreement → quarantine. **Every job batch includes blinded random_control kernels** so kernel-blindness is monitored continuously in production, not just in mocks. | Haiku | protocol doc + server test |
-| S3-3 | (=DM-3) Re-run the v1 headline numbers (S₁,₂ ≤ 1.177, Δ = 47.0, K3-DISC-0003 coordinates) under quorum with the new observable. Preregistered framing: these are **target coordinates to re-test, not numbers to match**. Archive the run so A7 closes. | Haiku | quorum artifacts committed; A7 struck from the defect table |
-| S3-4 | (=DM-4) Dispatch the D-3 sweep (S2-6) as volunteer jobs: SDSS DR17 sectors, Euclid tiles when available, both s₇ and s₁₀ kernels + control. | Haiku | dispatch log + quorum results |
-| S3-5 | PTA screen refresh: per-finalist NANOGrav band comparison (reformat g2_3/g2_4 per candidate — absorbs old D-5 dossier task). | Haiku | `d5_observatory_dossier.json` |
-| S3-6 | Public site update (`DarkMatterK3-Home.github.io`): honest status page — what is established (H1 partial, H2), what failed (kernel-blind observable), what volunteers are now testing. **HUMAN sign-off before publishing** (external communication rule). | HUMAN + Haiku draft | PR reviewed by user |
+**Backlog (revised, gates included):**
 
-**Stream-3 gate (HUMAN): GATE-X** — no volunteer job dispatch and no public-site claims until GATE D-1v2 (Stream 2) passes and the S3-1/S3-2 protocol is live.
+| ID | Task | Tier | Validation | Blocked By |
+|---|---|---|---|---|
+| **S3-00** | **(GATE M1)** Minimal Viable Matching (MVM): derive P1/P2 observables. See EXECUTION_PLAN §4 S3-00 for full spec: (1) Free-Parameter Ledger install; (2) m_φ(𝒱, g_s) from period data; (3) α_D, Λ_D(𝒱, g_s) from C2 Kodaira + RG; (4) eliminate (𝒱, g_s) or trigger kill condition; (5) tag predictions with [A-SEQ, A-VOL, A-ONT, A-REL]; (6) T0 derives, T0s blind re-derives, both agree. **This is the gate itself — no downstream work until M1 passes.** | **T0 derives + T0s blind re-derives** | Both agree within tolerance; numbers committed hash-pinned; timestamp clean; DERIVATION_DISPUTES.md empty or resolved | GATE D-1v2 (C3b + top candidate pair) |
+| S3-1 | (=DM-1) Job spec schema: `{survey_tile, statistic_hash, candidate_id ∈ {cooper_s7, cooper_s10, t103, random_control}, seed, client_version}`. The `statistic_hash` pins the **P1/P2 observables** derived in S3-00 — **no job runs a generic statistic.** | Haiku | schema JSON + validator test | GATE M1 |
+| S3-2 | (=DM-2) Quorum replication: ≥2 independent clients per tile; disagreement → quarantine. **Every job batch includes blinded random_control kernels** so kernel-blindness is monitored continuously in production. | Haiku | protocol doc + server test | S3-1 |
+| S3-3 | (=DM-3) Re-run the v1 headline coordinates (S₁,₂, K3-DISC-0003 locus) under quorum with the S3-00 observables. Preregistered framing: these are **target coordinates to re-test, not numbers to match**. Archive the run so A7 closes. | Haiku | quorum artifacts committed; A7 struck | GATE M1 + S3-2 |
+| S3-4 | (=DM-4) Dispatch the D-3 sweep (S2-6) as volunteer jobs: SDSS DR17 sectors, Euclid tiles when available, both s₇ and s₁₀ kernels + control. **Test the P1/P2 predictions from S3-00 at scale.** | Haiku | dispatch log + quorum results | GATE M1 + S3-2 |
+| S3-5 | Prediction comparison: per-finalist PTA band test (P1 channel if selected), lensing profile test (P2 channel if selected). Reformat results per S3-00 observable structure. | Haiku/Sonnet | Test/FIT labels honored; assumption tags preserved; results table | GATE M1 |
+| S3-6 | `OBSERVATIONAL_REPORT.md` assembly: machine tables (S3-04/S3-05 results) + T0-written interpretation. F3/F4/F5 branches triggered mechanically. **Report published even if all results are exclusions.** | T1 assembles; T0 writes interpretation | Report + branch triggers | S3-5 complete |
+| S3-7 | Public site update (`DarkMatterK3-Home.github.io`): honest status page — what's established (H1 partial, H2), what failed (old FFT), what volunteers validated (S3-00 predictions). **HUMAN sign-off before publishing.** | HUMAN + Haiku draft | PR reviewed by user | S3-6 complete + GATE M3 |
+
+**Stream-3 gate (HUMAN): GATE M1 (MVM pin)** — S3-00 complete; T0 ↔ T0s agreement; predictions hash-pinned; kill-condition evaluated.  
+**Stream-3 gate (HUMAN): GATE-X (dispatch authorization)** — after GATE M1, S3-1/S3-2 protocols live; volunteer jobs dispatch; no public claims until results (S3-03/S3-04) are in quorum.
 
 ---
 
@@ -161,41 +169,60 @@ Every interface artifact is a committed file with a hash referenced on the recei
 
 ---
 
-## 9. Sequencing & immediate next actions
+## 9. Sequencing & Critical Path (Revised for MVM Architecture)
 
+**Critical path (blocks G1/M1, everything else):**
 ```
-        Stream 1 (Theory)          Stream 2 (K3 Selection)        Stream 3 (Experimentation)
-NOW:    S1-1 axiom hygiene         S2-1 observable redesign ★     S3-1 job schema
-        S1-2 import D-2.4 loci     S2-2/S2-3 (D-2.1, D-2.2)       S3-2 quorum protocol
-THEN:   S1-3 base geometry Lean    S2-4 true-K3 certification     (wait on GATE D-1v2)
-        S1-4 Kodaira types         S2-5 AutoEvolve w/ new gate
-GATE:   GATE-T (axiom review)      GATE D-1v2 (HUMAN) ────────▶   unfreezes S3-3/S3-4 dispatch
-LAST:   S1-5 manuscript            S2-6 = D-3 reruns              S3-5 PTA, S3-6 public site
-                                          └──────────── GATE-E (HUMAN): publication decision
+P0-A (ASSUMPTIONS.md) 
+  ↓ [blocks S2-01]
+S2-01 (K3_CRITERIA.md v1.0 + C3b definition) 
+  ↓ [requires C3b checker]
+S2-01b (implement check_C3b_moduli_map.py + golden tests) 
+  ↓ [blocks S2-03/S2-04 ranking]
+S2-03/S2-04 (AutoEvolve + ranking, identify top C3b-passing pair) 
+  ↓ [blocks S3-00]
+S3-00 (MVM derivation: m_φ, α_D, Λ_D, P1/P2 observables, kill-condition) 
+  ↓ [T0 derives, T0s blind re-derives]
+  GATE M1 (agreement + timestamp audit + assumption tags clean)
+  ↓ [unfreezes empirical dispatch]
+S3-1/S3-2 (volunteer protocol), S3-03/S3-04 (prediction validation)
 ```
 
-★ **S2-1 (observable redesign) is the critical path for the entire program:** H3 and both experiment streams are blocked until an observable exists that passes the kernel-swap battery. Streams 1 and 2-theory proceed in parallel regardless.
+**Parallel streams (do NOT block critical path):**
+```
+Stream 1:                          Stream 2 (non-critical):       Stream 3 (non-critical):
+S1-1 axiom hygiene                 S2-2 m_eff(Δ) law              S3-5 per-candidate PTA
+S1-2 import D-2.4 loci             S2-3 ρ_b → z mapping           S3-6 observational report
+S1-3 base geometry Lean            S2-4 true-K3 certification     S3-7 public site (wait on GATE M3)
+S1-4 Kodaira types                 S2-5 AutoEvolve w/ C3b gate
+GATE-T (axiom review)              S2-6 D-3 reruns (frozen until GATE M1)
+S1-5 manuscript                    
+```
 
-**This plan deliberately does NOT:** assume any prior Δ statistic survives; publish anything externally before GATE-X/GATE-E; claim the Dual-Scale Model is favored — it builds machinery that can favor **or kill** it (s₁₀ challenger + random-control kernel remain the falsification scissors).
+**Original recommendation R1 updated:** The critical path is now **P0-A → S2-01b (C3b checker) → S2-04 (ranking) → S3-00 (MVM)**. Every gate M1-blocking task is T0-tier (architecture, physics derivation, or verifier-first-dependent). S2-1 (observable redesign) is now **no longer independent**; it is consumed by S3-00's P1/P2 design.
+
+**This plan deliberately does NOT:** assume any prior Δ statistic or PTA signature survives; assume C3b will pass for any candidate (failure → F1); assume the MVM calculation will yield a pinned observable (no relation → F5, and that is a reportable result); assume any assumption in [A-SEQ, A-VOL, A-ONT, A-REL] is unbreakable (adversarial passes explicitly attempt to break them); publish anything externally before GATE M1 + GATE-X/GATE-E; claim the Dual-Scale Model is favored — it builds machinery that can favor **or kill** it (s₁₀ challenger + random-control kernel remain the falsification scissors, now applied to P1/P2 predictions).
 
 ---
 
-## 10. Recommendations (Fable session, 2026-07-16)
+## 10. Recommendations (Updated for Phase 0 + MVM Architecture)
 
-**R1 — Spend the next unit of effort on S2-1, and nothing empirical before it.** Every downstream deliverable (D-3, Stream-3 dispatch, H3) is gated on an observable that survives the kernel-swap battery. The singular-locus-proximity design is the only candidate with a *structural* reason to be kernel-specific: 1/27 ≠ 1/16 enters the statistic directly. Preregister the pass thresholds in a commit *before* writing the observable code.
+**R1 — Complete Phase 0 (P0-A/B/C/D) before any S2-01 freeze.** ASSUMPTIONS.md is now load-bearing: every prediction carries an assumption-list tag; every criterion definition may reference one. The Free-Parameter Ledger schema is the contract between S2 (candidate selection) and S3 (MVM derivation). The abstract-tier rule (epistemic-guardrails update) must be live in all three repos before any public prose. Start with P0-A; it unblocks everything.
 
-**R2 — Fix Stream 1's axiom hygiene before any publicity of "0 sorry".** A 0-sorry Lean development is only as strong as its axioms, and `pipeline_upper_bound` (S₁,₂ ≤ 1.177) currently encodes a number the audit classified as non-reproducible (A7). Either demote it to `hypothesis_` or wait for the S3-3 quorum re-run. Conversely, the D-2.4 loci are exact rationals — *prove* them in Lean rather than axiomatizing (net axiom count goes down, which is a better headline than "0 sorry").
+**R2 — Implement C3b checker (S2-01b) as a critical-path blocker, not optional.** The Shioda-Inose moduli map F is the T0 Architecture Review's centerpiece: it is the *honest version* of the Desk's "rigid locking" claim, downgraded from asserted theorem to checkable per-candidate criterion. C3b failure → candidate removal (F1). C3b success → the pair is qualified for MVM matching. **Do not proceed to S2-04 ranking or S3-00 derivation until C3b checker is golden-test-passing and validated on at least one candidate pair.**
 
-**R3 — Get an independent check on the D-2.4 loci as part of S2-4.** The 1/27 and 1/16 values were derived in-repo via the θ-translation (with one index-shift bug already caught). Cooper's level-7/level-10 operators exist in the literature (AESZ/Cooper 2012 tables); matching the in-repo operators against published ones both certifies "true K3" (H1) and independently validates the loci the whole observable redesign rests on. One task, two closures.
+**R3 — Perform blind re-derivation (S3-00 step 6) as the T0/T0s gate for M1, not as optional review.** The T0 Architecture Review mandates two-model independent derivation of the MVM steps 1–4. This is not a review (where the second model reads the first's answer); it is re-derivation from geometric data + literature only. Disagreement → DERIVATION_DISPUTES.md; unresolved disputes block M1. This is your insurance that the calculation is not a story told twice.
 
-**R4 — Treat the kernel-blind negative result as a publishable asset.** GATE D-1.3 (r = 1.0000 between a K3 kernel and noise) is a clean methodological finding about FFT-contrast statistics on density fields — exactly the negative-results-first material Part VIII was designed for. Publishing it costs nothing and armors the program's credibility before any positive claim.
+**R4 — Tag every prediction in S3-00 with [A-SEQ, A-VOL, A-ONT, A-REL].** Do this at write time, not post-hoc. The tags are machine-auditable; CI must check that every quantity in the Free-Parameter Ledger and every observable (P1, P2) carries the correct assumption list. If an assumption's discharge path indicates it could fail (e.g., A-SEQ failure ⇒ light field found), the entire result set is void. Audit this before M1 pin.
 
-**R5 — Preregister *which kernel predicts what* before looking at data.** s₇'s physical locus (z = 1/27 ≈ 0.037) sits at lower modulus than s₁₀'s (z = 1/16 = 0.0625), so s₇ predicts response steepening at a *lower* critical density under any monotone z(ρ) map. Translate both loci into ρ_crit bands under the S2-3 (a,b) family and commit the two predicted signatures before any data run. If the data later prefers one, the claim is only as strong as this preregistration.
+**R5 — Preregister the kill condition (S3-00 step 4) in a commit before deriving it.** If no relation survives the (𝒱, g_s) elimination, the model is generic vdSIDM and triggers F5 (false positive). State the exact threshold, the test statistic, and the expected result of the calculation before you calculate it. This is your hedge against unwitting post-hoc tuning.
 
-**R6 — Keep one source of truth for sequences across all three repos.** `k3_kernel_engine.py` (compute + self-verify against Lean recurrence and OEIS b-file) is the c704833 lesson made mechanical. Stream 1 should reference its artifact hashes; Stream 3 clients should vendor it pinned by `statistic_hash` — never re-implement or hardcode terms.
+**R6 — Treat the C3b test as the new adversarial standing item (beyond A-SEQ and A-REL).** Deep Think's S2-05 adversarial pass must explicitly attempt: (1) to find a light field A-SEQ missed; (2) to find a production history that back-reacts on σ(v); (3) to find a candidate pair where C3b "passed" but F is actually disconnected or multivalued. Unanswered breaks → block GATE D-1v2.
 
-**R7 — Unify CI across the three repos.** This repo has `cross_consistency_check.sh` (28 checks + real `lake build`); the LeanProposal repo and the DarkMatter@Home infra have no equivalent yet. Minimum: LeanProposal CI = `lake build` + sorry-grep + axiom-inventory diff; Stream 3 CI = schema validation + quorum-protocol tests. A vision spanning three repos is only as rigorous as its weakest CI.
+**R7 — Keep one source of truth for sequences, and extend to assumptions.** `k3_kernel_engine.py` (compute + self-verify) plus `ASSUMPTIONS.md` (define once, reference everywhere). Stream 2 exports assumption-tagged certificates; Stream 1 receives them as-is; Stream 3 clients receive them pinned by `statistic_hash`. Never re-specify or hardcode an assumption downstream.
 
-**R8 — Budget realistically by tier.** The plan is ~70% Haiku-executable (schemas, sweeps, CI, `decide` proofs), ~25% Sonnet (S2-1 design, S2-4 identification, S1-4 Kodaira, derivations), ~5% HUMAN (four gates + anything public). The two tasks where a cheap model *will* produce false confidence are S2-1 (statistics design) and S1-4 (Kodaira classification) — route those to Sonnet-or-better and require pasted verifier output per Rule 4.
+**R8 — Unify CI across the three repos, and add assumption-audit CI.** This repo's CI must now include: (1) assumption-tag audit (every quantity in PREDICTION.md + K3_CRITERIA carries correct tags); (2) C3b gate test (candidate fails C3b ⇒ score = null); (3) TUNING_LOG audit (every change to assumption lists is logged). LeanProposal: `lake build` + sorry-grep + axiom-inventory diff + assumption-import audit. Stream 3: schema validation + quorum-protocol tests + P1/P2 observable hash check. A vision spanning three repos is only as rigorous as its weakest audit.
+
+**R9 — Budget realistically by tier (updated for MVM).** Plan is ~60% Haiku (schemas, sweeps, CI, checkers on golden data), ~30% Sonnet (S2-01b C3b derivation, S2-4 identification, S1-4 Kodaira, m_eff/ρ_b laws), ~5% T0 (C3b design, MVM derivation, adversarial adjudication), ~5% HUMAN (five gates + external comms). **T0 tasks non-negotiable: (1) C3b criterion definition (S2-01), (2) MVM matching derivation (S3-00), (3) adversarial adjudication (S2-05), (4) blind re-derivation agreement (S3-00 step 6), (5) all M-gate sign-offs.** No cheap model will produce confident-sounding wrong physics here; the verifier is the gate.
 
 *Drafted 2026-07-16 (Fable session) after auditing all three repositories. Stream-2 detail remains governed by `K3xT2_DEEP_IMPROVEMENT_PLAN.md`; Phase 8.E tasks in `TODO.md` are absorbed into Stream 3.*
