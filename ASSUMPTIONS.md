@@ -1,72 +1,89 @@
-# ASSUMPTIONS — Phase 0 Load-Bearing Assumptions for the Dual-Scale Model
+# ASSUMPTIONS — Dual-Scale Topological Universe Model (v0.2)
 
-**Status:** ⚠️ **DRAFT v0.1 — UNVERIFIED — NOT YET T0-AUTHORED OR SIGNED OFF** ⚠️
+*(Dependencies for the MVM and PREDICTION.md. Every downstream result is conditional on the
+assumptions below and must cite them by ID. Each assumption carries a discharge path — how it
+could eventually be verified, replaced by a computation, or falsified — and a tier ledger entry.)*
 
-**Provenance note:** The names A-SEQ, A-VOL, A-ONT, A-REL originate in `DUAL_SCALE_THREE_STREAM_PLAN.md` §5/§10 and `EXECUTION_PLAN.md` WP P0-A ("Phase 0 ASSUMPTIONS v0.2"), which reference this file but predate it. No source draft for their content exists in either repository at time of writing. The statements below are a **best-inference reconstruction from context clues already present in `VISION.md` §1.2–1.3 and the S3-00 MVM spec** — they are explicitly *not* an authoritative Tier C ruling. Per this project's own `epistemic-guardrails` rule, no Tier C claim may be asserted without T0 authorship. **Xavier: every entry below needs your review, correction, or replacement before Phase 0 can exit.**
+**Status:** v0.2 — authoritative register from the T0 review session. **Reviewed-by: pending Xavier sign-off.**
+**Repo of record:** `SocrateAI-Scientific-Agora-K3-DarkMatter`; mirrored (hash-pinned at freeze) in the other two repos.
 
-**Repo of record:** `SocrateAI-Scientific-Agora-K3-DarkMatter`; mirrored (hash-pinned at freeze) in the other two repos, same as `K3_CRITERIA.md`.
-
----
-
-## Purpose
-
-The S3-00 MVM (Minimal Viable Matching) calculation derives observable quantities (m_φ, α_D, Λ_D, and the eliminated P1/P2 relations) from geometric data at a point (𝒱, g_s) in moduli space. That derivation is only as honest as the assumptions it silently relies on. This file makes those assumptions explicit, gives each one a tier, a way to check whether it's wrong (discharge path), and states what happens to the program if it fails (failure mode) — so a failure is a recorded result, not a quiet rationalization.
-
-Every quantity in the Free-Parameter Ledger (`EXECUTION_PLAN.md` WP P0-B) and every prediction in `PREDICTION.md` must carry the assumption IDs it depends on.
-
----
-
-## Assumption Register
-
-Template per assumption: **Statement** · **Tier** · **Where it enters the MVM chain** · **Discharge path** (what would let us promote/confirm it) · **Failure mode** (what happens if it's false).
-
-### A-SEQ — Single-Sequence Dominance
-
-- **Statement (DRAFT):** No light degree of freedom other than the modulus associated with the selected candidate's own Picard-Fuchs sequence contributes to the low-energy 4D EFT at the scales relevant to m_φ and the P1/P2 observables. I.e., the truncation to one modulus (the C3/C3b-selected candidate's) is complete, not an approximation hiding an uncounted light field.
-- **Tier:** C (physical conjecture; not checkable by the exact-algebraic sieve alone).
-- **Enters MVM at:** Step (2), derivation of m_φ(𝒱, g_s) from period data — assumes the period geometry fully determines the light spectrum.
-- **Discharge path:** Would require an explicit KK/moduli spectrum computation for the selected candidate's full compactification (not just the K3 factor) showing no additional mode below the relevant mass scale. Not attempted before M1; recorded as an open assumption.
-- **Failure mode:** **A-SEQ failure ⇒ an uncounted light field exists.** Any P1/P2 prediction derived without it is incomplete; the adversarial pass (S2-05 / DUAL_SCALE_THREE_STREAM_PLAN.md §10 R6) is explicitly tasked with trying to find one. If found before M1, S3-00 is blocked until the field is either incorporated or shown irrelevant.
-
-### A-VOL — Volume-Modulus Stability Over Cosmological History
-
-- **Statement (DRAFT):** The volume modulus 𝒱 sits at (or close enough to) the stabilization point used to evaluate m_φ, α_D, Λ_D across the cosmological history relevant to today's observables (structure formation through present-day halos). Its production/relaxation history does not back-react on the velocity-dependence of the dark-matter self-interaction cross-section σ(v) used in the P2 (lensing) observable.
-- **Tier:** C.
-- **Enters MVM at:** Steps (2)–(3) — m_φ(𝒱, g_s) and α_D, Λ_D(𝒱, g_s) are evaluated at a fixed point, not integrated over a modulus trajectory.
-- **Discharge path:** Requires either (a) an explicit stabilization mechanism for 𝒱 (flux/non-perturbative — not yet exhibited, per VISION §1.2 "no explicit flux stabilization"), or (b) an argument that σ(v)'s velocity-dependence is insensitive to plausible 𝒱-histories within the tested range.
-- **Failure mode:** If 𝒱's history back-reacts materially on σ(v), the P2 lensing prediction is not a fixed prediction but a family; DUAL_SCALE_THREE_STREAM_PLAN.md §10 R6 flags this explicitly as an adversarial-pass target ("find a production history that back-reacts on σ(v)"). Failure demotes P2 from TEST to a conditional/FIT-labeled statement, or removes it as a candidate observable.
-
-### A-ONT — Ontological Identification of the Selected Candidate with a Physical Compactification
-
-- **Statement (DRAFT):** The K3 candidate selected by the exact-algebraic sieve (Tier A/B, `K3_CRITERIA.md`) is treated as if it corresponds to an actual, consistent string compactification geometry (flux/orientifold/tadpole data exhibited or exhibitable), not merely as an abstract sequence/operator satisfying checkable arithmetic properties.
-- **Tier:** C (this is precisely the gap the README already flags: "we do not claim a complete vacuum construction").
-- **Enters MVM at:** Step (1), Free-Parameter Ledger installation — the ledger classifies quantities as GEOMETRIC/CONTINUOUS-FREE/DISCRETE/ASSUMED under the premise that "geometric" quantities are physically real, not merely formally computable.
-- **Discharge path:** A worked flux/orientifold construction for at least one C3b-passing candidate (long-horizon; explicitly out of scope for M1 per VISION §1.2 "unconstructed"). Short of that, A-ONT stays an assumption and every downstream number inherits its Tier C ceiling.
-- **Failure mode:** If no consistent full compactification exists for any surviving candidate, the entire physical program (Tier C) collapses to F5 (`VISION.md` §4) — the mathematics (Tier A/B) still stands and publishes independently.
-
-### A-REL — Global–Local Sector Relation (the Dual-Scale Coupling Itself)
-
-- **Statement (DRAFT):** The global K3 (bulk vacuum) sector and the local elliptic-curve (brane-localized dark-matter EFT) sector share the same underlying moduli (𝒱, g_s), such that eliminating (𝒱, g_s) between the independently-derived m_φ(𝒱,g_s) and α_D, Λ_D(𝒱,g_s) relations produces a genuine, physically-meaningful parameter-free relation between P1 and P2 — not an artifact of forcing two unrelated sectors onto a shared coordinate.
-- **Tier:** C. This is the formal restatement of VISION.md §1.3's central ruling: "It does not, by itself, imply any physical coupling... between a bulk vacuum and a brane EFT."
-- **Enters MVM at:** Step (3), the elimination step — this is the step that only makes sense if A-REL holds.
-- **Discharge path:** The worked EFT matching itself (VISION §1.3's Phase 1 blocker) *is* the discharge path — if S3-00 completes and both T0 and T0s independently re-derive the same eliminated relation from geometric data alone (not from each other), that is evidence (not proof) for A-REL at the specific candidate point tested.
-- **Failure mode:** **This is the kill condition already pre-committed in `EXECUTION_PLAN.md` WP S3-00 step (4):** if no relation survives the (𝒱, g_s) elimination, the model is generic vdSIDM and triggers **F5** — a reportable, non-post-hoc result, not a silent abandonment.
+> Supersedes the v0.1 draft, which was a best-inference reconstruction made before this text
+> was available in-repo. Note the v0.1 reconstruction's "A-REL" was a different assumption
+> (global–local sector relation) — that content is *not* lost: it is the kill condition already
+> pre-committed in `EXECUTION_PLAN.md` WP S3-00 step (4), where it belongs as a checkable
+> outcome rather than an assumption.
 
 ---
 
-## CI / Audit Contract (once Phase 0 exits)
+**A-SEQ (Moduli Sequestering).**
+We assume the Calabi-Yau fourfold Y₄ admits a flux stabilization scheme in which all moduli
+outside the explicitly tracked sequence pair (z_bulk, z_brane) — including all remaining
+complex-structure moduli of Y₄, the Kähler moduli of B₃ other than the overall volume,
+**the open-string sector on the brane divisor D (brane position moduli and Wilson lines)**,
+and any additional axionic partners — are stabilized strictly above the dark-sector EFT
+cutoff, decouple from the 4D dark-sector EFT, and mediate no long-range forces.
+*(Tier C. Discharge path: exhibit an explicit flux choice realizing the hierarchy for the
+selected candidate, or find an obstruction — either outcome is reportable. Failure mode:
+if a forgotten light field is identified that couples to the dark sector, every MVM result
+is void and must be recomputed.)*
 
-1. Every quantity in the Free-Parameter Ledger and every prediction in `PREDICTION.md` carries an explicit assumption-ID list (e.g., `m_φ [A-SEQ, A-VOL, A-ONT, A-REL]`).
-2. `TUNING_LOG.md` records any change to an assumption's statement or an assumption-list tag after Phase 0 exit.
-3. The S2-05 / S3-00-adjacent adversarial passes must explicitly attempt to break each assumption (see per-assumption "discharge path" above) before GATE M1.
-4. No abstract or summary in any of the three repos may state a Tier C conclusion (this file) in Tier A/B language (`epistemic-guardrails` Finding F-A).
+**A-VOL (Volume and Coupling Stabilization).** *(v0.2 — split out of A-SEQ to remove a
+dangerous ambiguity.)*
+The overall volume 𝒱 and the string coupling g_s are **stabilized** — with masses safe from
+fifth-force, equivalence-principle, and post-BBN cosmological constraints in the *visible*
+sector — but at values not computed within the MVM. They therefore enter the EFT as the two
+declared CONTINUOUS-FREE constants of the Free-Parameter Ledger: unknown numbers, **not light
+dynamical fields**. No MVM observable may rely on 𝒱 or g_s rolling.
+*(Tier C. Rationale: a light volume modulus couples gravitationally to all sectors and is
+excluded by visible-sector fifth-force tests long before any dark-sector observable is
+reached; exempting 𝒱 from stabilization would falsify the model in the wrong sector.
+Discharge path: a concrete stabilization mechanism for (𝒱, g_s) with computed values would
+convert both from FREE to GEOMETRIC in the ledger and strengthen every prediction; this is
+desirable but not required for M1.)*
+
+**A-ONT (Dark Sector Ontology).**
+Dark matter consists of confined SU(N) dark-sector states (e.g., dark glueballs) localized on
+the 7-branes wrapping D. The local elliptic modulus fluctuation φ is the light scalar
+mediator, with mass m_φ computed from the flux potential at the vacuum point selected by the
+C3b map F. The solitonic-halo picture is relegated to a clearly-marked speculative appendix,
+outside the prediction chain.
+*(Tier C. Discharge path: the MVM steps 1–2 replace the qualitative statement with computed
+(m_φ, α_D, Λ_D) as functions of (𝒱, g_s). Failure mode: if the Kodaira data of the selected
+candidate provides no non-Abelian locus (criterion C2, HYPOTHESIS-DERIVED list), A-ONT has no
+carrier and triggers F1 for the dual-scale role.)*
+
+**A-REL (Relic Abundance).** *(v0.2 — new.)*
+The observed dark matter abundance Ω_DM h² ≈ 0.12 is achieved by some production mechanism
+(e.g., dark-sector freeze-out/freeze-in or misalignment of a heavier partner) **without
+modifying the low-velocity self-interaction physics** that the MVM predicts: the σ(v)/m curve
+and the mediator sector are treated as independent of the production history. The DM particle
+mass is set by the confinement scale, m_DM ~ Λ_D(𝒱, g_s).
+*(Tier C. Rationale: without this assumption, the lensing prediction silently depends on an
+uncomputed cosmological history. Declaring it makes the dependency auditable. Discharge path:
+a worked production calculation for the selected candidate; if the required history conflicts
+with the (𝒱, g_s) region singled out by other observables, that tension is a reportable
+result, not a tuning opportunity.)*
 
 ---
 
-## Changelog
+## Consistency notes
 
-- **v0.1 (2026-07-17):** Initial draft. Best-inference reconstruction of A-SEQ, A-VOL, A-ONT, A-REL from context in `VISION.md` §1.2–1.3, `DUAL_SCALE_THREE_STREAM_PLAN.md` §5/§10, and `EXECUTION_PLAN.md` WP P0-A/S3-00. **Awaiting T0/Xavier review before Phase 0 can be marked complete.**
+1. **Ledger alignment:** A-VOL is the assumption-form of the ledger's CONTINUOUS-FREE row;
+   A-SEQ is the assumption-form of the ASSUMED row. The ledger and this file must never
+   disagree; CI greps both for the assumption IDs.
+2. **Labeling rule:** any PREDICTION.md quantity derived under these assumptions carries the
+   suffix list it depends on, e.g. r_c(M_halo) [A-SEQ, A-VOL, A-ONT, A-REL]. A result whose
+   assumption list grows after the pin is a tuning event (TUNING_LOG.md).
+3. **Adversarial standing item:** the Deep Think adversarial pass on each phase explicitly
+   attempts to break A-SEQ (find the light field we forgot) and A-REL (find the production
+   history that back-reacts on σ(v)). Unanswered breaks block the pin.
 
----
+**Changelog**
+- v0.1: Desk draft (A-SEQ, A-ONT); in-repo v0.1 was a session reconstruction, now superseded.
+- v0.2 (this version): A-VOL split out — 𝒱 and g_s are stabilized-at-unknown-values, not
+  light fields; g_s added (absent from v0.1); open-string moduli and Wilson lines added to
+  A-SEQ's scope; A-REL added; discharge paths, failure modes, labeling rule, and adversarial
+  standing items added.
 
-`Generated-by: Claude Sonnet 5 (Claude Code session, inference from repo context) | Verified-by: none — no checker exists for physical-assumption content | Reviewed-by: T0 N`
+*Generated-by: T0 review session | Verified-by: n/a (assumption register) | Reviewed-by:
+pending Xavier sign-off*

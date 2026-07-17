@@ -1,0 +1,250 @@
+{
+  "checker": "check_C3b_moduli_map.py",
+  "checker_version": "1.0.0",
+  "criterion": "C3b (moduli map: algebraic relation between bulk and brane mirror maps)",
+  "pair": {
+    "brane": "zagier_A",
+    "bulk": "cooper_s10"
+  },
+  "parameters": {
+    "max_bidegree": 4,
+    "n_terms": 28,
+    "power_hypotheses": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        1
+      ]
+    ],
+    "validate_extra": 8
+  },
+  "provenance": "Generated-by: checkers/check_C3b_moduli_map.py v1.0.0 | Verified-by: exact arithmetic, self-validated relation | Reviewed-by: pending",
+  "refs_file": "/home/callensxavier_gmail_com/SocrateAI-Scientific-Agora-K3-DarkMatter/refs/recurrences_v1.json",
+  "refs_sha256": "da7ef8207ad1709fe67b472979d40849cb7693a733936e8fb4022bf8c2fe5e34",
+  "relation_search": [
+    {
+      "bidegree": [
+        1,
+        1
+      ],
+      "hypothesis_q_powers": [
+        1,
+        1
+      ],
+      "relation": null,
+      "truncation_order": 28
+    },
+    {
+      "bidegree": [
+        2,
+        2
+      ],
+      "hypothesis_q_powers": [
+        1,
+        1
+      ],
+      "relation": null,
+      "truncation_order": 28
+    },
+    {
+      "bidegree": [
+        3,
+        3
+      ],
+      "hypothesis_q_powers": [
+        1,
+        1
+      ],
+      "relation": null,
+      "truncation_order": 28
+    },
+    {
+      "bidegree": [
+        4,
+        4
+      ],
+      "hypothesis_q_powers": [
+        1,
+        1
+      ],
+      "relation": null,
+      "truncation_order": 28
+    },
+    {
+      "bidegree": [
+        1,
+        1
+      ],
+      "hypothesis_q_powers": [
+        1,
+        2
+      ],
+      "relation": null,
+      "truncation_order": 28
+    },
+    {
+      "bidegree": [
+        2,
+        2
+      ],
+      "hypothesis_q_powers": [
+        1,
+        2
+      ],
+      "relation": null,
+      "truncation_order": 28
+    },
+    {
+      "bidegree": [
+        3,
+        3
+      ],
+      "hypothesis_q_powers": [
+        1,
+        2
+      ],
+      "relation": null,
+      "truncation_order": 28
+    },
+    {
+      "bidegree": [
+        4,
+        4
+      ],
+      "hypothesis_q_powers": [
+        1,
+        2
+      ],
+      "relation": null,
+      "truncation_order": 28
+    },
+    {
+      "bidegree": [
+        1,
+        1
+      ],
+      "hypothesis_q_powers": [
+        2,
+        1
+      ],
+      "relation": null,
+      "truncation_order": 28
+    },
+    {
+      "bidegree": [
+        2,
+        2
+      ],
+      "hypothesis_q_powers": [
+        2,
+        1
+      ],
+      "relation": null,
+      "truncation_order": 28
+    },
+    {
+      "bidegree": [
+        3,
+        3
+      ],
+      "hypothesis_q_powers": [
+        2,
+        1
+      ],
+      "relation": null,
+      "truncation_order": 28
+    },
+    {
+      "bidegree": [
+        4,
+        4
+      ],
+      "hypothesis_q_powers": [
+        2,
+        1
+      ],
+      "relation": null,
+      "truncation_order": 28
+    }
+  ],
+  "sequences": {
+    "brane": {
+      "extracted_polynomials": {
+        "A": "7*k**2 + 7*k + 2",
+        "B": "8*k**2",
+        "C": "k**2 + 2*k + 1"
+      },
+      "first_terms": [
+        "1",
+        "2",
+        "10",
+        "56",
+        "346",
+        "2252",
+        "15184",
+        "104960",
+        "739162",
+        "5280932",
+        "38165260",
+        "278415920"
+      ],
+      "integrality": "PASS(36)",
+      "mirror_map_z_of_q_first_terms": [
+        "0",
+        "1",
+        "-3",
+        "3",
+        "5",
+        "-18",
+        "15",
+        "24"
+      ],
+      "mum_validated": true,
+      "order": 2,
+      "source": "Zagier, D. (2009). Integral solutions of Apery-like differential equations. Table 1 (Franel numbers)."
+    },
+    "bulk": {
+      "extracted_polynomials": {
+        "A": "12*k**3 + 18*k**2 + 10*k + 2",
+        "B": "64*k**3 - 4*k",
+        "C": "k**3 + 3*k**2 + 3*k + 1"
+      },
+      "first_terms": [
+        "1",
+        "2",
+        "18",
+        "164",
+        "1810",
+        "21252",
+        "263844",
+        "3395016",
+        "44916498",
+        "607041380",
+        "8345319268",
+        "116335834056"
+      ],
+      "integrality": "PASS(36)",
+      "mirror_map_z_of_q_first_terms": [
+        "0",
+        "1",
+        "-4",
+        "-6",
+        "56",
+        "-45",
+        "-360",
+        "894"
+      ],
+      "mum_validated": true,
+      "order": 3,
+      "source": "Cooper, S. (2012). Ramanujan J. 29, 163-183. Equation (16)."
+    }
+  },
+  "verdict": "C3B_NOT_FOUND(n_terms=28, max_bidegree=4, hypotheses=[[1, 1], [1, 2], [2, 1]])"
+}
