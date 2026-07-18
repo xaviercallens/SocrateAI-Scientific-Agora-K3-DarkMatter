@@ -96,7 +96,7 @@
   - Comoving transformation: < 1s: ✓
   - K3 transformation: 0.257s: ✓
   - Asymmetry computation: 0.647s: ✓
-  - **ANOMALY DETECTED: Δ_{s7} = 663.4 > threshold 1.0** ✓
+  - **Raw statistic: Δ_{s7} = 663.4 > threshold 1.0** ⚠️ Uncalibrated; awaits GATE D-1 mock calibration and kernel-swap validation
 
 ---
 
@@ -140,8 +140,8 @@
 | Sector processing time | 5.983s | ✓ REAL-TIME |
 | SDSS galaxies per sector | 10,000 | ✓ REALISTIC |
 | Voxel grid size | 128³ = 2.1M | ✓ MANAGEABLE |
-| Asymmetry metric range | [0.03, 663] | ✓ SENSITIVE |
-| Anomalies detected (Sector 1) | 1 | ✓ DISCOVERY |
+| Asymmetry metric range | [0.03, 663] | ⚠️ UNCALIBRATED |
+| Raw statistics (Sector 1) | Δ=663.4 | 🔧 Pending GATE D-1v2 |
 
 ---
 
@@ -190,7 +190,7 @@ python3 lss_tensor_analytics/cooper_s7_periods.py
 ```bash
 python3 empirical_crucible/cooper_s7_euclid_worker.py
 ```
-**Expected output:** 🌌 [DISCOVERY] K3 S7 Anomaly detected!
+**Expected output:** 🔧 [COMPUTING] K3 S7 sector statistic (Δ value logged; significance pending GATE D-1v2 validation)
 
 ### Continuous Sector Sweep (Daemon Mode)
 ```bash

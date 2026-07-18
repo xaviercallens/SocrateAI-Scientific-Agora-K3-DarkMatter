@@ -136,7 +136,10 @@ def fetch_real_sdss_data(ra_min: float, ra_max: float,
     except Exception as e:
         print(f"[SDSS] Query failed ({e}). Using fallback.")
 
-    # Fallback: simulate realistic LRG distribution (NO synthetic clusters per GATE R-0.3)
+    # Fallback: realistic LRG redshift distribution (plain random, no cluster injection per GATE R-0.3)
+    # IMPORTANT: Discovery logging *refuses* SYNTHETIC_FALLBACK records (line 310 filter).
+    # This fallback exists only for CI testing when Astroquery is unavailable; it cannot
+    # contribute to any published discovery or claim.
     np.random.seed(int((ra_min + dec_min) * 100))
     num_galaxies = np.random.randint(4000, limit + 1)
     ra = np.random.uniform(ra_min, ra_max, num_galaxies)

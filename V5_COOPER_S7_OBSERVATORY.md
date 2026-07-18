@@ -18,12 +18,12 @@ Following the formal rejection of the S₁₂ and S₂₁ candidates (Order-2 El
 We have:
 
 1. **Embedded the exact Cooper s₇ sequence** (OEIS A183204) into a GPU-accelerated period integral engine
-2. **Formalized the Picard-Fuchs operator** in Lean 4 with complete K3 geometry validation (zero `sorry`)
+2. **Formalized the Picard-Fuchs operator** in Lean 4: `CooperS7Recurrence.lean` verified zero `sorry`; `CooperS7_K3Geometry.lean` (draft) has a deferred proof, quarantined pending completion.
 3. **Constructed the Effective K3 Volume Grid** by mapping baryonic density ρ_b → complex structure modulus z → period integral Π₀(z)
 4. **Validated on real SDSS DR17 data**: Successfully processed 10,000 BOSS galaxies in the sector RA [150–160]°, DEC [0–10]°
-5. **Defined the new asymmetry metric Δ_{s7}**: Proven to naturally filter cosmic noise and isolate massive filament intersections
+5. **Defined the asymmetry metric Δ_{s7}**: A candidate observable combining FFT contrast (pending GATE D-1 kernel-swap validation and mock calibration)
 
-**First cosmic anomaly detected:** Δ_{s7} = 663 (threshold: 1.0) in SDSS Sector 1.
+**Δ_{s7} = 663 in SDSS Sector 1 (threshold: 1.0):** Uncalibrated raw statistic. **GATE D-1.3 verdict (2026-07-14):** the FFT-contrast observable is kernel-blind (r(cooper_s7, random_control) = 1.0000). Observable under redesign (S2-1); empirical rerun frozen until GATE D-1v2 passes.
 
 ---
 
