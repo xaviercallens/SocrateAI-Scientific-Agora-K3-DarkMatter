@@ -1,8 +1,0 @@
-PyQt6
-numpy
-tqdm
-torch
-transformers
-filelock
-gymnasium
-matplotlib
