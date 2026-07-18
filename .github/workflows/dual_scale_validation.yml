@@ -1,0 +1,90 @@
+name: Dual-Scale Model Validation
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    - cron: '0 0 * * *'  # Daily at midnight
+
+jobs:
+  validate_theory:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      - name: Set Up Lean 4
+        run: |
+          curl -L https://raw.githubusercontent.com/leanprover/lean4/master/scripts/install.sh | bash
+          echo "$HOME/.elan/bin" >> $GITHUB_PATH
+      - name: Run Lean 4 Proofs
+        run: |
+          lake build
+          lake env lean --run scripts/validate_lean_proofs.lean
+      - name: Upload Lean 4 Report
+        uses: actions/upload-artifact@v3
+        with:
+          name: lean4-validation-report
+          path: reports/LEAN_VALIDATION_REPORT.md
+
+  validate_k3_selection:
+    runs-on: ubuntu-latest
+    needs: validate_theory
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      - name: Set Up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - name: Install Dependencies
+        run: pip install numpy scipy pandas matplotlib
+      - name: Run AutoEvolve
+        run: python scripts/auto_evolve_k3_selection.py
+      - name: Upload K3 Selection Report
+        uses: actions/upload-artifact@v3
+        with:
+          name: k3-selection-report
+          path: reports/K3_SELECTION_REPORT.md
+
+  validate_experimentation:
+    runs-on: ubuntu-latest
+    needs: validate_k3_selection
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      - name: Set Up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - name: Install Dependencies
+        run: pip install numpy scipy pandas matplotlib astropy h5py
+      - name: Run V5 Pipeline
+        run: python scripts/v5_dual_scale_pipeline.py
+      - name: Run Weak Lensing Validation
+        run: python scripts/weak_lensing_overlay.py
+      - name: Run PTA Validation
+        run: python scripts/NANOGrav_prediction.py
+      - name: Upload Experimentation Report
+        uses: actions/upload-artifact@v3
+        with:
+          name: experimentation-report
+          path: reports/OBSERVATIONAL_REPORT.md
+
+  compile_final_report:
+    runs-on: ubuntu-latest
+    needs: [validate_theory, validate_k3_selection, validate_experimentation]
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      - name: Download All Reports
+        uses: actions/download-artifact@v3
+      - name: Compile Final Report
+        run: |
+          python scripts/compile_final_report.py
+      - name: Upload Final Report
+        uses: actions/upload-artifact@v3
+        with:
+          name: final-report
+          path: reports/FINAL_REPORT.md
