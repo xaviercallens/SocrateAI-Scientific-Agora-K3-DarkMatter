@@ -1,0 +1,59 @@
+{
+  "checker": "check_C3b_moduli_map.py",
+  "checker_version": "1.0.0",
+  "criterion": "C3b (moduli map: algebraic relation between bulk and brane mirror maps)",
+  "pair": {
+    "brane": "apery_zeta2",
+    "bulk": "cooper_s7"
+  },
+  "parameters": {
+    "max_bidegree": 2,
+    "n_terms": 16,
+    "power_hypotheses": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        1
+      ]
+    ],
+    "validate_extra": 8
+  },
+  "provenance": "Generated-by: checkers/check_C3b_moduli_map.py v1.0.0 | Verified-by: exact arithmetic, self-validated relation | Reviewed-by: pending",
+  "refs_file": "refs/recurrences_v1.json",
+  "refs_sha256": "01f1d1867df892cf308c4ad08b60ed634707d80dca51a494d9cace3e3c1ed6b5",
+  "sequences": {
+    "bulk": {
+      "extracted_polynomials": {
+        "A": "-26*k**3 - 117*k**2 - 177*k - 90",
+        "B": "-27*k**3 - 81*k**2 - 78*k - 24",
+        "C": "k**3 + 6*k**2 + 12*k + 8"
+      },
+      "first_terms": [
+        "1",
+        "4",
+        "48",
+        "760",
+        "13840",
+        "273504",
+        "5703096",
+        "123519792",
+        "2751843600",
+        "62659854400",
+        "-178286916117600/121",
+        "35316728816221700/1089"
+      ],
+      "integrality": "FAIL",
+      "mum_validated": false,
+      "order": 3,
+      "source": "OEIS A183204 (http://oeis.org/A183204); Cooper 2012 sporadic sequence s\u2087; Lean4 Structures/CooperS7Recurrence.lean"
+    }
+  },
+  "verdict": "FAIL_MUM"
+}
