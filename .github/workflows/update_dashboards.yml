@@ -1,0 +1,55 @@
+name: Update Dashboards
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'scripts/v5_dual_scale_pipeline.py'
+      - 'scripts/weak_lensing_overlay.py'
+      - 'scripts/NANOGrav_prediction.py'
+  schedule:
+    - cron: '0 6 * * *'  # Daily at 6 AM
+
+jobs:
+  update_v3_dashboard:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      - name: Set Up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - name: Install Dependencies
+        run: pip install numpy scipy pandas matplotlib
+      - name: Run V3 Dashboard Update
+        run: python scripts/update_v3_dashboard.py
+      - name: Commit Dashboard Updates
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add dashboards/v3_cosmic_topology_dashboard.pdf
+          git commit -m "Auto-update: V3 Cosmic Topology Dashboard [$(date +%Y-%m-%d)]"
+          git push
+
+  update_v5_dashboard:
+    runs-on: ubuntu-latest
+    needs: update_v3_dashboard
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      - name: Set Up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - name: Install Dependencies
+        run: pip install numpy scipy pandas matplotlib
+      - name: Run V5 Dashboard Update
+        run: python scripts/update_v5_dashboard.py
+      - name: Commit Dashboard Updates
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add dashboards/v5_dual_scale_pipeline_dashboard.pdf
+          git commit -m "Auto-update: V5 Dual-Scale Pipeline Dashboard [$(date +%Y-%m-%d)]"
+          git push
