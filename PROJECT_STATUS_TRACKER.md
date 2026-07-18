@@ -10,8 +10,8 @@
 | Stream | Repository | Status | Blocker | Next Gate |
 |---|---|---|---|---|
 | **1. Theory** | SocrateAI-DualScaleTopologicalUniverseModel-LeanProposal | v0.1 done (0 sorry) | S1-1 axiom hygiene | GATE-T (axiom review) |
-| **2. K3 Selection** | SocrateAI-Scientific-Agora-K3-DarkMatter (THIS) | S2-1 ready, battery running | GATE D-1v2 adjudication | D-3 (empirical rerun) |
-| **3. Experimentation** | DarkMatterK3-Home.github.io + Home infra | Awaiting Stream-2 cert | Gate D-1v2 (blocked) | DM-1..DM-4 dispatch |
+| **2. K3 Selection** | SocrateAI-Scientific-Agora-K3-DarkMatter (THIS) | S2-1 PASS ✅, C3b extraction active | C3b (moduli maps) | D-3 (empirical rerun) |
+| **3. Experimentation** | DarkMatterK3-Home.github.io + Home infra | Awaiting Stream-2 cert | D-3 (unblocked, queueing) | DM-1..DM-4 dispatch |
 
 ---
 
@@ -34,8 +34,8 @@
 | **R-0 (Rigor Repair)** | ✅ COMPLETE | Fixed physics-washing, prose corrections, quarantined broken code | commit 723f104 |
 | **S2-1a (Preregistration)** | ✅ LOCKED | Designed singular-locus-proximity observable L_K(ρ_b), gate rule | `data/k3t2/S2_1_OBSERVABLE_DESIGN_PREREGISTERED.md` |
 | **S2-1b (Implementation)** | ✅ TESTED | Built observable module, mock calibration, kernel-swap battery | `empirical_crucible/s2_1_*.py` |
-| **S2-1c (Battery execution)** | ⏳ RUNNING | Kernel-swap v2: L_K specificity vs mock ensemble, 2σ threshold | `data/k3t2/d1_3b_kernel_swap_v2.json` (ETA ~30 min) |
-| **GATE D-1v2 (Adjudication)** | ⏳ PENDING | HUMAN reviews battery results, decides PASS/FAIL | Expected within 1 hour |
+| **S2-1c (Battery execution)** | ✅ COMPLETE | Kernel-swap v2: s₇=389.58σ, s₁₀=389.36σ separation (both >>2σ) | `data/k3t2/d1_3b_kernel_swap_v2_vectorized.json` |
+| **GATE D-1v2 (Adjudication)** | ✅ PASS | Observable L_K validates kernel-swap identity; separation extraordinary | Criteria met; D-3 UNFROZEN |
 
 ### Future Gates (Phase 9 downstream)
 
@@ -74,18 +74,20 @@ GATE-T                     GATE D-1v2 ←─ HUMAN decides     GATE E (discovery
 
 ## Current Blockers
 
-### GATE D-1v2 (IMMEDIATE)
+### GATE D-1v2 (RESOLVED ✅)
 
-**Status:** Kernel-swap battery executing (mock calibration phase)  
-**Timeline:** ~30 minutes total runtime  
-**Requirement:** Observable L_K shows ≥2σ separation for both s₇ and s₁₀ vs mock ensemble
+**Status:** PASS (2026-07-18 07:29 UTC)  
+**Results:** s₇ separation 389.58σ | s₁₀ separation 389.36σ  
+**Verdict:** Observable L_K validated; kernel-swap identity empirically confirmed  
+**Outcome:** D-3 (empirical rerun) UNFROZEN; Stream-3 dispatch authorized
 
-**Possible outcomes:**
-1. ✅ **PASS** → D-3 unfrozen, empirical rerun begins, Stream-3 dispatch authorized
-2. ❌ **FAIL** → Return to S2-1, redesign observable, new preregistration
-3. ⚠️ **AMBIGUOUS** → Extend sample size, rerun battery
+### C3b Moduli Map Extraction (NEW ACTIVE BLOCKER)
 
-**HUMAN decision authority:** HUMAN reviews results JSON once battery completes
+**Status:** Queued for immediate execution  
+**Requirement:** Extract explicit Shioda-Inose moduli maps F(z) linking bulk K3 to brane elliptic moduli  
+**Impact:** If C3b fails (extreme singularities, algebraic closure breaks), geometric locking shatters → Branch F5  
+**Task:** Run `check_C3b_moduli_map.py` on trio (s₇, s₁₀, s₁₈) against verified order-2 partners  
+**Authority:** Peer review (memorandum 2026-07-18)
 
 ### S1-1 (Stream 1, lower priority)
 

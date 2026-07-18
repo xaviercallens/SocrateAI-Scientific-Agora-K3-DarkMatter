@@ -1,0 +1,65 @@
+{
+  "timestamp": "/mnt/disks/disk-socrateai-local-1/callensxavier_home_data/SocrateAI-Scientific-Agora-K3-DarkMatter/empirical_crucible",
+  "n_samples": 100,
+  "calibration_s7": {
+    "kernel": "cooper_s7",
+    "n_mocks": 1000,
+    "reference_density": 0.28,
+    "mean": 0.591537899777188,
+    "std": 2.0682499774984885e-05,
+    "median": 0.5915378300393782,
+    "q25": 0.5915239654486614,
+    "q75": 0.5915521214807149,
+    "q05": 0.5915046444000679,
+    "q95": 0.5915714941839235,
+    "threshold_2sigma_lower": 0.591496534777638,
+    "threshold_2sigma_upper": 0.591579264776738
+  },
+  "calibration_s10": {
+    "kernel": "cooper_s10",
+    "n_mocks": 1000,
+    "reference_density": 0.28,
+    "mean": 0.5660749368142249,
+    "std": 2.0682499774998346e-05,
+    "median": 0.5660748670764151,
+    "q25": 0.5660610024856985,
+    "q75": 0.5660891585177523,
+    "q05": 0.5660416814371046,
+    "q95": 0.5661085312209609,
+    "threshold_2sigma_lower": 0.566033571814675,
+    "threshold_2sigma_upper": 0.5661163018137749
+  },
+  "tests": {
+    "L_s7_on_s7_model": {
+      "mean": 0.5995928638171225,
+      "std": 2.0544706473268316e-05,
+      "z_score_vs_mock": 389.4579537081339
+    },
+    "L_s7_on_random": {
+      "mean": 0.5915353340480649,
+      "std": 2.110722426129888e-05,
+      "z_score_vs_mock": -0.12405314400887103
+    },
+    "L_s10_on_s10_model": {
+      "mean": 0.5741301223737411,
+      "std": 2.147267923320681e-05,
+      "z_score_vs_mock": 389.46866419181504
+    },
+    "L_s10_on_random": {
+      "mean": 0.5660771181831156,
+      "std": 1.9866768363059385e-05,
+      "z_score_vs_mock": 0.10546930566232425
+    }
+  },
+  "optimization": {
+    "method": "NumPy broadcasting vectorization",
+    "expected_speedup": "~250x vs original loop-based"
+  },
+  "gate_d1v2_decision": {
+    "status": "PASS",
+    "s7_separation_sigma": 389.5801232301074,
+    "s10_separation_sigma": 389.36131232206924,
+    "threshold_sigma": 2.0,
+    "rationale": "S7 separation: 389.58\u03c3, S10 separation: 389.36\u03c3. Both must be \u22652\u03c3 for PASS."
+  }
+}
