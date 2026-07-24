@@ -1,6 +1,6 @@
 # Project Status Tracker — Dual-Scale Topological Universe Model (3-Stream)
 
-**Last updated:** 2026-07-18  
+**Last updated:** 2026-07-24  
 **Authority:** Human-decided gates; model by Fable; all three streams parallel.
 
 ---
@@ -9,8 +9,8 @@
 
 | Stream | Repository | Status | Blocker | Next Gate |
 |---|---|---|---|---|
-| **1. Theory** | SocrateAI-DualScaleTopologicalUniverseModel-LeanProposal | v0.1 done (0 sorry) | S1-1 axiom hygiene | GATE-T (axiom review) |
-| **2. K3 Selection** | SocrateAI-Scientific-Agora-K3-DarkMatter (THIS) | S2-1 PASS ✅, C3b extraction active | C3b (moduli maps) | D-3 (empirical rerun) |
+| **1. Theory** | SocrateAI-DualScaleTopologicalUniverseModel-LeanProposal | v0.1 done (0 sorry); D3 keeps `pipeline_upper_bound` as disclosed-vacuous axiom | S1-1 axiom-hygiene disclosure (bridge delivered) | GATE-T (axiom review) |
+| **2. K3 Selection** | SocrateAI-Scientific-Agora-K3-DarkMatter (THIS) | S2-1 PASS ✅; Shioda-Inose selection brief delivered (`briefs/PHASE_8_K3_SELECTION.md`); C3b extraction active | C3b partner identification (moduli maps) | D-3 (empirical rerun) |
 | **3. Experimentation** | DarkMatterK3-Home.github.io + Home infra | Awaiting Stream-2 cert | D-3 (unblocked, queueing) | DM-1..DM-4 dispatch |
 
 ---
@@ -91,8 +91,10 @@ GATE-T                     GATE D-1v2 ←─ HUMAN decides     GATE E (discovery
 
 ### S1-1 (Stream 1, lower priority)
 
-**Status:** Axiom hygiene audit pending  
-**Issue:** Non-reproducible axiom `pipeline_upper_bound` needs provenance tag or re-source  
+**Status:** Bridge artifact delivered by Stream 2 (2026-07-24); Stream 1 disclosure pending  
+**Issue:** Non-reproducible number `pipeline_upper_bound` (S₁₂ ≤ 1.177) inherits the A7 provenance defect  
+**Resolution (D3 = RETAIN AXIOMATIC FIREWALL):** the axiom is **not discharged**. It stays an explicit `axiom` with a `[DISCLOSED-VACUOUS]` docstring pointing at the Stream-2 bridge:  
+`data/interfaces/pipeline_bound_v1.json` (+ `.sha256`), generator `scripts/export_pipeline_bound_artifact.py` — deterministic, exact-rational 1177/1000, canonical sha256 `3a368d95…3169b`, typed `lean_import_kind=hypothesis` / `must_not_be_imported_as=axiom`. Promotion to a verified bound is gated on **DM-3** (Stream-3 quorum re-run).  
 **Timeline:** Can run in parallel with Stream-2; low criticality
 
 ### S2-2, S2-3, S2-4 (Stream 2, backlog)
