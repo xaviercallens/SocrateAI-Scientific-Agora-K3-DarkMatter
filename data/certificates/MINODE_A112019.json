@@ -1,0 +1,62 @@
+{
+  "checker": "check_min_ode_order.py",
+  "checker_version": "1.0.0",
+  "criterion": "min-ODE-order (generating-function Picard-Fuchs order; the geometric discriminator)",
+  "first_terms": [
+    "1",
+    "5",
+    "55",
+    "749",
+    "11251",
+    "178835"
+  ],
+  "geometric_type_if_MUM": "ELLIPTIC-curve type (order 2)  [Tier B: finite-order evidence, box-relative minimality]",
+  "min_ode": {
+    "ode_coefficients_p_i_ascending_z": {
+      "0": [
+        "80",
+        "0",
+        "21",
+        "5",
+        "0",
+        "0"
+      ],
+      "1": [
+        "-16",
+        "624",
+        "315",
+        "82",
+        "15",
+        "0"
+      ],
+      "2": [
+        "0",
+        "-16",
+        "302",
+        "235",
+        "33",
+        "5"
+      ]
+    },
+    "order": 2,
+    "orders_below_excluded_to_deg": 8,
+    "poly_degree": 5,
+    "rows_validated": 58
+  },
+  "min_recurrence": {
+    "order": 3,
+    "poly_degree": 3,
+    "rows_validated": 57
+  },
+  "n_terms_used": 60,
+  "provenance": "Generated-by: checkers/check_min_ode_order.py v1.0.0 (Tier B) | Verified-by: exact integer nullspace over full series depth | Reviewed-by: pending T0",
+  "search_box": {
+    "d_max": 8,
+    "r_max": 4
+  },
+  "sequence": "A112019",
+  "source_file": "refs/oeis_A112019_bfile.txt",
+  "source_kind": "bfile",
+  "source_sha256": "fbaed47a4d1c892ab7c8b9811ed6be95dc328a57e685aa6ed44955370d51517a",
+  "verdict": "MIN_ODE_ORDER=2 PASS(58) [deg=5; orders<2 excluded to deg 8; min recurrence order=3]"
+}
