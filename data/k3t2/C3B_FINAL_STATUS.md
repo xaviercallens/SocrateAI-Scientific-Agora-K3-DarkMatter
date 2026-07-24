@@ -32,10 +32,15 @@
 > Both partners are *extended-form* order-2 operators (full-quadratic on fₙ₋₁, "d≠0") — which is
 > exactly why none of Zagier's six *pure* sporadics matched.
 >
-> **Epistemic scope:** verdicts are finite-order machine checks — report as **PASS(58)**, not
-> "proved for all n". The all-n operator identity L₃ = Sym²(L₂) is a **Stream-1 symbolic follow-up**.
-> Naming L₂ "the elliptic/brane partner" and any bulk↔brane physical coupling remains **Tier C**
-> (conjecture); the geometric Sym² relation implies no EFT coupling absent a worked matching.
+> **Epistemic scope (updated 2026-07-24):** the all-n operator identity **L₃ = Sym²(L₂) is now
+> proven at the CAS level** — `check_C3b_symsqrt.py` computes Sym²(L₂) symbolically and emits verdict
+> **`SYM2_OPERATOR_IDENTITY_PROVEN`** (Sym²(L₂) − L₃ = 0 in all three monic d/dz coefficients, exact,
+> ∀n), independently of the finite-order fit. Deep Think (T0s) returned CONCUR via a separate θ-basis
+> derivation; Stream 2 re-verified by the monic d/dz route (Two-Model Rule cleared). What remains is
+> the **Lean formalization** (a `ring` identity over `Polynomial ℚ`, aided by θ(P₂)=2P₁) — tracked in
+> `briefs/STREAM1_C3B_SYM2_PROOF_TASK.md`. Naming L₂ "the elliptic/brane partner" or any bulk↔brane
+> physical coupling remains **Tier C** (conjecture) — the "load-bearing physical vacuum" framing is
+> NOT adopted; the geometric Sym² relation implies no EFT coupling absent a worked matching.
 >
 > **F6 correction:** the 2026-07-20 note calling A002893 "weight-3 K3-type / genuinely order-3 ODE,
 > invalid as an order-2 brane" was itself wrong — A002893 is Zagier's second-order sporadic C

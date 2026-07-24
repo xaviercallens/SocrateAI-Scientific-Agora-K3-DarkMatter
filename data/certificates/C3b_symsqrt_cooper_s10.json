@@ -50,7 +50,21 @@
     "mirror_map_z_L2_eq_z_L3": true,
     "partner_MUM": true,
     "recurrence_validated_to_n": 58,
-    "sqrt_is_order2_holonomic": true
+    "sqrt_is_order2_holonomic": true,
+    "sym2_operator_detail": {
+      "collapse_theta_P2_eq_2P1": true,
+      "partner_operator_theta": {
+        "P0": "-15*z**2 - z",
+        "P1": "-64*z**2 - 6*z",
+        "P2": "-64*z**2 - 12*z + 1"
+      },
+      "sym2_minus_L3_monic": {
+        "D0": "0",
+        "D1": "0",
+        "D2": "0"
+      }
+    },
+    "sym2_operator_identity_L3_eq_Sym2L2": true
   },
-  "verdict": "SYM2_PARTNER_EXTRACTED(validated to n=58, mirror q^14)"
+  "verdict": "SYM2_OPERATOR_IDENTITY_PROVEN(all-n symbolic; partner revalidated to n=58, mirror q^14)"
 }

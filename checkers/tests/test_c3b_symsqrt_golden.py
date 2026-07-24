@@ -17,12 +17,16 @@ REFS = str(REPO / "refs" / "recurrences_v1.json")
 
 
 def test_known_good_s7_extracts_partner():
-    """cooper_s7 IS a symmetric square; partner = A279619 (1,2,22,336,6006,...)."""
+    """cooper_s7 IS a symmetric square; partner = A279619 (1,2,22,336,6006,...).
+    The all-n operator identity L3 = Sym^2(L2) closes symbolically."""
     result, code = chk.run_check(REFS, "cooper_s7", n_fit=26, n_val=60)
     assert code == 0
-    assert result["verdict"].startswith("SYM2_PARTNER_EXTRACTED")
+    assert result["verdict"].startswith("SYM2_OPERATOR_IDENTITY_PROVEN")
     assert result["validation"]["partner_MUM"] is True
     assert result["validation"]["mirror_map_z_L2_eq_z_L3"] is True
+    assert result["validation"]["sym2_operator_identity_L3_eq_Sym2L2"] is True
+    # Deep Think's collapse identity theta(P2) = 2 P1 (independently re-derived 2026-07-24).
+    assert result["validation"]["sym2_operator_detail"]["collapse_theta_P2_eq_2P1"] is True
     # Partner sequence is the exact integer sequence (falsifiable literal).
     assert result["partner_L2"]["first_terms"][:6] == ["1", "2", "22", "336", "6006", "117348"]
     assert result["partner_L2"]["partner_is_integral"] is True
@@ -31,8 +35,9 @@ def test_known_good_s7_extracts_partner():
 def test_known_good_s10_extracts_partner():
     result, code = chk.run_check(REFS, "cooper_s10", n_fit=26, n_val=60)
     assert code == 0
-    assert result["verdict"].startswith("SYM2_PARTNER_EXTRACTED")
+    assert result["verdict"].startswith("SYM2_OPERATOR_IDENTITY_PROVEN")
     assert result["validation"]["mirror_map_z_L2_eq_z_L3"] is True
+    assert result["validation"]["sym2_operator_identity_L3_eq_Sym2L2"] is True
 
 
 def test_known_bad_order2_bulk_is_rejected():

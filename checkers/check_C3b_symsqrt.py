@@ -110,6 +110,58 @@ def validate_recurrence(f, Cpoly, Apoly, Bpoly, n_val):
     return None
 
 
+def sym2_operator_identity(bulk_A, bulk_B, partner_A_expr, partner_B_expr):
+    """Symbolically verify L3 = Sym^2(L2) as differential operators over Q(z) — an ALL-n proof,
+    not a finite-order check. Both operators are built in the theta = z d/dz basis from their
+    recurrence polynomials: L = theta^order - z*A(theta) - z^2*B(theta+1). We convert L2 to monic
+    d/dz form (a1, a0), form Sym^2 via the classical formula
+        Sym^2(D^2 + a1 D + a0) = D^3 + 3a1 D^2 + (2a1^2 + a1' + 4a0) D + (4a0 a1 + 2a0'),
+    convert L3 to monic d/dz form, and check all three coefficients are equal as rational
+    functions of z. Returns (bool, collapse_identity_holds, detail)."""
+    th = sp.Symbol("theta")
+    z = sp.Symbol("z")
+
+    def Pz(Lexpr, order):
+        poly = sp.Poly(sp.expand(Lexpr), th)
+        P = {j: sp.Integer(0) for j in range(order + 1)}
+        for (j,), c in poly.terms():
+            P[j] = sp.expand(c)
+        return P
+
+    # L2 = theta^2 - z A2(theta) - z^2 B2(theta+1)
+    A2 = sp.sympify(str(partner_A_expr).replace("n", "theta"))
+    B2 = sp.sympify(str(partner_B_expr).replace("n", "theta"))
+    L2 = sp.expand(th**2 - z * A2 - z**2 * B2.subs(th, th + 1))
+    P = Pz(L2, 2)
+    collapse = sp.expand(z * sp.diff(P[2], z) - 2 * P[1]) == 0  # theta(P2) = 2 P1 (Deep Think)
+    c2 = sp.expand(P[2] * z**2); c1 = sp.expand((P[2] + P[1]) * z); c0 = sp.expand(P[0])
+    a1 = sp.cancel(c1 / c2); a0 = sp.cancel(c0 / c2)
+    s_b2 = sp.cancel(3 * a1)
+    s_b1 = sp.cancel(2 * a1**2 + sp.diff(a1, z) + 4 * a0)
+    s_b0 = sp.cancel(4 * a0 * a1 + 2 * sp.diff(a0, z))
+
+    # L3 = theta^3 - z A3(theta) - z^2 B3(theta+1), monic in d/dz
+    A3 = sp.Poly(bulk_A.as_expr().subs(sp.Symbol("k"), th), th).as_expr()
+    B3 = sp.Poly(bulk_B.as_expr().subs(sp.Symbol("k"), th), th).as_expr()
+    L3 = sp.expand(th**3 - z * A3 - z**2 * B3.subs(th, th + 1))
+    Q = Pz(L3, 3)
+    d3 = sp.expand(Q[3] * z**3)
+    d2 = sp.expand(3 * Q[3] * z**2 + Q[2] * z**2)
+    d1 = sp.expand((Q[3] + Q[2] + Q[1]) * z)
+    d0 = sp.expand(Q[0])
+    l_b2 = sp.cancel(d2 / d3); l_b1 = sp.cancel(d1 / d3); l_b0 = sp.cancel(d0 / d3)
+
+    eq2 = sp.simplify(s_b2 - l_b2) == 0
+    eq1 = sp.simplify(s_b1 - l_b1) == 0
+    eq0 = sp.simplify(s_b0 - l_b0) == 0
+    detail = {"partner_operator_theta": {"P2": str(P[2]), "P1": str(P[1]), "P0": str(P[0])},
+              "collapse_theta_P2_eq_2P1": bool(collapse),
+              "sym2_minus_L3_monic": {"D2": str(sp.simplify(s_b2 - l_b2)),
+                                      "D1": str(sp.simplify(s_b1 - l_b1)),
+                                      "D0": str(sp.simplify(s_b0 - l_b0))}}
+    return (eq2 and eq1 and eq0), bool(collapse), detail
+
+
 def run_check(refs_path, bulk_id, n_fit=26, n_val=60, deg=2, mirror_order=14):
     refs_raw = Path(refs_path).read_bytes()
     refs_sha = hashlib.sha256(refs_raw).hexdigest()
@@ -191,6 +243,9 @@ def run_check(refs_path, bulk_id, n_fit=26, n_val=60, deg=2, mirror_order=14):
         "partner_is_integral": partner_integral,
         "B_coefficient_factored": str(sp.factor(Bexpr)),
     }
+    # ALL-n operator-level proof: verify L3 = Sym^2(L2) symbolically over Q(z).
+    op_identity, collapse_ok, op_detail = sym2_operator_identity(A3, B3, Aexpr, Bexpr)
+
     result["validation"] = {
         "sqrt_is_order2_holonomic": True,
         "recurrence_validated_to_n": n_val - 2,
@@ -198,8 +253,16 @@ def run_check(refs_path, bulk_id, n_fit=26, n_val=60, deg=2, mirror_order=14):
         "mirror_map_z_L2_eq_z_L3": bool(mirror_match),
         "mirror_map_order": mirror_order,
         "bulk_z_of_q": [str(x) for x in z_l3[:8]],
+        "sym2_operator_identity_L3_eq_Sym2L2": bool(op_identity),
+        "sym2_operator_detail": op_detail,
     }
-    if mum2 and mirror_match:
+    if mum2 and mirror_match and op_identity:
+        result["verdict"] = ("SYM2_OPERATOR_IDENTITY_PROVEN(all-n symbolic; "
+                             f"partner revalidated to n={n_val - 2}, mirror q^{mirror_order})")
+        code = 0
+    elif mum2 and mirror_match:
+        # Partner is right to finite order but the symbolic operator identity did not close —
+        # do not claim all-n; report the weaker finite-order verdict.
         result["verdict"] = f"SYM2_PARTNER_EXTRACTED(validated to n={n_val - 2}, mirror q^{mirror_order})"
         code = 0
     else:

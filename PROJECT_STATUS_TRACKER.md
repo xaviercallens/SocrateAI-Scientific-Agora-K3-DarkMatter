@@ -90,8 +90,11 @@ the bulk operator L₃, computed directly. Zagier's six sporadic order-2 sequenc
 `check_C3b_symsqrt.py` then extracted L₂ from √g and confirmed z(L₂)=z(L₃) (moduli map = identity).  
 **Partners:** s7 → OEIS A279619 `(n+1)²fₙ₊₁=(26n²+13n+2)fₙ+3(3n−1)(3n−2)fₙ₋₁`; s10 → rational
 `(n+1)²fₙ₊₁=(12n²+6n+1)fₙ+(8n−5)(8n−3)fₙ₋₁`. Certificates `data/certificates/C3b_symsqrt_*.json`, PASS(58).  
-**Remaining (Stream-1 follow-up, not a blocker):** upgrade PASS(58) to an all-n operator identity
-L₃ = Sym²(L₂) via symbolic ODE. Physical brane interpretation stays Tier C.  
+**All-n operator identity (CAS-PROVEN 2026-07-24):** `check_C3b_symsqrt.py` verifies L₃ = Sym²(L₂)
+symbolically (verdict `SYM2_OPERATOR_IDENTITY_PROVEN`); Deep Think (T0s) CONCUR + independent Stream-2
+re-derivation (Two-Model Rule cleared). **Remaining:** Lean `ring` formalization only (see
+`briefs/STREAM1_C3B_SYM2_PROOF_TASK.md`). Physical brane interpretation stays Tier C (the
+"load-bearing physical vacuum" framing is not adopted).  
 **Note:** s₁₈ still `BLOCKED` (corrupt recurrence; re-transcribe from arXiv:2102.11839 before any C3b run).  
 **Authority:** Peer review (memorandum 2026-07-18); resolution 2026-07-24
 

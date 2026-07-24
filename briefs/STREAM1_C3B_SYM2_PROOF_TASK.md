@@ -6,6 +6,16 @@
 **Provenance of inputs:** commit `3b6064b`; certificates `data/certificates/C3b_symsqrt_cooper_s{7,10}.json`;
 checker `checkers/check_C3b_symsqrt.py`; refs `cooper_s7_partner`, `cooper_s10_partner`.
 
+> ## ✅ UPDATE 2026-07-24 — the CAS-level proof is DONE; only the Lean encoding remains.
+>
+> Deep Think returned CONCUR with an independent θ-basis derivation. **Stream 2 then independently
+> verified the operator identity by a different route** (monic d/dz symmetric-square formula), and
+> promoted it into the checker: `check_C3b_symsqrt.py` now computes Sym²(L₂) symbolically and
+> emits verdict **`SYM2_OPERATOR_IDENTITY_PROVEN`** for both s7 and s10 — `Sym²(L₂) − L₃ = 0` in all
+> three monic d/dz coefficients (exact, all n), and Deep Think's collapse identity **θ(P₂) = 2P₁**
+> holds. So §2–§3 below are **complete at the CAS level**; the ONLY remaining work is the Lean
+> formalization (§3 step 4). Verified operators are tabulated in §3a.
+
 > Tiers: **[A]** established/certified · **[B]** checkable, unproven (carries route) · **[C]** physical.
 
 ## 1. What Stream 2 established (and its exact epistemic status)
@@ -48,6 +58,21 @@ n=58 checks. The mirror-map equality z(L₂)=z(L₃) then follows structurally (
 4. **On success:** upgrade the two certificates' verdict language from `PASS(58)` to a Lean-backed all-n
    statement, cite the `lake env lean` output in the commit (Rule 4), and set repo state `SYM2_PROVED`
    for s7/s10.
+
+## 3a. Verified operators (for the Lean encoding)
+
+In the θ = z d/dz basis, L₂ = P₂(z)θ² + P₁(z)θ + P₀(z) (all checker-verified, commit pending):
+
+| | P₂(z) | P₁(z) | P₀(z) | θ(P₂)−2P₁ |
+|---|---|---|---|---|
+| **s7**  | 1 − 26z − 27z² | −13z − 27z² | −2z − 6z² | 0 ✓ |
+| **s10** | 1 − 12z − 64z² | −6z − 64z²  | −z − 15z² | 0 ✓ |
+
+Because **θ(P₂) = 2P₁ identically**, the classical Sym² fractional terms collapse and L₃ = Sym²(L₂)
+reduces to the linear polynomial relations Deep Think noted (K₂ = 3P₁, K₁ = θ(P₁)+4P₀, K₀ = 2θ(P₀)),
+each provable in `Polynomial ℚ` by `ring`. Two-Model note: Stream 2 verified via the monic d/dz
+`Sym²(D²+a₁D+a₀) = D³+3a₁D²+(2a₁²+a₁'+4a₀)D+(4a₀a₁+2a₀')` route — an *independent* derivation from
+Deep Think's; both give `Sym²(L₂) − L₃ = 0`. The operator-form gate is therefore cleared.
 
 ## 4. Scope guards
 
