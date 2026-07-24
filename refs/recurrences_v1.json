@@ -71,9 +71,8 @@
     },
     "zagier_sporadic_A": {
       "type": "order-2",
-      "status": "BLOCKED_WRONG_TYPE",
-      "_meta_status": "BLOCKED",
-      "source": "OEIS A002893 (http://oeis.org/A002893); a(n)=Sum_{k=0..n} C(n,k)^2 C(2k,k); Zagier sporadic (a,b,c)=(10,3,9); Beukers-Stienstra 'Picard-Fuchs Equation and Formal Brauer Group of Certain Elliptic K3-Surfaces' (Math. Ann. 271, 1985); Beauville four-singular-fibre family.",
+      "status": "OK_NOT_A_PARTNER",
+      "source": "OEIS A002893 (http://oeis.org/A002893); a(n)=Sum_{k=0..n} C(n,k)^2 C(2k,k); Zagier sporadic SECOND-ORDER sequence C, triple (A,B,λ)=(10,9,3), per Gorodetsky arXiv:2102.11839 Table (fetched 2026-07-24); Beukers-Stienstra 'Picard-Fuchs Equation and Formal Brauer Group of Certain Elliptic K3-Surfaces' (Math. Ann. 271, 1985).",
       "closed_form": "∑_{k=0}^{n} C(n,k)² · C(2k,k)",
       "initial_terms": [1, 3, 15, 93, 639, 4653, 35169, 272835, 2157759, 17319837],
       "recurrence_python": "((10*k**2+10*k+3)*s[-1] - 9*k**2*s[-2]) / ((k+1)**2)",
@@ -82,7 +81,35 @@
         "B": [0, 0, -9],
         "C": [1, 2, 1]
       },
-      "_meta_note": "CORRECTED 2026-07-20: the original entry was corrupt. Its recurrence_python did not reproduce its own stated terms (predicted a2=-6, not 15) and the tail terms [274803, 2189423, 17799159] were fabricated/mis-transcribed (inconsistent with any order-2 Apéry recurrence). Reconstructed by exact linear fit to the correct first 7 terms and verified against OEIS (fetched, not memory): the sequence is A002893. Recurrence (n+1)^2 a(n+1) = (10n^2+10n+3)a(n) - 9n^2 a(n-1) reproduces all corrected terms exactly and is integral. BLOCKED as a C3b brane: A002893 is weight-3 K3-type (Beukers-Stienstra formal Brauer group of an ELLIPTIC K3 surface), NOT a weight-2 elliptic curve. It has a three-term recurrence but a genuinely order-3 generating-function ODE, so the checker's 2-solution (order-2) Frobenius/mirror construction is invalid for it. It is therefore NOT a valid order-2 elliptic partner for cooper_s10; the correct weight-2 elliptic partner is still unidentified (modular-forms lookup pending)."
+      "_meta_note": "History: CORRECTED 2026-07-20 (original recurrence was corrupt; predicted a2=-6 not 15; reconstructed by exact fit + OEIS fetch to A002893). F6 CORRECTION 2026-07-24: the 2026-07-20 verdict 'BLOCKED_WRONG_TYPE / genuinely order-3 generating-function ODE' was ITSELF wrong. Per Gorodetsky arXiv:2102.11839 (fetched) A002893 is Zagier's SECOND-ORDER sporadic sequence C (A,B,λ)=(10,9,3): it satisfies (n+1)^2 a(n+1)=(10n^2+10n+3)a(n)-9n^2 a(n-1), is MUM (C=(k+1)^2), integral, and its order-2 Frobenius/mirror construction is VALID (the earlier note conflated the sequence with its own symmetric square, an order-3 K3). STATUS NOW: valid order-2 sequence, but empirically RULED OUT as the partner of cooper_s7/s10 — check_C3b_moduli_map found no algebraic mirror-map relation up to bidegree 5 across 8 power-hypotheses, validated to q^32 (2026-07-24 partner sweep). The true partners are the symmetric-square roots cooper_s7_partner / cooper_s10_partner below."
+    },
+    "cooper_s7_partner": {
+      "type": "order-2",
+      "status": "OK",
+      "source": "DERIVED (not literature transcription): symmetric-square root of cooper_s7 (order-3, A183204), extracted by checkers/check_C3b_symsqrt.py; certificate data/certificates/C3b_symsqrt_cooper_s7.json. Integer sequence is OEIS A279619 (1,2,22,336,6006,117348,2428272,52303680,...; fetched b-file 2026-07-24).",
+      "closed_form": "[order-2 partner operator L2 with cooper_s7 = Sym^2(L2); f = sqrt of the s7 generating function]",
+      "initial_terms": [1, 2, 22, 336, 6006, 117348, 2428272, 52303680, 1160427510, 26337699740],
+      "recurrence_python": "((26*k**2+13*k+2)*s[-1] + (27*k**2-27*k+6)*s[-2])/((k+1)**2)",
+      "recurrence_coefficients": {
+        "A": [2, 13, 26],
+        "B": [6, -27, 27],
+        "C": [1, 2, 1]
+      },
+      "_meta_note": "Extended-form order-2 (B(n)=3(3n-1)(3n-2) is a full quadratic, not pure -Bn^2, so NOT one of Zagier's six pure sporadics). MUM validated; recurrence re-validated to n=58; mirror map z(q) equals cooper_s7's bulk z(q) exactly to q^14 (Sym^2 preserves the mirror map -> the C3b moduli map is the identity). This IS the weight-2 elliptic partner for the s7 K3. Verdict PASS(58): finite-order machine check; an all-n operator identity L3=Sym^2(L2) is a Stream-1 symbolic follow-up."
+    },
+    "cooper_s10_partner": {
+      "type": "order-2",
+      "status": "OK",
+      "source": "DERIVED (not literature transcription): symmetric-square root of cooper_s10 (order-3, A005260 = sum C(n,k)^4), extracted by checkers/check_C3b_symsqrt.py; certificate data/certificates/C3b_symsqrt_cooper_s10.json.",
+      "closed_form": "[order-2 partner operator L2 with cooper_s10 = Sym^2(L2); f = sqrt of the s10 generating function; f is RATIONAL, not integral (denominators are powers of 2)]",
+      "initial_terms_rational": ["1", "1", "17/2", "147/2", "6363/8", "73647/8", "1812069/16", "23160699/16"],
+      "recurrence_python": "((12*k**2+6*k+1)*s[-1] + (64*k**2-64*k+15)*s[-2])/((k+1)**2)",
+      "recurrence_coefficients": {
+        "A": [1, 6, 12],
+        "B": [15, -64, 64],
+        "C": [1, 2, 1]
+      },
+      "_meta_note": "Extended-form order-2 (B(n)=(8n-5)(8n-3) is a full quadratic). MUM validated; recurrence re-validated to n=58; mirror map z(q) equals cooper_s10's bulk z(q) exactly to q^14. The partner series f is NOT integral (2-power denominators), so it is an operator-level partner rather than an Apery-like integer sequence — the elliptic partner exists as L2 even though it is not a catalogued integer sequence. Verdict PASS(58); all-n operator identity is a Stream-1 follow-up."
     }
   }
 }

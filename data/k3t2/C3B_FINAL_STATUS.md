@@ -1,8 +1,46 @@
 # C3b Extraction — Final Status Report
 
-**Date:** 2026-07-18 (**correction appended 2026-07-20**)  
-**Status:** FRAMEWORK COMPLETE (for the 3 executed sequences), AWAITING PARTNER IDENTIFICATION  
+**Date:** 2026-07-18 (corrections 2026-07-20; **RESOLVED 2026-07-24**)  
+**Status:** ✅ **RESOLVED for cooper_s7 and cooper_s10** — order-2 elliptic partners extracted and certified  
 **Authority:** Peer review (2026-07-18); user directive to hold Stream 3 handoff until C3b complete
+
+---
+
+> ## ✅ RESOLUTION 2026-07-24 — the partner is computed, not catalogued
+>
+> **The C3b partner search was looking for the wrong kind of object.** It sought a *catalogued*
+> order-2 Apéry-like sequence whose mirror map has a low-degree algebraic relation to the bulk's.
+> Every catalogued candidate failed — because the partner is not in any catalogue.
+>
+> **What was done (all exact arithmetic, from committed data):**
+> 1. Fetched Zagier's six sporadic order-2 sequences (Gorodetsky arXiv:2102.11839, Table) and ran
+>    the moduli-map checker for s7 and s10 against **all six** (incl. apery_zeta2=D and A002893=C).
+>    Result: **no validated mirror-map relation** up to bidegree 5, 8 power-hypotheses, to q³².
+>    The known sporadic order-2 class is exhausted — none is the partner.
+> 2. Tested symmetric-square-ness directly: the series square root f = √(Σaₙzⁿ) of s7 and s10 is
+>    **order-2 holonomic** (exact nullspace fit, re-validated to n=58). A generic order-3 sequence's
+>    √g is NOT (control), so this is a non-trivial property. This *extracts the partner operator L₂*.
+> 3. Confirmed **z(L₂)(q) = z(L₃)(q) exactly** to q¹⁴ — Sym² preserves the mirror map, so the C3b
+>    moduli map is the **identity** (the tightest possible Shioda–Inose relation, z_bulk = z_brane).
+>
+> **Partners (checker `check_C3b_symsqrt.py`; certificates `data/certificates/C3b_symsqrt_*.json`):**
+> - **s7** → `(n+1)²fₙ₊₁ = (26n²+13n+2)fₙ + 3(3n−1)(3n−2)fₙ₋₁`, integer sequence **OEIS A279619**
+>   (1, 2, 22, 336, 6006, 117348, …). Certified `SYM2_PARTNER_EXTRACTED`, PASS(58).
+> - **s10** → `(n+1)²fₙ₊₁ = (12n²+6n+1)fₙ + (8n−5)(8n−3)fₙ₋₁`, partner series **rational** (2-power
+>   denominators) — an operator-level partner, not a catalogued integer sequence. PASS(58).
+>
+> Both partners are *extended-form* order-2 operators (full-quadratic on fₙ₋₁, "d≠0") — which is
+> exactly why none of Zagier's six *pure* sporadics matched.
+>
+> **Epistemic scope:** verdicts are finite-order machine checks — report as **PASS(58)**, not
+> "proved for all n". The all-n operator identity L₃ = Sym²(L₂) is a **Stream-1 symbolic follow-up**.
+> Naming L₂ "the elliptic/brane partner" and any bulk↔brane physical coupling remains **Tier C**
+> (conjecture); the geometric Sym² relation implies no EFT coupling absent a worked matching.
+>
+> **F6 correction:** the 2026-07-20 note calling A002893 "weight-3 K3-type / genuinely order-3 ODE,
+> invalid as an order-2 brane" was itself wrong — A002893 is Zagier's second-order sporadic C
+> (10,9,3), a valid order-2 sequence; it is simply *not s7/s10's partner* (now empirically ruled
+> out). The refs entry is corrected to `OK_NOT_A_PARTNER`.
 
 ---
 

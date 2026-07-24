@@ -10,7 +10,7 @@
 | Stream | Repository | Status | Blocker | Next Gate |
 |---|---|---|---|---|
 | **1. Theory** | SocrateAI-DualScaleTopologicalUniverseModel-LeanProposal | v0.1 done (0 sorry); D3 keeps `pipeline_upper_bound` as disclosed-vacuous axiom | S1-1 axiom-hygiene disclosure (bridge delivered) | GATE-T (axiom review) |
-| **2. K3 Selection** | SocrateAI-Scientific-Agora-K3-DarkMatter (THIS) | S2-1 PASS ✅; Shioda-Inose selection brief delivered (`briefs/PHASE_10_K3_SELECTION.md`); C3b extraction active | C3b partner identification (moduli maps) | D-3 (empirical rerun) |
+| **2. K3 Selection** | SocrateAI-Scientific-Agora-K3-DarkMatter (THIS) | S2-1 PASS ✅; brief `briefs/PHASE_10_K3_SELECTION.md`; **C3b RESOLVED for s7/s10** (order-2 partners extracted, `check_C3b_symsqrt.py`, PASS(58)) | Stream-1 all-n Sym² identity (follow-up) | D-3 (empirical rerun) |
 | **3. Experimentation** | DarkMatterK3-Home.github.io + Home infra | Awaiting Stream-2 cert | D-3 (unblocked, queueing) | DM-1..DM-4 dispatch |
 
 ---
@@ -81,13 +81,19 @@ GATE-T                     GATE D-1v2 ←─ HUMAN decides     GATE E (discovery
 **Verdict:** Observable L_K validated; kernel-swap identity empirically confirmed  
 **Outcome:** D-3 (empirical rerun) UNFROZEN; Stream-3 dispatch authorized
 
-### C3b Moduli Map Extraction (NEW ACTIVE BLOCKER)
+### C3b Moduli Map Extraction (RESOLVED ✅ 2026-07-24)
 
-**Status:** Queued for immediate execution  
-**Requirement:** Extract explicit Shioda-Inose moduli maps F(z) linking bulk K3 to brane elliptic moduli  
-**Impact:** If C3b fails (extreme singularities, algebraic closure breaks), geometric locking shatters → Branch F5  
-**Task:** Run `check_C3b_moduli_map.py` on trio (s₇, s₁₀, s₁₈) against verified order-2 partners  
-**Authority:** Peer review (memorandum 2026-07-18)
+**Status:** RESOLVED for cooper_s7 and cooper_s10 — order-2 elliptic partners extracted and certified  
+**Key insight:** the partner is not a catalogued sequence to look up; it is L₂ = symmetric-square root of
+the bulk operator L₃, computed directly. Zagier's six sporadic order-2 sequences were all ruled out by
+`check_C3b_moduli_map.py` (no mirror-map relation ≤ bidegree 5, to q³²); the constructive checker
+`check_C3b_symsqrt.py` then extracted L₂ from √g and confirmed z(L₂)=z(L₃) (moduli map = identity).  
+**Partners:** s7 → OEIS A279619 `(n+1)²fₙ₊₁=(26n²+13n+2)fₙ+3(3n−1)(3n−2)fₙ₋₁`; s10 → rational
+`(n+1)²fₙ₊₁=(12n²+6n+1)fₙ+(8n−5)(8n−3)fₙ₋₁`. Certificates `data/certificates/C3b_symsqrt_*.json`, PASS(58).  
+**Remaining (Stream-1 follow-up, not a blocker):** upgrade PASS(58) to an all-n operator identity
+L₃ = Sym²(L₂) via symbolic ODE. Physical brane interpretation stays Tier C.  
+**Note:** s₁₈ still `BLOCKED` (corrupt recurrence; re-transcribe from arXiv:2102.11839 before any C3b run).  
+**Authority:** Peer review (memorandum 2026-07-18); resolution 2026-07-24
 
 ### S1-1 (Stream 1, lower priority)
 

@@ -133,11 +133,21 @@ def test_determinism(tmp_path):
 
 @pytest.mark.skipif(not REFS.exists(), reason="frozen refs not present")
 def test_frozen_refs_integrality():
-    """Both frozen sequences must generate integrally — a transcription sanity gate."""
+    """Every VALID frozen sequence must be MUM and generate integrally — a transcription
+    sanity gate. Skips: (a) BLOCKED entries (intentionally quarantined, not required valid);
+    (b) operator-level partners that declare only `initial_terms_rational` (a symmetric-square
+    root partner may be rational, e.g. cooper_s10_partner — it is still required MUM)."""
     refs = json.loads(REFS.read_text())
     for sid, entry in refs["sequences"].items():
+        if entry.get("_meta_status") == "BLOCKED" or str(entry.get("status", "")).startswith("BLOCKED"):
+            continue
         order = {"order-2": 2, "order-3": 3}[entry["type"]]
         A, B, C, mum = extract_recurrence_polys(entry["recurrence_python"], order)
         assert mum, f"{sid}: not MUM"
-        _, integral = generate_sequence(A, B, C, entry["initial_terms"], 40)
+        init = entry.get("initial_terms")
+        if init is None:
+            # Rational operator-level partner: MUM already asserted; integrality N/A by design.
+            assert "initial_terms_rational" in entry, f"{sid}: missing initial terms"
+            continue
+        _, integral = generate_sequence(A, B, C, init, 40)
         assert integral, f"{sid}: integrality failed — check transcription"
