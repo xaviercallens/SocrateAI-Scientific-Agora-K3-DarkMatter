@@ -31,18 +31,28 @@ Stream 3:  D-3 empirical rerun (real SDSS/Euclid sectors) → Gate E verdict
 
 | Task | Status | Blocker | Next |
 |---|---|---|---|
+| **L₃ = Sym²(L₂) proof (s7/s10)** | ✅ SYM2_PROVED | — | Kernel-verified, axiom-clean (2026-07-24) |
 | **D1 Option B (Polynomial Identity)** | 🟢 DESIGN COMPLETE | — | Encode P_cleared(z)≡0 for generic Cooper family |
-| **L₃ = Sym²(L₂) proof (s7/s10)** | 🟢 AUTHORIZED | — | Encode collapsed relations; deploy `ring` tactic |
 | **Frobenius Solutions (D2 WZ)** | 🟡 QUEUED | Fetch G(n,k) from arXiv:2102.11839 | Mining certificates if needed |
 | **Axiom Hygiene (S1-1)** | 🟢 DISCHARGED | — | `pipeline_upper_bound` disclosure live |
 | **Register Freeze (D5)** | 🟢 LIVE | s18 stays BLOCKED | Maintain: {s7, s10} Tier A; {s18} Tier B |
 
-**Authorized Action (Stream 1):** Encode L₂/L₃ operators in Polynomial ℚ. Prove:
-- K₂ = 3P₁ (via ring)
-- K₁ = θ(P₁) + 4P₀ (via ring)
-- K₀ = 2θ(P₀) (via ring)
+**✅ COMPLETED (Stream 1, 2026-07-24): `L₃ = Sym²(L₂)` kernel-verified in Lean 4.**
+File `lean4_formal_proofs/Structures/CooperSym2Proof.lean` proves, for BOTH s7 and s10,
+the θ-basis coefficient identities (θ = z·d/dz, exact in ℚ[z]):
+- Q₃ = P₂ (θ³)
+- Q₂ = 3·P₁ (θ²)
+- Q₁ = θ(P₁) + 4·P₀ (θ¹)
+- Q₀ = 2·θ(P₀) (θ⁰)
+- collapse: θ(P₂) = 2·P₁
 
-Upon success → repo status = [A] SYM2_PROVED.
+Discharged by `simp [Polynomial.derivative_*] + ring`. **NO `sorry`, NO `axiom`, NO
+`native_decide`.** Axioms: `[propext, Classical.choice, Quot.sound]` (Mathlib foundational
+only, verified via `#print axioms`). `lake build Structures.CooperSym2Proof` = 0 errors.
+Repo status → **[A] SYM2_PROVED** (`PROOF_STATUS.txt`).
+
+Scope guard (VISION §1.3): mathematical operator identity only — no bulk↔brane physical
+coupling is claimed (that remains Tier C).
 
 ---
 
