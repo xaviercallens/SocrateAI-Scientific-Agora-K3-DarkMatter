@@ -2,16 +2,45 @@
   "checker": "check_C1_singular_loci.py",
   "checker_version": "1.0.0",
   "criterion": "C1-loci (CORRECTED z-space singular locus of order-2 partner)",
-  "kodaira_types": "TODO \u2014 requires local Frobenius exponents; NOT hardcoded (see F6 note)",
+  "exponent_differences": {
+    "-1/4": "1/2",
+    "0": "0",
+    "1/16": "1/2",
+    "oo": "1/4"
+  },
+  "finite_singular_loci_z": [
+    "-1/4",
+    "1/16"
+  ],
+  "fuchs_relation_check": {
+    "PASS": true,
+    "expected_n_sing_minus_2": 2,
+    "sum_all_exponents": "2"
+  },
+  "kodaira_types": "DEFERRED (open ticket): exponent differences computed exactly, but PF-exponent -> Kodaira-type requires resolving the rank-1 twist (fibre monodromy in SL2(Z), det +1) vs raw PF monodromy. NOT emitting a type or a rho/T until that is done rigorously \u2014 see F6 lesson.",
   "leading_dz_factor_P2_of_z": "-(4*z + 1)*(16*z - 1)",
+  "local_exponents": {
+    "-1/4": [
+      "1/2",
+      "0"
+    ],
+    "0": [
+      "0",
+      "0"
+    ],
+    "1/16": [
+      "1/2",
+      "0"
+    ],
+    "oo": [
+      "5/8",
+      "3/8"
+    ]
+  },
   "mum_point": "z=0",
   "partner": "cooper_s10_partner",
   "provenance": "Generated-by: checkers/check_C1_singular_loci.py v1.0.0 (Tier B) | Verified-by: exact algebra (leading d/dz coefficient) | Reviewed-by: pending T0",
   "refs_sha256": "17f54915417277ea80480fb3ff32edfc5bf7753435a5d634e3c998fc3dd1b6ce",
-  "singular_loci_z": [
-    "-1/4",
-    "1/16"
-  ],
   "supersedes": "check_C1.py singular-locus step (F6 defect: index-space roots of B(k))",
-  "verdict": "C1_SINGULAR_LOCI_CORRECTED(n_finite_loci=2)"
+  "verdict": "C1_LOCI_AND_EXPONENTS_CORRECTED(n_finite_loci=2, fuchs_ok=True)"
 }

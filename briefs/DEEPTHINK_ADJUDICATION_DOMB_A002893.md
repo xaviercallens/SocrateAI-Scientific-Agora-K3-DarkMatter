@@ -56,11 +56,20 @@ it solved for roots of the recurrence coefficient **B(k) in the discrete index k
 them as z-space singular points, with **hardcoded** exponents (0, 1/2) → "type II". Consequences:
 - The C1 fibre configs and the C2 numbers **ρ=4, T=18** (both partners) are **NOT valid** —
   retracted (`_F6_RETRACTED` stamped on all six C1_/C2_ certs; README disclosure added).
-- **Corrected z-space loci** (`checkers/check_C1_singular_loci.py`, exact algebra):
-  cooper_s7_partner **{−1, 1/27}**, cooper_s10_partner **{−1/4, 1/16}**, A002893 **{1/9, 1}**.
+- **Corrected z-space loci + exact local exponents** (`checkers/check_C1_singular_loci.py`,
+  exact indicial algebra, **Fuchs relation Σexponents = #sing−2 validated = 2 for all**):
+  - cooper_s7_partner: z=0 {0,0}(MUM); z=1/27 {0,1/2}; z=−1 {0,1/2}; z=∞ {1/3,2/3}. Δ = 1/2,1/2,1/3.
+  - cooper_s10_partner: z=0 {0,0}; z=1/16 {0,1/2}; z=−1/4 {0,1/2}; z=∞ {3/8,5/8}. Δ = 1/2,1/2,1/4.
+  - A002893: z=0,1,1/9 all {0,0}; z=∞ {1,1}. **Δ = 0 everywhere → all-unipotent (only I_n/cusp
+    monodromy).** This is a rigorous, twist-independent structural distinction from the cooper
+    partners (which carry additive, finite-order-monodromy points) — **independent corroboration
+    of the non-Shioda–Inose finding in §1**.
+- **Kodaira type / ρ / T still DEFERRED** (open ticket): exponents are exact and Fuchs-validated,
+  but PF-exponent → Kodaira-type needs the rank-1 twist resolved (fibre monodromy ∈ SL₂(ℤ)).
+  Per the F6 lesson I will not emit a type or lattice until that is rigorous. (Note: a multiplicity
+  bug in my *own* first Fuchs check was caught and fixed before commit — golden test now guards it.)
 - **Unaffected:** the v0.3.0 **Sym² proof** (`CooperSym2Proof.lean`) — pure operator algebra, no
-  dependence on the C1 locus step. The headline L₃=Sym²(L₂) result stands. Full Kodaira re-typing
-  (local Frobenius exponents at the corrected loci) is an open ticket.
+  dependence on the C1 locus step. The headline L₃=Sym²(L₂) result stands.
 
 ## 4. Decision taken (T0-delegated; countermand window open)
 

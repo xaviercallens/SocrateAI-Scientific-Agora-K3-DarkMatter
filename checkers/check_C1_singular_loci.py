@@ -32,6 +32,18 @@ import check_C3b_moduli_map as base  # noqa: E402
 CHECKER_VERSION = "1.0.0"
 
 
+def theta_coeffs(A_poly, B_poly):
+    """Theta-form coefficients P2,P1,P0 of L2 = theta^2 - z A(theta) - z^2 B(theta+1)."""
+    k, z, th = sp.symbols("k z theta")
+    A = A_poly.subs(k, th)
+    B = B_poly.subs(k, th)
+    L2 = sp.expand(th**2 - z * A - z**2 * B.subs(th, th + 1))
+    P = {j: sp.Integer(0) for j in range(3)}
+    for (j,), c in sp.Poly(L2, th).terms():
+        P[j] = sp.expand(c)
+    return P[2], P[1], P[0]
+
+
 def singular_loci(A_poly, B_poly):
     """Roots of P2(z)=1 - a2 z - b2 z^2, a2,b2 = leading coeffs of A(k),B(k)."""
     k, z = sp.symbols("k z")
@@ -40,6 +52,49 @@ def singular_loci(A_poly, B_poly):
     P2 = sp.expand(1 - a2 * z - b2 * z**2)
     roots = sp.solve(sp.Eq(P2, 0), z)
     return P2, sorted(roots, key=lambda r: sp.re(r.evalf())), a2, b2
+
+
+def local_exponents(A_poly, B_poly):
+    """Exact indicial exponents at every regular singular point of the order-2 ODE
+        P2 z^2 y'' + z(P2+P1) y' + P0 y = 0,  (theta = z d/dz form),
+    at z=0, the finite loci (roots of P2), and z=inf. Returns list of (point, [r1,r2])
+    plus the Fuchs-relation check (sum of all exponents == #sing_pts - 2 for order 2)."""
+    z, r, w = sp.symbols("z r w")
+    P2z, P1z, P0z = theta_coeffs(A_poly, B_poly)
+    # y'' + p y' + q y = 0
+    a = sp.expand(P2z * z**2)
+    b = sp.expand(z * (P2z + P1z))
+    p = sp.cancel(b / a)
+    q = sp.cancel(P0z / a)
+
+    def roots_with_mult(poly_in_r):
+        """Exact roots of a quadratic-in-r indicial poly, WITH multiplicity (list length 2)."""
+        rr = sp.roots(sp.Poly(sp.expand(poly_in_r), r))  # {root: multiplicity}
+        out = []
+        for root, mult in rr.items():
+            out.extend([sp.nsimplify(root)] * mult)
+        return out  # length 2 for a genuine 2nd-order indicial equation
+
+    def indicial_at(zc):
+        p0 = sp.limit((z - zc) * p, z, zc)
+        q0 = sp.limit((z - zc)**2 * q, z, zc)
+        return roots_with_mult(r * (r - 1) + p0 * r + q0)
+
+    pts = []
+    finite_sing = [sp.Integer(0)] + list(sp.solve(P2z, z))
+    for zc in finite_sing:
+        pts.append((str(zc), indicial_at(zc)))
+    # at infinity: z=1/w, exponents from the transformed equation's indicial at w=0
+    p_w = sp.cancel((2 / w - p.subs(z, 1 / w) / w**2))   # p_tilde(w) for y in w
+    q_w = sp.cancel(q.subs(z, 1 / w) / w**4)
+    p0i = sp.limit(w * p_w, w, 0)
+    q0i = sp.limit(w**2 * q_w, w, 0)
+    pts.append(("oo", roots_with_mult(r * (r - 1) + p0i * r + q0i)))
+
+    total = sum(sum(e for e in exps) for _, exps in pts)
+    n_sing = len(pts)
+    fuchs_ok = sp.simplify(total - (n_sing - 2)) == 0
+    return pts, bool(fuchs_ok), sp.nsimplify(total), n_sing
 
 
 def run_check(refs_path, partner_id):
@@ -60,10 +115,24 @@ def run_check(refs_path, partner_id):
     A, B, C, _ = base.extract_recurrence_polys(e["recurrence_python"], 2)
     P2, roots, a2, b2 = singular_loci(A.as_expr(), B.as_expr())
     result["leading_dz_factor_P2_of_z"] = str(sp.factor(P2))
-    result["singular_loci_z"] = [str(sp.nsimplify(r)) for r in roots]
+    result["finite_singular_loci_z"] = [str(sp.nsimplify(r)) for r in roots]
     result["mum_point"] = "z=0"
-    result["kodaira_types"] = "TODO — requires local Frobenius exponents; NOT hardcoded (see F6 note)"
-    result["verdict"] = f"C1_SINGULAR_LOCI_CORRECTED(n_finite_loci={len(roots)})"
+
+    exps, fuchs_ok, total, n_sing = local_exponents(A.as_expr(), B.as_expr())
+    result["local_exponents"] = {pt: [str(x) for x in ex] for pt, ex in exps}
+    result["exponent_differences"] = {pt: str(sp.Abs(ex[0] - ex[1])) for pt, ex in exps if len(ex) == 2}
+    result["fuchs_relation_check"] = {"sum_all_exponents": str(total),
+                                      "expected_n_sing_minus_2": n_sing - 2,
+                                      "PASS": fuchs_ok}
+    result["kodaira_types"] = ("DEFERRED (open ticket): exponent differences computed exactly, but "
+                               "PF-exponent -> Kodaira-type requires resolving the rank-1 twist "
+                               "(fibre monodromy in SL2(Z), det +1) vs raw PF monodromy. NOT emitting "
+                               "a type or a rho/T until that is done rigorously — see F6 lesson.")
+    result["verdict"] = (f"C1_LOCI_AND_EXPONENTS_CORRECTED(n_finite_loci={len(roots)}, "
+                         f"fuchs_ok={fuchs_ok})")
+    if not fuchs_ok:
+        result["verdict"] = "ERROR_FUCHS_RELATION_FAILED"
+        return result, 2
     result["provenance"] = ("Generated-by: checkers/check_C1_singular_loci.py v1.0.0 (Tier B) | "
                             "Verified-by: exact algebra (leading d/dz coefficient) | Reviewed-by: pending T0")
     return result, 0
