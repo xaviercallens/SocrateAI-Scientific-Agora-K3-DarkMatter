@@ -1,0 +1,34 @@
+{
+  "checker": "check_C1.py",
+  "checker_version": "1.0.0",
+  "criterion": "C1 (Kodaira fibre classification of order-2 elliptic partner)",
+  "fibre_configuration": {
+    "fibres": [
+      {
+        "exponents": [
+          "0",
+          "1/2"
+        ],
+        "fibre_multiplicity": 2,
+        "kodaira_type": "II",
+        "singular_point_z": "5/8"
+      },
+      {
+        "exponents": [
+          "0",
+          "1/2"
+        ],
+        "fibre_multiplicity": 2,
+        "kodaira_type": "II",
+        "singular_point_z": "3/8"
+      }
+    ],
+    "partner_source": "DERIVED (not literature transcription): symmetric-square root of cooper_s10 (order-3, A005260 = sum C(n,k)^4), extracted by checkers/check_C3b_symsqrt.py; certificate data/certificates/C3b_symsqrt_cooper_s10.json.",
+    "singular_points_count": 2
+  },
+  "partner": "cooper_s10_partner",
+  "provenance": "Generated-by: checkers/check_C1.py v1.0.0 (Tier B) | Verified-by: exact symbolic computation, singular-point extraction | Reviewed-by: pending T0",
+  "refs_file": "refs/recurrences_v1.json",
+  "refs_sha256": "63ec6248429182b8105b891a3f4f85034c4f11776742ee9484d17f0d0d592b7e",
+  "verdict": "C1_KODAIRA_CLASSIFIED(fibres=2)"
+}

@@ -1,0 +1,17 @@
+{
+  "c1_source": "data/certificates/C1_cooper_s10_partner.json",
+  "checker": "check_C2.py",
+  "checker_version": "1.0.0",
+  "criterion": "C2 (Transcendental/Picard lattice of the K3)",
+  "lattice": {
+    "fibre_contribution": 2,
+    "lattice_discriminant": 4,
+    "mordell_weil_rank": 0,
+    "picard_number": 4,
+    "singular_fibres_count": 2,
+    "transcendental_rank": 18
+  },
+  "partner": "cooper_s10_partner",
+  "provenance": "Generated-by: checkers/check_C2.py v1.0.0 (Tier B) | Verified-by: Shioda\u2013Tate formula (exact arithmetic) | Reviewed-by: pending T0",
+  "verdict": "C2_LATTICE_COMPUTED(\u03c1=4, T=18)"
+}
