@@ -1,6 +1,6 @@
 # K3_SELECTION_REPORT — v0.1-DRAFT (Stream 2 → Stream 3 unblock)
 
-**Date:** 2026-07-24 | **Status:** DRAFT — criterion tables final (machine-generated); **selection rationale T0-PENDING**
+**Date:** 2026-07-24 | **Status:** v0.2 — criterion tables final (machine-generated); **§3 selection DECIDED (Route A, T0-delegated sign-off)**
 **Requested by:** Stream 3 Fable brief "Execution Expectations to Unblock Stream 3" (2026-07-24)
 **Regenerate tables:** `python3 scripts/render_k3_selection_report.py`
 
@@ -95,10 +95,14 @@ sentence in the swarm matrix. See `docs/OEIS_FTHEORY_CLAIMS_REGISTER.md`.
 
 ---
 
-## 3. Selection rationale — **T0-PENDING** (decision matrix)
+## 3. Selection rationale — **DECIDED: Route A** (2026-07-24, T0-delegated)
 
-Two mathematically honest routes exist. **Stream 2 recommends Route A for the S3-00 input**,
-with Route B retained as the novel-mathematics track. Xavier (T0) decides.
+**Decision:** Route A is the S3-00 input. Route B is retained as the novel-mathematics track.
+**Authority:** Xavier Callens (T0 Owner) by explicit delegation to Claude (Fable 5),
+instruction 2026-07-24 ("take decision … on my behalf"); countermand window open per
+ASSUMPTIONS.md §3. The mechanical pair-selection rule — fixed **before** C2 runs on the AZ
+candidates — is pinned in PREDICTION.md §2 (max certified ρ; tie-breaks: C1-INT margin, then
+lower level). The decision matrix that grounded this choice:
 
 **Route A — sporadic AZ pair with catalogued Zagier partner (Fable brief Options A/B).**
 Fully literature-anchored: partner's modular data (level, weight-2 form) is catalogued, which
