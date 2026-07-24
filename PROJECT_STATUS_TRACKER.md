@@ -10,7 +10,7 @@
 | Stream | Repository | Status | Blocker | Next Gate |
 |---|---|---|---|---|
 | **1. Theory** | SocrateAI-DualScaleTopologicalUniverseModel-LeanProposal | v0.1 done (0 sorry); D3 keeps `pipeline_upper_bound` as disclosed-vacuous axiom | S1-1 axiom-hygiene disclosure (bridge delivered) | GATE-T (axiom review) |
-| **2. K3 Selection** | SocrateAI-Scientific-Agora-K3-DarkMatter (THIS) | S2-1 PASS ✅; Shioda-Inose selection brief delivered (`briefs/PHASE_8_K3_SELECTION.md`); C3b extraction active | C3b partner identification (moduli maps) | D-3 (empirical rerun) |
+| **2. K3 Selection** | SocrateAI-Scientific-Agora-K3-DarkMatter (THIS) | S2-1 PASS ✅; Shioda-Inose selection brief delivered (`briefs/PHASE_10_K3_SELECTION.md`); C3b extraction active | C3b partner identification (moduli maps) | D-3 (empirical rerun) |
 | **3. Experimentation** | DarkMatterK3-Home.github.io + Home infra | Awaiting Stream-2 cert | D-3 (unblocked, queueing) | DM-1..DM-4 dispatch |
 
 ---

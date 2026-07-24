@@ -1,4 +1,8 @@
-# 🔬 Phase 8: Shioda–Inose Selection & Core Prioritization
+# 🔬 Phase 10: Shioda–Inose Selection & Core Prioritization
+
+> Numbered Phase **10** to avoid collision with the existing Phase 8 (AutoEvolve Gate Battery,
+> complete) and Phase 9 (Observable Redesign, in progress) in `PROJECT_STATUS_TRACKER.md`.
+> This is the discriminator/selection workstream that follows the C3b partner-identification blocker.
 
 **Status:** active · **Owner:** Stream 2 (Theory & K3 Selection) · **Handoff from:** Stream 1 (math kernel)
 

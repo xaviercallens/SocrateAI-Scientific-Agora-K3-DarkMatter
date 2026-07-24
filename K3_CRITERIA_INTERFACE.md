@@ -54,12 +54,12 @@ See [auto_evolve_k3_selection.py](scripts/auto_evolve_k3_selection.py) for the i
 
 Since W ≡ 0 is non-discriminating between s₇ and s₁₀ (structural for the whole Cooper ansatz),
 active candidate discrimination now runs through the non-structural discriminators (C3b Sym²
-partner map, C1/C2 Kodaira/lattice). See [briefs/PHASE_8_K3_SELECTION.md](briefs/PHASE_8_K3_SELECTION.md)
+partner map, C1/C2 Kodaira/lattice). See [briefs/PHASE_10_K3_SELECTION.md](briefs/PHASE_10_K3_SELECTION.md)
 for the tiered task definitions and priority target (s₇, A183204).
 
 ## References
 
-- [briefs/PHASE_8_K3_SELECTION.md](briefs/PHASE_8_K3_SELECTION.md)
+- [briefs/PHASE_10_K3_SELECTION.md](briefs/PHASE_10_K3_SELECTION.md)
 - [DUAL_SCALE_HYPOTHESIS.md](DUAL_SCALE_HYPOTHESIS.md)
 - [V3 Cosmic Topology Dashboard](dashboards/dual_scale_v3_cosmic_topology_dashboard.pdf)
 - [V5 Dual-Scale Pipeline Dashboard](dashboards/v5_dual_scale_pipeline_dashboard.pdf)
