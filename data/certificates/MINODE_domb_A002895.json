@@ -1,0 +1,66 @@
+{
+  "checker": "check_min_ode_order.py",
+  "checker_version": "1.0.0",
+  "criterion": "min-ODE-order (generating-function Picard-Fuchs order; the geometric discriminator)",
+  "first_terms": [
+    "1",
+    "4",
+    "28",
+    "256",
+    "2716",
+    "31504"
+  ],
+  "geometric_type_if_MUM": "K3-type (order 3)  [Tier B: finite-order evidence, box-relative minimality]",
+  "min_ode": {
+    "ode_coefficients_p_i_ascending_z": {
+      "0": [
+        "-4",
+        "64",
+        "0",
+        "0",
+        "0"
+      ],
+      "1": [
+        "1",
+        "-68",
+        "448",
+        "0",
+        "0"
+      ],
+      "2": [
+        "0",
+        "3",
+        "-90",
+        "384",
+        "0"
+      ],
+      "3": [
+        "0",
+        "0",
+        "1",
+        "-20",
+        "64"
+      ]
+    },
+    "order": 3,
+    "orders_below_excluded_to_deg": 8,
+    "poly_degree": 4,
+    "rows_validated": 42
+  },
+  "min_recurrence": {
+    "order": 2,
+    "poly_degree": 3,
+    "rows_validated": 43
+  },
+  "n_terms_used": 45,
+  "provenance": "Generated-by: checkers/check_min_ode_order.py v1.0.0 (Tier B) | Verified-by: exact integer nullspace over full series depth | Reviewed-by: pending T0",
+  "search_box": {
+    "d_max": 8,
+    "r_max": 4
+  },
+  "sequence": "domb",
+  "source_file": "/mnt/disks/disk-socrateai-local-1/callensxavier_home_data/SocrateAI-Scientific-Agora-K3-DarkMatter/refs/recurrences_v1.json",
+  "source_kind": "refs",
+  "source_sha256": "383ea77bb6951796ec4bbdb279dc404abbeace2c678a1edc08b23a8623e9dd7c",
+  "verdict": "MIN_ODE_ORDER=3 PASS(42) [deg=4; orders<3 excluded to deg 8; min recurrence order=2]"
+}

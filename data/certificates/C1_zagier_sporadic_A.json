@@ -1,0 +1,15 @@
+{
+  "checker": "check_C1.py",
+  "checker_version": "1.0.0",
+  "criterion": "C1 (Kodaira fibre classification of order-2 elliptic partner)",
+  "fibre_configuration": {
+    "fibres": [],
+    "partner_source": "OEIS A002893 (http://oeis.org/A002893); a(n)=Sum_{k=0..n} C(n,k)^2 C(2k,k); Zagier sporadic SECOND-ORDER sequence C, triple (A,B,\u03bb)=(10,9,3), per Gorodetsky arXiv:2102.11839 Table (fetched 2026-07-24); Beukers-Stienstra 'Picard-Fuchs Equation and Formal Brauer Group of Certain Elliptic K3-Surfaces' (Math. Ann. 271, 1985).",
+    "singular_points_count": 0
+  },
+  "partner": "zagier_sporadic_A",
+  "provenance": "Generated-by: checkers/check_C1.py v1.0.0 (Tier B) | Verified-by: exact symbolic computation, singular-point extraction | Reviewed-by: pending T0",
+  "refs_file": "/mnt/disks/disk-socrateai-local-1/callensxavier_home_data/SocrateAI-Scientific-Agora-K3-DarkMatter/refs/recurrences_v1.json",
+  "refs_sha256": "383ea77bb6951796ec4bbdb279dc404abbeace2c678a1edc08b23a8623e9dd7c",
+  "verdict": "C1_KODAIRA_CLASSIFIED(fibres=0)"
+}

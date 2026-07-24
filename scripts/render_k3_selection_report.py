@@ -26,25 +26,31 @@ def main():
         src = (v.get("source") or "")[:70].replace("|", "/")
         print(f"| {k} | {v.get('type','?')} | {status} | {src} |")
 
-    print("\n### T2. C3b — symmetric-square structure (constructive, this repo)\n")
-    print("| bulk | verdict | operator identity (all-n) | mirror z(L2)=z(L3) | partner integral |")
+    print("\n### T2. C3b-SYM — symmetric-square structure (constructive, all-n)\n")
+    print("| bulk | is Sym²? | op identity L3=Sym²(L2) | partner integral | partner first terms |")
     print("|---|---|---|---|---|")
-    for b in ("cooper_s7", "cooper_s10"):
-        c = j(CERT / f"C3b_symsqrt_{b}.json")
-        v = c["validation"]
-        print(f"| {b} | {c['verdict'][:60]}… | {v['sym2_operator_identity_L3_eq_Sym2L2']} "
-              f"| {v['mirror_map_z_L2_eq_z_L3']} (q^{v['mirror_map_order']}) "
-              f"| {c['partner_L2']['partner_is_integral']} |")
+    for b in ("cooper_s7", "cooper_s10", "domb", "apery_zeta3", "almkvist_zagier_second"):
+        p = CERT / f"C3b_symsqrt_{b}.json"
+        if not p.exists():
+            continue
+        c = j(p)
+        v = c.get("validation", {})
+        isym = v.get("sym2_operator_identity_L3_eq_Sym2L2")
+        pl = c.get("partner_L2", {})
+        ft = pl.get("first_terms")
+        ft = ", ".join(ft[:6]) if ft else "—"
+        print(f"| {b} | {'YES' if isym else 'NO'} | {isym} | {pl.get('partner_is_integral')} | {ft} |")
 
-    print("\n### T3. C3b — catalogued-partner search (moduli-map, this repo)\n")
-    print("| bulk | tested partner | verdict |")
+    print("\n### T3. C3b-CAT — catalogued moduli-map relation\n")
+    print("| bulk | brane (catalogued) | verdict |")
     print("|---|---|---|")
-    for b in ("cooper_s7", "cooper_s10"):
-        p = CERT / f"C3b_{b}__apery_zeta2.json"
+    for b, brane, label in (("cooper_s7", "apery_zeta2", "A005258"),
+                            ("cooper_s10", "apery_zeta2", "A005258"),
+                            ("domb", "zagier_sporadic_A", "A002893")):
+        p = CERT / f"C3b_{b}__{brane}.json"
         if p.exists():
             c = j(p)
-            v = c.get("verdict", "?")
-            print(f"| {b} | apery_zeta2 (A005258) | {v[:80]} |")
+            print(f"| {b} | {brane} ({label}) | {c.get('verdict','?')[:70]} |")
 
     print("\n### T4. C1 — Kodaira fibre classification (order-2 partners)\n")
     print("| partner | fibres | types | singular points z | exponents |")

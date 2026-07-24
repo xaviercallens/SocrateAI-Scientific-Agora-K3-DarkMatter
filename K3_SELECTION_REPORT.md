@@ -127,6 +127,30 @@ compactification realisation); T4/T5 additionally carry the stated MW-rank-0 ass
 
 ---
 
+## 3b. Route-A execution result (2026-07-24, T0-delegated)  — **NO CERTIFIED PAIR; one lead**
+
+The Route-A prerequisite was executed (fetch+derive+hash 4 sequences; run C3b-SYM/C3b-CAT/C1/C2).
+Full detail: `briefs/ROUTE_A_EXECUTION_FINDINGS_2026_07_24.md`. Headline:
+
+- **New theorem:** **Domb (A002895) IS a symmetric square** — integral partner `1,2,12,104,1078,…`,
+  all-n operator identity (`C3b_symsqrt_domb.json`). Apéry ζ(3) and Almkvist–Zudilin-2nd are **not**
+  symmetric squares. See table T2 above (machine-generated).
+- **Only catalogued C3b-CAT relation in the whole pool:** **Domb × A002893** (`RELATION_FOUND`,
+  q³⁶; table T3). But A002893 is **not** Domb's Sym² square-root, so the relation's Shioda–Inose
+  status is **uncertified**, and C1-KOD is degenerate on A002893 (0 fibres, ρ=2) → **not
+  mechanically rankable**.
+- **Eligible set for the PREDICTION.md §2 rule is EMPTY** (no certified, rankable Shioda–Inose
+  catalogued pair). No Route-A winner is designated. Every Apéry-like K3 Sym² in the pool
+  (cooper_s7/s10, Domb) has a **non-catalogued** partner.
+
+**Revised decision (supersedes §3's "Route A" for the S3-00 *input*, T0-delegated, countermand open):**
+1. S3-00 input falls back to **Route B** — K3 = cooper_s7 (partner A279619, OEIS-catalogued) or
+   Domb — with the partner's **modular identification** as an explicit tracked Tier-B dependency.
+2. **Domb × A002893 → Deep Think (T0s) for Shioda–Inose adjudication** (is the q³⁶ relation
+   geometric or accidental?). If genuine, it becomes the Route-A pair and supersedes this.
+3. **Stream 3: send exact OEIS IDs for your γ/F, α/C, δ/A, η/D pairs** — not identifiable in this
+   repo's pool; if they are true catalogued Sym² pairs they override this finding.
+
 ## 4. Gaps blocking report v1.0 (explicit)
 
 1. **AZ sporadics (γ, α, δ, η) + Zagier partners are not in `refs/`** — no numbers about them

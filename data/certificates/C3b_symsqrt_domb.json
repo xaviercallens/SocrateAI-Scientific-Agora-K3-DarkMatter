@@ -1,0 +1,70 @@
+{
+  "bulk": "domb",
+  "bulk_source": "OEIS A002895 (http://oeis.org/A002895); Domb numbers, K3-class (diamond lattice)",
+  "checker": "check_C3b_symsqrt.py",
+  "checker_version": "1.0.0",
+  "criterion": "C3b-symsqrt (constructive: L3 = Sym^2(L2); extract the order-2 partner)",
+  "parameters": {
+    "fit_degree": 2,
+    "mirror_order": 14,
+    "n_fit": 26,
+    "n_val": 60
+  },
+  "partner_L2": {
+    "B_coefficient_factored": "-16*(2*n - 1)**2",
+    "first_terms": [
+      "1",
+      "2",
+      "12",
+      "104",
+      "1078",
+      "12348",
+      "150528",
+      "1914432",
+      "25108668",
+      "337111736"
+    ],
+    "initial_terms": [
+      "1",
+      "2"
+    ],
+    "partner_is_integral": true,
+    "recurrence": "(n+1)^2 f(n+1) = (20*n**2 + 10*n + 2) f(n) + (-64*n**2 + 64*n - 16) f(n-1)",
+    "recurrence_python": "((20*k**2 + 10*k + 2)*s[-1] + (-64*k**2 + 64*k - 16)*s[-2])/((k+1)**2)"
+  },
+  "provenance": "Generated-by: checkers/check_C3b_symsqrt.py v1.0.0 (Tier A computation, finite-order PASS) | Verified-by: exact power-series sqrt + nullspace fit + high-order revalidation + mirror-map equality | Reviewed-by: pending T0",
+  "refs_file": "/mnt/disks/disk-socrateai-local-1/callensxavier_home_data/SocrateAI-Scientific-Agora-K3-DarkMatter/refs/recurrences_v1.json",
+  "refs_sha256": "383ea77bb6951796ec4bbdb279dc404abbeace2c678a1edc08b23a8623e9dd7c",
+  "validation": {
+    "bulk_z_of_q": [
+      "0",
+      "1",
+      "-6",
+      "21",
+      "-68",
+      "198",
+      "-510",
+      "1248"
+    ],
+    "mirror_map_order": 14,
+    "mirror_map_z_L2_eq_z_L3": true,
+    "partner_MUM": true,
+    "recurrence_validated_to_n": 58,
+    "sqrt_is_order2_holonomic": true,
+    "sym2_operator_detail": {
+      "collapse_theta_P2_eq_2P1": true,
+      "partner_operator_theta": {
+        "P0": "16*z**2 - 2*z",
+        "P1": "64*z**2 - 10*z",
+        "P2": "64*z**2 - 20*z + 1"
+      },
+      "sym2_minus_L3_monic": {
+        "D0": "0",
+        "D1": "0",
+        "D2": "0"
+      }
+    },
+    "sym2_operator_identity_L3_eq_Sym2L2": true
+  },
+  "verdict": "SYM2_OPERATOR_IDENTITY_PROVEN(all-n symbolic; partner revalidated to n=58, mirror q^14)"
+}

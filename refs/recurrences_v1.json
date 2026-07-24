@@ -1,115 +1,353 @@
 {
-  "metadata": {
-    "description": "Holonomic recurrences for K3/elliptic candidate pairs (C3b moduli map extraction)",
-    "version": "1.0",
-    "date_created": "2026-07-18",
-    "authority": "Lean-verified (s7, s10) + literature (Gorodetsky s18, Zagier order-2)",
-    "references": {
-      "cooper_s7": "OEIS A183204; Cooper 2012 Ramanujan J. 29(2012) 163-183; Lean4 kernel-verified recurrence",
-      "cooper_s10": "OEIS A005260; Cooper 2012 Ramanujan J. 29(2012) 163-183; Lean4 kernel-verified recurrence",
-      "gorodetsky_s18": "Gorodetsky arXiv:2102.11839; recurrence (14, 6, 192, -12) from literature",
-      "apery_zeta2": "OEIS A005258; Apéry ζ(2) = (1/6)π²; weight-2 elliptic order-2 ODE",
-      "apery_zeta3": "OEIS A005259; Apéry ζ(3); weight-3 K3 order-3 ODE (control)"
-    }
-  },
-  "sequences": {
-    "cooper_s7": {
-      "type": "order-3",
-      "status": "OK",
-      "source": "OEIS A183204 (http://oeis.org/A183204); Cooper 2012 sporadic sequence s₇; Lean4 Structures/CooperS7Recurrence.lean",
-      "closed_form": "∑_{j=0}^{n} C(n,j)² · C(2j,n) · C(j+n,j)",
-      "initial_terms": [1, 4, 48, 760, 13840, 273504, 5703096, 123519792, 2751843600, 62659854400],
-      "recurrence_python": "((90+177*(k-1)+117*(k-1)**2+26*(k-1)**3)*s[-1] + (24+78*(k-1)+81*(k-1)**2+27*(k-1)**3)*s[-2]) / (8+12*(k-1)+6*(k-1)**2+(k-1)**3)",
-      "recurrence_coefficients": {
-        "P0": [-24, -78, -81, -27],
-        "P1": [-90, -177, -117, -26],
-        "P2": [8, 12, 6, 1]
-      },
-      "_meta_note": "Recurrence is P0(n)·a(n) + P1(n)·a(n+1) + P2(n)·a(n+2) = 0. Leading coeff P2(n) = (n+2)³. MUM validated (monodromy at z=0 maximally unipotent). Shift order 2; generating-function ODE order 3 (K3-type)."
-    },
-    "cooper_s10": {
-      "type": "order-3",
-      "status": "OK",
-      "source": "OEIS A005260 (http://oeis.org/A005260); Cooper 2012 sporadic sequence s₁₀; Lean4 Structures/CooperS10Recurrence.lean",
-      "closed_form": "∑_{k=0}^{n} C(n,k)⁴",
-      "initial_terms": [1, 2, 18, 164, 1810, 21252, 263844, 3395016, 44916498, 607041380],
-      "recurrence_python": "((42+82*(k-1)+54*(k-1)**2+12*(k-1)**3)*s[-1] + (60+188*(k-1)+192*(k-1)**2+64*(k-1)**3)*s[-2]) / (8+12*(k-1)+6*(k-1)**2+(k-1)**3)",
-      "recurrence_coefficients": {
-        "P0": [-60, -188, -192, -64],
-        "P1": [-42, -82, -54, -12],
-        "P2": [8, 12, 6, 1]
-      },
-      "_meta_note": "Recurrence is P0(n)·a(n) + P1(n)·a(n+1) + P2(n)·a(n+2) = 0. Leading coeff P2(n) = (n+2)³ (same as s7, structural feature). MUM validated. Shift order 2; generating-function ODE order 3 (K3-type). Finalists: s7, s10, s18."
-    },
-    "gorodetsky_s18": {
-      "type": "order-3",
-      "status": "BLOCKED_CORRUPT_RECURRENCE",
-      "_meta_status": "BLOCKED",
-      "source": "Gorodetsky arXiv:2102.11839 (https://arxiv.org/abs/2102.11839); recurrence transcription (14, 6, 192, -12) UNVERIFIED — see _meta_note.",
-      "closed_form": "[to be transcribed from Gorodetsky arXiv:2102.11839]",
-      "initial_terms": [1, 14, 672, 42768, 3205920, 284462784, 28510491264, 3095346850944, 366192230530560],
-      "recurrence_python": "(6*s[-1] + 14*s[-2]) / (192 - 12*k)",
-      "recurrence_coefficients": {
-        "P0": [14],
-        "P1": [6],
-        "P2": [192, -12]
-      },
-      "_meta_note": "BLOCKED 2026-07-20: this entry's recurrence_python does NOT reproduce its own stated initial_terms (predicts a2 ≈ 0.544, not 672; non-integral). An exact fit of a general order-3 Apéry-like recurrence [(n+1)^3 leading] to the stated terms is underdetermined with non-integer coefficients — i.e. these terms do not satisfy any clean order-3 three-term recurrence, consistent with the peer-review G1-1 finding that s18 is order-4 in the tested window. The (14,6,192,-12) → recurrence_python translation is garbled and the sequence's true holonomic order is disputed. REFUSED for C3b until re-transcribed directly from Gorodetsky arXiv:2102.11839 (verify both the recurrence and the initial terms; do not compute values from memory)."
-    },
-    "apery_zeta2": {
-      "type": "order-2",
-      "status": "OK",
-      "source": "OEIS A005258 (http://oeis.org/A005258); Apéry ζ(2) sequence; weight-2 elliptic; proven modularity (Beukers 1983, Beauville's classification of rational elliptic surfaces)",
-      "closed_form": "∑_{k=0}^{n} C(n,k)² · C(n+k,k)",
-      "initial_terms": [1, 3, 19, 147, 1251, 11253, 104959, 1004307, 9793891, 96918753],
-      "recurrence_python": "((11*k**2+11*k+3)*s[-1] + k**2*s[-2]) / ((k+1)**2)",
-      "recurrence_coefficients": {
-        "P0": [0, -1, 0, -1],
-        "P1": [0, 2, 2, 0]
-      },
-      "_meta_note": "Apéry's classical weight-2 sequence. Order-2 generating-function ODE (elliptic, not K3). Natural order-2 control for moduli-map pairing with weight-3 K3 sequences. MUM property holds (monodromy at z=0). Paired with cooper_s7 for C3b_cooper_s7__apery_zeta2 moduli relation extraction."
-    },
-    "zagier_sporadic_A": {
-      "type": "order-2",
-      "status": "OK_NOT_A_PARTNER",
-      "source": "OEIS A002893 (http://oeis.org/A002893); a(n)=Sum_{k=0..n} C(n,k)^2 C(2k,k); Zagier sporadic SECOND-ORDER sequence C, triple (A,B,λ)=(10,9,3), per Gorodetsky arXiv:2102.11839 Table (fetched 2026-07-24); Beukers-Stienstra 'Picard-Fuchs Equation and Formal Brauer Group of Certain Elliptic K3-Surfaces' (Math. Ann. 271, 1985).",
-      "closed_form": "∑_{k=0}^{n} C(n,k)² · C(2k,k)",
-      "initial_terms": [1, 3, 15, 93, 639, 4653, 35169, 272835, 2157759, 17319837],
-      "recurrence_python": "((10*k**2+10*k+3)*s[-1] - 9*k**2*s[-2]) / ((k+1)**2)",
-      "recurrence_coefficients": {
-        "A": [3, 10, 10],
-        "B": [0, 0, -9],
-        "C": [1, 2, 1]
-      },
-      "_meta_note": "History: CORRECTED 2026-07-20 (original recurrence was corrupt; predicted a2=-6 not 15; reconstructed by exact fit + OEIS fetch to A002893). F6 CORRECTION 2026-07-24: the 2026-07-20 verdict 'BLOCKED_WRONG_TYPE / genuinely order-3 generating-function ODE' was ITSELF wrong. Per Gorodetsky arXiv:2102.11839 (fetched) A002893 is Zagier's SECOND-ORDER sporadic sequence C (A,B,λ)=(10,9,3): it satisfies (n+1)^2 a(n+1)=(10n^2+10n+3)a(n)-9n^2 a(n-1), is MUM (C=(k+1)^2), integral, and its order-2 Frobenius/mirror construction is VALID (the earlier note conflated the sequence with its own symmetric square, an order-3 K3). STATUS NOW: valid order-2 sequence, but empirically RULED OUT as the partner of cooper_s7/s10 — check_C3b_moduli_map found no algebraic mirror-map relation up to bidegree 5 across 8 power-hypotheses, validated to q^32 (2026-07-24 partner sweep). The true partners are the symmetric-square roots cooper_s7_partner / cooper_s10_partner below."
-    },
-    "cooper_s7_partner": {
-      "type": "order-2",
-      "status": "OK",
-      "source": "DERIVED (not literature transcription): symmetric-square root of cooper_s7 (order-3, A183204), extracted by checkers/check_C3b_symsqrt.py; certificate data/certificates/C3b_symsqrt_cooper_s7.json. Integer sequence is OEIS A279619 (1,2,22,336,6006,117348,2428272,52303680,...; fetched b-file 2026-07-24).",
-      "closed_form": "[order-2 partner operator L2 with cooper_s7 = Sym^2(L2); f = sqrt of the s7 generating function]",
-      "initial_terms": [1, 2, 22, 336, 6006, 117348, 2428272, 52303680, 1160427510, 26337699740],
-      "recurrence_python": "((26*k**2+13*k+2)*s[-1] + (27*k**2-27*k+6)*s[-2])/((k+1)**2)",
-      "recurrence_coefficients": {
-        "A": [2, 13, 26],
-        "B": [6, -27, 27],
-        "C": [1, 2, 1]
-      },
-      "_meta_note": "Extended-form order-2 (B(n)=3(3n-1)(3n-2) is a full quadratic, not pure -Bn^2, so NOT one of Zagier's six pure sporadics). MUM validated; recurrence re-validated to n=58; mirror map z(q) equals cooper_s7's bulk z(q) exactly to q^14 (Sym^2 preserves the mirror map -> the C3b moduli map is the identity). This IS the weight-2 elliptic partner for the s7 K3. Verdict PASS(58): finite-order machine check; an all-n operator identity L3=Sym^2(L2) is a Stream-1 symbolic follow-up."
-    },
-    "cooper_s10_partner": {
-      "type": "order-2",
-      "status": "OK",
-      "source": "DERIVED (not literature transcription): symmetric-square root of cooper_s10 (order-3, A005260 = sum C(n,k)^4), extracted by checkers/check_C3b_symsqrt.py; certificate data/certificates/C3b_symsqrt_cooper_s10.json.",
-      "closed_form": "[order-2 partner operator L2 with cooper_s10 = Sym^2(L2); f = sqrt of the s10 generating function; f is RATIONAL, not integral (denominators are powers of 2)]",
-      "initial_terms_rational": ["1", "1", "17/2", "147/2", "6363/8", "73647/8", "1812069/16", "23160699/16"],
-      "recurrence_python": "((12*k**2+6*k+1)*s[-1] + (64*k**2-64*k+15)*s[-2])/((k+1)**2)",
-      "recurrence_coefficients": {
-        "A": [1, 6, 12],
-        "B": [15, -64, 64],
-        "C": [1, 2, 1]
-      },
-      "_meta_note": "Extended-form order-2 (B(n)=(8n-5)(8n-3) is a full quadratic). MUM validated; recurrence re-validated to n=58; mirror map z(q) equals cooper_s10's bulk z(q) exactly to q^14. The partner series f is NOT integral (2-power denominators), so it is an operator-level partner rather than an Apery-like integer sequence — the elliptic partner exists as L2 even though it is not a catalogued integer sequence. Verdict PASS(58); all-n operator identity is a Stream-1 follow-up."
-    }
+ "metadata": {
+  "description": "Holonomic recurrences for K3/elliptic candidate pairs (C3b moduli map extraction)",
+  "version": "1.0",
+  "date_created": "2026-07-18",
+  "authority": "Lean-verified (s7, s10) + literature (Gorodetsky s18, Zagier order-2)",
+  "references": {
+   "cooper_s7": "OEIS A183204; Cooper 2012 Ramanujan J. 29(2012) 163-183; Lean4 kernel-verified recurrence",
+   "cooper_s10": "OEIS A005260; Cooper 2012 Ramanujan J. 29(2012) 163-183; Lean4 kernel-verified recurrence",
+   "gorodetsky_s18": "Gorodetsky arXiv:2102.11839; recurrence (14, 6, 192, -12) from literature",
+   "apery_zeta2": "OEIS A005258; Ap\u00e9ry \u03b6(2) = (1/6)\u03c0\u00b2; weight-2 elliptic order-2 ODE",
+   "apery_zeta3": "OEIS A005259; Ap\u00e9ry \u03b6(3); weight-3 K3 order-3 ODE (control)"
   }
+ },
+ "sequences": {
+  "cooper_s7": {
+   "type": "order-3",
+   "status": "OK",
+   "source": "OEIS A183204 (http://oeis.org/A183204); Cooper 2012 sporadic sequence s\u2087; Lean4 Structures/CooperS7Recurrence.lean",
+   "closed_form": "\u2211_{j=0}^{n} C(n,j)\u00b2 \u00b7 C(2j,n) \u00b7 C(j+n,j)",
+   "initial_terms": [
+    1,
+    4,
+    48,
+    760,
+    13840,
+    273504,
+    5703096,
+    123519792,
+    2751843600,
+    62659854400
+   ],
+   "recurrence_python": "((90+177*(k-1)+117*(k-1)**2+26*(k-1)**3)*s[-1] + (24+78*(k-1)+81*(k-1)**2+27*(k-1)**3)*s[-2]) / (8+12*(k-1)+6*(k-1)**2+(k-1)**3)",
+   "recurrence_coefficients": {
+    "P0": [
+     -24,
+     -78,
+     -81,
+     -27
+    ],
+    "P1": [
+     -90,
+     -177,
+     -117,
+     -26
+    ],
+    "P2": [
+     8,
+     12,
+     6,
+     1
+    ]
+   },
+   "_meta_note": "Recurrence is P0(n)\u00b7a(n) + P1(n)\u00b7a(n+1) + P2(n)\u00b7a(n+2) = 0. Leading coeff P2(n) = (n+2)\u00b3. MUM validated (monodromy at z=0 maximally unipotent). Shift order 2; generating-function ODE order 3 (K3-type)."
+  },
+  "cooper_s10": {
+   "type": "order-3",
+   "status": "OK",
+   "source": "OEIS A005260 (http://oeis.org/A005260); Cooper 2012 sporadic sequence s\u2081\u2080; Lean4 Structures/CooperS10Recurrence.lean",
+   "closed_form": "\u2211_{k=0}^{n} C(n,k)\u2074",
+   "initial_terms": [
+    1,
+    2,
+    18,
+    164,
+    1810,
+    21252,
+    263844,
+    3395016,
+    44916498,
+    607041380
+   ],
+   "recurrence_python": "((42+82*(k-1)+54*(k-1)**2+12*(k-1)**3)*s[-1] + (60+188*(k-1)+192*(k-1)**2+64*(k-1)**3)*s[-2]) / (8+12*(k-1)+6*(k-1)**2+(k-1)**3)",
+   "recurrence_coefficients": {
+    "P0": [
+     -60,
+     -188,
+     -192,
+     -64
+    ],
+    "P1": [
+     -42,
+     -82,
+     -54,
+     -12
+    ],
+    "P2": [
+     8,
+     12,
+     6,
+     1
+    ]
+   },
+   "_meta_note": "Recurrence is P0(n)\u00b7a(n) + P1(n)\u00b7a(n+1) + P2(n)\u00b7a(n+2) = 0. Leading coeff P2(n) = (n+2)\u00b3 (same as s7, structural feature). MUM validated. Shift order 2; generating-function ODE order 3 (K3-type). Finalists: s7, s10, s18."
+  },
+  "gorodetsky_s18": {
+   "type": "order-3",
+   "status": "BLOCKED_CORRUPT_RECURRENCE",
+   "_meta_status": "BLOCKED",
+   "source": "Gorodetsky arXiv:2102.11839 (https://arxiv.org/abs/2102.11839); recurrence transcription (14, 6, 192, -12) UNVERIFIED \u2014 see _meta_note.",
+   "closed_form": "[to be transcribed from Gorodetsky arXiv:2102.11839]",
+   "initial_terms": [
+    1,
+    14,
+    672,
+    42768,
+    3205920,
+    284462784,
+    28510491264,
+    3095346850944,
+    366192230530560
+   ],
+   "recurrence_python": "(6*s[-1] + 14*s[-2]) / (192 - 12*k)",
+   "recurrence_coefficients": {
+    "P0": [
+     14
+    ],
+    "P1": [
+     6
+    ],
+    "P2": [
+     192,
+     -12
+    ]
+   },
+   "_meta_note": "BLOCKED 2026-07-20: this entry's recurrence_python does NOT reproduce its own stated initial_terms (predicts a2 \u2248 0.544, not 672; non-integral). An exact fit of a general order-3 Ap\u00e9ry-like recurrence [(n+1)^3 leading] to the stated terms is underdetermined with non-integer coefficients \u2014 i.e. these terms do not satisfy any clean order-3 three-term recurrence, consistent with the peer-review G1-1 finding that s18 is order-4 in the tested window. The (14,6,192,-12) \u2192 recurrence_python translation is garbled and the sequence's true holonomic order is disputed. REFUSED for C3b until re-transcribed directly from Gorodetsky arXiv:2102.11839 (verify both the recurrence and the initial terms; do not compute values from memory)."
+  },
+  "apery_zeta2": {
+   "type": "order-2",
+   "status": "OK",
+   "source": "OEIS A005258 (http://oeis.org/A005258); Ap\u00e9ry \u03b6(2) sequence; weight-2 elliptic; proven modularity (Beukers 1983, Beauville's classification of rational elliptic surfaces)",
+   "closed_form": "\u2211_{k=0}^{n} C(n,k)\u00b2 \u00b7 C(n+k,k)",
+   "initial_terms": [
+    1,
+    3,
+    19,
+    147,
+    1251,
+    11253,
+    104959,
+    1004307,
+    9793891,
+    96918753
+   ],
+   "recurrence_python": "((11*k**2+11*k+3)*s[-1] + k**2*s[-2]) / ((k+1)**2)",
+   "recurrence_coefficients": {
+    "P0": [
+     0,
+     -1,
+     0,
+     -1
+    ],
+    "P1": [
+     0,
+     2,
+     2,
+     0
+    ]
+   },
+   "_meta_note": "Ap\u00e9ry's classical weight-2 sequence. Order-2 generating-function ODE (elliptic, not K3). Natural order-2 control for moduli-map pairing with weight-3 K3 sequences. MUM property holds (monodromy at z=0). Paired with cooper_s7 for C3b_cooper_s7__apery_zeta2 moduli relation extraction."
+  },
+  "zagier_sporadic_A": {
+   "type": "order-2",
+   "status": "OK_ELLIPTIC_order2_minODE_PASS43",
+   "source": "OEIS A002893 (http://oeis.org/A002893); a(n)=Sum_{k=0..n} C(n,k)^2 C(2k,k); Zagier sporadic SECOND-ORDER sequence C, triple (A,B,\u03bb)=(10,9,3), per Gorodetsky arXiv:2102.11839 Table (fetched 2026-07-24); Beukers-Stienstra 'Picard-Fuchs Equation and Formal Brauer Group of Certain Elliptic K3-Surfaces' (Math. Ann. 271, 1985).",
+   "closed_form": "\u2211_{k=0}^{n} C(n,k)\u00b2 \u00b7 C(2k,k)",
+   "initial_terms": [
+    1,
+    3,
+    15,
+    93,
+    639,
+    4653,
+    35169,
+    272835,
+    2157759,
+    17319837
+   ],
+   "recurrence_python": "((10*k**2+10*k+3)*s[-1] - 9*k**2*s[-2]) / ((k+1)**2)",
+   "recurrence_coefficients": {
+    "A": [
+     3,
+     10,
+     10
+    ],
+    "B": [
+     0,
+     0,
+     -9
+    ],
+    "C": [
+     1,
+     2,
+     1
+    ]
+   },
+   "_meta_note": "History: CORRECTED 2026-07-20 (original recurrence was corrupt; predicted a2=-6 not 15; reconstructed by exact fit + OEIS fetch to A002893). F6 CORRECTION 2026-07-24: the 2026-07-20 verdict 'BLOCKED_WRONG_TYPE / genuinely order-3 generating-function ODE' was ITSELF wrong. Per Gorodetsky arXiv:2102.11839 (fetched) A002893 is Zagier's SECOND-ORDER sporadic sequence C (A,B,\u03bb)=(10,9,3): it satisfies (n+1)^2 a(n+1)=(10n^2+10n+3)a(n)-9n^2 a(n-1), is MUM (C=(k+1)^2), integral, and its order-2 Frobenius/mirror construction is VALID (the earlier note conflated the sequence with its own symmetric square, an order-3 K3). STATUS NOW: valid order-2 sequence, but empirically RULED OUT as the partner of cooper_s7/s10 \u2014 check_C3b_moduli_map found no algebraic mirror-map relation up to bidegree 5 across 8 power-hypotheses, validated to q^32 (2026-07-24 partner sweep). The true partners are the symmetric-square roots cooper_s7_partner / cooper_s10_partner below.",
+   "_route_a_note": "C3b-CAT relation with domb (A002895) FOUND, validated q^36 (C3b_domb__zagier_sporadic_A.json); Shioda-Inose status uncertified (A002893 is not domb's Sym2 sqrt). min-ODE order 2 (elliptic) refutes earlier 'K3-type' note."
+  },
+  "cooper_s7_partner": {
+   "type": "order-2",
+   "status": "OK",
+   "source": "DERIVED (not literature transcription): symmetric-square root of cooper_s7 (order-3, A183204), extracted by checkers/check_C3b_symsqrt.py; certificate data/certificates/C3b_symsqrt_cooper_s7.json. Integer sequence is OEIS A279619 (1,2,22,336,6006,117348,2428272,52303680,...; fetched b-file 2026-07-24).",
+   "closed_form": "[order-2 partner operator L2 with cooper_s7 = Sym^2(L2); f = sqrt of the s7 generating function]",
+   "initial_terms": [
+    1,
+    2,
+    22,
+    336,
+    6006,
+    117348,
+    2428272,
+    52303680,
+    1160427510,
+    26337699740
+   ],
+   "recurrence_python": "((26*k**2+13*k+2)*s[-1] + (27*k**2-27*k+6)*s[-2])/((k+1)**2)",
+   "recurrence_coefficients": {
+    "A": [
+     2,
+     13,
+     26
+    ],
+    "B": [
+     6,
+     -27,
+     27
+    ],
+    "C": [
+     1,
+     2,
+     1
+    ]
+   },
+   "_meta_note": "Extended-form order-2 (B(n)=3(3n-1)(3n-2) is a full quadratic, not pure -Bn^2, so NOT one of Zagier's six pure sporadics). MUM validated; recurrence re-validated to n=58; mirror map z(q) equals cooper_s7's bulk z(q) exactly to q^14 (Sym^2 preserves the mirror map -> the C3b moduli map is the identity). This IS the weight-2 elliptic partner for the s7 K3. Verdict PASS(58): finite-order machine check; an all-n operator identity L3=Sym^2(L2) is a Stream-1 symbolic follow-up."
+  },
+  "cooper_s10_partner": {
+   "type": "order-2",
+   "status": "OK",
+   "source": "DERIVED (not literature transcription): symmetric-square root of cooper_s10 (order-3, A005260 = sum C(n,k)^4), extracted by checkers/check_C3b_symsqrt.py; certificate data/certificates/C3b_symsqrt_cooper_s10.json.",
+   "closed_form": "[order-2 partner operator L2 with cooper_s10 = Sym^2(L2); f = sqrt of the s10 generating function; f is RATIONAL, not integral (denominators are powers of 2)]",
+   "initial_terms_rational": [
+    "1",
+    "1",
+    "17/2",
+    "147/2",
+    "6363/8",
+    "73647/8",
+    "1812069/16",
+    "23160699/16"
+   ],
+   "recurrence_python": "((12*k**2+6*k+1)*s[-1] + (64*k**2-64*k+15)*s[-2])/((k+1)**2)",
+   "recurrence_coefficients": {
+    "A": [
+     1,
+     6,
+     12
+    ],
+    "B": [
+     15,
+     -64,
+     64
+    ],
+    "C": [
+     1,
+     2,
+     1
+    ]
+   },
+   "_meta_note": "Extended-form order-2 (B(n)=(8n-5)(8n-3) is a full quadratic). MUM validated; recurrence re-validated to n=58; mirror map z(q) equals cooper_s10's bulk z(q) exactly to q^14. The partner series f is NOT integral (2-power denominators), so it is an operator-level partner rather than an Apery-like integer sequence \u2014 the elliptic partner exists as L2 even though it is not a catalogued integer sequence. Verdict PASS(58); all-n operator identity is a Stream-1 follow-up."
+  },
+  "apery_zeta3": {
+   "type": "order-3",
+   "status": "OK",
+   "source": "OEIS A005259 (http://oeis.org/A005259); Ap\u00e9ry zeta(3), Beukers-Peters K3 (1984); weight-3",
+   "closed_form": "",
+   "initial_terms": [
+    1,
+    5,
+    73,
+    1445,
+    33001,
+    819005,
+    21460825,
+    584307365,
+    16367912425,
+    468690849005
+   ],
+   "recurrence_python": "(((5) + (27)*k + (51)*k**2 + (34)*k**3)*s[-1] + ((-1)*k**3)*s[-2]) / ((1) + (3)*k + (3)*k**2 + (1)*k**3)",
+   "_derivation": "recurrence DERIVED by exact nullspace from hash-pinned b-file (refs/oeis_A005259_bfile.txt) \u2014 NOT transcribed; verified to reproduce 78 terms; min-ODE order 3 PASS(77)"
+  },
+  "domb": {
+   "type": "order-3",
+   "status": "OK",
+   "source": "OEIS A002895 (http://oeis.org/A002895); Domb numbers, K3-class (diamond lattice)",
+   "closed_form": "",
+   "initial_terms": [
+    1,
+    4,
+    28,
+    256,
+    2716,
+    31504,
+    387136,
+    4951552,
+    65218204,
+    878536624
+   ],
+   "recurrence_python": "(((4) + (18)*k + (30)*k**2 + (20)*k**3)*s[-1] + ((-64)*k**3)*s[-2]) / ((1) + (3)*k + (3)*k**2 + (1)*k**3)",
+   "_derivation": "recurrence DERIVED by exact nullspace from hash-pinned b-file (refs/oeis_A002895_bfile.txt) \u2014 NOT transcribed; verified to reproduce 78 terms; min-ODE order 3 PASS(77)"
+  },
+  "almkvist_zagier_second": {
+   "type": "order-3",
+   "status": "OK",
+   "source": "OEIS A125143 (http://oeis.org/A125143); Almkvist-Zudilin second K3-class sequence",
+   "closed_form": "",
+   "initial_terms": [
+    1,
+    -3,
+    9,
+    -3,
+    -279,
+    2997,
+    -19431,
+    65853,
+    292329,
+    -7202523
+   ],
+   "recurrence_python": "(((-3) + (-13)*k + (-21)*k**2 + (-14)*k**3)*s[-1] + ((-81)*k**3)*s[-2]) / ((1) + (3)*k + (3)*k**2 + (1)*k**3)",
+   "_derivation": "recurrence DERIVED by exact nullspace from hash-pinned b-file (refs/oeis_A125143_bfile.txt) \u2014 NOT transcribed; verified to reproduce 78 terms; min-ODE order 3 PASS(77)"
+  },
+  "az_sporadic_a006077": {
+   "type": "order-2",
+   "status": "OK",
+   "source": "OEIS A006077 (http://oeis.org/A006077); Zagier order-2 sporadic (elliptic, weight-2)",
+   "closed_form": "",
+   "initial_terms": [
+    1,
+    3,
+    9,
+    21,
+    9,
+    -297,
+    -2421,
+    -12933,
+    -52407,
+    -145293
+   ],
+   "recurrence_python": "(((3) + (9)*k + (9)*k**2)*s[-1] + ((-27)*k**2)*s[-2]) / ((1) + (2)*k + (1)*k**2)",
+   "_derivation": "recurrence DERIVED by exact nullspace from hash-pinned b-file (refs/oeis_A006077_bfile.txt) \u2014 NOT transcribed; verified to reproduce 78 terms; min-ODE order 2 PASS(78)"
+  }
+ }
 }
