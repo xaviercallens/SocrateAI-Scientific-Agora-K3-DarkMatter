@@ -1,0 +1,15 @@
+{
+  "checker": "check_C1.py",
+  "checker_version": "1.0.0",
+  "criterion": "C1 (Kodaira fibre classification of order-2 elliptic partner)",
+  "fibre_configuration": {
+    "fibres": [],
+    "partner_source": "DERIVED (not literature transcription): symmetric-square root of cooper_s7 (order-3, A183204), extracted by checkers/check_C3b_symsqrt.py; certificate data/certificates/C3b_symsqrt_cooper_s7.json. Integer sequence is OEIS A279619 (1,2,22,336,6006,117348,2428272,52303680,...; fetched b-file 2026-07-24).",
+    "singular_points_count": 0
+  },
+  "partner": "cooper_s7_partner",
+  "provenance": "Generated-by: checkers/check_C1.py v1.0.0 (Tier B) | Verified-by: exact symbolic computation, singular-point extraction | Reviewed-by: pending T0",
+  "refs_file": "/mnt/disks/disk-socrateai-local-1/callensxavier_home_data/SocrateAI-Scientific-Agora-K3-DarkMatter/refs/recurrences_v1.json",
+  "refs_sha256": "63ec6248429182b8105b891a3f4f85034c4f11776742ee9484d17f0d0d592b7e",
+  "verdict": "C1_KODAIRA_CLASSIFIED(fibres=0)"
+}
