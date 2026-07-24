@@ -1,8 +1,26 @@
 # C3b Extraction — Final Status Report
 
-**Date:** 2026-07-18  
-**Status:** FRAMEWORK COMPLETE, AWAITING PARTNER IDENTIFICATION  
+**Date:** 2026-07-18 (**correction appended 2026-07-20**)  
+**Status:** FRAMEWORK COMPLETE (for the 3 executed sequences), AWAITING PARTNER IDENTIFICATION  
 **Authority:** Peer review (2026-07-18); user directive to hold Stream 3 handoff until C3b complete
+
+---
+
+> **CORRECTION 2026-07-20 — refs data-integrity sweep.**
+> The "all 5 sequences pass validation" claim below was verified only for the **3 executed**
+> sequences (cooper_s7, cooper_s10, apery_zeta2). A mechanical sweep (regenerate each sequence
+> from its own recurrence, compare to stated terms) found the **2 reserve partners were corrupt**:
+> - `gorodetsky_s18` — recurrence predicts a₂≈0.544 (not 672); no clean order-3 fit exists
+>   (consistent with the G1-1 "s18 is order-4" finding). Now `BLOCKED_CORRUPT_RECURRENCE`;
+>   needs re-transcription from arXiv:2102.11839.
+> - `zagier_sporadic_A` — recurrence predicts a₂=−6 (not 15); tail terms fabricated. The true
+>   sequence is **OEIS A002893** (verified via OEIS fetch). But A002893 is weight-3 **K3-type**
+>   (Beukers–Stienstra), **not** a weight-2 elliptic curve → invalid as an order-2 brane. Now
+>   `BLOCKED_WRONG_TYPE`.
+>
+> Both now return `REFUSED_NO_DATA`. **Consequence:** no valid untested pairing remains
+> (only s7+apery, s10+apery are type-valid, both already ruled out). The blocker is unchanged
+> and mathematical: a correct **weight-2 elliptic** partner for s7/s10 from modular-forms theory.
 
 ---
 

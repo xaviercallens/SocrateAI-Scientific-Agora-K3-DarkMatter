@@ -43,9 +43,10 @@
     },
     "gorodetsky_s18": {
       "type": "order-3",
-      "status": "OK",
-      "source": "Gorodetsky arXiv:2102.11839 (https://arxiv.org/abs/2102.11839); recurrence (14, 6, 192, -12) extracted from literature; kernel validation in s7/s10 pattern.",
-      "closed_form": "[derived from recurrence; closed form not yet in standard literature]",
+      "status": "BLOCKED_CORRUPT_RECURRENCE",
+      "_meta_status": "BLOCKED",
+      "source": "Gorodetsky arXiv:2102.11839 (https://arxiv.org/abs/2102.11839); recurrence transcription (14, 6, 192, -12) UNVERIFIED — see _meta_note.",
+      "closed_form": "[to be transcribed from Gorodetsky arXiv:2102.11839]",
       "initial_terms": [1, 14, 672, 42768, 3205920, 284462784, 28510491264, 3095346850944, 366192230530560],
       "recurrence_python": "(6*s[-1] + 14*s[-2]) / (192 - 12*k)",
       "recurrence_coefficients": {
@@ -53,7 +54,7 @@
         "P1": [6],
         "P2": [192, -12]
       },
-      "_meta_note": "Gorodetsky's sporadic sequence (novel discovery, not in classical literature). Recurrence (14, 6, 192, -12) sourced from arXiv. Initial terms computed via the recurrence with verified kernel test u₃ = 564 (Gorodetsky kernel validation). Shift order unknown; presumed order-3 K3-type (pending exact ODE derivation). Candidate for C3b moduli map in case s7/s10 pair fails to find low-degree algebraic relation."
+      "_meta_note": "BLOCKED 2026-07-20: this entry's recurrence_python does NOT reproduce its own stated initial_terms (predicts a2 ≈ 0.544, not 672; non-integral). An exact fit of a general order-3 Apéry-like recurrence [(n+1)^3 leading] to the stated terms is underdetermined with non-integer coefficients — i.e. these terms do not satisfy any clean order-3 three-term recurrence, consistent with the peer-review G1-1 finding that s18 is order-4 in the tested window. The (14,6,192,-12) → recurrence_python translation is garbled and the sequence's true holonomic order is disputed. REFUSED for C3b until re-transcribed directly from Gorodetsky arXiv:2102.11839 (verify both the recurrence and the initial terms; do not compute values from memory)."
     },
     "apery_zeta2": {
       "type": "order-2",
@@ -70,16 +71,18 @@
     },
     "zagier_sporadic_A": {
       "type": "order-2",
-      "status": "OK",
-      "source": "Zagier 2009 'Integral solutions of Apéry-like recurrences' Math. Comp. 72(2003) 1023-1033 §4; one of Zagier's 6 sporadic order-2 sequences",
-      "closed_form": "[Zagier family; closed form under-documented]",
-      "initial_terms": [1, 3, 15, 93, 639, 4653, 35169, 274803, 2189423, 17799159],
-      "recurrence_python": "(-(k+1)**2*s[-1] + (k+1)*(2*k+1)*s[0])",
+      "status": "BLOCKED_WRONG_TYPE",
+      "_meta_status": "BLOCKED",
+      "source": "OEIS A002893 (http://oeis.org/A002893); a(n)=Sum_{k=0..n} C(n,k)^2 C(2k,k); Zagier sporadic (a,b,c)=(10,3,9); Beukers-Stienstra 'Picard-Fuchs Equation and Formal Brauer Group of Certain Elliptic K3-Surfaces' (Math. Ann. 271, 1985); Beauville four-singular-fibre family.",
+      "closed_form": "∑_{k=0}^{n} C(n,k)² · C(2k,k)",
+      "initial_terms": [1, 3, 15, 93, 639, 4653, 35169, 272835, 2157759, 17319837],
+      "recurrence_python": "((10*k**2+10*k+3)*s[-1] - 9*k**2*s[-2]) / ((k+1)**2)",
       "recurrence_coefficients": {
-        "P0": [0, -1, 0, -1],
-        "P1": [0, 1, 2, 0]
+        "A": [3, 10, 10],
+        "B": [0, 0, -9],
+        "C": [1, 2, 1]
       },
-      "_meta_note": "Zagier's second sporadic order-2 sequence (literature reference: Zagier 2009 §4). Intended as order-2 partner for cooper_s10 in C3b extraction. Weight-2 elliptic type. Recurrence derived from Zagier's closed form. Paired for C3b_cooper_s10__zagier_sporadic_A moduli relation extraction."
+      "_meta_note": "CORRECTED 2026-07-20: the original entry was corrupt. Its recurrence_python did not reproduce its own stated terms (predicted a2=-6, not 15) and the tail terms [274803, 2189423, 17799159] were fabricated/mis-transcribed (inconsistent with any order-2 Apéry recurrence). Reconstructed by exact linear fit to the correct first 7 terms and verified against OEIS (fetched, not memory): the sequence is A002893. Recurrence (n+1)^2 a(n+1) = (10n^2+10n+3)a(n) - 9n^2 a(n-1) reproduces all corrected terms exactly and is integral. BLOCKED as a C3b brane: A002893 is weight-3 K3-type (Beukers-Stienstra formal Brauer group of an ELLIPTIC K3 surface), NOT a weight-2 elliptic curve. It has a three-term recurrence but a genuinely order-3 generating-function ODE, so the checker's 2-solution (order-2) Frobenius/mirror construction is invalid for it. It is therefore NOT a valid order-2 elliptic partner for cooper_s10; the correct weight-2 elliptic partner is still unidentified (modular-forms lookup pending)."
     }
   }
 }
