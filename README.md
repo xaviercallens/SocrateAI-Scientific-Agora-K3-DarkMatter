@@ -1,5 +1,16 @@
 # Dual-Scale Topological Universe Model
 
+> **F6 disclosure (2026-07-24): C1/C2 lattice numbers retracted.** `check_C1.py` extracted
+> singular loci as roots of the recurrence coefficient B(k) in the discrete **index k** and
+> mislabeled them as z-space singular points, with **hardcoded** exponents → "type II". The
+> resulting fibre configs and the Picard/transcendental numbers **ρ=4, T=18** (cooper_s7/s10
+> partners, in prior `C1C2_LATTICE_REPORT` and v0.3.0) are **NOT valid** and are retracted
+> (`_F6_RETRACTED` on the affected certs). Corrected z-space loci via
+> `checkers/check_C1_singular_loci.py`: cooper_s7_partner {−1, 1/27}, cooper_s10_partner
+> {−1/4, 1/16}. **Unaffected:** the kernel-verified **L₃=Sym²(L₂) proof** (`CooperSym2Proof.lean`,
+> v0.3.0) — pure operator algebra, independent of the C1 step. Full Kodaira re-typing is an open
+> ticket. See `briefs/DEEPTHINK_ADJUDICATION_DOMB_A002893.md` §3.
+
 ## Project Tracking
 - [GitHub Project: Dual-Scale Topological Universe Model](https://github.com/xaviercallens/SocrateAI-Scientific-Agora-K3-DarkMatter/projects)
 - [Milestones](https://github.com/xaviercallens/SocrateAI-Scientific-Agora-K3-DarkMatter/milestones)

@@ -1,0 +1,17 @@
+{
+  "checker": "check_C1_singular_loci.py",
+  "checker_version": "1.0.0",
+  "criterion": "C1-loci (CORRECTED z-space singular locus of order-2 partner)",
+  "kodaira_types": "TODO \u2014 requires local Frobenius exponents; NOT hardcoded (see F6 note)",
+  "leading_dz_factor_P2_of_z": "-(4*z + 1)*(16*z - 1)",
+  "mum_point": "z=0",
+  "partner": "cooper_s10_partner",
+  "provenance": "Generated-by: checkers/check_C1_singular_loci.py v1.0.0 (Tier B) | Verified-by: exact algebra (leading d/dz coefficient) | Reviewed-by: pending T0",
+  "refs_sha256": "17f54915417277ea80480fb3ff32edfc5bf7753435a5d634e3c998fc3dd1b6ce",
+  "singular_loci_z": [
+    "-1/4",
+    "1/16"
+  ],
+  "supersedes": "check_C1.py singular-locus step (F6 defect: index-space roots of B(k))",
+  "verdict": "C1_SINGULAR_LOCI_CORRECTED(n_finite_loci=2)"
+}

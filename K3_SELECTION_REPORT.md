@@ -143,13 +143,20 @@ Full detail: `briefs/ROUTE_A_EXECUTION_FINDINGS_2026_07_24.md`. Headline:
   catalogued pair). No Route-A winner is designated. Every Apéry-like K3 Sym² in the pool
   (cooper_s7/s10, Domb) has a **non-catalogued** partner.
 
-**Revised decision (supersedes §3's "Route A" for the S3-00 *input*, T0-delegated, countermand open):**
-1. S3-00 input falls back to **Route B** — K3 = cooper_s7 (partner A279619, OEIS-catalogued) or
-   Domb — with the partner's **modular identification** as an explicit tracked Tier-B dependency.
-2. **Domb × A002893 → Deep Think (T0s) for Shioda–Inose adjudication** (is the q³⁶ relation
-   geometric or accidental?). If genuine, it becomes the Route-A pair and supersedes this.
-3. **Stream 3: send exact OEIS IDs for your γ/F, α/C, δ/A, η/D pairs** — not identifiable in this
-   repo's pool; if they are true catalogued Sym² pairs they override this finding.
+**FINAL decision (T0-delegated 2026-07-24, countermand open) — see `briefs/DEEPTHINK_ADJUDICATION_DOMB_A002893.md`:**
+1. **S3-00 input = Route B, K3 = cooper_s7.** Best-anchored: Sym²-proven (kernel, v0.3.0); partner
+   **A279619 is OEIS-catalogued AND integral** (cooper_s10's partner non-integral; Domb's
+   uncatalogued). Remaining Tier-B dependency: modular ID of A279619's operator (tracked, not a
+   pipeline blocker).
+2. **Domb × A002893 adjudicated by Stream 2 as a genuine but NON-Shioda–Inose correspondence**
+   (bidegree (4,4), no bijective/rational singular-fibre pairing, A002893 ≠ Domb's Sym²-root) →
+   does not revive Route A. Referred to Deep Think (T0s) only to adversarially test whether a
+   rational reparametrization could make it a genuine isogeny.
+3. **F6:** the C1/C2 rows in T4/T5 above are **RETRACTED** (index-space locus bug). Corrected loci:
+   cooper_s7_partner {−1,1/27}, cooper_s10_partner {−1/4,1/16} (`C1loci_*` certs). ρ/T recompute
+   required before any lattice-dependent step.
+4. **Stream 3: still send exact OEIS IDs for γ/F, α/C, δ/A, η/D** — if genuine catalogued Sym²
+   pairs, they override and revive Route A.
 
 ## 4. Gaps blocking report v1.0 (explicit)
 

@@ -1,4 +1,5 @@
 {
+  "_F6_RETRACTED": "2026-07-24: singular loci were index-space roots of B(k), not z-space; exponents/Kodaira types were hardcoded placeholders. Fibre count, rho, T here are NOT valid. Corrected loci: data/certificates/C1loci_*.json. Full Kodaira re-typing = open ticket.",
   "c1_source": "data/certificates/C1_cooper_s7_partner.json",
   "checker": "check_C2.py",
   "checker_version": "1.0.0",

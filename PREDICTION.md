@@ -36,7 +36,23 @@ SIGNED); §4 comparisons additionally [A-DATA, A-PIPE].
 
 ---
 
-## 2. Candidate-selection rule (Route A — DECIDED)  [T0-DELEGATED]
+## 2a. Candidate RESOLVED (2026-07-24, T0-delegated) — Route B, K3 = cooper_s7
+
+Route-A execution (`briefs/ROUTE_A_EXECUTION_FINDINGS_2026_07_24.md`) found **no certified
+catalogued Shioda–Inose pair** in the standard pool; the one lead (Domb × A002893) is a genuine
+but non-Shioda–Inose correspondence (`briefs/DEEPTHINK_ADJUDICATION_DOMB_A002893.md`). Therefore
+the mechanical Route-A rule in §2 fires on an empty set, and the S3-00 input is:
+
+> **K3 = cooper_s7 (A183204)**, order-2 partner **A279619** (OEIS-catalogued, integral,
+> Sym²-proven kernel-verified). **Tier-B dependency (tracked, not a pipeline blocker):** modular
+> identification of A279619's operator (level, weight-2 newform). **Blocker before any
+> lattice-dependent step:** correct C1/C2 recompute for the A279619 partner (F6 — the previous
+> ρ=4/T=18 is retracted).
+
+§2 below is retained as the rule that would fire *if* Stream 3 supplies genuine catalogued
+γ/α/δ/η Sym² pairs (which would override this resolution).
+
+## 2. Candidate-selection rule (Route A — retained as override path)  [T0-DELEGATED]
 
 Per K3_SELECTION_REPORT.md §3 (decision recorded there as DECIDED, this document is the
 operative rule): the S3-00 input is a **sporadic AZ order-3 / Zagier order-2 catalogued pair**
