@@ -7,6 +7,24 @@
 
 ---
 
+## 📌 STREAM 1/2 STATUS UPDATE (2026-07-24 EOD)
+
+**Stream 1 (Lean proof):** ✅ COMPLETE — `L₃=Sym²(L₂)` kernel-verified (commit 27b2c3f)
+- File: `lean4_formal_proofs/Structures/CooperSym2Proof.lean`
+- Status: `PROOF_STATUS.txt` = **SYM2_PROVED**
+- Axiom-clean (no sorry, no axiom, no native_decide)
+
+**Stream 2 (K3 selection):** ✅ COMPLETE — C1 Kodaira + C2 lattice for s7 & s10 (commit 30fcd15)
+- Lattice report: `data/reports/C1C2_LATTICE_REPORT_s7vs10.md`
+- Both partners: 2×Kodaira-II fibres, ρ=4, T=18 (identical structure)
+
+**For context, see:**
+- `RELEASE_v0.3.0.md` — comprehensive release notes
+- `briefs/DEEPTHINK_REVIEW_2026_07_24.md` — full technical review for T0s
+- `ROADMAP.md` — updated status by stream
+
+---
+
 ## Quick Start (60 seconds)
 
 ```bash
