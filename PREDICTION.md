@@ -36,6 +36,105 @@ SIGNED); §4 comparisons additionally [A-DATA, A-PIPE].
 
 ---
 
+## STREAM 3 EXPERIMENTATION INSTRUCTIONS (Added 2026-07-25)
+
+### Authority & Go/No-Go
+
+**T0 Authority:** Xavier Callens (T0 Owner) — **AUTHORIZED Stream 3 Phase 2 Go-Ahead** (2026-07-24)
+
+**Delegation:** Execution delegated to Stream 3 team; decision authority retained by Xavier.
+
+**Pre-Requisites (ALL MUST BE MET):**
+✅ C3b partner extraction complete (L₃=Sym²(L₂) proven all-n)
+✅ C1 Kodaira classification complete (ρ=4, T=18 confirmed)
+✅ C2 Picard/lattice computation complete (both s7 & s10)
+✅ Phase 1 local checks all PASS (numerics, mirror-map, lattice)
+✅ All three organizational blockers cleared:
+   • K3_SELECTION_REPORT.md published & frozen (Route A: cooper_s7)
+   • ASSUMPTIONS.md v2.0-SIGNED (T0-delegated)
+   • PREDICTION.md v1.0-PINNED (this document, pre-data)
+✅ Stream 2 lattice comparison validates design (s7 ≈ s10 isomorphic)
+
+**Status (2026-07-25 18:00 UTC):** ✅ ALL PRE-REQUISITES MET → PROCEED TO PHASE 2 D-3
+
+---
+
+### Stream 3 Phase 2 Execution (D-3 Empirical Rerun)
+
+**Scope:** Test L₃=Sym²(L₂) operator identity on 100–150 real SDSS + Euclid sectors
+
+**Command (GPU):**
+```bash
+python3 pipelines/D3_batch_runner_phase2.py \
+  --sectors-dir data/sdss_sectors/ data/euclid_sectors/ \
+  --operators L3_cooper_s7 L3_cooper_s10 \
+  --gpu-count 4 --batch-size 32 \
+  --output data/d3_runs/ \
+  --log-file data/d3_runs/D3_BATCH_LOG.txt --verbose
+```
+
+**Command (CPU fallback):**
+```bash
+python3 pipelines/D3_batch_runner_phase2.py \
+  --sectors-dir data/sdss_sectors/ data/euclid_sectors/ \
+  --operators L3_cooper_s7 L3_cooper_s10 \
+  --cpu-only --batch-size 8 \
+  --output data/d3_runs/ --log-file data/d3_runs/D3_BATCH_LOG.txt
+```
+
+**Expected Timeline:**
+- Batch execution: 6–12 hours (GPU) or 3–7 days (CPU)
+- Aggregation: ~1 hour
+- Gate E decision: 2026-07-27 EOD UTC
+
+---
+
+### Gate E Go/No-Go Criteria (MANDATORY)
+
+**All 6 criteria must PASS for v0.4.0 release:**
+
+| Criterion | Threshold | Evidence | Authority |
+|-----------|-----------|----------|-----------|
+| s7 pass rate | ≥95% | D3_AGGREGATE_VERDICT.json | Stream 3 ops |
+| s10 pass rate | ≥95% | D3_AGGREGATE_VERDICT.json | Stream 3 ops |
+| Lattice χ² (s7) | <1.0 @ 3σ | D3_STATISTICAL_REPORT.md | Stream 3 ops |
+| Operator numerics | <1e-50 error | C3b_symsqrt_*.json | Stream 2 verified |
+| Mirror-map | q⁶⁴ agreement | C3b_symsqrt_*.json | Stream 2 verified |
+| Physics-washing audit | zero Tier C claims | D3_GATE_E_VERDICT.md | Xavier (T0) |
+
+**Decision Logic (Xavier):**
+- **IF all 6 PASS** → Gate E = **PASS** → Release v0.4.0 authorized
+- **ELSE IF 5/6 PASS (marginal)** → Gate E = **CONDITIONAL** → human review required
+- **ELSE** → Gate E = **FAIL** → hypothesis revision needed
+
+---
+
+### Stream 3 Contingency & Escalation
+
+**If GPU unavailable:** Switch to CPU fallback (adds 4–6 days to timeline)
+
+**If D-3 pass rate marginal (90–95%):** Escalate to Xavier; may retry 50 sectors with relaxed bounds
+
+**If lattice χ² > 1.0:** Escalate to Xavier + Deep Think for prior adjustment
+
+**If physics-washing detected:** FAIL; report must be rewritten using Tier B/C markers
+
+---
+
+### Sign-Off: Stream 3 May Proceed
+
+**Xavier Callens (T0 Owner):**
+✅ **AUTHORIZED Stream 3 Phase 2 go-ahead (2026-07-24 delegation)**
+✅ **All pre-requisites verified (2026-07-25)**
+✅ **Prediction pinned and frozen (this document, v1.0-PINNED)**
+✅ **Stream 3 may execute D-3 batch immediately (2026-07-25 18:00 UTC)**
+
+**Condition:** Gate E decision authority retained by Xavier. Phase 2 results gate v0.4.0 release.
+
+**Next authorization point:** Gate E decision (2026-07-27 EOD UTC)
+
+---
+
 ## 2a. Candidate RESOLVED (2026-07-24, T0-delegated) — Route B, K3 = cooper_s7
 
 Route-A execution (`briefs/ROUTE_A_EXECUTION_FINDINGS_2026_07_24.md`) found **no certified

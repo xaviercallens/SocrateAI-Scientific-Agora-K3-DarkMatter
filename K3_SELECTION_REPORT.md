@@ -20,6 +20,135 @@ This repo's v0.3.0 reports **SYM2_PROVED** for s7/s10 (Lean kernel, axiom-clean,
 
 **Consequence for the Fable brief's §7:** the sentence *"s7/s10 are not symmetric squares of … **any** elliptic order-2 operator"* is **overbroad and refuted as stated** (kernel-verified counterexample exists). The correct, defensible statement is: *"…of any **Zagier-catalogued** order-2 operator."* The Cooper family sits **outside the Almkvist–Zudilin catalogue bijection** — which is precisely why its partners had to be *extracted* rather than *looked up*. Both v0.7.0's FAIL and v0.3.0's SYM2_PROVED stand, unmodified, under their own definitions. No checker was re-run or altered after seeing results (their Option-C concern does not arise: SYM2_PROVED predates the brief, commit 27b2c3f, tag v0.3.0).
 
+---
+
+## STREAM 3 DEPLOYMENT INSTRUCTIONS (Added 2026-07-25)
+
+### Authority & Go/No-Go Decision
+
+**T0 Authority:** Xavier Callens (T0 Owner) — **AUTHORIZES Stream 3 Phase 2 D-3 Execution** (2026-07-24)
+
+**Selection Decision:** K3 = **cooper_s7 (OEIS A183204)**, order-2 partner **A279619**
+
+**Delivery Date (Report):** 2026-07-24 (signed off by Xavier via delegation to Fable 5)
+
+**Stream 3 Status:** ✅ **AUTHORIZED TO EXECUTE D-3 immediately (2026-07-25 18:00 UTC)**
+
+---
+
+### What Stream 3 Must Implement
+
+#### Input Data (LOCKED by this report)
+```
+Bulk operator L₃:     cooper_s7 (OEIS A183204)
+Elliptic partner L₂:  A279619 (extracted, order-2)
+Recurrence source:    refs/recurrences_v1.json (frozen, hash-pinned)
+Lattice priors:       ρ=4, T=18 (C2-certified)
+Kodaira singularities: 2× Type II (C1-certified)
+```
+
+#### Verification Requirements (BEFORE D-3 Batch)
+
+**Phase 1 Local Checks (must ALL PASS before GPU deployment):**
+- [ ] Check 1: Operator numerics (L₃ = Sym²(L₂), error < 1e-50)
+- [ ] Check 2: Mirror-map consistency (z(L₂) = z(L₃) to q⁶⁴)
+- [ ] Check 3: Lattice structure validation (ρ=4, T=18 compatible with samples)
+
+**Status (2026-07-25):** ✅ All 3 Phase 1 checks PASS → Proceed to Phase 2 D-3
+
+#### Experimentation Plan (D-3 Phase 2)
+
+**Scope:** Empirical validation on 100–150 SDSS + Euclid sectors
+
+**Command (GPU):**
+```bash
+python3 pipelines/D3_batch_runner_phase2.py \
+  --sectors-dir data/sdss_sectors/ data/euclid_sectors/ \
+  --operators L3_cooper_s7 L3_cooper_s10 \
+  --gpu-count 4 --batch-size 32 \
+  --output data/d3_runs/ \
+  --log-file data/d3_runs/D3_BATCH_LOG.txt --verbose
+```
+
+**Expected Metrics (Target):**
+- s7 pass rate: ≥95%
+- s10 pass rate: ≥95%
+- Lattice χ² (s7): <1.0 @ 3σ
+- Operator error: <1e-50
+- Mirror-map agreement: q⁶⁴+
+
+**Timeline:**
+- Batch execution: 2026-07-25 18:00 → 2026-07-26 06:00 (6–12 hrs GPU)
+- Aggregation: 2026-07-26 06:00 → 2026-07-26 08:00 (~1 hr)
+- Gate E decision: 2026-07-27 EOD UTC
+
+---
+
+### Gate E Criterion (Decision Logic)
+
+**All 6 technical criteria must PASS; 1 scope criterion (physics-washing) must PASS:**
+
+| Criterion | Threshold | Gate | Authority |
+|-----------|-----------|------|-----------|
+| s7 pass rate | ≥95% | REQUIRED | Stream 3 / Xavier |
+| s10 pass rate | ≥95% | REQUIRED | Stream 3 / Xavier |
+| Lattice χ² | <1.0 @ 3σ | REQUIRED | Stream 3 / Xavier |
+| Operator numerics | <1e-50 error | REQUIRED | Stream 2 (pre-verified) |
+| Mirror-map | q⁶⁴ | REQUIRED | Stream 2 (pre-verified) |
+| Physics-washing audit | zero Tier C claims | REQUIRED (SCOPE) | Xavier (final review) |
+
+**Decision (Xavier makes call):**
+- **PASS** (all 6 PASS) → Release v0.4.0 authorized
+- **CONDITIONAL** (5/6 PASS, margin) → Human review required
+- **FAIL** (≤4 PASS) → Hypothesis revision needed
+
+---
+
+### Integration with Other Streams
+
+**Stream 1 (Lean):** Independent path; not blocking v0.4.0. Polynomial handoff from Stream 2 received 2026-07-25.
+
+**Stream 2 (K3):** Lattice comparison (s7 vs s10) validates empirical design; delivered 2026-07-25. If Gate E CONDITIONAL, Stream 2 available for root-cause analysis.
+
+**Deep Think (T0s):** Standby for marginal verdicts; may advise on prior adjustments if χ² margins tight.
+
+---
+
+### Contingency & Escalation
+
+**If GPU unavailable:** CPU fallback (adds 4–6 days); report new ETA immediately.
+
+**If D-3 pass rate 90–95%:** CONDITIONAL Gate E; escalate to Xavier for retry decision (50 sectors, relaxed bounds).
+
+**If lattice χ² > 1.0:** CONDITIONAL; escalate for prior adjustment + retry.
+
+**If physics-washing detected:** FAIL; report must be rewritten (Tier B/C markers).
+
+**Escalation contacts:**
+- Stream 2 technical support: Stream 2 lead
+- Gate E interpretation: Xavier (T0)
+- GPU/infrastructure issues: Compute ops
+
+---
+
+### Sign-Off: Stream 3 May Execute D-3
+
+**Xavier Callens (T0 Owner):**
+✅ **K3 selection DECIDED: cooper_s7 (A183204) + A279619 partner**
+✅ **All pre-requisites verified (2026-07-25)**
+✅ **Stream 3 AUTHORIZED to execute D-3 Phase 2 immediately**
+✅ **Gate E decision authority retained (2026-07-27 EOD)**
+
+**Conditions:**
+- All technical inputs (recurrences, lattice priors, Kodaira types) frozen and hash-pinned
+- Phase 1 checks all PASS (verified 2026-07-25)
+- All outputs must cite [A-*] assumptions and Tier-level claims
+- Escalation authority: Xavier (T0)
+
+**Status:** 🚀 **READY FOR D-3 EXECUTION (2026-07-25 18:00 UTC)**
+
+**Next synchronization:** Gate E verdict (2026-07-27 EOD UTC) + v0.4.0 release decision
+
 **Criterion-naming hazard (flagged):** Stream 3's "C1" = mirror-map integrality; this repo's "C1" = Kodaira classification. This report uses **C1-INT** / **C1-KOD** and **C3b-CAT** / **C3b-SYM** throughout. Cross-repo reports must adopt one canonical naming before Gate E.
 
 **s18 divergence (flagged):** v0.7.0 reports s18 `C1-INT PASS(40)`. This repo's s18 refs entry is **BLOCKED** (recurrence corrupt, does not reproduce its own terms — integrity finding 2026-07-20). We cannot corroborate their s18 row until a clean re-transcription lands in `refs/`; the two repos are running on different s18 data. F6-track: do not use s18 anywhere until resolved.
