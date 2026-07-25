@@ -50,9 +50,16 @@ to order 29. Step 1: both singular loci are **simple critical values** of the Ha
 signature of an **order-2 elliptic point** of a Fuchsian group — finite-order monodromy by
 construction, **not** a Kodaira degeneration. All three retractions (F6, E-007, E-008) were
 downstream of forcing a fibration reading onto a modular object. Leads (both [B], untested):
-the group is likely **Γ₀(7)+** not Γ₀(7) (ν₂=0 vs 2 Fricke fixed points); and L₃'s order 3
-suggests **T=3, ρ=19** — the retracted ρ=4/T=18 essentially *inverted*. **Not computed; do
-not cite.** All certificates still emit ρ/T as `null` by design.
+the group is likely **Γ₀(7)+**; and L₃'s order 3 suggests **T=3, ρ=19**.
+
+**Both leads worked (2026-07-26).** L₃'s complete Riemann scheme (exact): s7 has
+{0,0,0} **MUM** at 0, {0,½,1} at ±loci, {2/3,1,4/3} at ∞, **Fuchs Σ=6 exact**, and
+**W(L₃)=W(L₂)³** (rank-3 orthogonal from rank-2 symplectic — a K3 transcendental form).
+→ **ESTABLISHED UNCONDITIONALLY: ρ=4/T=18 is structurally IMPOSSIBLE** (order-3 operator
+⇒ rank-3 system, never rank-18) — an independent second argument for E-007.
+→ **T=3/ρ=19 is the unique consistent assignment — but CONDITIONAL on E-009.**
+→ **Lead 1 corroborated [B]:** implied signature (genus 0; 2,2,3; 1 cusp; area 2/3)
+matches **Γ₀(7)+** exactly. All certificates still emit ρ/T as `null` by design.
 
 → `ESCALATIONS.md` E-007, E-008 (resolved), **E-009 (open)** · `briefs/STREAM2_ACTION_PLAN_2026_07_26.md`
 

@@ -45,10 +45,48 @@ reading onto a modular object. This ticket names the assumption itself.
    structurally motivated (operator order ↔ sub-VHS rank), **not computed**, and must
    not be cited. Testing it is the natural next task.
 
+### Progress 2026-07-26 — Lead 2 worked; Lead 1 corroborated as a byproduct
+
+`checkers/check_L3_riemann_scheme.py` computed L₃'s **complete** Riemann scheme in exact
+arithmetic (all four singular points including ∞):
+
+| | z = 0 | finite loci | z = ∞ | Fuchs |
+|---|---|---|---|---|
+| **s7** | {0,0,0} **MUM** | {0,½,1} at −1 and 1/27 | {2/3, 1, 4/3} | Σ = 6 = required ✅ |
+| **s10** | {0,0,0} **MUM** | {0,½,1} at −1/4 and 1/16 | {3/4, 1, 5/4} | Σ = 6 = required ✅ |
+
+Plus: **W(L₃) = W(L₂)³ CONFIRMED** — a rank-3 *orthogonal* local system arising as Sym² of
+a rank-2 *symplectic* one, which is exactly the form a K3 transcendental lattice carries.
+
+**ESTABLISHED UNCONDITIONALLY — ρ=4 / T=18 is structurally IMPOSSIBLE.** A Fuchsian
+operator of order *n* governs a rank-*n* local system. order(L₃) = 3, so any sub-VHS it
+governs has rank 3 — **not** 18. T = 18 would require an order-18 operator. This is
+independent of any K3 reading and reinforces E-007 by a second, unrelated argument: the
+retracted numbers were not merely unsupported, they were *arithmetically incompatible with
+the operator that generates the sequence*.
+
+**Lead 2 — CONDITIONALLY CONFIRMED.** Every structural precondition for a K3 reading
+passes (order 3; MUM {0,0,0}; Fuchs exact; integral holomorphic solution A183204;
+L₃ = Sym²(L₂) Tier A; the Wronskian/orthogonality signature). Therefore **T = 3, ρ = 19 is
+the unique assignment consistent with the operator** — the retracted values were essentially
+*inverted*. But passing preconditions is **not existence**: whether a K3 actually exists
+whose transcendental sub-VHS L₃ governs is exactly this ticket, still open. **T=3/ρ=19 is
+recorded as a conditional only; `picard_rank` and `transcendental_rank` remain `null`.**
+
+**Lead 1 — independently corroborated [B].** The implied Fuchsian signature for s7 is
+**genus 0, elliptic orders (2,2,3), 1 cusp, area/2π = 2/3** — which matches **Γ₀(7)+ =
+Γ₀(7)/w₇ exactly**: Γ₀(7) has index 8 (area 4/3); the Fricke quotient halves it to 2/3,
+fuses its 2 cusps to 1 and its 2 order-3 points to 1, and w₇'s 2 fixed points
+(h(−7) = h(−28) = 1) become the 2 order-2 elliptic points. This was *predicted* by Lead 1
+from a count and is now met by an independent exponent computation. Still [B] — inferred
+from exponent data plus standard Fuchsian theory, not a rigorous identification.
+(s10 analogously gives (2,2,4), 1 cusp, area 3/4 — consistent with a level-10
+Atkin–Lehner quotient.)
+
 ### Standing rule (unchanged)
 
-**Emit no ρ and no T until one is derived.** `ROUTE_GAMMA_STEP{0,1}.json` and
-`C1_L3_cooper_s{7,10}.json` all set them `null` deliberately.
+**Emit no ρ and no T until one is derived.** `ROUTE_GAMMA_STEP{0,1}.json`,
+`C1_L3_cooper_s{7,10}.json` and `L3_RIEMANN_SCHEME.json` all set them `null` deliberately.
 
 ---
 

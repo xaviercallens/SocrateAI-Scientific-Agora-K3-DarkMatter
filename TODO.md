@@ -87,14 +87,21 @@ Artifacts: `ESCALATIONS.md` E-007 · `data/certificates/C1_KODAIRA_CONSISTENCY.j
 > Three retractions (F6, E-007, E-008) were all downstream of forcing a fibration reading
 > onto a modular object. This ticket names that assumption.
 
-- [ ] **Lead 1 [B, verify before use]:** identify the group. Γ₀(7) has ν₂ = 0, so likely
-      **not** Γ₀(7); **Γ₀(7)+ = Γ₀(7)/w₇** has exactly 2 order-2 elliptic points (Fricke
-      fixed points), matching our 2 loci. Inferred from the count only.
-- [ ] **Lead 2 [B, HYPOTHESIS — test, do not cite]:** L₃ is order 3 ⇒ rank-3 transcendental
-      sub-VHS ⇒ **T = 3, ρ = 19** for a 1-parameter K3 family — i.e. the retracted values
-      (ρ=4, T=18) were essentially *inverted*. Structurally motivated, **not computed**.
-- [ ] Only if a ρ/T is genuinely derived: emit C1/C2 v3, notify Stream 3, and only then
-      does a revised M1′ become draftable
+- [x] **Lead 2 WORKED** (`checkers/check_L3_riemann_scheme.py`, `L3_RIEMANN_SCHEME.json`):
+      complete Riemann scheme computed exactly — s7 {0,0,0} MUM / {0,½,1} / {2/3,1,4/3},
+      **Fuchs Σ = 6 exact**; **W(L₃)=W(L₂)³ confirmed** (rank-3 orthogonal from rank-2
+      symplectic = a K3 transcendental form).
+      → **ESTABLISHED UNCONDITIONALLY: ρ=4/T=18 is structurally IMPOSSIBLE** — an order-3
+      operator governs a rank-3 system, not rank-18. Independent second argument for E-007.
+      → **T=3 / ρ=19 is the unique consistent assignment, but CONDITIONAL on E-009.**
+      Recorded as conditional; ρ/T still `null`. Do not cite as derived.
+- [x] **Lead 1 CORROBORATED [B]:** implied signature genus 0, elliptic (2,2,3), 1 cusp,
+      area 2/3 = **Γ₀(7)+ exactly** (Fricke halves Γ₀(7)'s 4/3; 2 cusps→1; 2 order-3→1;
+      w₇'s 2 fixed points → the 2 order-2 points). Predicted from a count, met by an
+      independent exponent computation. Still [B], not a rigorous identification.
+- [ ] **E-009 core question remains OPEN:** does a K3 EXIST whose transcendental sub-VHS
+      L₃ governs? Passing preconditions is not existence. This is now the single blocker.
+- [ ] Only if that resolves: emit C1/C2 v3, notify Stream 3, then a revised M1′ is draftable
 
 
 ### Phase 3: C2 v3 (2–3 h) — only after Phase 2 yields a genuine PF operator

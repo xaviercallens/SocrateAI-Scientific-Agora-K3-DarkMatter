@@ -1,0 +1,108 @@
+{
+  "checker": "check_L3_riemann_scheme.py",
+  "checker_version": "1.0.0",
+  "date": "2026-07-26",
+  "ticket": "E-009 Lead 2",
+  "results": [
+    {
+      "operator": "cooper_s7",
+      "bulk_oeis": "A183204",
+      "riemann_scheme": {
+        "0": [
+          "0",
+          "0",
+          "0"
+        ],
+        "-1": [
+          "0",
+          "1/2",
+          "1"
+        ],
+        "1/27": [
+          "0",
+          "1/2",
+          "1"
+        ],
+        "oo": [
+          "2/3",
+          "1",
+          "4/3"
+        ]
+      },
+      "fuchs_sum": "6",
+      "fuchs_required": "6",
+      "fuchs_satisfied": true,
+      "mum_at_zero": true,
+      "wronskian_W3_equals_W2_cubed": true,
+      "implied_fuchsian_signature": {
+        "genus": 0,
+        "elliptic_orders": [
+          2,
+          2,
+          3
+        ],
+        "cusps": 1,
+        "hyperbolic_area_over_2pi": "2/3"
+      },
+      "all_structural_tests_pass": true
+    },
+    {
+      "operator": "cooper_s10",
+      "bulk_oeis": "A005260",
+      "riemann_scheme": {
+        "0": [
+          "0",
+          "0",
+          "0"
+        ],
+        "-1/4": [
+          "0",
+          "1/2",
+          "1"
+        ],
+        "1/16": [
+          "0",
+          "1/2",
+          "1"
+        ],
+        "oo": [
+          "3/4",
+          "1",
+          "5/4"
+        ]
+      },
+      "fuchs_sum": "6",
+      "fuchs_required": "6",
+      "fuchs_satisfied": true,
+      "mum_at_zero": true,
+      "wronskian_W3_equals_W2_cubed": true,
+      "implied_fuchsian_signature": {
+        "genus": 0,
+        "elliptic_orders": [
+          2,
+          2,
+          4
+        ],
+        "cusps": 1,
+        "hyperbolic_area_over_2pi": "3/4"
+      },
+      "all_structural_tests_pass": true
+    }
+  ],
+  "picard_rank": null,
+  "transcendental_rank": null,
+  "established_unconditionally": {
+    "claim": "rho=4 / T=18 is structurally impossible for an order-3 operator",
+    "reason": "A Fuchsian operator of order n governs a rank-n local system. order(L3)=3, so any sub-VHS it governs has rank 3, not 18. T=18 would require order 18.",
+    "depends_on_K3_reading": false
+  },
+  "conditional_result": {
+    "if": "L3 governs the transcendental sub-VHS of a K3 family (E-009, OPEN)",
+    "then": {
+      "transcendental_rank_T": 3,
+      "picard_rank_rho": 19
+    },
+    "status": "NOT ESTABLISHED \u2014 E-009 must resolve first. Do not cite as derived."
+  },
+  "lead1_bonus": "[B] The implied Fuchsian signature for s7 \u2014 genus 0, elliptic orders (2,2,3), 1 cusp, area/2\u03c0 = 2/3 \u2014 matches \u0393\u2080(7)+ = \u0393\u2080(7)/w\u2087 exactly: \u0393\u2080(7) has index 8 (area 4/3), the Fricke quotient halves it to 2/3, its 2 cusps fuse to 1, its 2 order-3 points fuse to 1, and w\u2087's 2 fixed points (h(-7)=h(-28)=1) become the 2 order-2 elliptic points. This independently corroborates E-009 Lead 1 (group is \u0393\u2080(7)+, not \u0393\u2080(7), which has \u03bd\u2082=0). Inferred from exponent data + standard Fuchsian theory \u2014 NOT a rigorous identification."
+}
