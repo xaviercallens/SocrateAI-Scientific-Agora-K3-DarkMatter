@@ -1,0 +1,145 @@
+name: Stream 1 WP-B1 — Chameleon Screening Verification
+
+# Validation gate for WP-B1 (briefs/STREAM1_WP_B1_CHAMELEON_MECHANISM.md).
+# Scoped deliberately to the B1 modules so this gate reports on WP-B1's own
+# Definition of Done and is not coupled to unrelated legacy modules.
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'lean4_formal_proofs/Structures/B1_*.lean'
+      - 'lean4_formal_proofs/Structures/Axioms/B1_*.lean'
+      - 'lean4_formal_proofs/Structures/Tests/B1_*.lean'
+      - '.github/workflows/stream1_b1.yml'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'lean4_formal_proofs/Structures/B1_*.lean'
+      - 'lean4_formal_proofs/Structures/Axioms/B1_*.lean'
+      - 'lean4_formal_proofs/Structures/Tests/B1_*.lean'
+      - '.github/workflows/stream1_b1.yml'
+  workflow_dispatch:
+
+env:
+  B1_MODULES: >-
+    Structures.Axioms.B1_Screening
+    Structures.B1_Chameleon
+    Structures.B1_Sym2Bridge
+    Structures.Tests.B1_screening_golden
+    Structures.B1_AxiomAudit
+  B1_FILES: >-
+    Structures/Axioms/B1_Screening.lean
+    Structures/B1_Chameleon.lean
+    Structures/B1_Sym2Bridge.lean
+    Structures/Tests/B1_screening_golden.lean
+    Structures/B1_AxiomAudit.lean
+
+jobs:
+  b1-verification:
+    name: WP-B1 Definition of Done
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Lean 4 (elan) and Lake
+        run: |
+          curl -L https://raw.githubusercontent.com/leanprover/lean4/master/scripts/install.sh | bash -s -- -y
+          echo "$HOME/.elan/bin" >> $GITHUB_PATH
+
+      - name: Report toolchain
+        run: |
+          lean --version
+          lake --version
+
+      - name: Fetch Mathlib cache
+        working-directory: lean4_formal_proofs
+        run: lake exe cache get
+
+      # DoD: "Lean 4 compiles"
+      - name: Build B1 modules
+        working-directory: lean4_formal_proofs
+        run: |
+          echo "🔨 Building WP-B1 modules..."
+          lake build $B1_MODULES 2>&1 | tee b1_build.log
+          if grep -qE '^error' b1_build.log; then
+            echo "::error::WP-B1 build reported errors"
+            exit 1
+          fi
+          echo "✅ All B1 modules compiled"
+
+      # DoD: "zero `sorry`"
+      - name: Assert zero sorry / admit / native_decide in B1 sources
+        working-directory: lean4_formal_proofs
+        run: |
+          echo "🔍 Scanning B1 sources for proof holes..."
+          # Strip comment lines first so prose *describing* a past sorry
+          # does not trip the gate; only real tactic occurrences count.
+          FOUND=0
+          for f in $B1_FILES; do
+            if grep -nE '(^|[^[:alnum:]_])(sorry|admit|native_decide)([^[:alnum:]_]|$)' "$f" \
+                 | grep -vE '^\s*[0-9]+:\s*--' ; then
+              echo "::error file=lean4_formal_proofs/$f::proof hole found"
+              FOUND=1
+            fi
+          done
+          if [ "$FOUND" -ne 0 ]; then exit 1; fi
+          echo "✅ No proof holes in B1 sources"
+
+      # DoD: axiom hygiene — the trust base must be only kernel axioms plus
+      # the declared physical constants. `sorryAx` here means a hole leaked in.
+      - name: Audit axiom trust base
+        working-directory: lean4_formal_proofs
+        run: |
+          echo "🔬 Auditing axiom dependencies..."
+          lake build Structures.B1_AxiomAudit 2>&1 | tee b1_axioms.log
+          if grep -q 'sorryAx' b1_axioms.log; then
+            echo "::error::sorryAx present in B1 axiom trust base"
+            exit 1
+          fi
+          echo "--- trust base ---"
+          grep 'depends on axioms' -A6 b1_axioms.log || true
+          echo "✅ No sorryAx in trust base"
+
+      # DoD: "All citations in docstrings"
+      - name: Check literature citations present
+        working-directory: lean4_formal_proofs
+        run: |
+          echo "📚 Checking required citations..."
+          MISSING=0
+          for ref in 'astro-ph/0309411' '1109.2709'; do
+            if ! grep -rq "$ref" Structures/B1_Chameleon.lean Structures/Axioms/B1_Screening.lean; then
+              echo "::error::missing citation $ref in B1 sources"
+              MISSING=1
+            else
+              echo "  ✓ $ref"
+            fi
+          done
+          if [ "$MISSING" -ne 0 ]; then exit 1; fi
+          echo "✅ All required citations present"
+
+      - name: Upload logs
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: stream1-b1-logs
+          path: |
+            lean4_formal_proofs/b1_build.log
+            lean4_formal_proofs/b1_axioms.log
+          retention-days: 14
+
+      - name: Summary
+        if: success()
+        run: |
+          {
+            echo "## Stream 1 WP-B1 — Gate PASS"
+            echo ""
+            echo "| Check | Status |"
+            echo "|---|---|"
+            echo "| Lean 4 build (5 modules) | ✅ |"
+            echo "| Zero sorry / admit / native_decide | ✅ |"
+            echo "| Axiom trust base (no sorryAx) | ✅ |"
+            echo "| Literature citations present | ✅ |"
+          } >> $GITHUB_STEP_SUMMARY

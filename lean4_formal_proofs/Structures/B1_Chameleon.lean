@@ -104,20 +104,62 @@ theorem dense_env_short_range (ε : ℝ) (hε : ε > 0) :
     rw [hK, mul_comm, div_mul_cancel₀ (C_max : ℝ) hε.ne']
   linarith [h_mul, h_eq]
 
-/-! LEMMA 4: No unscreened long-range force from K3 alone
-    ¬(∃ params : K3_BulkParameters, ∃ r, unscreened at r > 1 Mpc)
+/-! SUPPORTING: screening radius is strictly antitone in density
 
+    Denser environment ⇒ strictly shorter force range. This is the
+    monotone form of the screening mechanism (Lemma 3 gives the limit
+    statement; this gives the pointwise comparison).
+
+    Source: [astro-ph/0309411] §3.3
+-/
+
+theorem screening_radius_strict_anti (ρ₁ ρ₂ : EnvDensity) (h : ρ₁ < ρ₂) :
+    screening_radius ρ₂ < screening_radius ρ₁ := by
+  have h_coe : (ρ₁ : ℝ) < (ρ₂ : ℝ) := by exact_mod_cast h
+  have h_meff : m_eff ρ₁ < m_eff ρ₂ := by
+    simp only [m_eff, m_eff_squared]
+    exact Real.sqrt_lt_sqrt
+      (by nlinarith [sq_nonneg (m_bare : ℝ), NNReal.coe_nonneg ρ₁]) (by linarith)
+  have h1 : (0 : ℝ) < m_eff ρ₁ + 1 := by
+    have := Real.sqrt_nonneg (m_eff_squared ρ₁); simp only [m_eff]; linarith
+  have h2 : (0 : ℝ) < m_eff ρ₂ + 1 := by
+    have := Real.sqrt_nonneg (m_eff_squared ρ₂); simp only [m_eff]; linarith
+  have hC : (0 : ℝ) < (C_max : ℝ) := NNReal.coe_pos.mpr C_max_positive
+  simp only [screening_radius]
+  rw [div_lt_div_iff₀ h2 h1]
+  nlinarith [hC, h_meff]
+
+/-! LEMMA 4: No unscreened long-range force from K3 alone
     Without chameleon screening, the K3 geometric mediation cannot produce
     an unscreened Mpc-range force. This is a negative result that justifies
     introducing the chameleon mechanism as necessary infrastructure.
 
-    STATUS: structural placeholder (sorry). Closing this requires the K3
-    exchange-amplitude bound from Stream 2's lattice certificates (ρ=4,
-    T=18), which is out of WP-B1's own scope per its "What This WP Does
-    NOT Do" section (no K3 geometry changes). Escalated per the brief's
-    Validation Gate ("if proof stalls after 3 attempts, escalate to
-    Sonnet for lemma redesign") — the redesign needed is a Stream 2
-    hand-off, not a Lean tactic issue.
+    ⚠️ SPEC CORRECTION (2026-07-25, Sonnet 5). The brief's literal DoD
+    statement
+
+        no_unscreened_lmp : ¬(∃ params, K3_bulk_unscreened_force (r > Mpc))
+
+    transcribed into Lean as
+
+        ¬(∃ params : K3_BulkParameters, ∃ r : ℝ,
+            has_unscreened_long_range r ∧ params.coupling > 0 ∧ params.scale > 0)
+
+    is **FALSE, not merely hard** — `r` is freely existentially quantified
+    with no functional dependence on `params`, so `⟨1,1⟩` together with
+    `r = 2·10⁶` satisfies the inner conjunction and refutes the negation.
+    This is proved below as `brief_literal_statement_is_refutable`, so the
+    defect is recorded in the kernel rather than only in prose.
+
+    The intended physical content is that the force range is *determined by*
+    the K3 data. We therefore introduce `k3_force_range params := 1 /
+    params.scale` (range = inverse mediator mass, set by the compactification
+    scale) and prove the corrected statement, which is a genuine theorem.
+
+    It carries one explicit modeling hypothesis — `h_scale`, that the K3
+    compactification scale is not itself Mpc-sized. That hypothesis is a
+    Tier [B] input, NOT derived here; it is precisely the quantity Stream 2's
+    lattice certificates constrain. Making it a visible hypothesis rather
+    than a hidden assumption is the point.
 
     Source: [astro-ph/0309411] §2 - standard screening constraints
 -/
@@ -131,11 +173,35 @@ structure K3_BulkParameters where
 -- Unscreened force definition: force range r > 1 Mpc
 def has_unscreened_long_range (r : ℝ) : Prop := r > 1_000_000  -- 1 Mpc in physical units
 
--- The negative result: K3 alone cannot produce unscreened Mpc-range force
-theorem no_unscreened_lmp :
-    ¬(∃ params : K3_BulkParameters, ∃ r : ℝ,
+/-- The force range mediated by K3 bulk exchange alone: the inverse of the
+mediator mass, which is set by the compactification scale. -/
+noncomputable def k3_force_range (params : K3_BulkParameters) : ℝ :=
+  1 / (params.scale : ℝ)
+
+/-- **Defect record.** The brief's literal transcription is refutable: `r`
+carries no dependence on `params`, so the existential is trivially witnessed.
+Kept in-tree so the spec bug cannot silently reappear. -/
+theorem brief_literal_statement_is_refutable :
+    ∃ params : K3_BulkParameters, ∃ r : ℝ,
       has_unscreened_long_range r ∧
-      (params.coupling > 0) ∧ (params.scale > 0)) := by
-  sorry  -- Requires K3 exchange-amplitude bound from Stream 2; see docstring
+      (params.coupling > 0) ∧ (params.scale > 0) := by
+  refine ⟨⟨1, 1⟩, 2_000_000, ?_, ?_, ?_⟩
+  · unfold has_unscreened_long_range; norm_num
+  · norm_num
+  · norm_num
+
+/-- **Corrected Lemma 4.** K3 bulk mediation alone cannot produce an
+unscreened Mpc-range force, given that the compactification scale is not
+itself Mpc-sized (`h_scale`, a Tier [B] modeling input constrained by
+Stream 2's lattice certificates). -/
+theorem no_unscreened_lmp
+    (params : K3_BulkParameters)
+    (h_scale : (params.scale : ℝ) ≥ 1e-6) :
+    ¬ has_unscreened_long_range (k3_force_range params) := by
+  intro h_unscreened
+  simp only [has_unscreened_long_range, k3_force_range] at h_unscreened
+  have h_pos : (0 : ℝ) < (params.scale : ℝ) := lt_of_lt_of_le (by norm_num) h_scale
+  rw [gt_iff_lt, lt_div_iff₀ h_pos] at h_unscreened
+  linarith
 
 end B1_Chameleon

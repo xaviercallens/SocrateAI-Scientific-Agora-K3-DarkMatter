@@ -61,20 +61,18 @@ example : let ρ₁ : EnvDensity := ⟨1e-24, by norm_num⟩
 
 /-! Test Case 3: Screening radius decreases with density
 
-    As density increases, the screening radius shrinks.
+    As density increases, the screening radius shrinks strictly.
     This is the physical mechanism: high-density regions suppress long-range forces.
-
-    STATUS: structural (sorry). Follows immediately from `m_eff_monotone`
-    plus antitonicity of `x ↦ C_max / (x + 1)`; deferred pending a
-    `div_lt_div_of_pos_left`-style lemma name check (Phase 2C polish,
-    not part of the four DoD-critical lemmas).
+    Closed via `screening_radius_strict_anti` (Phase 2C).
 -/
 
-example : ∃ ρ₁ ρ₂ : EnvDensity, ρ₁ < ρ₂ →
-    screening_radius ρ₁ > screening_radius ρ₂ := by
-  use ⟨1e-30, by norm_num⟩, ⟨1e-20, by norm_num⟩
-  intro _
-  sorry  -- Phase 2C polish: antitonicity of ρ ↦ C_max/(m_eff ρ + 1)
+example (ρ₁ ρ₂ : EnvDensity) (h : ρ₁ < ρ₂) :
+    screening_radius ρ₁ > screening_radius ρ₂ :=
+  screening_radius_strict_anti ρ₁ ρ₂ h
+
+-- Concrete instance: solar-system vs. laboratory density
+example : screening_radius ⟨1e-20, by norm_num⟩ < screening_radius ⟨1e-30, by norm_num⟩ :=
+  screening_radius_strict_anti _ _ (by exact_mod_cast (by norm_num : (1e-30 : ℝ) < 1e-20))
 
 /-! Test Case 4: Known-bad scenario (no screening)
 
@@ -136,5 +134,23 @@ example : ∀ ρ : EnvDensity,
       site.coupling_strength ≥ 0 := by
   intro ρ
   exact ⟨brane_coupling_site ρ, rfl, zero_le⟩
+
+/-! Test Case 9: Corrected Lemma 4 — K3-alone force range stays sub-Mpc
+
+    With a compactification scale at the inverse-Mpc bound, the K3-mediated
+    range saturates at exactly 1 Mpc and is therefore NOT unscreened.
+-/
+
+example : ¬ has_unscreened_long_range (k3_force_range ⟨1, 1e-6, by norm_num⟩) :=
+  no_unscreened_lmp _ (le_refl _)
+
+/-! Test Case 10: Defect record — the brief's literal Lemma 4 is refutable
+
+    Guards against the spec bug silently reappearing.
+-/
+
+example : ∃ params : K3_BulkParameters, ∃ r : ℝ,
+    has_unscreened_long_range r ∧ params.coupling > 0 ∧ params.scale > 0 :=
+  brief_literal_statement_is_refutable
 
 end B1_Screening_Tests

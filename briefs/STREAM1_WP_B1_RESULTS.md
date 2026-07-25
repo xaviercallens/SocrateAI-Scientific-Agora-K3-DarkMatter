@@ -1,112 +1,190 @@
 # Stream 1 WP-B1 Results — Chameleon Mechanism (Lean 4)
 
-**Status:** ✅ **PHASE 2B COMPLETE — 3/4 DoD LEMMAS KERNEL-VERIFIED**
-**Date:** 2026-07-25 (Sonnet 5 compilation fix + proof completion)
-**Executor:** Sonnet 5 (T1), continuing Haiku 4.5's Phase 2A architecture
-**Provenance:** `Generated-by: Sonnet 5 | Verified-by: lake build | Reviewed-by: [pending T0 sign-off]`
+**Status:** ✅ **COMPLETE — all 4 DoD lemmas kernel-verified, zero `sorry`**
+**Date:** 2026-07-25
+**Executors:** Haiku 4.5 (Phase 2A architecture) → Sonnet 5 (Phase 2B compilation fix) → Opus 5 (Phase 2C completion)
+**Provenance:** `Generated-by: Opus 5 | Verified-by: lake build (1588 jobs, 0 errors) | Reviewed-by: [pending T0 sign-off]`
 
 ---
 
-## Summary
+## Definition of Done — Final Status
 
-All Lean 4 compilation blockers identified in Phase 2A were environmental/syntactic
-(not mathematical) and are now fixed. **`lake build` succeeds with zero errors**
-across all four B1 modules. Three of the four DoD lemmas are fully kernel-checked
-with no `sorry`; the fourth (`no_unscreened_lmp`) is deliberately scoped out
-pending a Stream 2 hand-off, as documented in its docstring.
+| DoD item | Status |
+|---|---|
+| Lean 4 compiles, zero `sorry`, zero undeclared `axiom` | ✅ |
+| `screening_always_triggers : ∀ ρ, m_eff ρ ≥ m_bare` | ✅ kernel-verified |
+| `force_range_bounded : ∀ ρ, r_S ρ ≤ C` | ✅ kernel-verified (⚠️ see Deviation 1) |
+| `dense_env_short_range : ∀ ε>0, ∃ρ_crit, ∀ρ≥ρ_crit, r_S ρ < ε` | ✅ kernel-verified |
+| `no_unscreened_lmp` | ✅ kernel-verified (⚠️ see Deviation 2 — **spec was false as written**) |
+| Coupled to `SYM2_PARTNER` (B3 local EFT), interface compiles | ✅ `Structures/B1_Sym2Bridge.lean` |
+| All citations in docstrings | ✅ CI-enforced |
+| CI workflow | ✅ `.github/workflows/stream1_b1.yml` |
+| Results table | ✅ this file |
 
-## Root Causes Fixed (Phase 2A → 2B)
+**Two deviations from the brief require T0/T1 sign-off before this gate can be
+marked closed. Both are documented below and recorded in the Lean source, not
+just in prose.**
 
-| Blocker | Root cause | Fix |
-|---|---|---|
-| `constant m_bare : ℝ` etc. failing to parse | `constant` was removed from Lean 4 years ago | Replaced with top-level `axiom` declarations |
-| File-scope `variable (...)` corrupting arities | Lean 4 auto-binds mentioned variables into *every* downstream `def`, silently changing signatures (`m_eff` gained a phantom `m_bare` parameter) | Removed `variable`; constants are now genuine global `axiom`s |
-| `ℝ≥0` triggering `LE Type` / `OfNat Type 0` errors | Missing `import Mathlib.Data.NNReal.Basic` + missing `open scoped NNReal` (the notation itself is scoped) | Added both |
-| `div_le_iff` / `div_lt_iff` unknown identifier | Renamed to `div_le_iff₀` / `div_lt_iff₀` in current Mathlib (explicit non-negativity-free versions) | Updated call sites |
-| `Real.sqrt_sq (h : 0 ≤ a)` type mismatch on `positivity` | `positivity` proves `0 ≤ e` / `0 < e` goals, not the general `a ≤ b` goal `Real.sqrt_le_sqrt` needs | Swapped to `linarith`/explicit coercion lemmas (`NNReal.coe_nonneg`) |
+---
 
-## Lemma Status (DoD Checklist)
+## ⚠️ Deviation 1 — `force_range_bounded` restated (needs sign-off)
 
-| Lemma | File | Status | Axioms depended on |
-|---|---|---|---|
-| `screening_always_triggers : ∀ ρ, m_eff ρ ≥ m_bare` | `Structures/B1_Chameleon.lean` | ✅ **Kernel-verified, no sorry** | `propext, Classical.choice, Quot.sound` + `m_bare` |
-| `force_range_bounded : ∀ ρ, screening_radius ρ ≤ C_max` | `Structures/B1_Chameleon.lean` | ✅ **Kernel-verified, no sorry** | + `C_max, C_max_positive` |
-| `dense_env_short_range : ∀ ε>0, ∃ρ_crit, ∀ρ≥ρ_crit, r_S ρ < ε` | `Structures/B1_Chameleon.lean` | ✅ **Kernel-verified, no sorry** | + `C_max, C_max_positive, m_bare` |
-| `no_unscreened_lmp : ¬∃ K3 params producing Mpc-range force` | `Structures/B1_Chameleon.lean` | ⏸️ **`sorry`, explicitly scoped out** | Requires Stream 2's K3 exchange-amplitude bound (out of WP-B1's own "Does NOT Do" list) |
-
-## Documented Deviation from Brief (Flagged for T1/T0 Review)
-
-The brief's DoD literally states:
+The brief's DoD says:
 ```
 force_range_bounded : ∀ ρ, r_S ρ ≤ C * (m_eff ρ)^(-1)
 ```
-Under Lean's `x⁻¹ = 0` convention for `x = 0`, this is **false** at the boundary
-`ρ = 0, m_bare = 0` (LHS = `C_max`, RHS = `C_max · 0⁻¹ = 0`, so `C_max ≤ 0` would
-be required). We instead prove the stronger, always-true, uniform bound
-`screening_radius ρ ≤ C_max`, which:
-- Implies the brief's physical intent (screening radius is controlled by a fixed
-  constant) without the zero-division edge case,
-- Is definitionally consistent with `screening_radius ρ := C_max / (m_eff ρ + 1)`
-  (the `+1` floor was also added in this fix, replacing the earlier `split_ifs`
-  case analysis that left the `> 0` branch as an unclosed proof obligation).
+Under Lean's `x⁻¹ = 0` convention for `x = 0`, this is **false** at
+`ρ = 0, m_bare = 0`: LHS `= C_max`, RHS `= C_max · 0⁻¹ = 0`, so it would
+demand `C_max ≤ 0`, contradicting `C_max_positive`.
 
-**This substitution needs Sonnet/T1 or Xavier/T0 sign-off** per the WP-B1
-Validation Gate ("Sonnet (T1) reviews the four lemmas against
-[astro-ph/0309411 §3–§4] and approves structure").
+**What we proved instead:** the uniform bound `screening_radius ρ ≤ C_max`,
+with `screening_radius ρ := C_max / (m_eff ρ + 1)` (the `+ 1` floor keeps the
+denominator positive without a case split).
 
-## Golden Tests (`Structures/Tests/B1_screening_golden.lean`)
+**Impact:** carries the brief's physical intent (range controlled by a fixed
+constant) and is strictly stronger wherever `m_eff ρ ≥ 1`. If the asymptotic
+inverse-mass scaling law is ever needed, use `dense_env_short_range` in the
+limit — **not** `force_range_bounded` directly.
 
-7 of 8 test cases fully proven; Test 3 (screening radius strict antitonicity
-in ρ, a Phase 2C polish item not required by the DoD) carries a documented
-`sorry`.
+## ⚠️ Deviation 2 — `no_unscreened_lmp` was FALSE as specified (needs sign-off)
+
+The brief's DoD says:
+```
+no_unscreened_lmp : ¬(∃ params, K3_bulk_unscreened_force (r > Mpc))
+```
+Transcribed literally, `r` is **freely existentially quantified with no
+functional dependence on `params`**. So `params = ⟨1,1⟩` together with
+`r = 2·10⁶` witnesses the existential, and the negation is refutable. This is
+not a hard lemma — **it is a false statement**.
+
+This is recorded in the kernel, not only in prose:
+```lean
+theorem brief_literal_statement_is_refutable :
+    ∃ params : K3_BulkParameters, ∃ r : ℝ,
+      has_unscreened_long_range r ∧ params.coupling > 0 ∧ params.scale > 0
+```
+so the spec bug cannot silently reappear.
+
+**Corrected statement (proved):** make the range a *function of* the K3 data,
+`k3_force_range params := 1 / params.scale` (range = inverse mediator mass,
+set by the compactification scale), then
+```lean
+theorem no_unscreened_lmp (params : K3_BulkParameters)
+    (h_scale : (params.scale : ℝ) ≥ 1e-6) :
+    ¬ has_unscreened_long_range (k3_force_range params)
+```
+`h_scale` — "the K3 compactification scale is not itself Mpc-sized" — is an
+**explicit Tier [B] modeling hypothesis, not derived here**. It is precisely
+the quantity Stream 2's lattice certificates constrain. Surfacing it as a
+visible hypothesis rather than burying it is the point; the earlier `sorry`
+was hiding exactly this.
+
+---
+
+## Root Causes Fixed (Phase 2A → 2B) — reusable Lean-4 checklist for this repo
+
+| Blocker | Root cause | Fix |
+|---|---|---|
+| `constant m_bare : ℝ` failing to parse | `constant` was removed from Lean 4 years ago | top-level `axiom` |
+| File-scope `variable (...)` corrupting arities | Lean 4 auto-binds mentioned variables into *every* downstream `def` (`m_eff` silently gained a phantom `m_bare` parameter) | removed `variable`; constants are global `axiom`s |
+| `ℝ≥0` → `LE Type` / `OfNat Type 0` errors | needs **both** `import Mathlib.Data.NNReal.Basic` **and** `open scoped NNReal` (the notation is scoped) | added both |
+| `div_le_iff` / `div_lt_iff` unknown | renamed `div_le_iff₀` / `div_lt_iff₀` | updated call sites |
+| `Real.sqrt_sq` / `sqrt_le_sqrt` hypothesis mismatch on `positivity` | `positivity` proves `0 ≤ e` / `0 < e`, not general `a ≤ b` | `linarith` + `NNReal.coe_nonneg` / `NNReal.coe_pos` |
+
+---
+
+## Axiom Trust Base (CI-audited, `Structures/B1_AxiomAudit.lean`)
+
+**No `sorryAx` anywhere.** Every theorem depends on the three standard Lean
+kernel axioms `[propext, Classical.choice, Quot.sound]` plus only the declared
+physical constants it genuinely needs:
+
+| Theorem | Physical-constant axioms used |
+|---|---|
+| `screening_always_triggers` | `m_bare` |
+| `force_range_bounded` | `C_max`, `C_max_positive`, `m_bare` |
+| `dense_env_short_range` | `C_max`, `C_max_positive`, `m_bare` |
+| `screening_radius_strict_anti` | `C_max`, `C_max_positive`, `m_bare` |
+| `no_unscreened_lmp` | **none** (pure kernel) |
+| `brief_literal_statement_is_refutable` | **none** (pure kernel) |
+| `s7_site` / `s10_site` | `m_bare`, `α_ch` |
+
+Declared physical constants (opaque; S3-00 instantiates numerically):
+`m_bare`, `α_ch` (**= α_D**), `ρ_env`, `C_max` + `C_max_positive`,
+`C_min` + `C_min_positive` + `C_min_le_C_max`.
+
+---
+
+## Golden Tests — 10/10 passing, zero `sorry`
 
 | # | Test | Status |
 |---|---|---|
-| 1 | Known-good screening parameters (solar-system-scale) | ✅ |
-| 2 | m_eff monotonicity | ✅ |
-| 3 | Screening radius strict antitonicity | ⏸️ sorry (Phase 2C polish) |
+| 1 | Known-good screening parameters (solar-system scale) | ✅ |
+| 2 | `m_eff` monotonicity | ✅ |
+| 3 | Screening radius strict antitonicity (+ concrete instance) | ✅ |
 | 4 | Known-bad unscreened scenario refuted | ✅ |
-| 5 | Dense-environment limit (concrete ε) | ✅ |
+| 5 | Dense-environment limit at concrete ε = 1 mm | ✅ |
 | 6 | Force-range uniform bound | ✅ |
 | 7 | Chameleon field well-definedness | ✅ |
 | 8 | Brane coupling site existence | ✅ |
+| 9 | Corrected Lemma 4 at the inverse-Mpc scale bound | ✅ |
+| 10 | Defect record: brief's literal Lemma 4 is refutable | ✅ |
+
+## B3 / SYM2_PARTNER Bridge (`Structures/B1_Sym2Bridge.lean`)
+
+`DualScaleSite` pairs chameleon-side data with the order-2 elliptic partner's
+θ-basis coefficients. Its two `Prop` fields give it teeth:
+* `density_coherent` — the coupling vertex sits at the same density the site claims;
+* `sym2_witness` — the supplied partner genuinely satisfies `θ(P₂) = 2·P₁`.
+
+`s7_site` and `s10_site` are therefore **compile-time evidence that Stream 1's
+two independent workstreams (Sym² proof and chameleon screening) are
+structurally consistent.**
+
+⚠️ **Epistemic scope** (inherited from `CooperSym2Proof.lean`): this is a
+type-level/algebraic interface only. It does **not** assert a physical
+bulk↔brane coupling exists or has any strength — that remains Tier [C].
+Instantiating `α_ch` does not inherit this file's Tier A status.
+
+---
 
 ## Build Verification
 
 ```
 $ lake build Structures.Axioms.B1_Screening Structures.B1_Chameleon \
-             Structures.Tests.B1_screening_golden Structures.B1_Chameleon_Minimal
-Build completed successfully (1503 jobs).
+             Structures.B1_Sym2Bridge Structures.Tests.B1_screening_golden \
+             Structures.B1_AxiomAudit
+Build completed successfully (1588 jobs).
 ```
+Zero errors, zero `sorry` warnings.
 
-Only two `sorry` warnings remain in-tree, both intentional and documented:
-- `B1_Chameleon.lean:135` (`no_unscreened_lmp` — Stream 2 K3-geometry hand-off)
-- `Tests/B1_screening_golden.lean:73` (Test 3 antitonicity — cosmetic polish)
+## Files
 
-## Files Changed This Session
-
-| File | Change |
+| File | Role |
 |---|---|
-| `Structures/Axioms/B1_Screening.lean` | `constant`→`axiom`, added NNReal imports/open, fixed `div_le_iff₀`, closed `screening_radius_bounded` (was `sorry`) |
-| `Structures/B1_Chameleon.lean` | Full rewrite against fixed Axioms API; 3/4 lemmas closed; dropped the invalid `chameleon_necessity_for_unscreened` (not valid Lean — English prose in a theorem statement) |
-| `Structures/Tests/B1_screening_golden.lean` | Rewrote all 8 examples against the corrected `ℝ`-valued (not `ℝ≥0`-valued) `m_eff`/`screening_radius` API |
-| `Structures/B1_Chameleon_Minimal.lean` | Debug/scratch version kept for reference; also fully builds (3/4 lemmas closed) |
-| `Structures.lean`, `Structures/B1_Axioms.lean` | Removed (scaffolding from Phase 2A debugging, superseded by direct imports) |
+| `Structures/Axioms/B1_Screening.lean` | definitions + physical-constant axioms + 2 lemmas |
+| `Structures/B1_Chameleon.lean` | 4 DoD lemmas + antitonicity + defect record |
+| `Structures/B1_Sym2Bridge.lean` | B3 / SYM2_PARTNER interface, s7 & s10 instances |
+| `Structures/Tests/B1_screening_golden.lean` | 10 golden tests |
+| `Structures/B1_AxiomAudit.lean` | trust-base audit (CI-consumed) |
+| `.github/workflows/stream1_b1.yml` | validation gate |
 
-## Next Actions
-
-1. **T0/T1 sign-off** on the `force_range_bounded` deviation (documented above).
-2. **Lemma 4 hand-off to Stream 2**: `no_unscreened_lmp` needs the K3
-   exchange-amplitude bound from the lattice certificates
-   (`data/certificates/C2_cooper_s{7,10}_partner_v2.json`, ρ=4, T=18) —
-   this is a Stream 2→1 request, not further Lean tactic work.
-3. **Stream 3 handoff** (this session): `chameleon_field`, `screening_radius`,
-   and `brane_coupling_site` are now compiled, axiom-clean-except-for-declared-
-   physical-constants, and ready to be cited as Tier-A infrastructure in any
-   S3-00 MVM derivation that reopens the chameleon-bridge phase.
-4. Optional Phase 2C polish: close Test 3's antitonicity `sorry` (cosmetic,
-   not DoD-blocking).
+Removed: `Structures/B1_Chameleon_Minimal.lean` (Phase 2A debug scaffold, superseded).
 
 ---
 
-**Provenance:** `Generated-by: Sonnet 5 | Verified-by: lake build (1503 jobs, 0 errors) | Reviewed-by: [pending]`
+## Open Items
+
+1. **T0/T1 sign-off on Deviations 1 and 2** — this is the remaining gate to
+   closing WP-B1. Deviation 2 in particular means the brief's DoD text should
+   be amended, since it currently specifies a false theorem.
+2. **Stream 2 request:** tighten `h_scale` in `no_unscreened_lmp` from the
+   placeholder `1e-6` bound to the value implied by the lattice certificates
+   (`data/certificates/C2_cooper_s{7,10}_partner_v2.json`, ρ=4, T=18).
+3. **Stream 3 (S3-00):** instantiate `m_bare`, `α_ch` (= α_D), `C_max`
+   numerically — see `briefs/STREAM1_TO_STREAM3_B1_HANDOFF_2026_07_25.md`.
+   Structure is Tier A; the numbers remain Tier B/C until independently justified.
+
+---
+
+**Provenance:** `Generated-by: Opus 5 | Verified-by: lake build (1588 jobs, 0 errors) | Reviewed-by: [pending]`
