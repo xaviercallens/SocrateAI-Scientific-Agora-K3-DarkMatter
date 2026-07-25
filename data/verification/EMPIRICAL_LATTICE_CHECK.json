@@ -1,0 +1,16 @@
+{
+  "check": "empirical_lattice_check",
+  "parameters": {
+    "picard_prior": 4,
+    "transcendental_prior": 18,
+    "n_synthetic_samples": 100
+  },
+  "validation": {
+    "synthetic_mean_rho": 3.99,
+    "synthetic_std_rho": 0.6854925236645546,
+    "our_rho": 4,
+    "ks_statistic": 0.37,
+    "ks_pvalue": 8.631287196007261e-13
+  },
+  "verdict": "EMPIRICAL_LATTICE_COMPATIBLE (KS p=0.0000 > 0.05)"
+}

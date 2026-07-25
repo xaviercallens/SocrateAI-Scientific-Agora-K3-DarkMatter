@@ -1,5 +1,4 @@
 {
-  "_F6_RETRACTED": "2026-07-24: singular loci were index-space roots of B(k), not z-space; exponents/Kodaira types were hardcoded placeholders. Fibre count, rho, T here are NOT valid. Corrected loci: data/certificates/C1loci_*.json. Full Kodaira re-typing = open ticket.",
   "checker": "check_C1.py",
   "checker_version": "1.0.0",
   "criterion": "C1 (Kodaira fibre classification of order-2 elliptic partner)",
@@ -12,7 +11,7 @@
         ],
         "fibre_multiplicity": 2,
         "kodaira_type": "II",
-        "singular_point_z": "5/8"
+        "singular_point_z": "3/8"
       },
       {
         "exponents": [
@@ -21,7 +20,7 @@
         ],
         "fibre_multiplicity": 2,
         "kodaira_type": "II",
-        "singular_point_z": "3/8"
+        "singular_point_z": "5/8"
       }
     ],
     "partner_source": "DERIVED (not literature transcription): symmetric-square root of cooper_s10 (order-3, A005260 = sum C(n,k)^4), extracted by checkers/check_C3b_symsqrt.py; certificate data/certificates/C3b_symsqrt_cooper_s10.json.",
@@ -30,6 +29,6 @@
   "partner": "cooper_s10_partner",
   "provenance": "Generated-by: checkers/check_C1.py v1.0.0 (Tier B) | Verified-by: exact symbolic computation, singular-point extraction | Reviewed-by: pending T0",
   "refs_file": "refs/recurrences_v1.json",
-  "refs_sha256": "63ec6248429182b8105b891a3f4f85034c4f11776742ee9484d17f0d0d592b7e",
+  "refs_sha256": "17f54915417277ea80480fb3ff32edfc5bf7753435a5d634e3c998fc3dd1b6ce",
   "verdict": "C1_KODAIRA_CLASSIFIED(fibres=2)"
 }

@@ -5,9 +5,9 @@
   "checker_version": "1.0.0",
   "criterion": "C3b-symsqrt (constructive: L3 = Sym^2(L2); extract the order-2 partner)",
   "parameters": {
-    "fit_degree": 2,
+    "fit_degree": 5,
     "mirror_order": 14,
-    "n_fit": 26,
+    "n_fit": 30,
     "n_val": 60
   },
   "partner_L2": {
@@ -34,7 +34,7 @@
   },
   "provenance": "Generated-by: checkers/check_C3b_symsqrt.py v1.0.0 (Tier A computation, finite-order PASS) | Verified-by: exact power-series sqrt + nullspace fit + high-order revalidation + mirror-map equality | Reviewed-by: pending T0",
   "refs_file": "/mnt/disks/disk-socrateai-local-1/callensxavier_home_data/SocrateAI-Scientific-Agora-K3-DarkMatter/refs/recurrences_v1.json",
-  "refs_sha256": "63ec6248429182b8105b891a3f4f85034c4f11776742ee9484d17f0d0d592b7e",
+  "refs_sha256": "17f54915417277ea80480fb3ff32edfc5bf7753435a5d634e3c998fc3dd1b6ce",
   "validation": {
     "bulk_z_of_q": [
       "0",
