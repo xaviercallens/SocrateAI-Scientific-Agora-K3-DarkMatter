@@ -2,6 +2,15 @@
 """
 check_C1.py — C1 criterion checker (K3_CRITERIA.md): Kodaira fibre classification of the order-2 elliptic partner.
 
+⚠️ DEPRECATED (2026-07-25 — F6 RETRACTED)
+This checker used index-space roots of B(k) as singular loci — a dimensional category error.
+For corrected workflow, use:
+  1. checkers/check_C1_singular_loci.py (exact z-space P2(z) roots)
+  2. scripts/compute_C1_monodromy.py (exponent-to-Kodaira mapping)
+  3. scripts/generate_C1C2_v2_certificates.py (unified v2 certificates)
+
+See docs/K3_LATTICE_RECTIFICATION_REPORT_2026_07_25.md for full analysis.
+
 For a bulk order-3 K3 operator L₃ = Sym²(L₂), the elliptic partner L₂ is an order-2 Picard-Fuchs
 operator. This checker computes the exact singular loci of L₂ and classifies each singular point
 as a Kodaira fibre type via the local monodromy exponents.
@@ -9,18 +18,19 @@ as a Kodaira fibre type via the local monodromy exponents.
 Input: the order-2 partner recurrence (n+1)²aₙ₊₁ = A(n)aₙ + B(n)aₙ₋₁ from refs.
 Output: certificate with (singular point, Kodaira fibre type) pairs and the fibre configuration.
 
-Method (exact arithmetic):
+Method (INCORRECT — DO NOT USE):
 1. Convert recurrence C(n)aₙ = A(n-1)aₙ₋₁ + B(n-1)aₙ₋₂ to the Picard-Fuchs operator in
    theta = z d/dz basis: L = θ² - z·A(θ) - z²·B(θ+1), then expand to standard d/dz form.
 2. Identify the leading coefficient (highest z-power after full expansion).
 3. Find roots = singular loci (excluding z=0, the MUM point).
+   ❌ ERROR: This script used index-space roots of B(k), not z-space roots of P2(z).
 4. At each singular point zc, compute local exponents (Frobenius method):
    The local solution is z^r (1 + O(z-zc)) where r satisfies the indicial equation.
    The exponent difference δr determines the Kodaira type (Persson classification).
 5. Output the fibre configuration Σ (sum of singular fibres).
 
 Checker contract (K3_CRITERIA.md §3): exact arithmetic, no network, no model memory,
-deterministic, certificate JSON output.
+deterministic, certificate JSON output. ← Now fulfilled by corrected workflow above.
 """
 
 import argparse

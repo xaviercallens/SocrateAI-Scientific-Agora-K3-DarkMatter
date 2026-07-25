@@ -1,0 +1,40 @@
+{
+  "assumption": "Mordell-Weil rank = 0 (fibre has no rational points besides identity)",
+  "checker": "compute_C1_monodromy.py",
+  "checker_version": "1.0.0",
+  "criterion": "C1-monodromy (Kodaira fibre types from PF exponents)",
+  "fibres": [
+    {
+      "exponent_difference": "1/2",
+      "irreducible_components": 2,
+      "kodaira_type": "II (tentative)",
+      "local_exponents": [
+        "1/2",
+        "0"
+      ],
+      "rank_defect": 1,
+      "singular_point_z": "-1"
+    },
+    {
+      "exponent_difference": "1/2",
+      "irreducible_components": 2,
+      "kodaira_type": "II (tentative)",
+      "local_exponents": [
+        "1/2",
+        "0"
+      ],
+      "rank_defect": 1,
+      "singular_point_z": "1/27"
+    }
+  ],
+  "mordell_weil_rank": 0,
+  "n_singular_fibres": 2,
+  "partner": "cooper_s7_partner",
+  "picard_rank": 4,
+  "provenance": "Generated-by: scripts/compute_C1_monodromy.py v1.0.0 (Tier B, exponent-based) | Verified-by: exact algebra (Fuchs relation) | Reviewed-by: pending T0",
+  "refs_sha256": "17f54915417277ea80480fb3ff32edfc5bf7753435a5d634e3c998fc3dd1b6ce",
+  "shioda_tate_formula": "\u03c1 = 2 + \u03a3(m_i - 1) + rank(MW) = 2 + 2 + 0 = 4",
+  "transcendental_rank": 18,
+  "verdict": "C1_KODAIRA_TENTATIVE(n_fibres=2, rho=4)",
+  "warning": "Kodaira types are TENTATIVE. Full resolution requires Weierstrass model analysis at each singular fibre. This script uses exponent differences as a heuristic; the exact types require local discriminant analysis (monodromy-orbit refinement). See compute_C1_monodromy.py v1.1 for full SL2(Z)-orbit classification."
+}

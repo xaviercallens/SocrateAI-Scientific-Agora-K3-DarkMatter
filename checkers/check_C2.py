@@ -2,6 +2,15 @@
 """
 check_C2.py — C2 criterion checker: Transcendental & Picard lattice of the K3.
 
+⚠️ DEPRECATED (2026-07-25 — REPLACED BY C1/C2 V2 WORKFLOW)
+C2 was derived from retracted C1 certificate (F6 error: index-space singular loci).
+For corrected workflow, use:
+  1. checkers/check_C1_singular_loci.py (exact z-space P2(z) roots)
+  2. scripts/compute_C1_monodromy.py (exponent-to-Kodaira mapping)
+  3. scripts/generate_C1C2_v2_certificates.py (unified v2 certificates)
+
+See docs/K3_LATTICE_RECTIFICATION_REPORT_2026_07_25.md for full analysis.
+
 From the C1 Kodaira fibre classification, compute the K3's lattice invariants via Shioda–Tate.
 For an elliptic surface over ℚ with fibre configuration Σ:
 

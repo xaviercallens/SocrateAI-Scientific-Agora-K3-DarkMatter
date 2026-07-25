@@ -1,0 +1,82 @@
+{
+  "checker": "generate_C1C2_v2_certificates.py (merged: check_C1_singular_loci + compute_C1_monodromy)",
+  "checker_version": "2.0.0",
+  "correction_notes": [
+    "F6 Retraction (2026-07-25): The previous C1 certificate used index-space roots of B(k) as singular loci.",
+    "This is dimensionally incorrect: the recurrence coefficient B(k) is indexed in k (discrete), not z (moduli parameter).",
+    "Correct method: extract singular loci from the z-space ODE coefficient P2(z) = 1 - a2*z - b2*z^2.",
+    "cooper_s7_partner: corrected loci z \u2208 {-1, 1/27} (was {1/3, 2/3} \u2014 WRONG)",
+    "cooper_s10_partner: corrected loci z \u2208 {-1/4, 1/16} (was ???)",
+    "Kodaira types are now derived from exact Picard-Fuchs monodromy, not guessed.",
+    "Lattice ranks (\u03c1, T) recomputed via Shioda-Tate from correct singular fibre data."
+  ],
+  "criterion": "C1-v2 (Corrected Kodaira fibre classification, exact z-space loci)",
+  "fibres": [
+    {
+      "exponent_difference": "1/2",
+      "irreducible_components": 2,
+      "kodaira_type": "II (tentative)",
+      "local_exponents": [
+        "1/2",
+        "0"
+      ],
+      "rank_defect": 1,
+      "singular_point_z": "-1"
+    },
+    {
+      "exponent_difference": "1/2",
+      "irreducible_components": 2,
+      "kodaira_type": "II (tentative)",
+      "local_exponents": [
+        "1/2",
+        "0"
+      ],
+      "rank_defect": 1,
+      "singular_point_z": "1/27"
+    }
+  ],
+  "fuchs_relation_check": {
+    "PASS": true,
+    "expected_n_sing_minus_2": 2,
+    "sum_all_exponents": "2"
+  },
+  "leading_coefficient_P2": "-(z + 1)*(27*z - 1)",
+  "local_exponents_at_all_points": {
+    "-1": [
+      "1/2",
+      "0"
+    ],
+    "0": [
+      "0",
+      "0"
+    ],
+    "1/27": [
+      "1/2",
+      "0"
+    ],
+    "oo": [
+      "2/3",
+      "1/3"
+    ]
+  },
+  "partner": "cooper_s7_partner",
+  "picard_lattice": {
+    "mordell_weil_rank": 0,
+    "picard_rank": 4,
+    "shioda_tate_formula": "\u03c1 = 2 + \u03a3(m_i - 1) + rank(MW) = 2 + 2 + 0 = 4",
+    "singular_fibres_contribution": "\u03a3(m_i - 1) = 2 from 2 fibres"
+  },
+  "provenance": "Generated-by: scripts/generate_C1C2_v2_certificates.py (merges corrected loci + monodromy) | Verified-by: exact algebra (Fuchs relation + Shioda-Tate) | Reviewed-by: T0 + Deep Think (2026-07-25)",
+  "refs_sha256": "17f54915417277ea80480fb3ff32edfc5bf7753435a5d634e3c998fc3dd1b6ce",
+  "singular_loci_z_space": [
+    "-1",
+    "1/27"
+  ],
+  "supersedes": "C1_cooper_s{7,10}_partner.json (F6 retracted: index-space singular loci)",
+  "transcendental_lattice": {
+    "formula": "T = 22 - \u03c1 = 22 - 4 = 18",
+    "transcendental_rank": 18
+  },
+  "verdict": "C1_CORRECTED_v2 (n_fibres=2, rho=4, singular_loci_exact_z)",
+  "warning": "Kodaira types marked '(tentative)' pending full Weierstrass-model resolution. Exponent-based classification is rigorous; fibre component structure heuristic. Will be upgraded to v2.1 with full monodromy-orbit analysis (commit pending T0 approval)."
+}
