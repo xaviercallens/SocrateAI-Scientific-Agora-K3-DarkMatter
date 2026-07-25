@@ -1,0 +1,93 @@
+{
+  "checker": "check_C1_kodaira_consistency.py",
+  "checker_version": "1.0.0",
+  "date": "2026-07-26",
+  "purpose": "Adversarial consistency test of C1 v2 Kodaira labels vs recomputed monodromy and Shioda-Tate arithmetic",
+  "partners": [
+    {
+      "partner": "cooper_s7_partner",
+      "P2_factored": "Mul(Integer(-1), Add(Symbol('z'), Integer(1)), Add(Mul(Integer(27), Symbol('z')), Integer(-1)))",
+      "P2_pretty": "-(z + 1)*(27*z - 1)",
+      "singular_loci": [
+        "-1",
+        "1/27"
+      ],
+      "fibres": [
+        {
+          "z": "-1",
+          "local_exponents": [
+            "0",
+            "1/2"
+          ],
+          "exponent_difference": "1/2",
+          "monodromy_eigenvalues": [
+            "1",
+            "-1"
+          ],
+          "monodromy_determinant": "-1",
+          "in_SL2Z": false
+        },
+        {
+          "z": "1/27",
+          "local_exponents": [
+            "0",
+            "1/2"
+          ],
+          "exponent_difference": "1/2",
+          "monodromy_eigenvalues": [
+            "1",
+            "-1"
+          ],
+          "monodromy_determinant": "-1",
+          "in_SL2Z": false
+        }
+      ]
+    },
+    {
+      "partner": "cooper_s10_partner",
+      "P2_factored": "Mul(Integer(-1), Add(Mul(Integer(4), Symbol('z')), Integer(1)), Add(Mul(Integer(16), Symbol('z')), Integer(-1)))",
+      "P2_pretty": "-(4*z + 1)*(16*z - 1)",
+      "singular_loci": [
+        "-1/4",
+        "1/16"
+      ],
+      "fibres": [
+        {
+          "z": "-1/4",
+          "local_exponents": [
+            "0",
+            "1/2"
+          ],
+          "exponent_difference": "1/2",
+          "monodromy_eigenvalues": [
+            "1",
+            "-1"
+          ],
+          "monodromy_determinant": "-1",
+          "in_SL2Z": false
+        },
+        {
+          "z": "1/16",
+          "local_exponents": [
+            "0",
+            "1/2"
+          ],
+          "exponent_difference": "1/2",
+          "monodromy_eigenvalues": [
+            "1",
+            "-1"
+          ],
+          "monodromy_determinant": "-1",
+          "in_SL2Z": false
+        }
+      ]
+    }
+  ],
+  "verdict": "C1_KODAIRA_LABELS_UNSUPPORTED",
+  "findings": [
+    "All four singular loci have exponent difference Delta = 1/2 with exponents [0, 1/2]. Kodaira I_1 has UNIPOTENT monodromy (Delta = 0, log case), so the fibres are definitively NOT I_1. Kodaira II has monodromy of order 6 (Delta = 1/6), so they are NOT II either.",
+    "Exponents [0, 1/2] give local monodromy eigenvalues {+1, -1}, hence determinant -1. Every Kodaira fibre monodromy lies in SL_2(Z) and therefore has determinant +1. So this local monodromy is not a Kodaira elliptic-fibration monodromy at all: NO Kodaira type can be read off these exponents.",
+    "Shioda-Tate inconsistency: the C1/C2 v2 certificates derive rho = 2 + sum(m_i - 1) + rank(MW) = 2 + 2 + 0 = 4, which REQUIRES m_i = 2 at each of the two fibres. But the same certificates label those fibres 'II (tentative)', and Kodaira II has m = 1. With m = 1 the formula gives rho = 2, not 4. The certificate's label and its own rank arithmetic contradict each other.",
+    "Half-integer exponents are the expected signature of a symmetric-square ROOT: L2 was extracted as the Sym^2 root of L3, and that extraction introduces sqrt branch points. This suggests L2's singular points are NOT the elliptic fibration's singular fibres, so reading Kodaira types off L2's exponents is methodologically unsound. The Kodaira classification must come from a Weierstrass model / discriminant, not from L2."
+  ]
+}

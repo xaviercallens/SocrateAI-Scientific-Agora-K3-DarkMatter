@@ -1,6 +1,29 @@
 # 🗺️ ROADMAP: Dual-Scale Topological Universe Model (K3×T² + D-brane Dynamics)
 
-**Last updated:** 2026-07-24 EOD | **Status:** ✅ STREAMS 1/2 APPROVED (T0 sign-off); 🚀 STREAM 3 GO-AHEAD AUTHORIZED; v0.3.0 LIVE
+**Last updated:** 2026-07-26 | **Status:** Stream 1 ✅ COMPLETE (Sym² + WP-B1); Stream 2 🔴 C1 KODAIRA LABELS UNSUPPORTED; Stream 3 🔄 D-3 running, Gate E 2026-07-27 EOD
+
+---
+
+## 🔴 OPEN FINDING (2026-07-26) — Stream 2 C1/C2 Kodaira labels unsupported
+
+`checkers/check_C1_kodaira_consistency.py` independently re-derives the L₂ local
+exponents: **[0, 1/2], Δ = 1/2, det(monodromy) = −1 at all four singular loci**
+(both partners). Consequences:
+
+- Fibres are **not I₁** (unipotent, Δ = 0) and **not II** (order 6, Δ = 1/6).
+- det = −1 ∉ SL₂(ℤ) ⇒ **no Kodaira type is derivable from these exponents at all**.
+- Shioda–Tate ρ = 4 requires mᵥ = 2 per fibre; the v2 certs' own "II" label has m = 1,
+  which would give ρ = 2. **The v2 certificates contradict themselves.**
+- Likely cause: half-integer exponents are the signature of the **Sym² root
+  extraction**, so L₂'s singular points are probably not the fibration's singular fibres.
+
+**Downstream:** Stream 3's D-3 batch runs with ρ = 4, T = 18 as its lattice prior.
+That prior is currently unsupported — **T0 decision needed before Gate E**.
+
+**Untouched by this finding:** L₃ = Sym²(L₂) (Tier A, kernel-verified); the exact
+singular loci; all WP-B1 chameleon results.
+
+→ Full analysis and reconciled plan: `briefs/STREAM2_ACTION_PLAN_2026_07_26.md`
 
 ---
 
@@ -21,19 +44,30 @@
 
 ### What's Done ✅
 - **C3b Resolution (2026-07-24):** s7/s10 order-2 Shioda–Inose partners extracted; all-n L₃=Sym²(L₂) proven at CAS level (Deep Think CONCUR verified independently)
-- **Stream 2 C1/C2 (Kodaira + Lattice):** Checkers built & verified for s7_partner
-  - C1: 2 Kodaira-II fibres (z=1/3, 2/3)
-  - C2: Picard number ρ=4, transcendental rank T=18
-- **Stream 1 Lean Encoding:** AUTHORIZED (θ(P₂)=2P₁ collapse → simple ring identities)
-- **Stream 3 D-3:** UNBLOCKED (empirical rerun awaits C1/C2 completion)
+- **Stream 1 Sym² (2026-07-24):** `L₃ = Sym²(L₂)` kernel-verified in Lean 4, axiom-clean
+- **Stream 1 WP-B1 Chameleon (2026-07-25/26):** 4/4 DoD lemmas kernel-verified, zero `sorry`;
+  B3/SYM2_PARTNER bridge compiles; CI gate live. ⚠️ Found the brief's `no_unscreened_lmp`
+  was **false as specified** — recorded in-kernel and restated. Two deviations await T0 sign-off.
+  → `briefs/STREAM1_WP_B1_RESULTS.md`
+- **Stream 2 F6 rectification (2026-07-25):** singular loci corrected from index-space to
+  z-space: s7 {1/27, −1}, s10 {1/16, −1/4}. ✅ Independently re-confirmed 2026-07-26.
+  *(The earlier "2 Kodaira-II fibres at z = 1/3, 2/3" entry was the pre-F6 error and is retracted.)*
+- **Stream 3 D-3:** Phase 2 batch running; Gate E 2026-07-27 EOD
+
+### ⚠️ What's NOT established
+- **Kodaira fibre types** for s7/s10 — see Open Finding above. Neither "II" (v2 certs)
+  nor "I₁" (proposed plan) is supported by the exponent data.
+- **ρ = 4, T = 18** — does not follow from the current fibre data; needs Weierstrass-model redo.
+- **discriminant = −3** — appears only in the **superseded v1** certs, which are marked
+  *"F6 retracted: fabricated from incorrect C1."* Do not carry forward.
 
 ### Critical Path
 ```
-Stream 2:  C1/C2 for s10 ──→ Full s7/s10 lattice report
-             ↓
-Stream 1:  Lean Sym² encoding (ring tactic on collapsed relations)
-             ↓
-Stream 3:  D-3 empirical rerun (real SDSS/Euclid sectors) → Gate E verdict
+Stream 2:  Phase 1 provenance gate ──→ C1 v3 via Weierstrass/Tate ──→ C2 v3 (ρ, τ derived)
+             ↓                                                          ↓
+             └──────────────────────────────→ Stream 3 lattice prior ───┘
+                                                     ↓
+Stream 3:  D-3 empirical rerun ──→ Gate E verdict (criterion 1 currently UNRESOLVED)
 ```
 
 ---
@@ -75,13 +109,18 @@ coupling is claimed (that remains Tier C).
 |---|---|---|---|
 | **C3b Partner Extraction** | ✅ RESOLVED | 2026-07-24 | — |
 | **All-n L₃=Sym²(L₂) (CAS)** | ✅ PROVEN | 2026-07-24 | — |
-| **C1 Kodaira (s7)** | ✅ DONE | 2026-07-24 (2 II-fibres) | Run on s10 |
-| **C2 Lattice (s7)** | ✅ DONE | 2026-07-24 (ρ=4, T=18) | Run on s10; produce report |
-| **C1 Kodaira (s10)** | 🟡 QUEUED | — | Execute check_C1 --partner cooper_s10_partner |
-| **C2 Lattice (s10)** | 🟡 QUEUED | — | Execute check_C2 (from s10 C1 cert) |
-| **Lattice Comparison Report** | 🟡 QUEUED | — | s7 vs s10: ρ, T, discriminant, K3-type signature |
+| **Exact singular loci (s7, s10)** | ✅ CONFIRMED | 2026-07-25 (F6), re-verified 2026-07-26 | — |
+| **C1 Kodaira types (s7, s10)** | 🔴 UNSUPPORTED | — | Redo via Weierstrass model + Tate's algorithm |
+| **C2 Lattice ρ, τ (s7, s10)** | 🔴 UNSUPPORTED | — | Blocked on C1 v3 |
+| **Provenance gate (literature)** | 🟡 NOT STARTED | — | Fetch 4 PDFs, hash-pin, write honest checker |
+| **Physics interpretation** | ⛔ BLOCKED | — | Gauge groups need fibre types |
 
-**Deliverable (Stream 2, this week):** Final lattice report for both s7/s10. Then handoff to Stream 1.
+**Deliverable (Stream 2):** C1 v3 / C2 v3 certificates with fibre types derived from
+Tate's algorithm, then the physics brief. → `briefs/STREAM2_ACTION_PLAN_2026_07_26.md`
+
+**Note on tooling:** `checkers/check_C1.py` and `check_C2.py` are **deprecated** (F6).
+`checkers/check_C1_kodaira_fibers.py` / `check_C2_picard_lattice.py` do **not** exist.
+The live adversarial checker is `checkers/check_C1_kodaira_consistency.py`.
 
 ---
 
@@ -121,21 +160,27 @@ coupling is claimed (that remains Tier C).
 
 ## Next 48 Hours: Prioritized Actions
 
-### Immediate (Stream 2 — Haiku)
-1. ✅ C2 for s7 → DONE
-2. ⏳ Run C1 on s10 (cooper_s10_partner)
-3. ⏳ Run C2 on s10 (from s10 C1 cert)
-4. ⏳ Produce lattice comparison report (s7 vs s10)
+### 🔴 Blocking (T0 — Xavier)
+1. Decide Gate E scoring for criterion 1 given the unsupported ρ = 4 prior
+   (recommend: score UNRESOLVED, let the other five proceed, keep 2026-07-27)
+2. Decide: annotate vs. retract the v2 C1/C2 certificates (recommend annotate)
+3. Sign off (or amend) the two WP-B1 deviations → `briefs/STREAM1_WP_B1_RESULTS.md`
 
-### High (Stream 1 — Opus 4.8)
-1. ⏳ Encode L₂, L₃ in Polynomial ℚ
-2. ⏳ Prove θ(P₂)=2P₁ identity (via tactics)
-3. ⏳ Prove collapsed relations (K₂, K₁, K₀ via ring)
-4. ⏳ Compile + verify SYM2_PROVED status
+### Immediate (Stream 2)
+1. ✅ Phase 0 reconciliation → `check_C1_kodaira_consistency.py` (DONE 2026-07-26)
+2. ⏳ Phase 1 provenance gate — fetch 4 PDFs, hash-pin, honest checker (1–2 h)
+3. ⏳ Phase 2 C1 v3 — Weierstrass model + Tate's algorithm (8–14 h)
+4. ⏳ Phase 3 C2 v3 — Shioda–Tate from v3 fibre data, derive rank MW (2–3 h)
+
+### Stream 1 (complete — maintenance only)
+1. ✅ Sym² kernel-verified; ✅ WP-B1 4/4 lemmas + bridge + CI gate
+2. ⏳ Awaiting T0 sign-off on two documented WP-B1 deviations
+3. ⏳ Optional: tighten `h_scale` in `no_unscreened_lmp` once Stream 2 lands C1 v3
 
 ### Parallel (Stream 3 — GPU)
-1. ⏳ Queue D-3 empirical sectors (SDSS/Euclid)
-2. ⏳ Monitor GPU validation pipeline
+1. 🔄 D-3 Phase 2 batch running
+2. ⏳ Aggregation + statistics; Gate E verdict 2026-07-27 EOD
+3. ⚠️ Lattice prior (ρ=4, T=18) currently unsupported — see Open Finding
 
 ---
 
