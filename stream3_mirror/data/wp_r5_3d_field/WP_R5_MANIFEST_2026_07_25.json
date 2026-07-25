@@ -1,0 +1,17 @@
+{
+  "timestamp": "2026-07-25T12:47:21.262203+00:00",
+  "cosmology": "Planck18",
+  "nbins": 8,
+  "threshold_percentile": 50.0,
+  "n_null_realizations": 200,
+  "fields": [
+    "euclid_z_edf_north",
+    "euclid_z_edf_fornax",
+    "euclid_z_edf_south",
+    "sdss_z_coma_cluster"
+  ],
+  "output_file": "/mnt/disks/disk-socrateai-local-1/SocrateAI-stream3-realdata/wp_r5_3d_field/wp_r5_results_2026_07_25.json",
+  "sha256": "2a69505ebe510c8249abac145c20f7c6c762d959bf02df706a8b6832bb5bd65c",
+  "label": "ENGINEERING",
+  "supersedes": "data/nullbanks/real/nullbank_2026_07_25.json (WP-R3, retracted per docs/FINDING_R_NULLDEGENERATE_2026_07_25.md)"
+}

@@ -1,0 +1,17 @@
+{
+  "timestamp": "2026-07-25T12:52:28.266635+00:00",
+  "fields": [
+    "sdss_cosmos",
+    "sdss_stripe82_center",
+    "sdss_coma_cluster",
+    "euclid_edf_north",
+    "sdss_z_coma_cluster",
+    "euclid_z_edf_north",
+    "euclid_z_edf_fornax",
+    "euclid_z_edf_south"
+  ],
+  "output_file": "/mnt/disks/disk-socrateai-local-1/SocrateAI-stream3-realdata/survey_characterization/survey_scales_2026_07_25.json",
+  "sha256": "70630739a3ae77ea343fb529857faac645ec9612469454ff1042a608735f68d1",
+  "label": "ENGINEERING",
+  "purpose": "Descriptive scale facts for Stream 1 (chameleon screening WP-B1) and Stream 2 (K3 selection) \u2014 no hypothesis test."
+}

@@ -32,6 +32,12 @@ externally supplied constraint of unverified local provenance** and requests tho
 docs (or their hashes) be mirrored into this repo before M2. No observable is proposed
 below, so nothing yet depends on them.
 
+> **Provenance update (2026-07-26, post-D3):** the mirror landed — see
+> `stream3_mirror/` (25 files, hash-pinned, source commit `3d18add`). The envelope
+> claims were independently re-verified at mirror time (36/50 Coma duplicates exact;
+> β₀ 14/30 exact; β₂ 30/30 exact; β₁ alone 29/30 — see
+> `stream3_mirror/README.md` precision note). §1's provenance objection is closed.
+
 ## §2. Wall-by-wall answer (directive §3 — mandatory, silence = return)
 
 **Wall 1 — Type II veto (a₁ / Λ_D).**

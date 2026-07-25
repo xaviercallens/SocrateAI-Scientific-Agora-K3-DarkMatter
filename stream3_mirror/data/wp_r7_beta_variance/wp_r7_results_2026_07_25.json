@@ -1,0 +1,1346 @@
+{
+  "euclid_z_edf_north": {
+    "field_name": "euclid_z_edf_north",
+    "survey": "Euclid MER x phz_photo_z (photometric redshift)",
+    "nbins": 8,
+    "n_input": 2000,
+    "redshift_drop_report": {
+      "n_input": 2000,
+      "n_valid": 1983,
+      "n_dropped": 17,
+      "n_dropped_nan": 17,
+      "n_dropped_negative": 0
+    },
+    "per_threshold": [
+      {
+        "threshold_percentile": 50.0,
+        "real_topology": {
+          "beta_0": 1,
+          "beta_1": 0,
+          "beta_2": 2,
+          "euler_char": 3
+        },
+        "n_null_realizations": 50,
+        "schemes": {
+          "z_shuffle": {
+            "beta_0": {
+              "mean": 1.0,
+              "std": 0.0,
+              "variance": 0.0,
+              "nonzero_variance": false,
+              "real_value": 1,
+              "real_percentile_rank": 100.0
+            },
+            "beta_1": {
+              "mean": 0.06,
+              "std": 0.23748684174075835,
+              "variance": 0.0564,
+              "nonzero_variance": true,
+              "real_value": 0,
+              "real_percentile_rank": 94.0
+            },
+            "beta_2": {
+              "mean": 0.3,
+              "std": 0.5385164807134504,
+              "variance": 0.29,
+              "nonzero_variance": true,
+              "real_value": 2,
+              "real_percentile_rank": 100.0
+            }
+          },
+          "angular_csr": {
+            "beta_0": {
+              "mean": 1.0,
+              "std": 0.0,
+              "variance": 0.0,
+              "nonzero_variance": false,
+              "real_value": 1,
+              "real_percentile_rank": 100.0
+            },
+            "beta_1": {
+              "mean": 0.16,
+              "std": 0.417612260356422,
+              "variance": 0.1744,
+              "nonzero_variance": true,
+              "real_value": 0,
+              "real_percentile_rank": 86.0
+            },
+            "beta_2": {
+              "mean": 0.76,
+              "std": 0.8380930735902785,
+              "variance": 0.7023999999999999,
+              "nonzero_variance": true,
+              "real_value": 2,
+              "real_percentile_rank": 98.0
+            }
+          }
+        }
+      },
+      {
+        "threshold_percentile": 60.0,
+        "real_topology": {
+          "beta_0": 1,
+          "beta_1": 1,
+          "beta_2": 1,
+          "euler_char": 1
+        },
+        "n_null_realizations": 50,
+        "schemes": {
+          "z_shuffle": {
+            "beta_0": {
+              "mean": 1.0,
+              "std": 0.0,
+              "variance": 0.0,
+              "nonzero_variance": false,
+              "real_value": 1,
+              "real_percentile_rank": 100.0
+            },
+            "beta_1": {
+              "mean": 0.24,
+              "std": 0.5122499389946279,
+              "variance": 0.2624,
+              "nonzero_variance": true,
+              "real_value": 1,
+              "real_percentile_rank": 96.0
+            },
+            "beta_2": {
+              "mean": 0.72,
+              "std": 0.7756287771866126,
+              "variance": 0.6015999999999999,
+              "nonzero_variance": true,
+              "real_value": 1,
+              "real_percentile_rank": 88.0
+            }
+          },
+          "angular_csr": {
+            "beta_0": {
+              "mean": 1.02,
+              "std": 0.13999999999999999,
+              "variance": 0.019599999999999992,
+              "nonzero_variance": true,
+              "real_value": 1,
+              "real_percentile_rank": 98.0
+            },
+            "beta_1": {
+              "mean": 0.9,
+              "std": 0.9643650760992956,
+              "variance": 0.9300000000000002,
+              "nonzero_variance": true,
+              "real_value": 1,
+              "real_percentile_rank": 76.0
+            },
+            "beta_2": {
+              "mean": 0.74,
+              "std": 0.8674099376880576,
+              "variance": 0.7524,
+              "nonzero_variance": true,
+              "real_value": 1,
+              "real_percentile_rank": 84.0
+            }
+          }
+        }
+      },
+      {
+        "threshold_percentile": 70.0,
+        "real_topology": {
+          "beta_0": 1,
+          "beta_1": 1,
+          "beta_2": 0,
+          "euler_char": 0
+        },
+        "n_null_realizations": 50,
+        "schemes": {
+          "z_shuffle": {
+            "beta_0": {
+              "mean": 1.0,
+              "std": 0.0,
+              "variance": 0.0,
+              "nonzero_variance": false,
+              "real_value": 1,
+              "real_percentile_rank": 100.0
+            },
+            "beta_1": {
+              "mean": 0.32,
+              "std": 0.581033561853358,
+              "variance": 0.3375999999999999,
+              "nonzero_variance": true,
+              "real_value": 1,
+              "real_percentile_rank": 94.0
+            },
+            "beta_2": {
+              "mean": 0.44,
+              "std": 0.6681317235396026,
+              "variance": 0.4464,
+              "nonzero_variance": true,
+              "real_value": 0,
+              "real_percentile_rank": 66.0
+            }
+          },
+          "angular_csr": {
+            "beta_0": {
+              "mean": 1.14,
+              "std": 0.4004996878900157,
+              "variance": 0.16040000000000001,
+              "nonzero_variance": true,
+              "real_value": 1,
+              "real_percentile_rank": 88.0
+            },
+            "beta_1": {
+              "mean": 0.78,
+              "std": 0.9442457307290301,
+              "variance": 0.8916,
+              "nonzero_variance": true,
+              "real_value": 1,
+              "real_percentile_rank": 80.0
+            },
+            "beta_2": {
+              "mean": 0.6,
+              "std": 0.848528137423857,
+              "variance": 0.72,
+              "nonzero_variance": true,
+              "real_value": 0,
+              "real_percentile_rank": 60.0
+            }
+          }
+        }
+      },
+      {
+        "threshold_percentile": 80.0,
+        "real_topology": {
+          "beta_0": 1,
+          "beta_1": 2,
+          "beta_2": 0,
+          "euler_char": -1
+        },
+        "n_null_realizations": 50,
+        "schemes": {
+          "z_shuffle": {
+            "beta_0": {
+              "mean": 1.04,
+              "std": 0.19595917942265428,
+              "variance": 0.03840000000000001,
+              "nonzero_variance": true,
+              "real_value": 1,
+              "real_percentile_rank": 96.0
+            },
+            "beta_1": {
+              "mean": 0.26,
+              "std": 0.482078831727758,
+              "variance": 0.2324,
+              "nonzero_variance": true,
+              "real_value": 2,
+              "real_percentile_rank": 100.0
+            },
+            "beta_2": {
+              "mean": 0.36,
+              "std": 0.6248199740725323,
+              "variance": 0.39039999999999997,
+              "nonzero_variance": true,
+              "real_value": 0,
+              "real_percentile_rank": 70.0
+            }
+          },
+          "angular_csr": {
+            "beta_0": {
+              "mean": 1.12,
+              "std": 0.32496153618543844,
+              "variance": 0.10560000000000003,
+              "nonzero_variance": true,
+              "real_value": 1,
+              "real_percentile_rank": 88.0
+            },
+            "beta_1": {
+              "mean": 0.54,
+              "std": 0.7799999999999999,
+              "variance": 0.6083999999999999,
+              "nonzero_variance": true,
+              "real_value": 2,
+              "real_percentile_rank": 96.0
+            },
+            "beta_2": {
+              "mean": 0.28,
+              "std": 0.448998886412873,
+              "variance": 0.20160000000000003,
+              "nonzero_variance": true,
+              "real_value": 0,
+              "real_percentile_rank": 72.0
+            }
+          }
+        }
+      },
+      {
+        "threshold_percentile": 90.0,
+        "real_topology": {
+          "beta_0": 1,
+          "beta_1": 0,
+          "beta_2": 0,
+          "euler_char": 1
+        },
+        "n_null_realizations": 50,
+        "schemes": {
+          "z_shuffle": {
+            "beta_0": {
+              "mean": 1.0,
+              "std": 0.0,
+              "variance": 0.0,
+              "nonzero_variance": false,
+              "real_value": 1,
+              "real_percentile_rank": 100.0
+            },
+            "beta_1": {
+              "mean": 0.02,
+              "std": 0.13999999999999999,
+              "variance": 0.019599999999999996,
+              "nonzero_variance": true,
+              "real_value": 0,
+              "real_percentile_rank": 98.0
+            },
+            "beta_2": {
+              "mean": 0.08,
+              "std": 0.2712931993250107,
+              "variance": 0.0736,
+              "nonzero_variance": true,
+              "real_value": 0,
+              "real_percentile_rank": 92.0
+            }
+          },
+          "angular_csr": {
+            "beta_0": {
+              "mean": 1.0,
+              "std": 0.0,
+              "variance": 0.0,
+              "nonzero_variance": false,
+              "real_value": 1,
+              "real_percentile_rank": 100.0
+            },
+            "beta_1": {
+              "mean": 0.08,
+              "std": 0.2712931993250107,
+              "variance": 0.0736,
+              "nonzero_variance": true,
+              "real_value": 0,
+              "real_percentile_rank": 92.0
+            },
+            "beta_2": {
+              "mean": 0.1,
+              "std": 0.3,
+              "variance": 0.09,
+              "nonzero_variance": true,
+              "real_value": 0,
+              "real_percentile_rank": 90.0
+            }
+          }
+        }
+      }
+    ],
+    "label": "ENGINEERING"
+  },
+  "euclid_z_edf_fornax": {
+    "field_name": "euclid_z_edf_fornax",
+    "survey": "Euclid MER x phz_photo_z (photometric redshift)",
+    "nbins": 8,
+    "n_input": 2000,
+    "redshift_drop_report": {
+      "n_input": 2000,
+      "n_valid": 1993,
+      "n_dropped": 7,
+      "n_dropped_nan": 7,
+      "n_dropped_negative": 0
+    },
+    "per_threshold": [
+      {
+        "threshold_percentile": 50.0,
+        "real_topology": {
+          "beta_0": 1,
+          "beta_1": 0,
+          "beta_2": 0,
+          "euler_char": 1
+        },
+        "n_null_realizations": 50,
+        "schemes": {
+          "z_shuffle": {
+            "beta_0": {
+              "mean": 1.0,
+              "std": 0.0,
+              "variance": 0.0,
+              "nonzero_variance": false,
+              "real_value": 1,
+              "real_percentile_rank": 100.0
+            },
+            "beta_1": {
+              "mean": 0.08,
+              "std": 0.2712931993250107,
+              "variance": 0.0736,
+              "nonzero_variance": true,
+              "real_value": 0,
+              "real_percentile_rank": 92.0
+            },
+            "beta_2": {
+              "mean": 0.32,
+              "std": 0.581033561853358,
+              "variance": 0.33759999999999996,
+              "nonzero_variance": true,
+              "real_value": 0,
+              "real_percentile_rank": 74.0
+            }
+          },
+          "angular_csr": {
+            "beta_0": {
+              "mean": 1.0,
+              "std": 0.0,
+              "variance": 0.0,
+              "nonzero_variance": false,
+              "real_value": 1,
+              "real_percentile_rank": 100.0
+            },
+            "beta_1": {
+              "mean": 0.0,
+              "std": 0.0,
+              "variance": 0.0,
+              "nonzero_variance": false,
+              "real_value": 0,
+              "real_percentile_rank": 100.0
+            },
+            "beta_2": {
+              "mean": 0.54,
+              "std": 0.805232885567896,
+              "variance": 0.6484000000000002,
+              "nonzero_variance": true,
+              "real_value": 0,
+              "real_percentile_rank": 57.99999999999999
+            }
+          }
+        }
+      },
+      {
+        "threshold_percentile": 60.0,
+        "real_topology": {
+          "beta_0": 1,
+          "beta_1": 0,
+          "beta_2": 1,
+          "euler_char": 2
+        },
+        "n_null_realizations": 50,
+        "schemes": {
+          "z_shuffle": {
+            "beta_0": {
+              "mean": 1.0,
+              "std": 0.0,
+              "variance": 0.0,
+              "nonzero_variance": false,
+              "real_value": 1,
+              "real_percentile_rank": 100.0
+            },
+            "beta_1": {
+              "mean": 0.18,
+              "std": 0.38418745424597095,
+              "variance": 0.1476,
+              "nonzero_variance": true,
+              "real_value": 0,
+              "real_percentile_rank": 82.0
+            },
+            "beta_2": {
+              "mean": 0.34,
+              "std": 0.5517245689653488,
+              "variance": 0.3044,
+              "nonzero_variance": true,
+              "real_value": 1,
+              "real_percentile_rank": 96.0
+            }
+          },
+          "angular_csr": {
+            "beta_0": {
+              "mean": 1.0,
+              "std": 0.0,
+              "variance": 0.0,
+              "nonzero_variance": false,
+              "real_value": 1,
+              "real_percentile_rank": 100.0
+            },
+            "beta_1": {
+              "mean": 0.1,
+              "std": 0.3,
+              "variance": 0.09,
+              "nonzero_variance": true,
+              "real_value": 0,
+              "real_percentile_rank": 90.0
+            },
+            "beta_2": {
+              "mean": 0.48,
+              "std": 0.8059776671843955,
+              "variance": 0.6496000000000001,
+              "nonzero_variance": true,
+              "real_value": 1,
+              "real_percentile_rank": 90.0
+            }
+          }
+        }
+      },
+      {
+        "threshold_percentile": 70.0,
+        "real_topology": {
+          "beta_0": 1,
+          "beta_1": 1,
+          "beta_2": 0,
+          "euler_char": 0
+        },
+        "n_null_realizations": 50,
+        "schemes": {
+          "z_shuffle": {
+            "beta_0": {
+              "mean": 1.0,
+              "std": 0.0,
+              "variance": 0.0,
+              "nonzero_variance": false,
+              "real_value": 1,
+              "real_percentile_rank": 100.0
+            },
+            "beta_1": {
+              "mean": 0.06,
+              "std": 0.23748684174075835,
+              "variance": 0.056400000000000006,
+              "nonzero_variance": true,
+              "real_value": 1,
+              "real_percentile_rank": 100.0
+            },
+            "beta_2": {
+              "mean": 0.06,
+              "std": 0.23748684174075835,
+              "variance": 0.056400000000000006,
+              "nonzero_variance": true,
+              "real_value": 0,
+              "real_percentile_rank": 94.0
+            }
+          },
+          "angular_csr": {
+            "beta_0": {
+              "mean": 1.02,
+              "std": 0.13999999999999999,
+              "variance": 0.019599999999999996,
+              "nonzero_variance": true,
+              "real_value": 1,
+              "real_percentile_rank": 98.0
+            },
+            "beta_1": {
+              "mean": 0.22,
+              "std": 0.46,
+              "variance": 0.21160000000000004,
+              "nonzero_variance": true,
+              "real_value": 1,
+              "real_percentile_rank": 98.0
+            },
+            "beta_2": {
+              "mean": 0.06,
+              "std": 0.23748684174075835,
+              "variance": 0.056400000000000006,
+              "nonzero_variance": true,
+              "real_value": 0,
+              "real_percentile_rank": 94.0
+            }
+          }
+        }
+      },
+      {
+        "threshold_percentile": 80.0,
+        "real_topology": {
+          "beta_0": 1,
+          "beta_1": 0,
+          "beta_2": 0,
+          "euler_char": 1
+        },
+        "n_null_realizations": 50,
+        "schemes": {
+          "z_shuffle": {
+            "beta_0": {
+              "mean": 1.0,
+              "std": 0.0,
+              "variance": 0.0,
+              "nonzero_variance": false,
+              "real_value": 1,
+              "real_percentile_rank": 100.0
+            },
+            "beta_1": {
+              "mean": 0.1,
+              "std": 0.36055512754639896,
+              "variance": 0.13,
+              "nonzero_variance": true,
+              "real_value": 0,
+              "real_percentile_rank": 92.0
+            },
+            "beta_2": {
+              "mean": 0.08,
+              "std": 0.2712931993250107,
+              "variance": 0.0736,
+              "nonzero_variance": true,
+              "real_value": 0,
+              "real_percentile_rank": 92.0
+            }
+          },
+          "angular_csr": {
+            "beta_0": {
+              "mean": 1.02,
+              "std": 0.13999999999999999,
+              "variance": 0.019599999999999992,
+              "nonzero_variance": true,
+              "real_value": 1,
+              "real_percentile_rank": 98.0
+            },
+            "beta_1": {
+              "mean": 0.12,
+              "std": 0.3815756805667782,
+              "variance": 0.14559999999999998,
+              "nonzero_variance": true,
+              "real_value": 0,
+              "real_percentile_rank": 90.0
+            },
+            "beta_2": {
+              "mean": 0.14,
+              "std": 0.34698703145794946,
+              "variance": 0.1204,
+              "nonzero_variance": true,
+              "real_value": 0,
+              "real_percentile_rank": 86.0
+            }
+          }
+        }
+      },
+      {
+        "threshold_percentile": 90.0,
+        "real_topology": {
+          "beta_0": 1,
+          "beta_1": 0,
+          "beta_2": 0,
+          "euler_char": 1
+        },
+        "n_null_realizations": 50,
+        "schemes": {
+          "z_shuffle": {
+            "beta_0": {
+              "mean": 1.02,
+              "std": 0.13999999999999999,
+              "variance": 0.019599999999999996,
+              "nonzero_variance": true,
+              "real_value": 1,
+              "real_percentile_rank": 98.0
+            },
+            "beta_1": {
+              "mean": 0.2,
+              "std": 0.529150262212918,
+              "variance": 0.27999999999999997,
+              "nonzero_variance": true,
+              "real_value": 0,
+              "real_percentile_rank": 84.0
+            },
+            "beta_2": {
+              "mean": 0.08,
+              "std": 0.2712931993250107,
+              "variance": 0.0736,
+              "nonzero_variance": true,
+              "real_value": 0,
+              "real_percentile_rank": 92.0
+            }
+          },
+          "angular_csr": {
+            "beta_0": {
+              "mean": 1.0,
+              "std": 0.0,
+              "variance": 0.0,
+              "nonzero_variance": false,
+              "real_value": 1,
+              "real_percentile_rank": 100.0
+            },
+            "beta_1": {
+              "mean": 0.46,
+              "std": 0.6696267617113283,
+              "variance": 0.44839999999999997,
+              "nonzero_variance": true,
+              "real_value": 0,
+              "real_percentile_rank": 62.0
+            },
+            "beta_2": {
+              "mean": 0.12,
+              "std": 0.3249615361854384,
+              "variance": 0.10559999999999999,
+              "nonzero_variance": true,
+              "real_value": 0,
+              "real_percentile_rank": 88.0
+            }
+          }
+        }
+      }
+    ],
+    "label": "ENGINEERING"
+  },
+  "euclid_z_edf_south": {
+    "field_name": "euclid_z_edf_south",
+    "survey": "Euclid MER x phz_photo_z (photometric redshift)",
+    "nbins": 8,
+    "n_input": 2000,
+    "redshift_drop_report": {
+      "n_input": 2000,
+      "n_valid": 1996,
+      "n_dropped": 4,
+      "n_dropped_nan": 4,
+      "n_dropped_negative": 0
+    },
+    "per_threshold": [
+      {
+        "threshold_percentile": 50.0,
+        "real_topology": {
+          "beta_0": 1,
+          "beta_1": 0,
+          "beta_2": 0,
+          "euler_char": 1
+        },
+        "n_null_realizations": 50,
+        "schemes": {
+          "z_shuffle": {
+            "beta_0": {
+              "mean": 1.04,
+              "std": 0.19595917942265428,
+              "variance": 0.03840000000000001,
+              "nonzero_variance": true,
+              "real_value": 1,
+              "real_percentile_rank": 96.0
+            },
+            "beta_1": {
+              "mean": 0.58,
+              "std": 0.7236021006050218,
+              "variance": 0.5236000000000001,
+              "nonzero_variance": true,
+              "real_value": 0,
+              "real_percentile_rank": 54.0
+            },
+            "beta_2": {
+              "mean": 0.46,
+              "std": 0.6696267617113283,
+              "variance": 0.4484,
+              "nonzero_variance": true,
+              "real_value": 0,
+              "real_percentile_rank": 62.0
+            }
+          },
+          "angular_csr": {
+            "beta_0": {
+              "mean": 1.0,
+              "std": 0.0,
+              "variance": 0.0,
+              "nonzero_variance": false,
+              "real_value": 1,
+              "real_percentile_rank": 100.0
+            },
+            "beta_1": {
+              "mean": 0.08,
+              "std": 0.2712931993250107,
+              "variance": 0.0736,
+              "nonzero_variance": true,
+              "real_value": 0,
+              "real_percentile_rank": 92.0
+            },
+            "beta_2": {
+              "mean": 0.56,
+              "std": 0.6974238309665078,
+              "variance": 0.48640000000000005,
+              "nonzero_variance": true,
+              "real_value": 0,
+              "real_percentile_rank": 56.00000000000001
+            }
+          }
+        }
+      },
+      {
+        "threshold_percentile": 60.0,
+        "real_topology": {
+          "beta_0": 1,
+          "beta_1": 0,
+          "beta_2": 0,
+          "euler_char": 1
+        },
+        "n_null_realizations": 50,
+        "schemes": {
+          "z_shuffle": {
+            "beta_0": {
+              "mean": 1.04,
+              "std": 0.19595917942265428,
+              "variance": 0.03840000000000001,
+              "nonzero_variance": true,
+              "real_value": 1,
+              "real_percentile_rank": 96.0
+            },
+            "beta_1": {
+              "mean": 0.58,
+              "std": 0.7236021006050218,
+              "variance": 0.5236000000000001,
+              "nonzero_variance": true,
+              "real_value": 0,
+              "real_percentile_rank": 54.0
+            },
+            "beta_2": {
+              "mean": 0.46,
+              "std": 0.6696267617113283,
+              "variance": 0.4484,
+              "nonzero_variance": true,
+              "real_value": 0,
+              "real_percentile_rank": 62.0
+            }
+          },
+          "angular_csr": {
+            "beta_0": {
+              "mean": 1.0,
+              "std": 0.0,
+              "variance": 0.0,
+              "nonzero_variance": false,
+              "real_value": 1,
+              "real_percentile_rank": 100.0
+            },
+            "beta_1": {
+              "mean": 0.14,
+              "std": 0.49030602688525055,
+              "variance": 0.24040000000000003,
+              "nonzero_variance": true,
+              "real_value": 0,
+              "real_percentile_rank": 90.0
+            },
+            "beta_2": {
+              "mean": 0.54,
+              "std": 0.6696267617113283,
+              "variance": 0.44839999999999997,
+              "nonzero_variance": true,
+              "real_value": 0,
+              "real_percentile_rank": 56.00000000000001
+            }
+          }
+        }
+      },
+      {
+        "threshold_percentile": 70.0,
+        "real_topology": {
+          "beta_0": 1,
+          "beta_1": 0,
+          "beta_2": 0,
+          "euler_char": 1
+        },
+        "n_null_realizations": 50,
+        "schemes": {
+          "z_shuffle": {
+            "beta_0": {
+              "mean": 1.04,
+              "std": 0.19595917942265428,
+              "variance": 0.03840000000000001,
+              "nonzero_variance": true,
+              "real_value": 1,
+              "real_percentile_rank": 96.0
+            },
+            "beta_1": {
+              "mean": 0.24,
+              "std": 0.5122499389946279,
+              "variance": 0.2624,
+              "nonzero_variance": true,
+              "real_value": 0,
+              "real_percentile_rank": 80.0
+            },
+            "beta_2": {
+              "mean": 0.12,
+              "std": 0.32496153618543844,
+              "variance": 0.1056,
+              "nonzero_variance": true,
+              "real_value": 0,
+              "real_percentile_rank": 88.0
+            }
+          },
+          "angular_csr": {
+            "beta_0": {
+              "mean": 1.0,
+              "std": 0.0,
+              "variance": 0.0,
+              "nonzero_variance": false,
+              "real_value": 1,
+              "real_percentile_rank": 100.0
+            },
+            "beta_1": {
+              "mean": 0.56,
+              "std": 0.92,
+              "variance": 0.8464,
+              "nonzero_variance": true,
+              "real_value": 0,
+              "real_percentile_rank": 64.0
+            },
+            "beta_2": {
+              "mean": 0.76,
+              "std": 0.7088018058667741,
+              "variance": 0.5024000000000001,
+              "nonzero_variance": true,
+              "real_value": 0,
+              "real_percentile_rank": 38.0
+            }
+          }
+        }
+      },
+      {
+        "threshold_percentile": 80.0,
+        "real_topology": {
+          "beta_0": 1,
+          "beta_1": 0,
+          "beta_2": 0,
+          "euler_char": 1
+        },
+        "n_null_realizations": 50,
+        "schemes": {
+          "z_shuffle": {
+            "beta_0": {
+              "mean": 1.12,
+              "std": 0.3815756805667783,
+              "variance": 0.14560000000000003,
+              "nonzero_variance": true,
+              "real_value": 1,
+              "real_percentile_rank": 90.0
+            },
+            "beta_1": {
+              "mean": 0.16,
+              "std": 0.36660605559646714,
+              "variance": 0.13439999999999996,
+              "nonzero_variance": true,
+              "real_value": 0,
+              "real_percentile_rank": 84.0
+            },
+            "beta_2": {
+              "mean": 0.16,
+              "std": 0.417612260356422,
+              "variance": 0.1744,
+              "nonzero_variance": true,
+              "real_value": 0,
+              "real_percentile_rank": 86.0
+            }
+          },
+          "angular_csr": {
+            "beta_0": {
+              "mean": 1.18,
+              "std": 0.38418745424597095,
+              "variance": 0.1476,
+              "nonzero_variance": true,
+              "real_value": 1,
+              "real_percentile_rank": 82.0
+            },
+            "beta_1": {
+              "mean": 1.1,
+              "std": 1.0440306508910548,
+              "variance": 1.0899999999999999,
+              "nonzero_variance": true,
+              "real_value": 0,
+              "real_percentile_rank": 32.0
+            },
+            "beta_2": {
+              "mean": 0.24,
+              "std": 0.47159304490206383,
+              "variance": 0.22240000000000001,
+              "nonzero_variance": true,
+              "real_value": 0,
+              "real_percentile_rank": 78.0
+            }
+          }
+        }
+      },
+      {
+        "threshold_percentile": 90.0,
+        "real_topology": {
+          "beta_0": 1,
+          "beta_1": 0,
+          "beta_2": 0,
+          "euler_char": 1
+        },
+        "n_null_realizations": 50,
+        "schemes": {
+          "z_shuffle": {
+            "beta_0": {
+              "mean": 1.04,
+              "std": 0.19595917942265428,
+              "variance": 0.03840000000000001,
+              "nonzero_variance": true,
+              "real_value": 1,
+              "real_percentile_rank": 96.0
+            },
+            "beta_1": {
+              "mean": 0.14,
+              "std": 0.4476605857119878,
+              "variance": 0.2004,
+              "nonzero_variance": true,
+              "real_value": 0,
+              "real_percentile_rank": 90.0
+            },
+            "beta_2": {
+              "mean": 0.06,
+              "std": 0.23748684174075835,
+              "variance": 0.056400000000000006,
+              "nonzero_variance": true,
+              "real_value": 0,
+              "real_percentile_rank": 94.0
+            }
+          },
+          "angular_csr": {
+            "beta_0": {
+              "mean": 1.08,
+              "std": 0.2712931993250107,
+              "variance": 0.0736,
+              "nonzero_variance": true,
+              "real_value": 1,
+              "real_percentile_rank": 92.0
+            },
+            "beta_1": {
+              "mean": 0.26,
+              "std": 0.482078831727758,
+              "variance": 0.2324,
+              "nonzero_variance": true,
+              "real_value": 0,
+              "real_percentile_rank": 76.0
+            },
+            "beta_2": {
+              "mean": 0.14,
+              "std": 0.3469870314579494,
+              "variance": 0.12039999999999995,
+              "nonzero_variance": true,
+              "real_value": 0,
+              "real_percentile_rank": 86.0
+            }
+          }
+        }
+      }
+    ],
+    "label": "ENGINEERING"
+  },
+  "sdss_z_coma_cluster": {
+    "field_name": "sdss_z_coma_cluster",
+    "survey": "SDSS spectroscopic (spectro=True, real spec-z)",
+    "nbins": 8,
+    "n_input": 50,
+    "redshift_drop_report": {
+      "n_input": 50,
+      "n_valid": 50,
+      "n_dropped": 0,
+      "n_dropped_nan": 0,
+      "n_dropped_negative": 0
+    },
+    "per_threshold": [
+      {
+        "threshold_percentile": 50.0,
+        "real_topology": {
+          "beta_0": 5,
+          "beta_1": 0,
+          "beta_2": 0,
+          "euler_char": 5
+        },
+        "n_null_realizations": 50,
+        "schemes": {
+          "z_shuffle": {
+            "beta_0": {
+              "mean": 6.12,
+              "std": 1.5315351775261319,
+              "variance": 2.3456,
+              "nonzero_variance": true,
+              "real_value": 5,
+              "real_percentile_rank": 32.0
+            },
+            "beta_1": {
+              "mean": 1.84,
+              "std": 1.0071742649611337,
+              "variance": 1.0144,
+              "nonzero_variance": true,
+              "real_value": 0,
+              "real_percentile_rank": 10.0
+            },
+            "beta_2": {
+              "mean": 0.0,
+              "std": 0.0,
+              "variance": 0.0,
+              "nonzero_variance": false,
+              "real_value": 0,
+              "real_percentile_rank": 100.0
+            }
+          },
+          "angular_csr": {
+            "beta_0": {
+              "mean": 4.78,
+              "std": 1.6886681142249353,
+              "variance": 2.851599999999999,
+              "nonzero_variance": true,
+              "real_value": 5,
+              "real_percentile_rank": 68.0
+            },
+            "beta_1": {
+              "mean": 2.34,
+              "std": 1.9350452191098793,
+              "variance": 3.7444000000000006,
+              "nonzero_variance": true,
+              "real_value": 0,
+              "real_percentile_rank": 18.0
+            },
+            "beta_2": {
+              "mean": 0.02,
+              "std": 0.13999999999999999,
+              "variance": 0.019599999999999996,
+              "nonzero_variance": true,
+              "real_value": 0,
+              "real_percentile_rank": 98.0
+            }
+          }
+        }
+      },
+      {
+        "threshold_percentile": 60.0,
+        "real_topology": {
+          "beta_0": 5,
+          "beta_1": 0,
+          "beta_2": 0,
+          "euler_char": 5
+        },
+        "n_null_realizations": 50,
+        "schemes": {
+          "z_shuffle": {
+            "beta_0": {
+              "mean": 6.12,
+              "std": 1.5315351775261319,
+              "variance": 2.3456,
+              "nonzero_variance": true,
+              "real_value": 5,
+              "real_percentile_rank": 32.0
+            },
+            "beta_1": {
+              "mean": 1.84,
+              "std": 1.0071742649611337,
+              "variance": 1.0144,
+              "nonzero_variance": true,
+              "real_value": 0,
+              "real_percentile_rank": 10.0
+            },
+            "beta_2": {
+              "mean": 0.0,
+              "std": 0.0,
+              "variance": 0.0,
+              "nonzero_variance": false,
+              "real_value": 0,
+              "real_percentile_rank": 100.0
+            }
+          },
+          "angular_csr": {
+            "beta_0": {
+              "mean": 4.78,
+              "std": 1.6886681142249353,
+              "variance": 2.851599999999999,
+              "nonzero_variance": true,
+              "real_value": 5,
+              "real_percentile_rank": 68.0
+            },
+            "beta_1": {
+              "mean": 2.34,
+              "std": 1.9350452191098793,
+              "variance": 3.7444000000000006,
+              "nonzero_variance": true,
+              "real_value": 0,
+              "real_percentile_rank": 18.0
+            },
+            "beta_2": {
+              "mean": 0.02,
+              "std": 0.13999999999999999,
+              "variance": 0.019599999999999996,
+              "nonzero_variance": true,
+              "real_value": 0,
+              "real_percentile_rank": 98.0
+            }
+          }
+        }
+      },
+      {
+        "threshold_percentile": 70.0,
+        "real_topology": {
+          "beta_0": 5,
+          "beta_1": 0,
+          "beta_2": 0,
+          "euler_char": 5
+        },
+        "n_null_realizations": 50,
+        "schemes": {
+          "z_shuffle": {
+            "beta_0": {
+              "mean": 6.12,
+              "std": 1.5315351775261319,
+              "variance": 2.3456,
+              "nonzero_variance": true,
+              "real_value": 5,
+              "real_percentile_rank": 32.0
+            },
+            "beta_1": {
+              "mean": 1.84,
+              "std": 1.0071742649611337,
+              "variance": 1.0144,
+              "nonzero_variance": true,
+              "real_value": 0,
+              "real_percentile_rank": 10.0
+            },
+            "beta_2": {
+              "mean": 0.0,
+              "std": 0.0,
+              "variance": 0.0,
+              "nonzero_variance": false,
+              "real_value": 0,
+              "real_percentile_rank": 100.0
+            }
+          },
+          "angular_csr": {
+            "beta_0": {
+              "mean": 4.78,
+              "std": 1.6886681142249353,
+              "variance": 2.851599999999999,
+              "nonzero_variance": true,
+              "real_value": 5,
+              "real_percentile_rank": 68.0
+            },
+            "beta_1": {
+              "mean": 2.34,
+              "std": 1.9350452191098793,
+              "variance": 3.7444000000000006,
+              "nonzero_variance": true,
+              "real_value": 0,
+              "real_percentile_rank": 18.0
+            },
+            "beta_2": {
+              "mean": 0.02,
+              "std": 0.13999999999999999,
+              "variance": 0.019599999999999996,
+              "nonzero_variance": true,
+              "real_value": 0,
+              "real_percentile_rank": 98.0
+            }
+          }
+        }
+      },
+      {
+        "threshold_percentile": 80.0,
+        "real_topology": {
+          "beta_0": 5,
+          "beta_1": 0,
+          "beta_2": 0,
+          "euler_char": 5
+        },
+        "n_null_realizations": 50,
+        "schemes": {
+          "z_shuffle": {
+            "beta_0": {
+              "mean": 6.12,
+              "std": 1.5315351775261319,
+              "variance": 2.3456,
+              "nonzero_variance": true,
+              "real_value": 5,
+              "real_percentile_rank": 32.0
+            },
+            "beta_1": {
+              "mean": 1.84,
+              "std": 1.0071742649611337,
+              "variance": 1.0144,
+              "nonzero_variance": true,
+              "real_value": 0,
+              "real_percentile_rank": 10.0
+            },
+            "beta_2": {
+              "mean": 0.0,
+              "std": 0.0,
+              "variance": 0.0,
+              "nonzero_variance": false,
+              "real_value": 0,
+              "real_percentile_rank": 100.0
+            }
+          },
+          "angular_csr": {
+            "beta_0": {
+              "mean": 4.78,
+              "std": 1.6886681142249353,
+              "variance": 2.851599999999999,
+              "nonzero_variance": true,
+              "real_value": 5,
+              "real_percentile_rank": 68.0
+            },
+            "beta_1": {
+              "mean": 2.34,
+              "std": 1.9350452191098793,
+              "variance": 3.7444000000000006,
+              "nonzero_variance": true,
+              "real_value": 0,
+              "real_percentile_rank": 18.0
+            },
+            "beta_2": {
+              "mean": 0.02,
+              "std": 0.13999999999999999,
+              "variance": 0.019599999999999996,
+              "nonzero_variance": true,
+              "real_value": 0,
+              "real_percentile_rank": 98.0
+            }
+          }
+        }
+      },
+      {
+        "threshold_percentile": 90.0,
+        "real_topology": {
+          "beta_0": 5,
+          "beta_1": 0,
+          "beta_2": 0,
+          "euler_char": 5
+        },
+        "n_null_realizations": 50,
+        "schemes": {
+          "z_shuffle": {
+            "beta_0": {
+              "mean": 6.12,
+              "std": 1.5315351775261319,
+              "variance": 2.3456,
+              "nonzero_variance": true,
+              "real_value": 5,
+              "real_percentile_rank": 32.0
+            },
+            "beta_1": {
+              "mean": 1.84,
+              "std": 1.0071742649611337,
+              "variance": 1.0144,
+              "nonzero_variance": true,
+              "real_value": 0,
+              "real_percentile_rank": 10.0
+            },
+            "beta_2": {
+              "mean": 0.0,
+              "std": 0.0,
+              "variance": 0.0,
+              "nonzero_variance": false,
+              "real_value": 0,
+              "real_percentile_rank": 100.0
+            }
+          },
+          "angular_csr": {
+            "beta_0": {
+              "mean": 4.78,
+              "std": 1.6886681142249353,
+              "variance": 2.851599999999999,
+              "nonzero_variance": true,
+              "real_value": 5,
+              "real_percentile_rank": 68.0
+            },
+            "beta_1": {
+              "mean": 2.34,
+              "std": 1.9350452191098793,
+              "variance": 3.7444000000000006,
+              "nonzero_variance": true,
+              "real_value": 0,
+              "real_percentile_rank": 18.0
+            },
+            "beta_2": {
+              "mean": 0.02,
+              "std": 0.13999999999999999,
+              "variance": 0.019599999999999996,
+              "nonzero_variance": true,
+              "real_value": 0,
+              "real_percentile_rank": 98.0
+            }
+          }
+        }
+      }
+    ],
+    "label": "ENGINEERING"
+  }
+}

@@ -1,0 +1,222 @@
+{
+  "euclid_z_edf_north": {
+    "field_name": "euclid_z_edf_north",
+    "survey": "Euclid MER x phz_photo_z (photometric redshift)",
+    "cosmology": "Planck18 (astropy.cosmology.Planck18; Planck Collaboration 2018/2020, A&A 641, A6)",
+    "n_input": 2000,
+    "redshift_drop_report": {
+      "n_input": 2000,
+      "n_valid": 1983,
+      "n_dropped": 17,
+      "n_dropped_nan": 17,
+      "n_dropped_negative": 0
+    },
+    "comoving_ranges_mpc": {
+      "x": [
+        -21.53582916672101,
+        26.789678813847793
+      ],
+      "y": [
+        -23.05392013115891,
+        29.349398224313227
+      ],
+      "z": [
+        175.5675700199505,
+        8364.385970174177
+      ]
+    },
+    "real_topology": {
+      "beta_0": 1,
+      "beta_1": 0,
+      "beta_2": 2,
+      "euler_char": 3
+    },
+    "bin_occupancy": {
+      "occupied_bins": 211,
+      "total_bins": 512,
+      "fraction_occupied": 0.412109375
+    },
+    "null_zshuffle": {
+      "n_realizations": 200,
+      "beta_0_mean": 1.0,
+      "beta_0_std": 0.0,
+      "beta_0_variance": 0.0,
+      "beta_0_percentile_rank_of_real": 100.0,
+      "nonzero_variance_check": "FAIL"
+    },
+    "null_csr": {
+      "n_realizations": 200,
+      "beta_0_mean": 1.0,
+      "beta_0_std": 0.0,
+      "beta_0_variance": 0.0,
+      "beta_0_percentile_rank_of_real": 100.0,
+      "nonzero_variance_check": "FAIL"
+    },
+    "label": "ENGINEERING"
+  },
+  "euclid_z_edf_fornax": {
+    "field_name": "euclid_z_edf_fornax",
+    "survey": "Euclid MER x phz_photo_z (photometric redshift)",
+    "cosmology": "Planck18 (astropy.cosmology.Planck18; Planck Collaboration 2018/2020, A&A 641, A6)",
+    "n_input": 2000,
+    "redshift_drop_report": {
+      "n_input": 2000,
+      "n_valid": 1993,
+      "n_dropped": 7,
+      "n_dropped_nan": 7,
+      "n_dropped_negative": 0
+    },
+    "comoving_ranges_mpc": {
+      "x": [
+        -20.216974017260256,
+        20.659702788277595
+      ],
+      "y": [
+        -17.70322344748995,
+        26.49205659680096
+      ],
+      "z": [
+        131.9899513342074,
+        8425.100014933401
+      ]
+    },
+    "real_topology": {
+      "beta_0": 1,
+      "beta_1": 0,
+      "beta_2": 0,
+      "euler_char": 1
+    },
+    "bin_occupancy": {
+      "occupied_bins": 228,
+      "total_bins": 512,
+      "fraction_occupied": 0.4453125
+    },
+    "null_zshuffle": {
+      "n_realizations": 200,
+      "beta_0_mean": 1.0,
+      "beta_0_std": 0.0,
+      "beta_0_variance": 0.0,
+      "beta_0_percentile_rank_of_real": 100.0,
+      "nonzero_variance_check": "FAIL"
+    },
+    "null_csr": {
+      "n_realizations": 200,
+      "beta_0_mean": 1.0,
+      "beta_0_std": 0.0,
+      "beta_0_variance": 0.0,
+      "beta_0_percentile_rank_of_real": 100.0,
+      "nonzero_variance_check": "FAIL"
+    },
+    "label": "ENGINEERING"
+  },
+  "euclid_z_edf_south": {
+    "field_name": "euclid_z_edf_south",
+    "survey": "Euclid MER x phz_photo_z (photometric redshift)",
+    "cosmology": "Planck18 (astropy.cosmology.Planck18; Planck Collaboration 2018/2020, A&A 641, A6)",
+    "n_input": 2000,
+    "redshift_drop_report": {
+      "n_input": 2000,
+      "n_valid": 1996,
+      "n_dropped": 4,
+      "n_dropped_nan": 4,
+      "n_dropped_negative": 0
+    },
+    "comoving_ranges_mpc": {
+      "x": [
+        -29.929260056493163,
+        19.655343497150206
+      ],
+      "y": [
+        -19.428474735430363,
+        24.926194494976226
+      ],
+      "z": [
+        474.64669894334764,
+        8420.823414521503
+      ]
+    },
+    "real_topology": {
+      "beta_0": 1,
+      "beta_1": 0,
+      "beta_2": 0,
+      "euler_char": 1
+    },
+    "bin_occupancy": {
+      "occupied_bins": 191,
+      "total_bins": 512,
+      "fraction_occupied": 0.373046875
+    },
+    "null_zshuffle": {
+      "n_realizations": 200,
+      "beta_0_mean": 1.05,
+      "beta_0_std": 0.2179449471770337,
+      "beta_0_variance": 0.04750000000000001,
+      "beta_0_percentile_rank_of_real": 95.0,
+      "nonzero_variance_check": "PASS"
+    },
+    "null_csr": {
+      "n_realizations": 200,
+      "beta_0_mean": 1.0,
+      "beta_0_std": 0.0,
+      "beta_0_variance": 0.0,
+      "beta_0_percentile_rank_of_real": 100.0,
+      "nonzero_variance_check": "FAIL"
+    },
+    "label": "ENGINEERING"
+  },
+  "sdss_z_coma_cluster": {
+    "field_name": "sdss_z_coma_cluster",
+    "survey": "SDSS spectroscopic (spectro=True, real spec-z)",
+    "cosmology": "Planck18 (astropy.cosmology.Planck18; Planck Collaboration 2018/2020, A&A 641, A6)",
+    "n_input": 50,
+    "redshift_drop_report": {
+      "n_input": 50,
+      "n_valid": 50,
+      "n_dropped": 0,
+      "n_dropped_nan": 0,
+      "n_dropped_negative": 0
+    },
+    "comoving_ranges_mpc": {
+      "x": [
+        -0.1117655376384628,
+        0.13733782791577162
+      ],
+      "y": [
+        -0.11884805290512239,
+        0.1453188877358316
+      ],
+      "z": [
+        3.4590878250800103,
+        144.20162681907593
+      ]
+    },
+    "real_topology": {
+      "beta_0": 5,
+      "beta_1": 0,
+      "beta_2": 0,
+      "euler_char": 5
+    },
+    "bin_occupancy": {
+      "occupied_bins": 32,
+      "total_bins": 512,
+      "fraction_occupied": 0.0625
+    },
+    "null_zshuffle": {
+      "n_realizations": 200,
+      "beta_0_mean": 5.96,
+      "beta_0_std": 1.4029967925836466,
+      "beta_0_variance": 1.9684,
+      "beta_0_percentile_rank_of_real": 39.5,
+      "nonzero_variance_check": "PASS"
+    },
+    "null_csr": {
+      "n_realizations": 200,
+      "beta_0_mean": 5.225,
+      "beta_0_std": 1.8067581465154654,
+      "beta_0_variance": 3.264375,
+      "beta_0_percentile_rank_of_real": 57.99999999999999,
+      "nonzero_variance_check": "PASS"
+    },
+    "label": "ENGINEERING"
+  }
+}

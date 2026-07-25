@@ -1,0 +1,22 @@
+{
+  "timestamp": "2026-07-25T14:53:46.317937+00:00",
+  "nbins": 8,
+  "thresholds": [
+    50.0,
+    60.0,
+    70.0,
+    80.0,
+    90.0
+  ],
+  "n_null_realizations": 50,
+  "fields": [
+    "euclid_z_edf_north",
+    "euclid_z_edf_fornax",
+    "euclid_z_edf_south",
+    "sdss_z_coma_cluster"
+  ],
+  "output_file": "/mnt/disks/disk-socrateai-local-1/SocrateAI-stream3-realdata/wp_r7_beta_variance/wp_r7_results_2026_07_25.json",
+  "sha256": "b700f1f31c40cbb32f3f325f6b28178bf8185057d1ec21dcb97a41e4618bb226",
+  "label": "ENGINEERING",
+  "follows_on_from": "docs/WP_R5_3D_FIELD.md Section 7 (flagged, out of scope there)"
+}

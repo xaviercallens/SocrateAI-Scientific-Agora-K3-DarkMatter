@@ -199,6 +199,8 @@ Live checkers: `checkers/check_C1_kodaira_consistency.py` (L₂, E-007) and
 4. ⏳ Phase 3 C2 v3 — Shioda–Tate from v3 fibre data, derive rank MW (2–3 h)
 5. ✅ **Phase M / M1 memo (T0 directive)** — conditional negative filed; Phase M gated on
    Route γ + T0 review → `briefs/STREAM2_M1_MECHANISM_MEMO_2026_07_26.md`
+6. ✅ **D3 mirror delivered** — Stream 3 WP-R artifacts + data outcomes hash-pinned into
+   `stream3_mirror/` (claims re-verified; β₁=29/30 precision note in its README)
 
 ### Stream 1 (complete — maintenance only)
 1. ✅ Sym² kernel-verified; ✅ WP-B1 4/4 lemmas + bridge + CI gate

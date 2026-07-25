@@ -14,8 +14,9 @@
       achievable verdict = CONDITIONAL. Handoff sent →
       `briefs/STREAM2_TO_STREAM3_GATE_E_CRITERION1_2026_07_26.md`
 - [x] **D2 — M1 accepted** (conditional negative); Phase M dormant, gated on Route γ; M2 unauthorized
-- [x] **D3 — Stream 3 mirroring authorized** (WP-R6/R7, NO_PREDICTION_BRANCH, tier checker, siblings harness)
-      + standing rule: directives with absent referenced artifacts are returned for provenance first
+- [x] **D3 — Stream 3 mirroring DELIVERED 2026-07-26** → `stream3_mirror/` (25 files, hash-pinned,
+      source commit `3d18add`; claims re-verified at mirror time — see `stream3_mirror/README.md`,
+      incl. β₁=29/30 precision note). Standing returned-for-provenance rule in force.
 - [x] **D4 — Wall-3 renunciation = standing policy** → ASSUMPTIONS.md addendum **A-DE**
 - [x] Expected-outputs amendment — overtaken by E-007 closure (retraction is permanent)
 
@@ -101,7 +102,7 @@ Artifacts: `ESCALATIONS.md` E-007 · `data/certificates/C1_KODAIRA_CONSISTENCY.j
       `briefs/STREAM2_M1_MECHANISM_MEMO_2026_07_26.md` — conditional negative;
       Wall 3 routed by renunciation (now ASSUMPTIONS.md **A-DE**)
 - [x] Stop-point cleared (T0 acceptance 2026-07-26)
-- [x] Mirroring request authorized (D3) — awaiting Stream 3 delivery
+- [x] Mirroring delivered (D3) → `stream3_mirror/` — M2's artifact precondition is now met (Route γ still required)
 - [ ] Phase M **DORMANT**: M2–M4 open only after Route γ delivers C1v3/C2v3 AND T0 re-opens against a revised M1′
 
 ---
@@ -124,7 +125,7 @@ Artifacts: `ESCALATIONS.md` E-007 · `data/certificates/C1_KODAIRA_CONSISTENCY.j
 - [ ] Gate E verdict **2026-07-27 EOD UTC** (Xavier)
 - [x] Criterion 1 decision taken (D1): score **UNRESOLVED**, retain outputs as re-scorable data
 - [ ] Apply D1 at aggregation/verdict → `briefs/STREAM2_TO_STREAM3_GATE_E_CRITERION1_2026_07_26.md`
-- [ ] Deliver D3 mirroring (WP-R6/R7 + tier checker + siblings harness, hash-pinned)
+- [x] D3 mirroring delivered (done by Stream 2, 2026-07-26) → `stream3_mirror/`
 
 ---
 
