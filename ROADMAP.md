@@ -4,7 +4,7 @@
 
 ---
 
-## 🟢 E-007 RESOLVED (2026-07-26) — C1/C2 layer permanently retracted; root cause established
+## 🟢 E-007 + E-008 RESOLVED (2026-07-26) — C1/C2 retracted; Route γ succeeded; 🔴 E-009 opened
 
 **L₂ is a *twisted* Picard–Fuchs operator, not a PF operator. K3 geometry cannot be
 extracted from it as-is.** Independently established two ways:
@@ -41,12 +41,20 @@ L₃ being unipotent. **Tested and false:** `scripts/compute_L3_monodromy.py` gi
 exponents **{0, ½, 1}** at every finite locus. Sym² of {0,½} is {0, ½, 1} — only y₂²
 doubles to 1, the **cross term y₁y₂ keeps ½**. Kodaira is blocked at the L₃ level too.
 The gauge-transform escape is also closed: **exponent differences are gauge-invariant**.
-Only a **ramified Hauptmodul pullback** (Route γ) remains. **Step 0 CONFIRMED 2026-07-26**
-(`g.f.(A002652)=F(t(q))` exact to order 29 — the Hauptmodul is the right coordinate);
-**step 1 (unipotency of the pulled-back operator) is OPEN** and is the program's geometric
-frontier. `C1_L3_cooper_s{7,10}.json` and `ROUTE_GAMMA_STEP0.json` emit no ρ/T by design.
+**Route γ SUCCEEDED (2026-07-26) — E-008 RESOLVED.** Step 0: `g.f.(A002652)=F(t(q))` exact
+to order 29. Step 1: both singular loci are **simple critical values** of the Hauptmodul
+(m = 2 exactly) ⇒ exponents {0,½} ↦ **{0,1}, integral — the branch cut clears** (1/27 to
+17 digits; −1 to ~3 digits, flagged).
 
-→ `ESCALATIONS.md` E-007, E-008 · `briefs/STREAM2_ACTION_PLAN_2026_07_26.md`
+**But the reason it cleared is the real finding, now 🔴 E-009:** ½ + ramification 2 is the
+signature of an **order-2 elliptic point** of a Fuchsian group — finite-order monodromy by
+construction, **not** a Kodaira degeneration. All three retractions (F6, E-007, E-008) were
+downstream of forcing a fibration reading onto a modular object. Leads (both [B], untested):
+the group is likely **Γ₀(7)+** not Γ₀(7) (ν₂=0 vs 2 Fricke fixed points); and L₃'s order 3
+suggests **T=3, ρ=19** — the retracted ρ=4/T=18 essentially *inverted*. **Not computed; do
+not cite.** All certificates still emit ρ/T as `null` by design.
+
+→ `ESCALATIONS.md` E-007, E-008 (resolved), **E-009 (open)** · `briefs/STREAM2_ACTION_PLAN_2026_07_26.md`
 
 ---
 
@@ -134,7 +142,7 @@ coupling is claimed (that remains Tier C).
 | **C3b Partner Extraction** | ✅ RESOLVED | 2026-07-24 | — |
 | **All-n L₃=Sym²(L₂) (CAS)** | ✅ PROVEN | 2026-07-24 | — |
 | **Exact singular loci (s7, s10)** | ✅ CONFIRMED | 2026-07-25 (F6), re-verified 2026-07-26 | — |
-| **C1 Kodaira types (s7, s10)** | 🔴 BLOCKED (E-008) | — | Route γ: ramified Hauptmodul pullback (L₂ **and** L₃ both carry ½) |
+| **C1 Kodaira types (s7, s10)** | 🔴 BLOCKED (E-009) | — | Route γ cleared the ½; but a Kodaira reading may be category-mismatched (order-2 elliptic points) |
 | **C2 Lattice ρ, τ (s7, s10)** | 🔴 UNSUPPORTED | — | Blocked on C1 v3 |
 | **Provenance gate (literature)** | 🟡 NOT STARTED | — | Fetch 4 PDFs, hash-pin, write honest checker |
 | **Physics interpretation** | ⛔ BLOCKED | — | Gauge groups need fibre types |
@@ -197,7 +205,7 @@ Live checkers: `checkers/check_C1_kodaira_consistency.py` (L₂, E-007) and
 ### Immediate (Stream 2)
 1. ✅ Phase 0 reconciliation → `check_C1_kodaira_consistency.py` (DONE 2026-07-26)
 2. ⏳ Phase 1 provenance gate — fetch 4 PDFs, hash-pin, honest checker (1–2 h)
-3. ⏳ Phase 2 **Route γ** — ramified Hauptmodul pullback (Routes α/β refuted, E-008)
+3. ✅ Phase 2 **Route γ steps 0+1 PASS** — branch cut clears (E-008 resolved); next: **E-009** (is a Kodaira/Picard reading category-correct?)
 4. ⏳ Phase 3 C2 v3 — Shioda–Tate from v3 fibre data, derive rank MW (2–3 h)
 5. ✅ **Phase M / M1 memo (T0 directive)** — conditional negative filed; Phase M gated on
    Route γ + T0 review → `briefs/STREAM2_M1_MECHANISM_MEMO_2026_07_26.md`

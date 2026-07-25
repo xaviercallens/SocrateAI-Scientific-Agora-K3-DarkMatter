@@ -158,8 +158,12 @@ Only a **ramified covering** genuinely converts exponent ½ into an integer.
 - [ ] Emit `C1_cooper_s{7,10}_v3.json` **naming the operator and coordinate used**
 - [ ] Cross-check: singular loci must still map to {1/27, −1} / {1/16, −1/4}
 
-**Standing rule for this phase:** emit **no ρ and no T** until an operator with
-integral exponents is in hand. `data/certificates/C1_L3_cooper_s{7,10}.json` set both
+**RESULT (2026-07-26): Route γ steps 0 and 1 both PASS — E-008 RESOLVED.** An operator
+with integral exponents is now in hand (m = 2 ramification at both loci ⇒ {0,½} ↦ {0,1}).
+**The standing rule nevertheless still binds**, because clearing the branch cut did not
+produce a fibration: the ½ cleared *because* these are order-2 elliptic points, which are
+not Kodaira degenerations. New ticket **E-009** asks whether a Kodaira/Picard reading is
+category-correct at all. Until E-009 resolves: emit **no ρ and no T**. `data/certificates/C1_L3_cooper_s{7,10}.json` set both
 to `null` deliberately — emitting numbers here is exactly the E-007 failure.
 
 **Phase 2B — Reframe the geometric target for s7**

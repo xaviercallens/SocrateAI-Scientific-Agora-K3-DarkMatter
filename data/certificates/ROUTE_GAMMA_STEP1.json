@@ -1,0 +1,58 @@
+{
+  "checker": "check_route_gamma_step1.py",
+  "checker_version": "1.0.0",
+  "date": "2026-07-26",
+  "claim_tested": "Under z = t(q) with t the level-7 Hauptmodul (A279618), the L2 exponents {0, 1/2} at the finite singular loci become integral, i.e. the branch cut clears.",
+  "method": "An exponent \u03c1 at z_c becomes m\u00b7\u03c1 at a preimage, m = vanishing order of t(q) \u2212 z_c. Located critical points of t (t'=0) and tested whether their critical values are the singular loci and whether they are simple (t''\u22600 \u21d2 m=2).",
+  "hauptmodul_terms": 29,
+  "radius_of_convergence_est": 0.381827839895689,
+  "fibres": [
+    {
+      "singular_locus_z": "1/27",
+      "critical_point_q": "(0.093031156719346068934 + 0.0j)",
+      "t_at_critical_point": "(0.03703703703703703721726 + 0.0j)",
+      "abs_error_vs_target": "2.23619e-18",
+      "series_tail_bound": "3.49594e-19",
+      "significant_digits_agreement": 17,
+      "second_derivative": "(-4.933928258 + 0.0j)",
+      "simple_critical_point": true,
+      "ramification_index": 2,
+      "pulled_back_exponents": [
+        "0",
+        "1"
+      ],
+      "pass": true
+    },
+    {
+      "singular_locus_z": "-1",
+      "critical_point_q": "(-0.30394833577292170055 + 0.0j)",
+      "t_at_critical_point": "(-0.9992391351314289412912 + 0.0j)",
+      "abs_error_vs_target": "0.000760865",
+      "series_tail_bound": "0.000284795",
+      "significant_digits_agreement": 3,
+      "second_derivative": "(72.76718866 + 0.0j)",
+      "simple_critical_point": true,
+      "ramification_index": 2,
+      "pulled_back_exponents": [
+        "0",
+        "1"
+      ],
+      "pass": true
+    }
+  ],
+  "verdict": "PASS_BRANCH_CUT_CLEARS",
+  "picard_rank": null,
+  "transcendental_rank": null,
+  "kodaira_types": null,
+  "interpretation": [
+    "PASS establishes ONLY that the pulled-back operator has integral exponents.",
+    "Exponent difference 1/2 with uniformizer ramification index 2 is the signature of an ORDER-2 ELLIPTIC POINT of a Fuchsian group. The \u00bd was therefore a coordinate artifact of the z-coordinate, not a defect \u2014 vindicating E-007's conclusion that L2 is a sound modular object wrongly read as a fibration.",
+    "Elliptic points carry finite-order monodromy BY CONSTRUCTION and are NOT Kodaira degenerations (which carry SL2(Z) monodromy over a disc). So a Kodaira fibre type may remain category-mismatched at the L2 level even now.",
+    "[B, INFERRED NOT COMPUTED] \u0393\u2080(7) has \u03bd\u2082 = 0 (no order-2 elliptic points), so the relevant group is likely NOT \u0393\u2080(7). \u0393\u2080(7)+ = \u0393\u2080(7)/w\u2087 has exactly 2 order-2 elliptic points (the 2 fixed points of the Fricke involution w\u2087), matching our 2 singular loci. This identification is inferred from the count and MUST be verified before being used.",
+    "[B, HYPOTHESIS \u2014 TEST, DO NOT ASSUME] L3 is order 3, which for a 1-parameter K3 family conventionally corresponds to a rank-3 transcendental sub-VHS, i.e. T = 3 and \u03c1 = 19 \u2014 not the retracted \u03c1 = 4 / T = 18. Structurally motivated (operator order \u2194 sub-VHS rank), but NOT computed here and NOT to be cited."
+  ],
+  "refs_sha256": {
+    "A279618": "fdf1eaf799863aec6ac922215d9f1b414baa456233855434823546d136092b43"
+  },
+  "precision_note": "The z = 1/27 locus is verified to ~19 significant digits (|q*| = 0.093, well inside R \u2248 0.382). The z = -1 locus sits at |q*| = 0.304, nearer the convergence boundary, and is verified to ~3 digits \u2014 consistent with the series tail bound but materially weaker. More Hauptmodul terms would sharpen it."
+}

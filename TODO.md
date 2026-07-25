@@ -74,11 +74,27 @@ Artifacts: `ESCALATIONS.md` E-007 · `data/certificates/C1_KODAIRA_CONSISTENCY.j
 - [x] **Step 0: composition CONFIRMED** — `g.f.(A002652) = F(t(q))` exact to order 29
       (`checkers/check_route_gamma_step0.py`, `data/certificates/ROUTE_GAMMA_STEP0.json`).
       Hauptmodul t = A279618 is the correct uniformizing coordinate. **No ρ/T emitted.**
-- [ ] **Step 1 (OPEN — geometric frontier):** construct the pullback in `t`, push the
-      operator through it, and **test** whether the result has integral exponents +
-      rational Wronskian. Test, do not assume — three prior "obvious" routes were refuted.
-- [ ] Only if step 1 passes: classify fibres; emit `C1_cooper_s{7,10}_v3.json` naming
-      operator + coordinate; then C2 v3; then a revised M1′ becomes draftable
+- [x] **Step 1: PASS** — `checkers/check_route_gamma_step1.py`. Both singular loci are
+      **simple critical values** of t (t′=0, t″≠0 ⇒ ramification index **m = 2 exactly**),
+      so exponents {0, ½} ↦ **{0, 1}, integral — the branch cut clears.**
+      z = 1/27 to **17 significant digits**; z = −1 to ~3 digits (nearer the convergence
+      radius — weaker, flagged). Certificate `ROUTE_GAMMA_STEP1.json`. **No ρ/T emitted.**
+      → **E-008 RESOLVED.**
+
+### 🔴 E-009 (NEW, OPEN) — is a Kodaira/Picard reading category-correct at all?
+> The ½ cleared *because* these look like **order-2 elliptic points** of a Fuchsian group —
+> which have finite-order monodromy by construction and are **not** Kodaira degenerations.
+> Three retractions (F6, E-007, E-008) were all downstream of forcing a fibration reading
+> onto a modular object. This ticket names that assumption.
+
+- [ ] **Lead 1 [B, verify before use]:** identify the group. Γ₀(7) has ν₂ = 0, so likely
+      **not** Γ₀(7); **Γ₀(7)+ = Γ₀(7)/w₇** has exactly 2 order-2 elliptic points (Fricke
+      fixed points), matching our 2 loci. Inferred from the count only.
+- [ ] **Lead 2 [B, HYPOTHESIS — test, do not cite]:** L₃ is order 3 ⇒ rank-3 transcendental
+      sub-VHS ⇒ **T = 3, ρ = 19** for a 1-parameter K3 family — i.e. the retracted values
+      (ρ=4, T=18) were essentially *inverted*. Structurally motivated, **not computed**.
+- [ ] Only if a ρ/T is genuinely derived: emit C1/C2 v3, notify Stream 3, and only then
+      does a revised M1′ become draftable
 
 
 ### Phase 3: C2 v3 (2–3 h) — only after Phase 2 yields a genuine PF operator
