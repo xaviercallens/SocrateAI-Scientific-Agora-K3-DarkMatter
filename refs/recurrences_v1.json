@@ -3,11 +3,11 @@
   "description": "Holonomic recurrences for K3/elliptic candidate pairs (C3b moduli map extraction)",
   "version": "1.0",
   "date_created": "2026-07-18",
-  "authority": "Lean-verified (s7, s10) + literature (Gorodetsky s18, Zagier order-2)",
+  "authority": "Lean-verified (s7, s10) + literature (Almkvist-van Straten s18, Zagier order-2)",
   "references": {
    "cooper_s7": "OEIS A183204; Cooper 2012 Ramanujan J. 29(2012) 163-183; Lean4 kernel-verified recurrence",
    "cooper_s10": "OEIS A005260; Cooper 2012 Ramanujan J. 29(2012) 163-183; Lean4 kernel-verified recurrence",
-   "gorodetsky_s18": "Gorodetsky arXiv:2102.11839; recurrence (14, 6, 192, -12) from literature",
+   "avs_sporadic3_s18": "Almkvist & van Straten arXiv:2103.08651v1 \"three sporadic third order operators\" (Sporadic 3); recurrence derived here from their printed operator and independently re-verified against their own printed phi(x) series to n=22. Key deliberately distinct from scripts/autoresearch_v2_pool.py's unrelated 'cooper_s18' (OEIS A219692) — see entry _meta_note for a flagged a(0) discrepancy (2 vs 1) between them.",
    "apery_zeta2": "OEIS A005258; Ap\u00e9ry \u03b6(2) = (1/6)\u03c0\u00b2; weight-2 elliptic order-2 ODE",
    "apery_zeta3": "OEIS A005259; Ap\u00e9ry \u03b6(3); weight-3 K3 order-3 ODE (control)"
   }
@@ -93,37 +93,45 @@
    },
    "_meta_note": "Recurrence is P0(n)\u00b7a(n) + P1(n)\u00b7a(n+1) + P2(n)\u00b7a(n+2) = 0. Leading coeff P2(n) = (n+2)\u00b3 (same as s7, structural feature). MUM validated. Shift order 2; generating-function ODE order 3 (K3-type). Finalists: s7, s10, s18."
   },
-  "gorodetsky_s18": {
+  "avs_sporadic3_s18": {
    "type": "order-3",
-   "status": "BLOCKED_CORRUPT_RECURRENCE",
-   "_meta_status": "BLOCKED",
-   "source": "Gorodetsky arXiv:2102.11839 (https://arxiv.org/abs/2102.11839); recurrence transcription (14, 6, 192, -12) UNVERIFIED \u2014 see _meta_note.",
-   "closed_form": "[to be transcribed from Gorodetsky arXiv:2102.11839]",
+   "status": "OK",
+   "source": "Almkvist & van Straten arXiv:2103.08651v1 (docs/literature/almkvist_van_straten_2103.08651.txt, lines 1833-1872, hash-pinned per refs/literature_provenance.txt), section \"three sporadic third order operators\" (Sporadic 3); their own words: \"also found by S. Cooper, where they are called s10, s7 and s18\". Operator and phi(x) series read directly from the pinned primary-source text (not from the ESCALATIONS.md paraphrase, and not from the Gorodetsky secondary source used for the prior blocked attempt). Recovers the previously-corrupt gorodetsky_s18 register entry (blocked 2026-07-20). See ESCALATIONS.md E-009 (\"Bonus \u2014 s18 recovered\").",
+   "closed_form": "Picard-Fuchs operator L = theta^3 - 2z(2theta+1)(7theta^2+7theta+3) + 12z^2(4theta+3)(theta+1)(4theta+5), theta = z d/dz; equivalently Q3(z)theta^3+Q2(z)theta^2+Q1(z)theta+Q0(z) with Q3=192z^2-28z+1, Q2=576z^2-42z, Q1=564z^2-26z, Q0=180z^2-6z. Operator hand-re-expanded from the printed theta-form and confirmed to match. NOT the same normalization as OEIS A219692's closed-form combinatorial sum an = Sum_{k=0}^{floor(n/3)} (-1)^k C(n,k) C(2k,k) C(2(n-k),n-k) (C(2n-3k-1,n)+C(2n-3k,n)) \u2014 that sum evaluates to a(0)=2 (verified here), whereas this operator's own indicial recursion forces a(1)=6*a(0), which only closes consistently with A-vS's own printed phi(x)=1+6x+54x^2+... (a(0)=1), matching the operator's own printed power series, not the closed-form sum's boundary value. See _meta_note.",
    "initial_terms": [
     1,
-    14,
-    672,
-    42768,
-    3205920,
-    284462784,
-    28510491264,
-    3095346850944,
-    366192230530560
+    6,
+    54,
+    564,
+    6390,
+    76356,
+    948276,
+    12132504,
+    158984694,
+    2124923460
    ],
-   "recurrence_python": "(6*s[-1] + 14*s[-2]) / (192 - 12*k)",
+   "recurrence_python": "-((180+564*k+576*k**2+192*k**3)*s[-2] + (-102-194*k-126*k**2-28*k**3)*s[-1]) / (8+12*k+6*k**2+k**3)",
    "recurrence_coefficients": {
     "P0": [
-     14
+     180,
+     564,
+     576,
+     192
     ],
     "P1": [
-     6
+     -102,
+     -194,
+     -126,
+     -28
     ],
     "P2": [
-     192,
-     -12
+     8,
+     12,
+     6,
+     1
     ]
    },
-   "_meta_note": "BLOCKED 2026-07-20: this entry's recurrence_python does NOT reproduce its own stated initial_terms (predicts a2 \u2248 0.544, not 672; non-integral). An exact fit of a general order-3 Ap\u00e9ry-like recurrence [(n+1)^3 leading] to the stated terms is underdetermined with non-integer coefficients \u2014 i.e. these terms do not satisfy any clean order-3 three-term recurrence, consistent with the peer-review G1-1 finding that s18 is order-4 in the tested window. The (14,6,192,-12) \u2192 recurrence_python translation is garbled and the sequence's true holonomic order is disputed. REFUSED for C3b until re-transcribed directly from Gorodetsky arXiv:2102.11839 (verify both the recurrence and the initial terms; do not compute values from memory)."
+   "_meta_note": "Recurrence is P0(n)\u00b7a(n) + P1(n)\u00b7a(n+1) + P2(n)\u00b7a(n+2) = 0, derived directly from the A-vS differential operator by z^m coefficient extraction (theta^k y = sum m^k a(m) z^m) \u2014 NOT transcribed from a secondary source. Leading coeff P2(n) = (n+2)^3, same structural family as cooper_s7/s10. Independently re-verified here: reproduces all 7 of A-vS's own printed phi(x) terms (1,6,54,564,6390,76356,948276) exactly and remains integral to n=22 (script: /tmp scratchpad derive_s18.py, not checked in \u2014 rederive via checkers/ if this needs re-verification). MUM at z=0 (Q0(0)=Q1(0)=Q2(0)=0, Q3(0)=1 \u21d2 indicial equation r^3=0). UNBLOCKS the 2026-07-20 BLOCKED_CORRUPT_RECURRENCE finding \u2014 the (14,6,192,-12) transcription that failed was simply wrong; this operator is a different, verified source. No order-2 elliptic/weight-1 companion has been identified for s18 (per briefs/STREAM2_TO_STREAM1_E009_STATUS_2026_07_26.md); an L3=Sym^2(L2)-style claim is NOT available for s18. NAMING: deliberately NOT called 'cooper_s18' \u2014 that key is already used in scripts/autoresearch_v2_pool.py for OEIS A219692 (fetched 2026-07-14, a(0)=2, same closed-form combinatorial formula as A-vS's Sporadic 3), which differs from this entry ONLY at n=0 (2 vs 1); every term n>=1 is identical. That a(0)=2 is the literal value of the closed-form sum (re-verified here by direct computation); a(0)=1 is what A-vS's own operator and their own printed phi(x) series both independently require. This a(0) artifact (formula boundary value vs. operator/GF-consistent value) is unresolved and flagged for awareness \u2014 it does not affect n>=1 or anything this repo has derived from either object so far, since C1/C2/E-009 work uses s7/s10, not s18."
   },
   "apery_zeta2": {
    "type": "order-2",

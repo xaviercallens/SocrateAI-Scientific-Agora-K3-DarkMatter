@@ -75,7 +75,19 @@ conditional on an unproven existence claim. `Stienstra–Beukers 1985` would clo
 ### 🎁 s18 UNBLOCKED (corrupt since 2026-07-20)
 A–vS Sporadic 3 gives `Q₃=192z²−28z+1, Q₂=576z²−42z, Q₁=564z²−26z, Q₀=180z²−6z`;
 regenerates 1, 6, 54, 564, 6390, 76356, 948276 exactly.
-- [ ] Fold the recovered s18 operator into `refs/recurrences_v1.json` (currently BLOCKED there)
+- [x] Fold the recovered s18 operator into `refs/recurrences_v1.json` — entry renamed
+      `gorodetsky_s18` → `avs_sporadic3_s18` (NOT `cooper_s18` — that key is already used
+      by `scripts/autoresearch_v2_pool.py` for OEIS A219692, an unrelated AutoEvolve-pool
+      framework); recurrence re-derived directly from A-vS's printed operator (z^m
+      coefficient extraction, not transcription — cross-checked against the pinned source
+      text `docs/literature/almkvist_van_straten_2103.08651.txt` lines 1833-1872, not just
+      the ESCALATIONS.md paraphrase) and independently re-verified against A-vS's own
+      printed φ(x) series (1,6,54,564,6390,76356,948276) plus integral to n=22.
+      **New flagged discrepancy:** A219692's closed-form combinatorial sum literally
+      evaluates to a(0)=2 (re-verified here), but A-vS's own operator + printed φ(x) both
+      require a(0)=1 — the two "s18"s agree everywhere except n=0. Unresolved artifact,
+      noted in the entry's `_meta_note`; does not affect any C1/C2/E-009 work (s7/s10 only).
+      No order-2 companion identified yet (per `briefs/STREAM2_TO_STREAM1_E009_STATUS_2026_07_26.md`).
 
 ### Phase 2: ⚠️ REVISED TWICE — Routes α and β both REFUTED (E-008)
 > Neither Deep Think's Route A (use L₃) nor any gauge transform works. Both tested and closed.

@@ -22,3 +22,15 @@ bytes   314883
 #   O'Brien 2016 MSc thesis, Massey Univ. (Thm 6.1, c_7 = A279619)
 #   Chan-Cooper-Sica 2010 (Conj 5.4)
 #   Stienstra-Beukers 1985, Math. Ann. 271, 269-304 (K3 Picard rank — would settle E-009 Lead 2 fully)
+#     CONFIRMED PAYWALLED 2026-07-26 (search attempt, no fetch of paywalled content):
+#     Springer DOI 10.1007/BF01455990 requires institutional/paid auth (idp.springer.com
+#     login redirect). No open-access mirror found after checking: EUDML (doc/163967,
+#     points to a dead GDZ resolver link with no PDF), Utrecht research-portal (metadata
+#     only, no OA button), Beukers' own site (webspace.science.uu.nl/~beuke106/caen.pdf —
+#     discusses the paper's existence and cites it as [SB] but is a different, freely
+#     hosted survey, not the paper itself), Stienstra's own publications page
+#     (webspace.science.uu.nl/~stien101/publications, entry 9, explicitly "No PDF link
+#     available"). Same status as Cooper 2012: paywalled, needs institutional access to
+#     close. Related but distinct paper Peters & Stienstra 1989 ("A pencil of K3-surfaces
+#     related to Apery's recurrence for zeta(3)", Springer LNM 1399) is ALSO paywalled,
+#     not checked further since it covers zeta(3)/Apery-Fermi, not the s7/s10 family.
