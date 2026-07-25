@@ -62,15 +62,41 @@ directly). **This is exactly the Tier B→A promotion path**: the *structure*
 is Tier A now; the *numbers* you plug in remain Tier B/C until independently
 justified per epistemic-guardrails.
 
-## Known gap (do not build on this yet)
+## Lemma 4 status — now proven, but read the hypothesis
 
-`no_unscreened_lmp` — the negative result "K3 alone, without chameleon,
-cannot produce an unscreened Mpc-range force" — is still an open `sorry`.
-It requires the K3 exchange-amplitude bound from Stream 2's lattice data,
-which is explicitly out of WP-B1's own scope (see brief's "What This WP
-Does NOT Do"). **Do not cite this lemma as proven.** If S3-00's derivation
-needs this negative result, request it from Stream 2 directly — it is a
-lattice-geometry question, not a Lean tactics question.
+**UPDATE 2026-07-25 (Phase 2C):** `no_unscreened_lmp` is no longer a `sorry`.
+It is proven — but the brief's *literal* version turned out to be **false as
+stated** (`r` was freely existentially quantified with no dependence on the K3
+params, so `⟨1,1⟩` with `r = 2·10⁶` refutes it; this is now recorded in-kernel
+as `brief_literal_statement_is_refutable`).
+
+The corrected, proven form makes the range a function of the K3 data:
+```lean
+noncomputable def k3_force_range (params : K3_BulkParameters) : ℝ := 1 / params.scale
+
+theorem no_unscreened_lmp (params : K3_BulkParameters)
+    (h_scale : (params.scale : ℝ) ≥ 1e-6) :
+    ¬ has_unscreened_long_range (k3_force_range params)
+```
+
+**What this means for S3-00:** you may cite this lemma, but `h_scale` — "the
+K3 compactification scale is not itself Mpc-sized" — is an **explicit Tier [B]
+modeling hypothesis, not derived**. Its placeholder value `1e-6` should be
+replaced by the bound implied by Stream 2's lattice certificates
+(`data/certificates/C2_cooper_s{7,10}_partner_v2.json`, ρ=4, T=18). Until
+that substitution happens, any S3-00 quantity depending on this lemma inherits
+Tier B, not Tier A. Request the tightened bound from Stream 2.
+
+## Bonus: B3 bridge now available
+
+`Structures/B1_Sym2Bridge.lean` provides `DualScaleSite` with ready-made
+`s7_site ρ` / `s10_site ρ` instances, plus site-level restatements
+(`site_force_range_bounded`, `site_screening_triggers`,
+`site_denser_is_shorter`) so you can cite one object instead of re-threading
+the environment density by hand. `s7_site_coupling_is_alpha` confirms the
+site's coupling really is the global `α_ch` (= your `α_D`), with no hidden
+second coupling. **Scope caveat:** the bridge is type-level/algebraic only —
+it does not assert a physical bulk↔brane coupling (Tier [C], per VISION §1.3).
 
 ## One documented deviation (needs your awareness, not your action)
 
