@@ -1,0 +1,3976 @@
+arXiv:2103.08651v1  [math.AG]  15 Mar 2021
+Calabi-Yau operators of degree two
+Gert Almkvist * and Duco van Straten
+March 17, 2021
+Abstract
+W e show that the solutions to the equations deﬁning the so-ca lled Calabi-Y au con-
+dition for fourth order operators of degree two deﬁnes a variety tha t consists of ten
+irreducible components. These can be described completely in parametric form, but
+only two of the components seem to admit arithmetically inte resting operators. W e
+include a description of the 69 essentially distinct fourth order Calabi-Y au operators
+of degree two that are presently known to us.
+Introduction
+The hypergeometric series
+φ0(x) =
+∞
+∑
+n=0
+(5n)!
+(n!)5 xn = 1 + 120x + 113400x2 + . . . ∈ Z[[x]]
+became famous after in the paper [ 19] its dual interpretation was discovered: on the one
+hand the series encodes enumerative information on rationa l curves on the general quin-
+tic Calabi-Yau threefold in P4 and on the other hand it can be identiﬁed as a normalised
+period of the mirror quintic Calabi-Yau threefold. The powe r series is the unique (up to
+scalar) series solution of the hypergeometric operator
+L := θ4 − 55x(θ + 1
+5 )(θ + 2
+5 )(θ + 3
+5 )(θ + 4
+5 ), θ = x d
+dx .
+The operator L is the ﬁrst of the family of fourteen hypergeometric fourth or der opera-
+tors related to mirror symmetry for complete intersections in weighted projective spaces.
+These operators are all of the form
+θ4 − Nx(θ + α1)(θ + α2)(θ + α3)(θ + α4)
+where the integer N is chosen as to make the coefﬁcients of the normalised holomor phic
+solution integral. The properties of these operators have b een well-studied from various
+points of view [ 1], [40], [25], [18], [36], [37], [30].
+The operator L is also the ﬁrst member of the ever growing list of Calabi-Yau operators [7],
+[39], a notion that was introduced by the ﬁrst author and W. Zudili n in [5] by abstracting
+the properties of L. Calabi-Yau operators in this sense are essentially self-a djoint fourth
+*The ﬁrst author passed away in December 2018. Gert was a remarkable man and a great mathematician.
+It was a privilege to have known and worked with him.
+1
+order fuchsian operators with a point of maximal unipotent m onodromy for which
+strong integrality properties are supposed to hold. In a sen se the term Calabi-Yau oper-
+ator is somewhat of a misnomer, as there exist families of Calabi- Yau varieties, whose
+Picard-Fuchs operator have no MUM-point, hence are not Calabi -Yau operators in the
+above sense of the word. For a recent account, see [ 22]
+Let us consider a general Nth order differential operator written in θ-form:
+L = P0(θ) + xP1(θ) + . . . + . . . + xr Pr(θ), θ := x d
+dx ,
+where the Pi are polynomials of degree N. We call the largest r with Pr ̸= 0 the degree of
+the operator. The differential equation
+Lφ = 0, φ(x) =
+∞
+∑
+n=0
+anxn
+translates into the recursion relation
+P0(n)an + P1(n − 1)an−1 + . . . + Pr(n − r)an−r = 0
+on the coefﬁcients an of the series φ(x), so the degree of L is equal to the length of this
+recursion.
+The roots of P0(θ) are the exponents of the operator at 0. By translation one can deﬁne
+exponents of P at each point of the Riemann sphere P1. For the point ∞ we have to
+apply inversion x ↦→1/x; the exponents then are the roots of Pr(−θ). The Riemann
+symbol is a table that contains for each singular point the correspo nding exponents, that
+encode information about the local ramiﬁcation of the soluti ons. Logarithmic terms may
+and usually do appear at points with exponents with integral difference. This leads to
+Jordan blocks in the local monodromy , but these are usually l eft implicit in the Riemann
+symbol.
+We will usually assume that N = 4 and all exponents at 0 vanish, P0(θ) = θ4. The
+most salient feature of this situation is that at 0 we have a ca nonical Frobenius basis of
+solution φ0, φ1, φ2, φ3, where φk contains terms with log k(x). The local monodromy has a
+Jordan block of maximal size, so 0 is a point of maximal unipot ent monodromy: MUM.
+The 14 hypergeometric operators have degree 1 and have a Riem ann-symbol of the form
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 1/ N ∞
+0 0 α1
+0 1 α2
+0 1 α3
+0 2 α4
+
+
+
+
+
+
+
+
+
+
+
+
+
+exhibiting a conifold singularity at the point 1/ N, where the exponents are 0, 1, 1, 2 and
+the local monodromy around that point is a symplectic reﬂection ; there is a Jordan block
+of size two. The exponents at ∞ are α1 ≤ α2 ≤ α3 ≤ α4 and add up in pairs to one:
+α1 + α4 = α2 + α3 = 1.
+Currently we know over 500 Calabi-Yau operators with degree s running up to 40, but
+in no way do we expect the current list to be complete. An updat e of the AESZ-list is in
+2
+preparation, [8].
+The ﬁrst Calabi-Yau operator of degree > 1 is # 15 in the AESZ-table and appeared in
+[9]:
+θ4 − 3x(3θ + 1)(3θ + 2)(7θ2 + 7θ + 2) − 72x2(3θ + 1)(3θ + 2)(3θ + 4)(3θ + 5)
+Its Riemann symbol is 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 1/216 −1/27 ∞
+0 0 0 1
+3
+0 1 1 2
+3
+0 1 1 4
+3
+0 2 2 5
+3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Another operator of this type # 25 of the AESZ-list. It arose from the quantum-cohomology
+of the Grassmanian G(2, 5). The complete interesection X(1, 2, 2) of hypersurfaces of
+degrees 1, 2, 2 in the Plücker embedding is a Calabi-Yau three fold with the following
+mirror-Picard-Fuchs operator:
+θ4 − 4x(2θ + 1)2(11θ2 + 11θ + 3) − 16x2(2θ + 1)2(2θ + 3)2.
+Its holomorphic solution is
+φ0(x) =
+∞
+∑
+n=0
+( 2n
+n
+) 2
+Anxn,
+where
+An =
+n
+∑
+k=0
+( n
+k
+) 2( n + k
+k
+)
+are the small Apéry numbers that were use in Apéry’s proof of the irrationality of ζ(2).
+At present we know 69 essentially distinct Calabi-Yau opera tors of order two, to which
+all further such degree two operators can be related by simpl e transformations. The
+operators for which the instanton numbers are 0 are obtained as Sym3 of a second order
+operator and do not count as a proper Calabi-Yau operator and do not appear in [ 7]
+But contrary to the hypergeometric case, it appears that the se degree two operators
+do not all fall in a single family . First of all, an operator of degree two can have four
+singularities, with a Riemann symbol of the form
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 a b ∞
+0 0 0 α1
+0 1 1 α2
+0 1 1 α3
+0 2 2 α4
+
+
+
+
+
+
+
+
+
+
+
+
+
+exhibiting two distinct conifold points . But in many cases the points a and b coalesce,
+producing an operator with only three singular points.
+As one can observe in the above two examples, the exponents at inﬁnity are symmetri-
+cally centered around the value 1 and this seemed to be the cas e for all further examples
+3
+we found. It was M. B ogner who ﬁrst found an example of an Calabi-Yau operator for
+which this is not the case: it is the operator
+θ4 − x(216 θ4 + 396 θ3 + 366 θ2 − 168 θ + 30) + 36 x2 (3 θ + 2)2 (6 θ + 7)2
+with Riemann symbol 
+
+
+
+
+
+
+
+
+
+
+
+
+0 1/108 ∞
+0 0 2/3
+0 1/6 2/3
+0 1 7/6
+0 7/6 7/6
+
+
+
+
+
+
+
+
+
+
+
+
+
+and later two more such operators were found. The existence o f such operators was
+initially a surprise to us, as it appears that within the grou p of operators with three
+singular points further distinctions can be made. It is this circumstance that led to this
+paper.
+The structure of the paper is as follows. In the ﬁrst section we recall some basic facts
+about the Calabi-Yau condition and formulate the main resul t of this paper. In the sec-
+ond section we describe how the result can be obtained from a s eries of simple computa-
+tions. In the third section we summarise the properties of th e operators corresponding
+to each of the components that we ﬁnd. In a ﬁnal section we review the list all degree
+two Calabi-Yau operators that are presently known to us. In t wo appendices we include
+some further monodromy and modular form information on thes e examples, together
+with some properties of the lower order operators used in man y constructions.
+1 The Calabi-Y au condition
+The adjoint L ∗ of a differential operator L of the form
+L = dn
+dxn + an−1
+dn−1
+dxn−1 + . . . + a1
+d
+dx + a0 ∈ Q(x)[ d
+dx ]
+is obtained by reading the operator backwards with alternating signs :
+L∗ = dn
+dxn − dn−1
+dxn−1 an−1 + . . . + ± d
+dx a1 + (−1)na0 ∈ Q(x)[ d
+dx ],
+so that
+L∗(y) = y(n) − (an−1y)(n−1) + . . . + (−1)na0y
+The operator P is called essentially self-adjoint , if there exists a function α ̸= 0 (in an
+extension of Q(x)), such that
+Lα = αL∗.
+It is easy to see that any such α has to satisfy the ﬁrst order differential equation
+α′ = − 2
+n an−1α.
+This essentially adjointness is equivalent to the existenc e of an invariant pairing on the
+solution space, symmetric if n is odd and alternating if n is even, [ 15], [ 16]. The condi-
+tion of essential self-adjointness can be expressed by the v anishing of certain differential
+4
+polynomials in the ai described in [ 5], [15], [16], [6], called the Calabi-Yau condition.
+For an operator of order two the essentially self-adjontnes s does not impose any condi-
+tions, whereas for an differential equation of order three o f the form
+y′′′ + a2y′′ + a1y′ + a0y
+the Calabi-Yau condition comes down to the vanishing of the q uantity
+W := 1
+3 a′′
+2 + 2
+3 a2a′
+2 + 4
+27 a3
+2 + 2a0 − 2
+3 a1a2 − a′
+1 ,
+whereas for a fourth order operator
+y(iv) + a3y′′′ + a2y′′ + a1y′ + a0y = 0
+the quantity
+Q := 1
+2 a2a3 − a1 − 1
+8 a3
+3 + a′
+2 − 3
+4 a3(a3)′ − 1
+2 a′′
+3
+has to vanish. In that case the associated differential equa tion satisiﬁed by the 2 × 2
+Wronskians reduces its order from 6 to 5.
+For operators of higher order, one ﬁnds that more than one diff erential polynomial con-
+dition has to be satisﬁed; here we will be mainly concerned wit h operators of order four.
+It is rather easy to fulﬁll the condition Q = 0. For example, there exists one particularly
+nice family of operators of degree n, that we call the main family.
+Proposition
+If P , Q, R are polynomials of degree n, then the operator
+L = θ2Pθ2 + θQθ + R
+= Pθ4 + 2P′θ3 + (Q + P′′)θ2 + Q′θ + R
+has degree n and satisﬁes the Calabi-Yau condition. If the const ant term of P is 1 and of Q
+and R is zero, then the exponents of L at 0 are all zero. If the roots of P are all distinct, L
+has n singular points with exponents 0, 1, 1, 2 and a further singular point at inﬁnity. (Here
+P′ := θ(P) = x∂P/∂x, etc.)
+In this paper we take a closer look at differential operators of the form
+θ4 + x(aθ4 + bθ3 + cθ2 + dθ + e) + f x2(θ + α)(θ + β)(θ + γ)(θ + δ)
+If f ̸= 0, then the numbers α, β, γ, δ are then the characteristic exponents of the operator
+at ∞ .
+For this operator the quantity Q is a rational function with
+x2(1 + ax + f x2)3
+as denominator; the singular points of the operator are the r oots of this polynomial,
+together with the point ∞ .
+5
+The numerator is a polynomial Q of degree 5 in the variable x, so we can write
+Q = Q0 + Q1x + Q2x2 + Q3x3 + Q4x4 + Q5x5,
+where the coefﬁcients Qi are rather complicated polynomials in the parameters a, b, c, d, e, f
+and the exponents α, β, γ, δ:
+Q0, Q1, Q2, Q3, Q4, Q5 ∈ Q[a, b, c, d, e, f , α, β, γ, δ].
+So the Calabi-Yau condition is equivalent to six polynomial equations
+Q0 = Q1 = Q2 = Q3 = Q4 = Q5 = 0
+which deﬁne a certain afﬁne algebraic set
+X = V(Q0, Q1, . . . , Q5) ⊂ C10.
+We will give a complete description of the set X, in particular we determine the irre-
+ducible components of X. As we have six equations in 10 variables, a ﬁrst trivial remar k
+is that all irreducible components of X have dimension at least four . We will give explicit
+parametrisations of all the irreducible components. Note a lso that the polynomials Qi
+do not depend on the accessory parameter e, so the solution set X contains the e-line as
+trivial factor.
+Theorem
+The algebraic set X deﬁned by the condition Q (a, b, c, d, e, f , α, β, γ, δ) = 0 is the union of ten
+irreducible components, of which there are seven with f ̸= 0.
+Note that if f = 0 we are dealing with an operator of lower degree, so will from now
+on assume that f ̸= 0 and we will ignore the three components with f = 0. The seven
+remaining components differ in the behaviour of the average exponents at inﬁnity:
+σ := α + β + γ + δ
+4 .
+There is a single component for which σ is not ﬁxed, that we will call the transverse com-
+ponent. On each of the remaining six components σ has a ﬁxed value. The dimensions
+and values of σ that appear are summarised in the following diagram.
+σ 0 1 2 3 4
+6
+dim 5 5
+4 4 4
+The two ﬁve dimensional components are related by a simple tra nsformation, as are the
+three four dimensional components.
+All Calabi-Yau operators known to us, belong to the six-dime nsional main component M:
+M : θ4 + x(aθ4 + 2aθ3 + (a + d)θ2 + dθ + e) + f x2(θ + α)(θ + β)(θ + 2 − α)(θ + 2 − β)
+or the transverse component T that we describe later.
+6
+We remark furthermore that the ideal
+I = ( Q0, Q1, Q2, Q3, Q4, Q5) ⊂ C[a, b, c, d, e, f , α, β, γ, δ]
+is, from an algebraic point of view, rather complicated. It i s not radical and the compo-
+nents appear with non-trivial multiplicities in the primar y decomposition.
+For third order operators of degree two
+θ3 + x(aθ3 + bθ2 + cθ + d) + f x2(θ + α)(θ + β)(θ + γ)
+the Calabi-Yau condition W = 0 leads in a similar way to an algebraic set
+Y ⊂ C8
+deﬁned by a system of polynomial equations
+W0 = W1 = W2 = W3 = W4 = W5 = 0
+where now the polynomials
+W0, W1, W2, W3, W4, W5 ∈ Q[a, b, c, d, f , α, β, γ].
+are in eight variables. The analysis of this ideal is very sim ilar to the ideal for the fourth
+order operators, but hardly simpler. The result is also very similar to the case of order
+four:
+Theorem
+The algebraic set Y ⊂ C8 deﬁned by the condition W (a, b, c, d, f , α, β, γ) = 0 is the union of ten
+irreducible components, of which there are seven with f ̸= 0.
+The seven remaining components differ in the behaviour of th e (doubled) average expo-
+nent
+σ = 2 α + β + γ
+3 .
+Again there is a single transverse component on which the value of σ is not ﬁxed. On each
+of the remaining six components σ has a ﬁxed value. The dimensions and values of σ
+that appear are summarised in the following diagram.
+σ 0 1 2 3 4
+4
+dim 3 3
+2 2 2
+The main component (m) is the one with σ = 2, dim = 4 and is given by
+(m) : θ3 + x(2θ + 1)((c − 2d)θ2 + (c − 2d)θ + d) + f x2(θ + α)(θ + 1)(θ + 2 − α),
+whereas on the transverse component (t) we have the operator
+θ3 + a
+4 x(4θ3 + 3(α + β)θ2 + (α + β + 2αβ)θ + αβ) + ( a
+4 )2x2(θ + α)(θ + α + β
+2 )(θ + β)
+Again, the operators on the two three dimensional component s are related by a simple
+transformation, as are the three two dimensional component s.
+One may speculate that the above patterns extends to higher o rder operators, but we
+will not try to pursue it here.
+7
+2 Proof of the theorem
+The proof of the above theorem is purely computational and co nsists of systematically
+solving of the equations using a computer algebra system lik e Maple. The miracle here
+is that this procedure actually works. We will describe the m ost important steps in the
+process.
+2.1 Preliminary reductions
+The value of b: The polynomial Q0 is found to be
+−4b − 8d + 8c
+and this allows us directly to eliminate the variable b and thus we will put from now on
+b = 2(c − d) .
+Symmetry of the exponents: The polynomial Q5 factors nicely as
+− f 3(α + β − δ − ǫ)(α + δ − β − ǫ)(α + ǫ − β − δ)
+As we assume that f ̸= 0, this only vanishes if one of the three other factors vanish ,
+meaning that the exponents come in two pairs that add up to the same value that we shall call
+σ. So without loss of generality we can assume to have the pairs α, σ − α and β, σ − β
+and we will take the operator to be of the form
+θ4 + x(aθ4 + bθ3 + cθ2 + dθ + e) + f x2(θ + α)(θ + β)(θ + σ − α)(θ + σ − β),
+with b = 2(c − d) as our starting point.
+After solving the equations Q0 = 0, Q5 = 0, one is left to solve the polynomial equations
+Q1 = Q2 = Q3 = Q4 = 0. For sake of concreteness, we give the explicit form of the
+polynomials:
+Q1 := 8 f α2σ + 16 f σ β − 8 f σ2β − 16 c2 + 40 cd − 24 d2 − 8 f α σ2 − 16 f α2+
++16 f σ2 − 16 f β2 − 32 f σ − 24 da + 16 ca + 16 f α σ + 8 f σ β2,
+Q2 := −8 f α2c − 8 f β2c + 8 f β2d + 8 f α2d − 8 cad + 8 f σ2c + 72 f σ d − 8 f σ2d+
++24 c2d − 24 cd2 + 8 c2a − 64 c f σ + 24 f α σ a + 24 f σ β a − 16 f σ2 β a + 16 f α2σ a+
+−16 f α σ2 a + 16 f σ β2a − 8 f α σ d + 8 f α σ c − 8 c3 + 8 d3 + 8 f σ β c − 8 f σ β d+
+−64 d f − 8 da2 − 24 f σ a − 24 f α2a + 48 c f + 24 f σ2a − 24 f β2a,
+Q3 = 8 f
+(
+2 f σ β + 2 f α σ + f σ β2 − f σ2β + f α2σ − f α σ2 − 2 f β2+
+−3 da + σ2a2 + f σ3 − β2a2 − σ a2 − σ β ad + σ β ac − α σ ad + α σ ac+
+−α2a2 − 2 cσ a − 2 f α2 − 4 f σ2 + 4 f σ + 4 c2 − 7 cd + 3 d2 − α σ2a2+
++σ β2a2 + 6 σ cd + 3 σ ad − β2ac + β2ad − α2ac + α2ad + σ2ac+
+8
+−σ2ad − 3 σ d2 − 3 σ c2 + α σ a2 + σ β a2 − σ2β a2 + α2σ a2)
+,
+Q4 = 8 f 2 (
+−2 c − α2c − 2 σ2c − 3 σ d + 2 σ2d + β2d − 2 σ2a − β2a − α σ d+
+α σ c + σ β c − σ β d + σ β a − α σ2a − σ2β a + α σ a + α2σ a + β2σ a+
+σ a − α2a + σ3a + 4 cσ − β2c + α2d
+)
+.
+Somewhat to our surprise, it turns out to be rather easy to giv e a complete solution to
+these equations. It will be useful to introduce the paramete rs
+A := α(σ − α), B := β(σ − β)
+and use these instead of α and β. One has
+(θ + α)(θ + σ − α)(θ + β)(θ + σ − β) = ( θ2 + σθ + A)(θ2 + σθ + B)
+= θ4 + 2σθ3 + (σ2 + (A + B))θ2 + σ(A + B)θ + AB.
+We will see that most expressions only depend on
+∆ := −(A + B) = α2 + β2 − σ(α + β).
+2.2 The polynomial Q4
+The polynomial Q4 is an expression that is f 2 times an expression linear in the variable
+a. As we will only consider cases with f ̸= 0, we can solve for a and ﬁnd
+a = (2(σ − 1)2 + ∆ )c − (σ(2σ − 3) + ∆ )d
+(σ − 1)(σ2 − σ + ∆ ) ,
+Note that this value for a introduces the denominator
+(σ − 1)(σ(σ − 1) + ∆ ).
+So if we work further with this operator, we are implicitly as suming that these two
+factors do not vanish. If one of them does vanish, we should go back to the previous
+step, impose these conditions and compute further. For now, we will assume that these
+factors are non-zero and come back to these cases later.
+2.3 The case σ = 2
+It appears that with this value of a the quantity Q becomes divisible by σ − 2. So in
+this remarkable σ = 2 case we obtain an operator family with Q = 0. The value of a
+simpliﬁes to
+a = (2 + ∆ )c − (2 + ∆ )c
+1 · (2 + ∆ ) = c − d ,
+and one obtains what we call the main component:
+P := θ4 + x((c − d)θ4 + 2(c − d)θ3 + cθ2 + dθ + e)+
++ f x2(θ + α)(θ + β)(θ + 2 − α)(θ + 2 − β) ,
+depending c, d, e, f and the exponents α and β as free parameters. Almost all operators
+of degree two from the AESZ-list are of this type. We obtain ou r ﬁrst component of
+dimension 6.
+9
+2.4 The case σ ̸= 2
+If however σ ̸= 2 we have to analyse further. Still using the above value for a, the
+coefﬁcient of x of Q is a complicated expression in c, d, e, f and the exponents, that
+however is factored by M aple instantly into four factors. First, there are the factors
+(σ − 1), (σ − 2), (σ(σ − 1) + ∆ ).
+We assume ﬁrst that these are non-zero, so one is forced put to z ero the fourth factor,
+which leads to a speciﬁc value for f :
+f = ( 2c − 3d) ((σ − 1)2 + ∆ )c − (σ(σ − 2) + ∆ )c
+(σ − 1) (2σ + ∆ ) (œ 2 − œ + ∆ ) .
+Here a new factor 2 σ + ∆ is introduced in the denominator, so we have to come back
+later to the case 2 σ + ∆ = 0.
+2.4.1 The subcase σ = 3
+Using the above values for a and f , the quantity Q only contains terms with x2 and x3.
+It factors out the factor σ − 3, which leads to another remarkable operator family with
+Q = 0:
+a = (8 + ∆ )c − (9 + ∆ )d
+2(6 + ∆ ) , f = ( 2c − 3d) (4 + ∆ )c − (3 + ∆ )d
+2(6 + ∆ )2 .
+It has c, d, e and α, β as free parameters. This makes up a second component, of dime n-
+sion 5.
+2.4.2 The subcase σ ̸= 3
+Still with the given values for a and f , if σ ̸= 3, one has to analyse the quantity Q
+further. M aple manages to factor the coefﬁcient of x2 into a product of eight factors, of
+only three were not supposed to be non-zero at this stage. Eac h of these factors leads to
+a linear dependence between c and d.
+Case A:
+c = ( ∆ − σ) d
+∆ .
+Upon substitution we obtain an operator that satisﬁes the con dition Q = 0. For this
+operator one has
+a = −2 d
+∆ , b = −2σ d
+∆ , c = −(σ − ∆ ) d
+∆ , f = ( d
+∆ )2,
+and has d, e and the exponents α, β, σ as free parameters. So we obtain a further irre-
+ducible component of dimension 5. The remarkable thing is th at now we have only ∆
+apearing in the denominator.
+The operator of B ogner mentioned in the introduction is an instance of case A for the
+parameter choice:
+α = β = 2/3, σ = 11/6, d = −168, e = 30.
+Case B:
+10
+c = d σ2 − 2σ + ∆
+(σ − 1)2 + ∆ .
+In this case f reduces to 0, so we do not get an operator of degree two.
+Case C:
+c = d σ2 − 6σ + 4 + ∆
+(σ − 1)(σ − 4) + ∆
+In this case the condition Q = 0 reduces to special relations between the exponents. The
+exceptional cases are:
+σ ∈ {0, 1, 2, 3, 4}
+or (
+œ 2 − 2σ + 4 + ∆
+)
+= 0,
+(
+œ 2 − 3σ + 4 + ∆
+)
+= 0,
+(
+œ 2 − 5σ + 4 + ∆
+)
+= 0
+This concludes the list of all possibilities. We still have t o backtrack some of the cases:
+2.5 Backtracking the remaining cases
+Earlier we use the value for a which involved the denominator
+(σ − 1)(σ2 − σ + ∆ ) .
+The introduction of f led to a further denominator
+2σ + ∆
+The analysis of Case A gave ∆ as denominator, and Case C gave further factor (σ −
+1)(σ − 4) + ∆ in the denominator. In each of the cases we have to backtrack a nd see if
+we ﬁnd additional solutions.
+2.5.1 The case σ = 1
+Looking at the operator with σ = 1, we ﬁnd from the coefﬁcient of x of Q the value of f .
+Using this value factoring the coefﬁcient of x2 of Q we ﬁnd there is a unique value of c:
+c = d ∆ − 1
+∆ .
+Here a denominator ∆ appears, so we assume this to be ̸= 0; but the case ∆ = 0 has to
+be analysed anyway .
+2.5.2 The case ∆ = 0
+To analyse the further cases, it is useful to write the operat or in terms of A and B instead
+of α and β, so that ∆ = C can be implemented by putting B = C − A. We start with
+C = 0. The following seven components make up the intersection w ith ∆ = 0:
+Case 1) σ = ∆ = 0, b, c, d = 0:
+θ4 + x(aθ4 + e) + f x2(θ4 + u).
+11
+Case 2) σ = 1, ∆ = 0, d = 0, f = ( a − c)c;
+θ4 + x(aθ4 + 2cθ3 + cθ2 + e) + (a − c)c(θ4 + 2θ2 + 3 + θ2 + u)
+Case 3) σ = 2, ∆ = 0, a = c − d. This is inside the main component.
+Case 4) σ = 2, ∆ = 0, a = d, c = 2d. f = d2/4.
+Case 5) σ = 3, ∆ = 0, a = 8c − 9d/12, f = ( 2c − 3d)(4c − 3d)/72
+This is inside the σ = 3 component.
+Case 6) σ = 4, ∆ = 0, d = 0, c = 2a, f = a2/4.
+Case 7) d = ∆ = 0, there is the family with parameters c, e, σ, α
+a = 2c
+σ , b = 2c, d = 0, f = a2
+4 .
+2.5.3 Remaining cases
+There are more cases to check and this could be done along the a bove sketched lines.
+Instead of this, we used the computer algebra system Singular. There is a library
+called primdec.lib containing the algorithms for doing primary decomposition . On
+our computer, Singular could not straight away compute the primary decomposition
+of the ideal I deﬁned by the vanishing of the x-coefﬁcients of Q. But after taking the
+ideal quotient of I by the ideals already found, it turned out to be able to ﬁnd the l ast
+component. In total we thus found seven irreducible compone nts of the variety deﬁned
+by Q = 0.
+2.6 Summary of the seven components
+In total we have found seven components. Membership to a compo nent is deﬁned by
+certain polynomial relations between the coefﬁcients. Belo w we give the deﬁning re-
+lations for each of the components, the operator with its coe fﬁcients together with its
+generic Riemann symbol.
+The big σ = 2 component, also called the main component is deﬁned by the linear
+equations
+σ − 2 = 0, a − (c − d) = 0.
+For a general member of this component the Riemann symbol is:
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 ∗ ∗ ∞
+0 0 0 α
+0 1 1 β
+0 1 1 2 − β
+0 2 2 2 − α
+
+
+
+
+
+
+
+
+
+
+
+
+
+where ∗ are the two roots of 1 + ax + f x2 = 0. The operator depends on the six pa-
+rameters a, d, e, f , α, β. The parameters a, f determine the position of the singular ﬁbres.
+12
+The parameters α, β determine the four exponents at ∞ which are symmetric around the
+value 2. The parameters d, e are accessory parameters.
+However, if the two roots coincide, a2 = 4 f , then we obtain an operator with three sin-
+gular points.
+The σ = 1 component is deﬁned by the four conditions:
+σ − 1 = 0, c∆ + d(∆ − 1) = 0,
+d(a − (c − d)) + f ∆ = 0, c(a − (c − d)) + f (∆ − 1) = 0
+The Riemann symbol of the operator is:
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 x y ∞
+0 0 0 α
+0 1 1 β
+0 1 2 1 − β
+0 2 3 1 − α
+
+
+
+
+
+
+
+
+
+
+
+
+
+where the special points x and y are located at:
+x = ∆
+d , y = ∆
+d + a∆ .
+The point y is not really a singular point of the differential operator, as the exponents
+0, 1, 2, 3 are those of a regular point of the differential equa tion. Indeed, as it can be
+checked that no logarithms occur.
+The σ = 3 component is deﬁned by the conditions:
+0 = σ − 3
+0 = 4a2 − 4c2 − 3ad + 11cd − 7d2 − 3 f A + 20 f
+0 = 2aA − cA + dA − 12a + 8c − 9d
+0 = 2ac − 2c2 − 3a2aA − cA + dA − 12a + 8c − 9d
+0 = 2c2 A − 5cdA + 3d2 A + 2 f A2 − 8c2 + 18cd − 9d2 − 24 f A + 72 f
+The Riemann symbol of the operator is:
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 x y ∞
+0 0 −1 α
+0 1 0 β
+0 1 1 3 − β
+0 2 2 3 − α
+
+
+
+
+
+
+
+
+
+
+
+
+
+where the singular points are located at:
+x = 6 + ∆
+2c − 3d , y = −2(6 + ∆ )
+4c − 3d + (c − d)∆ .
+The operator has ﬁve parameters c, d, e, α, β. α, β are parameters that determine the ex-
+ponents at inﬁnity , symmetric around 3. The parameters c, d determine, together with α
+and β the position of the two singularities. e is a single accessory parameter.
+13
+The σ = 0 component is deﬁned by the conditions:
+σ = 0, c = 0, d = 0, ∆ = 0.
+The generic Riemann symbol for this operator is:
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 x y ∞
+0 0 0 α
+0 1 1 iα
+0 2 2 −α
+0 3 3 −iα
+
+
+
+
+
+
+
+
+
+
+
+
+
+where the special points x, y are located at the solutions of 1 + ax + f x2 = 0. The opera-
+tor depends on four parameters a, e, f , α.
+The small σ = 2 component is deﬁned by the four conditions:
+σ − 2 = 0, 4 ad − d2 − 16 f = 0, 2 c − 3d = 0, ∆ + 2 = 0.
+The Riemann symbol for a general member of this component is:
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 x y ∞
+0 −1 0 2 + α
+0 0 1 2 + iα
+0 1 2 2 − α
+0 2 3 2 − iα
+
+
+
+
+
+
+
+
+
+
+
+
+
+where the special points are
+x = − 4
+d , y = − 4
+4a − d .
+The σ = 4 component is deﬁned by the four conditions:
+σ − 4 = 0, 6 a − c = 0, 2 c − 3d, ∆ + 8 = 0.
+The Riemann symbol of this operator is:
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 x y ∞
+0 −1 −1 4 + α
+0 0 0 4 + iα
+0 1 1 4 − α
+0 2 2 4 − iα
+
+
+
+
+
+
+
+
+
+
+
+
+
+where the singular points x, y are solutions to 1 + ax + f x2 = 0.
+The transverse component ﬁnally is deﬁned by the equations
+0 = a2 − 4 f ,
+0 = aσ − 2(c − d),
+0 = a∆ + 2d,
+0 = − f ∆ 2 + d2,
+0 = ad + 2 f ∆ ,
+0 = dσ − c∆ + d∆ ,
+0 = f σ∆ − f ∆ 2 + cd,
+0 = − f σ2 + f σ∆ + c2 − cd,
+0 = ac − 2 f σ + 2 f ∆ .
+14
+Solving for a, b, c, f we ﬁnd the family of operators
+T(d, e, α, β, σ) := θ4+
+−x 1
+∆
+(
+2dθ4 + 2dσθ3 + (σ − ∆ )θ)
+)
++ x(θ + e)+
+−
+( dx
+∆
+) 2
+(θ + α)(θ + β)(θ + σ − β)(θ + σ − β)
+The Riemann symbol of the generic member in this family is:
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 x ∞
+0 0 α
+0 1 β
+0 2 − σ σ − β
+0 3 − σ σ − α
+
+
+
+
+
+
+
+
+
+
+
+
+
+where x = ∆
+d .
+The big and small σ = 2 components do intersect:
+σ = 2, ∆ = −2, 2 a = d, 2 c = 3d, f = d2/16.
+The transverse component intersects all other components. No other pair of components
+can intersect, as they have a different σ-value.
+2.7 The small components
+It turns out that the components with σ = 0, 2, 4 are closely related to each other
+and the solutions of the corresponding differential equati ons can be related in a simple
+manner. The families of operators in question are:
+P0(a, e, f , A) := θ4 + x(aθ4 + e) + x2 f (θ4 − A2)
+P2(a, d, e, A) := θ4 + x(aθ4 + dθ3 + (3/2)dθ2 + dθ + e)+
++ d(4a−d)
+16 x2((θ + 1)4 − (A − 1)2)
+P4(a, e, f , A) := θ4 + x(aθ4 + 4aθ3 + 6aθ2 + 4aθ + e)+
++x2 f (θ4 + 8θ3 + 24θ2 + 32θ + A(8 − A))
+Their relation is most easily understood from the perspecti ve of the operator P2(a, d, e, A)
+and its exponents. The discriminant ∆ (x) of the operator P2(a, d, e, A) factors as (1 +
+dx/4)(1 + (4a − d)x/4). The exponents at the ﬁrst factor are −1, 0, 1, 2 and at the second
+factor 0, 1, 2, 3. The exponents at inﬁnity are of the form
+1 + α, 1 − α, 1 + iα, 1 − iα.
+15
+Multiplication of a solution to P2(a, d, e, A) by (1 + dx/4) will shift the exponents at the
+ﬁrst singular point by +1 and the exponents at inﬁnity by −1, which then leads to an
+operator with two points with exponents 0, 1, 2, 3 and
+α, −α, iα, −iα
+as exponents at inﬁnity , i.e with σ = 0 and ∆ = 0. Similarly , division of a solution to
+P2(a, d, e, A) by (1 + (4a − d)x/4) leads to a shift at the second singularity by −1 and
+hence produces two singularities with exponents −1, 0, 1, 2. At inﬁnity the exponents
+shift by +1 and are of the form
+2 + α, 2 − α, 2 + iα, 2 − iα
+i.e. with σ = 4 and ∆ = −8.
+We remark that the exponents at inﬁnity can only be all real in t he very special case that
+these all coincide.
+A precise statement relating these operators is the followi ng:
+Proposition
+y(x) is a solution of P 2(a, d, e, A)
+⇐ ⇒
+(1 + dx/4).y0(x) is a solution of
+P0(a, e − d/4, (4a − d)d/16, A − 1)
+⇐ ⇒
+(1 + (4a − d)x/4)−1y(x) is a solution of
+P4(a, e + (4a − d)/4, (4a − d)d/16), A − 3)
+It is a remarkable fact that the local monodromies around the special points ̸= 0 and
+̸= ∞ are trivial. The monodromy around 0 is MUM, so has inﬁnite order a nd thus the
+monodoromy group is the non-reductive group Z, which clearly prevents these opera-
+tors from being Picard-Fuchs operators of a family of algebr aic varieties.
+Something similar happens for the σ = 1 and γ = 3 components, given by the operator
+families
+P1(a, d, e, α, β) := θ4 + x
+(
+aθ4 − 2d
+∆ θ3 + ∆ −1
+∆ θ2 + dθ + e
+)
++
+− d(d+a∆ )
+∆ 2 (θ + α)(θ + β)(θ + 1 − α)(θ + 1 − β)
+where ∆ = α2 + β2 − α − β, and
+P3(c, d, e, α, β) := θ4 + x
+( (∆ + 8)c + (∆ + 9)d
+2(∆ + 6) + 2(c − d)θ3 + cθ2 + dθ + e
+)
++
++(2c − 3d) (∆ + 4)c − (∆ + 3)d)
+2(∆ + 6)2 x2(θ + α)(θ + β)(θ + 3 + α)(θ + 3 − β),
+16
+with ∆ = α2 + β2 − 3α − 3β.
+One veriﬁes directly that
+Proposition
+y(x) is a solution of P 1(a, d, e, α, β)
+⇐ ⇒
+(∆ − (d + a∆ )x)y0(x) is a solution of
+P3(d(∆ − 1)/∆ , d, e, α + 1, β + 1)
+These operators are also remarkable. One of the roots of the p olynomial 1 + ax + f x2 is in
+fact a regular point, the other is a conifold point, so the thr ee non-trivial monodromies
+are precisely as those for the hypergeometric operators. In fact, if we multiply the
+hypergeometric operator
+θ4 − Nx(θ + α)(θ)
+with the linear factor 1 + Mx, the result is the operator
+P1(M + N, −N∆ , e, α, β), (∆ = α2 + β2 − α − β)
+for the speciﬁc value
+e = Nαβ(1 − α)(1 − β)
+of the accessory parameter e. If e takes on another value, the operator is no longer equal
+to linear factor × hypergeometric.
+17
+3 The known Calabi-Y au operators of degree 2
+Below we will give an overview of the 69 Calabi–Yau operators of degree two that are
+currently known to us. We also include some further remarkab le operators that are not
+strictly Calabi-Yau in the sense of [5]. Of course, this is just a small portion of the list of
+the still growing list Calabi-Yau operators that was starte d in [ 7] and now contains more
+then 500 members. An update of this list in preparation [ 8].
+For operators of degree two there are cases with three and wit h four singular points.
+Most of the known operators can be related to hypergeometric o perators or operators
+that are convolutions, that is, can be obtained via Hadamard product of operators o f
+lower order. Recall that the Hadamard product of two power series φ(x) := ∑ n anxn and
+ψ(x) := ∑ n bnxn is the series
+φ ∗ ψ(x) = ∑
+n
+anbnxn
+and by a classical theorem, if φ and ψ satisfy a linear differential equations, then so does
+φ ∗ ψ. The Hadamard product corresponds to the multiplicative co nvolution of local
+systems, so are under very good control, see [ 23], [24].
+Frobenius basis: For a fourth order operator P with at MUM-point at 0, there is a
+canonical basis of solutions y0, y1, y2, y3 to Py = 0 on a sufﬁciently small slit disc around
+the origin, called the Frobenius basis:
+y0(x) = f0(x)
+y1(x) = log(x)y0(x) + f1(x)
+y2(x) = 1
+2 log(x)2y0(x) + log(x)y1(x) + f2(x)
+y3(x) = 1
+6 log(t)3y0(x) + 1
+2 log(x)2y1(x) + log(x)y2(x) + f2(x)
+where f0(x) ∈ Q[[x]], fi(x) ∈ tQ[[t]], i = 1, 2, 3.
+The Calabi-Yau operators from [ 5] are characterised by three integrality conditions:
+1) integrality of the solution y 0:
+y0(x) ∈ Z[[x]].
+2) integrality of the q-coordinate q (x):
+q(x) := exp (y1(x)/y0(x)) = xexp ( f1(x)/ f0(x)) = x + . . . ∈ Z[[x]]
+3) integrality of the instanton numbers n d.
+These can be computed in several different ways. The second l ogarithmic derivative of
+y2/y0 expressed in the q-coordinate is called the Yakawa-coupling K(q) of P:
+K(q) =
+(
+q d
+dq
+) 2 ( y2
+y0
+)
+18
+Now expand K(q) as a Lambert-series
+K(q) = 1 +
+∞
+∑
+k=1
+k3nkqk
+1 − qk .
+The numbers nd are called the (normalised, n0 = 1) instanton numbers of P and are re-
+quired to to be integral. It is natural to allow small denomin ators in f0, q(x) and nd, so
+require only N-integrality , for some denominator N.
+3.1 Description of the operators
+Many of the Calabi-Yau operators of degree 2 that we will describe involve special lower
+order operators of Calabi-Yau type. These are introduced an d discussed in Appendix B.
+Operators with three singular points
+I. The 14 tilde operators There are 14 exponents (α1, α2, α3, α4) with
+α1 ≤ α2 ≤ α3 ≤ α4, α1 + α4 = α2 + α4 = 1,
+for which the hypergeometric operator, scaled by N,
+θ4 − Nx(θ + α1)(θ + α2)(θ + α3)(θ + α4)
+is a Calabi-Yau operator, [ 1]. Corresponding to these, there are also 14 hypergeometric
+ﬁfth order Calabi-Yau operator
+θ5 − 4Nx(θ + α1)(θ + α2)(θ + 1
+2 )(θ + α3)(θ + α4)
+with Riemann symbol 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 1/4 N ∞
+0 0 α1
+0 1 α2
+0 3/2 1/2
+0 2 α3
+0 3 α4
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+These operators have a Yifan Yang pull-back to 14 special fourth order operators, called the
+tilde-operators ˜1, ˜2, . . . , ˜14. These operators replace the more complicated hat-operators
+ˆi, i = 1, 2, . . . , 14 that appeared in the list [ 7] into which they can be transformed. How-
+ever, operator ˜3, is not new, as it can be reduced to operator 2.33
+II. The 16 operators of type H ∗ µ(H)
+There are four special hypergeometric second order operato rs called A, B, C, D. The
+Möbius transformation that interchanges the singularity wi th inﬁnity leads to four
+Möbius transformed hypergeometric operators
+µ(A) := e, µ(B) = h, µ(C) = i, µ(D) = j,
+19
+where e, h, i, j refer to the names given in [ 5], see also Appendix B.
+Thus we can form the 16 Hadamard product A ∗ µ(B), etcetera and obtain 16 fourth
+order operators of degree two with three singular points.
+But there are two surprises: the operator C ∗ µ(A) can be reduced to the hypergeometric
+operator AESZ #3 = 1.3 and the operator C ∗ µ(B) has vanishing instanton numbers and
+in fact is the third symmetric power of the hypergeometric se cond order operator
+θ2 − 12 x (12 θ + 7) (12 θ + 1)
+So from this we obtain only 14 Calabi-Yau operators of degree two that are ’new’.
+III. The four Hadamard products I ∗ µ(H′)
+There are also four special hypergeometric third order oper ators A′, B′, C′, D′, analogous
+to second order operators A, B, C, D. Interchanging the singularity with the point at
+inﬁnity , we obtain third order operators
+µ(A′) = β, µ(B′) = ι, µ(C′) = θ, µ(D′) = κ
+of degree two with three singular points. Taking Hadamard pr oduct with the central
+binomial coefﬁcient produces four fourth order operators of degree two. One of these,
+I ∗ β, can be transformd by a quadratic transformation to an opera tor (I ∗ β)∗
+θ4 − 16(4θ + 1)(4θ + 3)(8θ2 + 8θ + 3) + 4096x2(4θ + 1)(4θ + 3)(4θ + 5)(4θ + 7),
+which in turn can be transformed to the hypergeometric opera tor AESZ #3. The oper-
+ator I ∗ θ can be transformed in 2.17, so only two of these give rise to ne w Calabi-Yau
+operators.
+IV .Four sporadic operators
+The operator 2.63 = #AESZ 84 can not be constructed in this way . Furthermore, there are
+three operators of Bogner-type that were obtained from tran sformations of the higher de-
+gree operators AESZ #245, AESZ #406 and AESZ #255. As these operators have unusual
+properties, they probably should better be understood in te rms of the higher degree
+versions. We remark that the local monodromies around the tw o singularities ̸= 0 are
+of ﬁnite order.
+Operators with four singular points
+I. The 24 operators of type H ∗ BZB
+There are six special second order operators of degree two wi th four singular ﬁbres and
+Riemann symbol of the form 
+
+
+0 ∗ ∗ ∞
+0 0 0 1
+0 0 0 1
+
+
+ .
+So we are dealing here with special Heun operators. They appe ar in the work of Beuk-
+ers [ 12], and Zagier [ 42] and are related to the rational elliptic surfaces describe d by
+20
+Beauville [11], so we call them the BZB-operators. They were denoted a, b, c, d, f , g in [5].
+Taking the Hadamard product with the hypergeometric operat ors A, B, C, D produces
+24 fourth order operators of degree two with four singular po ints.
+II. The six Hadamard products I ∗ BZB ′
+The BZB-operators have also analogs as third order operator s that we will call the BZB’-
+operators, that were called α, γ, δ, ǫ, ζ, η in [ 5]. Taking I∗ with these operators produce
+six new fourth order operators of degree two with four singul arities.
+III. Six Sporadic operators with four singularities
+III.a. Three operators I ∗ sporadic third order : There are three sporadic third order operators
+of degree two, described in Appendix B. These lead to fourth o rder operators of degree
+two by taking I∗ with them.
+III.b: Three original operators : There are three operators that apparently can not be con-
+structed starting from simpler operators of lower order; we call them original operators.
+The count
+So in total we have described
+(14 − 1) + (16 − 2) + (4 − 2) + 4 = 33
+Calabi-Yau operators of degree two with three singular poin ts and
+24 + 6 + 3 + 3 = 36
+with four singular points, making up a total of 69. Because th ese all have different
+instanton numbers, these are essentially different and the re are no algebraic transforma-
+tions mapping one to any of the other operators.
+Miscellaneous operators
+There are two further types of operators of degree two that de serve to be mentioned at
+this place, as they challenge the precise deﬁnition of Calabi -Yau operator, as formulated
+in [5].
+Reducible operators: A large scale Zagier-type search for degree two operators wi th in-
+tegral solutions has been perfomed by P avel Metelitsyn. Apart from the operators
+equivalent to the ones mentioned above, there are some inter esting reducible fourth or-
+der operators. With regards to the q-coordinate and instant on numbers these examples
+behave very much in the same way as the irreducible ones. An ex ample is the operator
+θ4 − 12x (6θ + 1) (6θ + 5)
+(
+2θ2 + 2θ + 1
+)
++ 144x2 (6θ + 1) (6θ + 5) (6θ + 7) (6θ + 11) .
+One ﬁnds:
+φ(x) = 1 + 60x + 13860x2 + 4084080x3 + 1338557220x4 + 465817912560x5 + . . .
+21
+q(x) = x + 312x2 + 107604x3 + 39073568x4 + 14645965026x5 + . . .
+n1 = −192, n2 = 4182, n3 = −229568, n4 = 19136058, n5 = −2006581440
+But note that the above series φ(x) is just the solution of the second order operator D,
+and the above operator is just the compositional square of of D. (Doing this with the
+hypergeometric second order operators A, B, C produce periodic instanton numbers.)
+A Strange Operator: M. Bogner [15] also found an example of an operator of degree two
+with an integer solution, integral q-coordinate, integral K(q)-series, but for which the
+instanton numbers are badly non-integral. We start from the third order operator
+L := θ3 − 4x (2θ + 1)
+(
+5θ2 + 5θ + 2
+)
++ 48x2 (3θ + 2) (3θ + 4) (θ + 1)
+with integral solution
+1 + 8x + 96x2 + 1280x3 + 17440x4 + 231168x5 + . . .
+The operator I ∗ L is the fourth order operator
+θ4 − 8x(2θ + 1)2(5θ2 + 5θ + 2) + 192x2(2θ + 1)(3θ + 2)(3θ + 4)(2θ + 3)
+We ﬁnd the following nice integral series:
+y0(x) = 1 + 16x + 576x2 + 25600x3 + 1220800x4 + 58254336x5 + . . .
+q(x) := x + 40x2 + 1984x3 + 106496x4 + 5863168x5 + . . .
+K(q) := 1 + 8q2 − 5632q3 − 456064q4 − 17708032q5 + . . .
+However, if we expand K(q) as a Lambert-series we do not get integral instanton num-
+bers:
+n1 = 8, n2 = −1, n3 = − 1880
+9 , n4 = −7126, n5 = − 3541608
+25 , . . . ,
+n17 = 2432475693294458880448632
+289 , . . .
+Experimentally , the denominator p2 appears in np for
+p = 3, 5, 7, 11, 13 17 19, . . .
+This is rather puzzling. Conjecturally , already the fact th at φ(x) is an integral series
+implies that the operator is a factor of a Picard-Fuchs equat ion of a family of varieties
+deﬁned over Q and indeed our operator is of geometrical origin. It was conj ectured in
+[5] that the integrality of the q-series implies the integrality of the instanton numbers,
+which in this example is not the case. The integrality of solu tion and mirror map clearly
+indicate that we have a rank four Calabi-Yau motive and one wo uld expect the general
+arguments for the integrality of [ 41] to be applicable, but apparently they are not. There
+might exist a different scaling of the coordinate that repai rs this defect, but up to now
+we have been unable to ﬁnd it.
+Acknowledgement This work for this paper was done in 2016 and we had hoped to ﬁnd
+many new degree two operators. That did not happen and we neve r found the time to
+write the paper. We intended it to be a possible reference for this class of operators. The
+untimely death of Gert left the paper in a unﬁnished state and i t is only now I found
+the time to complete it. We thank M. Bogner, J. Hofmann and K. Sam ol for help with
+computations, done years ago, and W. Zudilin and O. Gorodets ky for useful comments,
+corrections and showing interest in this paper.
+22
+Appendix A
+The following table lists the operators as they appear in the electronic database access-
+able at https://cydb.mathematik.uni-mainz.de/. (These are ordered by degree, so
+that the nth operator of degree d gets the code d.n in that list.) The second column
+lists the AESZ-numbers as appearing in [ 7]. The last three list the ﬁrst three instanton
+numbers (normalised, n0 = 1). As these do not change under transformations of the
+coordinate, the pair of numbers |n1|, |n3| provide a simple ’ﬁngerprint/superseeker’ to
+identify an operator. In Appendix C one ﬁnds some monodromy an d modular form
+information for these operators.
+Number AESZ Source |Σ | n1 n2 n3
+2.1 #45 A ∗ a 4 12 163 3204
+2.2 #15 B ∗ a 4 21 480 15894
+2.3 #68 C ∗ a 4 52 2814 220220
+2.4 #62 D ∗ a 4 372 136182 71562236
+2.5 #25 A ∗ b 4 20 277 8220
+2.6 #24 B ∗ b 4 36 837 41421
+2.7 #51 C ∗ b 4 92 5052 585396
+2.8 #63 D ∗ b 4 684 253314 195638820
+2.9 #58 A ∗ c 4 16 142 11056/3
+2.10 #70 B ∗ c 4 27 432 18089
+2.11 #69 C ∗ c 4 64 2616 246848
+2.12 #64 D ∗ c 4 432 130842 78259376
+2.13 #36 A ∗ d 4 16 42 1232
+2.14 #48 B ∗ d 4 24 291/2 5832
+2.15 #38 C ∗ d 4 48 998 73328
+2.16 #65 D ∗ d 4 240 57102 19105840
+2.17 #111, ∼ #40 A ∗ e 3 32 −96 1440
+2.18 #110 B ∗ e 3 36 −144 8076
+2.xx19 ∼ #3 C ∗ e 3 32 608 26016
+2.19 #112 D ∗ e 3 −288 162504 −96055968
+2.20 #133 A ∗ f 4 12 −42 −3284/3
+2.21 #134 B ∗ f 4 18 −207/2 −5177
+2.22 #135 C ∗ f 4 36 −477 −206716/3
+2.23 #136 D ∗ f 4 180 −15615 −21847076
+2.24 #137 A ∗ g 4 20 2 1684/3
+2.25 #138 B ∗ g 4 27 189/4 2618
+2.26 #139 C ∗ g 4 44 607 22500
+2.27 #140 D ∗ g 4 108 54135 −4945756
+2.28 #141 A ∗ h 3 48 −438 2864
+2.29 #142 B ∗ h 3 45 −3465/4 27735
+2.xx30 Sym3 C ∗ h 3 0 0 0
+2.30 #143 D ∗ h 3 −1008 499086 −607849200
+23
+Number AESZ Source n1 n2 n3
+2.31 7∗∗ A ∗ i 3 96 −3560 −12064
+2.32 B ∗ i 3 60 −7635 307860
+2.33 6∗ C ∗ i 3 −160 −6920 −539680
+2.34 D ∗ i 3 −3936 3550992 −10892932064
+2.35 9∗∗, ∼ #67 A ∗ j 3 480 −226968 −16034720
+2.36 B ∗ j 3 −36 −486279 128217204
+2.37 C ∗ j 3 −2592 −307800 81451104
+2.38 #61 D ∗ j 3 −41184 251271360 −5124430612320
+2.39 ∼ ˆ1 ˜1 3 −2450 −1825075/2 −623291900
+2.40 ∼ ˆ2 ˜2 3 −791200 −41486886600 −4288711075194400
+2.xx41 ∼ ˆ3 ˜3 3 −160 −6920 −539680
+2.41 ∼ ˆ4 ˜4 3 −522 −105291/2 −9879192
+2.42 ∼ ˆ5 ˜5 3 −288 −19260 −2339616
+2.43 ∼ ˆ6 ˜6 3 −736 −104512 −26911072
+2.44 ∼ ˆ7 ˜7 3 −57760 −354010600 −3869123234080
+2.45 ∼ ˆ8 ˜8 3 −10080 −11338740 −24400330080
+2.46 ∼ ˆ9 ˜9 3 −2710944 −717640301160 −302270555492914464
+2.47 ∼ ˆ10 ˜10 3 −3488 −1406056 −1142687008
+2.48 ∼ ˆ11 ˜11 3 −1344 −278040 −109320512
+2.49 ∼ ˆ12 ˜12 3 −264006 −52511160 −230398034080
+2.50 ∼ ˆ13 ˜13 3 −201888 −1567499400 −40177844666400
+2.51 ∼ ˆ14 ˜14 3 −5472 −4476528 −6444589536
+2.52 #16 I ∗ α 4 4 20 644/3
+2.53 #29 I ∗ γ 4 14 303/2 10424/3
+2.54 #41 I ∗ δ 4 2 −7 −104
+2.55 #42 I ∗ ǫ 4 8 63 1000
+2.56 #185 I ∗ ζ 4 6 93/2 608
+2.57 #184 I ∗ η 4 2 4 −8
+2.xx58 ∼ #3 I ∗ β 3 0 4 0
+2.yy58 ∼ 2.xx58 (I ∗ β)∗ 3 32 608 26016
+2.58 4∗ I ∗ ι 3 −6 −6 −104
+2.xx59 ∼ 2.17 I ∗ θ 3 −32 −88 −1440
+2.59 13∗, ∼ 47 I ∗ κ 3 −384 −1356 −164736
+2.60 #18 I ∗ Spor 1 4 4 39 364
+2.61 #26 I ∗ Spor 2 4 10 191/2 1724
+2.62 #28 Original 4 5 28 312
+2.63 #84 Original 3 −4 −11 −44
+2.64 #182 Original 4 1 7/4 7
+2.65 #183 I ∗ Spor 3 4 4 7 556/9
+2.66 reducible ! D ◦ D 3 −192 4182 −229568
+2.67 ∼ #245 Bogner 1 3 6 −69/2 170
+2.68 #406 Bogner 2 3 −12 −186 −1668
+2.69 #205 Original 4 1 7/4 5
+2.70 ∼ #255 Bogner 3 3 20 290 28820/3
+24
+Appendix B
+In this appendix we collect some information on operators of lower order that are rele-
+vant to the construction of the order four Calabi-Yau operat ors of degree two.
+First order operator
+There is a single ﬁrst order operator that we call I:
+θ − 4x(θ + 1/2)
+The series ∞
+∑
+n=0
+( 2n
+n
+)
+xn
+is the unique holomorphic solution of I, and in fact coincides for x ≤ 1/4 with the
+algebraic function
+1
+√
+1 − 4x
+.
+Second order operators
+The four hypergeometric cases
+There are four very remarkable hypergeometric second order operators of the form
+θ2 − Nx(θ + α)(θ + β), α + β = 1, α = 1/2, 1/3, 1/4, 1/6
+with Riemann symbol of the form
+
+
+
+0 1/ N ∞
+0 0 α
+0 0 β
+
+
+ .
+These four operators appear in many different areas of mathe matics, like the alternative
+theories of Ramanujan and are described at many places, see e.g. [ 21].
+Name Operator a0, a1, a2, a3, . . . an
+A θ2 − 16x(θ + 1
+2 )2 1, 4, 36, 400, . . . (2n!)2
+n!4
+B θ2 − 27x(θ + 1
+3 )(θ + 2
+3 ) 1, 6, 90, 1680, . . . (3n)!
+n!3
+C θ2 − 64x(θ + 1
+4 )(θ + 3
+4 ) 1, 12, 420, 18480, . . . (4n)!
+(2n!)(n!)2
+D θ2 − 432x(θ + 1
+6 )(θ + 5
+6 ) 1, 60, 13860, 4084080, . . . (6n)!
+(3n!)(2n!)(n!)
+The above list of operators is in close correspondence with t he six extremal elliptic
+surfaces with three singular ﬁbres, [ 35], [32].
+25
+ﬁbres MW A B (BA )−1 Monodromy H/MP
+I2 I2 I∗
+2 (Z/2)2
+( 1 2
+0 1
+)
+( 1 0
+−2 1
+) ( 1 −2
+2 −3
+)
+Γ (2) 12/X222 A
+I1 I1 I∗
+4 Z/2
+( 1 1
+0 1
+)
+( −1 1
+−4 3
+) ( −1 0
+4 −1
+)
+Γ 0(4) 11/X114 A
+I1 I4 I∗
+1 Z/4
+( 1 1
+0 1
+)
+( 1 0
+−4 1
+) ( −3 −1
+4 1
+)
+Γ 0(4) 11/X141 A
+I1 I3 IV ∗ Z/3
+( 1 1
+0 1
+)
+( 1 0
+−3 1
+) ( 1 −1
+3 −2
+)
+Γ 0(3) 10/X134 B
+I1 I2 I I I∗ Z/2
+( 1 1
+0 1
+)
+( 1 0
+−2 1
+) ( 1 −1
+2 −1
+)
+Γ 0(2) 9/X123 C
+I1 I1 I I∗ Z/1
+( 1 1
+0 1
+)
+( 1 0
+−1 1
+) ( 1 −1
+1 0
+)
+Γ 0(1) 8/X112 D
+Here MW stands for the Mordell-Weil group of sections of the ﬁbration. The matrices A,
+B and (BA )−1 are monodromy matrices for loops around 0, c ̸= 0, ∞ and ∞ respectively .
+In the monodromy column, the group generated by A and B is identiﬁed. The column
+H/MP denotes the notation used in [ 35] and [ 32]. The last column denotes the type of
+the Picard-Fuchs operator. We see that there are three surfa ces that belong to operator
+A, but the surface I1 I4 I∗
+1 shows it is a member of a very regular series of four surfaces,
+which we will say to belong to the operators A, B, C, D.
+The surfaces belonging to the operators A, B, C, D have a clear relation to the geometry of
+the simple elliptic singularities . The ﬁbres over ∞ correspond to conﬁgurations of rational
+curves intersecting in the pattern of the afﬁne Dynkin diagra ms. The corresponding
+simple elliptic singularities have a single modulus. These families of elliptic curves lead
+to elliptic surfaces that cover the corresponding extremal elliptic surfaces.
+Case Dynkin Equation Cover
+A ˜D5 x2 + y2 = suv, u2 + v2 = sxy t = s2
+B ˜E6 x3 + y3 + z3 = sxyz t = s3
+C ˜E7 x2 + y4 + z4 = sxyz t = s4
+D ˜E8 x2 + y3 + z6 = sxyz t = s6
+The A case is slightly different, as the corresponding singulari ty is not a hypersurface,
+but a complete intersection of two quadrics. The last three c ases correspond to the
+euclidian triples (p, q, r) of integers ≥ 2 with the property that
+1
+p + 1
+q + 1
+r = 1.
+The transformed hypergeometric cases
+The Möbius-transformation
+x ↦→ − x
+1 − Nx
+preserves 0 and interchanges the points 1/ N and ∞ of the Riemann sphere. If y(x)
+solves one of the hypergeometric equations A, B, C, D, then
+Y(x) := 1
+1 − Nx y(− x
+1 − Nx )
+26
+satisﬁes a second order equation of the form
+θ2 − x(aθ2 + aθ + b) + cx2(θ + 1)2
+that we call transformed hypergeometric equation that we denote by µ(A), µ(B), µ(C), µ(D).
+These operators have Riemann symbol of the form
+
+
+
+0 1/ N ∞
+0 −α 1
+0 −β 1
+
+
+
+Name a b c a0, a1, a2, . . . an
+µ(A) = e 32 12 162 1, 12, 164, . . . 16n ∑ n
+k=0(−1)k(−1/2
+k )
+2
+(−1/2
+n−k )
+µ(B) = h 54 21 272 1, 21, 495, . . . 27n ∑ n
+k=0(−1)k(−1/3
+k )
+2
+(−2/3
+n−k )
+µ(C) = i 128 52 642 1, 52, 2980, . . . 64n ∑ n
+k=0(−1)k(−1/4
+k )
+2
+(−3/4
+n−k )
+µ(D) = j 864 372 4322 1, 372, 148644, . . . 432n ∑ n
+k=0(−1)k(−1/6
+k )
+2
+(−5/6
+n−k )
+The six Beukers-Zagier-Beauville operators
+There are six special second order operators of degree two wi th four singular points of
+the form
+θ2 − t(aθ2 + aθ + b) + c(θ + 1)2
+and hence have a Riemann-symbol of the form
+
+
+
+0 ∗ ∗ ∞
+0 0 0 1
+0 0 0 1
+
+
+
+AZ-name BZ-name a b c a0, a1, a2, a3, . . . an
+a A 7 2 −8 1, 2, 10, 56, . . . ∑ n
+k=0 (n
+k)3
+c C 10 3 9 1, 3, 15, 93, . . . ∑ n
+k=0 (n
+k)2(2k
+k )
+g F 17 6 72 1, 6, 42, 312, . . . ∑ n
+j,k=0(−1)j8n−j(n
+j )( j
+k)
+3
+d E 12 4 32 1, 4, 20, 112, . . . ∑ n
+k=0 (n
+k)(2k
+k )(2n−2k
+n−k )
+f B 9 3 27 1, 3, 9, 21, . . . ∑ k=0 n(−1)k3n−2k( n
+3k) (3k)!
+k!3
+b D 11 3 −1 1, 3, 19, 147, . . . ∑ n
+k=0 (n
+k)2(n+k
+k )
+We refer to [ 28] for a representation of these sequences as constant term of a Laurent
+polynomial.
+Unfortunately there is no natural naming for these operator s. In the ﬁrst column of the
+table we used the “AZ-names” used in [ 5]. In [ 13] and [42] the same operators are named
+27
+A, B, . . . , F (Not to be confused with the hypergeometric operators A, B, C, D mentioned
+above!); these names appear in the second column as “BZ-name s”. These operators
+also appear as Picard-Fuchs operators for rational ellipti c surfaces, namely the six semi-
+stable families of elliptic curves with four exceptional ﬁbr es, that have been studied by
+Beauville, [11]. The modular level gives a more or less natural way order the operators.
+ﬁbres j Pencil Group Operator
+I5 I5 I1 I1 214313/53 x(x − z)(y − z) + tzy(x − y) Γ 1(5) b
+I6 I3 I2 I1 22.733/34 (x + y)(y + z)(z + x) + txyz Γ 0(6) a, c, g
+I8 I2 I1 I1 1728 (x + y)(xy − z) + txyz Γ 0(8) ∩ Γ 1(4) d
+I4 I4 I2 I2 x(x2 + z2 + 2yz) + tz(x2 − y2) Γ 1(4) ∩ Γ (2)
+I9 I1 I1 I1 0 x2y + y2z + z2x + txyz Γ 0(9) ∩ Γ 1(3) f
+I3 I3 I3 I3 x3 + y3 + txzy Γ (3)
+The coefﬁcients of the holomorphic solution of the operator b are the Apéry-numbers
+for the irrationality of π2. It belongs to the elliptic surface with ﬁbres I5, I5, I1, I1 over the
+modular curve X1(5), as was ﬁrst noticed by Beukers in [ 12].
+The operators a, c, g differ by a Möbius-transformations. The base of this family c an be
+identiﬁed with the modular curve for the congruence subgroup Γ 0(6). Over that curve
+we have the semi-stable elliptic surface with ﬁbres of type I6, I3, I2, I1. The operator d
+belongs to the two isogenous elliptic surfaces with ﬁbres I8, I2, I1, I1 and I4, I4, I2, I2. Oper-
+ator f belongs to the two isogenous elliptic surfaces with ﬁbres I9, I1, I1, I1 and I3, I3, I3, I3
+which is nothing but the Hesse pencil.
+Third order operators
+Hypergeometric operators
+Closely related to the operators A, B, C, D there are also four very remarkable hyperge-
+ometric third order operators
+A′ = I ∗ A, B′ = I ∗ B, C′ = I ∗ C, D′ = I ∗ D
+of the form
+θ3 − Nx(θ + α)(θ + 1/2)(θ + β), α + β = 1, α = 1/2, 1/3, 1/4, 1/6
+with Riemann symbol 
+
+
+
+
+
+
+0 1/ N ∞
+0 0 α
+0 1/2 1/2
+0 0 β
+
+
+
+
+
+
+
+.
+Also important are the symmetric squares of the operators A, B, C, D. These are of the
+form
+θ3 − x(2θ + 1)(aθ2 + aθ + b) + a2x2(θ + α)(θ + 1)(θ + β), α + β = 2
+28
+and have Riemann-symbol of the form
+
+
+
+
+
+
+
+0 1/ a ∞
+0 0 1 − α
+0 0 1
+0 0 1 + α
+
+
+
+
+
+
+
+Name a b α
+sym2(A) 16 8 1 − 2 1
+2 = 0
+sym2(B) 27 12 1 − 2 1
+3 = 1/3
+sym2(C) 64 24 1 − 2 1
+4 = 1/2
+sym2(D) 432 120 1 − 2 1
+6 = 2/3
+The four transformed symmetric squares
+More important for us are the transformed symmetric squares of the operators A, B, C, D.
+These are of the form
+θ3 − x(2θ + 1)(aθ2 + aθ + b) + a2x2(θ + 1)3
+and have Riemann-symbol of the form
+
+
+
+
+
+
+
+0 1/ a ∞
+0 −α 1
+0 0 1
+0 α 1
+
+
+
+
+
+
+
+Name a b α a0, a1, a2, . . . an
+µ(sym2(A)) = β 16 8 1 1, 8, 88, 1088, 16n ∑ k (−1/2
+k )
+2
+(−1/2
+n−k )
+2
+µ(sym2(B)) = ι 27 15 1/3 1, 15, 297, 6495 27n ∑ k (−1/3
+k )
+2
+(−2/3
+n−k )
+2
+µ(sym2(C)) = θ 64 40 1/2 1, 40, 2008, 109120 64n ∑ k (−1/4
+k )
+2
+(−4/3
+n−k )
+2
+µ(sym2(D)) = κ 432 312 2/3 1, 312, 114264, 44196288 432m ∑ k (−1/6
+k )
+2
+(−5/6
+n−k )
+2
+The names β, ι, θ, κ stem from [ 5].
+The six BZB’ -operators
+Corresponding to the six BZB-operators, there are also six s pecial third order operators
+of degree two with four singular points of the form
+θ3 − x(2θ + 1)(aθ2 + aθ + b) + cx2(θ + 1)3
+and hence have a Riemann-symbol of the form
+
+
+
+
+
+
+
+0 ∗ ∗ ∞
+0 0 0 1
+0 1/2 1/2 1
+0 1 1 1
+
+
+
+
+
+
+
+29
+Name a b c a0, a1, a2, a3, . . . an
+δ 7 3 81 1, 3, 9, 3,−279 ∑ k(−1)k3n−3k( n
+3k)(n+k
+k ) (3k)!
+k!3
+α 10 4 64 1, 4, 28, 256, . . . ∑ k (n
+k)2(2k
+k )(2n−2k
+n−k )
+γ 17 5 1 1, 5, 73, 1445, . . . ∑ k (n
+k)2(n+k
+k )
+2
+ǫ 12 4 16 1, 4, 40, 544, . . . ∑ k (n
+k)2(2k
+n )
+2
+η 11 5 125 1, 5, 35, 275, . . . ∑ ⌊n/5⌋
+k=0 (n
+k)3
+(
+(4n−5k−1
+3n ) + (4n−5k
+3n )
+)
+ζ 9 3 −27 1, 3, 27, 309, . . . ∑ k,l (n
+k)2(n
+l )(k
+l)(k+l
+n )
+For a Laurent-representation of these sequences we refer to [28].
+The correspondence between the BZB -operators and BZB ′-operators is determined by
+the following table:
+a c g d f b
+δ α γ ǫ ζ η
+There is a general formula expressing the relation between t he BZB and BZB’ operators:
+Y0(−x/Q(x)) = Q(x)y0(x)2
+which shows that the third order operators are twisted versi ons of the symmetric squares
+of the corresponding second order operators. The factor Q(x) is the discriminant of the
+second order operator with y0 as solution.
+y0 Y0 Q
+a δ (1 + x)(1 − 8x)
+c α (1 − x)(1 − 9x)
+g γ (1 − 8x)(1 − 9x)
+d ǫ (1 − 4x)(1 − 8x)
+f ζ 1 − 9x + 27x2
+b η 1 − 11x − x2
+The three sporadic third order operators
+We know of three very special third order operators that seem to be not directly to the
+analogous of the second order operators. These are the follo wing ones:
+Sporadic 1:
+θ3 − 2x(2θ + 1)(3θ2 + 3θ + 1) − 4x2(4θ + 3)(θ + 1)(4θ + 5)
+φ(x) = 1 + 2x + 18x2 + 164x3 + 1810x4 + 21252x5 + 263844x6 + . . .
+
+
+
+
+
+
+
+0 1/16 −1/4 ∞
+0 0 0 3/4
+0 1/2 1/2 1
+0 1 1 5/4
+
+
+
+
+
+
+
+30
+an =
+n
+∑
+k=0
+( n
+k
+) 4
+This example has an A-incarnation as K 3-surface that is the intersection of four hyper-
+plane sections of type (1, 1) in P3 × P3. If we take I∗, we obtain a fourth order operator
+2.60 with A-incarnation a CY threefold that appears as intersect ion of two (1, 1) and one
+(2, 2) hypersurface in P3 × P3, [9].
+Sporadic 2:
+θ3 − x(2θ + 1)(13θ2 + 13θ + 4) − 3x2(3θ + 2)(θ + 1)(3θ + 4)
+φ(x) = 1 + 4x + 48x2 + 760x3 + 13840x4 + 273504x5 + 5703096x6 + . . .
+
+
+
+
+
+
+
+0 1/27 −1 ∞
+0 0 0 2/3
+0 1/2 1/2 1
+0 1 1 4/3
+
+
+
+
+
+
+
+an =
+n
+∑
+k=0
+( n
+k
+) 2( n + k
+n
+)( 2k
+n
+)
+This example has an A-incarnation as K 3-surface that is the intersection of six hyper-
+plane sections of the Grassmanian G(2, 6) in its Plücker embedding. If we take I∗, we
+obtain a fourth order operator 2.61 with A-incarnation a CY threefold that appears as
+intersection of four linear and a quadratic hypersurface in Grassmanian G(2, 6) in its
+Plücker embedding, [ 10].
+Sporadic 3:
+θ3 − 2x(2θ + 1)(7θ2 + 7θ + 3) + 12x2(4θ + 3)(θ + 1)(4θ + 5)
+φ(x) = 1 + 6x + 54x2 + 564x3 + 6390x4 + 76356x5 + 948276x6 + . . .
+
+
+
+
+
+
+
+0 1/16 1/12 ∞
+0 0 0 3/4
+0 1/2 1/2 1
+0 1 1 5/4
+
+
+
+
+
+
+
+an =
+⌊n/3⌋
+∑
+k=0
+(−1)k
+( n
+k
+)( 2k
+k
+)( 2(n − k)
+n − k
+) (( 2n − 3k − 1
+n
+)
++
+( 2n − 3k
+n
+))
+These sporadic operators and sequences were also found by S. Cooper [20], where they
+are called s10, s7 and s18 and where the explicit description for an in the last case also can
+be found. We refer to [ 28] for representations as constant term sequence of a Laurent
+polynomial.
+31
+Miscellaneous third order operators
+There is a remarkable inﬁnite series of third order operators with an integral solution.
+Theorem
+The differential operator
+P := θ3 − t(2θ + 1)(θ2 + θ − 1/2d2 + 1/2k2 + 1/2) + x2(θ + 1 − d)(θ + 1)(θ + 1 + d)
+has
+(1 − x)k ·2 F1
+( 1 − d + k
+2 , 1 + d + k
+2 , 1, x
+) 2
+as solution.
+Proof: The Riemann symbol of the operator P is
+
+
+
+
+
+
+
+0 1 ∞
+0 −k (1 − d)
+0 0 1
+.0 k 1 + d
+
+
+
+
+
+
+
+The operator is the symmetric square of a second order operat or with Rieman symbol
+
+
+
+0 1 ∞
+0 −k/2 (1 − d)/2
+0 k/2 (1 + d)/2
+
+
+ .
+Multiplication by a factor (1 − x)k/2 gives a hypergeometric operator with Riemann
+symbol 
+
+
+0 1 ∞
+0 0 (1 − d + k)/2
+0 k (1 + d + k)/2
+
+
+ .
+If we compare with the Riemann symbol of the standard hyperge ometric operator for
+2F1(a, b, c; x) 
+
+
+0 1 ∞
+0 0 a
+1 − c c − a − b b
+
+
+
+we read off a = ( 1 − d + k)/2, b = ( 1 + d + k)/2, c = 1, hence the solution of our original
+operator is the square of
+(1 − x)k/2 ·2 F1((1 − d + k)/2, (1 + d + k)/2, 1; x).
+Corollary
+If k and d are rational numbers, then the only the primes appea ring in denominator of k and d
+appear in the denominator of the coefﬁcients of the holomorphic solution of P. After an appropri-
+ate rescaling, the coefﬁcients become integral.
+32
+Appendix C
+In this Appendix we list all essentially distinct Calabi-Ya u operators of order four and
+degree two that are known to us. We also present some further i nformation. To present
+the monodromy , it is sometimes convenient to use ui(x) = yi(x)/(2πi)3 which we call
+the scaled Frobenius basis. The monodromy transformation around 0 in this basis is give n
+by the matrix 
+
+
+
+1 0 0 0
+1 1 0 0
+1/2 1 1 0
+1/6 1/2 1 1
+
+
+
+ .
+In the cases with four singular points, the operator belongs to the main component and
+the Riemann symbol of the operator has the form
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 c1 c2 ∞
+0 0 0 α
+0 1 1 β
+0 1 1 2 − α
+0 2 2 2 − β
+
+
+
+
+
+
+
+
+
+
+
+
+
+where c1, c2 are solutions to the equation
+∆ (x) := 1 + ax + f x2 = 0
+We will always assume that the exponents α, β are between 0 and 1. For each operator we
+give the monodromy transformations around the other singul ar points the with respect
+to this basis. This information was computed by J. H ofmann, [ 29]. A very common
+transformation is the symplectic reﬂection v ↦→v− < v, w > w in a vector w = ( a, b, c, d)
+represented by the matrix
+I − 1
+a
+
+
+
+
+−ad ac −ab a 2
+−bd bc −b2 ab
+−cd c 2 −bc ac
+−d2 cd −bd ad
+
+
+
+
+Such a tranformation is found at conifold points, where the exponents are 0 1 1 2. For
+the conifold nearest to the origin the vector is of the form
+(a, 0, c, d)
+and in that case the characteristic numbers h 3, c2h, c3 = χ of the operator are determined
+by the reﬂection vector via
+a = h3, c = c2h
+24 , d = c3λ
+where
+λ = ζ(3)
+(2πi)3 .
+These numbers are formally attached to the differential ope rator, but have the interpre-
+tation as characteristic numbers of the mirror manifold, se e [39].
+33
+Modular form information. For conifold points appearing at rational values of the pa-
+rameters one can determine the coefﬁents of a weight four modu lar form as described
+in the thesis of K. S amol, [ 33], [ 34]. We include here the name of modular form from
+S4(Γ 0(N) as it appears in the list of C. M eyer, [31]. For example, (6/1) denotes the ﬁrst
+(and only) weight four newform of level 6, which is the η-product
+f = ( η(q)η(q2)η(q3)η(q6))2 = q − 2q2 − 3q3 + 4q4 + 6q5 + . . . ∈ S4(Γ 0(6))
+For critical points at real quadratic irrationalities one e xpects the appearance of Hilbert
+modular forms; at imaginary quadratic irrationalities one would expect Bianchi modular
+forms. Another phenomenon that may occur is the of a so-calle d K-point, see [ 39]. Here
+there are two single logarithms appearing (two size two Jord an blocks), and one expects
+the appearance of a modular form from S3(Γ 0(N)).
+Below we list the 90-degree rotated extended Riemann-symbols ; each row starts with the
+singular value, followed by the four exponents at that point , then monodromy infor-
+mation and ﬁnally modular form information. At the MUM point th e monodromy is
+always standard, and we give the ﬁrst few instanton numbers as a substitute for mod-
+ular form information. If Hilbert-modular, Bianchi or weig ht three modular forms are
+expected, we indicate this with h, b or k. In case the monodromy is of ﬁnite order we
+put −.
+The operators with three singular points which are on the mai n components can all be
+written in the form
+θ4 + f x(−2θ4 − 4θ3 + (γ(1 − γ) + α2 + β2 − 4)θ2 + (γ(1 − γ) + α2 + β2 − 2)θ + e+
++ f 2(θ + 1 − α)(θ + 1 − β)(θ + 1 + β)(θ + 1 + α)
+which has Riemann symbol 
+
+
+
+
+
+
+
+
+
+
+
+
+0 1/ f ∞
+0 0 1 − α
+0 γ 1 − β
+0 1 − γ 1 + β
+0 1 1 + α
+
+
+
+
+
+
+
+
+
+
+
+
+
+There is a single accessory parameter e.
+34
+2.1: A ∗ a = #45 χ = −120, c2H = 72, H3 = 24, dim |H| = 10.
+θ4 − 4(2θ + 1)2(7θ2 + 7θ + 2) − 128(2θ + 1)2(2θ + 3)2
+
+
+
+
+
+
+
+
+
+0
+0 0 0 0 12, 163, 3204
+1
+128 0 1 1 2 (24, 0, 3, −120λ) (64/5)
+− 1
+16 0 1 1 2 (48, −24, 10, −3 − 240λ) (8/1)
+∞ 1
+2
+1
+2
+3
+2
+3
+2 k
+
+
+
+
+
+
+
+
+
+2.2: B ∗ a = #15 χ = −162, c2H = 72, H3 = 18, dim |H| = 9.
+θ4 − 3x(3θ + 1)(3θ + 2)(7θ2 + 7θ + 2) − 72x2(3θ + 1)(3θ + 2)(3θ + 4)(3θ + 5)
+
+
+
+
+
+
+
+
+
+0
+0 0 0 0 21, 480, 15894
+1
+216 0 1 1 2 (18, 0, 3, −162λ) (54/2)
+− 1
+27 0 1 1 2 (36, −18, 9, −3 − 324λ) (27/2)
+∞ 1
+3
+2
+3
+4
+3
+5
+3 −
+
+
+
+
+
+
+
+
+
+2.3: C ∗ a = #68 χ = −228, c2H = 72, H3 = 12, dim |H| = 8.
+θ4 − 4x(4θ + 1)(4θ + 3)(7θ2 + 7θ + 2) − 128x(4θ + 1)(4θ + 3)(4θ + 5)(4θ + 7)
+
+
+
+
+
+
+
+
+
+0
+0 0 0 0 52, 2814, 220220
+1
+512 0 1 1 2 (12, 0, 3, −228λ) (256/3)
+− 1
+64 0 1 1 2 (24, −12, 8, −3 − 456λ) (32/3)
+∞ 1
+4
+3
+4
+5
+4
+7
+4 −
+
+
+
+
+
+
+
+
+
+2.4: D ∗ a = #62 χ = −336, c2H = 72, H3 = 6, dim |H| = 7.
+θ4 − 12x(6θ + 1)(6θ + 5)(7θ2 + 7θ + 2) − 1152x2(6θ + 1)(6θ + 5)(6θ + 7)(6θ + 11)
+
+
+
+
+
+
+
+
+
+0
+0 0 0 0 372, 136182, 71562236
+1
+3456 0 1 1 2 (6, 0, 3, −366λ) (1728/16)
+− 1
+432 0 1 1 2 (12, −6, 7, −3 − 732λ) (216/4)
+∞ 1
+6
+5
+6
+7
+6
+11
+6
+
+
+
+
+
+
+
+
+
+2.5: A ∗ b = #25 χ = −120, c2H = 68, H3 = 20, dim |H| = 9.
+θ4 − 4x(2θ + 1)2(11θ2 + 11θ + 3) − 16x2(2θ + 1)2(2θ + 3)2
+
+
+
+
+
+
+
+
+
+0
+0 0 0 0 20, 277, 8220
+0.005636 0 1 1 2 (20, 0, 17/6, −120λ) h
+−0.693136 0 1 1 2 (80, −40, 46/3 −13/3 − 480λ) h
+∞ 1
+2
+1
+2
+3
+2
+3
+2 k
+
+
+
+
+
+
+
+
+
+35
+2.6: B ∗ b = #24 χ = −150, c2H = 66, H3 = 15, dim |H| = 8.
+θ4 − 3x(3θ + 1)(3θ + 2)(11θ2 + 11θ + 3) − 9x2(3θ + 1)(3θ + 2)(3θ + 4)(3θ + 5)
+
+
+
+
+
+
+
+
+
+0
+0 0 0 0 36, 837, 41421
+0.003340 0 1 1 2 (15, 0, 11/4, −150λ) h
+−0.410748 0 1 1 2 (12, −6, 7, −3 − 732λ) h
+∞ 1
+3
+2
+3
+4
+3
+5
+3 −
+
+
+
+
+
+
+
+
+
+2.7: C ∗ b = #51 χ = −200, c2H = 64, H3 = 10, dim |H| = 7.
+θ4 − 4x(4θ + 1)(4θ + 3)(11θ2 + 11θ + 3) − 16x2(4θ + 1)(4θ + 3)(4θ + 5)(4θ + 7)
+
+
+
+
+
+
+
+
+
+0
+0 0 0 0 92, 5052, 585396
+0.0014090 0 1 1 2 (10, 0, 8/3, −200λ) h
+−0.173284 0 1 1 2 (40, −20, 38/3, −14/3 − 400λ) h
+∞ 1
+4
+1
+2
+3
+2
+3
+2 −
+
+
+
+
+
+
+
+
+
+2.8 D ∗ b = #63 χ = −310, c2H = 62, H3 = 5, dim |H| = 6.
+θ4 − 12x(6θ + 1)(6θ + 5)(11θ2 + 11θ + 3) − 144x2(6θ + 1)(6θ + 5)(6θ + 7)(6θ + 11)
+
+
+
+
+
+
+
+
+
+0
+0 0 0 0 684, 253314, 195638820
+0.000208 0 1 1 2 (5, 0, 31/12, −310λ) h
+−0.025671 0 1 1 2 (20 −10 34/3 −29/6 − 1240λ) h
+∞ 1
+6
+5
+6
+7
+6
+11
+6 −
+
+
+
+
+
+
+
+
+
+2.9: A ∗ c = #58 χ = −112, c2H = 72, H3 = 24, dim |H| = 10.
+θ4 − 4x(2θ + 1)2(10θ2 + 10θ + 3) + 144x2(2θ + 1)2(2θ + 3)2
+
+
+
+
+
+
+
+
+
+0
+0 0 0 0 16, 142, 11056/3;
+1
+144 0 1 1 2 (24, 0, 3, −112λ) (48/1)
+1
+16 0 1 1 2 (72, −24, 9, −3 − 336λ) (16/1)
+∞ 1
+2
+1
+2
+3
+2
+3
+2 k
+
+
+
+
+
+
+
+
+
+2.10: B ∗ c = #70 χ = −156, c2H = 72, H3 = 18, dim |H| = 9.
+θ4 − 3x(3θ + 1)(3θ + 2)(10θ2 + 10θ + 3) − 81x2(3θ + 1)(3θ + 2)(3θ + 4)(3θ + 5)
+
+
+
+
+
+
+
+
+
+0
+0 0 0 0 27, n2 = 432, n3 = 18089
+1
+243 0 1 1 2 (18, 0, 3, −156λ) (243/1)
+1
+27 0 1 1 2 (54, −18, 9, −3 − 468λ) (27/1)
+∞ 1
+4
+3
+4
+5
+4
+7
+4 −
+
+
+
+
+
+
+
+
+
+36
+2.11: C ∗ c = #69 χ = −224, c2H = 72, H3 = 12, dim |H| = 8.
+θ4 − 4x(4θ + 1)(4θ + 3)(10θ2 + 10θ + 3) + 144x2(4θ + 1)(4θ + 3)(4θ + 5)(4θ + 7)
+
+
+
+
+
+
+
+
+
+0
+0 0 0 0 64, 2616, 246848;
+1
+576 0 1 1 2 (12, 0, 3, −224λ) (576/3)
+1
+64 0 1 1 2 (36, −12, 9, −3 − 672λ) (64/3)
+∞ 1
+4
+3
+4
+5
+4
+7
+4 −
+
+
+
+
+
+
+
+
+
+2.12: D ∗ c = #64 χ = −364, c2H = 72, H3 = 6, dim |H| = 7.
+θ4 − 12x(6θ + 1)(6θ + 5)(10θ2 + 10θ + 3) + 1296x2(6θ + 1)(6θ + 5)(6θ + 7)(6θ + 11)
+
+
+
+
+
+
+
+
+
+0
+0 0 0 0 432, 130842, 78259376;
+1
+3888 0 1 1 2 (6, 0, 3, −364λ) (1944/5)
+1
+432 0 1 1 2 (18, −6, 9, −3 − 1092λ) (432/9)
+∞ 1
+4
+3
+4
+5
+4
+7
+4 −
+
+
+
+
+
+
+
+
+
+2.13: A ∗ d = #36 χ = −88, c2H = 80, H3 = 32, dim |H| = 12.
+θ4 − 16x(2θ + 1)2(3θ2 + 3θ + 1) + 512x2(2θ + 1)2(2θ + 3)2
+
+
+
+
+
+
+
+
+
+0
+0 0 0 0 16, 42, 1232
+1
+128 0 1 1 2 (32, 0, 10/3, −88λ) (64/4)
+1
+64 0 1 1 2 (64, −16, 20/3, −7/3 − 176λ) (32/2)
+∞ 1
+2
+1
+2
+3
+2
+3
+2 k
+
+
+
+
+
+
+
+
+
+2.14: B ∗ d = #48 χ = −162, c2H = 84, H3 = 24, dim |H| = 11.
+θ4 − 12x(3θ + 1)(3θ + 2)(3θ2 + 3θ + 1) + 288x2(3θ + 1)(3θ + 2)(3θ + 4)(3θ + 5)
+
+
+
+
+
+
+
+
+
+0
+0 0 0 0 4, 291/2, 5832
+1
+216 0 1 1 2 (24, 0, 7/2, −162λ) (9/1)
+1
+108 0 1 1 2 (48, −12, 7, −9/4 − 324λ) (108/4)
+∞ 1
+3
+2
+3
+4
+3
+5
+3 −
+
+
+
+
+
+
+
+
+
+2.15: C ∗ d = #38 χ = −268, c2H = 88, H3 = 16, dim |H| = 10.
+θ4 − 16x(4θ + 1)(4θ + 3)(3θ2 + 3θ + 1) + 512x2(4θ + 1)(4θ + 3)(4θ + 5)(4θ + 7)
+
+
+
+
+
+
+
+
+
+0
+0 0 0 0 48, 998, 73328
+1
+512 0 1 1 2 (16, 0, 11/3, −268λ) (256/1)
+1
+256 0 1 1 2 (32, −8, 22/3, −13/6 − 536λ) (128/4)
+∞ 1
+4
+3
+4
+5
+4
+7
+4 −
+
+
+
+
+
+
+
+
+
+2.16: D ∗ d = #65 χ = −470, c2H = 92, H3 = 8, dim |H| = 9.
+θ4 − 48x(6θ + 1)(6θ + 5)(3θ2 + 3θ + 1) + 4608x2(6θ + 1)(6θ + 5)(6θ + 7)(6θ + 11)
+37
+
+
+
+
+
+
+
+
+
+0
+0 0 0 0 240, 57102, 19105840;
+1
+3456 0 1 1 2 (8, 0, 23/6, −470λ) (576/8)
+1
+1728 0 1 1 2 (16, −4, 23/3, −25/12 − 940λ) (864/3)
+∞ 1
+6
+5
+6
+7
+6
+11
+6 −
+
+
+
+
+
+
+
+
+
+2.17: A ∗ e = #111
+θ4 − 16x(2θ + 1)2(8θ2 + 8θ + 3) + 212x2(2θ + 1)2(2θ + 3)2
+
+
+
+0
+0 0 0 0 32, −96, 1440
+1/256 0 1/2 1/2 1 m
+∞ 1/2 1/2 3/2 3/2 k
+
+
+
+2.18: B ∗ e = #110
+θ4 − 12x(3θ + 1)(3θ + 2)(8θ2 + 8θ + 3) + 2832x2(3θ + 1)(3θ + 2)(3θ + 4)(3θ + 5)
+
+
+
+0
+0 0 0 0 36, −144, 8076
+1/432 0 1/2 1/2 1 m
+∞ 1/3 2/3 4/3 5/3 −
+
+
+
+2.xx19: C ∗ e ∼ 1.3 = #3
+θ4 − 16x(4θ + 1)(4θ + 3)(8θ2 + 8θ + 3) + 212x2(4θ + 1)(4θ + 3)(4θ + 5)(4θ + 7)
+
+
+
+0
+0 0 0 0 32, 608, 26016
+1/1024 0 1/2 1/2 1 m
+∞ 1/4 3/4 5/4 7/4 −
+
+
+
+2.19: D ∗ e = #112
+θ4 − 48x(6θ + 1)(6θ + 5)(8θ2 + 8θ + 3) + 21232x2(6θ + 1)(6θ + 5)(6θ + 7)(6θ + 11)
+
+
+
+0
+0 0 0 0 −288, 162504,−96055968
+1/6912 0 1/2 1/2 1 m
+∞ 1/6 5/6 7/6 11/6 −
+
+
+
+2.20: A ∗ f = #133
+θ4 − 12x(2θ + 1)2(3θ2 + 3θ + 1) + 432x2(2θ + 1)2(2θ + 3)2
+
+
+
+
+
+
+
+
+
+0
+0 0 0 0 12, −42, −3284/3
+α 0 1 1 2 (36, −6, 4, −5/6 − 120λ) b
+β 0 1 1 2 (36, 6, 4, −5/6 − 120λ) b
+∞ 1
+2
+1
+2
+3
+2
+3
+2 k
+
+
+
+
+
+
+
+
+
+38
+2.21: B ∗ f = #134
+θ4 − 9x(3θ + 1)(3θ + 2)(3θ2 + 3θ + 1) + 243x2(3θ + 1)(3θ + 2)(3θ + 4)(3θ + 5)
+
+
+
+
+
+
+
+
+
+0
+0 0 0 0 18, −207/2, −52177
+α 0 1 1 2 (27, −9/2, 33/8, −13/16 − 198λ) b
+β 0 1 1 2 (27, 9/2, 33/8, −13/16 − 198λ) b
+∞ 1
+3
+2
+3
+4
+3
+5
+3 −
+
+
+
+
+
+
+
+
+
+2.22: C ∗ f = #135
+θ4 − 12x(4θ + 1)(4θ + 3)(3θ2 + 3θ + 1) + 432x2(4θ + 1)(4θ + 3)(4θ + 5)(4θ + 7)
+
+
+
+
+
+
+
+
+
+0
+0 0 0 0 36, −477, −206716/3
+α 0 1 1 2 (18, −3, 17/4, −19/24 − 312λ) b
+β 0 1 1 2 (18, 3, 17/4, 19/24 − 312λ) b
+∞ 1
+4
+3
+4
+5
+4
+7
+4 −
+
+
+
+
+
+
+
+
+
+2.23: D ∗ f = #136
+θ4 − 36x(6θ + 1)(6θ + 5)(3θ2 + 3θ + 1) + 3888x2(6θ + 1)(6θ + 5)(6θ + 7)(6θ + 11)
+
+
+
+
+
+
+
+
+
+0
+0 0 0 0 180, −15615, −21847076
+α 0 1 1 2 (9, −3/2, 35/8, −37/48 − 534λ) b
+β 0 1 1 2 (9, 3/2, 35/8, −37/48 − 534λ) b
+∞ 1
+6
+5
+6
+7
+6
+11
+6 −
+
+
+
+
+
+
+
+
+
+2.24: A ∗ g = #137 χ = −16, c2H = 96, H3 = 48, dim |H| = 16.
+θ4 − 4x(2θ + 1)2(17θ2 + 17θ + 6) + 1152x2(2θ + 1)2(2θ + 3)2
+
+
+
+
+
+
+
+
+
+0
+0 0 0 0 20, 2, 1684/3
+1
+144 0 1 1 2 (48, 0, 4, −16λ) (24/1)
+1
+128 0 1 1 2 (72, −12, 6, −2 − 24λ) (64/1)
+∞ 1
+2
+1
+2
+3
+2
+3
+2 k
+
+
+
+
+
+
+
+
+
+2.25: B ∗ g = #138 χ = −156, c2H = 108, H3 = 36, dim |H| = 15.
+θ4 − 3x(3θ + 1)(3θ + 2)(17θ2 + 17θ + 6) + 648x2(3θ + 1)(3θ + 2)(3θ + 4)(3θ + 5)
+
+
+
+
+
+
+
+
+
+0
+0 0 0 0 27, 189/4, 2618
+1
+243 0 1 1 2 (36, 0, 9/2, −156λ) (243/2)
+1
+216 0 1 1 2 (54, −9, 27/4, −15/8 − 234λ) (54/4)
+∞ 1
+3
+2
+3
+4
+3
+5
+3 −
+
+
+
+
+
+
+
+
+
+2.26: C ∗ g = #139 χ = −344, c2H = 120, H3 = 24, dim |H| = 14.
+θ4 − 4x(4θ + 1)(4θ + 3)(17θ2 + 17θ + 6) + 1152x2(4θ + 1)(4θ + 3)(4θ + 5)(4θ + 7)
+39
+
+
+
+
+
+
+
+
+
+0
+0 0 0 0 44, 607, 22500
+1
+576 0 1 1 2 (24, 0, 5, −344λ) (288/10)
+1
+512 0 1 1 2 (36, −6, 15/2, −7/2 − 516λ) (256/4)
+∞ 1
+4
+3
+4
+5
+4
+7
+4 −
+
+
+
+
+
+
+
+
+
+2.27: D ∗ g = #140 χ = −676, c2H = 132, H3 = 12, dim |H| = 13.
+θ4 − 12x(6θ + 1)(6θ + 5)(17θ2 + 17θ + 6) + 10368x2(6θ + 1)(6θ + 5)(6θ + 7)(6θ + 11)
+
+
+
+
+
+
+
+
+
+0
+0 0 0 0 108, 54135, −494556
+1
+3888 0 1 1 2 (12, 0, 11/2, −676λ) (1944/6)
+1
+3456 0 1 1 2 (18, −3, 33/4, −13/8 − 1014λ) (1728/15)
+∞ 1
+6
+5
+6
+7
+6
+11
+6 −
+
+
+
+
+
+
+
+
+
+2.28: A ∗ h = #141
+θ4 − 12x(2θ + 1)2(18θ2 + 18θ + 7) + 2436x2(2θ + 1)2(2θ + 3)2
+
+
+
+0
+0 0 0 0 48, −438, 2864
+1/432 0 1/3 2/3 1 −
+∞ 1/2 1/2 3/2 3/2 k
+
+
+
+2.29: B ∗ h = #142
+θ4 − 9x(3θ + 1)(3θ + 2)(18θ2 + 18θ + 7) + 38x2(3θ + 1)(3θ + 2)(3θ + 4)(3θ + 5)
+
+
+
+0
+0 0 0 0 45, −3465/4, 27735
+1/729 0 1/3 2/3 1 −
+∞ 1/3 2/3 4/3 5/3 −
+
+
+
+2.xx30: C ∗ h
+θ4 − 12x(4θ + 1)(4θ + 3)(18θ2 + 18θ + 7) + 2436x2(4θ + 1)(4θ + 3)(4θ + 5)(4θ + 7)
+
+
+
+0
+0 0 0 0 0, 0, 0
+1/1728 0 1/3 2/3 1 −
+∞ 1/4 3/4 5/4 7/4 −
+
+
+
+2.30: D ∗ h = #143
+θ4 − 36x(6θ + 1)(6θ + 5)(18θ2 + 18θ + 7) + 2438x2(6θ + 1)(6θ + 5)(6θ + 7)(6θ + 11)
+
+
+
+0
+0 0 0 0 −1008, 499086,−607849200
+1/11664 0 1/3 2/3 1 −
+∞ 1/6 5/6 7/6 11/6 −
+
+
+
+40
+2.31: A ∗ i
+θ4 − 16x(2θ + 1)2(32θ2 + 32θ + 13) + 216x2(2θ + 1)2(2θ + 3)2
+
+
+
+0
+0 0 0 0 96, −3560, −12064
+1/1024 0 1/4 3/4 1 −
+∞ 1/2 1/2 3/2 3/2 k
+
+
+
+2.32: B ∗ i
+θ4 − 12x(3θ + 1)(3θ + 2)(32θ2 + 32θ + 13) + 21232x2(3θ + 1)(3θ + 2)(3θ + 4)(3θ + 5)
+
+
+
+0
+0 0 0 0 60, −7635, 307860
+1/1728 0 1/4 3/4 1 −
+∞ 1/3 2/3 4/3 5/3 −
+
+
+
+2.33: C ∗ i
+θ4 − 16x(4θ + 1)(4θ + 3)(32θ2 + 32θ + 13) + 2436x2(4θ + 1)(4θ + 3)(4θ + 5)(4θ + 7)
+
+
+
+0
+0 0 0 0 −160, −6920, −539680
+1/4096 0 1/4 3/4 1 −
+∞ 1/4 3/4 5/4 7/4 −
+
+
+
+2.34: D ∗ i
+θ4 − 48x(6θ + 1)(6θ + 5)(32θ2 + 32θ + 13) + 21632x2(6θ + 1)(6θ + 5)(6θ + 7)(6θ + 11)
+
+
+
+0
+0 0 0 0 −3936, 3550992,−10892932064
+1/27648 0 1/4 3/4 1 −
+∞ 1/6 5/6 7/6 11/6 −
+
+
+
+2.35: A ∗ j
+θ4 − 48x(2θ + 1)2(72θ2 + 72θ + 31) + 21236x2(2θ + 1)2(2θ + 3)2
+
+
+
+0
+0 0 0 0 480, −226968, −16034720
+1/6912 0 1/6 5/6 1 −
+∞ 1/2 1/2 3/2 3/2 k
+
+
+
+2.36: B ∗ j
+θ4 − 36x(3θ + 1)(3θ + 2)(72θ2 + 72θ + 31) + 2838x2(3θ + 1)(3θ + 2)(3θ + 4)(3θ + 5)
+
+
+
+0
+0 0 0 0 −36, −486279, 128217204
+1/11664 0 1/6 5/6 1 −
+∞ 1/3 2/3 4/3 5/3 −
+
+
+
+41
+2.37: C ∗ j
+θ4 − 48x(4θ + 1)(4θ + 3)(72θ2 + 72θ + 31) + 21236x2(4θ + 1)(4θ + 3)(4θ + 5)(4θ + 7)
+
+
+
+0
+0 0 0 0 −2592, −307800, 81451104
+1/27648 0 1/6 5/6 1 −
+∞ 1/4 3/4 5/4 7/4 −
+
+
+
+2.38: D ∗ j
+θ4 − 144x(6θ + 1)(6θ + 5)(72θ2 + 72θ + 31) + 21238x2(6θ + 1)(6θ + 5)(6θ + 7)(6θ + 11)
+
+
+
+0
+0 0 0 0 −41184, 251271360,−5124430612320
+1/186624 0 1/6 5/6 1 −
+∞ 1/6 5/6 7/6 11/6 −
+
+
+
+2.52: I ∗ α = #16 χ = −128, c2H = 96, H3 = 48, dim |H| = 16.
+θ4 − 4x(2θ + 1)2(5θ2 + 5θ + 2) + 256x2(2θ)(θ + 1)2(2θ + 3)
+
+
+
+
+
+
+
+
+
+0
+0 0 0 0 4, 20, 644/3
+1
+64 0 1 1 2 (48, 0, 4, −128λ) (6/1)
+1
+16 0 1 1 2 (192, −48, 16, −4 − 512λ) (12/1)
+∞ 1
+2 1 1 3
+2 m
+
+
+
+
+
+
+
+
+
+2.53: I ∗ γ = #29 χ = −116, c2H = 72, H3 = 24, dim |H| = 10.
+θ4 − 2x(2θ + 1)2(17θ2 + 17θ + 5) + 4x2(2θ + 1)(θ + 1)2(2θ + 3)
+
+
+
+
+
+
+
+
+
+0
+0 0 0 0 14, 303/2, 10424/3
+0.00737 0 1 1 2 (24, 0, 3, −116λ) −
+8.49263 0 1 1 2 (600, −240, 75 −20 − 2900λ) −
+∞ 1
+2 1 1 3
+2 m
+
+
+
+
+
+
+
+
+
+2.54: I ∗ δ = #41 χ = −116, c2H = 72, H3 = 24, dim |H| = 10.
+θ4 − 2x(2θ + 1)2(7θ2 + 7θ + 3) + 324x2(2θ + 1)(θ + 1)2(2θ + 3)
+
+
+
+
+
+
+
+
+
+0
+0 0 0 0 14, 303/2, 10424/3
+∗ 0 1 1 2 (72, −12, 6, −1 − 180λ) b
+∗ 0 1 1 2 (72, 12, 6, 1 − 180λ) b
+∞ 1
+2 1 1 3
+2 m
+
+
+
+
+
+
+
+
+
+2.55: I ∗ ǫ = #42 χ = −116, c2H = 80, H3 = 32, dim |H| = 12.
+θ4 − 8x(2θ + 1)2(3θ2 + 3θ + 1) + 64x2(2θ + 1)(θ + 1)2(2θ + 3)
+42
+
+
+
+
+
+
+
+
+
+0
+0 0 0 0 8, 63, 1000
+α 0 1 1 2 (32, 0, 10/3, −116λ) −
+β 0 1 1 2 (288, −96, 30, −8 − 1044λ) −
+∞ 1
+2 1 1 3
+2
+
+
+
+
+
+
+
+
+
+2.56: I ∗ ζ = #185 χ = −120, c2H = 84, H3 = 36, dim |H| = 13.
+θ4 − 6x(2θ + 1)2(3θ2 + 3θ + 1) − 108x2(2θ + 1)(θ + 1)2(2θ + 3)
+
+
+
+
+
+
+
+
+
+0
+0 0 0 0 6, 93/2, 608
+α 0 1 1 2 (36, 0, 7/2, −120λ) h
+β 0 1 1 2 (144, −72, 26, −7 − 480λ) h
+∞ 1
+2 1 1 3
+2 m
+
+
+
+
+
+
+
+
+
+2.57: I ∗ η = #184
+θ4 − 2x(2θ + 1)2(11θ2 + 11θ + 5) + 500x2(2θ + 1)(θ + 1)2(2θ + 3)
+
+
+
+
+
+
+
+
+
+0
+0 0 0 0 2, 4, −8
+α 0 1 1 2 (100, −10, 20/3, −5/6 − 200λ) b
+β 0 1 1 2 (100, 10, 20/3, 5/6 − 200λ) b
+∞ 1
+2 1 1 3
+2 m
+
+
+
+
+
+
+
+
+
+2.58: I ∗ ι = 4∗
+θ4 − 6x(2θ + 1)2(9θ2 + 9θ + 5) + 2916x2(2θ + 1)(θ + 1)2(2θ + 3)
+
+
+
+0
+0 0 0 0 −6, −6, −104
+1/108 0 1/6 5/6 1 −
+∞ 1/2 1 1 3/2 m
+
+
+
+2.xx59: I ∗ θ ∼ 2.17.
+θ4 − 16 x (2 θ + 1)2 (
+8 θ2 + 8 θ + 5
+)
++ 16384 x2 (2 θ + 1) (θ + 1)2 (2 θ + 3)
+
+
+
+0
+0 0 0 0 −32, −88, −1440
+1/256 0 0 1 1 k
+∞ 1/2 1 1 3/2 m
+
+
+
+2.59: I ∗ κ
+θ4 − 48(2θ + 1)2(18θ2 + 18θ + 13) + 746496x2(2θ + 1)(θ + 1)2(2θ + 3)
+43
+
+
+
+0
+0 0 0 0 −384, −1356, −164736
+1/1728 −1/6 0 1 7/6 −
+∞ 1/2 1 1 3/2 m
+
+
+
+2.60: = I ∗ Sporadic 1 = #18 χ = −128, c2H = 88, H3 = 40, dim |H| = 14.
+θ4 − 4x(2θ + 1)2(3θ2 + 3θ + 1) − 16x2(2θ + 1)(4θ + 3)(4θ + 5)(2θ + 3)
+
+
+
+
+
+
+
+
+
+0
+0 0 0 0 4, 39, 364
+1
+64 0 1 1 2 (40, 0, 11/3, −128λ) (80/3)
+− 1
+16 0 1 1 2 (80, −40, 46/3, −13/3 − 256λ) (40/2)
+∞ 1
+2
+3
+4
+5
+4
+3
+2 −
+
+
+
+
+
+
+
+
+
+2.61: I ∗ Sporadic 2 = #26 χ = −116, c2H = 76, H3 = 28, dim |H| = 11
+θ4 − 2x(2θ + 1)2(13θ2 + 13θ + 4) − 12x2(2θ + 1)(3θ + 2)(3θ + 4)(2θ + 3)
+
+
+
+
+
+
+
+
+
+0
+0 0 0 0 10, 191/2, 1724
+1
+108 0 1 1 2 (28, 0, 19/6, −116λ) (252/3)
+− 1
+4 0 1 1 2 (112, −56, 62/3, −17/3 − 464λ) (28/1)
+∞ 1
+2
+2
+3
+4
+3
+3
+2 −
+
+
+
+
+
+
+
+
+
+2.62: = #28 χ = −96, c2H = 84, H3 = 42, dim |H| = 14.
+θ4 − x(65θ4 + 130θ3 + 105θ2 + 40θ + 6) + 4x2(4θ + 3)(θ + 1)2(4θ + 5)
+
+
+
+
+
+
+
+
+
+0
+0 0 0 0 5, 28, 312
+1
+64 0 1 1 2 (42, 0, 7/2, −96λ) (14/2)
+1 0 1 1 2 (756, −252, 63, −15 − 1728λ) (7/1)
+∞ 3
+4 1 1 5
+4 m
+
+
+
+
+
+
+
+
+
+an = ∑
+j,k
+( n
+k
+) 2( n
+j
+) 2( k + j
+n
+) 2
+The operator comes from the mirror symmetry of the intersect ion of six general hyper-
+planes of the Grassmanian G(3, 6), Plücker-embedded in P19, [10].
+2.63: #84
+θ4 − 4x(32θ4 + 64θ3 + 63θ2 + 31θ + 6) + 256x2(4θ + 3)(θ + 1)2(4θ + 5)
+
+
+
+0
+0 0 0 0 −4, −11, −44, . . .
+1/64 0 0 1 1 k
+∞ 3/4 1 1 5/4 m
+
+
+
+44
+An = ∑
+k
+( n
+k
+) 2( 2n
+2k
+) −1 (4k!)
+(2k!)k!2
+(4n − 4k)!
+(2n − 2k)!(n − k)!2
+2.64: #182 χ = −96, c2H = 132, H3 = 132, dim |H| =
+θ4 − x(43θ4 + 86θ3 + 77θ2 + 34θ + 6) + 12x2(6θ + 5)(θ + 1)2(6θ + 7)
+
+
+
+
+
+
+
+
+
+0
+0 0 0 0 1, 7/4, 7
+1
+16 0 1 1 2 (132, 0, 11/2, −96λ) (22/3)
+1
+27 0 1 1 2 (396, −66, 33/2, −13/4 − 288λ) (33/2)
+∞ 5
+6 1 1 7
+6 m
+
+
+
+
+
+
+
+
+
+This operator was found by a brute-force search. We do not kno w an explicit formula
+for the coefﬁcient An.
+2.65 =I ∗ Sporadic 3 = #183 χ = −128, c2H = 120, H3 = 72, dim |H| = 22.
+θ4 − 4x(2θ + 1)2(7θ2 + 7θ + 3) + 48x2(2θ + 1)(4θ + 3)(4θ + 5)(2θ + 3)
+
+
+
+
+
+
+
+
+
+0
+0 0 0 0 4, 7, 556/9
+1
+64 0 1 1 2 (72, 0, 5, −128λ) (16/1)
+1
+48 0 1 1 2 (144, −24, 10, −7/3 − 256λ) (72/1)
+∞ 1
+2
+3
+4
+5
+4
+3
+2 −
+
+
+
+
+
+
+
+
+
+2.66 Reducible operator (does not really count).
+θ4 − 12x(6θ + 1)(6θ + 5)(2θ2 + 2θ + 1), +144x2(6θ + 1)(6θ + 5)(6θ + 7)(6θ + 11)
+
+
+
+0
+0 0 0 0 −192, 4182, −229568
+1/432 0 0 1 1 k
+∞ 1/6 5/6 7/6 11/6 −
+
+
+
+This operator is the square of the second order hypergeometr ic operator D.
+2.67: ∼ #245 (Bogner 1)
+θ4 − 2x(108θ4 + 198θ3 + 183θ2 + 84θ + 15) + 36x2(3θ + 2)2(6θ + 7)2
+
+
+
+0
+0 0 0 0 −6, −33, −170
+1/108 0 1/6 1 7/6 −
+∞ 2/3 2/3 7/6 7/6 −
+
+
+
+We do not know a formula for An.
+45
+2.68: ∼ #406 (Bogner 2)
+θ4 − 4x(128θ4 + 224θ3 + 197θ2 + 85θ + 14) + 128x2(2θ + 1)(4θ + 5)(8θ + 5)(8θ + 9)
+
+
+
+0
+0 0 0 0 −12 , −186 , −1668,
+1/256 0 1/4 1 5/4 −
+∞ 1/2 5/8 9/8 5/4 −
+
+
+
+We do not know a formula for An.
+2.69: = #205 χ = −128, c2H = 160, H3 = 160, dim |H| = 40.
+θ4 − x(59θ + 118θ3 + 105θ2 + 46θ + 8) + 96x2(3θ + 2)(θ + 1)2(3θ + 4)
+
+
+
+
+
+
+
+
+
+0
+0 0 0 0 1, 7/4, 5
+1
+32 0 1 1 2 (160, 0, 20/3, −128λ) (5/1)
+1
+27 0 1 1 2 (320, −40, 40/3, −7/3 − 256λ) (15/2)
+∞ 2
+3 1 1 4
+3 m
+
+
+
+
+
+
+
+
+
+An = 4
+⌊n/4⌋
+∑
+k
+n − 2k
+3n − 4k
+( n
+k
+)( 2k
+k
+)( 2n − 2k
+n − k
+)( 3n − 4k
+2n
+)
+2.70: ∼ #255 (Bogner 3)
+θ4 − 4x(128θ4 + 160θ3 + 125θ2 + 45θ + 6) + 128x2(8θ + 7)(2θ + 1)(4θ + 3)(8θ + 3)
+
+
+
+0
+0 0 0 0 20, 290, 28820/3
+1/256 0 3/4 1 7/4 −
+∞ 3/8 1/2 3/4 7/8 −
+
+
+
+We do not know a formula for An.
+The 14 tilde operators There are 14 exponents (α1, α2, α3, α4) with
+α1 ≤ α2 ≤ α3 ≤ α4, α1 + α4 = α2 + α4 = 1,
+for which the hypergeometric operator, scaled by N,
+θ4 − Nx(θ + α1)(θ + α2)(θ + α3)(θ + α4)
+is a Calabi-Yau operator, [ 1]. Corresponding to these, there are also 14 hypergeometric
+ﬁfth order Calabi-Yau operator
+θ5 − 4Nx(θ + α1)(θ + α2)(θ + 1
+2 )(θ + α3)(θ + α4)
+with Riemann symbol 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 1/4 N ∞
+0 0 α1
+0 1 α2
+0 3/2 1/2
+0 2 α3
+0 3 α4
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+46
+These operators have a Yifan Yang pull-back to 14 special fourth order operators, called the
+tilde-operators ˜1, ˜2, . . . , ˜14. These operators replace the more complicated hat-operators
+ˆi, i = 1, 2, . . . , 14 that appeared in the list [ 7] into which they can be transformed.
+An explicit formula for the tilde-operators can be found in [ 3]:
+θ4 − 4Nx
+(
+2(θ + 1
+2 )4 + 1
+2 ( 7
+2 − µ2 − ν2)(θ + 1
+2 )2 + 1
+16 − 1
+4 (µ2 + 1
+4 )(ν2 + 1
+4 )
+)
++
++(4N)2x2(θ + 1 + µ + ν
+2 )(θ + 1 − µ + ν
+2 )(θ + 1 + µ − ν
+2 )(θ + 1 − µ − ν
+2 )
+where µ := α3 − 1
+2 = 1
+2 − α2, ν := α4 − 1
+2 = 1
+2 − α1. Its Riemann-symbol is of the form
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 1/4 N ∞
+0 −1/2 1 − (µ + ν)/2
+0 0 1 + (µ − ν)/2
+0 1 1 − (µ − ν)/2
+0 3/2 1 + (µ + ν)/2
+
+
+
+
+
+
+
+
+
+
+
+
+
+A general formula for the homolorphic solution is also given in [ 3]. The 2 × 2 Wron-
+skians for this operator, multiplied by a factor (1 − 4Nx)3/2, are solutions to the hyper-
+geometric ﬁfth order equation.
+The monodromy around the central point 1/4 N is of order two, and the matrix in the
+scaled Frobenius basis is of the form
+
+
+
+
+x 0 y 0
+z −x 0 y
+t 0 −x 0
+0 t −z x
+
+
+
+
+where x, y, t satisfy the relation x2 + yt = 1. The invariants x, y, z, t can be expressed in
+terms of the reﬂection vector (see section 4.3):
+(a, 0, c, d) = ( h3, 0, c2h/24, χλ), λ := ζ(3)
+(2πi)3
+of the corresponding hypergeometric operator by the formul as
+x =
+√a
+24 + c√a , y = √
+a z = 2d − 4aλ√a , t = ( 1 − x2)/y.
+47
+The fourteen hypergeometric and the corresponding tilde op erators
+Case Exponents N Monodromy data Number
+1 1/5 2/5 3/4 4/5 55 5, 0, 25/12, −200λ 1.1
+˜1 4/5 9/10 11/10 6/5 11
+√
+5/24,
+√
+5, −84
+√
+5λ − 29
+√
+5/2880 2.39
+2 1/10 3/10 7/10 9/10 2855 1, 0, 17/12, −288λ 1.2
+˜2 7/10 9/10 11/10 13/10 35/24, 1, −580λ, −649/576 2.40
+3 1/2 1/2 1/2 1/2 28 16, 0, 8/3, −128λ 1.3
+˜3 1 1 1 1 5/6, 4, −80λ, ˜2.33
+4 1/3 1/3 2/3 2/3 36 9, 0, 9/4, −144λ 1.4
+˜4 5/6 1 1 7/6 7/8, 3, −108λ, 5/64 2.41
+5 1/3 1/2 1/2 2/3 2433 12, 0, 5/2, −144λ 1.5
+˜5 11/12 11/12 13/12 13/12
+√
+3/2, 2
+√
+3, −56
+√
+3λ,
+√
+3/24 2.42
+6 1/4 1/2 1/2 3/4 210 8, 0, 7/3, −296λ 1.6
+˜6 7/8 7/8 9/8 9/8 2
+√
+2/3, 2
+√
+2, −96
+√
+2λ,
+√
+2/36 2.43
+7 1/8 3/8 5/8 7/8 216 2, 0, 11/6, −296λ 1.7
+˜7 3/4 7/8 9/8 5/4 23
+√
+2/24,
+√
+2, −300
+√
+2λ, −241
+√
+2/576 2.44
+8 1/6 1/3 2/3 5/6 2436 3, 0, 7/4, −204λ 2.45
+˜8 3/4 11/12 13/12 5/4 5
+√
+3/8,
+√
+3, −140
+√
+3λ, −11
+√
+3/192 2.45
+9 1/12 5/12 7/12 11/12 21236 1, 0, 23/12, −484λ 1.9
+˜9 3/4 5/6 7/6 5/4 47/24, 1, −972λ, −1633/576 2.46
+10 1/4 1/4 3/4 3/4 212 4, 0, 5/3, −144λ 1.10
+˜10 3/4 1 1 5/4 11/12, 2, −152λ, 23/288 2.47
+11 1/4 1/3 2/3 3/4 2633 6, 0, 2,−156λ 1.11
+˜11 19/24 23/24 25/24 29/24 3
+√
+6/8,
+√
+6, −56
+√
+6λ, 5
+√
+6/192 2.48
+12 1/5 1/4 3/4 5/6 21033 2, 0, 4/3, −156λ 1.12
+˜12 17/24 23/24 25/24 31/24 17
+√
+2/24,
+√
+2, −160
+√
+2λ, −
+√
+2/576 2.49
+13 1/6 1/6 5/6 5/6 2836 1, 0, 11/12, −120λ 1.13
+˜13 2/3 1 1 4/3 23/24, 1, −244λ, 47/576 2.50
+14 1/6 1/2 1/2 5/6 2833 4, 0, 13/6, −256λ 1.14
+˜14 5/6 5/6 7/6 7/6 7/6, 2, −264λ, −13/72 2.51
+48
+List of Calabi-Y au operators of degree 2
+We give the parameters a, b, c, d, e, f , α, β, γ, δ for the Calabi-Yau operators written in the
+form (note the sign-change)
+θ4 − x(aθ4 + bθ3 + cθ2 + dθ + e) + f x2(θ + α)(θ + β)(θ + γ)(θ + δ).
+Number a b c d e f α β γ δ
+2.1 112 224 172 60 8 −(2)11 1/2 1/2 3/2 3/2
+2.2 189 378 285 96 12 −(2)3(3)6 1/3 2/3 4/3 5/3
+2.3 448 896 660 212 24 −(2)15 1/4 3/4 5/4 7/4
+2.4 3024 6048 4308 1284 120 −(2)11(3)6 1/6 5/6 7/6 11/6
+2.5 176 352 268 92 12 −(2)8 1/2 1/2 3/2 3/2
+2.6 4752 9504 6708 1956 180 −(3)6 1/3 2/3 4/3 5/3
+2.7 704 1408 1028 324 36 −(2)12 1/4 3/4 5/4 7/4
+2.8 4752 9504 6708 1956 180 −(2)8(3)6 1/6 5/6 7/6 11/6
+2.9 160 320 248 88 12 (2)8(3)2 1/2 1/2 3/2 3/2
+2.10 270 540 411 141 18 (3)8 1/3 2/3 4/3 5/3
+2.11 640 1280 952 312 36 (2)12(3)2 1/4 3/4 5/4 7/4
+2.12 4320 8640 6216 1896 180 (2)8(3)8 1/6 5/6 7/6 11/6
+2.13 192 384 304 112 16 (2)13 1/2 1/2 3/2 3/2
+2.14 324 648 504 180 24 (2)5(3)6 1/3 2/3 4/3 5/3
+2.15 768 1536 1168 400 48 (2)17 1/4 3/4 5/4 7/4
+2.16 5184 10368 7632 2448 240 (2)13(3)6 1/6 5/6 7/6 11/6
+2.17 512 1024 832 320 48 (2)16 1/2 1/2 3/2 3/2
+2.18 864 1728 1380 516 72 (2)8(3)6 1/3 2/3 4/3 5/3
+2.xx19 −144 −1152 −3200 −4096 −2048 (2)20 1/4 3/4 5/4 7/4
+2.19 13824 27648 20928 7104 720 (2)16(3)3 1/6 5/6 7/6 11/6
+2.20 144 288 228 84 12 (2)8(3)3 1/2 1/2 3/2 3/2
+2.21 243 486 378 135 18 (3)9 1/3 2/3 4/3 5/3
+2.22 576 1152 876 300 36 (2)12(3)3 1/4 3/4 5/4 7/4
+2.23 3888 7776 5724 1836 180 (2)8(3)9 1/6 5/6 7/6 11/6
+2.24 272 544 436 164 24 (2)11(3)2 1/2 1/2 3/2 3/2
+2.25 459 918 723 264 36 (2)3(3)8 1/3 2/3 4/3 5/3
+2.26 1088 2176 1676 588 72 (2)15(3)2 1/4 3/4 5/4 7/4
+2.27 7344 14688 10956 3612 360 (2)11(3)8 1/6 5/6 7/6 11/6
+2.28 864 1728 1416 552 84 (2)8(3)6 1/2 1/2 3/2 3/2
+2.29 1458 2916 2349 891 126 (3)12 1/3 2/3 4/3 5/3
+2.30 23328 46656 35640 12312 1260 (2)8(3)12 1/6 5/6 7/6 11/6
+49
+Number a b c d e f α β γ δ
+2.31 2048 4096 3392 1344 208 (2)20 1/2 1/2 3/2 3/2
+2.32 3456 6912 5628 2172 312 (2)12(3)6 1/3 2/3 4/3 5/3
+2.33 8192 16384 13056 4864 624 (2)24 1/4 3/4 5/4 7/4
+2.34 55296 110592 85440 30144 3120 (2)20(3)6 1/6 5/6 7/6 11/6
+2.35 13824 27648 23232 9408 1488 (2)16(3)6 1/2 1/2 3/2 3/2
+2.36 23328 46656 38556 15228 2232 (2)8(3)12 1/3 2/3 4/3 5/3
+2.37 55296 110592 89472 34176 4464 (2)20(3)6 1/4 3/4 5/4 7/4
+2.38 373248 746496 585792 212544 22320 (2)16(3)12 1/6 5/6 7/6 11/6
+2.39 25000 50000 58750 33750 7380 (2)4(5)10 4/5 6/5 9/10 11/10
+2.40 6400000 12800000 14880000 8480000 1824880 (2)20(5)10 7/10 9/10 11/10 13/10
+2.41 5832 11664 13770 7938 1746 (2)4(3)12 1 1 5/6 7/6
+2.42 3456 6912 8184 4728 1044 (2)12(3)6 11/12 11/12 13/12 13/12
+2.43 8192 16384 19328 11136 2448 (2)24 7/8 7/8 9/8 9/8
+2.44 524288 1048576 1224704 700416 151920 (2)36 3/4 5/4 7/8 9/8
+2.45 93312 186624 218376 125064 27180 (2)12(3)12 3/4 5/4 11/12 13/12
+2.46 23887872 47775744 55655424 31767552 6870384 (2)28(3)12 3/4 5/4 5/6 7/6
+2.47 32768 65536 76800 44032 9584 (2)28 3/4 1 1 5/4
+2.48 13824 27648 32520 18696 4092 (2)16(3)6 19/24 23/14 25/24 29/24
+2.49 221184 442368 515712 294528 63600 (2)24(3)6 17/24 23/24 25/24 31/24
+2.50 1492992 2985984 3462912 1969920 421488 (2)20(3)12 1 1 2/3 4/3
+2.51 55296 110592 129792 74496 16272 (2)20(3)6 5/6 5/6 7/6 7/6
+2.52 80 160 132 52 8 (2)10 1/2 1 1 3/2
+2.53 136 272 210 74 10 (2)4 1/2 1 1 3/2
+2.54 56 112 94 38 6 (2)4(3)4 1/2 1 1 3/2
+2.55 96 192 152 56 8 (2)8 1/2 1 1 3/2
+2.56 72 144 114 42 6 −(2)4(3)3 1/2 1 1 3/2
+2.57 88 176 150 62 10 (2)4(5)3 1/2 1 1 3/2
+2.xx58 128 256 224 96 16 (2)12 1/2 1 1 3/2
+2.yy58 2048 4096 3200 1152 144 (2)20 1/4 3/4 5/4 7/4
+2.58 216 432 390 174 30 (2)4(3)6 1/2 1 1 3/2
+2.59 3456 6912 6816 3360 624 (2)12(3)6 1/2 1 1 3/2
+2.60 48 96 76 28 4 −(2)10 1/2 3/4 5/4 3/2
+2.61 104 208 162 58 8 −(2)4(3)3 1/2 2/3 4/3 3/2
+2.62 65 130 105 40 6 (2)6 3/4 1 1 5/4
+2.63 128 256 252 124 24 (2)12 3/4 1 1 5/4
+2.64 43 86 77 34 6 (2)4(3) 1 1 5/6 7/6
+2.65 112 224 188 76 12 (2)10(3)6 1/2 3/4 5/4 3/2
+2.66 864 1728 1416 552 60 (2)4(3)4 1/6 5/6 7/6 11/6
+2.67 216 396 366 168 30 (2)4(36) 2/3 2/3 7/6 7/6
+2.68 512 896 788 340 56 (2)16 1/2 5/4 5/8 9/8
+2.69 59 118 105 46 8 (2)5(3)3 1 1 2/3 4/3
+2.70 512 1408 1652 948 216 (2)16 5/4 3/2 9/8 13/8
+50
+References
+[1] G. Almkvist, Strängar i månsken I , Normat 51, no. 2, 63 - 79, (2003).
+[2] G. Almkvist, The art of ﬁnding Calabi–Yau differential equations , Dedicated to the 90-
+th birthday of Lars Gårding. Gems in Experimental Mathematic s, Contemp. Math.
+517, Amer. Math. Soc., Providence, RI, ( 2010).
+[3] G. Almkvist, Calabi-Yau differential equations of degree 2 and 3 and Yifan Yang’s pullback.,
+arXiv:math.AG/0612215.
+[4] G. Almkvist, Fifth Order Differential Equations related to Calabi-Yau D ifferential Equa-
+tions, arXiv:math.AG/0703261v1.
+[5] G. Almkvist, W. Zudilin, Differential equations, mirror maps and zeta values , in: Mirror
+symmetry . V ,481515, AMS/IP Stud. Adv . Math., 38, Amer. Math. Soc., Providence,
+RI, (2006).
+[6] G. Almkvist, M. Bogner, J. Guillera, About a class of Calabi-Yau Differential Equations
+ArXive: math.NT:1310.6658 .
+[7] G. Almkvist, C. van Enckevort, D. van Straten, W. Zudilin, T ables of Calabi–Yau
+operators, arXive:math/0507430(2010).
+[8] G. Almkvist, S.Cynk, D. van Straten, Update on Calabi-Yau operators , in preparation.
+[9] V . Batyrev , D. van Straten, Generalized Hypergeometric Functions and rational Curves
+on Calabi–Yau Complete Intersections in T oric Varieties , Comm. Math. Phys. V olume
+168, Number 3, 493 - 533, (1995).
+[10] V . Batrev , I. Ciocan-Fontanine, B. Kim, D. van Straten, Conifold transitions and mirror
+symmetry for Calabi–Yau complete intersections in Grassmann ians, Nuclear Phys. B 514,
+no. 3, 640 - 666, ( 1998).
+[11] A. Beauville, Les familles stables de courbes elliptiques sur P1 admettant quarte ﬁbres
+singulières, C. R. Acad. Sc. Paris, 294, 657 - 660, ( 1982).
+[12] F. Beukers, Irrationality proofs using modular forms , Journées Arithmétique de Be-
+san con, Besan on (Besan on, 1985). Astérisque No. 147 - 148, 271 - 283, ( 1997).
+[13] F. Beukers, On Dwork’s accessory parameter problem , Math. Z. 241, no. 2, 425 - 444,
+(2002).
+[14] F. Beukers, C. Peters, A family of K 3 surfaces and ζ(3). J. Reine Angew. Math. 351, 42
+- 54, (1984).
+[15] M. Bogner, On differential operators of Calabi–Yau type , Thesis, Mainz ( 2012).
+[16] M. Bogner, Algebraic characterization of Differential Operators of Cal abi-Yau type ,
+ArXive:math.AG 1304.5434 .
+[17] M. Bogner, S. Reiter, On symplectically rigid local systems and Calabi–Yau operator s, J.
+Symb. Comp. 48, 64 - 100, (2013).
+[18] C. Brav , H. Thomas, Thin Monodromy in Sp(4), Comp. Math. 150 (3), 333 - 343, (2014).
+51
+[19] P . Candelas, X. de la Ossa, P . Green, L. Parkes, An exactly soluble superconformal
+theory from a mirror pair of Calabi–Yau manifolds , Phys. Lett. B 258, no. 1-2, 118 - 126,
+(1991).
+[20] S. Cooper, Sporadic sequences, modular forms and new series for 1/π, The Ramanujan
+Journal 29, p. 163 - 183 (2012).
+[21] S. Cooper, Ramanujan’s theta functions , Springer, Cham, 2017.
+[22] S. Cynk, D. van Straten, Picard-Fuchs operators for octic arrangements (The case of Or-
+phans), ArXive:1709.09752v1[math.AG].
+[23] M. Dettweiler, S. Reiter, Middle convolution of Fuchsian systems and the construction of
+rigid differential systems , J. Algebra 318, no. 1, 1 - 24, (2007).
+[24] M. Dettweiler, C. Sabbah, Hodge theory of the middle convolution , Publ. Res. Inst. Math.
+Sci. 49, no. 4, 761 - 800, (2013).
+[25] C. Doran, J. Morgan, Mirror Symmetry and Integral Variations of Hodge Structure U n-
+derlying One Parameter Families of Calabi–Yau Threefolds , in: Mirror Symmetry V , 517
+- 537, AMS/IP Stud. Adv . Math., 38, Amer. Math. Soc., Providence, RI ( 2006).
+[26] V . Golyshev , Modularity of the D 3 equations and the Iskovskikh classiﬁcation , (Russian)
+Dokl. Akad. Nauk 396, no. 6, 733 - 739, ( 2004).
+[27] V . Golyshev , Classiﬁcation problems and mirror duality . In: Surveys in geometry and
+number theory: reports on contemporary Russian mathematic s, 88 - 121, London
+Math. Soc. Lecture Note Ser. 338, Cambridge Univ . Press, Cambridge, ( 2007).
+[28] O. Gorodetsky , New representations for all sporadic Apéry-like sequences, with applica-
+tions to congruences , arXiv:2102.11839v1.
+[29] J. Hofmann, Monodromy calculations for some Differential Equations , Thesis, Mainz
+(2013).
+[30] Eskin, A., Kontsevich, M., Möller,M., Zorich, A. Lower bounds for Lyapunov exponents
+of ﬂat bundles on curves. Geom. Topol. 22, no. 4, 2299 - 2338, ( 2018).
+[31] C. Meyer, Modular Calabi–Yau threefolds . Fields Institute Monographs 22, American
+Mathematical Society , Providence, RI, (2005).
+[32] R. Miranda, U. Persson, On extremal Rational Elliptic Surfaces , Mathematische
+Zeitschrift 193, 537 - 558, ( 1986).
+[33] K. Samol, Frobenius Polynomial for Calabi–Yau Equations , Thesis, Mainz ( 2010).
+[34] K. Samol and D. van Straten, Frobenius polynomials for Calabi–Yau equations , Com-
+mun. Number Theory Phys. 2, no. 3, 537 - 561, ( 2008).
+[35] U. Schmickler-Hirzebruch, Elliptische Flächen über P 1 mit drei Ausnahmefasern und die
+hypergeometrische Differentialgleichung, Schriftenreihe des Mathematischen Instituts
+der Universität Münster ( 1985).
+[36] S. Singh, T. N. V enkataramana, Arithmeticity of Certain Symplectic Hypergeometric
+Groups, Duke Math. J. 163, No. 3, 591 - 617, ( 2014).
+52
+[37] S. Singh, Arithmeticity of the 4 Monodromy Groups associated to the Calabi–Yau threefolds ,
+Int. Math. Res. Not. 2015, No. 18, 8874 - 8889, ( 2015).
+[38] J. Stienstra, F. Beukers, On the Picard-Fuchs equation and the formal Brauer group of
+certain elliptic K 3-surfaces, Math. Ann. 271, no. 2, 269 - 304, ( 1985).
+[39] D. van Straten, Calabi-Yau operators , in: Uniformization, Riemann-Hilbert Corre-
+spondence, Calabi-Yau Manifolds and Picard-Fuchs Equation s (ed. Lizhen Ji, Shing-
+Tung Yau), Advanced Lectures in Mathematics, V ol. 42, International Press Boston
+(2018).
+[40] F. Rodriques-Villegas, Hypergeometric families of Calabi-Yau manifolds , in: Calabi-Yau
+Varieties and Mirror Symmetry , Fields Institute Communicat ions, 38 (eds. N. Yui
+and J. D. Lewis) (American Mathematical Society , Providence , RI), 223 - 231, (2003).
+[41] V . V ologodsky , On the N-Integrality of instanton numbers , arXive:0707.4617
+[math.AG] (2008).
+[42] D. Zagier, Integral solutions of Apéry-like recurrence equations , In: Groups and
+symmetries, 349 - 366, CRM Proc. Lecture Notes, 47, Amer. Math. Soc., Providence,
+RI, (2009).
+53

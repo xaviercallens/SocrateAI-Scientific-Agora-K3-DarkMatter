@@ -4,7 +4,7 @@
 
 ---
 
-## 🟢 E-007 + E-008 RESOLVED (2026-07-26) — C1/C2 retracted; Route γ succeeded; 🔴 E-009 opened
+## 🟢 E-007, E-008, E-009 ALL RESOLVED (2026-07-26) — C1/C2 retracted; Route γ succeeded; **the K3 exists**
 
 **L₂ is a *twisted* Picard–Fuchs operator, not a PF operator. K3 geometry cannot be
 extracted from it as-is.** Independently established two ways:
@@ -61,7 +61,17 @@ the group is likely **Γ₀(7)+**; and L₃'s order 3 suggests **T=3, ρ=19**.
 → **Lead 1 corroborated [B]:** implied signature (genus 0; 2,2,3; 1 cusp; area 2/3)
 matches **Γ₀(7)+** exactly. All certificates still emit ρ/T as `null` by design.
 
-→ `ESCALATIONS.md` E-007, E-008 (resolved), **E-009 (open)** · `briefs/STREAM2_ACTION_PLAN_2026_07_26.md`
+**🟢 E-009 RESOLVED — the K3 EXISTS.** Phase 1 provenance gate fetched Almkvist–van Straten
+(arXiv:2103.08651, hash-pinned). Its "three sporadic third order operators" are *ours*, stated
+verbatim: *"also found by S. Cooper … called s10, s7 and s18"*. Explicit K3 constructions:
+**s7** → intersection of six hyperplane sections of the Grassmannian **G(2,6)** (Plücker);
+**s10** → intersection of four hyperplane sections of type (1,1) in **P³×P³**.
+Their *printed* Riemann symbols and operator coefficients match our independent computations
+**exactly** — external validation of the whole Stream 2 computation chain.
+**🎁 s18 recovered** (corrupt since 2026-07-20). **Residual:** A–vS state no Picard number, so
+ρ=19/T=3 is now **[B] awaiting citation** (Stienstra–Beukers 1985), not conditional on existence.
+
+→ `ESCALATIONS.md` E-007, E-008, E-009 (all resolved) · `briefs/STREAM2_ACTION_PLAN_2026_07_26.md`
 
 ---
 
@@ -149,9 +159,9 @@ coupling is claimed (that remains Tier C).
 | **C3b Partner Extraction** | ✅ RESOLVED | 2026-07-24 | — |
 | **All-n L₃=Sym²(L₂) (CAS)** | ✅ PROVEN | 2026-07-24 | — |
 | **Exact singular loci (s7, s10)** | ✅ CONFIRMED | 2026-07-25 (F6), re-verified 2026-07-26 | — |
-| **C1 Kodaira types (s7, s10)** | 🔴 BLOCKED (E-009) | — | Route γ cleared the ½; but a Kodaira reading may be category-mismatched (order-2 elliptic points) |
+| **C1 Kodaira types (s7, s10)** | 🟡 UNBLOCKED | — | K3 exists (E-009); classify fibres from the A–vS explicit models, not from L₂/L₃ exponents |
 | **C2 Lattice ρ, τ (s7, s10)** | 🔴 UNSUPPORTED | — | Blocked on C1 v3 |
-| **Provenance gate (literature)** | 🟡 NOT STARTED | — | Fetch 4 PDFs, hash-pin, write honest checker |
+| **Provenance gate (literature)** | 🟢 SUBSTANTIALLY DONE | 2026-07-26 | A–vS + Gorodetsky pinned & cross-validated; 2 sources outstanding |
 | **Physics interpretation** | ⛔ BLOCKED | — | Gauge groups need fibre types |
 
 **Deliverable (Stream 2):** C1 v3 / C2 v3 certificates with fibre types derived from an

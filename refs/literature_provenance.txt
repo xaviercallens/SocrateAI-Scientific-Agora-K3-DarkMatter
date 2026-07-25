@@ -1,0 +1,24 @@
+# Literature provenance register — Stream 2
+# Created 2026-07-26 (Phase 1 provenance gate, T0 decision D3 discipline).
+# Each entry: SHA256, filename, bibliographic identity (verified from the PDF's own
+# front matter, not from memory), and source URL. Files live in docs/literature/.
+
+sha256  549c176daa7eb5605b09a6894a8e5a9cbe94c015ef6e7dcb87650ceef4e7cfec
+file    almkvist_van_straten_2103.08651.pdf
+cite    Almkvist & van Straten, 'Calabi-Yau operators of degree two', arXiv:2103.08651v1 [math.AG], 15 Mar 2021, 53 pp.
+url     https://arxiv.org/pdf/2103.08651
+fetched 2026-07-26
+bytes   331136
+
+sha256  520da4b0171128d22971d7398f79a1aa6cd760c2412b34a78ba5120adc371ee1
+file    gorodetsky_2102.11839.pdf
+cite    Gorodetsky, 'New representations for all sporadic Apery-like sequences, with applications to congruences', arXiv:2102.11839v2 [math.NT], 5 Jan 2025, 20 pp.
+url     https://arxiv.org/pdf/2102.11839
+fetched 2026-07-26
+bytes   314883
+
+# NOT YET FETCHED (still required to close Phase 1 fully):
+#   Cooper 2012, Ramanujan J. 29, 163-183 (paywalled; s7/s10/s18 naming)
+#   O'Brien 2016 MSc thesis, Massey Univ. (Thm 6.1, c_7 = A279619)
+#   Chan-Cooper-Sica 2010 (Conj 5.4)
+#   Stienstra-Beukers 1985, Math. Ann. 271, 269-304 (K3 Picard rank — would settle E-009 Lead 2 fully)

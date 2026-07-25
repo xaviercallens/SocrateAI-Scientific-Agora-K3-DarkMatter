@@ -51,15 +51,31 @@ Artifacts: `ESCALATIONS.md` E-007 · `data/certificates/C1_KODAIRA_CONSISTENCY.j
 - [x] Phase 0 reconciliation + root cause (E-007 closed)
 - [x] Hard-disable `exponents_to_kodaira_type()`; mark `compute_C1_monodromy.py` RETRACTED
 
-### Phase 1: Provenance gate (1–2 h)
-- [ ] `mkdir docs/literature/`; create `refs/literature_provenance.txt`
-- [ ] **O'Brien (2016) MSc thesis, Massey Univ.** — Thm 6.1, the c₇/A279619 recurrence *(new, from E-007)*
-- [ ] **Chan, Cooper & Sica (2010)** "Congruences satisfied by Apéry-like numbers" — Conj 5.4 *(new)*
-- [ ] Fetch Gorodetsky (arXiv:2102.11839) — *also unblocks the corrupt s18 recurrence*
-- [ ] Fetch Almkvist–van Straten (arXiv:2103.08651); Zagier 2009; Cooper 2012 (Ramanujan J. 29)
-- [ ] SHA256 + pin hashes; cross-check (a,b,c,d) vs PDFs and OEIS
-- [ ] Write `checkers/check_provenance_hygiene.py` — scope honestly in the docstring
-      (hashes + document identity + Cooper parameter sets; **not** 15 sequences, no OEIS lookup)
+### Phase 1: Provenance gate — ✅ SUBSTANTIALLY DONE (2026-07-26); 2 sources outstanding
+- [x] `docs/literature/` + `refs/literature_provenance.txt` created
+- [x] Fetched + hash-pinned **Almkvist–van Straten arXiv:2103.08651** and
+      **Gorodetsky arXiv:2102.11839**; identity verified from front matter
+- [x] `checkers/check_literature_provenance.py` (honest scope in docstring) — **PASS**
+- [x] **Cross-validation:** A–vS's printed operator coefficients match the repo's exactly;
+      their printed Riemann symbols match our independently computed schemes exactly
+- [ ] Still unfetched: Cooper 2012 (Ramanujan J. 29, paywalled); O'Brien 2016 MSc thesis;
+      Chan–Cooper–Sica 2010; **Stienstra–Beukers 1985 Math. Ann. 271** ← would close the ρ/T step
+
+### 🟢 E-009 RESOLVED (2026-07-26) — the K3 EXISTS
+A–vS §"three sporadic third order operators" *is* our s7/s10/s18, and gives explicit constructions:
+- **s7** = their Sporadic 2 → K3 = **intersection of six hyperplane sections of the Grassmannian G(2,6)** (Plücker)
+- **s10** = their Sporadic 1 → K3 = **intersection of four hyperplane sections of type (1,1) in P³×P³**
+
+The category worry is answered: there IS a K3. Order-2 elliptic points (E-008) are features
+of the modular parametrization, not evidence against it — both coexist, as in classical Apéry.
+**Residual:** A–vS state no Picard number, so ρ=19/T=3 now rests on the standard
+order-3-sub-VHS ↔ transcendental-lattice identification — **[B] awaiting citation**, no longer
+conditional on an unproven existence claim. `Stienstra–Beukers 1985` would close it.
+
+### 🎁 s18 UNBLOCKED (corrupt since 2026-07-20)
+A–vS Sporadic 3 gives `Q₃=192z²−28z+1, Q₂=576z²−42z, Q₁=564z²−26z, Q₀=180z²−6z`;
+regenerates 1, 6, 54, 564, 6390, 76356, 948276 exactly.
+- [ ] Fold the recovered s18 operator into `refs/recurrences_v1.json` (currently BLOCKED there)
 
 ### Phase 2: ⚠️ REVISED TWICE — Routes α and β both REFUTED (E-008)
 > Neither Deep Think's Route A (use L₃) nor any gauge transform works. Both tested and closed.

@@ -1,0 +1,1521 @@
+arXiv:2102.11839v2  [math.NT]  5 Jan 2025
+New representations for all sporadic Ap´ ery-like sequences, with
+applications to congruences
+Oﬁr Gorodetsky
+Abstract
+We ﬁnd new representations, in terms of constant terms of pow ers of Laurent polynomials, for all the
+15 sporadic Ap´ ery-like sequences discovered by Zagier, Al mkvist-Zudilin and Cooper.
+The new representations lead to binomial expressions for th e sequences, which, as opposed to previous
+expressions, do not involve powers of 3 or 8. We use these to es tablish the supercongruence Bnpk ≡
+Bnpk− 1 mod p2k for all primes p ≥ 3 and integers n, k≥ 1, where Bn is a sequence discovered by Zagier,
+known as Sequence B.
+Additionally, for 14 of the 15 sequences, the Newton polytop es of the Laurent polynomials contain the
+origin as their only interior integral point. This property allows us to prove that these sequences satisfy
+a strong form of the Lucas congruences, extending work of Mal ik and Straub. Moreover, we obtain lower
+bounds on the p-adic valuation of these sequences via recent work of Delayg ue.
+1 Introduction
+Roger Ap´ ery’s ingenious proof of the irrationality of ζ(3) =∑
+n≥1 1/n3 and ζ(2) =∑
+n≥1 1/n2 [1, 2] utilized
+two particular sequences:
+an =
+n∑
+k=0
+(n
+k
+)2(n + k
+k
+)2
+, b n =
+n∑
+k=0
+(n
+k
+)2(n + k
+k
+)
+(1.1)
+for n ≥ 0. These sequences are referred to as Ap´ ery sequences or Ap´ery numbers. Ap´ ery constructed explicit
+rational approximations to ζ(3) and ζ(2), with denominators being small multiples of an and bn, respectively.
+These rational approximations turn out to converge quickly enoug h (in a particular sense) to ζ(3) and ζ(2)
+as n → ∞ in order to conclude that ζ(3), ζ(2) /∈ Q.
+Originally, Ap´ ery deﬁnedan and bn through 3-term recurrences with given initial values:
+(n + 1)3an+1 − (2n + 1)(17n2 + 17n + 5)an + n3an−1 = 0, (a0 = 1, a 1 = 5)
+(n + 1)2bn+1 − (11n2 + 11n + 3)bn − n2bn−1 = 0, (b0 = 1, b 1 = 3)
+(1.2)
+and showed that an and bn can be expressed as the binomial sums in (1.1). The recurrences fo r an and bn
+can be restated in terms of diﬀerential equations for the g.f.s (gen erating functions)
+Fa(z) =
+∑
+n≥0
+anzn and Fb(z) =
+∑
+n≥0
+bnzn,
+namely, setting θ := z d
+dz , Fa is a solution to the third-order equation
+(θ3 − z(2θ + 1)(17θ2 + 17θ + 5) + z2(θ + 1)3)y = 0, (1.3)
+while Fb solves the second-order equation
+(θ2 − z(11θ2 + 11θ + 3) − z2(θ + 1)2)y = 0. (1.4)
+Beukers [9, 10] showed that Fa, Fb enjoy modular parametrization. Namely, there is a modular function
+t1(z) ( z in the upper-half plane) with respect to the modular subgroup Γ 1(6) such that Fa ◦ t1 is a modular
+1
+form of weight 2 with respect to Γ 1(6). Similarly, there is a modular function t2(z) with respect to Γ 1(5)
+such that Fb ◦ t2 is a modular form of weight 1 with respect to Γ 1(5).
+This is not a coincidence, and in fact related to the shape of the spec iﬁc diﬀerential equations. Equation
+(1.4) is a Picard-Fuchs equation, while (1.3) is a symmetric square of a Picard-Fuchs equation. We shall
+not discuss this geometric aspect here, and instead refer the rea der to the papers [ ?, 45, 55] and to Zagier’s
+survey [58].
+1.1 Sporadic sequences
+There is no apparent reason for solutions of the recurrences (1.2 ) to be integers (or, equivalently, for solutions
+of (1.3) or (1.4), which are regular at the origin, to have only integra l coeﬃcients in their Taylor expansion
+around z = 0). It is a surprise that an and bn are integers. For this reason, Zagier [57] searched for triples
+(A, B, λ) ∈ Z3 such that the recurrence
+(n + 1)2un+1 − (An2 + An + λ)un + Bn2un−1 = 0, n ≥ −1, (1.5)
+has a solution in integers with u−1 = 0, u0 = 1. A solution un gives rise to a power series y = ∑ unzn
+satisfying the second-order diﬀerential equation
+(θ2 − z(Aθ2 + Aθ + λ) + Bz 2(θ + 1)2)y = 0 (1.6)
+and vice-versa. For ( A, B, λ) = (11 , −1, 3) we already know that there is such a desired solution, namely
+bn. In his computer search, two well-understood families were found: Legendrian and hypergeometric. In
+addition, six sporadic solutions are found. The two families are easily e xplained, in the sense that the g.f.s∑ unzn have particularly simple forms, which explain the integrality. The six sp oradic sequences, which
+include un = bn, do not fall into either of these families and are not explained as easily . They are given in
+the following table.
+(A, B, λ) Name Formula Other names
+(7, −8, 2) A un =∑ n
+k=0
+(n
+k
+)3
+Franel numbers
+(9, 27, 3) B un =∑ ⌊n/ 3⌋
+k=0 (−1)k3n−3k(n
+3k
+)(3k
+2k
+)(2k
+k
+)
+(10, 9, 3) C un =∑ n
+k=0
+(n
+k
+)2(2k
+k
+)
+(11, −1, 3) D un =∑ n
+k=0
+(n
+k
+)2(n+k
+n
+)
+Ap´ ery numbers
+(12, 32, 4) E un =∑ ⌊n/ 2⌋
+k=0 4n−2k(n
+2k
+)(2k
+k
+)2
+(17, 72, 6) F un =∑ n
+k=0(−1)k8n−k(n
+k
+)∑ k
+j=0
+(k
+j
+)3
+Zagier conjectured that his (ﬁnite) search yielded all the integral solutions to (1.5). This is suggested by the
+fact that so few sporadic solutions were found in a very large param eter domain. As in the case of bn, the
+diﬀerential equations associated with the sequences found by Zag ier are Picard–Fuchs equations, and the
+solutions to the diﬀerential equations have modular parametrizatio ns [57, §5, §7].
+Similar searches were conducted in relation to an. Almkvist and Zudilin [5] searched for ( a, b, c) ∈ Z3
+such that the recurrence
+(n + 1)3un+1 − (2n + 1)(an2 + an + b)un + cn3un−1 = 0
+has integer solutions with u−1 = 0, u0 = 1. They found 6 sporadic solutions, including an, which corresponds
+to ( a, b, c) = (17 , 5, 1):
+(a, b, c) Name Formula Other names
+(7, 3, 81) ( δ) un =∑ ⌊n/ 3⌋
+k=0 (−1)k3n−3k(n
+3k
+)(n+k
+n
+)(3k
+2k
+)(2k
+k
+)
+Almkvist-Zudilin numbers
+(11, 5, 125) ( η) un =∑ ⌊n/ 5⌋
+k=0 (−1)k(n
+k
+)3((4n−5k−1
+3n
+)
++
+(4n−5k
+3n
+))
+(10, 4, 64) ( α) un =∑ n
+k=0
+(n
+k
+)2(2k
+k
+)(2n−2k
+n−k
+)
+Domb numbers
+(12, 4, 16) ( ǫ) un =∑ n
+k=⌈n/ 2⌉
+(n
+k
+)2(2k
+n
+)2
+(9, 3, −27) ( ζ) un =∑
+k,l
+(n
+k
+)2(n
+l
+)(k
+l
+)(k+l
+n
+)
+(17, 5, 1) ( γ) un =∑ n
+k=0
+(n
+k
+)2(n+k
+k
+)2
+Ap´ ery numbers
+2
+In [4, Thm. 1], Almkvist, van Straten and Zudilin discovered a bijection between Zagier’s sequences and
+Almkvist and Zudilin’s (cf. Cooper [22, p. 400]). The sequences A-F correspond to ( δ), ( ζ), ( α), ( η), ( ǫ),
+(γ), in this order, via sending ( A, B, λ) to ( a, b, c) = ( A, A − 2λ, A2 − 4B), and the g.f.s for the Almkvist and
+Zudilin sequences are essentially the squares of the corresponding sequences of Zagier:
+∑
+n≥0
+u′
+n
+( −x
+1 − Ax + Bx2
+)n+1
+= (−x)
+(∑
+n≥0
+unxn
+)2
+where u′
+n is the third-order sequence corresponding to the solution un of (1.5).
+Later, Cooper [21] introduced an additional parameter d ∈ Z:
+(n + 1)3un+1 − (2n + 1)(an2 + an + b)un + n(cn2 + d)un−1 = 0.
+A solution un gives rise to a power series y =∑ unzn satisfying the third-order diﬀerential equation
+(θ3 − z(2θ + 1)(aθ2 + aθ + b) + z2(c(θ + 1)3 + d(θ + 1)))y = 0 (1.7)
+and vice-versa. Cooper found 3 additional sporadic solutions, nam ed s7, s10 and s18. He established their
+modular parametrization (the subscript is related to the level of th e corresponding modular form). Formulas
+for the terms of s7, s10 and s18 were obtained by Zudilin:(a, b, c, d) Name Formula Other names
+(13, 4, −27, 3) s7 un =∑ n
+k=⌈n/ 2⌉
+(n
+k
+)2(n+k
+k
+)(2k
+n
+)
+(6, 2, −64, 4) s10 un =∑ n
+k=0
+(n
+k
+)4
+Yang-Zudilin numbers
+(14, 6, 192, −12) s18 un =∑ ⌊n/ 3⌋
+k=0 (−1)k(n
+k
+)(2k
+k
+)(2n−2k
+n−k
+)((2n−3k−1
+n
+)
++
+(2n−3k
+n
+))
+In total, we have 15 sporadic solutions, which are often referred t o as Ap´ ery-like sequences.
+1.2 Main results
+We say that a sequence {un}n≥1 is the constant term sequence of a Laurent polynomial Λ ∈ C[x±1
+1 , x±1
+2 , . . . , x±1
+d ]
+if un is the constant term of Λ n for every n ≥ 1. Our main result is
+Theorem 1.1. Let {un}n≥1 be one of the 15 sporadic sequences, and denote by k ∈ { 2, 3} the order of the
+diﬀerential equation it satisﬁes. Then un is a constant term sequence of a Laurent polynomial Λ with integer
+coeﬃcients in k variables x1, . . . , xk. In addition,
+1. Λ may be written as a product of Laurent polynomials, each with coeﬃcients in the set {−1, 0, 1}.
+2. Λ may be chosen in such a way that it is a (usual) polynomial divi ded by ∏ k
+i=1 xi.
+3. For all but possibly (η), Λ may be chosen in such a way that its Newton polytope contains t he origin
+as its only interior integral point.
+4. For all but possibly (η) and F, Λ may be chosen to satisfy the last 3 conditions simultaneousl y. In
+the case of F, one may choose a Laurent polynomial Λ( x1, x2) satisfying the last two conditions, with
+Λ( x2
+1, x2
+2) satisfying the ﬁrst condition.
+Speciﬁc Laurent polynomials are given in Proposition 3.3, from which we derive new binomial sum
+representations for B, F and ( δ).
+Proposition 1.2. Consider the set
+S(n) =
+{
+(a, b, c) ∈ Z9
+≥0 :
+a1+a2+a3=n,
+b1+b2+b3=n,
+c1+c2+c3=n,
+∀1≤i≤3: ai+bi+ci=n,
+3|b2+2b3+2c2+c3
+}
+.
+3
+The sequence B can be written as
+2(−1)nBn = 3
+∑
+(a, b, c)∈S(n)
+(n
+a
+)(n
+b
+)(n
+c
+)
+−
+( 3n
+n, n, n
+)
+.
+Consider the set
+T (n) =
+{
+(a, b, c, d, e) ∈ Z15
+≥0 :
+a1+a2+a3=n,
+b1+b2+b3=n,
+c1+c2+c3=n,
+d1+d2+d3=n,
+e1+e2+e3=n,
+∀1≤i≤3: ai+bi+ci+di+2ei=2n
+}
+.
+The sequence F can be written as
+Fn =
+∑
+(a, b, c, d, e)∈T (n)
+(n
+a
+)(n
+b
+)(n
+c
+)(n
+d
+)(n
+e
+)
+(−1)a1+b2+c3. (1.8)
+Consider the set
+U (n) =
+{
+(a, b, c, d) ∈ Z12
+≥0 :
+a1+a2+a3=n,
+b1+b2+b3=n,
+c1+c2+c3=n,
+d1+d2+d3=n,
+b1+c1+d1=n,
+a1+b2+d2=n,
+a2+b3+c2=n
+}
+.
+The sequence (δ) can be written as
+AZn =
+∑
+(a, b, c, d)∈U(n)
+(n
+a
+)(n
+b
+)(n
+c
+)(n
+d
+)
+(−1)a2+b1+d3. (1.9)
+1.3 Gauss congruences
+Both an and bn possess a wealth of arithmetic properties. We concentrate on Gau ss congruences.
+Deﬁnition 1.3. A sequence {un}n≥1 of integers is said to satisfy the Gauss congruences of order r if, for
+all primes p ≥ r + 1 and all positive integers k, n we have
+unpk ≡ unpk− 1 mod prk. (1.10)
+The case r = 1 is simply called ‘Gauss congruences’, while the case r > 1 is an example of supercongru-
+ences. A well-known example of a sequence satisfying the Gauss congruen ces is un = an for any choice of
+a ∈ Z. Another example of such a sequence is given by un =
+(2n
+n
+)
+[46, Ch. 5.3.3]. In fact,
+(2n
+n
+)
+satisﬁes the
+Gauss congruences of order 3, as shown by Jacobsthal [13] (cf. [46, Ch. 7.1.6]).
+Chowla, Cowles and Cowles [16], based on numerical observations, ma de several conjectures on the values
+of an modulo primes and prime powers. Gessel [29] proved generalizations of their conjectures. In particular,
+in [29, Thm. 3] he proved that an satisﬁes the Gauss congruences of order 3, but only in the special case
+where k = 1 in (1.10). This was established independently by Mimura [37, Prop. 2]. Finally, in his PhD
+thesis, Coster [23] showed that the Gauss congruences of order 3 are satisﬁed by an (without any restriction
+on k), as well as by bn.
+Following numerical observations, it was conjectured that all spor adic sequences satisfy the Gauss con-
+gruences of order 2 or 3 (depending on the sequence), see [44, T able 2]. The fact that they all satisfy the
+Gauss congruences of order 1 is explained by modular parametrizat ion, see e.g. [56, 41, 38]. Establishing
+Gauss congruences of higher order is a harder task. In his thesis, Coster [23] established such congruences
+for ‘generalized Ap´ ery numbers’, that is
+u(r,s,ε )
+n =
+n∑
+k=0
+(n
+k
+)r(n + k
+k
+)s
+εk
+for ε ∈ {± 1} and r, s ≥ 0. Speciﬁcally, he proved that u(r,s,ε ) satisﬁes the Gauss congruences of order 3 as
+long as r ≥ 2, or r = 1, s ≥ 1 and ε = −1. The sequences u(r,s,ε ) include, as special cases, the sequences
+(γ) and D, as well as A and s10. Coster’s method for proving these congruences was extended a nd used by
+various authors:
+4
+• Osburn and Sahu [42] proved that C satisﬁes the Gauss congruences of order 3.
+• Later, Osburn and Sahu [43] proved that ( α) satisﬁes the Gauss congruences of order 3 as well, extending
+a result of Chan, Cooper and Sica [17]. They also sketched the proo f of a similar result for E (using
+the representation (3.3)).
+• Osburn, Sahu and Straub [44] proved that s18 satisﬁes the Gauss congruences of order 3, as well as a
+family that includes s7, D and ( ǫ). In [44, Ex. 3.1] they sketch a proof of a similar result for ( η).
+All these sequences involved only one summation variable, k. Recently, the author established that the
+sequence (ζ), whose deﬁnition involves summation over two variables k and l, satisﬁes the Gauss congruences
+of order 3 [30, Cor. 1.4]. Although the proof uses q-congruences, this can be avoided, and one can formulate
+the proof using Coster’s method.
+This leaves three sequences for which little is known: B, F and ( δ). It was proved by Amdeberhan and
+Tauraso [3] that ( δ) satisﬁes the Gauss congruences of order 3, but only in the specia l case where k = 1
+in (1.10). The main diﬃculty in dealing with B, F and ( δ) has to do with the appearance of powers (of 3
+and 8) in their deﬁnition. As opposed to binomial coeﬃcients, which be have nicely modulo high powers of
+primes, powers’ behavior is much worse. For instance, un = 2 n satisﬁes the Gauss congruences of order 1
+but not of higher order, as opposed to un =
+(2n
+n
+)
+. In fact, it is not even known if there are inﬁnitely many
+primes p such that 2 p ≡ 21 mod p2; such primes are known as Wieferich primes. We prove the following.
+Theorem 1.4. Sequence B satisﬁes the Gauss congruences of order 2.
+This conﬁrms a conjecture of Osburn, Sahu and Straub [44].
+Remark 1.5. Theorem 1.1 also gives a new proof for the fact that all the sporadic sequences are integral
+and satisfy the Gauss congruences (of order 1), since these con gruences hold for the constant terms of powers
+of any integral Laurent series.
+2 Further results
+2.1 Lucas and D3 congruences
+Deﬁnition 2.1. A sequence {un}n≥1 of integers is said to satisfy the Lucas congruences if, for any prim e
+p, and any positive integer n with base- p expansion∑ s
+i=0 nipi (0 ≤ ni < p) we have
+un ≡
+s∏
+i=0
+uni mod p.
+The name of these congruences comes from a theorem of Lucas [3 4], stating that if n =∑ s
+i=0 nipi and
+k =∑ s
+i=0 kipi are base- p expansions of n ≥ k ≥ 0, then
+(n
+k
+)
+≡
+s∏
+i=0
+(ni
+ki
+)
+mod p.
+Gessel [29, Thm. 1], inspired by the previously mentioned conjectur es of Chowla, Cowles and Cowles, has
+shown that an satisﬁes the Lucas congruences. Deutsch and Sagan [27, Thm. 5.9 ] showed more generally
+that for any positive integers r and s, the sequence
+un =
+n∑
+k=0
+(n
+k
+)r(n + k
+k
+)s
+satisﬁes the Lucas congruences, which implies that an and bn satisfy the Lucas congruences. They also showed
+that un =
+(2n
+n
+)
+satisﬁes Lucas congruences [27, Thm. 4.4]. A property stronger t han Lucas congruences is
+the D3 property, named after Dwork [28].
+5
+Deﬁnition 2.2. Let {un}n≥1 be a sequence of integers, and set u0 := 1. We say that {un}n≥1 satisﬁes the
+D3 congruences with respect to a prime p if
+un+mpsu⌊ n
+p ⌋ ≡ unu⌊ n+mps
+p ⌋ mod ps (2.1)
+for all s, m, n ≥ 0. If this holds for all primes p, we simply say that {un}n≥1 satisﬁes the D3 congruences.
+These congruences are implicit in the work of Dwork [28] and have sign iﬁcance in p-adic analysis. We
+refer the reader to [52, 40] for further information, as well as de ﬁnitions of related congruences, known as
+D1 and D2, which together imply D3. One can show that (2.1) with s = 1 implies the Lucas congruences.
+Samol and van Straten [52] proved that a certain class of sequenc es satisﬁes the D3 congruences. A diﬀerent
+proof of this was found by Mellit and Vlasenko [40]. Before we state th eir result, we recall that the Newton
+polytope of a Laurent polynomial f =∑
+(a1,...,a d)∈Zd ca1,...,a dxa1
+1 · · · xad
+d is the convex hull of the support of
+f , that is, of {(a1, . . . , ad) ∈ Zd : ca1,...,a d ̸= 0}. We use the notation CT( f ) for the constant term c0, 0,..., 0 of
+f (or any Laurent series).
+Theorem 2.3. [52, 40] Let Λ ∈ Z[x1, x−1
+1 , . . . , xd, x−1
+d ] be a Laurent polynomial. If the Newton polytope
+of Λ contains the origin as its only interior integral point, the n the sequence un = CT(Λ n) satisﬁes the D3
+congruences.
+As observed e.g. by Mellit and Vlasenko [40, §1], bn is the constant term of the nth power of
+Λ = (1 + x1)(1 + x2)(1 + x1 + x2)
+x1x2
+. (2.2)
+Straub [51, Rem. 1.4] observed that an is the constant term of the nth power of
+Λ = (x1 + x2)(x3 + 1)(x1 + x2 + x3)(x2 + x3 + 1)
+x1x2x3
+. (2.3)
+A short computation shows that the Newton polytopes of (2.2) and (2.3) satisfy the conditions of Theo-
+rem 2.3, and so an and bn satisfy the D3 congruences.
+2.2 D3 congruences for sporadic sequences
+Malik and Straub [39, Thm. 3.1] proved that all 15 Ap´ ery-like sequen ces satisfy the Lucas congruences. For
+all sequences except for ( η) and s18 they did this by extending and applying a general method developed b y
+McIntosh [36], while for ( η) and s18 a much more delicate analysis was needed. From Theorems 2.3 and 1.1
+we immediately obtain
+Corollary 2.4. All the sporadic sequences, except possibly (η), satisfy the D3 congruences.
+2.3 p-adic valuation of sporadic sequences
+Given a sequence of integers u = {un}n≥0 and a prime p, let Zp(u) = {0 ≤ i ≤ p − 1 : p | ui}. For any
+non-negative integer n whose base- p expansion is n =∑ N
+i=0 nipi, let αp(u, n) = # {0 ≤ i ≤ N : ni ∈ Z p(u)}.
+Let vp(n) be the p-adic valuation of an integer n. Recently, Delaygue proved that vp(un) ≥ αp(u, n) under
+two conditions on {un}n [26, Thm. 2]. The ﬁrst condition is that un = CT(Λ n) for some Laurent polynomial
+Λ with integer coeﬃcients, whose Newton polytope contains the orig in as its only interior integral point.
+This holds for all the sporadic sequences except possibly ( η). The second condition involves a restriction on
+the diﬀerential operator annihilating ∑
+n≥0 unzn. According to (1.6), (1.7) and [39, p. 23], this condition
+holds for all 15 sequences. We thus obtain
+Corollary 2.5. Every sporadic sequence {un}n, except possibly (η), satisﬁes vp(un) ≥ αp(u, n) for every
+n ≥ 1 and every prime p.
+6
+3 Constant term and binomial representations for sporadic s e-
+quences
+3.1 Review of diagonals, constant terms and binomial repres entations
+Given a power series A(x1, . . . , xd) =∑
+(a1,...,a d)∈Zd
+≥ 0
+ca1,a 2,...,a d xa1
+1 xa2
+2 · · ·xad
+d ∈ C[[x1, . . . , xd]], we deﬁne its
+diagonal as the power series
+∆ d(A) :=
+∑
+i≥0
+ci,i,...,i ui ∈ C[[u]].
+Given a rational function A(x1, . . . , xd) ∈ C(x1, . . . , xd) whose denominator does not vanish at the origin,
+we can identify it with its Taylor expansion around ⃗0. For such A we have the following result of Lipshitz.
+Theorem 3.1. [33] Let A ∈ K(x1, . . . , xd) (K a ﬁeld of characteristic 0). If the denominator of A does
+not vanish at the origin, then the diagonal ∆ d(A) satisﬁes a homogeneous linear diﬀerential equation with
+coeﬃcients in K[u].
+Given a Laurent series f (x1, . . . , xd) =∑
+(a1,...,a d)∈Zd ca1,a 2,...,a d xa1
+1 xa2
+2 · · · xad
+d ∈ C[[x1, . . . , xd, x−1
+1 , . . . , x−1
+d ]],
+we deﬁne its constant term series as the power series
+CTS(f ) :=
+∑
+i≥0
+CT(f i)ui ∈ C[[u]].
+The constant term series of f is also known as its fundamental period. Suppose a Laurent polynomial A(x)
+in d variables becomes a polynomial when multiplied by ∏ d
+i=1 xi. Then it is known that A can be expressed
+as the diagonal of a rational function in d + 1 variables, namely
+CTS(A) = ∆ d+1
+( 1
+1 − x1x2 . . . xd+1A(x1, . . . , xd)
+)
+. (3.1)
+In general, the diagonal of a rational function cannot be express ed as the constant term series of a Laurent
+polynomial. However, we have the following partial converse. This co nverse is a special case of the MacMahon
+Master Theorem [35].
+Lemma 3.2. Given a square matrix M = (Mi,j )1≤i,j ≤n ∈ Matd(C), consider the rational function
+A(x1, . . . , xd) := 1
+det(Id − M · Diag(x1, . . . , xd)) .
+We have
+∆ d(A) = CTS
+(∏ d
+i=1(∑ d
+j=1 Mi,j xj)
+x1x2 · · · xd
+)
+. (3.2)
+As the rational function in the right-hand side of (3.2) is homogeneous of degree 0, we may substitute xi = 1
+for some i without changing the constant term series.
+There are various beneﬁts that come from representing a sequen ce as the diagonal of a rational function,
+some of which are described in [51, p. 1987]. For instance, it allows on e to extract the asymptotics of the
+sequence directly from the rational function. A much simpler beneﬁ t, which we make use of in Proposition 1.2,
+is that it allows us to easily extract binomial sum representations for the sequence 1.
+3.2 Known binomial sum representations
+In [57, §7], Zagier explains how the modular parametrization of a sequence ca n be used to obtain binomial
+representations for it. In practice, many of the binomial represe ntations are found using educated guesses
+or computer searches.
+1An example of a binomial sum is (1.1). The interested reader m ay ﬁnd a rigorous deﬁnition of ‘binomial sums’ in [11].
+7
+Binomial representations for A and ( γ) can be found in [50, 48], for ( δ), ( α) and ( γ) can be found in [25]
+and for ( α) and ( γ) can be found in [24]. Additional representations for A, D, E and ( α) are found in their
+OEIS pages [49], and we single out the following representation for E,
+un =
+n∑
+k=0
+(n
+k
+)(2k
+k
+)(2n − 2k
+n − k
+)
+. (3.3)
+This formula for E was used in [43] in establishing Gauss congruences of order 2; the or iginal representation
+of E, given by Zagier, involves powers of 4, which get in the way of establis hing supercongruences. A proof
+of (3.3) is sketched in [26, p. 257].
+3.3 Known diagonal representations
+Bostan, Lairez and Salvy [11, Thm. 3.5] proved (algorithmically) tha t if {un}n≥0 is a binomial sum then
+the g.f. of un is a diagonal of a rational function. Hence, every sporadic sequen ce is the diagonal of some
+rational function. We are aware of the following explicit diagonal rep resentations for the 10 sequences A, B,
+C, D, F, ( γ), ( δ), ( α), ( ǫ), s7 and s10:
+• Zagier [57] (cf. Verrill [54]) already explained how his Sporadic sequen ces have constant term rep-
+resentations, but this has been worked out only in a few cases: A is the constant term sequence
+of
+(x1 + x2)(x2 + x3)(x3 + x1)
+x1x2x3
+and so of ( x1 + x2)(x2 + 1)(x1 + 1)/x1x2 as well, B is the constant term sequence of
+x3
+1 + x3
+2 + x3
+3 − 3x1x2x3
+−x1x2x3
+and so of ( x3
+1 + x3
+2 + 1 − 3x1x2)/(−x1x2) as well, and F is the constant term sequence of
+x2
+1x2 + x2
+2x1 + x2
+2x3 + x2
+3x2 + x2
+3x1 + x2
+1x3 − 6x1x2x3
+−x1x2x3
+and so of ( x2
+1x2 + x2
+2x1 + x2
+1 + x2
+2 + x1 + x2 − 6x1x2)/(−x1x2) as well.
+• Various rational functions whose diagonal is the g.f. for ( γ) are given in [18, 19, 6, 51]. Of particular
+interest is the one found by Straub, which involves 4 variables, while o thers involve between 5 to 8
+variables. His rational function is [51, Thm. 1.1]
+((1 − x1 − x2)(1 − x3 − x4) − x1x2x3x4)−1. (3.4)
+Recently, Gheorghe Coserea added to the OEIS [49] two rational functions, in 4 variables, whose
+diagonal is the g.f. of ( γ): (1 − (x1x2x3x4 + x1x2x4 + x3x4 + x1x2 + x1x3 + x2 + x3))−1 and (1 − x4(1 +
+x1)(1 + x2)(1 + x3)(x1x2x3 + x2x3 + x2 + x3 + 1))−1.
+• Straub observed [51, Ex. 3.4] that the diagonal of
+((1 − x1 − x2)(1 − x3) − x1x2x3)−1 (3.5)
+is the g.f. of D. Bostan, Boukraa, Maillard and Weil [7], as well as Coserea [49], have f ound very
+similar representations.
+• Straub observed that
+((1 − x1)(1 − x2)(1 − x3) − x1x2x3)−1, (1 − x1 − x2 − x3 + 4x1x2x3)−1 (3.6)
+are both diagonals for A [51, Ex. 3.6, 3.7]. In the OEIS, Coserea provides three more rationa l functions,
+in 3 variables as well, whose diagonal is the g.f. of A:
+(1 − x1x2 − x2x3 − x1x3 − 2x1x2x3)−1, (1 +x1 + x2 + x3 + 2(x1x2 + x2x3 + x3x1) + 4x1x2x3)−1 (3.7)
+and (1 − (x1 + x2 + x3) + x1x2 + x2x3 + x3x1 − 2x1x2x3)−1.
+8
+• Straub also observed [51, Eq. (32)] that the g.f. for ( δ) coincides with the diagonal of
+(1 − (x1 + x2 + x3 − x4) − 27x1x2x3x4)−1.
+• The diagonal of ((1 − x1)(1 − x2)(1 − x3)(1 − x4) − x1x2x3x4)−1 is the g.f. for s10, see Straub [51,
+Ex. 3.6]. Coserea [49] also provides the rational function (1 − (x2x3x4 + x1x3x4 + x1x2x4 + x1x2x3 +
+x1x4 + x2x3))−1.
+• Sequences C and ( α) are the constant term sequences of the Laurent polynomial Pd(x1, . . . , xd) =
+(x1 + x2 + . . . + xd)
+(
+1
+x1
++ . . . + 1
+xd
+)
+with d = 3 and d = 4, respectively (see [15, Ex. 6], [14, Ex. 3.17],
+[12, Eq. (8)]). By (3.1), this also gives diagonal representations fo r C and ( α).
+• Coserea lists the functions (1 − (x2
+1x2 + x2
+2x3 − x2
+3x1 + 3x1x2x3))−1, (1 − (x3
+1 + x3
+2 − x3
+3 + 3x1x2x3))−1
+and (1 + x3
+1 + x3
+2 + x3
+3 − 3x1x2x3)−1 as rational functions whose diagonal is the g.f. for B [49].
+• Coserea has also found that the diagonal of (1 − (x4(x1x2 + x2x3 + x3x1) + x1x2 + x1x3 + x2 + x3))−1
+is the g.f. for s7.
+• In [53, Ex. 4.2], Straub and Zudilin prove that the g.f. of ( ǫ) is the diagonal of the Kauers–Zeilberger
+rational function (1 − (x1 + x2 + x3 + x4) + 2e3(x1, x2, x3, x4) + 4x1x2x3x4)−1, where e3 is the third
+elementary symmetric polynomial.
+In the proof of [51, Thm. 1.1], Straub observes that the rational f unction (3.4) may be written as det( I4 −
+M · Diag(x1, . . . , x4))−1 where
+M =
+
+
+
+
+1 1 1 0
+1 1 0 0
+0 0 1 1
+0 1 1 1
+
+
+
+ ,
+and so by Lemma 3.2 it gives rise to a constant term representation f or ( γ), the one deﬁned by (2.3).
+Representations of the form det( Id − M · Diag(x1, . . . , xd))−1 are hidden in some of the other functions that
+we listed, as we now show. The rational function in (3.5) can be writte n as det( I3 − M · Diag(x1, x2, x3))−1
+where
+M =
+
+
+1 1 0
+1 1 1
+1 0 1
+
+ ,
+and by Lemma 3.2, we ﬁnd that the constant term series of (2.2) is th e g.f. of D. The rational functions in
+(3.6) and (3.7) can be written as det( I3 − M · Diag(x1, x2, x3))−1 for
+M =
+
+
+1 1 0
+0 1 1
+1 0 1
+
+ ,
+
+
+1 1 1
+1 1 −1
+1 −1 1
+
+ ,
+
+
+0 1 1
+1 0 1
+1 1 0
+
+ ,
+
+
+−1 1 1
+−1 −1 1
+−1 −1 −1
+
+ .
+3.4 New constant term representations
+The discussion in §3.3 shows that there are known constant term representations f or A, B, C, F, (γ) and ( α),
+and also that a previously known diagonal representation for D gives rise to constant term representation
+through Lemma 3.2.
+We call a Laurent polynomial good if it may be factored into a product of Laurent polynomial, each of
+which has coeﬃcients in the set {−1, 0, 1}. We have conducted a computer search of the following form: we
+enumerated good Laurent polynomials f (in several variables) with bounded degree and coeﬃcients. For ea ch
+such polynomial we tested whether CTS( f ) is the g.f. of a sporadic sequence. For each of the 15 sequences,
+the search yielded more than one Laurent polynomial whose CTS is its g.f.. The reason for looking only at
+good Laurent polynomials is that they lead to binomial sum represent ations which do not involve powers of
+integers other than ±1 (as in Proposition 1.2).
+We list some of the Laurent polynomials we have found in the following th eorem.
+9
+Proposition 3.3. The constant term series of the Laurent polynomials in the se cond column are g.f.s of the
+sequences in the ﬁrst column:
+Sequence Laurent polynomial
+A (xy)−1(x + 1)(y + 1)(x + y)
+(xy)−1(x + y + 1)(xy + y + 1)
+B (−xy)−1(x + y + 1)(x2 + y2 − xy − x − y + 1)
+(−xy)−1(x2 − xy + y2 − x − y)(x2 − xy + y2 + x + y + 1)
+C (xy)−1(x + y + 1)(xy + x + y)
+(−xxy)−1(x + y − 1)(x + y + 1)(xy − 1)
+D (xy)−1(x + 1)(y + 1)(x + y + 1)
+(xy)−1(y − 1)(x − 1)(x − y + 1)(−x + y + 1)
+E (−xy)−1(xy + x + y − 1)(xy − x − y − 1)
+F (xy)−2(−x + y + 1)(x − y + 1)(x + y − 1)(x + y + 1)(x2 + y2 + 1)
+Sequence Laurent polynomial
+(δ) (xyz)−1(y − z + 1)(−x + y + z)(x + z + 1)(x + y − 1)
+(xyz)−1(xy + yz + zx)(x2 + y2 + z2 − xy − yz − zx + x + y + z + 1)
+(η) (xyz)−1(zx + xy − yz − x − 1)(xy + yz − zx − y − 1)(yz + zx − xy − z − 1)
+(α) (xyz)−1(−x − y − z + 1)(x − y)(x − y + z + 1)(x + y − z + 1)
+(xyz)−1(x + y + z + 1)(xyz + xy + yz + zx)
+(ǫ) (xyz)−1(x + 1)(y + 1)(z + 1)(x + y + z + 1)
+(ζ) (xyz)−1(x + y + z)(x + y + z + xy + yz + zx + xyz)
+(γ) (xyz)−1(y + z)(x + 1)(x + y + 1)(x + y + z)
+(xyz)−1(xy + yz + zx + x + z)(xy + yz + zx + x + y + z + 1)
+Sequence Laurent polynomial
+s7 (xyz)−1(x − 1)(y + 1)(x + z)(y − x − z + 1)
+s10 (xyz)−1(x + 1)(y + 1)(z + 1)(xyz + 1)
+s18 (−xyz)−1(x2 + y2 + z2 − xy − yz − zx − x + y − z)(x2 + y2 + z2 + xy +
+yz − zx + x + y + z)
+As can be seen, we were always able to ﬁnd good symmetric polynomials, except in the cases of ( γ), s7
+and s18. For ( γ), P = (xyz)−1(x + y + z + 1)(x2y + xy2 + y2z + yz 2 + z2x + zx2 + xy + yz + zx + 2xyz) is a
+symmetric polynomial whose constant term series is (empirically) the g.f. of ( γ), but P is not good according
+to our deﬁnition. For s18, P = (xyz)−1(xy + yz + zx + x + y + z)(x2 + y2 + z2 − xy − yz − zx − x − y − z + 1) is
+a symmetric polynomial whose constant term series is (empirically) th e g.f. of s18, and is good according to
+our deﬁnition, but we do not know how to prove it. Note that the ﬁrs t polynomial for B was given in [54],
+although it was not factored; its factorization is useful in the proo fs of Proposition 1.2 and Theorem 1.4.
+Proof of Proposition 3.3. For each of the Laurent polynomials in the proposition, we may easily c ompute
+the ﬁrst three terms and see that they agree with the ﬁrst three terms of the respective sequence. It now
+suﬃces to compute the diﬀerential operator annihilating the const ant term series of the polynomial, and
+that it coincides with (1.6) or (1.7).
+The proof of Theorem 3.1 is constructive and may give rise to such a d iﬀerential operator (by appealing
+to (3.1)). However, the algorithm arising from Lipshitz’s theorem is o ften not eﬃcient enough for practical
+purposes. However, Zeilberger’s Creative Telescoping algorithm [59 ], as generalized by Chyzak [20], gives a
+much faster way to compute the operator. See [8] for more details .
+The algorithm is implemented in the package Mgfun.2 To ﬁnd an operator annihilating the diagonal of
+f (s, t, x), we run the command
+P_, S_, T_ := op(op(Mgfun:-creative_telescoping(F, x::di ff, [s::diff, t::diff])))
+2Version 4.1, available from https://specfun.inria.fr/chyzak/mgfun.html.
+10
+on F := ( st)−1f (s, t/s, x/t), and P will be the operator. So if we want to ﬁnd the operator annihilating
+CTS(f (s, t)), we shall run it on F := (st)−1(1 − xf (s, t/s))−1. To ﬁnd an operator annihilating the diagonal
+of f (s, t, x, w), we run the command
+P_, S_, T_, X_ := op(op(Mgfun:-creative_telescoping(F, w: :diff, [s::diff, t::diff, x::diff])))
+on F := (stx)−1f (s, t/s, x/t, w/x), and P will be the operator. So if we want to ﬁnd the operator annihilating
+CTS(f (s, t, x)), we shall run it on F := (stx)−1(1 − wf (s, t/s, x/t))−1.
+In the two-variate case, the algorithm returns the expected ope rator in under a minute on an average
+laptop. For the three-variate case, the algorithm takes a few minu tes when we ran it on the polynomials
+for ( ǫ), ( ζ), ( γ), s7 and s10. For ( δ), ( η), ( α) and s18 we had to ‘massage’ the Laurent polynomials slightly
+before running the program, as we now explain.
+For (δ), we consider f = (xyz)−1(y − z + 1)(−x + y + z)(x + z + 1)(x + y − 1). We know by Lemma 3.2
+that for the matrix
+M =
+
+
+
+
+0 1 −1 1
+−1 1 1 0
+1 0 1 1
+1 1 0 −1
+
+
+
+ ,
+we have
+CTS (f ) = ∆ 4
+( 1
+det(I4 − M · Diag(x1, . . . , x4))
+)
+.
+Instead of running the algorithm on ( stx)−1(1 − wf (s, t/s, x/t))−1, we ran it on ( stx)−1g(s, t/s, x/t, w/x)
+where g := det(I4 −M ·Diag(x1, . . . , x4)), and it proved to be much quicker. The same trick works for the ﬁ rst
+polynomial of (α). The second polynomial for α comes from the polynomial ( x1 + x2 + x3 + x4) (1/x1 + . . . + 1/x4)
+mentioned in §3.3, in which we plugged x4 = 1.
+For the second polynomial f for ( δ), note that CT( f n) = CT( gn) for g = f ( 1
+xyz , 1
+yz , 1
+z ). We ran the
+algorithm on ( stx)−1(1 − wg(s, t/s, x/t))−1. For s18, the same trick works.
+Finally, for ( η) we use a diﬀerent implementation of Creative Telescoping, which tur ned out to be faster
+for this example, namely the Mathematica package HolonomicFunctions 3 by Christoph Koutschan. To ﬁnd
+the recurrence satisﬁed by CT( f n) for the polynomial of ( η), we ran
+CreativeTelescoping[((z x + x y - y z - x - 1) (x y + y z - z x - y - 1)
+(y z + z x - x y - z - 1)/(x y z))^n/(x y z), Der[x], {Der[y], Der[z] , S[n]}]
+CreativeTelescoping[First[%], Der[y], {Der[z], S[n]}]
+CreativeTelescoping[First[%], Der[z], {S[n]}]
+which outputs the expected recurrence.
+3.5 Proof of Proposition 1.2
+We use bold Latin letters a, b, . . . as short for sequences ( a1, a2, a3), (b1, b2, b3), . . .. If e.g. a sums to n we
+write
+(n
+a
+)
+for the multinomial coeﬃcient
+( n
+a1,a 2,a 3
+)
+. For the ﬁrst part, note that
+((x + y + 1)(x2 + y2 − xy − x − y + 1)
+−xy
+)n
+= (x + y + 1)n(x + yω + ω2)n(x + yω 2 + ω)n
+(−xy)n
+= (−xy)−n ∑
+a1+a2+a3=n
+xa1 ya2
+(n
+a
+) ∑
+b1+b2+b3=n
+xb1 yb2 ωb2+2b3
+(n
+b
+)
+∑
+c1+c2+c3=n
+xc1 yc2ω2c2+c3
+(n
+c
+)
+,
+3Version 1.7.3, available from https://www3.risc.jku.at/research/combinat/software/ergosum/installation.html.
+11
+where ω = e2πi/ 3. By Proposition 3.3, CTS(( x + y + 1)(x2 + y2 − xy − x − y + 1)/(−xy)) is the generating
+series for Bn, and so
+Bn = (−1)n ∑
+a1,a 2,a 3
+b1,b 2,b 3
+c1,c 2,c 3
+(n
+a
+)(n
+b
+)(n
+c
+)
+ωb2+2b3+2c2+c3, (3.8)
+where the sum is over tuples ( a1, a2, a3, b1, b2, b3, c1, c2, c3) of non-negative integers satisfying a1 + a2 + a3 =
+b1 + b2 + b3 = c1 + c2 + c3 = n and ai + bi + ci = n for i = 1, 2, 3. Observe that ℜ(2ωk) = 3 · 13|k − 1. Since
+Bn is real, we may take the real part of (3.8), obtaining
+2(−1)nBn = 3
+∑
+a1,a 2,a 3
+b1,b 2,b 3
+c1,c 3,c 3
+(n
+a
+)(n
+b
+)(n
+c
+)
+− CT
+(((x + y + 1)3
+xy
+)n)
+,
+where we sum over tuples ( a1, a2, a3, b1, b2, b3, c1, c2, c3) in S(n). The second term evaluates to
+( 3n
+n,n,n
+)
+by the
+multinomial theorem, as needed. For the second part, note that
+((−x + y + 1)(x − y + 1)(x + y − 1)(x + y + 1)(x2 + y2 + 1)
+x2y2
+)n
+= (−x + y + 1)n(x − y + 1)n(x + y − 1)n(x + y + 1)n(x2 + y2 + 1)n
+(xy)2n
+= (xy)−2n ∑
+a1+a2+a3=n
+xa1 ya2(−1)a1
+(n
+a
+) ∑
+b1+b2+b3=n
+xb1 yb2(−1)b2
+(n
+b
+)
+∑
+c1+c2+c3=n
+xc1 yc2(−1)c3
+(n
+c
+) ∑
+d1+d2+d3=n
+xd1 yd2
+(n
+d
+)
+∑
+e1+e2+e3=n
+x2e1 y2e2
+(n
+e
+)
+.
+Since CTS(( −x + y + 1)(x − y + 1)(x + y − 1)(x + y + 1)(x2 + y2 + 1)/(x2y2)) is the generating series for Fn
+(by Proposition 3.3), one obtains (1.8). For the third part, note th at
+((y − z + 1)(−x + y + z)(x + z + 1)(x + y − 1)
+xyz
+)n
+= (y − z + 1)n(−x + y + z)n(x + z + 1)n(x + y − 1)n
+(xyz)n
+= (xyz)−n ∑
+a1+a2+a3=n
+ya1za2(−1)a2
+(n
+a
+) ∑
+b1+b2+b3=n
+xb1 yb2zb3(−1)b1
+(n
+b
+)
+∑
+c1+c2+c3=n
+xc1 zc2
+(n
+c
+) ∑
+d1+d2+d3=n
+xd1yd2(−1)d3
+(n
+d
+)
+.
+Since CTS(( y − z + 1)( −x + y + z)(x + z + 1)( x + y − 1)/(xyz)) is the generating series for AZn (by
+Proposition 3.3), one obtains (1.9).
+3.6 Proof of Theorem 1.1
+For A-E, we can check that the polynomials in Proposition 3.3 satisfy all the co nditions of the theorem by
+drawing the corresponding Newton polygons (in case there is more t han one polynomial, we check the ﬁrst
+one only). For instance,
+12
+x
+y
+is the Newton polygon of the polynomial corresponding to A in Proposition 3.3. For F, the polynomial
+P (x, y) = ( xy)−2(−x + y + 1)(x − y + 1)(x + y − 1)(x + y + 1)(x2 + y2 + 1) satisﬁes the ﬁrst condition of
+the theorem, but not the later two. It turns out that P (x, y) = Q(x2, y2) for Q(x, y) = ( −xy)−1(x + y +
+1)(x2 + y2 − 2xy − 2x − 2y + 1). Since CT( P n) = CT( Qn), we see that Q(x, y) satisﬁes the second condition.
+Finally, we check the third condition, regarding the Newton polygon o f Q, which is given below:
+x
+y
+Indeed, (0 , 0) is its only interior point. For ( δ)-(γ) and s7-s18, drawing a picture is harder. In SageMath,
+one can check whether a Laurent polynomial in 3 variables contains t he origin as its only interior point using
+the following procedure:
+def checkInterior(poly):
+polyhedron = Polyhedron(vertices = poly.exponents())
+for pt in polyhedron.integral_points():
+if tuple(pt) != (0,0,0) and polyhedron.interior_contains (pt):
+return False
+return polyhedron.interior_contains((0,0,0))
+For instance, the following code checks that the ﬁrst polynomial of (δ) (from Proposition 3.3) satisﬁes the
+conditions of the theorem:
+R.<x,y,z> = LaurentPolynomialRing(QQ,3)
+P = (y-z+1)*(-x+y+z)*(x+z+1)*(x+y-1) / (x*y*z)
+checkInterior(P)
+>> True
+This allowed us to verify that the Newton polytopes contain the origin as their only interior point, except in
+the case of ( η), where (1 , 0, 0) and (1 , 1, 0) (as well as their permutations) are additional interior points.
+13
+4 Proof of Theorem 1.4
+4.1 Auxiliary results
+The following lemma is a classical result of Jacobsthal [13], discovered independently by Kazandzidis [31]
+(cf. [46, Ch. 7.1.6]).
+Lemma 4.1. Let p ≥ 3 be a prime and n ≥ m ≥ 0 be integers. Then
+(pn
+pm
+)
+(n
+m
+) ≡ 1 mod pvp(nm(n−m))+3−δp,3
+where δp, 3 = 1 if p = 3 and δp, 3 = 0 otherwise.
+The identity
+(n
+m
+)
+=
+(n−1
+m−1
+)
+n/m yields the following congruence.
+Lemma 4.2. Let p be a prime and n ≥ m ≥ 0 be integers. Suppose that vp(n) ≥ vp(m). Then
+(n
+m
+)
+≡ 0 mod pvp(n)−vp(m).
+4.2 Conclusion of proof
+As
+( 3n
+n,n,n
+)
+=
+(3n
+2n
+)(2n
+n
+)
+satisﬁes the Gauss congruences of order 2 by Lemma 4.1, and so do es ( −1)n, we deal
+with ˜Bn = 2(−1)nBn +
+( 3n
+n,n,n
+)
+instead of Bn.
+The vector ( a, b, c) stands for ( a1, a2, . . . , c2, c3) ∈ Z9. Let k, n ≥ 1 and let p ≥ 3 be a prime. We
+write p · (a, b, c) for ( p · a, p · b, p · c), and p | (a, b, c) if all the entries of ( a, b, c) are divisible by p. Given
+(a, b, c) ∈ S(m) we write
+B(a, b, c) =
+(m
+a
+)(m
+b
+)(m
+c
+)
+.
+Let p be an odd prime and let n, k ≥ 1. By Proposition 1.2 we may write ˜Bnpk − ˜Bnpk− 1 as
+˜Bnpk − ˜Bnpk− 1 = 3(S1 + S2 + S3) (4.1)
+where
+S1 =
+∑
+(a, b, c)∈S(npk)
+p∤(a, b, c)
+B(a, b, c),
+S2 =
+∑
+(a, b, c)∈S(npk− 1)
+(B(p · (a, b, c)) − B(a, b, c)) ,
+S3 =
+∑
+p·(a, b, c)∈S(npk)
+(a, b, c) /∈S(npk− 1)
+B(p · (a, b, c))
+Here we have used the following observation: if ( a, b, c) ∈ S(npk−1) then p · (a, b, c) ∈ S(npk).
+Let ( a, b, c) ∈ S(npk) with p ∤ (a, b, c). Suppose without loss of generalization that p ∤ a1. At least one
+of b1 and c1 is indivisible by p as well, because of the condition a1 + b1 + c1 = npk. Suppose without loss
+of generalization that p ∤ b1. The integer B(a, b, c) is divisible by
+(npk
+a1
+)(npk
+b1
+)
+, which by Lemma 4.2 implies
+that B(a, b, c) ≡ 0 mod p2k, and so S1 ≡ 0 mod p2k.
+We now deal with S2. Let ( a, b, c) ∈ S(npk−1). We may write both B(p · (a, b, c)) and B(a, b, c) as a
+product of 6 binomial coeﬃcients, namely
+B(p · (a, b, c)) =
+(npk
+pa1
+)(p(a2 + a3)
+pa2
+)(npk
+pb1
+)(p(b2 + b3)
+pb2
+)(npk
+pc1
+)(p(c2 + c3)
+pc2
+)
+,
+B(a, b, c) =
+(npk−1
+a1
+)(a2 + a3
+a2
+)(npk−1
+b1
+)(b2 + b3
+b2
+)(npk−1
+c1
+)(c2 + c3
+c2
+)
+.
+14
+Applying Lemma 4.1 6 times, we obtain that
+B(p · (a, b, c))
+B(a, b, c) ≡ 1 mod pd (4.2)
+where
+d = min{k + vp(pa1) + vp(p(a2 + a3)), vp(p3a2a3(a2 + a3)),
+k + vp(pb1) + vp(p(b2 + b3)), vp(p3b2b3(b2 + b3)),
+k + vp(pc1) + vp(p(c2 + c3)), vp(p3c2c3(c2 + c3))} − 1.
+Without loss of generalization, suppose that d = k + vp(a1) +vp(a2 + a3) + 1 or d = vp(a2a3(a2 + a3)) + 2. In
+the ﬁrst case, since
+(npk− 1
+a1
+)
+| B(a, b, c), Lemma 4.2 implies that B(a, b, c) ≡ 0 mod pmax{k−1−vp(a1), 0} and
+so
+B(p · (a, b, c)) ≡ B(a, b, c) mod pe,
+where e ≥ d + k − 1 − vp(a1) ≥ 2k + vp(a2 + a3) ≥ 2k, and so the summand of S2 corresponding to
+(a, b, c) vanishes modulo p2k. Suppose now that we are in the second case, d = vp(a2a3(a2 + a3)) + 2. Since
+ai + bi + ci = pk−1n for each i ∈ {1, 2, 3}, we have
+B(a, b, c) =
+3∏
+i=1
+( npk−1
+ai, bi, ci
+)
+,
+and in particular
+(npk− 1
+a2
+)(npk− 1
+a3
+)
+| B(a, b, c), so that by Lemma 4.2 we have
+B(a, b, c) ≡ 0 mod pmax{k−1−vp(a2), 0}+max{k−1−vp(a3), 0}. (4.3)
+From (4.2) and (4.3) we obtain
+B(p · (a, b, c)) ≡ B(a, b, c) mod pe,
+where e ≥ d + (k − 1 − vp(a2)) + ( k − 1 − vp(a3)) ≥ 2k + vp(a2 + a3) ≥ 2k, and so the summand of S2
+corresponding to ( a, b, c) vanishes modulo p2k in this case also. All in all, S2 ≡ 0 mod p2k.
+Finally, we deal with S3. We have shown that S1 and S2 vanish modulo p2k. By (4.1), it suﬃces to show
+that p2k | 3S3. If p ̸= 3 then clearly S3 = 0 since p | (a, b, c) forces ( a, b, c)/p ∈ S(npk−1). So from now on
+we suppose that p = 3, and shall show 3 2k−1 | S3.
+We ﬁrst demonstrate that each summand of S3 is divisible by 3 2k−2. As this is vacuous for k = 1,
+we assume k ≥ 2. The condition ( a, b, c) /∈ S(n3k−1) implies 3 ∤ b2 + 2 b3 + 2 c2 + c3, which forces one
+of {b2, b3, c2, c3} not being divisible by 3, say 3 ∤ b2. Next, at least one of a2 and c2 is also indivisible
+by 3 (say, a2) since otherwise the condition n3k−1 = a2 + b2 + c2 gives a contradiction modulo 3. The
+equality
+(3kn
+3a
+)(3kn
+3b
+)(3kn
+3c
+)
+= 3kn
+3b2
+3kn
+3a2
+( 3kn−1
+3b1, 3b2−1, 3b3
+)( 3kn−1
+3a1, 3a2−1, 3a3
+)(3kn
+3c
+)
+implies that indeed each summand of S3
+is divisible by 3 2k−2. Assuming still that k ≥ 2, we shall show that
+3 |
+∑
+3·(a, b, c)∈S(n3k)
+(a, b, c) /∈S(n3k− 1)
+(3kn
+3a
+)(3kn
+3b
+)(3kn
+3c
+)
+3−(2k−2), (4.4)
+ﬁnishing the proof for this case. For each ( a, b, c) in the summation range we deﬁne ∆ 1 = a2 − a3 mod 3,
+∆ 2 = b2 − b3 mod 3 and ∆ 3 = c2 − c3 mod 3. The condition 3 ∤ b2 + 2 b3 + 2 c2 + c3 is equivalent to
+∆ 2 ̸= ∆ 3. Moreover, we have ∆ 1 + ∆ 2 + ∆ 3 = 0. This forces {∆ 1, ∆ 2, ∆ 3} being a permutation of
+{0 mod 3 , 1 mod 3 , 2 mod 3 }, and so if ( a, b, c) is in the summation range, then ( b, c, a) and ( c, a, b) are two
+additional distinct tuples in the range, and evidently cyclic permutat ions of ( b, c, a) contribute the same
+value to the right-hand side of (4.4), proving the congruence (4.4) holds.
+It is left to deal with the case k = 1, which we deal with diﬀerently. We must prove that B3n ≡ Bn mod 9
+for 3 ∤ n. By the formula Bn =∑ ⌊n/ 3⌋
+k=0 (−1)k3n−3k(n
+3k
+)(3k
+2k
+)(2k
+k
+)
+, dating back to Zagier’s paper [57], we have
+B3n ≡ (−1)n( 3n
+n,n,n
+)
+mod 9 and Bn ≡ (−1)⌊ n
+3 ⌋3n−3⌊ n
+3 ⌋( n
+3⌊ n
+3 ⌋
+)( 3⌊ n
+3 ⌋
+⌊ n
+3 ⌋, ⌊ n
+3 ⌋, ⌊ n
+3 ⌋
+)
+mod 9. For n = 1, it is easy to
+check that both expression are 3 mod 9. For n > 1 (with 3 ∤ n), both expressions are 0 modulo 9 by e.g.
+Kummer’s theorem [32].
+15
+5 Legendrian and hypergeometric sequences
+Zagier [57] and Almkvist and Zudilin [5] have found the following Legend rian and hypergeometric Ap´ ery-like
+sequences:
+un = Cn
+α
+n∑
+k=0
+(−1)k
+( −α
+n − k
+)2(α − 1
+k
+)
+, u n = Cn
+α
+n∑
+k=0
+( −α
+n − k
+)2(α − 1
+k
+)2
+,
+un = Cn
+α
+(−α
+n
+)(α − 1
+n
+)
+, u n = Cn
+α
+(−α
+n
+)(α − 1
+n
+)(2n
+n
+)
+for α ∈ { 1/2, 1/3, 1/4, 1/6}, where Cα = α−3 if α ∈ { 1/3, 1/4} and Cα = 2 α−3 if α ∈ { 1/2, 1/6}. It is
+relatively easy to ﬁnd constant-term representations for the hy pergeometric sequences, several are listed in the
+OEIS. For the second-order Legendrian sequence un = 16 n∑ n
+k=0(−1)k(−1/ 2
+n−k
+)2(−1/ 2
+k
+)
+=∑ n
+k=0 4k(2n−2k
+n−k
+)2(2k
+k
+)
+we have found and veriﬁed the representation un = CT(Λ n) with
+Λ = ( −xy)−1(x2y2 − 2x2y − 2xy2 + x2 − 12xy + y2 − 2x − 2y + 1).
+The only interior point of Λ’s Newton polytope is the origin, and Λ becom es a ‘good’ Laurent poly-
+nomial upon substituting x2, y2 in place of x, y. Similarly, for the second-order Legendrian sequence
+un = 27 n∑ n
+k=0(−1)k(−1/ 3
+n−k
+)2(−2/ 3
+k
+)
+we have a representation with
+Λ = ( xy)−1(x3 + 3x2y + 3xy2 + y3 − 3x2 + 21xy − 3y2 + 3x + 3y − 1)
+which has no interior points other than the origin, and which factoriz es upon substituting x3, y3 for x, y.
+For the third-order Legendrian sequence un = 16 n∑ n
+k=0
+(−1/ 2
+n−k
+)2(−1/ 2
+k
+)2
+=∑ n
+k=0
+(2n−2k
+n−k
+)2(2k
+k
+)2
+, we have
+found a constant-term representation with
+Λ = ( xyz)−1(−x + y + z + 1)(x − y + z + 1)(x + y − z + 1)(x + y + z − 1),
+with no interior points other than the origin. It would be interesting t o ﬁnd useful representations for all
+the Legendrian solutions.
+6 Future directions
+1. Suppose an integer sequence {un}n≥0 is given in terms of a binomial sum, or as the diagonal of rational
+function. Is there an algorithm deciding whether un = CT(Λ n) for some Laurent polynomial Λ, and
+for ﬁnding such a Λ? Is there an eﬃcient algorithm which produces Λ s uch that the only integral point
+in its interior is the origin, in case such Λ exists?
+Positive answers to these questions would lead to an alternative pro of of Theorem 1.1. The ﬁrst
+question is a special case of a question raised by Zagier [58, p. 769, Q1], asking how to recognize that
+a diﬀerential equation has geometric origin.
+2. Fix d ∈ {2, 3}. Can one classify integer sequences {un}n≥0 such that y =∑
+n≥0 unzn satisﬁes (1.6) (if
+d = 2) or (1.7) (if d = 3), and in addition un = CT(Λ n) for some Laurent polynomial Λ in d variables?
+Such a classiﬁcation might give support to the conjecture that the 15 sporadic sequences that were
+discovered are the only integral solutions to (1.6) and (1.7).
+3. Can one ﬁnd new Calabi-Yau equations by considering the annihilatin g operator of CTS(Λ) for various
+good Laurent polynomials Λ? Here ‘good’ is used as in §3.4.
+4. Straub generalized the third-order Gauss congruences for th e Ap´ ery nmbers (γ) as follows. He proved
+[51, Thm. 1.2] that for every n = (n1, n2, n3, n4) ∈ Z4, A(prn) ≡ A(pr−1n) mod p3r holds for all r ≥ 1
+and primes p ≥ 5. Here A(n) is the coeﬃcient of xn1
+1 xn2
+2 xn3
+3 xn4
+4 in the Taylor expansion of (3.4). Since
+A(n, n, n, n) = an, this recovers anpr ≡ anpr− 1 mod p3r.
+16
+Given a Laurent polynomial Λ ∈ Z[x1, x−1
+1 , . . . , xd, x−1
+d ], we may consider the rational function A =
+1/(1 −∏ d+1
+i=1 xiΛ) with Taylor coeﬃcients A(n). Generalizing observation (3.1), note that
+A(n) = CT
+(
+Λ nd+1
+d∏
+i=1
+xnd+1−ni
+i
+)
+for n ∈ Zd+1. Thus, a family of congruences A(prn) ≡ A(pr−1n) mod pkr, of the form considered by
+Straub, becomes
+CT
+(
+Λ prn
+d∏
+i=1
+xpr ni
+i
+)
+≡ CT
+(
+Λ pr− 1n
+d∏
+i=1
+xpr− 1ni
+i
+)
+mod pkr. (6.1)
+Can one prove (6.1) for the Laurent polynomials in Proposition 3.3, wit h k = 2 or k = 3?
+Acknowledgments
+In addition to useful comments, corrections and suggestions, I w ould like to thank Armin Straub for crucial
+computational help in the proof of Proposition 3.3 for ( η), and Wadin Zudilin for letting me know of the
+survey [58]. I am grateful for the referee’s helpful comments reg arding the exposition.
+Funding
+This project has received funding from the European Research Co uncil (ERC) under the European Union’s
+Horizon 2020 research and innovation programme (grant agreeme nt No 851318).
+References
+[1] Roger Ap´ ery. Irrationalit´ e deζ(2) et ζ(3). Ast´ erisque, 61:11–13, 1979.
+[2] Roger Ap´ ery. Interpolation de fractions continues et irration alit´ e de certaines constantes. InMathemat-
+ics, CTHS: Bull. Sec. Sci., III, pages 37–53. Bib. Nat., Paris, 1981.
+[3] Tewodros Amdeberhan and Roberto Tauraso. Supercongruen ces for the Almkvist-Zudilin numbers.
+Acta Arith., 173(3):255–268, 2016.
+[4] Gert Almkvist, Duco van Straten, and Wadim Zudilin. Generalization s of Clausen’s formula and alge-
+braic transformations of Calabi-Yau diﬀerential equations. Proc. Edinb. Math. Soc. (2) , 54(2):273–295,
+2011.
+[5] Gert Almkvist and Wadim Zudilin. Diﬀerential equations, mirror maps and zeta values. In Mirror
+symmetry. V , volume 38 of AMS/IP Stud. Adv. Math. , pages 481–515. Amer. Math. Soc., Providence,
+RI, 2006.
+[6] A. Bostan, S. Boukraa, G. Christol, S. Hassani, and J.-M. Maillard . Ising n-fold integrals as diagonals
+of rational functions and integrality of series expansions. J. Phys. A , 46(18):185202, 44, 2013.
+[7] A. Bostan, S. Boukraa, J.-M. Maillard, and J.-A. Weil. Diagonals of r ational functions and selected
+diﬀerential Galois groups. J. Phys. A , 48(50):504001, 29, 2015.
+[8] Alin Bostan, Fr´ ed´ eric Chyzak, Mark van Hoeij, and Lucien Pech . Explicit formula for the generating
+series of diagonal 3D rook paths. S´ em. Lothar. Combin., 66:Art. B66a, 27, 2011/12.
+[9] F. Beukers. Another congruence for the Ap´ ery numbers. J. Number Theory , 25(2):201–210, 1987.
+[10] F. Beukers. Irrationality proofs using modular forms. Ast´ erisque, (147-148):271–283, 345, 1987. Journ´ ees
+arithm´ etiques de Besan¸ con (Besan¸ con, 1985).
+17
+[11] Alin Bostan, Pierre Lairez, and Bruno Salvy. Multiple binomial sums . J. Symbolic Comput. , 80(part
+2):351–386, 2017.
+[12] Jonathan M. Borwein, Dirk Nuyens, Armin Straub, and James Wa n. Some arithmetic properties of
+short random walk integrals. Ramanujan J. , 26(1):109–132, 2011.
+[13] Viggo Brun, J. O. Stubban, J. E. Fjeldstad, R. Tambs Lyche, K . E. Aubert, W. Ljunggren, and
+E. Jacobsthal. On the divisibility of the diﬀerence between two binomia l coeﬃcients. In Den 11te
+Skandinaviske Matematikerkongress, Trondheim, 1949 , pages 42–54. Johan Grundt Tanums Forlag,
+Oslo, 1952.
+[14] Jonathan M. Borwein, Armin Straub, and Christophe Vignat. De nsities of short uniform random walks
+in higher dimensions. J. Math. Anal. Appl. , 437(1):668–707, 2016.
+[15] Jonathan M. Borwein, Armin Straub, and James Wan. Three-st ep and four-step random walk integrals.
+Exp. Math. , 22(1):1–14, 2013.
+[16] S. Chowla, J. Cowles, and M. Cowles. Congruence properties of Ap´ ery numbers.J. Number Theory ,
+12(2):188–190, 1980.
+[17] Heng Huat Chan, Shaun Cooper, and Francesco Sica. Congrue nces satisﬁed by Ap´ ery-like numbers.
+Int. J. Number Theory , 6(1):89–97, 2010.
+[18] Gilles Christol. Diagonales de fractions rationnelles et equations d iﬀ´ erentielles. In Study group on
+ultrametric analysis, 10th year: 1982/83, No. 2 , pages Exp. No. 18, 10. Inst. Henri Poincar´ e, Paris,
+1984.
+[19] Gilles Christol. Diagonales de fractions rationnelles et ´ equations de Picard-Fuchs. In Study group on
+ultrametric analysis, 12th year, 1984/85, No. 1 , pages Exp. No. 13, 12. Secr´ etariat Math., Paris, 1985.
+[20] Fr´ ed´ eric Chyzak. An extension of Zeilberger’s fast algorithm to general holonomic functions. volume
+217, pages 115–134. 2000. Formal power series and algebraic com binatorics (Vienna, 1997).
+[21] Shaun Cooper. Sporadic sequences, modular forms and new se ries for 1 /π. Ramanujan J., 29(1-3):163–
+183, 2012.
+[22] Shaun Cooper. Ramanujan’s theta functions. Springer, Cham, 2017.
+[23] Matthijs Johannes Coster. Supercongruences. PhD thesis, University of Leiden, 1988.
+[24] Heng Huat Chan, Yoshio Tanigawa, Yifan Yang, and Wadim Zudilin. N ew analogues of Clausen’s
+identities arising from the theory of modular forms. Adv. Math., 228(2):1294–1314, 2011.
+[25] Heng Huat Chan and Wadim Zudilin. New representations for Ap´ e ry-like sequences. Mathematika,
+56(1):107–117, 2010.
+[26] ´E. Delaygue. Arithmetic properties of Ap´ ery-like numbers. Compos. Math., 154(2):249–274, 2018.
+[27] Emeric Deutsch and Bruce E. Sagan. Congruences for Catalan and Motzkin numbers and related
+sequences. J. Number Theory , 117(1):191–215, 2006.
+[28] B. Dwork. p-adic cycles. Inst. Hautes ´Etudes Sci. Publ. Math. , (37):27–115, 1969.
+[29] Ira Gessel. Some congruences for Ap´ ery numbers. J. Number Theory , 14(3):362–368, 1982.
+[30] Oﬁr Gorodetsky. q-congruences, with applications to superc ongruences and the cyclic sieving phe-
+nomenon. International Journal of Number Theory , 15(09):1919–1968, 2019.
+[31] G. S. Kazandzidis. On congruences in number-theory. Bull. Soc. Math. Gr` ece (N.S.) , 10(fasc., fasc.
+1):35–40, 1969.
+18
+[32] E. E. Kummer. ¨Uber die Erg¨ anzungss¨ atze zu den allgemeinen Reciprocit¨ atsgesetzen. J. Reine Angew.
+Math., 44:93–146, 1852.
+[33] L. Lipshitz. The diagonal of a D-ﬁnite power series is D-ﬁnite. J. Algebra, 113(2):373–378, 1988.
+[34] E. Lucas. Sur les congruences des nombres eul´ eriens et les c oeﬃcients diﬀ´ erentiels des functions
+trigonom´ etriques suivant un module premier. Bull. Soc. Math. Fr. , 6:49–54, 1878.
+[35] Percy A. MacMahon. Combinatory analysis . Two volumes (bound as one). Chelsea Publishing Co.,
+New York, 1960.
+[36] Richard J. McIntosh. A generalization of a congruential prope rty of Lucas. Amer. Math. Monthly ,
+99(3):231–238, 1992.
+[37] Yoshio Mimura. Congruence properties of Ap´ ery numbers. J. Number Theory , 16(1):138–146, 1983.
+[38] Richard Moy. Congruences among power series coeﬃcients of m odular forms. Int. J. Number Theory ,
+9(6):1447–1474, 2013.
+[39] Amita Malik and Armin Straub. Divisibility properties of sporadic Ap´ ery-like numbers. Res. Number
+Theory, 2:Art. 5, 26, 2016.
+[40] Anton Mellit and Masha Vlasenko. Dwork’s congruences for the c onstant terms of powers of a Laurent
+polynomial. Int. J. Number Theory , 12(2):313–321, 2016.
+[41] Robert Osburn and Brundaban Sahu. Congruences via modular forms. Proc. Amer. Math. Soc. ,
+139(7):2375–2381, 2011.
+[42] Robert Osburn and Brundaban Sahu. Supercongruences for Ap´ ery-like numbers.Adv. in Appl. Math. ,
+47(3):631–638, 2011.
+[43] Robert Osburn and Brundaban Sahu. A supercongruence for generalized Domb numbers. Funct. Approx.
+Comment. Math. , 48(part 1):29–36, 2013.
+[44] Robert Osburn, Brundaban Sahu, and Armin Straub. Superco ngruences for sporadic sequences. Proc.
+Edinb. Math. Soc. (2) , 59(2):503–518, 2016.
+[45] C. Peters and J. Stienstra. A pencil of K3-surfaces related to Ap´ ery’s recurrence for ζ(3) and Fermi
+surfaces for potential zero. In Arithmetic of complex manifolds (Erlangen, 1988) , volume 1399 of Lecture
+Notes in Math. , pages 110–127. Springer, Berlin, 1989.
+[46] Alain M. Robert. A course in p-adic analysis , volume 198 of Graduate Texts in Mathematics . Springer-
+Verlag, New York, 2000.
+[47] Jan Stienstra and Frits Beukers. On the Picard-Fuchs equatio n and the formal Brauer group of certain
+elliptic K3-surfaces. Math. Ann. , 271(2):269–304, 1985.
+[48] Asmus L. Schmidt. Legendre transforms and Ap´ ery’s sequen ces. J. Austral. Math. Soc. Ser. A ,
+58(3):358–375, 1995.
+[49] N. J. A. Sloane. The on-line encyclopedia of integer sequences. https://oeis.org, 1996.
+[50] Volker Strehl. Binomial identities—combinatorial and algorithmic a spects. Discrete Math. , 136(1-
+3):309–346, 1994. Trends in discrete mathematics.
+[51] Armin Straub. Multivariate Ap´ ery numbers and supercongruences of rational functions. Algebra Number
+Theory, 8(8):1985–2007, 2014.
+[52] Kira Samol and Duco van Straten. Dwork congruences and reﬂ exive polytopes. Ann. Math. Qu´ e.,
+39(2):185–203, 2015.
+19
+[53] Armin Straub and Wadim Zudilin. Positivity of rational functions an d their diagonals. J. Approx.
+Theory, 195:57–69, 2015.
+[54] H. A. Verrill. Some congruences related to modular forms. 1999 . Preprint.
+[55] H. A. Verrill. Picard-Fuchs equations of some families of elliptic cur ves. In Proceedings on Moonshine
+and related topics (Montr´ eal, QC, 1999), volume 30 of CRM Proc. Lecture Notes, pages 253–268. Amer.
+Math. Soc., Providence, RI, 2001.
+[56] H. A. Verrill. Congruences related to modular forms. Int. J. Number Theory , 6(6):1367–1390, 2010.
+[57] Don Zagier. Integral solutions of Ap´ ery-like recurrence equ ations. In Groups and symmetries , volume 47
+of CRM Proc. Lecture Notes , pages 349–366. Amer. Math. Soc., Providence, RI, 2009.
+[58] Don Zagier. The arithmetic and topology of diﬀerential equation s. In European Congress of Mathematics,
+pages 717–776. Eur. Math. Soc., Z¨ urich, 2018.
+[59] Doron Zeilberger. The method of creative telescoping. J. Symbolic Comput. , 11(3):195–204, 1991.
+Mathematical Institute, University of Oxford, Oxford, OX2 6G G, UK
+E-mail address: ofir.goro@gmail.com
+20

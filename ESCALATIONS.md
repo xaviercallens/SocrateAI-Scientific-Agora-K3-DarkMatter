@@ -15,7 +15,7 @@ changes are edited in place with a dated note.
 
 | | |
 |---|---|
-| **Status** | 🔴 **OPEN** — successor to E-008; the program's geometric frontier |
+| **Status** | 🟢 **RESOLVED (2026-07-26)** — the K3 **exists** and is explicitly constructed in the literature. Residual: the ρ/T identification, now [B] not [C]. |
 | **Opened** | 2026-07-26 |
 | **Raised by** | Opus 5 (Stream 2), on the E-008 step-1 PASS |
 | **Severity** | High — determines whether ρ/T are recoverable at all, and thus whether Phase M can ever reopen |
@@ -82,6 +82,59 @@ from a count and is now met by an independent exponent computation. Still [B] �
 from exponent data plus standard Fuchsian theory, not a rigorous identification.
 (s10 analogously gives (2,2,4), 1 cusp, area 3/4 — consistent with a level-10
 Atkin–Lehner quotient.)
+
+### RESOLUTION (2026-07-26) — Phase 1 provenance gate settled it
+
+Fetched and hash-pinned **Almkvist & van Straten, "Calabi-Yau operators of degree two"
+(arXiv:2103.08651v1)**. Its section *"The three sporadic third order operators"* is our
+operators, and A–vS state outright: *"These sporadic operators and sequences were also
+found by S. Cooper [20], where they are called **s10, s7 and s18**."*
+
+**The K3 EXISTS — explicitly constructed, for both candidates:**
+
+| ours | A–vS | K3 construction (their "A-incarnation") |
+|---|---|---|
+| **s7** (A183204) | Sporadic 2 | **intersection of six hyperplane sections of the Grassmannian G(2,6) in its Plücker embedding** |
+| **s10** (A005260) | Sporadic 1 | **intersection of four hyperplane sections of type (1,1) in P³ × P³** |
+
+So the category worry that motivated this ticket — "maybe there is no K3 and the whole
+fibration reading is a mirage" — is **answered: there is a K3.** The order-2 elliptic
+points found in E-008 are features of the *modular parametrization*, not evidence against
+the K3; both descriptions coexist, exactly as in the classical Apéry case (Gorodetsky
+arXiv:2102.11839 §1: *"(1.4) is a Picard-Fuchs equation, while (1.3) is a symmetric square
+of a Picard-Fuchs equation"* — order-2 ↦ weight-1 form, order-3 = Sym² ↦ weight-2, which
+is precisely our structure).
+
+**Independent validation of our own computations.** A–vS *print* Riemann symbols. They
+match what `check_L3_riemann_scheme.py` computed from scratch, exactly, at all four
+singular points for both operators:
+
+```
+s7  : 0 {0,0,0} | 1/27 {0,1/2,1} | -1   {0,1/2,1} | oo {2/3,1,4/3}
+s10 : 0 {0,0,0} | 1/16 {0,1/2,1} | -1/4 {0,1/2,1} | oo {3/4,1,5/4}
+```
+Their operator coefficients also match the repo's `Q3,Q2,Q1,Q0` **exactly**
+(`check_literature_provenance.py`), confirming the Lean-side coefficients are right and
+correctly attributed.
+
+**Bonus — s18 recovered.** A–vS "Sporadic 3" gives the operator whose repo copy has been
+BLOCKED as corrupt since 2026-07-20:
+`θ³ − 2x(2θ+1)(7θ²+7θ+3) + 12x²(4θ+3)(θ+1)(4θ+5)`, i.e.
+`Q₃ = 192z²−28z+1, Q₂ = 576z²−42z, Q₁ = 564z²−26z, Q₀ = 180z²−6z`. It regenerates the
+published sequence 1, 6, 54, 564, 6390, 76356, 948276 exactly.
+
+### What remains — and it is now [B], not [C]
+
+**A–vS state no Picard number.** So ρ = 19 / T = 3 still rests on the standard
+identification of the order-3 sub-VHS with the *full* transcendental lattice. That step is
+routine for this family of operators but is **not** in the source we fetched. It is
+therefore upgraded from *conditional on an unproven existence claim* to *a standard
+identification awaiting a citation* — materially stronger, still not derived here.
+
+**What would close it:** Stienstra & Beukers, *"On the Picard-Fuchs equation and the formal
+Brauer group of certain elliptic K3-surfaces"*, Math. Ann. **271** (1985) 269–304 (cited as
+[47] in Gorodetsky), and/or Peters & Stienstra [45]. Both are named in
+`refs/literature_provenance.txt` under NOT YET FETCHED.
 
 ### Standing rule (unchanged)
 

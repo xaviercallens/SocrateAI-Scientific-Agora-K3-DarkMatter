@@ -1,0 +1,175 @@
+{
+  "checker": "check_literature_provenance.py",
+  "checker_version": "1.0.0",
+  "date": "2026-07-26",
+  "hashes": [
+    {
+      "file": "almkvist_van_straten_2103.08651.pdf",
+      "sha256": "549c176daa7eb5605b09a6894a8e5a9cbe94c015ef6e7dcb87650ceef4e7cfec",
+      "hash_matches_register": true,
+      "identity_strings_present": true
+    },
+    {
+      "file": "gorodetsky_2102.11839.pdf",
+      "sha256": "520da4b0171128d22971d7398f79a1aa6cd760c2412b34a78ba5120adc371ee1",
+      "hash_matches_register": true,
+      "identity_strings_present": true
+    }
+  ],
+  "operators": [
+    {
+      "name": "cooper_s7",
+      "avs_name": "Sporadic 2",
+      "Q_from_paper": [
+        "-27*z**2 - 26*z + 1",
+        "-81*z**2 - 39*z",
+        "-78*z**2 - 21*z",
+        "-24*z**2 - 4*z"
+      ],
+      "repo_coefficients_match": true,
+      "sequence_regenerated_ok": true,
+      "printed_sequence": [
+        1,
+        4,
+        48,
+        760,
+        13840,
+        273504,
+        5703096
+      ],
+      "singular_points": [
+        "0",
+        "1/27",
+        "-1",
+        "oo"
+      ],
+      "riemann_symbol_as_printed": {
+        "0": [
+          "0",
+          "0",
+          "0"
+        ],
+        "1/27": [
+          "0",
+          "1/2",
+          "1"
+        ],
+        "-1": [
+          "0",
+          "1/2",
+          "1"
+        ],
+        "oo": [
+          "2/3",
+          "1",
+          "4/3"
+        ]
+      },
+      "A_incarnation": "K3 surface: intersection of six hyperplane sections of the Grassmannian G(2,6) in its Plucker embedding"
+    },
+    {
+      "name": "cooper_s10",
+      "avs_name": "Sporadic 1",
+      "Q_from_paper": [
+        "-64*z**2 - 12*z + 1",
+        "-192*z**2 - 18*z",
+        "-188*z**2 - 10*z",
+        "-60*z**2 - 2*z"
+      ],
+      "repo_coefficients_match": true,
+      "sequence_regenerated_ok": true,
+      "printed_sequence": [
+        1,
+        2,
+        18,
+        164,
+        1810,
+        21252,
+        263844
+      ],
+      "singular_points": [
+        "0",
+        "1/16",
+        "-1/4",
+        "oo"
+      ],
+      "riemann_symbol_as_printed": {
+        "0": [
+          "0",
+          "0",
+          "0"
+        ],
+        "1/16": [
+          "0",
+          "1/2",
+          "1"
+        ],
+        "-1/4": [
+          "0",
+          "1/2",
+          "1"
+        ],
+        "oo": [
+          "3/4",
+          "1",
+          "5/4"
+        ]
+      },
+      "A_incarnation": "K3 surface: intersection of four hyperplane sections of type (1,1) in P^3 x P^3"
+    },
+    {
+      "name": "s18",
+      "avs_name": "Sporadic 3",
+      "Q_from_paper": [
+        "192*z**2 - 28*z + 1",
+        "576*z**2 - 42*z",
+        "564*z**2 - 26*z",
+        "180*z**2 - 6*z"
+      ],
+      "repo_coefficients_match": null,
+      "sequence_regenerated_ok": true,
+      "printed_sequence": [
+        1,
+        6,
+        54,
+        564,
+        6390,
+        76356,
+        948276
+      ],
+      "singular_points": [
+        "0",
+        "1/16",
+        "1/12",
+        "oo"
+      ],
+      "riemann_symbol_as_printed": {
+        "0": [
+          "0",
+          "0",
+          "0"
+        ],
+        "1/16": [
+          "0",
+          "1/2",
+          "1"
+        ],
+        "1/12": [
+          "0",
+          "1/2",
+          "1"
+        ],
+        "oo": [
+          "3/4",
+          "1",
+          "5/4"
+        ]
+      },
+      "A_incarnation": null
+    }
+  ],
+  "scope_note": "Verifies file integrity, document identity, operator-coefficient agreement and sequence regeneration ONLY. Does not verify other claims in the papers and does not consult OEIS. Cooper 2012 and O'Brien 2016 remain unfetched; Phase 1 is NOT fully closed by a PASS here.",
+  "verdict": "PASS",
+  "picard_rank": null,
+  "transcendental_rank": null
+}

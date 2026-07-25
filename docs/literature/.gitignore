@@ -1,0 +1,3 @@
+# PDFs are hash-pinned in refs/literature_provenance.txt and re-fetchable from the
+# recorded URLs; the extracted .txt is what the checkers read. Keep the repo light.
+*.pdf
