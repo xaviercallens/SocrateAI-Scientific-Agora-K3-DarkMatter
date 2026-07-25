@@ -17,9 +17,29 @@ url     https://arxiv.org/pdf/2102.11839
 fetched 2026-07-26
 bytes   314883
 
+sha256  109a0e0cbc2513cb1e514b079145d4fe75fbec3777ae259e32af08157c488fa9
+file    obrien_2016_massey_thesis.pdf
+cite    O'Brien, L.A., 'Modular forms and two new integer sequences at level 7', MSc thesis, Massey University, Albany, New Zealand, 2016 (supervisor S. Cooper).
+url     https://mro.massey.ac.nz/server/api/core/bitstreams/16e1c23a-dd52-4f08-93bc-6fb17ed7d79b/content
+fetched 2026-07-26
+bytes   2251650
+note    Freely hosted by the Massey University institutional repository (MRO) — unlike
+        Cooper 2012 and Stienstra-Beukers 1985, this one is NOT paywalled.
+        Theorem 6.1 (p.45-46, verified against front matter and content) states exactly:
+        (n+1)^2 c7(n+1) = (26n^2+13n+2)c7(n) + 3(3n-1)(3n-2)c7(n-1), c7(-1)=0, c7(0)=1,
+        with values 1,2,22,336,6006,117348,2428272,52303680,1160427510,26337699740,
+        608642155660 for n=0..10 — matches refs/recurrences_v1.json's cooper_s7_partner
+        entry exactly (recurrence AND all 10 terms), independently confirming the
+        A279619 identity cited in ESCALATIONS.md E-007 point 4.
+        z7, X7 are level-7 modular functions (eta-quotients in q and q^7) — supports the
+        "level 7" / modular-curve framing in E-007. Does NOT itself state "X0(7)" or
+        "CM by Q(sqrt(-7))" anywhere (grepped, zero hits) — that specific clause in
+        E-007 point 4 is a separate, standard fact about the disc-(-7) quadratic form in
+        A002652, not something this thesis asserts; ESCALATIONS.md's citation there
+        should be read as supporting only the g.f./level-7 identity, not the CM claim.
+
 # NOT YET FETCHED (still required to close Phase 1 fully):
 #   Cooper 2012, Ramanujan J. 29, 163-183 (paywalled; s7/s10/s18 naming)
-#   O'Brien 2016 MSc thesis, Massey Univ. (Thm 6.1, c_7 = A279619)
 #   Chan-Cooper-Sica 2010 (Conj 5.4)
 #   Stienstra-Beukers 1985, Math. Ann. 271, 269-304 (K3 Picard rank — would settle E-009 Lead 2 fully)
 #     CONFIRMED PAYWALLED 2026-07-26 (search attempt, no fetch of paywalled content):

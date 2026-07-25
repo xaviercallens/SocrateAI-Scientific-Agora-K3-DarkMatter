@@ -275,6 +275,16 @@ Established facts:
    earlier as **Conjecture 5.4** in Chan, Cooper & Sica (2010), *"Congruences satisfied
    by Apéry-like numbers"*. A279619 = expansion of the g.f. of A002652 (x²+xy+2y²,
    disc −7) in powers of A279618 (level-7 Hauptmodul).
+   **Fetched and verified 2026-07-26** (`refs/literature_provenance.txt`,
+   `docs/literature/obrien_2016_massey_thesis.txt`): Theorem 6.1's recurrence and all 10
+   printed terms match `cooper_s7_partner` exactly — the A279619/level-7 identity is
+   confirmed from the primary source. **Citation-precision note:** the thesis text
+   establishes the g.f. identity and level-7 modular parametrization (z₇, X₇ built from
+   η-quotients in q, q⁷); it does **not** itself state "X₀(7)" or "CM by ℚ(√−7)"
+   anywhere (checked, zero hits) — that specific framing is a standard fact about the
+   disc-(-7) binary quadratic form x²+xy+2y² in A002652, independent of O'Brien's thesis,
+   not something Theorem 6.1 asserts. Read the citation as supporting the g.f. identity
+   only. Chan–Cooper–Sica 2010 remains unfetched (not found freely hosted; not re-checked).
 
 5. **s10 non-integrality is expected**, not an error: level 10 (Γ₀(10)) lacks the cusp
    structure that yields integral coefficients at level 7, forcing denominators scaling

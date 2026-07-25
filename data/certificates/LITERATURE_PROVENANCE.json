@@ -14,6 +14,12 @@
       "sha256": "520da4b0171128d22971d7398f79a1aa6cd760c2412b34a78ba5120adc371ee1",
       "hash_matches_register": true,
       "identity_strings_present": true
+    },
+    {
+      "file": "obrien_2016_massey_thesis.pdf",
+      "sha256": "109a0e0cbc2513cb1e514b079145d4fe75fbec3777ae259e32af08157c488fa9",
+      "hash_matches_register": true,
+      "identity_strings_present": true
     }
   ],
   "operators": [
@@ -168,7 +174,7 @@
       "A_incarnation": null
     }
   ],
-  "scope_note": "Verifies file integrity, document identity, operator-coefficient agreement and sequence regeneration ONLY. Does not verify other claims in the papers and does not consult OEIS. Cooper 2012 and O'Brien 2016 remain unfetched; Phase 1 is NOT fully closed by a PASS here.",
+  "scope_note": "Verifies file integrity, document identity, operator-coefficient agreement and sequence regeneration ONLY. Does not verify other claims in the papers and does not consult OEIS. Cooper 2012, Chan-Cooper-Sica 2010 and Stienstra-Beukers 1985 remain unfetched (paywalled, no OA mirror found); Phase 1 is NOT fully closed by a PASS here.",
   "verdict": "PASS",
   "picard_rank": null,
   "transcendental_rank": null

@@ -208,7 +208,7 @@
   "cooper_s7_partner": {
    "type": "order-2",
    "status": "OK",
-   "source": "DERIVED (not literature transcription): symmetric-square root of cooper_s7 (order-3, A183204), extracted by checkers/check_C3b_symsqrt.py; certificate data/certificates/C3b_symsqrt_cooper_s7.json. Integer sequence is OEIS A279619 (1,2,22,336,6006,117348,2428272,52303680,...; fetched b-file 2026-07-24).",
+   "source": "DERIVED (not literature transcription): symmetric-square root of cooper_s7 (order-3, A183204), extracted by checkers/check_C3b_symsqrt.py; certificate data/certificates/C3b_symsqrt_cooper_s7.json. Integer sequence is OEIS A279619 (1,2,22,336,6006,117348,2428272,52303680,...; fetched b-file 2026-07-24). INDEPENDENTLY CONFIRMED 2026-07-26 against the primary source: O'Brien 2016 MSc thesis Theorem 6.1 (docs/literature/obrien_2016_massey_thesis.txt, hash-pinned in refs/literature_provenance.txt) states the identical recurrence (n+1)^2 c7(n+1)=(26n^2+13n+2)c7(n)+3(3n-1)(3n-2)c7(n-1), c7(-1)=0, c7(0)=1, and prints all 10 terms exactly matching this entry's initial_terms.",
    "closed_form": "[order-2 partner operator L2 with cooper_s7 = Sym^2(L2); f = sqrt of the s7 generating function]",
    "initial_terms": [
     1,

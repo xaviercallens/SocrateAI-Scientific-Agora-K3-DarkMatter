@@ -88,6 +88,8 @@ REPO_Q = {
 IDENTITY_STRINGS = {
     "almkvist_van_straten_2103.08651.pdf": ["Calabi-Yau operators of degree two", "2103.08651"],
     "gorodetsky_2102.11839.pdf": ["sporadic", "2102.11839"],
+    "obrien_2016_massey_thesis.pdf": ["sequences at level 7", "Lynette Anne O'Brien",
+                                       "Massey University"],
 }
 
 
@@ -120,8 +122,9 @@ def main():
            "date": "2026-07-26", "hashes": [], "operators": [], "scope_note": (
                "Verifies file integrity, document identity, operator-coefficient agreement and "
                "sequence regeneration ONLY. Does not verify other claims in the papers and does "
-               "not consult OEIS. Cooper 2012 and O'Brien 2016 remain unfetched; Phase 1 is NOT "
-               "fully closed by a PASS here.")}
+               "not consult OEIS. Cooper 2012, Chan-Cooper-Sica 2010 and Stienstra-Beukers 1985 "
+               "remain unfetched (paywalled, no OA mirror found); Phase 1 is NOT fully closed by "
+               "a PASS here.")}
 
     print("=" * 74)
     print("PHASE 1 PROVENANCE GATE + LITERATURE CROSS-VALIDATION")

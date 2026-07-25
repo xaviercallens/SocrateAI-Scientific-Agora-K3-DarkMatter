@@ -58,8 +58,15 @@ Artifacts: `ESCALATIONS.md` E-007 · `data/certificates/C1_KODAIRA_CONSISTENCY.j
 - [x] `checkers/check_literature_provenance.py` (honest scope in docstring) — **PASS**
 - [x] **Cross-validation:** A–vS's printed operator coefficients match the repo's exactly;
       their printed Riemann symbols match our independently computed schemes exactly
-- [ ] Still unfetched: Cooper 2012 (Ramanujan J. 29, paywalled); O'Brien 2016 MSc thesis;
-      Chan–Cooper–Sica 2010; **Stienstra–Beukers 1985 Math. Ann. 271** ← would close the ρ/T step
+- [x] **O'Brien 2016 MSc thesis fetched + hash-pinned 2026-07-26** (freely hosted at
+      Massey Research Online, unlike the others — see `refs/literature_provenance.txt`).
+      Theorem 6.1 verified from the primary text: c7 recurrence + all 10 printed terms
+      match `cooper_s7_partner` exactly, independently confirming the A279619 identity.
+      Does NOT itself state "X0(7)" or "CM by Q(sqrt(-7))" (zero hits) — that clause in
+      ESCALATIONS.md E-007 point 4 rests on the separate disc-(-7) fact, not this thesis.
+- [ ] Still unfetched: Cooper 2012 (Ramanujan J. 29, paywalled); Chan–Cooper–Sica 2010;
+      **Stienstra–Beukers 1985 Math. Ann. 271** (confirmed paywalled 2026-07-26, no OA
+      mirror found — see `refs/literature_provenance.txt`) ← would close the ρ/T step
 
 ### 🟢 E-009 RESOLVED (2026-07-26) — the K3 EXISTS
 A–vS §"three sporadic third order operators" *is* our s7/s10/s18, and gives explicit constructions:
