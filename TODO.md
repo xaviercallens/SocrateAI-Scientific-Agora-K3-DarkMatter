@@ -8,17 +8,20 @@
 
 ---
 
-## 🔴 BLOCKING — T0 decisions (Xavier)
+## T0 decisions — ✅ DECIDED 2026-07-26 (`briefs/T0_DECISIONS_2026_07_26.md`)
 
-- [ ] **Gate E criterion 1.** Stream 3's D-3 batch runs with ρ=4, T=18 as its lattice prior.
-      That prior is unsupported (see finding below). Decide:
-      **(a) score criterion 1 UNRESOLVED and proceed on the other five** *(recommended)*,
-      (b) delay Gate E pending Stream 2 Phase 2–3, or
-      (c) proceed and annotate the prior as Tier B-provisional.
-      **Needed before 2026-07-27 EOD.**
+- [x] **D1 — Gate E criterion 1: UNRESOLVED**; other five proceed; date kept. Best
+      achievable verdict = CONDITIONAL. Handoff sent →
+      `briefs/STREAM2_TO_STREAM3_GATE_E_CRITERION1_2026_07_26.md`
+- [x] **D2 — M1 accepted** (conditional negative); Phase M dormant, gated on Route γ; M2 unauthorized
+- [x] **D3 — Stream 3 mirroring authorized** (WP-R6/R7, NO_PREDICTION_BRANCH, tier checker, siblings harness)
+      + standing rule: directives with absent referenced artifacts are returned for provenance first
+- [x] **D4 — Wall-3 renunciation = standing policy** → ASSUMPTIONS.md addendum **A-DE**
+- [x] Expected-outputs amendment — overtaken by E-007 closure (retraction is permanent)
+
+### 🔶 Remaining open T0 item (explicitly NOT covered by the 2026-07-26 authorization)
 - [ ] **WP-B1 sign-off** on two documented deviations → `briefs/STREAM1_WP_B1_RESULTS.md`
       (incl. the fact that the brief's `no_unscreened_lmp` was specified as a false theorem)
-- [ ] **Amend the proposed Stream 2 plan's expected outputs** — `[I₁,I₁]` and `ρ=4` cannot both hold
 
 ---
 
@@ -94,14 +97,12 @@ Artifacts: `ESCALATIONS.md` E-007 · `data/certificates/C1_KODAIRA_CONSISTENCY.j
 - [ ] Guardrail holds: "load-bearing physical vacuum" framing **not adopted**
 
 ### Phase M: Astrophysical model construction (Fable 5 T0 directive, 2026-07-25)
-- [x] **M1 mechanism memo delivered** → `briefs/STREAM2_M1_MECHANISM_MEMO_2026_07_26.md`
-      **Verdict: conditional negative.** Walls 1–2 are posed in retracted quantities
-      (ρ=4/T=18, Type II — E-007) so no route is currently nameable; Wall 3 routed by
-      renunciation (no dark-energy claims). Unblock = Route γ delivering C1v3/C2v3.
-- [ ] ⛔ **STOP-POINT: T0 review of M1** — M2 (two-model derivation) must NOT start before this
-- [ ] Request Stream 3 mirror WP-R6/R7 + `check_tier_language.py` + `pipeline/siblings.py`
-      into this repo (14/16 directive-referenced artifacts absent here)
-- [ ] M2–M4: blocked on M1 acceptance AND Route γ
+- [x] **M1 mechanism memo delivered & T0-ACCEPTED** (decision D2) →
+      `briefs/STREAM2_M1_MECHANISM_MEMO_2026_07_26.md` — conditional negative;
+      Wall 3 routed by renunciation (now ASSUMPTIONS.md **A-DE**)
+- [x] Stop-point cleared (T0 acceptance 2026-07-26)
+- [x] Mirroring request authorized (D3) — awaiting Stream 3 delivery
+- [ ] Phase M **DORMANT**: M2–M4 open only after Route γ delivers C1v3/C2v3 AND T0 re-opens against a revised M1′
 
 ---
 
@@ -121,7 +122,9 @@ Artifacts: `ESCALATIONS.md` E-007 · `data/certificates/C1_KODAIRA_CONSISTENCY.j
 - [x] Phase 2 infrastructure deployed; batch launched
 - [ ] Batch completion → aggregation → statistical report
 - [ ] Gate E verdict **2026-07-27 EOD UTC** (Xavier)
-- [ ] ⚠️ Note criterion 1 lattice prior is unsupported pending T0 decision
+- [x] Criterion 1 decision taken (D1): score **UNRESOLVED**, retain outputs as re-scorable data
+- [ ] Apply D1 at aggregation/verdict → `briefs/STREAM2_TO_STREAM3_GATE_E_CRITERION1_2026_07_26.md`
+- [ ] Deliver D3 mirroring (WP-R6/R7 + tier checker + siblings harness, hash-pinned)
 
 ---
 

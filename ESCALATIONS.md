@@ -141,14 +141,13 @@ Established facts:
   lookup is valid for a twisted operator.
 - **Discriminant = −3** (v1 certs only) is withdrawn with them.
 
-### Downstream — requires T0 action
+### Downstream — ✅ T0 DECIDED 2026-07-26 (decision D1)
 
-Stream 3's D-3 batch is running with **ρ = 4, T = 18 as its lattice prior**, and Gate E
-is scheduled **2026-07-27 EOD**. That prior is withdrawn, so **Gate E criterion 1
-("lattice structure validated") cannot be scored PASS on current evidence.**
-
-Recommended: score criterion 1 **UNRESOLVED**, let the other five criteria proceed, keep
-the 2026-07-27 date. See `briefs/STREAM2_ACTION_PLAN_2026_07_26.md` §"Decisions Needed".
+Xavier (T0) authorized: criterion 1 is scored **UNRESOLVED** for the 2026-07-27 verdict;
+the other five criteria proceed on their own evidence; the date is kept; criterion-1
+outputs are retained as re-scorable data. Best achievable Gate E outcome is therefore
+**CONDITIONAL**. Record: `briefs/T0_DECISIONS_2026_07_26.md` · handoff:
+`briefs/STREAM2_TO_STREAM3_GATE_E_CRITERION1_2026_07_26.md`.
 
 ### Not affected
 

@@ -28,9 +28,9 @@ extracted from it as-is.** Independently established two ways:
 `components = 2`, which mechanically produced ρ = 2+2+0 = 4. That function is now
 **hard-disabled (raises)**; the script is marked RETRACTED.
 
-**Downstream — T0 action needed:** Stream 3's D-3 batch runs with ρ=4, T=18 as its
-lattice prior. Withdrawn ⇒ **Gate E criterion 1 cannot be scored PASS**.
-Recommend: score it UNRESOLVED, proceed on the other five, keep 2026-07-27.
+**Downstream — ✅ T0 DECIDED (D1, 2026-07-26):** criterion 1 scored **UNRESOLVED**;
+other five proceed; date kept; criterion-1 outputs retained as re-scorable data.
+Best achievable Gate E outcome = **CONDITIONAL**. → `briefs/T0_DECISIONS_2026_07_26.md`
 
 **Untouched:** L₃ = Sym²(L₂) (Tier A — this resolution *confirms* it); the exact
 singular loci; all WP-B1 chameleon results.
@@ -187,11 +187,10 @@ Live checkers: `checkers/check_C1_kodaira_consistency.py` (L₂, E-007) and
 
 ## Next 48 Hours: Prioritized Actions
 
-### 🔴 Blocking (T0 — Xavier)
-1. Decide Gate E scoring for criterion 1 given the unsupported ρ = 4 prior
-   (recommend: score UNRESOLVED, let the other five proceed, keep 2026-07-27)
-2. Decide: annotate vs. retract the v2 C1/C2 certificates (recommend annotate)
-3. Sign off (or amend) the two WP-B1 deviations → `briefs/STREAM1_WP_B1_RESULTS.md`
+### ✅ T0 decisions D1–D4 taken 2026-07-26 → `briefs/T0_DECISIONS_2026_07_26.md`
+1. ✅ D1: Gate E criterion 1 = UNRESOLVED (best outcome now CONDITIONAL); handoff sent to Stream 3
+2. ✅ v2 certificates: permanently retracted (E-007 closure)
+3. 🔶 **Still open (not covered by the authorization):** WP-B1 deviation sign-off → `briefs/STREAM1_WP_B1_RESULTS.md`
 
 ### Immediate (Stream 2)
 1. ✅ Phase 0 reconciliation → `check_C1_kodaira_consistency.py` (DONE 2026-07-26)

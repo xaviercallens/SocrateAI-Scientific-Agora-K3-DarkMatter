@@ -186,6 +186,21 @@ Countermands or edits by Xavier: append to §2 ledger with date. All other strea
 file as read-only input. Changes that weaken a firewall (esp. A-REL) require T0s adversarial
 review before merge.
 
+## Addendum 2026-07-26 (T0-authorized amendment — see briefs/T0_DECISIONS_2026_07_26.md)
+
+### A-DE — Dark-energy renunciation  **[Standing policy — T0 decision D4, 2026-07-26]**
+Until a base B₃ is specified and the tadpole condition is posable (Wall 3,
+Phase M directive §3), **no model under this program makes any dark-energy or
+vacuum-energy claim.** Any draft containing such a claim is returned unread.
+This routes Wall 3 by renunciation rather than construction; it is not a
+statement that the identification is false — only that it is unposable today.
+
+### Amendment note on A-SEQ downstream artifacts
+The C1/C2 certificate layer (v1 and v2: Kodaira labels, ρ=4, T=18, disc=−3) is
+**permanently retracted** (ESCALATIONS.md E-007, 2026-07-26). A-SEQ itself stands;
+what changed is that the fibre/lattice quantities formerly cited under it are
+withdrawn pending Route γ (E-008). No pre-registered comparison may cite them.
+
 ## References
 - K3_SELECTION_REPORT.md (Route decision, criterion tables)
 - PREDICTION.md (pinned observable rule + kill conditions)

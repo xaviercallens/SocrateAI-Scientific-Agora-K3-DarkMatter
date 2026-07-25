@@ -1,6 +1,6 @@
 # M1 — Mechanism Memo (Phase M, Astrophysical Model Construction)
 
-**Date:** 2026-07-26 · **Owner:** Stream 2 (T1 drafting, per directive §6) · **Stop-point:** T0 review — no derivation work has been started
+**Date:** 2026-07-26 · **Owner:** Stream 2 (T1 drafting, per directive §6) · **Stop-point:** ✅ **CLEARED — T0 ACCEPTED 2026-07-26** (decision D2, `briefs/T0_DECISIONS_2026_07_26.md`). Phase M is dormant, gated on Route γ; M2 remains unauthorized.
 **Directive:** Stream 2 Directive — Astrophysical Model Construction (Phase M), Fable 5 (T0), 2026-07-25
 **Length discipline:** ≤2 pages per directive §6.
 
@@ -110,4 +110,4 @@ Wall 3 renunciation (no dark-energy claims) as standing policy for any future M1
 sentence above carries [Tier C] explicitly or by the §0 table. `check_tier_language.py`
 does not exist in this repo — self-audited; script requested alongside WP-R6/R7.*
 
-**Generated-by:** Fable 5 (T1 drafting under directive §6) | **Verified-by:** premise table traced to ESCALATIONS.md E-007/E-008, `checkers/check_C1_kodaira_consistency.py`, `scripts/compute_L3_monodromy.py` | **Reviewed-by:** [pending T0 — stop-point]
+**Generated-by:** Fable 5 (T1 drafting under directive §6) | **Verified-by:** premise table traced to ESCALATIONS.md E-007/E-008, `checkers/check_C1_kodaira_consistency.py`, `scripts/compute_L3_monodromy.py` | **Reviewed-by:** Xavier (T0) — ACCEPTED 2026-07-26 (decision D2)
