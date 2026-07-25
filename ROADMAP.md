@@ -4,26 +4,38 @@
 
 ---
 
-## 🔴 OPEN FINDING (2026-07-26) — Stream 2 C1/C2 Kodaira labels unsupported
+## 🟢 E-007 RESOLVED (2026-07-26) — C1/C2 layer permanently retracted; root cause established
 
-`checkers/check_C1_kodaira_consistency.py` independently re-derives the L₂ local
-exponents: **[0, 1/2], Δ = 1/2, det(monodromy) = −1 at all four singular loci**
-(both partners). Consequences:
+**L₂ is a *twisted* Picard–Fuchs operator, not a PF operator. K3 geometry cannot be
+extracted from it as-is.** Independently established two ways:
 
-- Fibres are **not I₁** (unipotent, Δ = 0) and **not II** (order 6, Δ = 1/6).
-- det = −1 ∉ SL₂(ℤ) ⇒ **no Kodaira type is derivable from these exponents at all**.
-- Shioda–Tate ρ = 4 requires mᵥ = 2 per fibre; the v2 certs' own "II" label has m = 1,
-  which would give ρ = 2. **The v2 certificates contradict themselves.**
-- Likely cause: half-integer exponents are the signature of the **Sym² root
-  extraction**, so L₂'s singular points are probably not the fibration's singular fibres.
+- `checkers/check_C1_kodaira_consistency.py` (Opus 5): L₂ local exponents are
+  **[0, 1/2], Δ = 1/2, det(monodromy) = −1** at all four loci. det = −1 ∉ SL₂(ℤ),
+  and every Kodaira monodromy has det +1 ⇒ **no Kodaira type is derivable at all**
+  (not I₁, not II).
+- Deep Think (T0s) literature review + verification here: **A279619's g.f. is exactly
+  the square root of A183204's g.f.** — re-verified from `refs/recurrences_v1.json`,
+  exact on all 8 terms. Squaring a unipotent {0,0} operator's solution halves the
+  exponents to {0, ½} and flips the monodromy determinant. The irrational Wronskian
+  `W = C/(z√P₂)` is that twist's analytic signature.
+- **Real geometric substrate for s7:** modular curve **X₀(7)**, CM by ℚ(√−7) — *not*
+  a Beauville rational elliptic surface. (O'Brien 2016 MSc thesis Thm 6.1;
+  Chan–Cooper–Sica 2010 Conj 5.4.)
 
-**Downstream:** Stream 3's D-3 batch runs with ρ = 4, T = 18 as its lattice prior.
-That prior is currently unsupported — **T0 decision needed before Gate E**.
+**Retracted permanently:** C1/C2 certificates (v1 **and** v2), **ρ = 4**, **T = 18**,
+**discriminant = −3**. Cause: `exponents_to_kodaira_type()` in
+`scripts/compute_C1_monodromy.py` had a wrong lookup table *and* a hardcoded
+`components = 2`, which mechanically produced ρ = 2+2+0 = 4. That function is now
+**hard-disabled (raises)**; the script is marked RETRACTED.
 
-**Untouched by this finding:** L₃ = Sym²(L₂) (Tier A, kernel-verified); the exact
+**Downstream — T0 action needed:** Stream 3's D-3 batch runs with ρ=4, T=18 as its
+lattice prior. Withdrawn ⇒ **Gate E criterion 1 cannot be scored PASS**.
+Recommend: score it UNRESOLVED, proceed on the other five, keep 2026-07-27.
+
+**Untouched:** L₃ = Sym²(L₂) (Tier A — this resolution *confirms* it); the exact
 singular loci; all WP-B1 chameleon results.
 
-→ Full analysis and reconciled plan: `briefs/STREAM2_ACTION_PLAN_2026_07_26.md`
+→ `ESCALATIONS.md` E-007 · `briefs/STREAM2_ACTION_PLAN_2026_07_26.md`
 
 ---
 

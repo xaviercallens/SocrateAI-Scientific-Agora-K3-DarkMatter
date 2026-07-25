@@ -23,48 +23,61 @@
 
 ---
 
-## 🔴 OPEN FINDING — C1 Kodaira labels unsupported (2026-07-26)
+## 🟢 E-007 RESOLVED (2026-07-26) — root cause established, C1/C2 layer retracted
 
-`checkers/check_C1_kodaira_consistency.py` re-derives the L₂ exponents independently:
-**[0, 1/2], Δ = 1/2, det(monodromy) = −1** at all four loci, both partners.
+**L₂ is a twisted PF operator, not a PF operator.** Two independent confirmations:
+- `checkers/check_C1_kodaira_consistency.py`: exponents [0, 1/2], det(monodromy) = −1
+  ∉ SL₂(ℤ) ⇒ **no Kodaira type derivable** (not I₁, not II).
+- Deep Think (T0s) + verification here: **g.f.(A279619)² = g.f.(A183204)** exactly on
+  all 8 terms. The square root halves {0,0} → {0,½} and flips det to −1.
+- s7's real substrate is **X₀(7)**, CM by ℚ(√−7) — not a Beauville elliptic surface.
 
-- Not I₁ (unipotent, Δ=0). Not II (order 6, Δ=1/6).
-- det = −1 ∉ SL₂(ℤ) ⇒ **no Kodaira type derivable from these exponents**.
-- ρ=4 needs mᵥ=2; "II" has m=1 ⇒ would give ρ=2. **v2 certs self-contradict.**
-- Likely cause: half-integer exponents are the Sym²-root signature, so L₂'s singular
-  points are probably not the fibration's singular fibres.
+**Permanently retracted:** C1/C2 certs (v1 + v2), ρ=4, T=18, discriminant=−3.
+Cause: hardcoded `components = 2` in a wrong lookup (`exponents_to_kodaira_type`),
+now **hard-disabled (raises)**.
 
-Artifacts: `data/certificates/C1_KODAIRA_CONSISTENCY.json`,
+Artifacts: `ESCALATIONS.md` E-007 · `data/certificates/C1_KODAIRA_CONSISTENCY.json` ·
 `briefs/STREAM2_ACTION_PLAN_2026_07_26.md`
 
-**Unaffected:** L₃=Sym²(L₂) (Tier A); exact singular loci; all WP-B1 results.
+**Unaffected:** L₃=Sym²(L₂) (Tier A — this *confirms* it); exact singular loci; WP-B1.
 
 ---
 
 ## Stream 2 — Geometry redo
 
-### Phase 1: Provenance gate (1–2 h) — unblocks literature-derived claims
+- [x] Phase 0 reconciliation + root cause (E-007 closed)
+- [x] Hard-disable `exponents_to_kodaira_type()`; mark `compute_C1_monodromy.py` RETRACTED
+
+### Phase 1: Provenance gate (1–2 h)
 - [ ] `mkdir docs/literature/`; create `refs/literature_provenance.txt`
-- [ ] Fetch Almkvist–van Straten (arXiv:2103.08651)
+- [ ] **O'Brien (2016) MSc thesis, Massey Univ.** — Thm 6.1, the c₇/A279619 recurrence *(new, from E-007)*
+- [ ] **Chan, Cooper & Sica (2010)** "Congruences satisfied by Apéry-like numbers" — Conj 5.4 *(new)*
 - [ ] Fetch Gorodetsky (arXiv:2102.11839) — *also unblocks the corrupt s18 recurrence*
-- [ ] Fetch Zagier 2009; Cooper 2012 (Ramanujan J. 29)
-- [ ] SHA256 + pin hashes; manually cross-check (a,b,c,d) vs PDFs and OEIS
+- [ ] Fetch Almkvist–van Straten (arXiv:2103.08651); Zagier 2009; Cooper 2012 (Ramanujan J. 29)
+- [ ] SHA256 + pin hashes; cross-check (a,b,c,d) vs PDFs and OEIS
 - [ ] Write `checkers/check_provenance_hygiene.py` — scope honestly in the docstring
       (hashes + document identity + Cooper parameter sets; **not** 15 sequences, no OEIS lookup)
 
-### Phase 2: C1 v3 via Weierstrass model (8–14 h) — replaces the old exponent→Kodaira route
-- [ ] Construct Weierstrass model for s7 and s10
-- [ ] Compute discriminant Δ(z) and j-invariant
-- [ ] Classify fibres by **Tate's algorithm** (ord Δ, ord c₄, ord c₆)
-- [ ] Derive mᵥ from fibre types (do not assume)
-- [ ] Emit `C1_cooper_s{7,10}_partner_v3.json`; mark v2 superseded
-- [ ] Cross-check v3 loci still = {1/27, −1} / {1/16, −1/4}
+### Phase 2: ⚠️ REVISED — do NOT run Tate's algorithm on raw L₂ (8–14 h)
+> The earlier "Weierstrass + Tate on L₂" plan is **retracted** — it repeated the same
+> category error one level up. Tate's algorithm needs a genuine unipotent PF operator.
 
-### Phase 3: C2 v3 (2–3 h)
-- [ ] Shioda–Tate with v3 mᵥ: ρ = 2 + Σ(mᵥ−1) + rank MW
+Pick **one** route, do not mix:
+- **Route α (recommended) — derive geometry from L₃** (fully unipotent, {0,0,0})
+  - [ ] Confirm L₃ unipotency at each singular locus (log solutions)
+  - [ ] Derive invariants from L₃'s monodromy representation
+- **Route β — untwist L₂ by gauge transformation**
+  - [ ] Clear the ½-exponents (e.g. `y ↦ P₂^{1/4}·y`) to reach {0,0}
+  - [ ] Verify the untwisted Wronskian is rational (currently `C/(z√P₂)`, irrational)
+  - [ ] Only then is fibre classification meaningful
+- [ ] Emit `C1_cooper_s{7,10}_v3.json` **naming which operator the geometry came from**
+- [ ] Reframe s7's target as **X₀(7)**; re-examine whether ρ is even the right invariant
+
+### Phase 3: C2 v3 (2–3 h) — only after Phase 2 yields a genuine PF operator
+- [ ] Shioda–Tate with **derived** mᵥ: ρ = 2 + Σ(mᵥ−1) + rank MW
 - [ ] **Compute** rank MW (v2 assumed 0 with no derivation)
 - [ ] τ = 22 − ρ; intersection form; discriminant — derived, not pre-declared
-- [ ] Emit `C2_cooper_s{7,10}_partner_v3.json`
+- [ ] Emit `C2_cooper_s{7,10}_v3.json`
 - [ ] **If ρ ≠ 4 → notify Stream 3 immediately** (D-3 prior changes)
 
 ### Phase 4: Physics interpretation (4–6 h) — ⛔ BLOCKED on Phase 3

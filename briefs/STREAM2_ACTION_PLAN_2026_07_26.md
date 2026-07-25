@@ -120,28 +120,104 @@ Blocking for any literature-derived parameter claim.
 *Side benefit:* Gorodetsky arXiv:2102.11839 is also what unblocks the s18 recurrence
 (currently BLOCKED, corrupt transcription) — one fetch clears two items.
 
-### Phase 2 — C1 REDO via Weierstrass model (8–14 h) — *replaces proposed Action 4*
+### Phase 2 — ⚠️ **REVISED 2026-07-26 after Deep Think (T0s) literature review**
 
-Do **not** re-run the exponent→Kodaira mapping; [F2] shows it cannot work.
+> **My original Phase 2 ("redo C1 via Weierstrass model + Tate's algorithm on L₂")
+> was itself wrong** and is retracted. It repeated the same category error one level
+> up: Tate's algorithm requires a genuine unipotent Picard–Fuchs operator, and L₂ is
+> not one. See Deep Think's mandate in §E below. **Do not run Tate's algorithm on
+> raw L₂ under any normalization.**
 
-- [ ] Construct the Weierstrass model of the elliptic fibration for s7 and s10
-- [ ] Compute the discriminant Δ(z) and j-invariant
-- [ ] Classify fibres by Tate's algorithm (ord(Δ), ord(c₄), ord(c₆)) — the standard,
-      sound route
-- [ ] Determine mᵥ (component counts) **from the fibre types**, not assumed
-- [ ] Emit `C1_cooper_s{7,10}_partner_v3.json`; explicitly supersede v2
-- [ ] Cross-check: v3 singular loci must still be {1/27, −1} / {1/16, −1/4}
+**Phase 2A — Untwist L₂, or move to L₃ (8–14 h)**
 
-This is Phases 1–2 of the already-designed `docs/EXTENDED_MONODROMY_FRAMEWORK_2026_07_25.md`
-(v0.5.0 roadmap) — pulled forward because it is now blocking, not optional.
+Two admissible routes; pick one, do not mix:
+
+- **Route α (recommended): derive geometry from L₃.** L₃ is the fully unipotent
+  order-3 operator (exponents {0,0,0}). Any Picard rank / lattice invariant for the
+  Dual-Scale model must come from L₃ directly.
+  - [ ] Confirm L₃ unipotency at each singular locus (exponents {0,0,0}, log solutions)
+  - [ ] Derive the K3/CY geometric invariants from L₃'s monodromy representation
+- **Route β: untwist L₂ by gauge transformation.** Clear the ½-exponents to restore a
+  rational Wronskian, yielding the true PF operator of the modular curve.
+  - [ ] Apply gauge transform `y ↦ P₂^{1/4}·y` (or equivalent) to reach {0,0} exponents
+  - [ ] Verify the untwisted Wronskian is rational (currently `W = C/(z√P₂)`, irrational)
+  - [ ] Only then is fibre classification meaningful
+
+- [ ] Emit `C1_cooper_s{7,10}_v3.json` **naming the operator the geometry came from**
+- [ ] Cross-check: singular loci must still be {1/27, −1} / {1/16, −1/4}
+
+**Phase 2B — Reframe the geometric target for s7**
+
+Deep Think identifies the actual substrate: **modular curve X₀(7), CM by ℚ(√−7)** —
+*not* a generic Beauville rational elliptic surface with 4 singular fibres. Treating it
+as the latter is a false parallel.
+- [ ] Restate the s7 geometric target as X₀(7) / level-7 modular
+- [ ] Re-examine whether "Picard rank ρ" is even the right invariant for this substrate
 
 ### Phase 3 — C2 recompute (2–3 h) — *replaces proposed Action 5*
 
-- [ ] Shioda–Tate with the **v3** mᵥ values: ρ = 2 + Σ(mᵥ − 1) + rank MW
+**Only meaningful once Phase 2 yields a genuine PF operator.**
+
+- [ ] Shioda–Tate with **derived** mᵥ: ρ = 2 + Σ(mᵥ − 1) + rank MW
 - [ ] Compute rank MW rather than assuming 0 (v2 assumed 0 without derivation)
 - [ ] τ = 22 − ρ; intersection form; discriminant — **derived, not pre-declared**
-- [ ] Emit `C2_cooper_s{7,10}_partner_v3.json`
+- [ ] Emit `C2_cooper_s{7,10}_v3.json`
 - [ ] **If ρ ≠ 4:** notify Stream 3 immediately — the D-3 prior changes
+
+---
+
+## §E — Deep Think (T0s) literature review, 2026-07-25 — CONCUR + root cause
+
+Deep Think independently reached the same verdict and supplied the literature that
+explains it. **Its central algebraic claim was re-verified here from repo data**
+(`refs/recurrences_v1.json`), not taken on trust:
+
+```
+g.f.(A279619)² == g.f.(A183204)   →  CONFIRMED exactly on all 8 available terms
+1,2,22,336,6006,…  squared  →  1,4,48,760,13840,273504,5703096,123519792
+```
+
+**Root cause (now established, upgrading finding [F4] from "likely" to confirmed):**
+A279619's g.f. *is* the square root of s7's g.f. A unipotent PF operator has exponents
+{0,0}; its exact square root acquires branch cuts, halving the indicial exponents to
+{0, ½} and flipping the monodromy determinant to **−1** (a reflection). The irrational
+Wronskian `W = C/(z√P₂)` is the exact analytic signature of that twist. So **L₂ is a
+twisted PF operator — a weight-1 modular differential equation — not the PF equation
+of an elliptic fibration.** No Kodaira data can be read from it.
+
+**Literature identified (Phase 1 provenance targets, updated):**
+- **L. O'Brien (2016)**, *"Modular forms and two new integer sequences at level 7"*,
+  MSc thesis, Massey University (supervisor: S. Cooper) — **Theorem 6.1** defines
+  c₇(n) = A279619 with the exact three-term recurrence matching our L₂.
+- **Chan, Cooper & Sica (2010)**, *"Congruences satisfied by Apéry-like numbers"* —
+  **Conjecture 5.4** (the earlier conjectural form).
+- A279619 = expansion of the g.f. of **A002652** (x²+xy+2y², disc −7, weight-1 modular
+  form) in powers of **A279618** (level-7 Hauptmodul).
+
+**On s10 non-integrality:** expected. Level 10 (Γ₀(10)) lacks the cusp structure that
+gives level 7 integer coefficients, forcing denominators scaling as powers of 2
+(2-isogeny). This makes s10 a messier F-theory candidate than s7 — consistent with the
+existing `[B] provisional` caveat.
+
+### ⚠️ One correction to Deep Think's causal account
+
+Deep Think states Stream 2 "attempted to run Tate's Algorithm on L₂," which "forced the
+algorithm to misinterpret the branch cut as a Type II fiber." **Tate's algorithm was
+never run.** The actual mechanism, from `scripts/compute_C1_monodromy.py:37`
+(`exponents_to_kodaira_type`), is a hand-written lookup table that is independently wrong:
+
+- its docstring asserts *"exp_diff = 1/2 ⇒ II, III, or IV"* — but **II has Δ=1/6,
+  III has Δ=1/4, IV has Δ=1/3. None of them is 1/2.**
+- it returns `("II (tentative)", 1, 2)` with **`components = 2` hardcoded**, regardless
+  of the type it just named (Kodaira II has m = 1).
+- Shioda–Tate then mechanically produced ρ = 2 + 2 + 0 = 4.
+
+So ρ = 4 was manufactured by a hardcoded constant in a faulty lookup, not by a
+misapplied Tate algorithm. Conclusion is unchanged; recording the precise mechanism
+because `exponents_to_kodaira_type()` must be **deleted, not fixed** — no exponent→Kodaira
+lookup is valid for a twisted operator.
+
+- [ ] **Delete or hard-disable** `exponents_to_kodaira_type()` in `scripts/compute_C1_monodromy.py`
 
 ### Phase 4 — Physics interpretation (4–6 h) — **BLOCKED on Phase 3**
 
