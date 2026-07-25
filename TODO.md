@@ -16,7 +16,6 @@
       (b) delay Gate E pending Stream 2 Phase 2–3, or
       (c) proceed and annotate the prior as Tier B-provisional.
       **Needed before 2026-07-27 EOD.**
-- [ ] **v2 certificates:** annotate with `known_inconsistency` *(recommended)* or retract?
 - [ ] **WP-B1 sign-off** on two documented deviations → `briefs/STREAM1_WP_B1_RESULTS.md`
       (incl. the fact that the brief's `no_unscreened_lmp` was specified as a false theorem)
 - [ ] **Amend the proposed Stream 2 plan's expected outputs** — `[I₁,I₁]` and `ρ=4` cannot both hold
@@ -58,20 +57,21 @@ Artifacts: `ESCALATIONS.md` E-007 · `data/certificates/C1_KODAIRA_CONSISTENCY.j
 - [ ] Write `checkers/check_provenance_hygiene.py` — scope honestly in the docstring
       (hashes + document identity + Cooper parameter sets; **not** 15 sequences, no OEIS lookup)
 
-### Phase 2: ⚠️ REVISED — do NOT run Tate's algorithm on raw L₂ (8–14 h)
-> The earlier "Weierstrass + Tate on L₂" plan is **retracted** — it repeated the same
-> category error one level up. Tate's algorithm needs a genuine unipotent PF operator.
+### Phase 2: ⚠️ REVISED TWICE — Routes α and β both REFUTED (E-008)
+> Neither Deep Think's Route A (use L₃) nor any gauge transform works. Both tested and closed.
 
-Pick **one** route, do not mix:
-- **Route α (recommended) — derive geometry from L₃** (fully unipotent, {0,0,0})
-  - [ ] Confirm L₃ unipotency at each singular locus (log solutions)
-  - [ ] Derive invariants from L₃'s monodromy representation
-- **Route β — untwist L₂ by gauge transformation**
-  - [ ] Clear the ½-exponents (e.g. `y ↦ P₂^{1/4}·y`) to reach {0,0}
-  - [ ] Verify the untwisted Wronskian is rational (currently `C/(z√P₂)`, irrational)
-  - [ ] Only then is fibre classification meaningful
-- [ ] Emit `C1_cooper_s{7,10}_v3.json` **naming which operator the geometry came from**
-- [ ] Reframe s7's target as **X₀(7)**; re-examine whether ρ is even the right invariant
+- [x] Test Route A premise → **REFUTED**: L₃ exponents are **{0, ½, 1}**, not unipotent
+      (`scripts/compute_L3_monodromy.py`; Sym² of {0,½} = {0,½,1} — cross term keeps ½)
+- [x] Route β (gauge transform) → **REFUTED**: exponent *differences* are gauge-invariant,
+      so a difference of ½ cannot be gauged away (incl. fractional twists like P₂^{1/4})
+- [x] Emit `C1_L3_cooper_s{7,10}.json` with `picard_rank: null` (deliberate — no fabrication)
+
+**Route γ — ramified Hauptmodul pullback (only surviving path):**
+- [ ] Fetch level-7 Hauptmodul **A279618** (A279619 = expansion of **A002652** in its powers)
+- [ ] Construct pullback `z ↦ t(z)`; push the operator through it
+- [ ] **Verify** integral exponents + rational Wronskian — *test, do not assume*
+- [ ] Only then classify fibres; emit `C1_cooper_s{7,10}_v3.json` naming operator + coordinate
+
 
 ### Phase 3: C2 v3 (2–3 h) — only after Phase 2 yields a genuine PF operator
 - [ ] Shioda–Tate with **derived** mᵥ: ρ = 2 + Σ(mᵥ−1) + rank MW
@@ -80,10 +80,17 @@ Pick **one** route, do not mix:
 - [ ] Emit `C2_cooper_s{7,10}_v3.json`
 - [ ] **If ρ ≠ 4 → notify Stream 3 immediately** (D-3 prior changes)
 
-### Phase 4: Physics interpretation (4–6 h) — ⛔ BLOCKED on Phase 3
-- [ ] Map Picard lattice → D-brane gauge groups
-- [ ] Every physics claim carries an inline `[C] CONJECTURE` marker **in the same sentence**
-- [ ] Deliverable: `briefs/STREAM2_PHYSICS_INTERPRETATION.md`
+### Phase 4: Physics interpretation — ⛔ BLOCKED on Phase 2/3
+- [x] **GUT-claim audit (Deep Think "Fallacy B")** — repo scanned for `SU(5)|SO(10)|GUT`:
+      4 hits, **all already correctly hedged** (`CAVEATS.md` "Not attempted";
+      `PHASE_10_K3_SELECTION.md` carries **[C]** + "not a result"; handoff brief mandates
+      the marker; `alpha_origin_rge.py` is a normalization comment). **No scrub needed —
+      the guardrails held.** The SU(5)/SO(10) language came from the proposed plan, not the repo.
+- [ ] Restrict claims to what real C1/C2 data supports (dark-sector coupling structure),
+      **not** GUT embeddings
+- [ ] Every phenomenological leap carries an inline `[C] CONJECTURE` marker **in the same sentence**
+- [ ] Deliverable: physics brief — retitle to match whichever operator/coordinate actually
+      yields the geometry (Deep Think's `PHYSICS_INTERPRETATION_L3.md` presumes L₃, now blocked)
 - [ ] Guardrail holds: "load-bearing physical vacuum" framing **not adopted**
 
 ---

@@ -1,0 +1,58 @@
+{
+  "checker": "compute_L3_monodromy.py",
+  "checker_version": "1.0.0",
+  "date": "2026-07-26",
+  "operator": "L3 (order-3 bulk)",
+  "sequence": "A005260",
+  "provenance": "L3 theta-basis coefficients from lean4_formal_proofs/Structures/CooperSym2Proof.lean (Tier A, kernel-verified)",
+  "finite_singular_loci": [
+    "-1/4",
+    "1/16"
+  ],
+  "l2_exponents_reference": [
+    "0",
+    "1/2"
+  ],
+  "sym2_predicted_exponents": [
+    "0",
+    "1/2",
+    "1"
+  ],
+  "fibres": [
+    {
+      "singular_point_z": "-1/4",
+      "local_exponents": [
+        "0",
+        "1/2",
+        "1"
+      ],
+      "unipotent": false,
+      "matches_sym2_prediction": true,
+      "kodaira_type": null,
+      "kodaira_type_reason": "NOT DETERMINED. Exponents contain a half-integer (1/2), so the local monodromy is not unipotent and this is not a Kodaira fibre monodromy. No Kodaira type is derivable at this locus from L3."
+    },
+    {
+      "singular_point_z": "1/16",
+      "local_exponents": [
+        "0",
+        "1/2",
+        "1"
+      ],
+      "unipotent": false,
+      "matches_sym2_prediction": true,
+      "kodaira_type": null,
+      "kodaira_type_reason": "NOT DETERMINED. Exponents contain a half-integer (1/2), so the local monodromy is not unipotent and this is not a Kodaira fibre monodromy. No Kodaira type is derivable at this locus from L3."
+    }
+  ],
+  "picard_rank": null,
+  "transcendental_rank": null,
+  "verdict": "L3_NOT_UNIPOTENT_AT_FINITE_LOCI",
+  "route_A_premise": "REFUTED",
+  "notes": [
+    "Deep Think (T0s) course-correction 2026-07-25 proposed Route A on the premise that L3 = Sym^2(L2) makes the 1/2 exponents 'double to 1', rendering L3 unipotent at the finite singular points. This script tested that premise and REFUTES it.",
+    "Sym^2 of a rank-2 system with exponents {a,b} has exponents {2a, a+b, 2b}. With {0, 1/2} that is {0, 1/2, 1}: only y2^2 doubles to 1, while the CROSS TERM y1*y2 retains 1/2. The branch cut is not cleared.",
+    "Confirmed two independent ways: direct order-3 indicial computation, and the Sym^2 structural prediction. They agree exactly.",
+    "A gauge transformation cannot fix this: gauge shifts all exponents at a point by the same amount, so exponent DIFFERENCES are gauge-invariant. A difference of 1/2 cannot be gauged away. Clearing it requires a RAMIFIED PULLBACK (Route B: Hauptmodul substitution), not a gauge transform.",
+    "Therefore NO Picard rank rho and NO transcendental rank T are emitted here. Emitting them would repeat the E-007 fabrication."
+  ]
+}

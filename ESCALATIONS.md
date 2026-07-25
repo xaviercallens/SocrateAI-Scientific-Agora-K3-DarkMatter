@@ -11,6 +11,74 @@ changes are edited in place with a dated note.
 
 ---
 
+## E-008 — Route A refuted: L₃ is also not unipotent at the finite singular loci
+
+| | |
+|---|---|
+| **Status** | 🔴 **OPEN** — Route A closed; only Route B (ramified pullback) remains |
+| **Opened** | 2026-07-26 |
+| **Raised by** | Opus 5 (Stream 2), testing the Deep Think course-correction mandate |
+| **Severity** | High — invalidates the proposed replacement path for the retracted C1/C2 layer |
+
+### Finding
+
+Deep Think's course-correction (2026-07-25) mandated **Route A**: run C1/C2 on L₃
+instead of L₂, on the stated premise that
+
+> *"Because L₃ = Sym²(L₂), the ½ exponents of L₂ double to 1 in L₃, effectively
+> clearing the branch cut and rendering L₃ unipotent at the finite singular points."*
+
+**That premise was tested and is FALSE.** `scripts/compute_L3_monodromy.py`:
+
+```
+L2 exponents at every finite locus:  {0, 1/2}
+L3 exponents at every finite locus:  {0, 1/2, 1}   <- NOT unipotent
+```
+
+Confirmed two independent ways that agree exactly:
+1. **Direct order-3 indicial computation** at each locus (s7: z = −1, 1/27;
+   s10: z = −1/4, 1/16).
+2. **Sym² structure.** Sym² of a rank-2 system with exponents {a, b} has solution
+   space {y₁², y₁y₂, y₂²} and hence exponents {2a, a+b, 2b}. With {0, ½} that is
+   **{0, ½, 1}** — only y₂² doubles to 1; the **cross term y₁y₂ retains ½**.
+
+So the branch cut is *not* cleared and **Kodaira classification remains blocked at
+the L₃ level too.** Running Tate/Kodaira on L₃ would repeat the E-007 fabrication
+one level up.
+
+### Also refuted: the "gauge transformation" escape
+
+Both Deep Think's Route B-as-gauge and my own earlier Phase 2 Route β proposed
+"untwisting L₂ by gauge transformation to clear the ½-exponents." **This cannot
+work.** A gauge transformation `y ↦ f·y` shifts *all* exponents at a point by
+`ord(f)`, so **exponent differences are gauge-invariant**. A difference of ½ cannot
+be gauged away — including by fractional twists like `P₂^{1/4}`, which shift
+uniformly too.
+
+### What remains viable
+
+**Only a ramified pullback.** Passing to a double cover branched at the singular
+loci genuinely converts exponent ½ into an integer. Concretely this is the
+**Hauptmodul route**: A279619 is the expansion of A002652 (weight-1 form, disc −7)
+in powers of **A279618** (the level-7 Hauptmodul). The natural coordinate is the
+Hauptmodul `t`, not `z`, and the ramification lives in the map `z ↦ t`.
+
+### Deliverables produced
+
+- `scripts/compute_L3_monodromy.py` — tests the premise, does not assume it
+- `data/certificates/C1_L3_cooper_s7.json`, `C1_L3_cooper_s10.json` —
+  verdict `L3_NOT_UNIPOTENT_AT_FINITE_LOCI`, `route_A_premise: REFUTED`.
+  **`picard_rank` and `transcendental_rank` are `null` by design** — emitting them
+  would repeat the E-007 fabrication.
+
+### Next
+
+Route B (Hauptmodul pullback) is now the only proposed path not yet refuted. It
+must be *tested*, not assumed, before any ρ/T is emitted. See
+`briefs/STREAM2_ACTION_PLAN_2026_07_26.md` Phase 2.
+
+---
+
 ## E-007 — K3 geometry cannot be extracted from L₂ as-is
 
 | | |

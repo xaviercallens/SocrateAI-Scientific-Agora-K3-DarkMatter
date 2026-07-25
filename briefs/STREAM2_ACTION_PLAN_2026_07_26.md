@@ -128,23 +128,39 @@ Blocking for any literature-derived parameter claim.
 > not one. See Deep Think's mandate in §E below. **Do not run Tate's algorithm on
 > raw L₂ under any normalization.**
 
-**Phase 2A — Untwist L₂, or move to L₃ (8–14 h)**
+**Phase 2A — ⚠️ REVISED AGAIN 2026-07-26: Routes α and β are BOTH REFUTED (E-008)**
 
-Two admissible routes; pick one, do not mix:
+> Both previously-proposed routes were **tested and closed**. Neither Deep Think's
+> Route A (use L₃) nor the gauge-transform route (my Route β, also Deep Think's
+> untwisting suggestion) works. See `ESCALATIONS.md` **E-008**.
 
-- **Route α (recommended): derive geometry from L₃.** L₃ is the fully unipotent
-  order-3 operator (exponents {0,0,0}). Any Picard rank / lattice invariant for the
-  Dual-Scale model must come from L₃ directly.
-  - [ ] Confirm L₃ unipotency at each singular locus (exponents {0,0,0}, log solutions)
-  - [ ] Derive the K3/CY geometric invariants from L₃'s monodromy representation
-- **Route β: untwist L₂ by gauge transformation.** Clear the ½-exponents to restore a
-  rational Wronskian, yielding the true PF operator of the modular curve.
-  - [ ] Apply gauge transform `y ↦ P₂^{1/4}·y` (or equivalent) to reach {0,0} exponents
-  - [ ] Verify the untwisted Wronskian is rational (currently `W = C/(z√P₂)`, irrational)
-  - [ ] Only then is fibre classification meaningful
+- ~~**Route α: derive geometry from L₃.**~~ **REFUTED.** Deep Think's premise was that
+  "L₃ = Sym²(L₂) makes the ½ exponents double to 1, rendering L₃ unipotent." Tested by
+  `scripts/compute_L3_monodromy.py`: **L₃ exponents are {0, ½, 1} — not unipotent.**
+  Sym² of a rank-2 system with exponents {a,b} gives {2a, a+b, 2b}; with {0,½} that is
+  {0,½,1}. Only y₂² doubles to 1 — the **cross term y₁y₂ keeps ½**. Confirmed two
+  independent ways (direct order-3 indicial computation + Sym² structure), which agree
+  exactly. **Kodaira classification is blocked at the L₃ level too.**
+- ~~**Route β: untwist by gauge transformation.**~~ **REFUTED.** A gauge transform
+  `y ↦ f·y` shifts *all* exponents at a point by `ord(f)`, so **exponent differences are
+  gauge-invariant**. A difference of ½ cannot be gauged away — fractional twists like
+  `P₂^{1/4}` shift uniformly too. (This closes my own earlier Route β as well.)
 
-- [ ] Emit `C1_cooper_s{7,10}_v3.json` **naming the operator the geometry came from**
-- [ ] Cross-check: singular loci must still be {1/27, −1} / {1/16, −1/4}
+**Route γ (the only surviving path): ramified Hauptmodul pullback**
+
+Only a **ramified covering** genuinely converts exponent ½ into an integer.
+- [ ] Fetch the level-7 Hauptmodul **A279618**; A279619 is the expansion of **A002652**
+      (weight-1 form, disc −7) in powers of it
+- [ ] Construct the pullback `z ↦ t(z)` and push L₂ (or L₃) through it
+- [ ] **Verify** the pulled-back operator has integral exponents and a rational
+      Wronskian — *test this, do not assume it*
+- [ ] Only if that verification passes is fibre classification meaningful
+- [ ] Emit `C1_cooper_s{7,10}_v3.json` **naming the operator and coordinate used**
+- [ ] Cross-check: singular loci must still map to {1/27, −1} / {1/16, −1/4}
+
+**Standing rule for this phase:** emit **no ρ and no T** until an operator with
+integral exponents is in hand. `data/certificates/C1_L3_cooper_s{7,10}.json` set both
+to `null` deliberately — emitting numbers here is exactly the E-007 failure.
 
 **Phase 2B — Reframe the geometric target for s7**
 
@@ -219,17 +235,39 @@ lookup is valid for a twisted operator.
 
 - [ ] **Delete or hard-disable** `exponents_to_kodaira_type()` in `scripts/compute_C1_monodromy.py`
 
-### Phase 4 — Physics interpretation (4–6 h) — **BLOCKED on Phase 3**
+### Phase 4 — Physics interpretation — **BLOCKED on Phase 2/3**
 
-Gauge-group assignment depends on fibre type (I_n → SU(n), I_n* → SO(2n+8), etc.).
-With fibre types unresolved, no gauge group can be assigned. Keep the proposed
-plan's content and its discipline, once unblocked:
+Gauge-group assignment depends on fibre type (I_n → SU(n), I_n* → SO(2n+8), …). With
+fibre types unresolved at *both* the L₂ and L₃ levels, **no gauge group can be assigned.**
 
-- [ ] Map Picard lattice → D-brane gauge groups
-- [ ] Every physics claim carries an inline `[C] CONJECTURE` marker in the same sentence
-- [ ] Deliverable: `briefs/STREAM2_PHYSICS_INTERPRETATION.md`
-- [ ] Retain the standing guardrail: Deep Think's "load-bearing physical vacuum"
-      framing is **not adopted** (ROADMAP §Physics-Washing Guardrails)
+**Deep Think "Fallacy B" — SU(5)/SO(10) GUT claims.** Deep Think flagged the proposed
+Research Summary's line *"supporting SU(5) or SO(10) GUT in s₇"* as physics-washing.
+Correct — and I had carried it into this plan's Phase 4. **It is struck.**
+
+**Audit result: the repo itself was already clean.** A full scan for
+`SU(5)|SO(10)|GUT` across all tracked `.md`/`.py`/`.json` returned four hits, all
+already properly hedged:
+
+| Location | Status |
+|---|---|
+| `CAVEATS.md:199` | explicitly "❌ Not attempted" |
+| `scripts/alpha_origin_rge.py:27` | MSSM normalization comment, not an s7 claim |
+| `briefs/STREAM1_TO_STREAM2_C1C2_HANDOFF.md:59` | states the gauge reading **is [C]** and requires a marker |
+| `briefs/PHASE_10_K3_SELECTION.md:52` | carries **[C]**, "*We conjecture* … not a result", "No such embedding is constructed or verified" |
+
+**No scrub was required; the existing guardrails held.** The SU(5)/SO(10) language
+entered via the proposed plan, not the codebase. Recording this rather than performing
+a cosmetic "scrub" of correctly-marked text.
+
+Once unblocked:
+- [ ] Restrict claims to what the real C1/C2 data supports — e.g. dark-sector coupling
+      structure (strong vs. weak), **not** GUT embeddings
+- [ ] Every phenomenological leap carries an inline `[C] CONJECTURE` marker in the same sentence
+- [ ] Deliverable: `docs/PHYSICS_INTERPRETATION_L3.md` (per Deep Think) — but note the
+      name presumes an L₃-based geometry that E-008 has now blocked; retitle to match
+      whichever operator/coordinate actually yields the geometry
+- [ ] Standing guardrail retained: the "load-bearing physical vacuum" framing is
+      **not adopted** (ROADMAP §Physics-Washing Guardrails)
 
 ---
 
@@ -251,7 +289,7 @@ plan's content and its discipline, once unblocked:
 
 - ✅ Phase 0 reconciliation recorded and signed off
 - ⬜ Phase 1 provenance gate PASS (with honestly-scoped checker)
-- ⬜ C1 v3 fibre types from Tate's algorithm, not from L₂ exponents
+- ⬜ C1 v3 fibre types from an operator with **integral** exponents (Route γ), not from L₂ or L₃
 - ⬜ C2 v3 ρ, τ **derived** from v3 fibre data
 - ⬜ Physics brief drafted, all claims `[C]`-marked
 - ⬜ No contradiction with L₃ = Sym²(L₂) (that Tier A result is untouched by this finding)

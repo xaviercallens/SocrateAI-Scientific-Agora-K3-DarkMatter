@@ -1,6 +1,6 @@
 # 🗺️ ROADMAP: Dual-Scale Topological Universe Model (K3×T² + D-brane Dynamics)
 
-**Last updated:** 2026-07-26 | **Status:** Stream 1 ✅ COMPLETE (Sym² + WP-B1); Stream 2 🔴 C1 KODAIRA LABELS UNSUPPORTED; Stream 3 🔄 D-3 running, Gate E 2026-07-27 EOD
+**Last updated:** 2026-07-26 | **Status:** Stream 1 ✅ COMPLETE (Sym² + WP-B1); Stream 2 🔴 GEOMETRY BLOCKED (E-007 closed, E-008 open); Stream 3 🔄 D-3 running, Gate E 2026-07-27 EOD
 
 ---
 
@@ -35,7 +35,16 @@ Recommend: score it UNRESOLVED, proceed on the other five, keep 2026-07-27.
 **Untouched:** L₃ = Sym²(L₂) (Tier A — this resolution *confirms* it); the exact
 singular loci; all WP-B1 chameleon results.
 
-→ `ESCALATIONS.md` E-007 · `briefs/STREAM2_ACTION_PLAN_2026_07_26.md`
+**🔴 E-008 (2026-07-26, OPEN) — the proposed replacement path is ALSO refuted.**
+Deep Think's course-correction mandated "Route A: run C1/C2 on L₃ instead," premised on
+L₃ being unipotent. **Tested and false:** `scripts/compute_L3_monodromy.py` gives L₃
+exponents **{0, ½, 1}** at every finite locus. Sym² of {0,½} is {0, ½, 1} — only y₂²
+doubles to 1, the **cross term y₁y₂ keeps ½**. Kodaira is blocked at the L₃ level too.
+The gauge-transform escape is also closed: **exponent differences are gauge-invariant**.
+Only a **ramified Hauptmodul pullback** (Route γ) remains — and it must be *tested*.
+`C1_L3_cooper_s{7,10}.json` emit `picard_rank: null` by design.
+
+→ `ESCALATIONS.md` E-007, E-008 · `briefs/STREAM2_ACTION_PLAN_2026_07_26.md`
 
 ---
 
@@ -69,13 +78,14 @@ singular loci; all WP-B1 chameleon results.
 ### ⚠️ What's NOT established
 - **Kodaira fibre types** for s7/s10 — see Open Finding above. Neither "II" (v2 certs)
   nor "I₁" (proposed plan) is supported by the exponent data.
-- **ρ = 4, T = 18** — does not follow from the current fibre data; needs Weierstrass-model redo.
+- **ρ = 4, T = 18** — withdrawn. Cannot be recomputed from L₂ *or* L₃ (both carry a ½ exponent);
+  requires the Route γ ramified Hauptmodul pullback first (E-008).
 - **discriminant = −3** — appears only in the **superseded v1** certs, which are marked
   *"F6 retracted: fabricated from incorrect C1."* Do not carry forward.
 
 ### Critical Path
 ```
-Stream 2:  Phase 1 provenance gate ──→ C1 v3 via Weierstrass/Tate ──→ C2 v3 (ρ, τ derived)
+Stream 2:  Phase 1 provenance gate ──→ Route γ Hauptmodul pullback ──→ C1/C2 v3 (ρ, τ derived)
              ↓                                                          ↓
              └──────────────────────────────→ Stream 3 lattice prior ───┘
                                                      ↓
@@ -122,17 +132,22 @@ coupling is claimed (that remains Tier C).
 | **C3b Partner Extraction** | ✅ RESOLVED | 2026-07-24 | — |
 | **All-n L₃=Sym²(L₂) (CAS)** | ✅ PROVEN | 2026-07-24 | — |
 | **Exact singular loci (s7, s10)** | ✅ CONFIRMED | 2026-07-25 (F6), re-verified 2026-07-26 | — |
-| **C1 Kodaira types (s7, s10)** | 🔴 UNSUPPORTED | — | Redo via Weierstrass model + Tate's algorithm |
+| **C1 Kodaira types (s7, s10)** | 🔴 BLOCKED (E-008) | — | Route γ: ramified Hauptmodul pullback (L₂ **and** L₃ both carry ½) |
 | **C2 Lattice ρ, τ (s7, s10)** | 🔴 UNSUPPORTED | — | Blocked on C1 v3 |
 | **Provenance gate (literature)** | 🟡 NOT STARTED | — | Fetch 4 PDFs, hash-pin, write honest checker |
 | **Physics interpretation** | ⛔ BLOCKED | — | Gauge groups need fibre types |
 
-**Deliverable (Stream 2):** C1 v3 / C2 v3 certificates with fibre types derived from
-Tate's algorithm, then the physics brief. → `briefs/STREAM2_ACTION_PLAN_2026_07_26.md`
+**Deliverable (Stream 2):** C1 v3 / C2 v3 certificates with fibre types derived from an
+operator with **integral** exponents (Route γ), then the physics brief.
+→ `briefs/STREAM2_ACTION_PLAN_2026_07_26.md`
+
+**Standing rule:** emit no ρ and no T until such an operator is in hand.
+`C1_L3_cooper_s{7,10}.json` set them to `null` deliberately.
 
 **Note on tooling:** `checkers/check_C1.py` and `check_C2.py` are **deprecated** (F6).
 `checkers/check_C1_kodaira_fibers.py` / `check_C2_picard_lattice.py` do **not** exist.
-The live adversarial checker is `checkers/check_C1_kodaira_consistency.py`.
+Live checkers: `checkers/check_C1_kodaira_consistency.py` (L₂, E-007) and
+`scripts/compute_L3_monodromy.py` (L₃, E-008).
 
 ---
 
@@ -181,7 +196,7 @@ The live adversarial checker is `checkers/check_C1_kodaira_consistency.py`.
 ### Immediate (Stream 2)
 1. ✅ Phase 0 reconciliation → `check_C1_kodaira_consistency.py` (DONE 2026-07-26)
 2. ⏳ Phase 1 provenance gate — fetch 4 PDFs, hash-pin, honest checker (1–2 h)
-3. ⏳ Phase 2 C1 v3 — Weierstrass model + Tate's algorithm (8–14 h)
+3. ⏳ Phase 2 **Route γ** — ramified Hauptmodul pullback (Routes α/β refuted, E-008)
 4. ⏳ Phase 3 C2 v3 — Shioda–Tate from v3 fibre data, derive rank MW (2–3 h)
 
 ### Stream 1 (complete — maintenance only)
