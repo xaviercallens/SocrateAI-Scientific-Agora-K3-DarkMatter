@@ -41,8 +41,10 @@ L₃ being unipotent. **Tested and false:** `scripts/compute_L3_monodromy.py` gi
 exponents **{0, ½, 1}** at every finite locus. Sym² of {0,½} is {0, ½, 1} — only y₂²
 doubles to 1, the **cross term y₁y₂ keeps ½**. Kodaira is blocked at the L₃ level too.
 The gauge-transform escape is also closed: **exponent differences are gauge-invariant**.
-Only a **ramified Hauptmodul pullback** (Route γ) remains — and it must be *tested*.
-`C1_L3_cooper_s{7,10}.json` emit `picard_rank: null` by design.
+Only a **ramified Hauptmodul pullback** (Route γ) remains. **Step 0 CONFIRMED 2026-07-26**
+(`g.f.(A002652)=F(t(q))` exact to order 29 — the Hauptmodul is the right coordinate);
+**step 1 (unipotency of the pulled-back operator) is OPEN** and is the program's geometric
+frontier. `C1_L3_cooper_s{7,10}.json` and `ROUTE_GAMMA_STEP0.json` emit no ρ/T by design.
 
 → `ESCALATIONS.md` E-007, E-008 · `briefs/STREAM2_ACTION_PLAN_2026_07_26.md`
 

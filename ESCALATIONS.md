@@ -15,7 +15,7 @@ changes are edited in place with a dated note.
 
 | | |
 |---|---|
-| **Status** | 🔴 **OPEN** — Route A closed; only Route B (ramified pullback) remains |
+| **Status** | 🟡 **PARTIALLY ADVANCED** — Routes A/β refuted; Route γ step 0 CONFIRMED (2026-07-26), step 1 (unipotency) OPEN |
 | **Opened** | 2026-07-26 |
 | **Raised by** | Opus 5 (Stream 2), testing the Deep Think course-correction mandate |
 | **Severity** | High — invalidates the proposed replacement path for the retracted C1/C2 layer |
@@ -71,11 +71,21 @@ Hauptmodul `t`, not `z`, and the ramification lives in the map `z ↦ t`.
   **`picard_rank` and `transcendental_rank` are `null` by design** — emitting them
   would repeat the E-007 fabrication.
 
-### Next
+### Progress — Route γ step 0 CONFIRMED (2026-07-26)
 
-Route B (Hauptmodul pullback) is now the only proposed path not yet refuted. It
-must be *tested*, not assumed, before any ρ/T is emitted. See
-`briefs/STREAM2_ACTION_PLAN_2026_07_26.md` Phase 2.
+Route γ (ramified Hauptmodul pullback) is now a two-step ladder:
+- **Step 0 (foundational composition): ✅ CONFIRMED.** `check_route_gamma_step0.py`:
+  `g.f.(A002652) = F(t(q))` with t = A279618 (level-7 Hauptmodul), F = g.f.(A279619),
+  exact to order 29. The Hauptmodul `t` is therefore the correct uniformizing
+  coordinate — Route γ has a genuine starting point. (Bonus: the composition
+  self-validates the OEIS-synthesized A279618 b-file.) Certificate:
+  `data/certificates/ROUTE_GAMMA_STEP0.json`. **No ρ/T emitted.**
+- **Step 1 (unipotency of the pulled-back operator): 🔴 OPEN.** Must be tested and pass
+  before any Kodaira/ρ/T work. This is the current geometric frontier of the program.
+
+Status: 🟡 **PARTIALLY ADVANCED** (was 🔴 fully blocked). See
+`briefs/STREAM2_ACTION_PLAN_2026_07_26.md` Phase 2 and
+`briefs/STREAM2_M1PRIME_ADJUDICATION_2026_07_26.md` §C.
 
 ---
 

@@ -71,10 +71,14 @@ Artifacts: `ESCALATIONS.md` E-007 · `data/certificates/C1_KODAIRA_CONSISTENCY.j
 - [x] Emit `C1_L3_cooper_s{7,10}.json` with `picard_rank: null` (deliberate — no fabrication)
 
 **Route γ — ramified Hauptmodul pullback (only surviving path):**
-- [ ] Fetch level-7 Hauptmodul **A279618** (A279619 = expansion of **A002652** in its powers)
-- [ ] Construct pullback `z ↦ t(z)`; push the operator through it
-- [ ] **Verify** integral exponents + rational Wronskian — *test, do not assume*
-- [ ] Only then classify fibres; emit `C1_cooper_s{7,10}_v3.json` naming operator + coordinate
+- [x] **Step 0: composition CONFIRMED** — `g.f.(A002652) = F(t(q))` exact to order 29
+      (`checkers/check_route_gamma_step0.py`, `data/certificates/ROUTE_GAMMA_STEP0.json`).
+      Hauptmodul t = A279618 is the correct uniformizing coordinate. **No ρ/T emitted.**
+- [ ] **Step 1 (OPEN — geometric frontier):** construct the pullback in `t`, push the
+      operator through it, and **test** whether the result has integral exponents +
+      rational Wronskian. Test, do not assume — three prior "obvious" routes were refuted.
+- [ ] Only if step 1 passes: classify fibres; emit `C1_cooper_s{7,10}_v3.json` naming
+      operator + coordinate; then C2 v3; then a revised M1′ becomes draftable
 
 
 ### Phase 3: C2 v3 (2–3 h) — only after Phase 2 yields a genuine PF operator

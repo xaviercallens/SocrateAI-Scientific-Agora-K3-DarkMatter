@@ -1,0 +1,15 @@
+{
+  "checker": "check_route_gamma_step0.py",
+  "checker_version": "1.0.0",
+  "date": "2026-07-26",
+  "claim": "g.f.(A002652) = F(t(q)), t=A279618 (level-7 Hauptmodul), F=g.f.(A279619)",
+  "order_tested": 29,
+  "verdict": "CONFIRMED",
+  "mismatch_orders": [],
+  "scope": "Establishes only that the Hauptmodul composition underlying Route \u03b3 is real. Does NOT establish \u03c1, T, Kodaira type, or unipotency of the pulled-back operator (Route \u03b3 step 1, still open). Emits no \u03c1/T.",
+  "refs_sha256": {
+    "A279618": "fdf1eaf799863aec6ac922215d9f1b414baa456233855434823546d136092b43",
+    "A002652": "43ab7042f40188cee4eaac94c53f4c2dbf0a6c10e72853205eea57096ccc3f26",
+    "A279619": "24930119a01838be245c5f19ba303b4b1c80ad79d103a3dab8726db09b211656"
+  }
+}
