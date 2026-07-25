@@ -93,6 +93,16 @@ Artifacts: `ESCALATIONS.md` E-007 · `data/certificates/C1_KODAIRA_CONSISTENCY.j
       yields the geometry (Deep Think's `PHYSICS_INTERPRETATION_L3.md` presumes L₃, now blocked)
 - [ ] Guardrail holds: "load-bearing physical vacuum" framing **not adopted**
 
+### Phase M: Astrophysical model construction (Fable 5 T0 directive, 2026-07-25)
+- [x] **M1 mechanism memo delivered** → `briefs/STREAM2_M1_MECHANISM_MEMO_2026_07_26.md`
+      **Verdict: conditional negative.** Walls 1–2 are posed in retracted quantities
+      (ρ=4/T=18, Type II — E-007) so no route is currently nameable; Wall 3 routed by
+      renunciation (no dark-energy claims). Unblock = Route γ delivering C1v3/C2v3.
+- [ ] ⛔ **STOP-POINT: T0 review of M1** — M2 (two-model derivation) must NOT start before this
+- [ ] Request Stream 3 mirror WP-R6/R7 + `check_tier_language.py` + `pipeline/siblings.py`
+      into this repo (14/16 directive-referenced artifacts absent here)
+- [ ] M2–M4: blocked on M1 acceptance AND Route γ
+
 ---
 
 ## Stream 1 — Complete (maintenance only)
