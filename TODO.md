@@ -72,12 +72,17 @@
       minus countable S = our very-general caveat at source), Doran Thm 5.13 (PF of
       Mₙ-polarized = Sym² of 2nd-order Fuchsian). Record:
       `briefs/STREAM2_PHASE4_STEP2_SOURCES_READ_2026_07_26.md`.
-- [ ] **U1 — the ONE residual before lattice certification:** does Γ₀(7)+ as uniformizing
-      group characterize T ≅ U⊕⟨14⟩ among even rank-3 (2,1) lattices (one-class genus /
-      Eichler-order correspondence at level 7)? Doran §6 flags the rank-19 classification as
-      open in general, so this is a real gap, not pedantry. On U1-PASS: emit
-      `C2_cooper_s7_v4.json` (lattices [B], per-statement citations) and put the S3-00 2(b)
-      **re-scope** option to T0. Until then: H-M7 stays [C]; **v3 (ranks only) stays live**.
+- [ ] **U1 — the ONE residual before lattice certification. ROUTE DESIGNED, not executed:**
+      see `docs/U1_ROUTE_DESIGN_2026_07_26.md`. Decomposition: **U1a** = derive disc(T) from
+      the family itself (⚠️ the cusp monodromy does NOT see n — it sits in the elliptic/Fricke
+      monodromies; plus the Yukawa constant Q(∂ϖ,∂ϖ) = 2n = 14 as exact-q-series cross-check);
+      **U1b** = one-class genus via Eichler (needs Cassels Ch. 11 **fetched and read** — do not
+      hand-wave the 2-adic spinor norms). **Execute NEXT SESSION, fresh** — deliberately not
+      run at end-of-session under freshly-granted authority (E-010 conditions). Order: Yukawa
+      first (self-controlling), then elliptic-monodromy lattice, then Cassels. On U1-PASS:
+      emit `C2_cooper_s7_v4.json` (lattices [B]) and put the S3-00 2(b) **re-scope** option to
+      T0. On FAIL: that is a finding — report as-is. Until then: H-M7 stays [C]; **v3 (ranks
+      only) stays live**.
 - [x] **E-016 → Stream 3: told**, with the one-line self-check, in
       `briefs/STREAM2_TO_STREAM3_WPE5_RESPONSE_2026_07_26.md` §5.
 
