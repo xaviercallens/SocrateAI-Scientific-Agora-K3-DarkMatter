@@ -1,0 +1,136 @@
+{
+  "checker": "check_L3_irreducible_minimal.py",
+  "checker_version": "1.0.0",
+  "date": "2026-07-26",
+  "ticket": "Phase 3 step A (supersedes the retracted check_c2_shioda_tate_v3.py, E-010)",
+  "results": [
+    {
+      "operator": "cooper_s7",
+      "bulk_oeis": "A183204",
+      "L2_exponents": {
+        "0": [
+          "0",
+          "0"
+        ],
+        "-1": [
+          "0",
+          "1/2"
+        ],
+        "1/27": [
+          "0",
+          "1/2"
+        ],
+        "oo": [
+          "1/3",
+          "2/3"
+        ]
+      },
+      "step1_not_dihedral": {
+        "double_indicial_root_at_zero": true,
+        "argument": "double root \u21d2 logarithmic solution (Frobenius) \u21d2 local monodromy at 0 is unipotent and \u2260 I; no nontrivial unipotent lies in the normalizer of a maximal torus of SL2 (its elements are semisimple or have trace 0)",
+        "pass": true
+      },
+      "step2_L2_irreducible": {
+        "attainable_residue_denominator_divides": 2,
+        "exponents_at_infinity": [
+          "1/3",
+          "2/3"
+        ],
+        "obstructed_at_infinity": [
+          "1/3",
+          "2/3"
+        ],
+        "argument": "every attainable \u03a3(residues) of u=y'/y lies in (1/2)\u2124, but no exponent of L2 at \u221e does; so no hyperexponential solution exists",
+        "pass": true
+      },
+      "step3_L3_irreducible": {
+        "argument": "Sym\u00b2 of an irreducible rank-2 system is irreducible unless the monodromy is dihedral (contained in the normalizer of a torus), which step 1 excludes",
+        "pass": true
+      },
+      "step4_minimality": {
+        "argument": "an irreducible operator is the minimal-order annihilator of each of its nonzero solutions (a lower-order annihilator would give a nontrivial gcrd, i.e. a proper right factor)",
+        "rank_of_sub_VHS_generated_by_omega": 3,
+        "pass": true
+      },
+      "step5_hodge_identification": {
+        "status": "[B] NOT COMPUTED HERE \u2014 standard Hodge theory, cited not re-derived",
+        "claim": "rank T(X_z) = rank V for very general z, via V \u2286 T (T is Gauss\u2013Manin-flat and contains \u03c9) and T \u2286 V^sat (T is the minimal primitive sub-Hodge-structure containing H^{2,0})",
+        "citation": "Huybrechts, Lectures on K3 Surfaces, CUP 2016, ch. 3 \u00a73.1 and ch. 17 \u00a717.1",
+        "blocks_emission_of_rho": true
+      },
+      "conditional_on_step5": {
+        "transcendental_rank_T": 3,
+        "picard_rank_rho": 19,
+        "caveat": "value for the VERY GENERAL member; \u03c1 jumps to 20 on a countable dense subset of the base (singular K3s)"
+      },
+      "picard_rank": null,
+      "transcendental_rank": null
+    },
+    {
+      "operator": "cooper_s10",
+      "bulk_oeis": "A005260",
+      "L2_exponents": {
+        "0": [
+          "0",
+          "0"
+        ],
+        "-1/4": [
+          "0",
+          "1/2"
+        ],
+        "1/16": [
+          "0",
+          "1/2"
+        ],
+        "oo": [
+          "3/8",
+          "5/8"
+        ]
+      },
+      "step1_not_dihedral": {
+        "double_indicial_root_at_zero": true,
+        "argument": "double root \u21d2 logarithmic solution (Frobenius) \u21d2 local monodromy at 0 is unipotent and \u2260 I; no nontrivial unipotent lies in the normalizer of a maximal torus of SL2 (its elements are semisimple or have trace 0)",
+        "pass": true
+      },
+      "step2_L2_irreducible": {
+        "attainable_residue_denominator_divides": 2,
+        "exponents_at_infinity": [
+          "3/8",
+          "5/8"
+        ],
+        "obstructed_at_infinity": [
+          "3/8",
+          "5/8"
+        ],
+        "argument": "every attainable \u03a3(residues) of u=y'/y lies in (1/2)\u2124, but no exponent of L2 at \u221e does; so no hyperexponential solution exists",
+        "pass": true
+      },
+      "step3_L3_irreducible": {
+        "argument": "Sym\u00b2 of an irreducible rank-2 system is irreducible unless the monodromy is dihedral (contained in the normalizer of a torus), which step 1 excludes",
+        "pass": true
+      },
+      "step4_minimality": {
+        "argument": "an irreducible operator is the minimal-order annihilator of each of its nonzero solutions (a lower-order annihilator would give a nontrivial gcrd, i.e. a proper right factor)",
+        "rank_of_sub_VHS_generated_by_omega": 3,
+        "pass": true
+      },
+      "step5_hodge_identification": {
+        "status": "[B] NOT COMPUTED HERE \u2014 standard Hodge theory, cited not re-derived",
+        "claim": "rank T(X_z) = rank V for very general z, via V \u2286 T (T is Gauss\u2013Manin-flat and contains \u03c9) and T \u2286 V^sat (T is the minimal primitive sub-Hodge-structure containing H^{2,0})",
+        "citation": "Huybrechts, Lectures on K3 Surfaces, CUP 2016, ch. 3 \u00a73.1 and ch. 17 \u00a717.1",
+        "blocks_emission_of_rho": true
+      },
+      "conditional_on_step5": {
+        "transcendental_rank_T": 3,
+        "picard_rank_rho": 19,
+        "caveat": "value for the VERY GENERAL member; \u03c1 jumps to 20 on a countable dense subset of the base (singular K3s)"
+      },
+      "picard_rank": null,
+      "transcendental_rank": null
+    }
+  ],
+  "verdict": "L3_IRREDUCIBLE_AND_MINIMAL",
+  "picard_rank": null,
+  "transcendental_rank": null,
+  "emission_blocked_by": "step 5 (Hodge identification) is a citation, not a computation; T0 sign-off required before any \u03c1/T is written to a certificate"
+}
