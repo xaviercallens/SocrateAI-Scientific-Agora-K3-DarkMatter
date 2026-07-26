@@ -174,9 +174,20 @@ annihilating the period. So the only real question is whether L₃ is minimal.
       dense subset (singular K3s).
 - [ ] Only after Step B: emit `C2_cooper_s{7,10}_v3.json` with non-null ρ/T, and notify Stream 3
       that criterion 1 is re-scorable (**no batch re-run needed**)
-- [ ] Optional independent corroboration: count Néron–Severi classes on the A–vS explicit models
-      (s7 = six hyperplane sections of G(2,6); s10 = four (1,1) sections in ℙ³×ℙ³) for a *lower*
-      bound on ρ. Would cross-check Step B from the geometry side rather than the VHS side.
+- [x] **Néron–Severi cross-check — ATTEMPTED, corroborates the EASY half only.**
+      (`checkers/check_neron_severi_ambient.py`, `data/certificates/NS_AMBIENT_BOUND.json`,
+      commit `c8f66f3`.) **Do not retry this route.** The ambient models give only
+      `ρ ≥ 1` (s7: deg G(2,6) = 14, genus 8 — the Mukai model) and `ρ ≥ 2` (s10:
+      ⟨H₁,H₂⟩ Gram [[4,6],[6,4]], det −20, signature (1,1) ✓ Hodge index; H² = 20, genus 11).
+      That shortfall is **real**, not laziness: the generic member of each ambient family has
+      exactly that ρ, confirmed via the moduli dimension formula `dim = 20 − ρ` checked against
+      both models independently (s7: 54−35 = 19 = 20−1 ✓; s10: 48−30 = 18 = 20−2 ✓).
+      Our family is a codimension-18 resp. -17 subfamily; the missing classes come from the
+      A–vS **pencil**, and extracting them needs its explicit equations plus a resolution of the
+      singular members — real algebraic geometry, not bookkeeping.
+      Applied to our family the same formula does give a genuine bound — 1-parameter and
+      non-isotrivial (MUM ⇒ period map non-constant) ⇒ `1 ≤ 20 − ρ` ⇒ **ρ ≤ 19** — but that is
+      the *same* half step A already gives via V ⊆ T. **The hard direction ρ ≥ 19 is untouched.**
 
 ### Phase 4: Physics interpretation — ⛔ BLOCKED on Phase 2/3
 - [x] **GUT-claim audit (Deep Think "Fallacy B")** — repo scanned for `SU(5)|SO(10)|GUT`:
