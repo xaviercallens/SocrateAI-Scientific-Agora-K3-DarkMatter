@@ -11,6 +11,85 @@ changes are edited in place with a dated note.
 
 ---
 
+## E-013 — The S3-00 spec was deleted 8 days ago, and its step 2(b) depends on data E-007 retracted
+
+| | |
+|---|---|
+| **Status** | 🟠 **PARTIALLY RESOLVED (2026-07-26)** — documents **restored**; the spec conflict needs T0 |
+| **Opened** | 2026-07-26, trying to attack WP S3-00 after all three streams agreed it is the critical path |
+| **Raised by** | Opus 5 (Stream 2) |
+| **Severity** | High — explains why the critical path has not moved |
+
+### Part 1: two governing documents were missing. Restored.
+
+`EXECUTION_PLAN.md` (176 lines) and `VISION.md` (162 lines) were **deleted on 2026-07-18** in
+`d2d8894 "chore: clean up deprecated and archive files (Phase 8 & prior sessions)"`, swept in
+alongside genuinely-deprecated files such as `PHASE_3_EXECUTION_PLAN.md`. Both were **live, not
+archival**: `EXECUTION_PLAN.md` was at **v1.1 dated 2026-07-17** — one day before its deletion —
+and `VISION.md` at **v1.2**.
+
+They are cited by **10** and **26** files respectively. `VISION.md` defines the **[A]/[B]/[C] tier
+system** that the `epistemic-guardrails` skill exists to enforce; that skill has been enforcing a
+tier system whose defining document was absent from the repo. **Both restored from `d2d8894^`.**
+If the deletion was deliberate, countermand this — but nothing in the repo records a supersession,
+and `ROADMAP.md`/`PROJECT_STATUS_TRACKER.md` do not replace either document's content.
+
+### Part 2: the restored spec cannot be executed as written
+
+`EXECUTION_PLAN.md` line 97 is the full **S3-00** definition — *"the single hardest task in the
+program"*:
+
+> (2) …derive in order: (a) **m_φ(𝒱, g_s) from period geometry**…; (b) **α_D, Λ_D(𝒱, g_s) from
+> Kodaira fiber data (C2 output)** and gauge kinetics RG running; (c) **eliminate (𝒱, g_s) between
+> observables to produce a relation, not a number.**
+> (4) Kill condition: if no observable-relation survives (𝒱, g_s) elimination → **F5**.
+
+**Step 2(b)'s input does not exist.** E-007 permanently retracted all Kodaira classification —
+L₂ is a *twisted* Picard–Fuchs operator (exponents {0,½}, det(monodromy) = −1 ∉ SL₂(ℤ)), so **no
+Kodaira type is derivable from it at all**. Verified: no certificate in `data/certificates/`
+carries a Kodaira type; those that did are stamped `RETRACTED`.
+
+So **α_D and Λ_D have no derivation route as specified.** This is the concrete, structural reason
+the critical path has not moved — and it was invisible for 8 days because the spec was deleted.
+It also explains, retrospectively, why Phase M's M1 filed a *conditional negative* and why WP-B1's
+chameleon was killed by Rule 7 for uninstantiated constants: **the inputs the spec calls for were
+retracted out from under it.**
+
+### What IS available to a revised S3-00
+
+- **ρ = 19, T = 3** [tier B] — E-011. Lattice *ranks*, not fibre types.
+- Exact Riemann scheme of L₃; `L₃ = Sym²(L₂)` kernel-proven (Tier A).
+- The modular substrate: level 7, disc −7, implied signature matching **Γ₀(7)+** [B].
+- A–vS's explicit projective models (G(2,6); ℙ³×ℙ³).
+
+**Step 2(a)** (m_φ from *period geometry*) may still be reachable — period geometry is exactly what
+E-011's chain established. **Step 2(b) needs either** a replacement derivation of α_D, Λ_D from
+ρ/T + the modular data instead of fibre content, **or** a T0 amendment to the spec. **Not a stream's
+call to make unilaterally** — it changes a gate definition.
+
+### The pre-authorized honest outcome
+
+`VISION.md` line 72, now restored, already provides for the negative:
+
+> *"if after honest effort no such prediction can be extracted — i.e. the model is observationally
+> degenerate with ΛCDM everywhere we can currently measure — that is itself a documented result
+> (`NO_PREDICTION_BRANCH.md`), and the program's ambition contracts to its Tier A mathematical
+> content, which remains publishable on its own merits."*
+
+`NO_PREDICTION_BRANCH.md` already exists in `stream3_mirror/`. **F5 is a legitimate, pre-committed
+landing place, not a failure** — and the Tier A content (E-011, the Sym² identity, the minimality
+result) stands on its own regardless.
+
+### Decisions needed from T0
+
+1. **Confirm or countermand** the restoration of `EXECUTION_PLAN.md` / `VISION.md`.
+2. **Amend S3-00 step 2(b)** — replace the Kodaira-fibre input, or declare α_D/Λ_D underivable and
+   evaluate the kill condition on that basis.
+3. Still open from E-012: the `PREDICTION.md` line-49 inconsistency (re-pin at v1.1, or annotate
+   under the countermand window).
+
+---
+
 ## E-012 — D-3 cannot be run: the pinned observable does not exist, and the official runner fabricates
 
 | | |
