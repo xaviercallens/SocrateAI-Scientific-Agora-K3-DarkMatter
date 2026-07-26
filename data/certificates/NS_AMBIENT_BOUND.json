@@ -1,0 +1,82 @@
+{
+  "checker": "check_neron_severi_ambient.py",
+  "checker_version": "1.0.0",
+  "date": "2026-07-26",
+  "ticket": "Phase 3 cross-check of step B",
+  "results": {
+    "cooper_s7": {
+      "model": "G(2,6) cap six hyperplane sections (Plucker)",
+      "ambient_classes": [
+        "H = O(1)|_X"
+      ],
+      "gram_matrix": [
+        [
+          14
+        ]
+      ],
+      "gram_determinant": 14,
+      "gram_eigenvalue_signs": [
+        1
+      ],
+      "hodge_index_signature_ok": true,
+      "polarisation_degree_H_squared": 14,
+      "genus": 8,
+      "rho_lower_bound_from_ambient": 1,
+      "ambient_family_dimension": 19,
+      "generic_rho_of_ambient_family": 1,
+      "dimension_formula_check": {
+        "predicted_20_minus_rho": 19,
+        "counted_family_dimension": 19,
+        "pass": true
+      }
+    },
+    "cooper_s10": {
+      "model": "P3 x P3 cap four (1,1) sections (Segre)",
+      "ambient_classes": [
+        "H1 = pr1*O(1)",
+        "H2 = pr2*O(1)"
+      ],
+      "gram_matrix": [
+        [
+          4,
+          6
+        ],
+        [
+          6,
+          4
+        ]
+      ],
+      "gram_determinant": -20,
+      "gram_eigenvalue_signs": [
+        -1,
+        1
+      ],
+      "hodge_index_signature_ok": true,
+      "polarisation_degree_H_squared": 20,
+      "genus": 11,
+      "rho_lower_bound_from_ambient": 2,
+      "ambient_family_dimension": 18,
+      "generic_rho_of_ambient_family": 2,
+      "dimension_formula_check": {
+        "predicted_20_minus_rho": 18,
+        "counted_family_dimension": 18,
+        "pass": true
+      }
+    }
+  },
+  "our_family_bound": {
+    "family_dimension": 1,
+    "non_isotrivial": true,
+    "non_isotriviality_source": "local monodromy at z=0 is unipotent and != I (check_L3_irreducible_minimal.py step 1), so the period map is not constant",
+    "rho_upper_bound": 19,
+    "equivalently": "rank T >= 3",
+    "which_half": "This is the SAME half step A already gives via V subset T. The hard direction rho >= 19 (rank T <= 3) requires T subset V^sat and is NOT reachable from this route.",
+    "valid_only_if": "the dimension formula check above passes",
+    "pass": true
+  },
+  "verdict": "CORROBORATES_UPPER_BOUND_ONLY",
+  "closes_step_B": false,
+  "why_not": "the ambient models give rho >= 1 (s7) and rho >= 2 (s10); the generic member of each ambient family really does have that rho, as the verified dimension count shows. Our family is a codimension-18 resp. -17 subfamily and the extra classes are not visible in the ambient space.",
+  "picard_rank": null,
+  "transcendental_rank": null
+}
