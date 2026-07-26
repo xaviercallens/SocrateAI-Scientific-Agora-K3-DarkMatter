@@ -1,253 +1,100 @@
-# ✅ TODO — 2026-07-26
+# ✅ TODO — restart here
 
-**Critical path:** T0 decisions (blocking Gate E) → Stream 2 geometry redo → Stream 3 Gate E
+**Last updated:** 2026-07-26 (evening) · **Release:** `v0.3.4` · **Previous TODO:** commit history
 
-> Previous TODO (2026-07-24: C1/C2 for s10, Lean Sym² encoding) is **complete or superseded**.
-> The C1/C2 items it listed were done, then corrected by F6, and their Kodaira labels are now
-> under the open finding below.
-
----
-
-## T0 decisions — ✅ DECIDED 2026-07-26 (`briefs/T0_DECISIONS_2026_07_26.md`)
-
-- [x] **D1 — Gate E criterion 1: UNRESOLVED**; other five proceed; date kept. Best
-      achievable verdict = CONDITIONAL. Handoff sent →
-      `briefs/STREAM2_TO_STREAM3_GATE_E_CRITERION1_2026_07_26.md`
-- [x] **D2 — M1 accepted** (conditional negative); Phase M dormant, gated on Route γ; M2 unauthorized
-- [x] **D3 — Stream 3 mirroring DELIVERED 2026-07-26** → `stream3_mirror/` (25 files, hash-pinned,
-      source commit `3d18add`; claims re-verified at mirror time — see `stream3_mirror/README.md`,
-      incl. β₁=29/30 precision note). Standing returned-for-provenance rule in force.
-- [x] **D4 — Wall-3 renunciation = standing policy** → ASSUMPTIONS.md addendum **A-DE**
-- [x] Expected-outputs amendment — overtaken by E-007 closure (retraction is permanent)
-
-### ✅ WP-B1 sign-off — APPROVED (Xavier, T0, 2026-07-26)
-- [x] **WP-B1 sign-off** on the two documented deviations → `briefs/STREAM1_WP_B1_RESULTS.md`
-      (restated `force_range_bounded`; corrected `no_unscreened_lmp`, whose original spec was a
-      false theorem). T0 authorization: "🏛️ T0 AUTHORIZATION: Stream 1 Parking & Unblock Queue
-      Cleared", 2026-07-26, §3. This was the one item left pending after the 2026-07-26
-      authorization above; Stream 1's final operational gate is now closed.
+> ## 30-second orientation
+>
+> **The mathematics is done. The physics branch closed honestly. Nothing is on fire.**
+>
+> - **ρ = 19, T = 3 — DERIVED** [tier B], E-011. Independently reproduced by Stream 1.
+> - **F5b — no prediction extractable.** Adopted into `PREDICTION.md` **v1.1-PINNED §6**.
+>   Pre-registered outcome, **not** a refutation, and **reversible**.
+> - **Gate E criteria 1–2 UNSCOREABLE** (no valid empirical run exists). *Not failing.*
+> - **Stream 1 parked clean. Stream 2 mathematics complete. Stream 3 running WP-E on Dark Home.**
+>
+> Full history: `ESCALATIONS.md` E-007 … E-013. Governing docs: `VISION.md`, `EXECUTION_PLAN.md`
+> (both restored 2026-07-26 — they had been deleted since 07-18).
 
 ---
 
-## 🟢 E-007 RESOLVED (2026-07-26) — root cause established, C1/C2 layer retracted
+## 🔴 Open — needs a human
 
-**L₂ is a twisted PF operator, not a PF operator.** Two independent confirmations:
-- `checkers/check_C1_kodaira_consistency.py`: exponents [0, 1/2], det(monodromy) = −1
-  ∉ SL₂(ℤ) ⇒ **no Kodaira type derivable** (not I₁, not II).
-- Deep Think (T0s) + verification here: **g.f.(A279619)² = g.f.(A183204)** exactly on
-  all 8 terms. The square root halves {0,0} → {0,½} and flips det to −1.
-- s7's real substrate is **X₀(7)**, CM by ℚ(√−7) — not a Beauville elliptic surface.
+- [ ] **T0: does `v0.4.0` still mean "Gate E PASS"?** Gate E in its original form may now be
+      unreachable (E-012: no valid D-3 possible; F5b: empirical programme contracted). Either
+      redefine v0.4.0 or retire it. **Blocking nothing**, but the reservation is currently
+      pointing at an event that may never occur.
+- [ ] **T0: amend `EXECUTION_PLAN.md` §S3-00 step 2(b)** — it derives α_D, Λ_D from *Kodaira
+      fibre data*, which E-007 retracted and E-008/E-009 showed is category-mismatched (the
+      finite loci are order-2 elliptic points, not Kodaira degenerations). Either supply a
+      replacement route or formally strike the step. F5b already stands without it.
+- [ ] **Stream 3: answer the four asks** in `briefs/STREAM2_TO_STREAM3_GUIDELINES_2026_07_26.md`
+      — do they hold a real D-3 run or 3D field data outside this repo; have they produced Gate E
+      verdicts from the disabled runner; the WP-E pre-flight σ(0); and t103's true status.
 
-**Permanently retracted:** C1/C2 certs (v1 + v2), ρ=4, T=18, discriminant=−3.
-Cause: hardcoded `components = 2` in a wrong lookup (`exponents_to_kodaira_type`),
-now **hard-disabled (raises)**.
+## 🟡 Open — mechanical, any agent can pick up
 
-Artifacts: `ESCALATIONS.md` E-007 · `data/certificates/C1_KODAIRA_CONSISTENCY.json` ·
-`briefs/STREAM2_ACTION_PLAN_2026_07_26.md`
+- [ ] **Correct `stream3_mirror/NO_PREDICTION_BRANCH.md` §2/§5 at source.** It lists ρ=4/T=18 and
+      "2× Type II" Kodaira as certified and "not in question" — both retracted by E-007 the day
+      after it was written. Corrected *downstream* in `PREDICTION.md` §6, but the mirror copy is
+      still stale. **The F5b conclusion is unaffected**; only its supporting table is wrong.
+- [ ] **`t103` status is contested.** `PROJECT_STATUS_TRACKER.md` has it in the K3 pool; a prior
+      validation vetoed it as "order-4 CY3"; `docs/autoresearch_v2/S12_S21_DEFINITION_ALIGNMENT.md`
+      says the order-4 object is its minimal *shift recurrence* while its minimal *ODE* is order 3
+      (the basis of K3 classification). Reconcile, or drop it from candidate lists.
+- [ ] **`scripts/v5_dual_scale_pipeline.py`** is a docstring + `print("Implementation pending")`.
+      Either implement or delete — it is cited as if real.
+- [ ] **`scripts/gate_e_verdict.py`** criterion 5 (physics-washing audit) is stubbed.
 
-**Unaffected:** L₃=Sym²(L₂) (Tier A — this *confirms* it); exact singular loci; WP-B1.
+## ⛔ Do NOT do these
 
----
-
-## Stream 2 — Geometry redo
-
-- [x] Phase 0 reconciliation + root cause (E-007 closed)
-- [x] Hard-disable `exponents_to_kodaira_type()`; mark `compute_C1_monodromy.py` RETRACTED
-
-### Phase 1: Provenance gate — ✅ SUBSTANTIALLY DONE (2026-07-26); 2 sources outstanding
-- [x] `docs/literature/` + `refs/literature_provenance.txt` created
-- [x] Fetched + hash-pinned **Almkvist–van Straten arXiv:2103.08651** and
-      **Gorodetsky arXiv:2102.11839**; identity verified from front matter
-- [x] `checkers/check_literature_provenance.py` (honest scope in docstring) — **PASS**
-- [x] **Cross-validation:** A–vS's printed operator coefficients match the repo's exactly;
-      their printed Riemann symbols match our independently computed schemes exactly
-- [x] **O'Brien 2016 MSc thesis fetched + hash-pinned 2026-07-26** (freely hosted at
-      Massey Research Online, unlike the others — see `refs/literature_provenance.txt`).
-      Theorem 6.1 verified from the primary text: c7 recurrence + all 10 printed terms
-      match `cooper_s7_partner` exactly, independently confirming the A279619 identity.
-      Does NOT itself state "X0(7)" or "CM by Q(sqrt(-7))" (zero hits) — that clause in
-      ESCALATIONS.md E-007 point 4 rests on the separate disc-(-7) fact, not this thesis.
-- [ ] Still unfetched: Cooper 2012 (Ramanujan J. 29, paywalled); Chan–Cooper–Sica 2010;
-      **Stienstra–Beukers 1985 Math. Ann. 271** (confirmed paywalled 2026-07-26, no OA
-      mirror found — see `refs/literature_provenance.txt`) ← would close the ρ/T step
-
-### 🟢 E-009 RESOLVED (2026-07-26) — the K3 EXISTS
-A–vS §"three sporadic third order operators" *is* our s7/s10/s18, and gives explicit constructions:
-- **s7** = their Sporadic 2 → K3 = **intersection of six hyperplane sections of the Grassmannian G(2,6)** (Plücker)
-- **s10** = their Sporadic 1 → K3 = **intersection of four hyperplane sections of type (1,1) in P³×P³**
-
-The category worry is answered: there IS a K3. Order-2 elliptic points (E-008) are features
-of the modular parametrization, not evidence against it — both coexist, as in classical Apéry.
-**Residual:** A–vS state no Picard number, so ρ=19/T=3 now rests on the standard
-order-3-sub-VHS ↔ transcendental-lattice identification — **[B] awaiting citation**, no longer
-conditional on an unproven existence claim. `Stienstra–Beukers 1985` would close it.
-
-### 🎁 s18 UNBLOCKED (corrupt since 2026-07-20)
-A–vS Sporadic 3 gives `Q₃=192z²−28z+1, Q₂=576z²−42z, Q₁=564z²−26z, Q₀=180z²−6z`;
-regenerates 1, 6, 54, 564, 6390, 76356, 948276 exactly.
-- [x] Fold the recovered s18 operator into `refs/recurrences_v1.json` — entry renamed
-      `gorodetsky_s18` → `avs_sporadic3_s18` (NOT `cooper_s18` — that key is already used
-      by `scripts/autoresearch_v2_pool.py` for OEIS A219692, an unrelated AutoEvolve-pool
-      framework); recurrence re-derived directly from A-vS's printed operator (z^m
-      coefficient extraction, not transcription — cross-checked against the pinned source
-      text `docs/literature/almkvist_van_straten_2103.08651.txt` lines 1833-1872, not just
-      the ESCALATIONS.md paraphrase) and independently re-verified against A-vS's own
-      printed φ(x) series (1,6,54,564,6390,76356,948276) plus integral to n=22.
-      **New flagged discrepancy:** A219692's closed-form combinatorial sum literally
-      evaluates to a(0)=2 (re-verified here), but A-vS's own operator + printed φ(x) both
-      require a(0)=1 — the two "s18"s agree everywhere except n=0. Unresolved artifact,
-      noted in the entry's `_meta_note`; does not affect any C1/C2/E-009 work (s7/s10 only).
-      No order-2 companion identified yet (per `briefs/STREAM2_TO_STREAM1_E009_STATUS_2026_07_26.md`).
-
-### Phase 2: ⚠️ REVISED TWICE — Routes α and β both REFUTED (E-008)
-> Neither Deep Think's Route A (use L₃) nor any gauge transform works. Both tested and closed.
-
-- [x] Test Route A premise → **REFUTED**: L₃ exponents are **{0, ½, 1}**, not unipotent
-      (`scripts/compute_L3_monodromy.py`; Sym² of {0,½} = {0,½,1} — cross term keeps ½)
-- [x] Route β (gauge transform) → **REFUTED**: exponent *differences* are gauge-invariant,
-      so a difference of ½ cannot be gauged away (incl. fractional twists like P₂^{1/4})
-- [x] Emit `C1_L3_cooper_s{7,10}.json` with `picard_rank: null` (deliberate — no fabrication)
-
-**Route γ — ramified Hauptmodul pullback (only surviving path):**
-- [x] **Step 0: composition CONFIRMED** — `g.f.(A002652) = F(t(q))` exact to order 29
-      (`checkers/check_route_gamma_step0.py`, `data/certificates/ROUTE_GAMMA_STEP0.json`).
-      Hauptmodul t = A279618 is the correct uniformizing coordinate. **No ρ/T emitted.**
-- [x] **Step 1: PASS** — `checkers/check_route_gamma_step1.py`. Both singular loci are
-      **simple critical values** of t (t′=0, t″≠0 ⇒ ramification index **m = 2 exactly**),
-      so exponents {0, ½} ↦ **{0, 1}, integral — the branch cut clears.**
-      z = 1/27 to **17 significant digits**; z = −1 to ~3 digits (nearer the convergence
-      radius — weaker, flagged). Certificate `ROUTE_GAMMA_STEP1.json`. **No ρ/T emitted.**
-      → **E-008 RESOLVED.**
-
-### 🔴 E-009 (NEW, OPEN) — is a Kodaira/Picard reading category-correct at all?
-> The ½ cleared *because* these look like **order-2 elliptic points** of a Fuchsian group —
-> which have finite-order monodromy by construction and are **not** Kodaira degenerations.
-> Three retractions (F6, E-007, E-008) were all downstream of forcing a fibration reading
-> onto a modular object. This ticket names that assumption.
-
-- [x] **Lead 2 WORKED** (`checkers/check_L3_riemann_scheme.py`, `L3_RIEMANN_SCHEME.json`):
-      complete Riemann scheme computed exactly — s7 {0,0,0} MUM / {0,½,1} / {2/3,1,4/3},
-      **Fuchs Σ = 6 exact**; **W(L₃)=W(L₂)³ confirmed** (rank-3 orthogonal from rank-2
-      symplectic = a K3 transcendental form).
-      → **ESTABLISHED UNCONDITIONALLY: ρ=4/T=18 is structurally IMPOSSIBLE** — an order-3
-      operator governs a rank-3 system, not rank-18. Independent second argument for E-007.
-      → **T=3 / ρ=19 is the unique consistent assignment, but CONDITIONAL on E-009.**
-      Recorded as conditional; ρ/T still `null`. Do not cite as derived.
-- [x] **Lead 1 CORROBORATED [B]:** implied signature genus 0, elliptic (2,2,3), 1 cusp,
-      area 2/3 = **Γ₀(7)+ exactly** (Fricke halves Γ₀(7)'s 4/3; 2 cusps→1; 2 order-3→1;
-      w₇'s 2 fixed points → the 2 order-2 points). Predicted from a count, met by an
-      independent exponent computation. Still [B], not a rigorous identification.
-- [ ] **E-009 core question remains OPEN:** does a K3 EXIST whose transcendental sub-VHS
-      L₃ governs? Passing preconditions is not existence. This is now the single blocker.
-- [ ] Only if that resolves: emit C1/C2 v3, notify Stream 3, then a revised M1′ is draftable
-
-
-### Phase 3 — ⚠️ ROUTE CHANGED (2026-07-26). Shioda–Tate was the wrong instrument.
-> A first attempt at the Shioda–Tate route was **fabricated and retracted the same day**
-> (`ESCALATIONS.md` **E-010**: ρ=19 hardcoded, rank MW back-solved to close the arithmetic).
-> The route itself was also misconceived: Shioda–Tate needs derived fibre multiplicities
-> and a derived MW rank, neither of which this repo can currently produce — whereas the
-> transcendental rank is reachable directly, and was.
-
-**The reduction.** Let V = the sub-VHS generated by the holomorphic 2-form ω. For the very
-general member, **rank T = rank V** by two standard inclusions (V ⊆ T since T is
-Gauss–Manin-flat and contains ω; T ⊆ V^sat since T is the *minimal* primitive
-sub-Hodge-structure containing H^{2,0}). And rank V = the order of the **minimal** operator
-annihilating the period. So the only real question is whether L₃ is minimal.
-
-- [x] **Step A — L₃ IRREDUCIBLE and MINIMAL** ✅ (`checkers/check_L3_irreducible_minimal.py`,
-      `data/certificates/L3_IRREDUCIBLE.json`, commit `b64abd5`). Exact in ℚ, both operators:
-      - **not dihedral** — L₂'s indicial equation at z=0 has a *double* root ⇒ Frobenius forces
-        a log ⇒ local monodromy unipotent and ≠ I ⇒ not in the normalizer of a torus (whose
-        elements are semisimple or trace-0). Dihedral is the *only* way Sym² of an irreducible
-        rank-2 can split.
-      - **L₂ irreducible** — no hyperexponential solution, by an exact denominator obstruction:
-        all finite exponents are {0,0} and {0,½} so every attainable Σ(residues) of u=y′/y lies
-        in ½ℤ, but the exponents at ∞ are **{1/3,2/3}** (s7) and **{3/8,5/8}** (s10). 3 and 8
-        against 2 — no overlap.
-      - ⇒ **rank V = 3 exactly.**
-      - Controls: `checkers/test_L3_irreducible_minimal_controls.py` (16 assertions). A
-        known-reducible operator must fail step 2; an operator with no log at 0 must fail
-        step 1. Writing them found a real bug. **Per E-010: a test that cannot fail is not a test.**
-- [x] **Step B — DONE 2026-07-26. ρ = 19, T = 3 emitted.** → `ESCALATIONS.md` **E-011**,
-      `checkers/check_C2_transcendental_rank.py`, `C2_cooper_s{7,10}_v3.json` (tier **[B]**).
-      T0 condition ("accept, but require a second source first") met: **both sources fetched,
-      hash-pinned and READ** —
-      **Zarhin 1983 Thm 1.6(a) p.207** (*"the Hdg-module V(Y) is simple"*; smooth projective,
-      p_g=1, **no genericity**; his p.200 also gives `dim V(Y) = b₂ − ρ`) — open at GDZ, a scan
-      with no text layer, so read as **rendered page images**; and **Huybrechts Lemma 3.2.7 +
-      3.3.1**. Projectivity discharged via A–vS's complete-intersection models (E-009).
-      ρ is **computed** as `b₂ − rank_V` from the step-A certificate at runtime, never typed in —
-      controls confirm the checker refuses on degraded input and reports ρ=17 if `rank_V`=5.
-      ⚠️ Caveats that travel with it: **very general member** (ρ jumps to 20 on a countable dense
-      subset); **projectivity is load-bearing** (Huybrechts Ex. 3.3.2 is a counterexample without
-      it); tier **B**, not A; `discriminant` stays **null**.
-- [x] Stream 3 notified → `briefs/STREAM2_TO_STREAM3_RHO_T_DERIVED_v2_2026_07_26.md`
-      (criterion 1 re-scorable, **no batch re-run**; includes a table distinguishing it from the
-      withdrawn E-010 brief of the same name, and tells them to verify by reading the source)
-- [x] **Stienstra–Beukers 1985 is OFF the critical path** — still paywalled, still unfetched,
-      nothing now depends on it
-- [x] **Néron–Severi cross-check — ATTEMPTED, corroborates the EASY half only.**
-      (`checkers/check_neron_severi_ambient.py`, `data/certificates/NS_AMBIENT_BOUND.json`,
-      commit `c8f66f3`.) **Do not retry this route.** The ambient models give only
-      `ρ ≥ 1` (s7: deg G(2,6) = 14, genus 8 — the Mukai model) and `ρ ≥ 2` (s10:
-      ⟨H₁,H₂⟩ Gram [[4,6],[6,4]], det −20, signature (1,1) ✓ Hodge index; H² = 20, genus 11).
-      That shortfall is **real**, not laziness: the generic member of each ambient family has
-      exactly that ρ, confirmed via the moduli dimension formula `dim = 20 − ρ` checked against
-      both models independently (s7: 54−35 = 19 = 20−1 ✓; s10: 48−30 = 18 = 20−2 ✓).
-      Our family is a codimension-18 resp. -17 subfamily; the missing classes come from the
-      A–vS **pencil**, and extracting them needs its explicit equations plus a resolution of the
-      singular members — real algebraic geometry, not bookkeeping.
-      Applied to our family the same formula does give a genuine bound — 1-parameter and
-      non-isotrivial (MUM ⇒ period map non-constant) ⇒ `1 ≤ 20 − ρ` ⇒ **ρ ≤ 19** — but that is
-      the *same* half step A already gives via V ⊆ T. **The hard direction ρ ≥ 19 is untouched.**
-
-### Phase 4: Physics interpretation — ⛔ BLOCKED on Phase 2/3
-- [x] **GUT-claim audit (Deep Think "Fallacy B")** — repo scanned for `SU(5)|SO(10)|GUT`:
-      4 hits, **all already correctly hedged** (`CAVEATS.md` "Not attempted";
-      `PHASE_10_K3_SELECTION.md` carries **[C]** + "not a result"; handoff brief mandates
-      the marker; `alpha_origin_rge.py` is a normalization comment). **No scrub needed —
-      the guardrails held.** The SU(5)/SO(10) language came from the proposed plan, not the repo.
-- [ ] Restrict claims to what real C1/C2 data supports (dark-sector coupling structure),
-      **not** GUT embeddings
-- [ ] Every phenomenological leap carries an inline `[C] CONJECTURE` marker **in the same sentence**
-- [ ] Deliverable: physics brief — retitle to match whichever operator/coordinate actually
-      yields the geometry (Deep Think's `PHYSICS_INTERPRETATION_L3.md` presumes L₃, now blocked)
-- [ ] Guardrail holds: "load-bearing physical vacuum" framing **not adopted**
-
-### Phase M: Astrophysical model construction (Fable 5 T0 directive, 2026-07-25)
-- [x] **M1 mechanism memo delivered & T0-ACCEPTED** (decision D2) →
-      `briefs/STREAM2_M1_MECHANISM_MEMO_2026_07_26.md` — conditional negative;
-      Wall 3 routed by renunciation (now ASSUMPTIONS.md **A-DE**)
-- [x] Stop-point cleared (T0 acceptance 2026-07-26)
-- [x] Mirroring delivered (D3) → `stream3_mirror/` — M2's artifact precondition is now met (Route γ still required)
-- [ ] Phase M **DORMANT**: M2–M4 open only after Route γ delivers C1v3/C2v3 AND T0 re-opens against a revised M1′
+- **Do not run `pipelines/D3_batch_runner_phase2.py`.** Disabled 2026-07-26; it raises. It
+  fabricates χ² via `np.random.chi2`, tests operator error against noise it cannot fail, and
+  defaults to the retracted ρ=4/T=18. Re-enable only by wiring
+  `empirical_crucible/s2_1_singular_locus_observable.py` **and** shipping negative controls.
+- **Do not retry the Néron–Severi route to ρ.** It corroborates only the easy bound (ρ ≤ 19); the
+  ambient models genuinely give ρ ≥ 1 (s7) / ρ ≥ 2 (s10). See `check_neron_severi_ambient.py`.
+- **Do not chase Stienstra–Beukers 1985.** Paywalled, unfetched, and **off the critical path** —
+  Zarhin 1983 Thm 1.6(a) closed the ρ/T step instead.
+- **Do not edit a pinned document unilaterally.** `PREDICTION.md` v1.1 was re-pinned under its
+  *own* protocol (§6 "populated only by the completed S3-00 derivation, in a new commit").
 
 ---
 
-## Stream 1 — Complete (maintenance only)
+## Standing rules (earned the hard way — E-007, E-010, E-012)
 
-- [x] `L₃ = Sym²(L₂)` kernel-verified, axiom-clean
-- [x] WP-B1: 4/4 DoD lemmas, zero `sorry`, 10/10 golden tests
-- [x] `B1_Sym2Bridge.lean` (B3 interface), `B1_AxiomAudit.lean`, CI gate
-- [ ] Awaiting T0 sign-off (see Blocking above)
-- [ ] Optional: tighten `h_scale` in `no_unscreened_lmp` once C1 v3 lands (Stream 2 request)
-- [ ] Optional: s18 recurrence recovery — unblocked by the Phase 1 Gorodetsky fetch
+1. **A test that cannot fail is not a test.** Every checker emitting a headline number ships a
+   negative control asserting a known-negative case FAILS. This has found a real bug every time.
+2. **Read the source, not the certificate.** All three fabrications produced well-formed,
+   correctly tiered, internally consistent certificates. The tell was always in the code.
+3. **Retractions must be in-band.** A retraction only in prose is invisible to a script — and is
+   where E-010's fabrication got its target value.
+4. **Verify a directive's artifacts before executing it.** Five occurrences to date of directives
+   naming files that do not exist.
+5. **Numbers are computed, never typed.** ρ is derived at runtime as `b₂ − rank_V` from the step-A
+   certificate; break that certificate and the number moves or the checker refuses.
 
----
+## Regression — all green as of `v0.3.4`
 
-## Stream 3 — D-3 running
+```bash
+python3 checkers/test_refs_self_regenerate.py            # 11/11 entries, both encodings agree
+python3 checkers/test_L3_irreducible_minimal_controls.py # 16 assertions incl. negative controls
+python3 checkers/check_L3_irreducible_minimal.py         # L3 irreducible => rank V = 3
+python3 checkers/check_C2_transcendental_rank.py         # rho = 19, T = 3  [tier B]
+python3 checkers/check_s7_partner_integrality_modular.py # s7 integrality mechanism
+python3 checkers/check_neron_severi_ambient.py           # rho <= 19, second route
+python3 stream3_mirror/scripts/check_tier_language.py    # 0 violations
+```
 
-- [x] Phase 2 infrastructure deployed; batch launched
-- [ ] Batch completion → aggregation → statistical report
-- [ ] Gate E verdict **2026-07-27 EOD UTC** (Xavier)
-- [x] Criterion 1 decision taken (D1): score **UNRESOLVED**, retain outputs as re-scorable data
-- [ ] Apply D1 at aggregation/verdict → `briefs/STREAM2_TO_STREAM3_GATE_E_CRITERION1_2026_07_26.md`
-- [x] D3 mirroring delivered (done by Stream 2, 2026-07-26) → `stream3_mirror/`
+## The Tier A result, for the record
 
----
+Publishable on its own merits, independent of any dark-sector claim:
 
-## Housekeeping
-
-- [ ] **Rotate the GitHub token embedded in `.git/config`.** `git remote -v` prints a
-      plaintext `ghp_…` PAT. Revoke it and switch to SSH or a credential helper.
+- `L₃ = Sym²(L₂)` — kernel-proven in Lean 4 (Stream 1)
+- **L₃ irreducible ⇒ the minimal-order Picard–Fuchs operator** — exact in ℚ, both operators.
+  Not dihedral (double indicial root at 0 ⇒ log ⇒ nontrivial unipotent ∉ N(T)); L₂ irreducible
+  by a denominator obstruction (residues ∈ ½ℤ vs ∞-exponents {1/3,2/3} and {3/8,5/8}).
+- **ρ = 19, T = 3** — via Zarhin 1983 Thm 1.6(a) + Huybrechts 3.2.7/3.3.1, both fetched and read
+  (Zarhin is a scan; read as rendered page images).
+- **s7-partner integrality mechanism** — `X₇ = η₁³η₇³/z₇³` is a *normalized* integral uniformizer;
+  normalization is the load-bearing property, not "η-quotients are integral".
+- Exact Riemann schemes, Fuchs Σ = 6, MUM at 0, W(L₃) = W(L₂)³; A–vS explicit projective K3 models.

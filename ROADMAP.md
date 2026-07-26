@@ -1,6 +1,24 @@
 # 🗺️ ROADMAP: Dual-Scale Topological Universe Model (K3×T² + D-brane Dynamics)
 
-**Last updated:** 2026-07-26 | **Status:** Stream 1 ✅ COMPLETE (Sym² + WP-B1); Stream 2 🔴 GEOMETRY BLOCKED (E-007 closed, E-008 open); Stream 3 🔄 D-3 running, Gate E 2026-07-27 EOD
+**Last updated:** 2026-07-26 (evening) | **Release:** `v0.3.4`
+
+> ## ⬛ READ THIS FIRST — current state supersedes everything below
+>
+> | | |
+> |---|---|
+> | **Stream 1** | ✅ **PARKED CLEAN.** Sym² + WP-B1 signed off; 2 goals `blocked-on-mathlib`. |
+> | **Stream 2** | ✅ **MATHEMATICS COMPLETE.** ρ = 19, T = 3 **DERIVED** [tier B] (E-011). |
+> | **Stream 3** | 🟡 **D-3 NOT RUNNABLE** (E-012). WP-E transverse study live on Dark Home. |
+> | **Physics** | 🔴 **F5b — no prediction extractable.** Adopted into `PREDICTION.md` **v1.1-PINNED** §6. |
+> | **Gate E** | criteria 1–2 **UNSCOREABLE** (no valid run). *Not failing.* |
+>
+> **The programme has contracted to its Tier A mathematical content, per `VISION.md` §5.**
+> That content is substantial and publishable on its own merits. This is a **pre-registered,
+> reportable outcome — not a failure, and not a refutation.** F5b means no prediction could be
+> *extracted*; none was tested and failed. It is **reversible**: exhibit a flux stabilization
+> plus a non-fibration route to the dark gauge sector and S3-00 reopens.
+>
+> **Tickets:** `ESCALATIONS.md` E-007 … E-013. **Restart here:** `TODO.md`.
 
 ---
 
@@ -18,9 +36,11 @@ extracted from it as-is.** Independently established two ways:
   exact on all 8 terms. Squaring a unipotent {0,0} operator's solution halves the
   exponents to {0, ½} and flips the monodromy determinant. The irrational Wronskian
   `W = C/(z√P₂)` is that twist's analytic signature.
-- **Real geometric substrate for s7:** modular curve **X₀(7)**, CM by ℚ(√−7) — *not*
-  a Beauville rational elliptic surface. (O'Brien 2016 MSc thesis Thm 6.1;
-  Chan–Cooper–Sica 2010 Conj 5.4.)
+- **Real geometric substrate for s7:** a **level-7 modular** parametrization — O'Brien 2016
+  Thm 6.1 gives `z7 = Σ c7(n) X7ⁿ` with `X7 = η₁³η₇³/z7³`. ⚠️ **Rescoped 2026-07-26** (commit
+  `c7ba6fb`): that thesis does **not** state "X₀(7)" or "CM by ℚ(√−7)" — zero hits. Those rest
+  on the separate disc-(−7) fact about A002652, not on this source. Cite it only for the
+  generating-function/level-7 identity.
 
 **Retracted permanently:** C1/C2 certificates (v1 **and** v2), **ρ = 4**, **T = 18**,
 **discriminant = −3**. Cause: `exponents_to_kodaira_type()` in
