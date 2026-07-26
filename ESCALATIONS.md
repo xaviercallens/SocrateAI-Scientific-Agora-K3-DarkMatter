@@ -11,6 +11,120 @@ changes are edited in place with a dated note.
 
 ---
 
+## E-015 — A "Project Health" memo to T0 reinstated retracted claims and scheduled unauthorized work
+
+| | |
+|---|---|
+| **Status** | 🟠 **CORRECTED (2026-07-26)** — memo re-issued; see `briefs/PROJECT_HEALTH_MEMO_CORRECTED_2026_07_26.md` |
+| **Opened** | 2026-07-26 evening, T0 circulated a status memo for review before wider distribution |
+| **Raised by** | Sonnet 5 (Stream 2), fact-check against primary sources |
+| **Severity** | Medium — no computation was corrupted, but the memo would have re-authorized gated work |
+
+### Why this is a ticket and not a copy-edit
+
+The memo was accurate in its arc (guardrails caught the failures; the mathematics is sound) and
+would have read as authoritative. Two of its errors were **governance-level**: one reinstated a
+permanently retracted geometric object, the other scheduled a work package T0 had explicitly
+gated off two days earlier. Circulated as written — particularly to Deep Think or Mistral, who
+were being briefed the same evening — it would have contradicted
+`briefs/DEBRIEF_DEEPTHINK_MISTRAL_2026_07_26.md` head-on and reintroduced exactly the retracted
+claims that debrief exists to warn against.
+
+### Findings
+
+**1. GOVERNANCE — "ample cycles … without violating the Type II fiber constraints."**
+There are no Type II fibres. E-007 did not revise the Kodaira classification, it **retracted it
+entirely**: L₂ is a twisted Picard–Fuchs operator (det monodromy = −1 ∉ SL₂(ℤ)), so no Kodaira
+type is derivable from it, and E-009 showed the finite loci are **order-2 elliptic points of a
+Fuchsian group**, not fibre degenerations. The polarity is also inverted: when "2× Type II" was
+still live it was a **veto** (Wall 1 of M1 — cuspal fibres yield no weakly-coupled gauge algebra),
+never a constraint one builds a dark sector *within*.
+
+**2. GOVERNANCE — "Draft the M2 Mechanism Derivation" listed as the next active step.**
+T0 decision **D2** (`briefs/T0_DECISIONS_2026_07_26.md`) makes M2 **not authorized**, Phase M
+dormant, opening only when *both* Route γ delivers derived C1v3/C2v3 lattice data **and** T0
+re-opens Phase M by explicit decision. Neither holds: Route γ's actual outcome (E-009) was that
+the fibration reading is category-mismatched — the opposite of delivering fibre data.
+
+**3. Stale observable — β₂ vs β₁.** The memo's Stream 3 framing ("void topology (β₂)") predates
+the same-day WP-E review: **β₂ ≡ 0** in the 2D transverse projection Stream 3 adopted (H₂ trivial
+for a 2D complex). The operative statistic is **β₁**, with E2.10's baseline-artifact warning
+binding harder, not less.
+
+**4. `ρ ≤ 19` should be `ρ = 19`.** T = 3 is derived exactly, so ρ = 22 − 3 = 19 exactly. Stating
+it as a bound understates E-011 and reopens the ambiguity the derivation closed.
+
+**5. Stream 1 open-goal count.** "Two open goals blocked-on-mathlib" is the superseded figure
+(`ROADMAP.md` header). Per `briefs/T0_AUTHORIZATION_EXECUTED_AND_S1_13_CORRECTION_2026_07_26.md`
+it is **one** — `open_goal_partner_integral_s7` was reopened and **closed** via a literature axiom
+(O'Brien 2016 **Thm 6.2**, p.47 — not 6.1). Relatedly, "s7 … perfectly shielded" is now a theorem
+rather than `PASS(N)`, but it rests on a **registered axiom**, not a from-scratch kernel
+derivation; the memo should say so.
+
+**6. "The Unblinded Test … with Gate G1-L open" as a near-term step.** `NO_PREDICTION_BRANCH.md`
+states that because F5b fired, **G1-L will not open on this branch**. It is closed by design.
+
+### Root cause
+
+Consistent with drafting from `ROADMAP.md`'s header (stale until commit `d074413`, same day) or a
+snapshot predating E-009 / D2 / F5b / the WP-E pivot — not from `TODO.md`, `PREDICTION.md` v1.1, or
+`ESCALATIONS.md`. This is standing rule 2 (**read the source, not the certificate**) applied to
+status prose: a summary document is a certificate, and it was internally consistent and confident
+while being wrong on the two points that carried authority.
+
+### Action taken
+
+Corrected memo issued at `briefs/PROJECT_HEALTH_MEMO_CORRECTED_2026_07_26.md`, sourced
+line-by-line to primary documents. No change to any computed result — nothing downstream consumed
+this memo.
+
+---
+
+## E-014 — t103's "contested status" has no actual T0 record; every artifact already agrees
+
+| | |
+|---|---|
+| **Status** | 🟢 **RESOLVED (2026-07-26)** — no veto found; t103 remains a live GATE-C finalist |
+| **Opened** | 2026-07-26, TODO.md mechanical item: "t103 status is contested" |
+| **Raised by** | Sonnet 5 (reconciliation pass) |
+| **Severity** | Low — no downstream claim depended on the wrong answer |
+
+### The claim
+
+`TODO.md` and `briefs/STREAM2_TO_STREAM3_WP_E_REVIEW_2026_07_26.md` both assert "a prior T0
+validation VETOED t103 as order-4 CY3," in tension with
+`docs/autoresearch_v2/S12_S21_DEFINITION_ALIGNMENT.md`, which says the order-4 object is t103's
+minimal *shift* recurrence while its minimal *ODE* is order 3 (K3-type).
+
+### What the repo actually contains
+
+Searched every artifact that classifies t103: `PHASE_A_FINDINGS.md`, `PHASE_B_FINDINGS.md`,
+`PHASE_C_A_RESULTS.md`, `S12_S21_ADJUDICATION.md`, `PHASE_8_AUTOEVOLVE_RECTIFICATION.md`,
+`PROJECT_STATUS_TRACKER.md`, `CAVEATS.md`, `VISION.md`, `EXECUTION_PLAN.md`,
+`T103Recurrence.lean`, and full git history (`git log -S"order-4 CY3"`, `-i --grep t103`, and the
+deleted `data/k3t2/GATE_D1_DECISION.md`). **Every one agrees**: t103 (A276536) has generating-function
+ODE order 3 / degree 6, is K3-type, has integral mirror map (q₂ = 25), and is a GATE-C finalist,
+kernel-verified in Lean (`t103_recurrence_checked`, zero `sorry`). `T103Recurrence.lean`'s own
+docstring already states the order-4/order-3 distinction and says "both are valid" — this was
+never actually ambiguous at the source.
+
+**No document anywhere records a T0 decision vetoing t103.** `briefs/T0_DECISIONS_2026_07_26.md`
+(the only T0 decision log in the repo) does not mention it. The genuinely-existing order-4,
+CY3-*shape* object in this repo is a **different candidate**: `cooper_s18` (A219692,
+`PHASE_B_FINDINGS.md` finding N5, non-MUM, gates BLOCKED). The "t103 vetoed as order-4 CY3" claim
+most likely conflated these two candidates somewhere upstream of this session and was then carried
+forward in prose (memory / brief text) without ever being backed by a repo artifact — the same
+failure mode as standing rule 4 (verify a directive's artifacts before executing it), just applied
+to a status claim instead of a file.
+
+### Resolution
+
+t103 is **not** vetoed. It stays in the GATE-C finalist pool alongside s7/s10, with the caveat
+already on record everywhere: it has **no C1/C2 lattice work and no order-2 partner**, so E-011's
+ρ=19/T=3 does not cover it, and it should not be assumed to inherit that result.
+
+---
+
 ## E-013 — The S3-00 spec was deleted 8 days ago, and its step 2(b) depends on data E-007 retracted
 
 | | |

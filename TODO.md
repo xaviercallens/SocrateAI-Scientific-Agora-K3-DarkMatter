@@ -27,9 +27,10 @@
       fibre data*, which E-007 retracted and E-008/E-009 showed is category-mismatched (the
       finite loci are order-2 elliptic points, not Kodaira degenerations). Either supply a
       replacement route or formally strike the step. F5b already stands without it.
-- [ ] **Stream 3: answer the four asks** in `briefs/STREAM2_TO_STREAM3_GUIDELINES_2026_07_26.md`
-      — do they hold a real D-3 run or 3D field data outside this repo; have they produced Gate E
-      verdicts from the disabled runner; the WP-E pre-flight σ(0); and t103's true status.
+- [ ] **Stream 3: answer the three remaining asks** in
+      `briefs/STREAM2_TO_STREAM3_GUIDELINES_2026_07_26.md` — do they hold a real D-3 run or 3D
+      field data outside this repo; have they produced Gate E verdicts from the disabled runner;
+      the WP-E pre-flight σ(0). (Fourth ask, t103's status, resolved in-repo — see E-014.)
 
 ## 🟡 Open — mechanical, any agent can pick up
 
@@ -37,10 +38,12 @@
       "2× Type II" Kodaira as certified and "not in question" — both retracted by E-007 the day
       after it was written. Corrected *downstream* in `PREDICTION.md` §6, but the mirror copy is
       still stale. **The F5b conclusion is unaffected**; only its supporting table is wrong.
-- [ ] **`t103` status is contested.** `PROJECT_STATUS_TRACKER.md` has it in the K3 pool; a prior
-      validation vetoed it as "order-4 CY3"; `docs/autoresearch_v2/S12_S21_DEFINITION_ALIGNMENT.md`
-      says the order-4 object is its minimal *shift recurrence* while its minimal *ODE* is order 3
-      (the basis of K3 classification). Reconcile, or drop it from candidate lists.
+- [x] **`t103` status — RESOLVED (E-014, 2026-07-26): not vetoed.** No T0 record vetoing it exists
+      anywhere in the repo; every classification artifact (Phase A/B/C findings, GATE-C, the Lean
+      file itself) already agreed it is K3-type, order-3 ODE, GATE-C finalist. The "order-4 CY3"
+      claim conflated it with `cooper_s18` (the actual order-4, CY3-*shape*, non-MUM candidate).
+      t103 stays in the pool, with the pre-existing caveat that it has no C1/C2 work and is not
+      covered by E-011's ρ=19/T=3.
 - [ ] **`scripts/v5_dual_scale_pipeline.py`** is a docstring + `print("Implementation pending")`.
       Either implement or delete — it is cited as if real.
 - [ ] **`scripts/gate_e_verdict.py`** criterion 5 (physics-washing audit) is stubbed.
