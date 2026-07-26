@@ -44,9 +44,24 @@
       claim conflated it with `cooper_s18` (the actual order-4, CY3-*shape*, non-MUM candidate).
       t103 stays in the pool, with the pre-existing caveat that it has no C1/C2 work and is not
       covered by E-011's ρ=19/T=3.
-- [ ] **`scripts/v5_dual_scale_pipeline.py`** is a docstring + `print("Implementation pending")`.
-      Either implement or delete — it is cited as if real.
-- [ ] **`scripts/gate_e_verdict.py`** criterion 5 (physics-washing audit) is stubbed.
+- [x] **`scripts/v5_dual_scale_pipeline.py` — DELETED** (2026-07-26, plus its twin
+      `_stub_tobeupdate.py`). It advertised the retracted legacy program (Δ-spikes, weak
+      lensing, NANOGrav). README link removed.
+- [x] **`scripts/gate_e_verdict.py` criterion 5 — REAL and fail-closed** (2026-07-26). Audits
+      via the tier-language wrapper; missing checker/files/empty list all FAIL. Also fixed while
+      there: expected ρ was the **retracted 4.0 hardcoded** — now read at runtime from
+      `C2_cooper_s7_v3.json` (null ⇒ raise); and the script refuses D-3 aggregates entirely
+      (E-012: their only producer fabricates). Controls:
+      `checkers/test_gate_e_verdict_controls.py` (7, incl. negatives).
+- [ ] **Fetch and read Dolgachev 1996 / Doran** (Phase 4 step 2 — see
+      `briefs/STREAM2_PHASE4_LATTICE_REFINEMENT_2026_07_26.md`). Promotes H-M7 lattices
+      (NS = U⊕E₈²⊕⟨−14⟩, T = U⊕⟨14⟩) from [C] to [B] and changes which S3-00 2(b) decision
+      is on the T0 table. The computational leg is done:
+      **A279618 is a Γ₀(7)+ Hauptmodul [B]** — deg-2 over the Γ₀(7) coordinate, Möbius refuted,
+      Fricke κ=49 computed from the fit (`check_s7_hauptmodul_gamma07plus.py`).
+- [ ] **Tell Stream 3 about E-016**: their mirrored `check_tier_language.py` silently ignores
+      CLI file arguments on Dark Home too — repo-scan is its only real mode. Fold into the next
+      Stream 3 brief.
 
 ## ⛔ Do NOT do these
 
@@ -85,7 +100,10 @@ python3 checkers/check_L3_irreducible_minimal.py         # L3 irreducible => ran
 python3 checkers/check_C2_transcendental_rank.py         # rho = 19, T = 3  [tier B]
 python3 checkers/check_s7_partner_integrality_modular.py # s7 integrality mechanism
 python3 checkers/check_neron_severi_ambient.py           # rho <= 19, second route
-python3 stream3_mirror/scripts/check_tier_language.py    # 0 violations
+python3 checkers/check_s7_hauptmodul_gamma07plus.py      # A279618 is Gamma_0(7)+ Hauptmodul
+python3 checkers/test_gate_e_verdict_controls.py         # Gate E script fails closed (7 controls)
+python3 scripts/check_tier_language.py                   # wrapper — HONORS file args (E-016);
+                                                         # scans root + briefs by default
 ```
 
 ## The Tier A result, for the record

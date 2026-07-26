@@ -5,7 +5,23 @@ gate_e_verdict.py — Gate E Decision Logic (v0.4.0 release criterion)
 Reads D3_AGGREGATE_VERDICT.json and Phase 1 checks, makes formal Gate E decision.
 Authority: Xavier Callens (T0 Owner).
 
-Usage:
+GUARDED 2026-07-26 (ESCALATIONS.md E-012 + T0 decision D1):
+  * The only producer of D3_AGGREGATE_VERDICT.json is the DISABLED fabricating
+    runner (pipelines/D3_batch_runner_phase2.py). Until a real observable is
+    wired, ANY aggregate this script could read is not a measurement, so
+    main() refuses to emit a verdict (read_aggregate_verdict raises).
+  * Criterion 1 ("lattice structure validated") is scored UNRESOLVED per T0
+    decision D1 — this script's PASS/CONDITIONAL/FAIL logic cannot represent
+    that, which is a second independent reason it must not run as-is.
+  * Criterion 5 (physics-washing audit) is now a REAL audit (fail-closed):
+    it runs stream3_mirror/scripts/check_tier_language.py and FAILS if the
+    checker is missing or reports violations. It is never assumed.
+  * The expected Picard rank is read at runtime from the live v3 certificate
+    (rule 5: numbers are computed, never typed). The retracted rho=4.0 that
+    was hardcoded here is gone; if the certificate is absent or carries null,
+    the criterion refuses rather than defaulting.
+
+Usage (will refuse until E-012 is lifted):
   python3 scripts/gate_e_verdict.py \
     --aggregate data/d3_summary/D3_AGGREGATE_VERDICT.json \
     --phase1-checks data/verification/*.json \
@@ -14,14 +30,68 @@ Usage:
 
 import argparse
 import json
+import subprocess
 import sys
 from datetime import datetime
 from pathlib import Path
 
+REPO_ROOT = Path(__file__).resolve().parent.parent
+# The repo wrapper, NOT the hash-pinned mirror copy: the mirror's CLI ignores
+# file arguments (E-016) — auditing through it would check nothing.
+TIER_CHECKER = REPO_ROOT / "scripts" / "check_tier_language.py"
+C2_V3_CERT = REPO_ROOT / "data" / "certificates" / "C2_cooper_s7_v3.json"
+
 
 def read_aggregate_verdict(path):
-    with open(path) as f:
-        return json.load(f)
+    raise SystemExit(
+        "gate_e_verdict.py refuses to read a D-3 aggregate (ESCALATIONS.md E-012): "
+        "the only script that produces one is the disabled fabricating runner, so "
+        "this file cannot be a measurement. Additionally, Gate E criterion 1 is "
+        "UNRESOLVED per T0 decision D1, which this script's decision logic cannot "
+        "represent. Re-enable only alongside a real observable, in the same commit."
+    )
+
+
+def read_expected_rho(cert_path=C2_V3_CERT):
+    """Expected Picard rank, read from the live certificate — never hardcoded.
+
+    Raises if the certificate is absent or the value is null/retracted: a
+    missing expected value must halt the criterion, not default it (rule 3:
+    retractions are in-band; rule 5: numbers are computed, never typed).
+    """
+    with open(cert_path) as f:
+        cert = json.load(f)
+    rho = cert.get("picard_rank")
+    if rho is None:
+        raise ValueError(
+            f"{cert_path.name}: picard_rank is null — refusing to score lattice "
+            "consistency against an unavailable prior (E-010 guard)."
+        )
+    return float(rho)
+
+
+def physics_washing_audit(files):
+    """Criterion 5 — REAL audit, fail-closed.
+
+    Runs the tier-language checker over `files`. Returns (passed, detail).
+    A missing checker or missing target file FAILS the criterion — the
+    five-occurrence lesson (E-013, WP-E review item D): guards must halt,
+    never skip.
+    """
+    if not TIER_CHECKER.exists():
+        return False, f"AUDIT FAILED-CLOSED: checker missing at {TIER_CHECKER}"
+    missing = [f for f in files if not Path(f).exists()]
+    if missing:
+        return False, f"AUDIT FAILED-CLOSED: target file(s) missing: {missing}"
+    if not files:
+        return False, "AUDIT FAILED-CLOSED: no files supplied to audit"
+    result = subprocess.run(
+        [sys.executable, str(TIER_CHECKER), *[str(f) for f in files]],
+        capture_output=True, text=True,
+    )
+    passed = result.returncode == 0
+    detail = (result.stdout or result.stderr).strip()
+    return passed, detail
 
 
 def read_phase1_checks(check_files):
@@ -88,19 +158,27 @@ def make_gate_e_decision(aggregate, phase1_checks):
             else f"❌ Phase 1 {check_name}: {verdict}"
         )
 
-    # Criterion 5: Physics-washing audit (stub)
-    crit_physics_washing = True  # Assume passed; would need actual audit logic
+    # Criterion 5: Physics-washing audit — REAL, fail-closed (was a hardcoded
+    # True until 2026-07-26; a criterion that cannot fail is not a criterion).
+    audit_files = phase1_checks.pop("_audit_files", None) or []
+    crit_physics_washing, audit_detail = physics_washing_audit(audit_files)
     criteria["physics_washing_audit"] = crit_physics_washing
-    rationale_lines.append("✅ Physics-washing audit: PASS (no Tier C coupling claims detected)")
+    rationale_lines.append(
+        f"✅ Physics-washing audit: PASS ({audit_detail})" if crit_physics_washing
+        else f"❌ Physics-washing audit: FAIL ({audit_detail})"
+    )
 
-    # Lattice consistency check (s7 Picard ≈ 4)
+    # Lattice consistency check — expected rho read from the live certificate
+    # at runtime (rule 5). The retracted 4.0 hardcode is gone; a null/absent
+    # certificate value raises rather than defaulting.
+    rho_expected = read_expected_rho()
     rho_s7_mean = aggregate.get("operators", {}).get("L3_cooper_s7", {}).get("picard_number", {}).get("mean", 0)
-    rho_deviation = abs(rho_s7_mean - 4.0)
+    rho_deviation = abs(rho_s7_mean - rho_expected)
     crit_picard_consistent = rho_deviation < 0.5
     criteria["picard_consistency"] = crit_picard_consistent
     rationale_lines.append(
-        f"✅ Picard ρ(s7): {rho_s7_mean:.2f} (expected: 4.0, deviation: {rho_deviation:.2f})" if crit_picard_consistent
-        else f"⚠️  Picard ρ(s7): {rho_s7_mean:.2f} (expected: 4.0, deviation: {rho_deviation:.2f})"
+        f"✅ Picard ρ(s7): {rho_s7_mean:.2f} (expected: {rho_expected:.1f}, deviation: {rho_deviation:.2f})" if crit_picard_consistent
+        else f"⚠️  Picard ρ(s7): {rho_s7_mean:.2f} (expected: {rho_expected:.1f}, deviation: {rho_deviation:.2f})"
     )
 
     # Decision logic

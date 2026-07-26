@@ -27,9 +27,12 @@
 ## Key Files
 - [DUAL_SCALE_HYPOTHESIS.md](DUAL_SCALE_HYPOTHESIS.md)
 - [K3_CRITERIA_INTERFACE.md](K3_CRITERIA_INTERFACE.md)
-- [v5_dual_scale_pipeline.py](scripts/v5_dual_scale_pipeline.py)
 - [weak_lensing_overlay.py](scripts/weak_lensing_overlay.py)
 - [NANOGrav_prediction.py](scripts/NANOGrav_prediction.py)
+
+> Note (2026-07-26): `v5_dual_scale_pipeline.py` was deleted — it was an empty stub citing the
+> retracted legacy program (Δ-spikes / weak lensing / NANOGrav observables). Current status
+> lives in `TODO.md`; the empirical position is `PREDICTION.md` v1.1 §6 (F5b).
 
 ## Workflow Files
 - [Dual-Scale Model Validation](.github/workflows/dual_scale_validation.yml)

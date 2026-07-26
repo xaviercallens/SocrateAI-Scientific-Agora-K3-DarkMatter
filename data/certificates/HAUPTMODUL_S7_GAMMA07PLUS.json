@@ -1,0 +1,26 @@
+{
+ "checker": "check_s7_hauptmodul_gamma07plus.py",
+ "date": "2026-07-26",
+ "claim": "g.f.(A279618) is a Hauptmodul for Gamma_0(7)+ (Fricke extension)",
+ "method": "exact deg-2 rational identity in the Gamma_0(7) eta-quotient coordinate; Mobius fit refuted; Fricke constant computed",
+ "orders": {
+  "available": 29,
+  "solve_M": 6,
+  "solve_D": 12,
+  "held_out_verified": [
+   13,
+   29
+  ]
+ },
+ "mobius_in_u7": false,
+ "degree2_in_u7": true,
+ "fricke_kappa": "49",
+ "negative_controls": {
+  "N1_gamma07_hauptmodul": "not-plus as required",
+  "N2_corrupted_series": "deg2 verify fails as required",
+  "N3_wrong_level_5": "all fits fail as required"
+ },
+ "tier": "B",
+ "tier_reason": "identities exact to stated order [computed]; conclusion uses the classical Atkin-Lehner normalizer statement [cited, not re-derived]; NO lattice data emitted (needs Dolgachev/Doran fetched and read \u2014 see Phase 4 memo)",
+ "verdict": "GAMMA07PLUS_HAUPTMODUL"
+}

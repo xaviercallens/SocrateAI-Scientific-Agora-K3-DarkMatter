@@ -11,6 +11,52 @@ changes are edited in place with a dated note.
 
 ---
 
+## E-016 — The mirrored tier-language checker ignores its file arguments; every "checked file X" claim made through it was vacuous
+
+| | |
+|---|---|
+| **Status** | 🟢 **RESOLVED (2026-07-26)** — wrapper `scripts/check_tier_language.py` added; documents re-checked honestly |
+| **Opened** | 2026-07-26 late evening, caught by a **negative control** while wiring Gate E criterion 5 |
+| **Raised by** | Fable 5 (Stream 2) — against its own same-day claims |
+| **Severity** | Medium — a lint that silently checks the wrong thing endorses anything |
+
+### The bug
+
+`stream3_mirror/scripts/check_tier_language.py::run_check()` ignores `sys.argv` entirely and
+globs only `REPO_ROOT/*.md`, where `REPO_ROOT` in this tree is `stream3_mirror/`. Passing file
+paths on the command line does nothing: the tool prints `OK (0 violations)` after checking the
+mirror's two top-level markdown files, whatever you asked for.
+
+### Why this is an escalation, not a bugfix note
+
+Earlier today (commit `af5800a` and the briefs it added), Stream 2 reported "tier-language
+checker green on all five files" — **those invocations checked none of the five files.** The
+claims were vacuous. On honest re-check with the fixed wrapper, all five documents pass, so the
+conclusions survive — but by luck, not by verification. This is standing rule 2 in its purest
+form: the checker *emitted a certificate* ("OK") and the tell was in its source, four lines of
+glob. It was caught the same way every prior instance was caught — a **negative control**
+(feed a known-bad file, assert failure) written for `gate_e_verdict.py` criterion 5 failed
+against a fixture that should have tripped it.
+
+Note the mirror copy is **not wrong for its home repo** — on Dark Home its `REPO_ROOT` is the
+repo root and repo-scan is its intended semantics. It is wrong *here*, and it silently accepts
+arguments it ignores, which is the actual defect. Stream 3 should still be told: an operator on
+Dark Home passing file arguments gets the same false comfort.
+
+### Resolution
+
+- `scripts/check_tier_language.py` (this repo): wrapper reusing the mirror's `check_text()`
+  verbatim, honoring file arguments, **exit 2 on missing files** (halt, don't skip — WP-E item
+  D), repo-root + `briefs/` scan by default, and a self-test that includes the file-args
+  control whose absence let this survive. The mirror copy is untouched (hash-pin discipline).
+- `scripts/gate_e_verdict.py` criterion 5 audits through the wrapper, fail-closed
+  (`checkers/test_gate_e_verdict_controls.py`, 7 controls).
+- Today's five documents re-checked through the wrapper: **genuinely 0 violations.**
+- The regression suite line in `TODO.md` now calls the wrapper, which scans strictly more than
+  the mirror invocation did.
+
+---
+
 ## E-015 — A "Project Health" memo to T0 reinstated retracted claims and scheduled unauthorized work
 
 | | |
