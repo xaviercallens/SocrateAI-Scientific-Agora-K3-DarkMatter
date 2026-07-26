@@ -1,0 +1,23 @@
+{
+  "overall": "PASS",
+  "preflight": {
+    "import_core": {
+      "detail": "ok",
+      "status": "PASS"
+    },
+    "pool_frozen": {
+      "detail": "INFO: candidate_pool.yaml not present; relying on autoresearch_v2_pool.py",
+      "status": "INFO"
+    },
+    "pool_generators": {
+      "detail": "ok",
+      "status": "PASS"
+    },
+    "python_version": "3.11.9",
+    "refs_integrity": {
+      "sha256": "e406d49e7809d4a24989a3b6369dd3e90804c20db71d9f3ef87ece9b545e7986",
+      "status": "PASS"
+    }
+  },
+  "script": "scripts/ae_preflight.py"
+}
