@@ -20,9 +20,12 @@
 - [x] **D4 — Wall-3 renunciation = standing policy** → ASSUMPTIONS.md addendum **A-DE**
 - [x] Expected-outputs amendment — overtaken by E-007 closure (retraction is permanent)
 
-### 🔶 Remaining open T0 item (explicitly NOT covered by the 2026-07-26 authorization)
-- [ ] **WP-B1 sign-off** on two documented deviations → `briefs/STREAM1_WP_B1_RESULTS.md`
-      (incl. the fact that the brief's `no_unscreened_lmp` was specified as a false theorem)
+### ✅ WP-B1 sign-off — APPROVED (Xavier, T0, 2026-07-26)
+- [x] **WP-B1 sign-off** on the two documented deviations → `briefs/STREAM1_WP_B1_RESULTS.md`
+      (restated `force_range_bounded`; corrected `no_unscreened_lmp`, whose original spec was a
+      false theorem). T0 authorization: "🏛️ T0 AUTHORIZATION: Stream 1 Parking & Unblock Queue
+      Cleared", 2026-07-26, §3. This was the one item left pending after the 2026-07-26
+      authorization above; Stream 1's final operational gate is now closed.
 
 ---
 

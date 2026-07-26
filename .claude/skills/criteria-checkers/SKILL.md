@@ -44,9 +44,13 @@ the checker.
    stop: implementation is blocked until the freeze resolves it (escalate, don't guess).
 2. Write the golden tests first; then the checker; `pytest` green.
 3. Run on candidates; commit certificates.
-4. Regenerate the status table: `python scripts/render_status_table.py` — this merges
-   certificates + Stream 1's `open_goals.json` (for C3 flags). NEVER edit the table by
-   hand; the hook blocks it and a hand edit is an integrity incident per K3_CRITERIA §5.
+4. Update the status table **from the certificates**, never by hand — a hand edit is an
+   integrity incident per K3_CRITERIA §5.
+   ⚠️ There is **no** `scripts/render_status_table.py`. This step used to name one; the
+   script has never existed in this repo (absence verified by repo search 2026-07-26,
+   `briefs/STREAM1_S1_10_11_12_STATUS_AND_UNBLOCK_2026_07_26.md`). Citing it violated the
+   D3 standing rule against phantom artifacts. If a regeneration step is wanted, write the
+   script first and reference it only once it is committed.
 
 ## Failure semantics
 

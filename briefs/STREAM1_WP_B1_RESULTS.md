@@ -3,7 +3,11 @@
 **Status:** ✅ **COMPLETE — all 4 DoD lemmas kernel-verified, zero `sorry`**
 **Date:** 2026-07-25
 **Executors:** Haiku 4.5 (Phase 2A architecture) → Sonnet 5 (Phase 2B compilation fix) → Opus 5 (Phase 2C completion)
-**Provenance:** `Generated-by: Opus 5 | Verified-by: lake build (1588 jobs, 0 errors) | Reviewed-by: [pending T0 sign-off]`
+**Provenance:** `Generated-by: Opus 5 | Verified-by: lake build (1588 jobs, 0 errors) | Reviewed-by: Xavier (T0) — APPROVED 2026-07-26, "🏛️ T0 AUTHORIZATION: Stream 1 Parking & Unblock Queue Cleared" §3`
+
+**T0 sign-off (2026-07-26):** both deviations below accepted as filed. This closes Stream 1's
+last open operational gate; see `briefs/STREAM1_S1_10_11_12_STATUS_AND_UNBLOCK_2026_07_26.md`
+unblock queue item #1 and `TODO.md`.
 
 ---
 

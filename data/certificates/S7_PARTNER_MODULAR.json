@@ -1,0 +1,85 @@
+{
+  "checker": "check_s7_partner_integrality_modular.py",
+  "checker_version": "1.0.0",
+  "date": "2026-07-26",
+  "source": "O'Brien 2016 (Massey), eqs (3.13),(3.14),(3.15), Thm 6.1 \u2014 docs/literature/obrien_2016_massey_thesis.txt (hash-pinned)",
+  "z7_squared_equals_Z7": true,
+  "readings_tested": {
+    "eta1^3 eta7^3 / z7^3": {
+      "X7_head": [
+        "0",
+        "1",
+        "-9",
+        "30",
+        "-15"
+      ],
+      "normalized_uniformizer": true,
+      "X7_integral": true,
+      "c7": [
+        "1",
+        "2",
+        "22",
+        "336",
+        "6006",
+        "117348",
+        "2428272"
+      ],
+      "c7_integral": true,
+      "reproduces_A279619": true
+    },
+    "eta1^3 eta7^3 / Z7^3": {
+      "X7_head": [
+        "0",
+        "1",
+        "-15",
+        "96",
+        "-287"
+      ],
+      "normalized_uniformizer": true,
+      "X7_integral": true,
+      "c7": [
+        "1",
+        "2",
+        "34",
+        "828",
+        "23662",
+        "739984",
+        "24521448"
+      ],
+      "c7_integral": true,
+      "reproduces_A279619": false
+    },
+    "eta1^3 eta7^3 / Z7^2": {
+      "X7_head": [
+        "0",
+        "1",
+        "-11",
+        "48",
+        "-67"
+      ],
+      "normalized_uniformizer": true,
+      "X7_integral": true,
+      "c7": [
+        "1",
+        "2",
+        "26",
+        "476",
+        "10206",
+        "239280",
+        "5942232"
+      ],
+      "c7_integral": true,
+      "reproduces_A279619": false
+    }
+  },
+  "resolved_reading_of_eq_3_15": "eta1^3 eta7^3 / z7^3",
+  "mechanism": "X7 is a normalized integral uniformizer (leading coefficient exactly 1); expanding an integral q-series in powers of such a uniformizer is integral. NOT merely 'eta quotients have integer coefficients' \u2014 normalization is the load-bearing property.",
+  "scope_limits": [
+    "establishes nothing about s10 or s18",
+    "absence of a known modular parametrization for s10/s18 is not proof that none exists",
+    "assigns s18 no level; makes no 'Level 18' claim"
+  ],
+  "verdict": "S7_PARTNER_INTEGRALITY_MODULAR_CONFIRMED",
+  "picard_rank": null,
+  "transcendental_rank": null
+}

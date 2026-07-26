@@ -24,12 +24,32 @@ under your maintenance items. That line is now **superseded, not activated**:
    identified** — A279619 (disc −7 weight-1 form) for s7, verified as the exact square root of A183204's
    generating function. **No order-2 companion for s18 has been identified in anything fetched so far.**
    A-vS's sporadic-operators section documents s18 as order-3 only; it does not name a weight-1 partner.
-   Without that companion there is nothing to state as a Sym² claim, let alone encode in Lean.
+   ~~Without that companion there is nothing to state as a Sym² claim, let alone encode in Lean.~~
 
-So the honest status is: s18 has a recovered order-3 operator (Stream 2's to fold in), but not yet the
-order-2 counterpart your Lean pattern (`B1_Sym2Bridge.lean` et al.) depends on. If Stream 2 later finds or
-rules out such a companion, that would be the trigger for a Stream 1 task — flagged here for awareness
-only, not authorized.
+> **CORRECTION 2026-07-26** (per `briefs/STREAM1_TO_STREAM2_S18_PARTNER_AND_PARAMS_2026_07_26.md`
+> §3b and T0 authorization of the same date). **The struck sentence was wrong**, and the
+> inference that slipped was *"no modular companion known"* ⇒ *"no Sym² partner exists"*.
+> The partner is **forced by the Cooper template regardless of whether anything modular sits
+> under it**, and Stream 1 has since made it explicit and kernel-proved it [Tier A]:
+>
+> ```
+> P₂ = 1 − 28z + 192z² = (1−12z)(1−16z)     P₁ = −14z + 192z²     P₀ = −3z + 45z²
+> ```
+>
+> with holomorphic solution `1, 3, 45/2, 429/2, 18387/8, …` — **non-integral**, the `45/2` at
+> n = 2 being a finite witness. Confirmed here by a third independent route: the formal square
+> root of the s18 bulk series reproduces those terms exactly, and Stream 1's expansion of the
+> parameters `(14,6,192,−12)` matches this register's corrected recurrence
+> coefficient-for-coefficient (`192(k−1)³+576(k−1)²+564(k−1)+180 = 192k³−12k`).
+>
+> **What remains true, re-scoped:** what is absent for s18 is a **weight-1 modular companion in
+> the literature** — still absent, still open, and not something Stream 1 can supply by algebra.
+> That was the caution worth keeping; it does not license the claim above it.
+
+So the honest status is: s18 has a recovered order-3 operator **and an explicit, kernel-proved
+order-2 Sym² partner**; what it lacks is a modular interpretation of that partner. If Stream 2
+later finds or rules out such a companion, that would be the trigger for a Stream 1 task —
+flagged here for awareness only, not authorized.
 
 ## Unchanged
 

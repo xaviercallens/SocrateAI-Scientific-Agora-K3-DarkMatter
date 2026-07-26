@@ -41,6 +41,20 @@ def regenerate(recurrence, seed, n_terms):
     return [str(x) for x in s]
 
 
+def regenerate_from_coefficients(rc, seed, n_terms):
+    """Second encoding, different convention (per _meta_note):
+       P0(n)a(n) + P1(n)a(n+1) + P2(n)a(n+2) = 0."""
+    def poly(c, n):
+        return sum(co * n**i for i, co in enumerate(c))
+    a = [sp.Rational(str(t)) for t in seed]
+    for n in range(n_terms - len(seed)):
+        den = poly(rc["P2"], n)
+        if den == 0:
+            raise ZeroDivisionError("vanishing leading coefficient")
+        a.append(sp.Rational(-(poly(rc["P1"], n) * a[n + 1] + poly(rc["P0"], n) * a[n]), den))
+    return [str(x) for x in a]
+
+
 def main():
     sequences = json.load(open(REFS))["sequences"]
     failures = []
@@ -65,7 +79,24 @@ def main():
                 continue
 
         if seeded is not None:
-            print(f"  PASS  {key:24} self-regenerates from {seeded} seed term(s)")
+            note = ""
+            # An entry may carry a SECOND encoding under a different convention. Both must
+            # reproduce the terms, and they must agree with each other -- the 2026-07-26 s18
+            # corruption was exactly a mismatch between the two (the coefficient polynomials
+            # were correct and were pasted into recurrence_python without the (k-1) shift
+            # that the s7/s10 entries apply).
+            rc = entry.get("recurrence_coefficients")
+            if rc and all(x in rc for x in ("P0", "P1", "P2")):
+                try:
+                    if regenerate_from_coefficients(rc, terms[:2], len(terms)) == terms:
+                        note = "; recurrence_coefficients agrees"
+                    else:
+                        failures.append(f"{key} (recurrence_coefficients disagrees)")
+                        note = "; recurrence_coefficients DISAGREES"
+                except Exception as exc:
+                    failures.append(f"{key} (recurrence_coefficients error: {exc})")
+                    note = f"; recurrence_coefficients ERROR {exc}"
+            print(f"  PASS  {key:24} self-regenerates from {seeded} seed term(s){note}")
         else:
             try:
                 got = regenerate(rec, terms[:2], len(terms))
