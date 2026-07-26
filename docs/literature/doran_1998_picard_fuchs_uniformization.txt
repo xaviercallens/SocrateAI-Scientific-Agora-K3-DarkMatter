@@ -1,0 +1,1368 @@
+arXiv:math/9812162v1 [math.AG] 31 Dec 1998
+
+Centre de Recherches Mathématiques
+CRM Proceedings and Lecture Notes
+
+Picard-Fuchs Uniformization: Modularity of the Mirror Map
+and Mirror-Moonshine
+Charles F. Doran
+Abstract. Motivated by a conjecture of Lian and Yau concerning the mirror
+map in string theory [LY1, ICMP], we determine when the mirror map qseries of certain elliptic curve and K3 surface families are Hauptmoduln (genus
+zero modular functions). Our geometric criterion for modularity characterizes
+orbifold uniformization properties of their Picard-Fuchs equations, effectively
+demystifying the mirror-moonshine phenomenon. A longer, more comprehensive treatment of these results can be found in [Dor2]. For a detailed look
+at several explicit examples of this phenomenon, see the article by Verrill and
+Yui in this volume [VY].
+
+Contents
+1. Introduction
+2. Calabi-Yau manifolds and the mirror map
+3. Orbifold uniformization
+4. Elliptic curve case: elliptic modular surfaces
+5. Mn -polarized K3 surface case: Mirror-Moonshine
+6. Generalizations
+References
+
+1
+4
+7
+10
+14
+22
+22
+
+1. Introduction
+Although the mirror map was introduced into string theoretic physics only in
+the last decade, whence it has lead to mathematical predictions of curve counts on
+certain Calabi-Yau threefolds, it is in fact reminiscent of standard mathematical
+constructions of the 19th century dating back at least to Legendre’s work on elliptic
+functions. In a similarly classical vein such maps have long been of mathematical
+interest through their connection with modular functions, e.g., the Hauptmoduln of
+Fricke-Klein. Stimulated by the Mirror-Moonshine Conjecture of Lian-Yau ([LY1,
+1991 Mathematics Subject Classification. Primary 14D05, 11F03, 14J32; Secondary 30F35,
+14J28, 83E30.
+c 0000 (copyright holder)
+
+1
+
+2
+
+CHARLES F. DORAN
+
+ICMP], Conjecture 5.14 below), in this paper we characterize families of elliptic
+curves and K3 surfaces for which the mirror map is modular, i.e., is a Hauptmodul.
+The Lian-Yau conjecture was originally stated just for a small class of K3
+surface pencils constructed by an “orbifold construction”, but it was rapidly realized that their mirror-moonshine observations apply to a larger class of “torically
+defined” K3 surface families [LY2]. In fact, as we show here, the modularity phenomenon they observed can occur quite generally in families of elliptic curves with
+section and families of lattice polarized K3 surfaces. In particular, the phenomenon
+is not “toric” in origin, and can be characterized by other means. The strategy
+we follow to do so makes use of the existence of a one-dimensional (coarse) moduli
+space and a global Torelli theorem for each type of family. In the elliptic curve case
+the moduli space is just the J-line and the Torelli theorem is classical. For families of K3 surfaces with a lattice polarization such moduli and Torelli results were
+recently formalized by Dolgachev for his own investigations of mirror-symmetric
+families of K3 surfaces motivated by Arnold’s “strange duality” [Dol].
+We begin in §2 by introducing Calabi-Yau manifolds, Picard-Fuchs equations,
+and the mirror map. The periods of the holomorphic top forms for a family of
+Calabi-Yau manifolds define multivalued solutions to the associated Picard-Fuchs
+differential equation, a homogeneous Fuchsian ordinary differential equation on the
+base of the family. The mirror map is then a “local inverse” to the projectivized
+period mapping at a regular singular point with maximal unipotent monodromy.
+In fact, since the mirror map depends only on the projective periods, it is insensitive
+to simultaneous rescalings of these periods. Thus it is really the projective normal
+form of the Picard-Fuchs differential equation which determines the mirror map.
+Second order homogeneous Fuchsian ordinary differential equations in projective normal form have a particular connection with automorphic functions, dating
+back at least to Poincaré and Fricke-Klein. An automorphic function f for a genus
+zero Fuchsian group of the first kind Γ can always be realized as the single-valued
+inverse of the ratio of two multi-valued functions u1 (x) and u2 (x) on the curve
+Γ \ H∗ ≃ P1 . The functions ui satisfy a second order Fuchsian ordinary differential equation in projective normal form which is naturally associated to f ([Leh]
+and §3.2 below). This equation is sometimes called the “Schwarzian equation” or
+(orbifold) uniformizing differential equation attached to the automorphic function.
+We conclude that, at least for families of Calabi-Yau manifolds with order two
+Picard-Fuchs equations:
+The mirror map is an automorphic function if and only if the projective normal form of the Picard-Fuchs differential equation is an
+orbifold uniformizing differential equation.
+In fact, families of elliptic curves with section do have second order PicardFuchs equations (§4.2). For the families of Mn -polarized K3 surfaces, Picard-Fuchs
+equations are of order three, but they take a particular form as the symmetric square
+of an associated second order equation, a process which preserves the period ratio
+and hence the mirror map (§5.2). Thus, to solve the mirror-moonshine modularity
+problem we need only characterize, in terms of a “geometric” invariant of the family
+of elliptic curves with section (respectively Mn -polarized K3 surfaces), when the
+projective normal form of the Picard-Fuchs equation (respectively its square root)
+is a uniformizing differential equation attached to an automorphic function. We
+call this Picard-Fuchs uniformization.
+
+PICARD-FUCHS UNIFORMIZATION
+
+3
+
+In the case of elliptic curves, the natural geometric invariant to consider is Kodaira’s functional invariant J (z), defined as the composition of the multi-valued
+period morphism τ (z) = ω1 (z)/ω0 (z) to the upper half plane and the elliptic modular function J(τ ) to the J-line. In other words, the functional invariant associates
+to each point of the base of the family the J-invariant of its elliptic curve fiber. Kodaira proves that J (z) is a rational function. We consider the “pullback by J ” of
+the uniformizing differential equation Λ for P SL(2, Z). By the rationality of J (z),
+the resulting differential equation J ∗ (Λ) agrees with the Picard-Fuchs equation up
+to projective equivalence (Proposition 4.7). Thus we need only determine the conditions on the rational function J (z) for the projective normal form of J ∗ (Λ) to be
+a uniformizing differential equation. We accomplish this by applying our general
+criterion, Theorem 3.22, which characterizes rational functions that pullback one
+projective equivalence class of uniformizing differential equations to another.
+Next, in §5, we extend our criterion to the case of Mn -polarized families of K3
+surfaces. Dolgachev has shown that the (coarse) moduli space for Mn -polarized K3
+surfaces is uniformized by the group Γ0 (n)∗ obtained by adding the Fricke involution to the congruence subgroup Γ0 (n) [Dol]. By analogy with the elliptic curve
+case, we introduce the generalized functional invariant Hn (z) as the composition of
+the multi-valued truncated period morphism τ (z) = Ω1 (z)/Ω0 (z) to the upper half
+plane and the normalized Hauptmodul Hn (τ ) for Γ0 (n)∗ , and establish its rationality (§5.4). The criterion from §3.3 then allows us to determine the conditions on
+Hn (z) to pullback the uniformizing differential equation for Γ0 (n)∗ to another uniformizing differential equation up to projective equivalence. As a consequence we
+obtain the desired characterization of the Lian-Yau mirror-moonshine phenomenon
+in Theorem 5.19.
+Finally, in §6, a number of natural generalizations of this work are discussed.
+Our Picard-Fuchs uniformization results for Mn -polarized K3 surface families extend mutatis mutandis to the general rank 19 lattice polarized case. We note that
+the genus-zero restriction on both the uniformizing groups and the base of the families of elliptic curves and K3 surfaces involved can be removed. Moreover, there is an
+extension of our modularity criteria to certain multi-parameter families of abelian
+varieties and K3 surfaces of various Picard ranks. In fact, there are one-parameter
+families of Picard rank 18 K3 surfaces whose mirror maps are “bi-modular”. These
+generalizations are treated in [Dor2].
+Throughout this paper we assume some basic familiarity with the theory of
+Fuchsian ordinary differential equations: regular singular points and their classification into types (i.e., generic, logarithmic, apparent), characteristic exponents,
+Frobenius’ theorem, etc. A favorite reference is Yoshida’s book [Yos] which also
+includes the theory of (orbifold) uniformization. Other nice presentations of the
+classical Fuchsian theory, with quite different applications, can be found in the
+survey paper by Varadarajan [Var] and the book by Anosov and Bolibruch [AB].
+
+Remark 1.1. This article is intended to complement the explicit constructions
+described by Helena Verrill and Noriko Yui in this proceedings [VY]. By providing
+a simple, geometric criterion for the Lian-Yau mirror-moonshine phenomenon which
+applies equally well to both elliptic curve and K3 surface families, we hope at once
+to “demystify” such examples of this phenomenon, and to highlight the importance
+of explicit constructions in answering questions which remain. Taking advantage of
+
+4
+
+CHARLES F. DORAN
+
+the opportunity such a pairing affords, we refer the reader to their paper for several
+explicit examples and extra discussion of related subject matter.
+2. Calabi-Yau manifolds and the mirror map
+In this section we quickly review the basics of Calabi-Yau manifolds, PicardFuchs equations, and the mirror map. The definitions and concepts are stated
+without proof, and a single motivational example is provided: that of the universal
+family of elliptic curves over the J-line. Perhaps the chief novelty here is the
+emphasis on the role played by the “projective normal form” Fuchsian ordinary
+differential equation. Although our discussion applies quite generally to families of
+Calabi-Yau varieties, we will only be applying it in this paper to the elliptic curve
+and K3 surface cases.
+At the time of writing, there are only a few general surveys on Calabi-Yau
+manifolds and the mirror map written for mathematicians, e.g., [EMM, MSI],
+[BP], [Voi]. By the time this volume goes to print it is hoped that the compendium
+[CK] will have appeared to fill this gap in the literature.
+2.1. Calabi-Yau manifolds.
+Definition 2.1. A Calabi-Yau manifold M is a compact complex manifold
+with trivial canonical bundle.
+Example 2.2. A one dimensional Calabi-Yau manifold is an elliptic curve. A
+simply connected Calabi-Yau manifold of dimension two is a K3 surface.
+Up to complex scaling, a Calabi-Yau n-fold has a unique holomorphic n-form
+ωn,0 ∈ H n (M, C) .
+Definition 2.3. The periods of this holomorphic n-form are the numbers
+Z
+ωn,0
+pγ (M ) :=
+γ
+
+as γ runs through the n-cycles of M . Fix an ordered basis of n-cycles {γ1 , . . . , γk },
+for k the nth Betti number of M . Then the periods of M define the vector
+[pγi (M )]ki=1 ∈ Pk−1
+the (projective) period point of M .
+Example 2.4. Consider the elliptic curve y 2 = 4x3 − g2 x − g3 in Weierstrass
+form. Here n = 1 and k = 2. The holomorphic one form is the usual differential of
+the first kind dx/y.
+2.2. Period mapping and Picard-Fuchs equations.
+Definition 2.5. Given a family π : X → S of Calabi-Yau manifolds Xs , by
+continuous extension of the basis of n-cycles the periods of the Calabi-Yau fibers
+define a vector of k multi-valued functions on the base manifold S
+[pγi (s) (Xs )]ki=1 : S → Pk−1
+the period mapping associated with the family.
+
+PICARD-FUCHS UNIFORMIZATION
+
+5
+
+Example 2.6. Consider the family E of elliptic curves over P1 defined by the
+equation
+27s
+27s
+E : y 2 = 4x3 −
+x−
+.
+s−1
+s−1
+The periods of the form dx/y may be given in terms of the hypergeometric function
+2 F1 (see [Sti], pp. 232–233, for explicit expressions).
+Suppose now that S = P1 .
+The functions pγ(s) (Xs ) satisfy an ordinary differential equation with regular
+singular points (i.e., a Fuchsian ODE) [BP]
+(2.1)
+
+dk−1 f
+dk f
++
+P
+(s)
++ . . . + Pk (s)f
+1
+dsk
+dsk−1
+
+=
+
+0 , Pi (s) ∈ C(s) .
+
+Definition 2.7. The differential equation (2.1) is called the Picard-Fuchs differential equation of the family π : X → P1 .
+Example 2.8. For the family E in Example 2.6, the Picard-Fuchs equation is
+d2 f
+1 df
+(31/144)s − 1/36
++
+f =0.
++
+ds2
+s ds
+s2 (s − 1)2
+
+There is a basis of solutions with local monodromies G0 , G1 , G∞ about the regular
+singular points {0, 1, ∞} respectively, where
+
+
+
+
+
+
+1 1
+0 −1
+1 1
+G0 =
+, G1 =
+, G∞ =
+.
+−1 0
+1 0
+0 1
+2.3. Points of maximal unipotent monodromy and the mirror map.
+Definition 2.9. A regular singular point of a Fuchsian ordinary differential
+equation is called a point of maximal unipotent monodromy if the local monodromy
+matrix G is such that G − Ik is nilpotent with exact order k.
+In a neighborhood of a point of maximal unipotent monodromy, Frobenius’
+method tells us that there is a basis of solutions such that the first is holomorphic
+at the point, the second has logarithmic behavior, the next behaves like log2 , . . . ,
+up to logk−1 .
+Example 2.10. The point of maximal unipotent monodromy in Example 2.8
+is ∞ ∈ P1 .
+Remark 2.11. Not every family of Calabi-Yau manifolds will have a PicardFuchs differential equation with a point of maximal unipotent monodromy. For
+a class of torically constructed hypersurfaces in toric Fano varieties, the existence
+of points of maximal unipotent monodromy was established by Hosono, Lian, and
+Yau [HLY].
+Consider a family of Calabi-Yau manifolds π : X → P1 , whose Picard-Fuchs
+equation has a point of maximal unipotent monodromy. In a neighborhood of such
+a point consider the truncated period vector consisting only of the holomorphic
+solution and the logarithmic solution
+[phol (s), plog (s)] : P1 → P1 .
+
+6
+
+CHARLES F. DORAN
+
+If the image lies in the upper half plane H ⊂ P1 , then, possibly after composition
+with projective linear transformations so that the singular point lies at 0 ∈ P1 and
+maps to ı∞ ∈ H∗ ⊂ P1 , we can consider the q-series for the local inverse mapping
+z(q(τ )) : H → P1 , q(τ ) = e2πıτ .
+
+Definition 2.12. This q-series z(q) is called the mirror map of the family
+π : X → P1 about the point of maximal unipotent monodromy.
+Example 2.13. For the family E of Example 2.6 the mirror map is quite familiar. Since the maximal unipotent monodromy point is at ∞, we change variables
+first to z = 1/s. The single-valued local inverse to the period mapping is then the
+reciprocal of the q-series for the elliptic modular function J(q)
+1
+J(q) = + 744 + 196884q + 21493760q 2 + O(q 3 ) ,
+q
+1
+z(q) =
+= q − 744q 2 + 356652q 3 − 140361152q 4 + O(q 5 ) .
+J(q)
+Remark 2.14. The period mapping is defined as a map to projective space. If
+one is interested in the mirror map it is often preferable to consider the Picard-Fuchs
+differential equation only up to “projective equivalence”.
+Definition 2.15. The projective normal form of a Fuchsian ordinary differential equation (e.g., that in equation (2.1) above) is the unique Fuchsian ordinary
+differential equation without a (k − 1)st order derivative
+
+dk−2 g
+dk g
++
+R
+(s)
++ . . . + Rk (s)g = 0 , Ri (s) ∈ C(s)
+2
+dsk
+dsk−2
+whose fundamental solutions define the same projective period map as that of
+equation (2.1).
+It is always possible to pass to the projective normal form differential equation
+by rescaling each fundamental solution by the kth root of the Wronskian of the
+original equation.
+Example 2.16. Suppose now that k = 2, i.e., the initial differential equation
+is
+
+df
+d2 f
++ P1 (s) + P2 (s)f = 0 ,
+2
+ds
+ds
+then the projective normal form of this differential equation takes the particularly
+simple form
+
+
+d2 g
+1 ′
+1
+2
++ P2 (s) − P1 (s) − P1 (s) g = 0 .
+ds2
+2
+4
+
+As the process of taking the projective normal form does not alter the position
+or type of a maximal unipotent monodromy point, and as the projective solution
+determines the mirror map, we find
+Lemma 2.17. The mirror map of a family of Calabi-Yau manifolds about a
+point of maximal unipotent monodromy of the Picard-Fuchs equation is determined
+by the projective normal form of this differential equation.
+
+PICARD-FUCHS UNIFORMIZATION
+
+7
+
+3. Orbifold uniformization
+In this section we will recall the classical theory of orbifold uniformization of
+Riemann surfaces by Fuchsian second order ordinary differential equations, including some basic facts about the Schwarzian derivative, orbifold uniformizing differential equations, and automorphic functions. More details of much of the material
+presented here can be found in the nice book by Yoshida [Yos].
+3.1. Uniformization of orbifolds.
+Definition 3.1. Let X be a complex manifold, Y ⊂ X a hypersurface, Y =
+∪j Yj its decomposition into irreducible components. Let the numbers bj , either
+∞ or an integer ≥ 2, be the weights attached to the corresponding Yj . The triple
+(X, Y, ~b) is called an orbifold if for every point in X \ ∪j {Yj | bj = ∞} there is an
+open neighborhood U and a covering manifold which ramifies along U ∩ Y with the
+given indices ~b.
+Definition 3.2. The orbifold (X, Y, ~b) is called uniformizable if there is a simply connected global covering manifold, or uniformization, of X with the given
+ramification data (Y, ~b).
+Remark 3.3. Often when one speaks of uniformization in classical settings it
+is understood that all the bj = ∞ (i.e., only cusps occur). We distinguish this
+from the definition given above by calling this more restrictive notion classical
+uniformization. For emphasis we will often refer to uniformization where bj is
+allowed to be finite as well as ∞ as orbifold uniformization.
+Definition 3.4. Let (X, Y, ~b) be an orbifold and M its uniformization. The
+multivalued inverse map X → M of the projection M → X is called the developing
+map, uniquely determined up to the group Aut(M ) of holomorphic automorphisms
+of M .
+For our application, we take X = P1 (C), Y = a finite set of points, M = the
+upper half plane H, and Aut(M ) = P SL(2, R) ≃ P U (1, 1).
+3.2. Schwarzian derivatives, uniformizing differential equations, and
+automorphic functions.
+Definition 3.5. The Schwarzian derivative {w; x} of a nonconstant smooth
+function w(x), with respect to x, is defined to be
+{w; x} =
+
+3(w′′ )2 − 2w′ w′′′
+.
+4(w′ )2
+
+Proposition 3.6 ([Yos], Proposition 4.1.1). The Schwarzian derivative satisfies “P GL(2, C)-invariance”:
+
+
+
+
+aw + b
+a b
+; x = {w; x} , for all
+∈ P GL(2, C)
+c d
+cw + d
+Definition 3.7. A function w(x) is called P GL(2, C)-multivalued if any two
+branches of w(x) are related by a projective transformaion.
+
+8
+
+CHARLES F. DORAN
+
+An immediate corollary of Proposition 3.6 is
+Corollary 3.8. If a function w = w(x) is P GL(2, C)-multivalued, then the
+Schwarzian derivative {w; x} is single valued.
+Proposition 3.9 ([Yos], Proposition 4.2). Let x and w be the coordinates of
+X and M respectively. There are two linearly independent solutions u1 and u2 of
+the equation
+d2 u
+− {w(x); x}u = 0
+dx2
+with single valued coefficients such that w(x) = u1 (x)/u2 (x).
+
+(3.1)
+
+Definition 3.10. The differential equation (3.1) is called the (orbifold) uniformizing differential equation, or Schwarzian differential equation, of the orbifold
+(X, Y, ~b).
+An immediate corollary of Proposition 3.9 is
+Corollary 3.11. The projective solution of the uniformizing differential equation of the orbifold (X, Y, ~b) is the developing map w(x).
+Let Γ ⊂ P SL(2, R) be a discrete subgroup such that Γ \ H∗ is compact (i.e., a
+Fuchsian group of the first kind). In our applications we will be primarily interested
+in a particular class of orbifold uniformizing differential equations associated to such
+groups Γ with Γ \ H∗ of genus zero.
+Definition 3.12. A function f (τ ) on the upper half plane H is an automorphic
+function for Γ if
+f (γτ ) = f (τ ) , for all γ ∈ Γ and for all τ ∈ H ,
+
+(i.e., invariance) and there are well defined limits of f (τ ) as τ approaches parabolic
+vertices (i.e., f (τ ) is meromorphic at each cusp of Γ).
+Definition 3.13. A univalent automorphic function f for a genus zero Fuchsian group is called a Hauptmodul.
+The covering map for the uniformization H → Γ \ H∗ is a Hauptmodul if Γ is
+genus zero.
+Theorem 3.14 ([Leh], Theorem 6A). Let Γ be a Fuchsian group of the first
+kind. If f, g are automorphic functions for Γ, then they satisfy an algebraic equation
+with complex coefficients.
+
+P(f, g) = 0
+
+Definition 3.15. Such an algebraic equation satisfied by a pair of automorphic
+functions f and g for Γ is known classically as a modular equation. Warning: Often
+in the literature this name is reserved for the particular case of modular equations
+relating the modular function J(τ ) and J(n · τ ), n ∈ N.
+Corollary 3.16 ([Leh], Theorem 6B). If there is a univalent automorphic
+function f for Γ (i.e., one to one on the fundamental domain), then every automorphic function for Γ is a rational function of f .
+
+PICARD-FUCHS UNIFORMIZATION
+
+9
+
+Suppose we are given a pair of genus zero groups Φ ⊆ Γ (finite index) with
+respective Hauptmoduln f , g. Then the rational function R(z) from Corollary 3.16
+expresses g in terms of f :
+g = R(f ) .
+Definition 3.17. The rational function R(z) is called the modular relation
+between the Hauptmoduln f and g.
+For several examples of modular relations between J(τ ) and Hauptmoduln of
+certain modular groups with level structure, see [CY].
+Remark 3.18. The orbifold uniformizing differential equation is, up to projective equivalence, the “pullback by R” of that for Γ \ H∗. In the next subsection
+we describe necessary and sufficient conditions on a rational function for it to pullback one uniformizing differential equation to (the projective equivalence class of)
+another.
+3.3. Regular singular points and orbifold uniformization.
+There is a particularly simple characterization of projective normal form equations which orbifold uniformize, given in terms of their characteristic exponents:
+Lemma 3.19 ([Yos], p. 50). A second order Fuchsian differential equation in
+projective normal form is an orbifold uniformizing differential equation if and only
+if at each of its regular singular points the difference in characteristic exponents is
+either 0 or 1/b for some b ≥ 2 ∈ Z.
+As we have already indicated, it is important that we understand the behavior of
+uniformizing differential equations under pullback. Suppose then that we pullback
+a second order Fuchsian equation L2 f = 0, with
+d
+d2
++ P1 (x)
++ P2 (x) ,
+2
+dx
+dx
+by a rational function x = R(z).
+L2 =
+
+Proposition 3.20. The regular singular points of the pulled back equation
+R∗ (L2 ) lie among the inverse image points of the regular singular points of the
+original equation L2 and the extra ramification points of the rational function R(z).
+
+and
+
+Proof. This is a straightforward computation:
+
+df
+dR
+df
+=
+dx
+dz
+dz
+
+−2  2
+
+
+
+
+d2 f
+d f
+df d2 R dR
+dR
+=
+−
+dx2
+dz
+dz 2
+dz dz 2
+dz
+∗
+so that the pullback R (L2 ) = 0 of the equation L2 f = 0 takes the form
+
+
+
+2 !
+ 2 
+dR
+d2 f
+dR
+df
+d R dR
+P1 (R(z))
++ f P2 (R(z))
+=0.
++
+−
+dz 2
+dz
+dz
+dz 2
+dz
+dz
+Thus the only poles in the coefficients can occur at points where P1 (R(z)) has one,
+or where P2 (R(z)) has one, or at other places where dR/dz = 0 (i.e., the extra
+ramification points of the R map).
+
+10
+
+CHARLES F. DORAN
+
+Lemma 3.21. The characteristic exponents of a point in the inverse image as
+above are exactly those of the point being pulled back times the order of ramification.
+The characteristic exponents at an extra ramification point differ by an integer.
+Proof. For simplicity assume that the singular point of L2 under consideration
+is at x = 0. In general (in the absence of ramification) there are deg R(z) points
+in the inverse image of 0, each with the same characteristic exponents as has L2
+at 0. If ramification of R(z) occurs at an inverse image point z0 , then R(z) has a
+multiple root there with multiplicity equal to the order of ramification. Thus the
+characteristic exponents at z0 are those of L2 at 0 times this order of ramification.
+At an extra ramification point z1 , i.e., a point in the inverse image of an ordinary
+point of L2 (characteristic exponents 0, 1), the characteristic exponents are thus 0
+and the ramification index of R(z) at z1 .
+In light of Lemmas 3.19 and 3.21, we have
+Theorem 3.22. Characterization of types of regular singular points of a pullback of an orbifold uniformizing differential equation by a rational function:
+• The extra ramification points of the rational function are all apparent singularities.
+• The points in the inverse image of logarithmic singularities of orbifold type
+(i.e., those with equal characteristic exponents) are logarithmic singularities
+of orbifold type.
+• For a regular singular point in the inverse image of a finite order orbifold
+point with characteristic exponent difference 1/b: if the characteristic exponent difference is integral (i.e., if b divides the ramification index), then the
+regular singular point is apparent; if the characteristic exponent difference
+is not integral (i.e., if b does not divide the ramification index), then the
+singular point is generic.
+Remark 3.23. Some comments on the proof: The regular singular points
+which are extra ramification points have characteristic exponent difference an integer ≥ 2 (if the difference were equal to 1 this would be an ordinary point [Yos,
+p. 23]). The characteristic exponent difference is rescaled by the degree of the rational function; if this difference is zero it remains so. In the last case, we can say
+more about the characteristic exponent difference: by Lemma 3.21 we know that
+this is the ramification degree r divided by b. The reduced form of this fraction
+has numerator r/ gcd(r, b). If this equals 1, then such a point satisfies the orbifold
+uniformization criterion with finite weight b/ gcd(r, b) for the pullback equation.
+Theorem 3.22 can be interpreted as providing a characterization of the modular
+relations between Hauptmoduln of a given genus zero Fuchsian group of the first
+kind and its finite index subgroups.
+4. Elliptic curve case: elliptic modular surfaces
+We are now ready to consider the problem of orbifold uniformization by PicardFuchs equations for families of elliptic curves — the first case of Picard-Fuchs uniformization. We will obtain a simple characterization of elliptic surfaces with modular mirror maps in terms of Kodaira’s functional invariant. This rational function
+assigns to each point in the base of an elliptic fibration the J-invariant of the corresponding elliptic curve fiber. Moreover, the projective normal form of the pullback
+
+PICARD-FUCHS UNIFORMIZATION
+
+11
+
+by the functional invariant of the uniformizing differential equation for the elliptic
+modular function J(τ ) is the projective normal form of the Picard-Fuchs equation
+of the elliptic fibration. Thus the mirror map is determined by the functional invariant, and using Theorem 3.22 we obtain a criterion for modularity of the mirror
+map in terms of properties of the functional invariant alone. Finally, we indicate
+how to use the modular relations between Hauptmoduln for genus zero subgroups
+of P SL(2, Z) and J(τ ) to provide explicit algebraic expressions for elliptic modular
+surfaces with specified modularity properties.
+4.1. Weierstrass elliptic surfaces and Kodaira theory.
+Definition 4.1. Let p : X → C be a flat proper map from a reduced irreducible C-scheme X to a complete, smooth curve C, such that every geometric
+fiber is an irreducible curve of arithmetic genus one, i.e., each fiber is one of
+1. an elliptic curve, or
+2. a rational curve with a node, or
+3. a rational curve with a cusp.
+The total space X is normal, and the generic fiber of p is smooth. Assume further
+that a section s : C → X is given, not passing through the nodes or cusps of the
+fibers. Call the collection of such data (p : X → C, s) a Weierstrass fibration over
+C. We may resolve the singularities of X to obtain an elliptic surface with section
+p : X → C, called the induced elliptic surface.
+In fact there is a canonical form for such a Weierstrass fibration, exhibiting X
+as a divisor in a P2 -bundle over the base curve C.
+Theorem 4.2 ([Mir1], Theorem (2.1)). Let Σ denote the given section of p,
+i.e., Σ = s(C), a divisor on X which is taken isomorphically onto C by p. Let
+L = p∗ [OX (Σ)/OX ]. Suppose that the general fiber of p is smooth. Then L is
+invertible and X is isomorphic to the closed subscheme of P = P(L⊗2 ⊕ L⊗3 ⊕ OY )
+defined by
+y 2 z = 4x3 − g2 xz 2 − g3 z 3 ,
+where
+g2 ∈ Γ(C, L⊗−4 ) , g3 ∈ Γ(C, L⊗−6 ) ,
+and [x, y, z] is the global coordinate system of P relative to (L⊗2 , L⊗3 , OC ). Moreover the pair (g2 , g3 ) is unique up to isomorphism, and the discriminant
+g23 − 27g32 ∈ Γ(C, L⊗−12 )
+
+vanishes at a point q ∈ C precisely when the fiber Xq is singular.
+Definition 4.3. Let J denote the composition of the period morphism ω1 /ω0 :
+C → H and the morphism J : H → P1 extending the classical modular function.
+Kodaira calls this the functional invariant of π : X → C, i.e., J = J ◦ ω1 /ω0 .
+Kodaira has classified the singular fiber types which can arise in Weierstrass
+fibered elliptic surfaces by describing these configurations of rational curves.
+Theorem 4.4 ([Kod]). The singular fibers which appear in a smooth minimal
+elliptic surface fall into “types”: In (n ≥ 0), II, III, IV , In∗ (n ≥ 0), IV ∗ , III ∗ ,
+and II ∗ . Let I0 denote a smooth elliptic fiber. The fiber of type I1 is a rational
+curve with a single node. More generally, fibers of type In consist of a n-cycle of
+
+12
+
+CHARLES F. DORAN
+
+intersecting rational curves for n ≥ 1. A fiber of type II is just a rational curve
+with a single cusp. Type III fibers consist of two rational curves with a single point
+of tangency. Fibers of type IV consist of three rational components intersecting
+at a single point. There are also fibers of types In∗ , n ≥ 0, IV ∗ , III ∗ , and II ∗ ,
+whose dual intersection graphs, minus in each case a multiplicity one component,
+correspond to those graphs of Dynkin types Dn+4 , E6 , E7 , and E8 respectively.
+We now recall how the Kodaira fiber types correlate with the ramification
+behavior of the J -map.
+Lemma 4.5 ([Mir2], Lemma IV.4.1). Let G = Xq be the fiber of π over q ∈ C.
+1. If G has type II, IV , IV ∗ , or II ∗ , then J (q) = 0. Conversely, suppose that
+J (q) = 0. Then
+• G has type I0 or I0∗ if and only if m(J ) ≡ 0 mod 3.
+• G has type II or IV ∗ if and only if m(J ) ≡ 1 mod 3.
+• G has type IV or II ∗ if and only if m(J ) ≡ 2 mod 3.
+2. If G has type III or III ∗ , then J (q) = 1. Conversely, suppose that J (q) =
+1. Then
+• G has type I0 or I0∗ if and only if m(J ) ≡ 0 mod 2.
+• G has type III or III ∗ if and only if m(J ) ≡ 1 mod 2.
+3. G has type In or In∗ with n ≥ 1 if and only if J has a pole at q of order n.
+
+4.2. Picard-Fuchs equations of Weierstrass elliptic surfaces.
+In this subsection we will describe the Picard-Fuchs differential equations for
+a Weierstrass elliptic curve fibration. We first recall Griffiths’ approach, which
+starts with a first order regular system from which the second order equation can
+be determined. This is computationally convenient, but will not be so useful for
+our later purposes. Ultimately, we will only care about properties of the projective
+normal form of the Picard-Fuchs differential equation. For that reason we also
+present Stiller’s approach by “pulling back by J ” which suffices to determine this.
+
+Theorem 4.6 ([Sas], p. 304). Griffiths’ approach to computing Picard-Fuchs
+yields
+#
+
+ " −1 d∆/dz
+
+3δ
+d
+η1
+η1
+12
+∆
+2∆
+=
+−g2 δ
+1 d∆/dz
+η2
+η2
+dz
+8∆
+
+12
+
+∆
+
+where
+
+and
+
+∆(z) = g2 (z)3 − 27g3 (z)2 ,
+dg3 (z)
+dg2 (z)
+− 2g2 (z)
+,
+δ(z) = 3g3 (z)
+dz
+dz
+Z
+Z
+dx
+xdx
+η1 =
+, η2 =
+.
+y
+γ
+γ y
+
+Now we turn to Stiller’s “pulling back by the J -map” approach. Let X be a
+complete smooth connected algebraic curve over C with function field C(X). Recall
+that the uniformizing differential equation for the group P SL(2, Z) is
+36x2 − 41x + 32
+d2 f
++
+f =0,
+dx2
+144x2 (x − 1)2
+the projective normal form of the Picard-Fuchs equation of the family E of Example
+2.6. Denote by ΛJ the projective normal form of the pullback equation J ∗ (Λ). By
+an explicit computation one can show that
+Λf =
+
+PICARD-FUCHS UNIFORMIZATION
+
+13
+
+Proposition 4.7. Given a Weierstrass fibration with functional invariant J ,
+the projective normal form of the Picard-Fuchs differential equation and the equation
+ΛJ are identical.
+Actually, this can also be seen indirectly through Stiller’s classification of Kequations [Sti].
+We now can recast the results of Lemma 4.5 above as describing the singular
+fiber types associated to various regular singular points of the projective normal
+form of Picard-Fuchs ΛJ , using Theorem 3.22.
+Proposition 4.8. A regular singular point of ΛJ corresponds to a fiber of type
+• In or In∗ , n ≥ 1 ⇔ the characteristic exponents are equal
+• I0 or I0∗ ⇔ the difference in characteristic exponents is a nonnegative integer
+• II or IV ∗ ⇔ the difference in characteristic exponents is 1/3 modulo integers
+• III or III ∗ ⇔ the difference in characteristic exponents is 1/2 modulo integers
+• IV or II ∗ ⇔ the difference in characteristic exponents is 2/3 modulo integers
+4.3. Characterization and construction of elliptic surfaces with modular mirror maps.
+The main result for elliptic curve families is now an immediate consequence
+of the criterion for orbifold uniformization (Theorem 3.22) in the elliptic surface
+setting:
+Theorem 4.9. The projective normal form of the Picard-Fuchs equation of
+a Weierstrass elliptic surface will orbifold uniformize if and only if there are no
+apparent singularities and the functional invariant J (t) has zeros to orders = 1 or
+≡ 0 mod 3 and ones to orders = 1 or ≡ 0 mod 2.
+This already generalizes results of Stiller [Sti] on classical uniformization by
+Picard-Fuchs differential equations, and Shioda [Shi] on elliptic modular surfaces.
+In addition, this also answers a question of Harnad and McKay regarding the geometric nature of modular solutions to generalized equations of Halphen type [HM].
+Furthermore, by interpreting geometrically the absence of extra ramification of
+the functional invariant, we have this purely geometric characterization of modularity:
+Corollary 4.10. The mirror map z(q) of a Weierstrass elliptic surface over
+P1 is modular if and only if it is isolated in deformations which preserve the Kodaira
+singular fiber types, and it contains no singular fibers of types IV or II ∗ .
+Applying this result to the list of rational elliptic surfaces over P1 we obtain:
+Theorem 4.11. Here is the complete list of rational elliptic modular surfaces,
+i.e., elliptic surfaces over P1 with Euler characteristic 12, non-constant functional
+
+14
+
+CHARLES F. DORAN
+
+invariant, and modular mirror maps, listed according to their singular fiber types:
+I1 , II, III ∗
+I2 , II, IV ∗
+I1 , I2 , III ∗
+I3 , III, III, III
+I1 , I3 , IV ∗
+I4 , II, III, III
+I5 , II, II, III
+I1 , I1 , I4∗
+I2 , I2 , I2∗
+I6 , II, II, II
+I1 , I5 , III, III
+
+I2 , I4 , III, III
+I3 , I3 , III, III
+I1 , I6 , II, III
+I2 , I5 , II, III
+I3 , I4 , II, III
+I1 , I7 , II, II
+I2 , I6 , II, II
+I4 , I4 , II, II
+I1 , I1 , I7 , III
+I1 , I2 , I6 , III
+I1 , I3 , I5 , III
+
+I2 , I3 , I4 , III
+I1 , I1 , I8 , II
+I1 , I2 , I7 , II
+I1 , I4 , I5 , II
+I2 , I3 , I5 , II
+I1 , I1 , I1 , I9
+I1 , I1 , I2 , I8
+I1 , I2 , I3 , I6
+I1 , I1 , I5 , I5
+I2 , I2 , I4 , I4
+I3 , I3 , I3 , I3
+
+Proof. Persson and Miranda [Per, Mir3] have cataloged the singular fiber
+types of all rational elliptic surfaces over C. Miranda’s list is particularly convenient
+to use for this application because it indicates as well the amount of excess ramification of the functional invariant associated to each combination of singular fibers.
+Between the constraint on the singular fibers and lack of excess ramification of J
+(both by Theorem 4.9), we are able to determine the above list of 33 types. Explicit
+expressions for the mirror map in each case can be derived from the Weierstrass
+canonical form of each elliptic surface. Since the number of singular fibers present
+is 3 or 4, explicit Weierstrass presentations are available in the literature already:
+see Schmickler-Hirzebruch for the 3 singular fibers cases [S-H], and Herfurtner for
+the surfaces with 4 singular fibers [Her].
+It seems appropriate to make some additional comments on the construction of
+explicit algebraic elliptic modular surfaces over P1 as an application of these results.
+Associated to any elliptic surface meeting the equivalent criteria of Theorem 4.9
+and Corollary 4.10, there is a mirror map which is a Hauptmodul (un-normalized!)
+of a genus zero (finite index) subgroup of P SL(2, Z). If we denote this Hauptmodul
+by H, then we know that the functional invariant J expresses the modular function
+J in terms of H, J(q) = J (H(q)), and the functional invariant defines a modular
+relation between the two genus zero modular groups.
+We know that the uniformizing differential equation Λ for P SL(2, Z) is also
+the projective normal form of the Picard-Fuchs equation of the family of elliptic
+curves E in Example 2.6. We can identify the base parameter s of that family with
+the modular function J. The base parameter of the “pullback surface” obtained
+by replacing J everywhere with J (H) in the equation for E is likewise identified
+with H. Since we are provided with an explicit algebraic elliptic modular surface
+with mirror map a Hauptmodul for P SL(2, Z), it is a simple matter to determine an
+explicit algebraic elliptic surface with mirror map a Hauptmodul H for any specified
+modular subgroup. We will return to this sort of “inverse construction” at the end
+of the next section in the context of K3 surfaces and a question of Dolgachev.
+5. Mn -polarized K3 surface case: Mirror-Moonshine
+The next case of Picard-Fuchs uniformization is by one parameter families of
+certain lattice polarized K3 surfaces. The direct motivation for considering this
+case is of course the Mirror-Moonshine Conjecture of Lian-Yau [LY1]. In the first
+subsection we recall the definition of Mn -polarized K3 surfaces and Dolgachev’s
+
+PICARD-FUCHS UNIFORMIZATION
+
+15
+
+results on their moduli. Next we show how classical Fuchsian ordinary differential
+equation facts imply that the Picard-Fuchs equation of a family of such surfaces is
+a “symmetric square”. After a brief overview of the Mirror-Moonshine Conjecture,
+we carefully formulate the questions we want to answer in §5.3. A crucial tool, the
+generalized functional invariant, is introduced in the next subsection. Finally, in
+§5.5 we prove our results on commensurability and modularity of the mirror map
+in the Mn -polarized K3 surface case.
+5.1. Mn -polarized K3 surfaces.
+See the paper in this volume by Verrill and Yui [VY] for a general discussion
+of lattice polarized K3 surfaces after Dolgachev [Dol].
+Let L be the K3 lattice
+L = U ⊥ U ⊥ U ⊥ −E8 ⊥ −E8 .
+
+Let M = h2ni. Since the lattice U represents any even integer, we can assume
+M ⊂ U . Then
+M ⊥ ≃ U ⊥ U ⊥ −E8 ⊥ −E8 ⊥ h−2ni =: Mn .
+
+This lattice is denoted by M in [VY].
+The global monodromy group of the “universal family” of K3 surfaces over the
+(coarse) moduli space of K3 surfaces polarized by a rank 19 lattice Mn has been
+determined by Dolgachev. Define to begin with
+
+
+
+a b
+Γ0 (n) :=
+∈ P SL(2, Z) c ≡ 0 mod n ⊂ P SL(2, Z) .
+c d
+Definition 5.1. The element of order two
+
+√ 
+0 −1/ n
+√
+∈ P SL(2, R)
+Fn =
+n
+0
+
+in the normalizer of Γ0 (n) in P SL(2, R) is the Fricke involution.
+Definition 5.2. The Fricke modular group of level n is the subgroup of P SL(2, R)
+is generated by Γ0 (n) and Fn , and denoted by Γ0 (n)∗ .
+Theorem 5.3 ([Dol], Theorem (7.1)). The coarse moduli space of K3 surfaces
+polarized by Mn is:
+KMn ≃ H/Γ0 (n)∗ .
+For later convenience we recall
+Proposition 5.4 ([Dol], Theorem (7.5)). Suppose that X0 (n)∗ is rational. Then
+there exists a unique holomorphic function
+Hn : H → C
+
+such that
+1. Hn is invariant with respect to Γ0 (n)∗
+2. Hn has a Fourier expansion
+∞
+1 X
+Hn (τ ) = +
+ck q k , q = e2πıτ
+q
+k=1
+
+16
+
+CHARLES F. DORAN
+
+3. the coefficients of the Fourier expansion are all integers
+4. as a meromorphic function on X0 (n)∗ , the function hn has a simple point
+at the cusp Γ0 (n)∗ · ∞ and generates the field of meromorphic functions on
+X0 (n)∗ .
+5.2. Picard-Fuchs equations of Mn -polarized K3 surface families.
+Here we describe in some detail the symmetric square structure of the PicardFuchs equations of Mn -polarized K3 surface families.
+Theorem 5.5 ([Sin], Lemma 3.1.(b)). Let L1 (y) and L2 (y) be homogeneous
+linear differential polynomials with coefficients in C(t). Then there exists a homogeneous linear differential equation L3 (y) = 0 with coefficients in C(t) and solution
+space the C-span of
+{ν1 ν2 | L1 (ν1 ) = 0 and L2 (ν2 ) = 0} .
+Definition 5.6. We call the operator L3 (y) constructed above the symmetric
+product of L1 and L2 , and denote it by L1 sL2 . In fact, the operation is associative,
+and we may further define Lsn for n ≥ 1 by Ls1 = L and Lsn = Lsn−1 sL. We
+call Symn (L) = Lsn the nth symmetric power of L; conversely, L is the nth root of
+Lsn .
+Lemma 5.7 ([Sin], Lemma 4, p. 129). Let L(y) be a homogeneous linear differential polynomial with coefficients in C(t). Then L(y) = Lsn
+2 (y) for some second
+order homogeneous linear differential polynomial L2 (y) with coefficients in C(t) if
+and only if there exists a fundamental set of solutions {y1 , . . . , yn+1 } of L(y) = 0
+such that
+2
+yi yi+2 − yi+1
+= 0 , i = 1, . . . , n − 1 .
+Corollary 5.8. Let L(y) = 0 be a third order homogeneous linear equation
+with coefficients in C(t). If there exists a nondegenerate homogeneous polynomial P
+of degree 2 with constant coefficients and a fundamental set of solutions {y1 , y2 , y3 }
+of L(y) = 0 such that P (y1 , y2 , y3 ) = 0, then L(y) is the second symmetric power of
+a second order homogeneous linear differential equation with coefficients in C(t).
+Proof. This follows easily from Lemma 5.7. By assumption, the fundamental
+set of solutions satisfies a nondegenerate quadratic relation. Since all such quadrics
+in P2 (C) are projectively equivalent to
+y1 y3 − y22 = 0
+
+the criterion of the lemma applies and L(y) is a symmetric square.
+Assume that we have a second order Fuchsian ordinary differential equation
+L2 f = 0 where
+d
+d2
+L2 = 2 + P1 (t) + P2 (t) .
+dt
+dt
+The second order equation L2 f = 0 is equivalent to the system of first order differential equations
+ ′
+f = g
+g ′ = −P2 f − P1 g
+
+PICARD-FUCHS UNIFORMIZATION
+
+17
+
+with {f, g} as fundamental solutions. Observe that
+
+{f n , f n−1 g, . . . , f g n−1 , g n }
+
+forms a set of fundamental solutions for the n-th symmetric power L = Lsn
+2 . The
+following result describes a system of first order differential equations for L with
+these fundamental solutions.
+Theorem 5.9 ([Lee], Theorem 2). If f and g satisfy
+
+
+ 
+
+d
+f
+f
+0
+1
+=
+,
+g
+g
+−P2 −P1
+dt
+
+then we have
+
+
+
+fn
+
+
+
+
+
+fn
+
+
+
+ f n−1 g 
+ f n−1 g 
+
+
+
+d 
+
+
+
+
+..
+..
+ ,
+ = A
+
+.
+.
+
+
+
+dt 
+ f g n−1 
+ f g n−1 
+gn
+gn
+where A = (aij ) is an (n + 1) × (n + 1) matrix such that
+ak,k
+ak,k+1
+ak+1,k
+ai,j
+
+=
+=
+=
+=
+
+(1 − k)P1
+n+1−k
+−kP2
+0
+
+,
+,
+,
+,
+
+1≤k ≤n+1 ,
+1≤k≤n,
+1≤k≤n,
+i > j + 1 or j > i + 1 .
+
+Example 5.10. In particular, when n = 2, the case for a symmetric square, it
+one rewrites the system as a single third order equation
+Sym2 (L2 )f = f ′′′ + 3P1 f ′′ + (2P1 2 + 4P2 + P1 ′ )f ′ + (4P1 P2 + 2P2 ′ )f = 0 .
+In this form it is easy to check, using the closed form expression for the projective normal form of a second order Fuchsian differential equation given in Example
+2.16, that
+Proposition 5.11. Let L2 be as above a second order Fuchsian ordinary differential operator, and let L = Sym2 (L2 ) be its symmetric square. Then the projective
+normal form of L is the symmetric square of the projective normal form of L2 .
+Remark 5.12. In fact, it is possible to provide an explicit description of the
+relationship between the monodromy matrices of the second order “square root”
+equation and those of the third order symmetric square equation. This is provided
+by the faithful representation of SL(2, C) in SL(3, C) via the symmetric square
+representation [Sin].
+Finally, we see the relevance of all of this for Picard-Fuchs equations of our
+Mn -polarized K3 surface families:
+Theorem 5.13. The Picard-Fuchs equation of a family of Mn -polarized K3
+surfaces is the symmetric square of a second order homogeneous linear Fuchsian
+ordinary differential equation.
+Proof. To begin with, the order of the Picard-Fuchs equation is equal to
+the rank of the transcendental lattice, i.e., 22 − 19 = 3. By Dolgachev’s Torelli
+theorem for lattice polarized K3 surfaces (specifically, the proof of Theorem 5.13
+
+18
+
+CHARLES F. DORAN
+
+above) the period domain lies on a nondegenerate quadric in P2 . Thus, Corollary 5.8
+implies that the third order Picard-Fuchs differential equation is in fact a symmetric
+square.
+There is another approach to proving this result which takes advantage of the
+special geometric properties of Mn -polarized K3 surfaces, namely their presentation
+as Shioda-Inose surfaces coming from a product of two elliptic curves linked by an
+n-isogeny. See [Pet, VY] for more details.
+5.3. The Mirror-Moonshine phenomenon.
+In their first systematic investigations of mirror symmetry for one parameter
+families of Calabi-Yau manifolds constructed via the “orbifold construction” [LY1],
+Lian and Yau discovered that the reciprocal of the mirror maps for the K3 surfaces
+they were studying agreed, up to an additive constant, with Thompson series in
+the lists of Conway-Norton [CN]. The evidence was sufficiently strong that they
+formulated
+Conjecture 5.14 (Lian-Yau, [LY1, ICMP]). If z(q) is the mirror map for a
+one parameter deformation of an algebraic K3 surface from an orbifold construction
+which has a third order Picard-Fuchs equation, then, for some c ∈ Z, the q-series
+1
++c
+z(q)
+
+is a Thompson series Tg (q) for some element g in the Monster.
+In [LY2], Lian and Yau compute many more toric examples (including over a
+dozen complete intersection examples), and note that the correspondence to monstrous groups persists. This suggested that the hypothesis regarding the “orbifold construction” should perhaps be weakened to the hypothesis “torically constructed”.
+As noted in the proof of Theorem 5.13, for a family of lattice polarized K3
+surfaces the condition of having a third order Picard-Fuchs equation is equivalent
+to the family possessing a polarization by a lattice of rank 19. In other words, the
+generic member of such a family will have Picard rank 19.
+Furthermore, recall that a Thompson series is in particular a Hauptmodul for
+some “monstrous” genus zero arithmetic group Γ, and that the various equivalent
+Hauptmoduln are well-defined as generators of the function field of the rational
+curve Γ \ H∗ only up to action of Γ. We see that in Conjecture 5.14 an equivalent
+conclusion is that the mirror map is itself a Hauptmodul (unnormalized!) for some
+monstrous Γ.
+Before Conjecture 5.14 was even formulated, Beukers, Peters, and Stienstra
+had computed the Picard-Fuchs equation of a particular family of Mn -polarized
+K3 surfaces [BP, PS]. The mirror map was determined by Verrill and Yui [VY,
+(V.2)]. It provides a counterexample to a “monstrous” generalization of the mirrormoonshine conjecture for torically constructed cases; although the mirror map is
+commensurable to a monstrous Hauptmodul, it is not a monstrous Hauptmodul
+itself.
+This suggests the following two questions:
+Commensurability: When is the mirror map commensurable to a Thompson
+series?
+
+PICARD-FUCHS UNIFORMIZATION
+
+19
+
+Modularity: Can we characterize the families of Mn -polarized K3 surfaces
+whose mirror maps are Hauptmoduln for genus zero subgroups of Γ0 (n)∗ ?
+We will provide answers to each of these questions in §5.5.
+5.4. Generalized functional invariant.
+Definition 5.15. By analogy with the functional invariant of an elliptic surface, to any family of Mn -polarized K3 surfaces over a curve C we associate the
+composition of the period morphism
+Ω:C
+z
+
+→ H
+7→ Ω1 (z)/Ω0 (z)
+
+and the canonical projection onto the coarse moduli space
+Hn : H → H/Γ0 (n)∗ ,
+and call it the generalized functional invariant Hn = Hn ◦ Ω.
+Lemma 5.16. The generalized functional invariant Hn is meromorphic.
+Proof. This follows directly from the regularity of the singular points of Fuchsian differential equations and the meromorphicity of the Hauptmodul. The question is local; we will always assume we work with charts centered about 0. Consider
+the second order (projective normal form of square root of) Picard-Fuchs differential equation on P1 with coordinate z. Let aρ denote the regular singular points.
+Let Ω(z) be the multivalued holomorphic function from the complement of the aρ
+to the upper half plane, Hn be the Hauptmodul viewed as a function from H to P1 ,
+and Hn be the generalized functional invariant. There are two cases to consider:
+the points aρ of finite or of infinite order monodromy.
+If a point has finite order m monodromy, then as a function of z = σ m the period
+m
+Ω(σ ) is a single-valued holomorphic function of σ in a neighborhood 0 < σ < ǫ,
+where ℑ(Ω(σ m )) > 0. In particular by Picard’s theorem the singularity is not
+essential.
+If the monodromy about an aρ is of infinite order, we can argue that the
+singularity is not essential by bounding the rate of growth of Hn (z) = Hn (Ω(z)).
+For appropriately chosen coordinate w centered about the singularity, by Frobenius’
+method we know that w = O(z −m log z), so |w| < O(z −(m+1) ) as z → 0. Because
+Hn (w) is a meromorphic function on Γ0 (n)∗ \ H∗ (and so on H∗ ), near a singular
+point of Hn the rate of growth of Hn (w) equals O(w−r ) for some finite r > 0. Thus
+|Hn (Ω(z))| < O(z −r(m+1) ), and Hn (z) does not have an essential singularity.
+Thus the singularity is either removable or a pole, and H(z) is meromorphic.
+5.5. Commensurability and modularity results.
+We can now address the two main questions regarding the Mirror-Moonshine
+conjecture for any family of Mn -polarized K3 surfaces over P1 : The first result
+explains the relationship of the mirror map to Thompson series. The second characterizes the modularity properties of the mirror map.
+5.5.1. Commensurability.
+By checking the tables of Conway-Norton [CN], we find: If Γ0 (n)∗ is a genus
+zero group with n 6= 49, 50, then it is monstrous, i.e., its Hauptmodul is a Thompson
+series.
+
+20
+
+CHARLES F. DORAN
+
+Suppose we are given an algebraic family of Mn -polarized K3 surfaces over P1 .
+In particular the genus of Γ0 (n)∗ must be zero. The generalized functional invariant
+is a rational function, Hn (z), such that
+Hn (q) = Hn (z(q)) ,
+i.e., it expresses the Hauptmodul for Γ0 (n)∗ as a rational function of the mirror map
+z(q). If n 6= 49, 50, this means that there is a rational expression for a Thompson
+series Hn (q) in terms of the mirror map z(q). In particular this shows that:
+Lemma 5.17. The mirror map of a family of Mn -polarized K3 surfaces over P1
+is commensurable with a Thompson series when n 6= 49, 50.
+The groups Γ0 (49)∗ and Γ0 (50)∗ are two of Conway-Norton’s “ghosts”, i.e., nonmonstrous genus zero subgroups of Γ0 (n)∗ containing Γ0 (n). Their Hauptmoduln
+are however still “replicable functions” in the sense of Conway-Norton, and lie
+among the list of “monster-like” groups of Ferenbaugh [Fer]. So we can say:
+Lemma 5.18. The mirror map of any family of Mn -polarized K3 surfaces over
+P1 is commensurable with a replicable function (i.e., a Hauptmodul of a monster-like
+group).
+5.5.2. Modularity.
+We wish now, by analogy with the elliptic curve case, to apply the general
+criterion for pulling back orbifold uniformizing differential equations (Theorem 3.22)
+to Mn -polarized K3 surface families. We replace the functional invariant with
+the rational function Hn (z), our generalized functional invariant. The differential
+equation ΛJ is replaced by the projective normal form of the square root of the
+Picard-Fuchs differential equation of our one parameter family of Mn -polarized K3
+surfaces.
+As the uniformizing group for the “target” is now Γ0 (n)∗ , what order elliptic
+points must be considered? In [Fer] it is indicated (page 55) that for the broader
+class of groups G = Γ0 (n|h) + e1 , e2 , . . . , an elliptic point can only have order 2, 3,
+4, or 6. We need to check that the “order of value” p of Hn (z) (i.e., the vanishing
+order of Hn (z) − p) for each elliptic point satisfy the conditions of Theorem 3.22.
+Theorem 5.19. The square root of the projective normal form of the PicardFuchs equation of a one parameter family of Mn -polarized K3 surfaces (with genus
+zero Γ0 (n)∗ ) will orbifold uniformize a Zariski open subset of the base of the family
+if and only if it has no apparent singularities, and for each elliptic point p ∈ X0 (n)∗ ,
+Hn (z) − p vanishes to permissible orders as listed in Table 1.
+Order of elliptic point p ∈ X0 (n)∗ Vanishing order Hn (z) − p
+2
+≡ 0 mod 2 or = 1 mod 2
+3
+≡ 0 mod 3 or = 1 mod 3
+4
+≡ 0 mod 4 or = 1 or 2 mod 4
+6
+≡ 0 mod 6 or = 1, 2, or 3 mod 6
+Table 1. Vanishing orders permitting modular mirror maps
+
+PICARD-FUCHS UNIFORMIZATION
+
+21
+
+Proof. The argument here is virtually identical to that for elliptic curves. To
+begin with we work with the square root of the projective normal form of PicardFuchs, a second order Fuchsian ordinary differential equation. Replace J(τ ) with
+the normalized hauptmodul Hn (τ ) for the appropriate Γ0 (n)∗ . Replace the functional invariant J with the generalized functional invariant Hn . The inverse image
+of a cusp under the generalized functional invariant is still a cusp and these are all
+the cusps (finite index condition). A regular singular point in the inverse image
+of an elliptic point is either an algebraic singularity, or an apparent singularity.
+The algebraic singularities are permitted if and only if they are of the types listed
+in Table 1. As before, the “extra” points at which dHn /dz = 0 are just the apparent singularities outside of the inverse image locus, or equivalently those for
+which the characteristic exponents are distinct. Positivity and surjectivity of the
+period morphism, and the fact that the universal cover of the complement of the
+(non-apparent) singularities is H all follow from the same properties of the X0 (n)∗
+orbifold.
+We have thus characterized the Mirror-Moonshine phenomenon completely.
+This characterization has the advantage that it is expressed purely in terms of
+properties of the generalized functional invariant, and applies equally well to any
+example family, toric or not.
+Remark 5.20. As an application we can construct families of Mn -polarized
+K3 surfaces which orbifold uniformize with specified monodromy groups. The only
+constraint is that we must already have at hand an algebraic construction for a
+family of Mn -polarized K3 surfaces with mirror map a Hauptmodul for the full
+group Γ0 (n)∗ . This thus provides a partial answer to a question of Dolgachev
+regarding the “inverse problem” (see [VY, (VI.2)]), reducing it to the case G =
+Γ0 (n)∗ . In other words, the problem can be solved completely just by finding
+explicit algebraic constructions of families of Mn -polarized K3 surfaces with mirror
+maps equal to Hn (q).
+As in the case of elliptic curve families, the starting point is that we know how
+to pullback from the “universal family” with a given lattice polarization, to another
+family with the same lattice polarization which orbifold uniformizes with a proper
+subgroup as monodromy group. Assume for now that the subgroup is also of genus
+zero.
+As long as we have an algebraic presentation (e.g., as hypersurfaces, complete
+intersections) for the universal family in the first place, then we can construct the
+pullback family. The necessary pullback function is the rational function which
+defines the modular relation for the Hauptmodul of the universal family as a rational function in the Hauptmodul of the second family (i.e., for the finite index
+subgroup). Once again the general fact (Corollary 3.16 and subsequent remarks)
+relating automorphic functions for genus zero groups provides this rational function.
+Remark 5.21. A necessary condition on the projective normal form PicardFuchs equation for orbifold uniformization once again is that there be no apparent
+singularities. There is a great deal of evidence to support the conjecture that no
+apparent singularities arise in any torically constructed family of Calabi-Yau manifolds. Aside from the lack of counterexamples, there are other reasons to believe
+such a conjecture (see the author’s work on geometric isomonodromic deformations,
+[Dor]).
+
+22
+
+CHARLES F. DORAN
+
+6. Generalizations
+We comment now on generalizations of these Picard-Fuchs uniformization results in various directions, involving changes in the natures of both the fiber and
+the base of the families considered. In each case, a complete discussion may be
+found in [Dor2].
+To begin with, we note that our results for Mn -polarized K3 surface families
+immediately extend to the general rank 19 lattice polarized case. In particular, the
+arguments from Fuchsian theory for the symmetric square structure of the PicardFuchs equation are independent of the particular rank 19 lattice chosen. What is
+lacking in the general setting is a complete classification of the rank 19 lattices and
+a specific description of monodromy groups.
+It is possible to lift the convenient genus zero restriction on both the uniformizing groups and the bases of the families under consideration. Most of the arguments
+given in determining the Picard-Fuchs uniformization criteria apply immediately
+to the case of families of elliptic curves and Mn -polarized K3 surfaces over higher
+genus curves. These criteria still imply that the mirror map is an automorphic
+function for a (no longer genus zero) subgroup of the genus zero groups P SL(2, Z)
+or Γ0 (n)∗ respectively, even though it is no longer a Hauptmodul. Modification of
+the arguments to allow for Γ0 (n)∗ of genus higher than zero can be made as well.
+Furthermore, there is an extension of our modularity criteria to certain multiparameter families of abelian varieties and K3 surfaces of various Picard ranks. In
+particular, this can be applied to two-parameter families of K3 surfaces with Picard
+rank 18 as studied in [VY, (VI.4)]. This case is particularly nice, as it is possible
+to apply another old result of Fano to conclude that generic one-parameter “slices”
+of such families will possess Picard-Fuchs equations of order four, built from two
+distinct second order equations by tensor product. When the two-parameter family
+is “modular”, with respect to the appropriate Hilbert modular group, the PicardFuchs equations on the one-parameter slices reflect this by being “bi-modular”,
+i.e., each second order factor equation is independently modular. The example of
+Hosono, [VY, (VI.4.1)], provides a nice illustration of this phenomenon.
+For more on all of this, together with a discussion of the considerably more
+subtle case of Calabi-Yau threefold families, see [Dor2].
+References
+[AB]
+
+D. Anosov and A. Bolibruch, The Riemann-Hilbert Problem, Aspects of Mathematics,
+Friedr. Vieweg & Sohn (1994).
+[BPV] W. Barth, C. Peters and A. Van de Ven, Compact Complex Surfaces, Springer-Verlag
+(1984).
+[BP] J. Bertin and C. Peters, Variations of Hodge Structures, Calabi-Yau Manifolds, and Mirror
+Symmetry, Introduction à la Théorie de Hodge, Panoramas et Synthèses, 3, Paris: Société
+Mathématique de France (1996).
+[CY] I. Chen and N. Yui, Singular Values of Thompson Series, Groups, Difference Sets, and the
+Monster: Proceedings of a Special Research Quarter at the Ohio State University, Spring
+1993, Ohio State University Mathematical Research Institute Publications 4, Walter de
+Gruyter, New York (1996).
+[CK] D. Cox and S. Katz, Mirror Symmetry and Algebraic Geometry, Mathematical Surveys
+and Monographs, American Mathematical Society (1999).
+[CN] J. Conway and S. Norton, Monstrous Moonshine, Bull. London Math. Soc. 11 (1979), no.
+3, 308–339.
+[Dol] I. Dolgachev, Mirror Symmetry for Lattice Polarized K3 Surfaces, Algebraic Geometry,
+4. J. Math. Sci. 81 (1996), no. 3, 2599–2630.
+
+PICARD-FUCHS UNIFORMIZATION
+
+[Dor]
+
+23
+
+C. F. Doran, Picard-Fuchs Uniformization and Geometric Isomonodromic Deformations:
+Modularity and Variation of the Mirror Map, Dissertation, Harvard University, Spring
+1999.
+[Dor2] C. F. Doran, Picard-Fuchs Uniformization and Modularity of the Mirror Map, in preparation.
+[EMM] Essays on Mirror Manifolds, Ed. by S.-T. Yau, International Press, Hong Kong (1992).
+[Fer] C. Ferenbaugh, The Genus-Zero Problem for n|h-Type Groups, Duke Math. J. 72 (1993),
+no. 1, 31–63.
+[HM] J. Harnad and J. McKay, Modular Solutions to Equations of Generalized Halphen Type,
+solv-int/9804006.
+[Her] S. Herfurtner, Elliptic Surfaces with Four Singular Fibres, Math. Ann. 291 (1991), no. 2,
+319–342.
+[HLY] S. Hosono, B. Lian and S.-T. Yau, Maximal Degeneracy Points of GKZ Systems, J. Amer.
+Math. Soc. 10 (1997), no. 2, 427–443.
+[ICMP] B. Lian and S.-T. Yau, Mirror symmetry, Rational Curves on Algebraic Manifolds and
+Hypergeometric Series, Proceedings of International Congress of Mathematical Physics
+(1994).
+[Kod] K. Kodaira, On Compact Analytic Surfaces, II, Ann. of Math. (2) 77 (1963), 563–626.
+[Lee] M.-H. Lee, Picard-Fuchs Equations for Elliptic Modular Varieties, Appl. Math. Letters 4
+(1991), no. 5, 91–95.
+[Leh] J. Lehner, Discontinuous Groups and Automorphic Functions, Mathematical Surveys,
+Number VIII, American Mathematical Society (1964).
+[LY1] B. Lian and S.-T. Yau, Arithmetic Properties of Mirror Map and Quantum Coupling,
+Comm. Math. Phys. 176 (1996), no. 1, 163–191.
+[LY2] B. Lian and S.-T. Yau, Mirror Maps, Modular Relations and Hypergeometric Series II,
+Nucl. Phys. Proc. Suppl. 46 (1996) 248-262.
+[Mir1] R. Miranda, The Moduli of Weierstrass Fibrations over P1 , Math. Ann., 255, no. 3, 379–
+394 (1981).
+[Mir2] R. Miranda, The Basic Theory of Elliptic Surfaces, Dottorato di Ricerca in Matematica.
+ETS Editrice, Pisa (1989).
+[Mir3] R. Miranda, Persson’s List of Singular Fibers for a Rational Elliptic Surface, Math. Z.
+205 (1990), no. 2, 191–211.
+[MSI] Mirror Symmetry I, Ed. S.-T. Yau, American Mathematical Society–International Press
+(1998). This is the second edition of [EMM] above.
+[Per] U. Persson, Configurations of Kodaira Fibers on Rational Elliptic Surfaces, Math. Z. 205
+(1990), no. 1, 1–47.
+[Pet] C. Peters, Monodromy and Picard-Fuchs Equations for Families of K3-Surfaces and Elliptic Curves, Ann. Sci. École Norm. Sup. (4) 19 (1986), no. 4, 583–607.
+[PS]
+C. Peters and J. Stienstra, A Pencil of K3-Surfaces Related to Apéry’s Recurrence for
+ζ(3) and Fermi Surfaces for Potential Zero, Arithmetic of Complex Manifolds (Erlangen,
+1988), 110–127, Lecture Notes in Math., 1399, Springer, Berlin (1989).
+[Sas] T. Sasai, Monodromy Representations of Homology of Certain Elliptic Surfaces, J. Math.
+Soc. Japan, Vol. 26, No. 2, 296–305 (1974).
+[S-H] Schmickler-Hirzebruch, Elliptische Flächen über P1 (C) mit drei Ausnahmefasern und die
+hypergeometrische Differentialgleichung, Schriftenreihe des Mathematischen Instituts der
+Universität Münster, Ser. 2, 33. Universität Münster, Mathematisches Institut, Münster
+(1985).
+[Shi] T. Shioda, On Elliptic Modular Surfaces, J. Math. Soc. Japan, Vol. 24, 20–59 (1972).
+[Sin] M. Singer, Algebraic Relations Among Solutions of Linear Differential Equations: Fano’s
+Theorem, Amer. J. Math., 110, no. 1, 115-143 (1988).
+[Sti]
+P. Stiller, On the Uniformization of Certain Curves, Pacific J. Math., 107, no. 1, 229–244
+(1983).
+[Var] V. Varadarajan, Meromorphic Differential Equations, Exposition. Math. 9 (1991), no. 2,
+97–188.
+[VY] H. Verrill and N. Yui, Thompson Series, and the Mirror Maps of Pencils of K3 Surfaces,
+contribution to this proceedings.
+[Voi] C. Voisin, Symétrie Miroir, Panoramas et Synthèses, 2, Paris: Société Mathématique de
+France (1996).
+
+24
+
+CHARLES F. DORAN
+
+[Yos]
+
+M. Yoshida, Fuchsian Differential Equations. With special emphasis on the Gauss-Schwarz
+theory, Aspects of Mathematics, E11. Friedr. Vieweg & Sohn, Braunschweig (1987).
+
+Department of Mathematics, Harvard University, Cambridge, Massachusetts 02138
+E-mail address: doran@math.harvard.edu
+
+

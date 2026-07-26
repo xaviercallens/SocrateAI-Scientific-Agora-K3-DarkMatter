@@ -6,11 +6,16 @@
 >
 > **The mathematics is done. The physics branch closed honestly. Nothing is on fire.**
 >
-> - **ρ = 19, T = 3 — DERIVED** [tier B], E-011. Independently reproduced by Stream 1.
+> - **ρ = 19, T = 3 — DERIVED** [tier B], E-011; derivation independently verified by Stream 1.
+>   (**Value ≠ gate scoring**: Gate E criterion 1 stays UNRESOLVED per T0 D1 — a derived prior
+>   is not a measurement. Both statements hold; do not conflate them — that conflation cost
+>   Stream 3 an escalation.)
 > - **F5b — no prediction extractable.** Adopted into `PREDICTION.md` **v1.1-PINNED §6**.
 >   Pre-registered outcome, **not** a refutation, and **reversible**.
 > - **Gate E criteria 1–2 UNSCOREABLE** (no valid empirical run exists). *Not failing.*
-> - **Stream 1 parked clean. Stream 2 mathematics complete. Stream 3 running WP-E on Dark Home.**
+> - **Stream 1 parked clean. Stream 2: Phase 4 running (lattice refinement — one residual, U1).
+>   Stream 3: WP-E5 COMPLETE — 2D transverse route closed (floors 1.6 Mpc / 10⁴ objects);
+>   directives E2.18–E2.23 adopted.**
 >
 > Full history: `ESCALATIONS.md` E-007 … E-013. Governing docs: `VISION.md`, `EXECUTION_PLAN.md`
 > (both restored 2026-07-26 — they had been deleted since 07-18).
@@ -27,10 +32,18 @@
       fibre data*, which E-007 retracted and E-008/E-009 showed is category-mismatched (the
       finite loci are order-2 elliptic points, not Kodaira degenerations). Either supply a
       replacement route or formally strike the step. F5b already stands without it.
-- [ ] **Stream 3: answer the three remaining asks** in
-      `briefs/STREAM2_TO_STREAM3_GUIDELINES_2026_07_26.md` — do they hold a real D-3 run or 3D
-      field data outside this repo; have they produced Gate E verdicts from the disabled runner;
-      the WP-E pre-flight σ(0). (Fourth ask, t103's status, resolved in-repo — see E-014.)
+- [x] **Stream 3 asks — ALL ANSWERED** (2026-07-26 night, their
+      `STREAM3_TO_STREAM2_DIRECTIVE_RESPONSE_2026_07_26.md` + WP-E5 findings, Dark Home repo
+      `~/SocrateAI-Scientific-Agora-Home`): **(a)** no D-3 run, no 3D data anywhere — 50
+      spectroscopic objects is the largest field; **(b)** no Gate E verdicts exist (verified by
+      search; runner never produced output, G1-L closed); **(c)** pre-flight σ(0) = **NO-GO**,
+      worse than predicted — β₂ *degenerate* (zero variance at 2/3 thresholds), not offset;
+      **(d)** t103 inadmissible-without-certificate (convergent with E-014). **WP-E5 CLOSED
+      the 2D transverse route**: floors ~1.6 Mpc / ~10⁴ objects per slice; real data 50× short;
+      no (r_s, α) bounding box deliverable, by design. Directives **E2.18–E2.23 adopted** into
+      Stream 2 standing practice. Response:
+      `briefs/STREAM2_TO_STREAM3_WPE5_RESPONSE_2026_07_26.md` (also dissolves their R-1 — no
+      M2 exists to reject — and resolves the ρ/T "contradiction" as value-vs-gate-scoring).
 
 ## 🟡 Open — mechanical, any agent can pick up
 
@@ -53,15 +66,20 @@
       `C2_cooper_s7_v3.json` (null ⇒ raise); and the script refuses D-3 aggregates entirely
       (E-012: their only producer fabricates). Controls:
       `checkers/test_gate_e_verdict_controls.py` (7, incl. negatives).
-- [ ] **Fetch and read Dolgachev 1996 / Doran** (Phase 4 step 2 — see
-      `briefs/STREAM2_PHASE4_LATTICE_REFINEMENT_2026_07_26.md`). Promotes H-M7 lattices
-      (NS = U⊕E₈²⊕⟨−14⟩, T = U⊕⟨14⟩) from [C] to [B] and changes which S3-00 2(b) decision
-      is on the T0 table. The computational leg is done:
-      **A279618 is a Γ₀(7)+ Hauptmodul [B]** — deg-2 over the Γ₀(7) coordinate, Möbius refuted,
-      Fricke κ=49 computed from the fit (`check_s7_hauptmodul_gamma07plus.py`).
-- [ ] **Tell Stream 3 about E-016**: their mirrored `check_tier_language.py` silently ignores
-      CLI file arguments on Dark Home too — repo-scan is its only real mode. Fold into the next
-      Stream 3 brief.
+- [x] **Dolgachev 1996 / Doran 1998 — FETCHED AND READ** (Phase 4 step 2, 2026-07-26 night,
+      hash-pinned in `docs/literature/MANIFEST.md`). The framework verifies **verbatim**:
+      Dolgachev Thm 7.1 (K_{Mₙ} ≅ H/Γ₀(n)+), §7 p.20 ((Mₙ)⊥ = U⊕⟨2n⟩), Thm 7.3 (ample locus
+      minus countable S = our very-general caveat at source), Doran Thm 5.13 (PF of
+      Mₙ-polarized = Sym² of 2nd-order Fuchsian). Record:
+      `briefs/STREAM2_PHASE4_STEP2_SOURCES_READ_2026_07_26.md`.
+- [ ] **U1 — the ONE residual before lattice certification:** does Γ₀(7)+ as uniformizing
+      group characterize T ≅ U⊕⟨14⟩ among even rank-3 (2,1) lattices (one-class genus /
+      Eichler-order correspondence at level 7)? Doran §6 flags the rank-19 classification as
+      open in general, so this is a real gap, not pedantry. On U1-PASS: emit
+      `C2_cooper_s7_v4.json` (lattices [B], per-statement citations) and put the S3-00 2(b)
+      **re-scope** option to T0. Until then: H-M7 stays [C]; **v3 (ranks only) stays live**.
+- [x] **E-016 → Stream 3: told**, with the one-line self-check, in
+      `briefs/STREAM2_TO_STREAM3_WPE5_RESPONSE_2026_07_26.md` §5.
 
 ## ⛔ Do NOT do these
 

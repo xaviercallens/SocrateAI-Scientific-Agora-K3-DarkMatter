@@ -1,0 +1,2304 @@
+MIRROR SYMMETRY FOR LATTICE POLARIZED K3 SURFACES
+
+arXiv:alg-geom/9502005v2 7 Jan 1996
+
+Igor V. Dolgachev ∗
+Department of Mathematics, University of Michigan, Ann Arbor, MI 48109
+
+Introduction. There has been a recent explosion in the number of mathematical
+publications due to the discovery of a certain duality between some families of Calabi-Yau
+threefolds made by a group of theoretical physicists (see [11,26] for references). Roughly
+speaking this duality, called mirror symmetry, pairs two families F and F ∗ of Calabi-Yau
+threefolds in such a way that the following properties are satisfied:
+MS1 The choice of the mirror family F ∗ involves the choice of a boundary point ∞
+of a compactification F̄ of the moduli space for F at which the monodromy is
+“maximally unipotent”.
+MS2 For each V ∈ F and V ′ ∈ F ∗ the Hodge numbers satisfy
+h1,1 (V ) = h2,1 (V ′ ), h2,1 (V ) = h1,1 (V ′ ).
+MS3 For some open subset U of ∞, for any V ∈ U ∩ F , the Laurent expansion
+of the canonical symmetric trilinear form S 3 (H 1 (V, ΘV )) → H 0,3 (V )⊗2 (the
+Griffiths-Yukawa cubic) at ∞ can be identified, after some special choice of local parameters and a basis of H 0,3 (V ), with the quantum intersection form on
+H 2 (V ′ ), V ′ ∈ F ∗ .
+MS4 The period map induces a holomorphic multivalued mapping from the subset
+U ∩ F to the tube domain H 2 (V ′ , R) + iKV ′ where KV ′ is the Kähler cone of
+V ′ ∈ F ∗ (the mirror mapping).
+Although known to some experts but never stated explicitly, it is a fact that mirror
+symmetry is a very beautiful and non-trivial (in many respects still hypothetical) generalization to the next dimension of the duality for K3 surfaces discovered almost 20 years
+ago by H. Pinkham [34] and independently by the author and V. Nikulin [8,9,31]. This
+duality was used to explain Arnold’s Strange Duality for exceptional unimodal critical
+points [1]. There are repeated hints on the relationship between the latter duality and
+the mirror symmetry both in physics literature ([2,14,23]) and in mathematics literature ([6,19,35,41]). Some of the results of this paper were independently obtained in
+[3,19,21,27,35] and some must be known to V. Batyrev and V. Nikulin. The paper [40]
+∗
+
+Research supported in part by a NSF grant.
+1
+
+of Todorov is probably most relevant. Nevertheless I believe that it is worthwhile to give
+a detailed account of how the ideas of Arnold’s Strange Duality allows one to state (and
+prove) precise analogs of properties MS1-MS4 for K3 surfaces.
+Note that property MS2 says that the local moduli number of V ∈ F is equal to
+the second Betti number of V ′ ∈ F ∗ . In the case of K3 surfaces, the first number is
+always equal to 20, and the second number is equal to 22. The key observation is that in
+three-dimensional case the second Betti number is equal to the rank of the Picard group
+of algebraic cycles. This suggests to create different moduli families of K3 surfaces with
+condition on the Picard group. The simplest realization of this idea is based on the notion
+of a polarized K3 surface. This is pair (X, h) where X is a K3 surface and h ∈ Pic(X)
+is an ample (or pseudo-ample) divisor class. A generalization of this notion, due to V.
+Nikulin [30], is the notion of a lattice polarized K3 surface. We fix a lattice M (a free
+abelian group equipped with an integral quadratic form) and consider a pair (X, j) where
+X is a K3 surface, and j : M → Pic(X) is a primitive embedding of lattices such that
+j(M ) contains a pseudo-ample divisor class. One can construct a coarse moduli space
+KM of M -polarized K3 surfaces. An obvious condition of its non-emptiness is that M is
+isomorpic to a sublattice of an even unimodular lattice L of signature (3, 19) isomorphic
+to the second cohomology group of a K3 surface equipped with the cup-product.
+To define the mirror family, we choose an isotropic primitive vector f in the orthogonal
+complement M ⊥ of M in L, and consider the lattice M̌ = (Zf )⊥
+M ⊥ /Zf . Under certain
+arithmetic conditions on M , the lattice M̌ admits a primitive embedding in M ⊥ , and we
+can define the mirror moduli space KM̌ . Additional conditions on M ensure that the
+ˇ = M . Now if
+moduli spaces KM and KM̌ are defined uniquely up to isomorphism, and M̌
+we have any complete family F of pseudo-ample M -polarized K3 surfaces its mirror family
+is any complete family of pseudo-ample M̌ -polarized K3 surfaces.
+It turns out that the choice of the isotropic vector f is the analog of MS1. Property
+MS2 becomes
+MS2′ The dimension of the family F is equal to the rank of the Picard group of a
+general member from the mirror family F ∗ .
+In the case of K3 surfaces the Griffiths-Yukawa cubic becomes a quadratic map
+S 2 (H 1 (V, ΘV )) → H 0,2 (V )⊗2
+
+and we have the following analog of MS3:
+MS3′ For some open subset U of F near the boundary point (determined by the choice
+of isotropic vector f ), for any V ∈ U , the Griffiths-Yukawa quadratic map can be
+canonically identified, after some choice of basis of H 0,2 (V ), with the quadratic
+form on M̌ ⊗ C.
+Note that in our case the Griffiths-Yukawa quadratic map becomes the “constant” quantum
+intersection form and does not carry any information about rational curves on the mirror
+surfaces. This agrees with the fact that the quantum cohomology ring of a K3 surface
+coincides with the usual cohomology ring [36].
+The next property is a very close analog of MS4:
+MS4′ The period map induces a holomorphic multivalued
+mapping from the subset
+√
+U from MS3′ to the tube domain Pic(V ′ )R + −1C(X)+ ⊂ Pic(V ′ )C where
+C(X)+ is the ample cone of V ′ ∈ F ∗ . It is called the mirror map.
+2
+
+We also produce some computational evidence to support our point. The mirror candidates for a family of Calabi-Yau three-dimensional hypersurfaces in toric Fano varieties
+are obtained by Batyrev’s construction from [5]. When this construction applies to K3
+surfaces it is “often”, but not always, gives our mirror family. This was first noticed by
+Batyrev in a preprint version of [5]. For example, in the case when F is the moduli family
+of quartic surfaces (M = Ze, (e, e) = 4) the mirror family F ∗ is the one-dimensional family
+of K3 surfaces obtained by dividing the surfaces
+λx0 x1 x2 x3 + x40 + x41 + x42 + x43 = 0
+by a symplectic action of the group (Z/4)2 . Note the analogy with Green-Plesser’s first
+discovered example of mirror symmetry for quintic hypersurfaces (see [11], pp.1-30). In
+this case assertion MS3′ was verified in [27].
+Other examples of our computations include the mirror families for the families of polarized K3 surfaces of degree 2n, for K3-covers of Enriques surfaces and Kummer surfaces,
+and the fourteen families coming from exceptional unimodal surface singularites. In the
+case of polarized K3 surfaces of degree n we compute the monodromy group of the period
+and mirror mappings. By other methods this computation was done in [27] (n = 4) and
+[21] (n = 2, 4, 6). We prove that the mirror moduli space is isomorphic to the modular
+curve X0 (n)+ = H/Γ0 (n)+ , where Γ0 (n)+ is the Fricke double extension of the modular
+group Γ0 (n). We relate the surfaces from this family to the Kummer surfaces Kum(E ×E ′ ),
+where (E, E ′ ) is a pair of isogeneous elliptic curve.
+There is another view of mirror symmetry more relevant to the string theory. Here
+one considers the moduli space of pairs (V, α) where V is a Calabi-Yau manifold, and
+α = B + iK ∈ H 2 (V, R/Z) + iKV with K equal to a Kähler form on V with respect to the
+complex structure of V . Then the mirror mapping extends to a map of this space to itself
+defined on pairs (V, α) such that V is close to a boundary point of the moduli space of
+complex structures and the imaginary part of α can be represented by the Einstein-Kähler
+metric of sufficiently large volume. The work of P. Aspinwal and D. Morrison [2,3] treats
+mirror symmetry for K3 surfaces from this point of view.
+My acknowledgments go to V. Batyrev, D. Morrison, V. Nikulin and A. Todorov who
+shared my belief that Arnold’s Strange Duality must be the pre-history of mirror symmetry
+and left it up to me to elaborate on this subject. I am also grateful to V. Batyrev, A.
+Greenspoon and D. Morrison for providing some references to the relevant literature.
+1. Lattice polarized K3 surfaces. Let X be a complex algebraic K3 surface, a
+nonsingular projective algebraic surface over C with vanishing canonical class and first
+Betti number. Via interesection form the second cohomology group H2 (X, Z) is equipped
+with the structure of a lattice (= a free abelian group together with an integral symmetric
+bilinear form on it). It is isomorphic to the lattice L equal to the orthogonal sum of
+three copies of the standard hyperbolic plane U (= an even unimodular indefinite lattice
+of rank 2) and two copies of the lattice E8 (= an even unimodular negative definite lattice
+of rank 8). The lattice L is called the K3-lattice. The Picard group Pic(X) of divisor
+3
+
+classes of X is naturally identified with the sublattice of algebraic cycles of H2 (X, Z).
+The unimodularity of H2 (X, Z) (= Poincaré duality) allows one to identify H2 (X, Z) with
+the second cohomology group H 2 (X, Z) = Hom(H2 (X, Z), Z) equipped with the lattice
+structure by means of the cup-product. Let
+c : Pic(X) → H 2 (X, Z)
+be the corresponding injection. If one uses the interpretation of Pic(X) as the group of
+isomorphism classes of line bundles on X, the map c corresponds to the first Chern class
+map. In virtue of the Hodge Index theorem, the lattice Pic(X) is of signature (t+ , t− ) =
+(1, t).
+The complex structure on X defines the Hodge decomposition
+H 2 (X, C) = H 2,0 (X) ⊕ H 1,1 (X) ⊕ H 0,2 (X),
+p
+where H p,q (X) ∼
+= H q (X, ΩX ). It is known that complex conjugation sends H 2,0 (X) to
+H 0,2 (X) and
+PX = (H 2,0 (X) ⊕ H 0,2 (X)) ∩ H 2 (X, R)
+
+is a positive definite 2-plane in H 2 (X, R). The subspace
+1,1
+(X) = H 1,1 (X) ∩ H 2 (X, R)
+HR
+
+has signature (1, 19). The cone
+1,1
+V (X) = {x ∈ HR
+(X) ∩ H 2 (X, R) : (x, x) > 0}
+
+consists of two connected components. We denote by V (X)+ the component which contains
+the class of some Kähler form on X with respect to the complex structure of X. Let
+∆(X) = {δ ∈ Pic(X) : (δ, δ) = −2}.
+`
+By Riemann-Roch, ∆(X) = ∆(X)+ ∆(X)− where ∆(X)+ consists of effective classes
+and ∆(X)− = −∆(X)+ . Let W (X) be the subgroup of the orthogonal group of H 2 (X, Z)
+generated by reflections in elements from ∆(X). This group acts properly discontinuously
+in V (X)+ with fundamental domain
+C(X) = {x ∈ V (X)+ : (x, δ) ≥ 0,
+
+for any δ ∈ ∆(X)+ }.
+
+The set C(X)+ of its interior points is the the Kähler cone of X ([13], Exposé X).
+By the Lefschetz Theorem
+1,1
+(X) ∩ H 2 (X, Z).
+Pic(X) = HR
+
+We set
+Pic(X)+ = C(X) ∩ H 2 (X, Z),
+
+Pic(X)++ = C(X)+ ∩ H 2 (X, Z).
+4
+
+The elements of Pic(X)+ are pseudo-ample divisor classes, i.e., numerically effective divisor classes with positive self-intersection. Elements of Pic(X)++ are ample divisor classes.
+Elements from V (X)+ ∩ H 2 (X, Z) are just effective divisor classes with positive selfintersection.
+Now let M be an even non-degenerate lattice of signature (1, t). The cone
+V (M ) = {x ∈ MR : (x, x) > 0} ⊂ MR
+consists of two connected components. We fix one of them and denote it by V (M )+ .
+Let
+∆(M ) = {δ ∈ M : (δ, δ) = −2}.
+
++
+We fix a subset ∆(M )`
+such that
++
+−
++
+(i) ∆(M ) = ∆(M )
+∆(M )− , where
+P ∆(M ) = {−δ : δ ∈ ∆(M ) }; +
++
+(ii) if δ1 , . . . , δk ∈ ∆(M ) and δ =
+ni δi with ni ≥ 0 then δ ∈ ∆(M ) .
++
+The choice of subset ∆(M ) as above defines the subset
+
+C(M )+ = {h ∈ V (M )+ ∩ M : (h, δ) > 0
+
+for all δ ∈ ∆(M )+ }.
+
+Definition. An M -polarized K3 surface is a pair (X, j) where X is a K3 surface and
+j : M ֒→ Pic(X) is a primitive lattice embedding. We say that (X, j) is pseudo-ample
+(resp. ample) M -polarized if
+j(C(M )+ ) ∩ Pic(X)+ 6= ∅
+(resp.
+j(C(M )+ ) ∩ Pic(X)++ 6= ∅).
+
+Two M -polarized K3 surfaces (X, j) and (X ′ , j ′ ) are called isomorphic if there exists
+an isomorphism of K3 surfaces f : X ′ → X such that j = f ∗ ◦ j ′ .
+Remarks (1.1). Note that for any pseudo-ample M -polarized K3 surface (X, j) we
+have
+(i) j(V (M )+ ) ⊂ V (X)+ ;
+(ii) j(∆(M )+ ) = j(M ) ∩ ∆(X)+ .
+Conversely, if these conditions are satisfied, and j(M ) = Pic(X), then (X, j) is ample
+M -polarized.
+Finally observe that a pseudo-ample M -polarized K3 surface is algebraic.
+Example (1.2). Let M =< 2n >:= Ze, (e, e) = 2n. Assume n > 0. Choose V (M )+
+to be one of the two rays in MR \ {0}. A pseudo-ample M -polarized K3 surface (X, j) is
+called a degree 2n pseudo-polarized K3 surface. Consider the complete linear system |j(e)|
+and let f be a rational map defined by this linear system. Then one of the following three
+possible cases occurs:
+(i) (Unigonal case) |j(e)| has a base curve C ∼
+= P1 , |j(e) − C| = |(n + 1)E| where E is an
+elliptic curve. The map f is a regular map from X to Pn+1 whose image is a normal
+rational curve of degree n + 1.
+5
+
+(ii) (Hyperelliptic case) |j(e)| has no base points and f is a morphism of degree 2 onto a
+normal surface of degree n in Pn+1 . Its singular points (if any) are rational double
+points.
+(iii) |j(e)| has no base points and f is a morphism of degree 1 onto a normal surface of
+degree 2n in Pn+1 . Its singular points (if any) are rational double points.
+Moreover, if j(e) is ample, the unigonal case may occur only if n = 1. Also in cases
+(ii) and (iii), the morphism f is finite and its image is nonsingular (see [13], Exposé IV).
+2. Local deformations. Fix an M -polarized K3 surface (X0 , j0 ). Let S be the local
+moduli space for X0 . It is smooth of dimension 20 with all Kodaira-Spencer mappings
+ρs : Ts (S) → H 1 (Xs , ΘXs )
+being isomorphisms. Let
+(1)
+
+H 1 (X0 , ΘX0 ) ⊗ H 1 (X0 , Ω1X0 ) → H 2 (X0 , OX0 )
+
+be the natural pairing induced by the duality map ΘX0 ⊗ Ω1X0 → OX0 . As was explained
+in the previous section, we can view Pic(X) as a subgroup of H 1,1 (X0 ). We denote by
+H 1 (X0 , ΘX0 )j0
+the orthogonal complement of j0 (M ) with respect to the pairing (1). Let
+H 1 (X0 , Ω1X0 )j0 = H 1 (X0 , Ω1X0 )/j0 (M ).
+In view of the canonical pairing
+H 1,1 (X0 ) ⊗ H 1,1 (X0 ) → H 2,2 (X0 ) ∼
+=C
+we may identify H 1 (X0 , Ω1X0 )j0 with
+H 1,1 (X0 )j0 := (j0 (M )C )⊥
+H 1,1 (X0 ) .
+The pairing (1) induces the map
+(1′ )
+
+d1 : H 1 (X0 , ΘX0 )j0 → Hom(H 1 (X0 , Ω1X0 )j0 , H 2 (X0 , OX0 )).
+
+Proposition (2.1). There is a local moduli space SM of isomorphism classes of M polarized K3 surfaces. It is smooth of dimension 19 − t. Its tangent space at each point
+s ∈ S is naturally isomorphic to H 1 (X0 , ΘX0 )j0 .
+Proof. In the case t = 0 this is a theorem from [15]. The general case is proved
+similarly.
+6
+
+Let
+H 1 (X0 , ΘX0 ) ⊗ H 0 (X0 , Ω2X0 ) → H 1 (X0 , Ω1X0 )
+
+(2)
+
+be the natural pairing induced by the contraction map ΘX0 ⊗ Ω2X0 → Ω1X0 . Composing
+(2) with the projection H 1 (X0 , Ω1X0 ) → H 1 (X0 , Ω1X0 )j0 and restricting the composition to
+H 1 (X0 , ΘX0 )j0 we get the map
+d2 : H 1 (X0 , ΘX0 )j0 → Hom(H 0 (X0 , Ω2X0 ), H 1 (X0 , Ω1X0 )j0 ).
+
+(2′ )
+Let
+
+(d1 , d2 ) : H 1 (X0 , ΘX0 )j0 → Hom(H 1,1 (X0 )j0 , H 0,2 (X0 )) ⊕ Hom(H 2,0 (X0 ), H 1,1 (X0 )j0 ).
+The formula
+(θ1 , θ2 ) = d1 (θ2 ) ◦ d2 (θ1 ) : H 2,0 (X0 ) → H 0,2 (X0 )
+defines the bilinear form
+2,0
+(X0 ), H 0,2 (X0 )).
+H 1 (X0 , ΘX0 )⊗2
+j0 → Hom(H
+
+The canonical pairing
+H 2,0 (X0 ) ⊗ H 0,2 (X0 ) → H 2,2 (X0 ) = H 4 (X0 , C) ∼
+=C
+allows one to identify the space of values of the bilinear form with the space H 0,2 (X0 )⊗2 .
+One can check that this pairing is symmetric [16] and hence defines the linear map
+Yu : S 2 (H 1 (X0 , ΘX0 )j0 ) → H 0,2 (X0 )⊗2
+which we call the Griffiths-Yukawa quadratic map for M -polarized K3 surfaces. A choice
+of an isomorphism
+H 0,2 (X0 ) ∼
+=C
+allows one to identify the map Yu with a quadratic form on the space H 1 (X0 , ΘX0 )j0 .
+The Griffiths-Yukawa quadratic map can also be expressed in terms of the intersection
+form on H 1,1 (X0 ) as follows. First observe that the map
+(3)
+
+d1 : H 1 (X0 , ΘX0 )j0 → Hom(H 2,0 (X0 ), H 1,1 (X0 )j0 ) ∼
+= H 0,2 (X0 ) ⊗ H 1,1 (X0 )j0
+
+is bijective (since it is injective and both spaces have the same dimension). The pairing
+H 1,1 (X0 )j0 ⊗ H 1,1 (X0 )j0 → C
+defines the symmetric bilinear map
+(4)
+
+(H 2,0 (X0 )∗ ⊗ H 1,1 (X0 )j0 ) ⊗ (H 2,0 (X0 )∗ ⊗ H 1,1 (X0 )j0 ) → H 0,2 (X0 )⊗2 .
+7
+
+Then it follows from the definition of the Griffiths-Yukawa quadratic map that
+Yu = Yu′ ◦ d1 ,
+where
+
+Yu′ : H 2,0 (X0 ) ⊗ H 1,1 (X0 )j0 → H 0,2 (X0 )⊗2
+
+is the quadratic map defined by (4).
+3. The period map. The map (3) can be naturally interpreted as the differential
+of the period mapping for M -polarized K3 surfaces. Let M be a lattice of signature (1, t)
+embeddable into the K3-lattice L. Fix a lattice embedding iM : M → L. We shall often
+identify M with the image iM (M ). Let
+N = ML⊥
+be the orthogonal complement of M in L. It is a lattice of signature (2, 19 − t).
+Definition. A marked M -polarized K3 surface is a pair (X, φ), where X is a K3 surface
+together with an isomorphism of lattices φ : H 2 (X, Z) → L such that φ−1 (M ) ⊂ Pic(X).
+The pair (X, jφ ) with jφ = φ−1 |M : M → Pic(X) is a M -polarized K3 surface. In this
+way we can speak about pseudo-ample and ample marked M -polarized K3 surfaces. Two
+marked surfaces (X, φ) and (X ′ , φ′ ) are called isomorphic if there exists an isomorphism
+of surfaces f : X → X ′ such that φ′ = φ ◦ f ∗ .
+
+Given a marked M -polarized K3 surface (X, φ), the Hodge decomposition of H 2 (X, C)
+defines the point φ(H 2,0 (X)) in P(LC ). Since H 2,0 (X) is orthogonal to H 1,1 (X) (with
+respect to the cup-product in H 2 ), the line φ(H 2,0 ) is always orthogonal to φ(j(M )) = M .
+Therefore
+φ(H 2,0 (X)) ∈ P(NC ) ⊂ P(LC ).
+Let Q be the quadric in P(NC ) corresponding to the quadratic form on NC defined by the
+lattice N . For any ω ∈ H 2,0 (X) we have
+(ω, ω) ∈ H 4,0 (X) = {0}.
+This shows that φ(H 2,0 ) ∈ Q. Also
+(ω, ω̄) ∈ R+ ⊂ H 2,2 (X) ∩ H 4 (X, R) = R.
+Therefore φ(H 2,0 (X)) is contained in an open (in the usual topology) subset DM of the
+quadric Q defined by the inequality (ω, ω̄) > 0. By assigning to H 2,0 (X0 ) the positive
+definite 2-plane PX ⊂ NR together with the orientation defined by the choice of the
+isotropic line H 2,0 (X0 ) ⊂ PX ⊗ C, we can identify DM with the symmetric homogeneous
+space O(2, 19−t)/SO(2)×O(19−t) of oriented positive definite 2-planes in NR . The space
+consists of two connected components each isomorphic to a bounded Hermitian domain of
+8
+
+type IV19−t . The involution which switches the two components is induced by the complex
+conjugation map Q → Q. We shall call the point φ(H 2,0 ) ∈ DM the period point of (X, φ).
+Let SM be the local moduli space of an M -polarized K3 surface (X0 , j0 ). Since SM
+is contractible, we can choose a marking φ : H 2 (Xs , C) → L for all Xs , s ∈ SM . We fix
+this marking and identify H 2 (Xs , C) with LC . The complex structure on Xs defines the
+Hodge decomposition and hence the period point H 2,0 (Xs ) ∈ DM . By the Local Torelli
+Theorem ([13], Exposé V) the resulting period map
+p : SM → DM
+is a holomorphic map which is locally an isomorphism in a neighborhood of the origin
+0 = (X0 , j0 ). Let µ = p(0) ∈ DM be the period point of (X0 , j0 ). We shall identify it with
+the subspace H 2,0 of NC . Then
+Tµ (DM ) ∼
+= Hom(µ, µ⊥ /µ) = Hom(H 2,0 (X0 ), H 1,1 (X0 )j0 ) ∼
+= H 0,2 (X0 ) ⊗ H 1,1 (X0 )j0 .
+The differential of the period map
+dp0 : T0 (SM ) → Tµ (DM )
+is the bijective map d1 from (3).
+Let KM be the fine moduli space of marked M -polarized K3 surfaces. It is obtained
+by gluing local moduli spaces of marked M -polarized K3 surfaces and is a (non-separated)
+analytic space (see [13], Exposé XIII, [30]). The local period maps are glued together to
+give a holomorphic map
+p : KM → DM .
+This map is the restriction of the period map P : M → D ⊃ DM for marked Kähler K3
+surfaces. According to the Global Torelli Theorem of Burns-Rappoport and the Surjectivity Theorem of Todorov the latter map is étale and surjective (see loc.cit). The former
+theorem also describes the fibres of the period map.
+Let (X, φ) be a marked M -polarized K3 surface. Then the image of the data
+(PX , V (X)+ , ∆(X)+ , C(X))
+under the map φ defines the data (π, Vπ+ , ∆+
+π , Cπ ), where
+(i) π is a positive oriented 2-plane in NR ;
+(ii) Vπ+ is a connected component of the cone {x ∈ π ⊥ : (x, x) > 0} ;
+`
+⊥
++
+−∆+
+(iii) ∆+
+π;
+π is a subset of ∆π = {e ∈ π ∩ L : (e, e) = −2} such that ∆π = ∆π
++
++
+(iv) Cπ = {x ∈ Vπ : (x, e) ≥ 0 for any e ∈ ∆π }.
+Note that Vπ+ is uniquely determined by π (since V (M )+ is fixed) and Cπ is determined
+by ∆+
+π.
+pa
+of
+Theorem (3.1). The restriction of the period map p : KM → DM to the subset KM
+isomorphism classes of marked pseudo-ample M -polarized K3 surfaces is surjective. There
+is a natural bijection between the fibre of the map
+pa
+→ DM
+p′ : KM
+
+9
+
+over a point π ∈ DM and the subgroup Wπ (N ) of isometries of L generated by reflections
+in vectors from ∆π ∩ N .
+Proof. It follows from the Global Torelli Theorem that the fibre p−1 (π) is bijective to
+the set of possible pairs (Vπ+ , ∆+
+π ). The group Wπ (L) × {±1}, where Wπ (L) is generated
+by reflections in elements from ∆π , acts transitively on the fibre. Pick up a point (X, φ)
++
++
++
+in p−1 (π) corresponding to (Vπ+ , ∆+
+π ) such that V (M ) ⊂ Vπ . Let h ∈ C(M ) , we may
+choose (X, φ) such that h ∈ Cπ . This is possible because Cπ is a fundamental domain
+for the action of Wπ (L) in Vπ+ . Since π ∈ DM , φ−1 (M ) ⊂ Pic(X) and jφ (h) ∈ Pic(X)+ .
+Composing φ with some reflections from ∆(M ), we may assume that h ∈ jφ (C(M )+ ).
+Thus (X, φ) is a marked pseudo-ample M -polarized K3 surface with p((X, φ)) = π. This
+proves the surjectivity.
+pm
+pa
+→ DM over π = p((X, φ)) is bijective to
+then the fibre of p′ : KM
+Let (X, φ) ∈ KM
++
++
+the set of subsets ∆π such that ∆π ∩ M = C(M )+ . The stabilizer G of this set in Wπ (L)
+is the subgroup Wπ (N ). In fact, it follows from the properties of reflection groups that
+G is generated by reflections in vectors δ ∈ ∆π such that (δ, h) = 0, where h ∈ C(M )+ .
+Since C(M )+ linearly spans MR we must have δ ∈ N . This proves the theorem.
+For any δ ∈ ∆(N ) = {x ∈ N : (x, x) = −2}, set
+Hδ = {z ∈ NC : (z, δ) = 0},
+◦
+DM
+= DM \ (
+
+[
+
+δ∈∆(N)
+
+Hδ ∩ DM ).
+
+Let (X, φ) be an ample marked M -polarized K3 surface. Then (jφ (M ))⊥ ∩ H 1,1 cannot
+contain vectors v with (v, v) = −2. This shows that the period point π = φ(PX ) satisfies
+∆π ∩ N = ∅. This implies the following:
+a
+Corollary (3.2). Let KM
+denote the subset of KM which consists of isomorphism
+classes of marked ample M -polarized K3 surfaces. The period map induces a bijective
+map
+a
+◦
+p : KM
+→D
+˜ M
+.
+
+Next we want to get rid of markings of M -polarized K3 surfaces. For any lattice S
+we denote by O(S) its orthogonal group. The group
+Γ(M ) = {σ ∈ O(L) : σ(m) = m for any m ∈ M }.
+acts on the moduli space KM transforming (X, φ) to (X, φ ◦ σ) without changing the
+isomorphism class of the M -polarized K3 surface (X, jφ ).
+Let ΓM be the image of Γ(M ) under the natural injective homomorphism
+Γ(M ) → O(N ).
+10
+
+Proposition (3.3). Let A(N ) = N ∗ /N be the discriminant group of the lattice N ,
+and let O(N ) → Aut(A(N )) be the natural homomorphism. Denote its kernel by O(N )∗ .
+Then
+ΓM = O(N )∗ .
+In particular, ΓM is a subgroup of finite index in O(N ).
+Proof. This follows from Corollary 1.5.2 in [31].
+The group O(N ) is an arithmetic subgroup of O(2, 19 − t) and by the previous proposition so is ΓM . Since DM is the union of two copies of a Hermitian homogeneous domain,
+the quotient DM /ΓM is a quasi-projective algebraic variety with at most two irreducible
+components. Obviously Γ(M ) contains the subgroup of O(L) generated by reflections in
+pa
+vectors δ ∈ N with (δ, δ) = −2. Thus each fibre of the map p′ : KM
+→ DM is mapped to
+the same orbit in KM /Γ(M ). Applying Theorem 3.1, we obtain that the period mapping
+descends to a bijection
+pa
+/Γ(M ) ∼
+KM
+= DM /ΓM .
+pa
+/Γ(M ) are isomorphism classes of pseudo-ample
+Since the elements of the quotient set KM
+pa
+M -polarized K3 surfaces, we are able to endow the set KM
+/Γ(M ) with a structure of a
+quasi-projective algebraic variety. We denote this variety by KM .
+Assume that M satisfies the following condition:
+(U) For any two primitive embeddings i1 , i2 : M ֒→ L, there exists an isometry σ : L → L
+such that i1 ◦ σ = i2 .
+Let (X, j) be a pseudo-ample M -polarized K3 surface. Take any marking φ : H 2 (X, Z)
+→ L. Composing it with j : M → H 2 (X, Z), we obtain a primitive embedding i′ : M →
+L. Replacing φ with φ ◦ σ for appropriate isometry σ of L, we obtain a new marking
+φ′ : H 2 (X, Z) → L such that j = jφ′ . This shows that any isomorphism class of (X, j) is
+represented by a point of KM . So we may view KM as the moduli space of M -polarized
+K3 surfaces.
+Similarly we can define the variety KaM of isomorphism classes of ample M -polarized
+K3 surfaces. We have
+◦
+KaM = DM
+/ΓM .
+
+Observe that O(N ) has only finitely many orbits in the set of primitive vectors with given
+value of the quadratic form (for example, this follows from Proposition 1.15.1 of [31]).
+◦
+This shows that the complement of DM
+/ΓM in DM /ΓM is the union of finitely many
+◦
+hypersurfaces, in particular, DM /ΓM is an open Zariski subset of D(M )/ΓM .
+Remark (3.4). In fact, following [13], éxpose XIII, one can show that DM /ΓM is
+a coarse moduli space of pseudo-ample M -polarized K3 surfaces. First we define a family
+of M -polarized K3 surfaces. This is a family f : X → S of K3 surfaces together with a
+homomorphism of sheaves MS → PicX /S where PicX /S ⊂ R2 f∗ (Z) is the relative Picard
+sheaf. We can define a family of pseudo-ample M -polarized K3 surfaces by requiring
+additionally that each (f −1 (s), js ) is pseudo-ample M -polarized K3 surface. Since KM
+is a fine moduli space for marked M -polarized K3 surfaces, a family (f : X → S, φ)
+of marked M -polarized K3 surfaces is equivalent to a holomorphic map α : S → KM .
+11
+
+Composing this map with the period we obtain that (f : X → S, φ) defines a holomorphic
+map ᾱ : S → DM /ΓM . Given a family (f : X → S, j) of pseudo-ample M -polarized K3
+surfaces, after localizing S, we equip it with marking, and define the map ᾱ : S → DM /ΓM
+which does not depend on the choice of the marking. When S is a point, we get a a bijection
+pa
+/Γ(M ) ∼
+KM
+= DM /ΓM . This proves that DM /ΓM is a coarse moduli space. Similarly we
+◦
+prove that DM
+/ΓM is a coarse moduli space for ample M -polarized K3 surfaces.
+I don’t know any algebraic construction for KM except when M is of rank 1.
+4. Tube domain realization of the period space. Let b : V × V → C be a
+non-degenerate symmetric bilinear form on a complex vector space and let Q : b(x, x) = 0
+be the corresponding non-degenerate quadric in the projective space P(V ) associated to V .
+For any non-zero vector v ∈ V we denote by [v] the line Cv ∈ P(V ). For any v ∈ V \ {0}
+the hyperplane Hv = {w ∈ V : b(w, v) = 0} intersects Q along the quadric
+Q(v) = Q ∩ Hv = {x ∈ Q : v ∈ P Tx (Q)} ⊂ Hv ,
+where P Tx (Q) is the projective tangent space of Q at the point [v]. If b(v, v) = 0, i.e.
+[v] ∈ Q, the hyperplane Hv coincides with P T[v] (Q) and Q(v) is the cone over the quadric
+Q̄(v) ⊂ P(Hv /Cv) with the vertex at [v]. In other words, the projection map Q \ {[v]} →
+P(V /Cv) is an isomorphism outside Q(v), and blows down Q(v) \ {[v]} to the quadric
+Q̄(v).
+We shall apply the previous remarks to our situation where V = NC ⊂ LC with the
+symmetric bilinear form defined by the lattice N = M ⊥ . The period space DM is a subset
+of the quadric Q defined by the inequality (µ, µ̄) > 0.
+Lemma (4.1). Let f ∈ (M ⊥ )R , (f, f ) = 0. Then
+DM ∩ Q([f ]) = ∅.
+Proof. Suppose there exists µ ∈ DM ∩ Q([f ]). Since f is a real vector, and the bilinear
+form originates from the lattice structure, we have (µ̄, f ) = (µ, f ) = 0. This implies that
+f ∈ P ⊥ , where P ⊂ NR is the positive definite 2-plane spanned by the real and imaginary
+part of µ. However, the signature (t+ , t− ) of the space (M ⊥ )R satisfies t+ = 2. Therefore
+P ⊥ is negative definite and does not contain isotropic vectors. This contradiction proves
+the assertion.
+From now on we assume that t ≤ 18, i.e., rank(M ) ≤ 19. This ensures that the lattice
+N = M ⊥ is indefinite. Let us fix an isotropic vector f ∈ NR . We set
+Wf = {x ∈ NR : (x, f ) = 1}/Rf,
+Vf = {x ∈ NR : (x, f ) = 0}/Rf.
+By Lemma (4.1), the projection map π : Q\Q([f ]) → P(NC /Cf ) maps DM isomorphically
+onto a subset of the affine space
+Af = P(NC /Cf ) \ P((Vf )C ) ∼
+= {z ∈ NC : (z, f ) = 1}/Cf =
+12
+
+Wf + iVf = {z = x + iy ∈ NC /Cf = (NR /Rf ) + i(NR /Rf ) : (x, f ) = 1, (y, f ) = 0}.
+Theorem (4.2). The projection map Q \ Q([f ]) → P(NC /Cf ) defines an analytic
+isomorphism
+DM ∼
+= {x + iy ∈ Af : (y, y) > 0}.
+Proof. This is just the translation of the condition (µ, µ̄) > 0 in terms of the projection
+map. We write any µ ∈ DM in the form µ = λf + x + iy where x + Rf ∈ Wf , y + Rf ∈ Vf .
+We have
+0 = (µ, µ) = [2ℜ(λ) + (x, x) − (y, y)] + i[2ℑ(λ) + 2(x, y)],
+hence (x, x) − (y, y) + 2ℜ(λ) = 0. This implies that
+0 < (µ, µ̄) = 2ℜ(λ) + (x, x) + (y, y) = 2(y, y).
+This proves the assertion.
+Recall that for any real affine space W with the translation space V and an open
+connected cone C ⊂ V which does not contain an affine line, the set
+Ω(W, V, C) = {z = x + iy : x ∈ W, y ∈ C} ⊂ WC
+is called the tube domain associated to the cone C in V . In the special case when V
+is equipped with a nondegenerate quadratic form with signature (1, n) and the cone V +
+is one of the two connected components of the cone {x ∈ V : (x, x) > 0} the tube
+domain Ω(W, V, C) is a bounded Hermitian symmetric domain of type IVn . This can
+be applied to our situation where V = Vf . Fix a connected component Vf+ of the cone
++
+of DM ,
+{x ∈ Vf : (x, x) > 0}. Restricting the period map to a connected component DM
+we obtain
+Corollary (4.3). The choice of an isotropic vector f ∈ NR defines an isomorphism
++ ∼
+DM
+= Ω(Wf , Vf , Vf+ ).
+
+Corollary (4.4). For any µ ∈ DM the choice of a representative ℓ ∈ L of µ with
+(ℓ, f ) = 1 defines a canonical isomorphism
+αµ : Tµ (DM ) → (Vf )C .
+If [(X, φ)] ∈ KM is the isomorphism class of a marked M -polarized K3 surface with the
+period point µ, then the pre-image of the quadratic form on (Vf )C under the map
+αµ ◦ dp[(X,φ)] : H 1 (X, ΘX ) → (Vf )C
+coincides with the Griffiths-Yukawa quadratic form with respect to the normalization
+H 0,2 →C
+˜ defined by the linear function φ−1 (ℓ) ∈ H 2,0 .
+Proof. The map
+αµ : Tµ (DM ) = Hom(µ, µ⊥ /µ) → (Vf )C
+13
+
+is the composition of the differential of the map DM → Af at the point µ and the differential of the translation map Af → (Vf )C , z 7→ z − µ. Explicitly it sends ψ : µ → µ⊥ /µ to
+ψ(ℓ)′ − (ψ(ℓ)′ , f )ℓ mod Cf , where ψ(ℓ)′ is a representative of ψ(ℓ) in µ⊥ .
+Remark (4.5). In general there is no canonical trivialization of the affine space Wf .
+However, a choice of an isotropic vector g ∈ NR with (f, g) = 1 defines the trivialization
+Wf → (Vf ), x → x − g.
+If we choose to identify Vf with (Rf +Rg)⊥
+NR , then the explicit isomorphism α : Ωf → DM
+is given by the formula:
+1
+α(z) = C(− (z, z)f + g + z).
+2
+
+5. Some arithmetical conditions on M . We are going to put some arithmetical
+conditions on our lattice M to ensure, for example, condition (U) in section (3).
+For each non-degenerate even lattice S we denote by A(S) = S ∗ /S the discriminant
+group of S equipped with the quadratic map
+qS : A(S) → Q/2Z, qM (x + S) = (x, x) + 2Z,
+where the bilinear form of S is extended to a Q-valued bilinear form on S ∗ .
+For example, for any integer m 6= 0, let U (m) denote the lattice of rank 2 with a basis
+′
+(e, e ) such that (e, e′ ) = m, (e, e) = (e′ , e′ ) = 0. Then A(U (m)) = (Z/mZ)2 with qU(m)
+defined by the formula:
+2ab
++ 2Z.
+q((a + mZ, b + mZ)) =
+m
+It is clear that for any isometry σ ∈ O(L), we have a canonical isomorphism DM →
+Dσ(M ) which defines a canonical isomorphism of the moduli spaces
+KM ∼
+= Kσ(M ) ,
+where we choose (V (M )+ , ∆(σ(M ))+) to be equal to (σ(V (M )+ ), σ(∆(M )+). The next
+result of Nikulin gives a condition implying that any two primitive embeddings i : M →
+L, i′ : M → L differ by an isometry of L.
+Proposition (5.1). Let S be an even lattice of signature (1, t) with t ≤ 19. Assume
+that l(A(S)) ≤ 20 − t or t ≤ 10. Then there exists a primitive embedding S ֒→ L.
+Moreover, such an embedding is unique up to an isometry of L if for each prime p 6= 2 the
+p-primary component A(S)p of A(S) satisfies l(A(S)p ) ≤ 19 − t and, if l(A(S)2 = 21 − t,
+A(S)2 contains as a direct summand the discriminant form of the lattice U (2).
+Proof. See [31], Corollary 1.12.3, Theorems 1.12.4, 1.14.4.
+14
+
+Corollary (5.2). Any even lattice M of signature (1, t) with t ≤ 9 admits a unique
+primitive embedding in the K3-lattice L. In particular, the moduli space KaM of ample
+M -polarized K3 surfaces is not empty (and of dimension 19 − t).
+
+Proof. In fact, KaM is a Zarisli-open non-empty subset in (19−t)-dimensional algebraic
+variety DM /ΓM .
+
+Next we want to study primitive isotropic vectors f in a non-degenerate even lattice
+S. Consider f as an element of S ∗ and let div(f ) be the positive generator of the image of
+1
+∗
+∗
+the linear map f : S → Z. Let f ∗ = div(f
+) f + S ∈ S . Clearly f is an isotropic element
+of the discriminant quadratic form A(S). Let I(S) denote the set of primitive isotropic
+vectors in S, and I(A(S)) be the same for A(S). The map f → f ∗ + S defines a map
+I(S) → I(A(S)). The orthogonal group O(S) acts naturally on the source and the target
+of this map, and the map is compatible with this action. Let
+O(S)∗ = Ker(O(S) → O(A(S)).
+This group acts on the fibres of the map I(S) → I(A(S)).
+Proposition (5.3). The map
+I(S)/O(S)∗ → I(A(S)), f 7→ f ∗ + S
+is surjective if S admits the lattice U = U (1) as an orthogonal summand. The map is
+bijective if S admits the lattice U ⊥ U as an orthogonal summand.
+Proof. See [37], Lemmas 4.1.1 and 4.1.2.
+Definition. An isotropic vector f ∈ I(S) is called m-admissible if div(f ) = m and
+there exists g ∈ I(S) with (f, g) = m, divg = m.
+Lemma (5.4). The following conditions are equivalent:
+(i) f ∈ I(S) is m-admissible;
+(ii) there exists a primitive lattice embedding i : U (m) → S such that S = i(U (m)) ⊕
+i(U (m))⊥ and f ∈ i(U (M )).
+
+Proof. (i) ⇒ (ii). Let g ∈ I(S) such that (f, g) = m. The sublattice U ′ spanned by f
+and g is primitive, contains f and is isomorphic to U (M ). Since for any s ∈ S, m divides
+(s,f )
+⊥
+′
+⊥
+(s, f ) and (s, g), we obtain s − (s,g)
+m f − m g ∈ US . This shows that S = U ⊥ U .
+(i) ⇐ (ii) Obvious.
+
+Proposition (5.5). Let S be an even indefinite non-degenerate lattice of signature
+(t+ , t−). Then S admits the lattice U (m) as an orthogonal summand if the following
+conditions are satisfied:
+(i) A(U (m)) is isomorphic to an orthogonal summand of A(S) with respect to the bilinear
+form defined by qS ;
+(ii) l(A(S)) ≤ t+ + t− − 3.
+Proof. Let A′ be the orthogonal complement of A(U (m)) in A(S). Then l(A′ ) ≤
+l(A(S)) ≤ rank S − 3 < (t+ − 1) + (t− − 1). By Corollary 1.10.2 from [31], there exists
+15
+
+a lattice S ′ with signature (t+ − 1, t− − 1) and A(S ′ ) ∼
+= A′ . Thus the lattice U (m) ⊥ S ′
+has the same signature and the same discriminant quadratic form as the lattice S. By
+Corollary 1.13.3 from loc. cit. we obtain S ∼
+= U (m) ⊥ S ′ .
+
+Proposition (5.6). Suppose M ⊥ contains an m-admissible isotropic vector with m ≤ 2.
+Then the moduli space KM is irreducible.
+
+Proof. Let M ⊥ = U (m) ⊥ M ′ . The isometry −idU(m) ⊕ idM ′ of M ⊥ acts identically
+on the discriminant group of M ⊥ , hence extends to an isometry of σ ∈ Γ(M ) of L (see
+Proposition (3.3)). Obviously σ switches the orientation of a positive definite 2-plane
+π ⊂ (M ⊥ )R spanned by a vector x ∈ U (m) with (x, x) > 0 and a vector y ∈ M ′ with
+(y, y) > 0. Hence σ switches the two connected components of DM . This implies that
+DM /Γ(M ) = DM /ΓM is irreducible.
+6. Mirror symmetry. Now we are ready to define the mirror family. Pick up
+an m-admissible isotropic vector f in N = M ⊥ (Proposition (5.3) gives some sufficient
+conditions for its existence). Then M ⊥ = U ′ ⊥ M̌ , where U ′ ∼
+= U (m) and f ∈ U ′ . The
+sublattice M̌ is of signature (1, 18 − t). We have
+∼
+(Zf )⊥
+M ⊥ /Zf = M̌ .
+So as an abstract lattice, M̌ does not depend on the choice of U ′ ∼
+= U (m) containing f . Let
++
++
++
+us fix (V (M̌ ) , ∆(M̌) , C(M̌ ) ) and use the embedding i : M̌ ֒→ M ⊥ ⊂ L to introduce
+the moduli space KM̌ of M̌ -polarized K3 surfaces.
+Definition. The moduli space KM̌ is called the mirror moduli space of KM̌ .
+The definition depends obviously on the choice of U ′ which determines the embedding
+M̌ ֒→ L. If we replace i with composition i′ = σ ◦ i where σ ∈ O(L), then i′ (M ) ⊂
+σ(M ⊥ ) = σ(M )⊥. Thus the new Ki′ (M̌ ) will be equal to the mirror of Kσ(M ) ∼
+= KM .
+Thus, if we put conditions on M which ensure the uniqueness of primitive embedding of
+M̌ in L, we obtain that the isomorphism class of the mirror moduli space depends only on
+the choice of f ∈ M ⊥ . Since the signature and the discriminant group of M̌ can be read
+off from the signature and discriminant of M , we can apply Proposition (5.1) to get some
+sufficient conditions on M which guarantee that our construction is well-defined.
+Note the obvious relations
+dim KM̌ + dim KM = 20,
+dim KM̌ = rank M = rank Pic(X),
+where for any marking φ of X ∈ KM the period of (X, φ) does not belong to a subvariety
+of the form DM ′ for some sublattice M ′ of L with M ⊂ M ′ .
+Note that KM is not a fine moduli space, so there is no a universal family of pseudoample M -polarized K3 surfaces. We shall usually substitute it with a family f : X → S
+of pseudo-ample M -polarized K3 surfaces (in sense of Reamrk (3.4)) such that the period
+16
+
+map S → KM is of finite degree. A similar family f ′ : X ′ → S ′ of M̌ -polarized K3 surfaces
+will be called a mirror family.
+The mirror correspondence works especially nicely when m = 1. This is true if and
+only if M ⊥ contains an isotropic vector with div(f ) = 1. Choose U ′ ∼
+= U containing f .
+⊥
+′
+⊥
+′
+′
+Then M = U ⊥ M̌ and M̌ = U ⊥ M . Thus, we can use f ∈ U to define the mirror
+family for both KM and KM̌ . Since
+ˇ = M,
+M̌
+we obtain that the mirror correspondence is a duality. Note that additional assumptions
+on M guarantee that this duality is independent of the choice of U ′ . For example, suppose
+l(A(M ) ≤ t − 3. Then A(M̌ ) ∼
+= A(M ⊥ ) ∼
+= A(M ) and by Corollary 1.13.3 of [31] M̌ is
+determined uniquely by its signature and the discriminant form. Proposition 1.15.1 of loc.
+cit. implies that the U -splitting of M ⊥ is unique up to an isometry of M ⊥ . Applying
+Proposition (5.1) to M ⊥ we obtain that M ⊥ admits a unique primitive embedding in L.
+Thus any isometry of M ⊥ lifts to an isometry of L. This shows that the moduli space KM̌
+is independent of the choice of splitting M ⊥ = U ⊥ M̌ .
+Remark (6.1). One of the main motivation of Nikulin’s paper [31] was to find some
+conditions ensuring that two lattices S and S ′ are K3-dual, i.e., can be realized as the
+lattices M and M̌ from above. For example, he proves in [31] (Corollary 1.13.5) that two
+hyperbolic lattices S and S ′ are K3-dual if rank S + rank S ′ = 20 and A(S) ∼
+= A(S ′ )
+as abelian groups and the values of the discriminant quadratic forms differ by sign. The
+notion of K3-dual lattices plays an important rôle in the explanation of the Arnold’s
+Strange Duality where M occurs as the lattice generated by algebraic cycles supported at
+infinity for a K3-smoothing of one of the fourteen unimodal exceptional singularities and
+M̌ ⊥ U is realized as the Milnor lattice of vanishing cycles for the same singularity. The
+Strange Duality switches the role of the lattices M and M̌ . In [31] Nikulin proves that
+the Milnor lattice of a hypersurface surface singularity contains an 1-admissible isotropic
+vector whenever it is indefinite.
+For any K3 surface X we can introduce the tube domain (the Picard tube domain)
+Ptd(X) = Pic(X)R + iC(X)+ .
+Now let (X, j) be an M -polarized K3 surface and f ∈ M ⊥ be an m-admissible isotropic
+vector. Fix a splitting M ⊥ = U ′ ⊥ M̌ where U ′ ∼
+= U (m) and f ∈ U ′ . Let us consider the
+tube domain Ωf = Vf + iVf+ . Observe that
+∼
+Vf = ((Zf )⊥
+M ⊥ /Zf )R = M̌R ⊂ LR .
+Let us choose the component Vf+ such that under the above isomorphism
+Vf+ = V (M̌ )+ .
+17
+
+Let
+
++
+Vf++ = C(M̌ )+
+R = {y ∈ V (M̌ ) : (y, δ) > 0
+
+for all δ ∈ ∆(M̌ )},
+
+++
+Ω+
+= M̌R + C(M̌ )+
+f = Vf + iVf
+R.
+
+Let (X, φ) be an ample M̌ -polarized surface. Then
+∆(M̌ )+ = jφ−1 (∆(X)+ ).
+The map jφ : M̌ → Pic(X) defines an open subset
+Vf++ (X, φ) = jφ−1 (C(X)+ )
+of Vf++ , and a holomorphic embedding
+Vf + iVf++ (X, φ) ֒→ Ptd(X).
+Note that, if jφ is an isomorphism we get Vf++ (X, φ) = Vf++ and the previous embedding
+becomes an isomorphism.
+′
+Let g ∈ UR
+be an isotropic vector with (f, g) = 1. By Remark (4.5), it defines an
++
+isomorphism from each connected component of DM onto the tube domain Ωf . Let DM
++
++
+be the pre-image of Ω+
+f under this isomorphism and let KM be the pre-image of DM under
+the period map from Theorem (4.2). For any ample M̌ -polarized marked K3 surface (X, φ)
+with bijective jφ : M̌ → Pic(X), the period map defines a holomorphic isomorphism:
++ ∼
+KM
+= Ptd(X).
+
+Note that its definition depends on the choice of splitting M ⊥ = U ′ ⊥ M̌ , the choice of an
+isotropic vector f ∈ U (m), and the choice of marking φ.
+
+∗
+Recall that the period space DM admits a compactification DM
+which is isomorphic
+to the quadric in P(NC ) defined by the lattice N . The topological boundary of DM in
+∗
+DM
+is equal to the disjoint union of locally closed analytic subsets F , called the boundary
+components. Each boundary component is of the form P(IC ) ∩ DM for some isotropic
+subspace I of NR . Since N is of signature (2, 19 − t), we have either dimI = 1 (F
+is a point) or dimI = 2 (F is isomorphic to upper half plane). The stabilizer group
+N (F ) = {g ∈ O(NR ) : g(F ) = F } of F is a maximal parabolic subgroup of G = O(NR ).
+Conversely, each such subgroup occurs as N (F ) for some boundary component F . A
+boundary component F is called rational if the corresponding isotropic subspace can be
+defined over Q. It is clear that we can identify the set of isotropic subspaces of NQ with the
+set of primitive isotropic sublattices of N . In particular we have a bijective correspondence
+
+{0-dimensional rational boundary components of DM } ←→ I(N ).
+Let Γ ⊂ G(Q) = O(NQ ) be an arithmetic subgroup of G (e.g., a subgroup of finite
+index in O(NZ )). It acts on the set RB(DM ) of rational boundary components of DM ,
+18
+
+and for each such component F , the stabilizer group NΓ (F ) = Γ ∩ N (F ) acts discretely on
+F with algebraic quotient F/NΓ (F ). Same is true for D/Γ. We have
+DM /Γ = D/Γ
+
+a
+(
+
+[
+
+F )/Γ = D/Γ
+
+F ∈RB(DM )
+
+a
+(
+
+[
+
+F/NΓ (F ))
+
+F ∈RB(DM )/Γ
+
+is a normal projective algebraic variety (Baily-Borel-Satake compactification).
+We shall apply it to our situation when Γ = ΓM . Let f ∈ I(N ) and let F be the
+corresponding zero-dimensional rational boundary component of DM . We set
+ZM (f ) = {g ∈ NΓM (F ) : g(f ) = f }.
+Now let us assume that f ∈ I(N ) is m-admissible and fix a splitting M ⊥ = U ′ ⊥ M̌
+where U ′ ∼
+= U (m), f ∈ U ′ . Let g ∈ U ′ be an isotropic vector with (g, f ) = m.
+
+Proposition (6.2). Let O(M̌ )∗ = Ker(O(M̌) → O(A(M̌)). Then there is a canonical
+split extension of groups
+0 → mM̌ → ZM (f ) → O(M̌ )∗ → 1.
+Proof. We can write any n ∈ M ⊥ in the form n = af + bg + z, where a, b ∈ Z, z ∈ M̌ .
+Any σ ∈ ZM (f ) is defined by the formula
+σ(f ) = f, σ(g) = −
+
+(vσ , vσ )
+(vσ , σ̃(z))
+f + g + vσ , σ(z) = −
+f + σ̃(z),
+2m
+m
+
+for some vσ , σ̃(z) ∈ M̌ . It is easy to check that σ̃ : z → σ̃(z) is an element of O(M̌ ). Setting
+A(σ) = (σ̃, vσ ) we verify that
+A(σ ′ ◦ σ) = (σ̃ ′ ◦ σ̃, σ̃ ′ (vσ ) + vσ′ ).
+Let G be the group of pairs (s, v) ∈ O(M̌ ) × M̌ with the composition law (s′ , v ′ ) ◦ (s, v) =
+(s′ ◦ s, s′ (v) + v ′ ). The homomorphism (s, v) 7→ s makes it an extension of O(M̌ ) with help
+of M̌ . It splits by the section s 7→ (s, 0). The homomorphism σ 7→ A(σ) is an injective
+homomorphism from ZM (f ) to G. To find its image we have to decide which pairs (σ̃, vσ )
+correspond to isometries σ ∈ O(M ⊥ ) which lift to isometries from Γ(M ). By Proposition
+(3.3), the condition for this is that σ ∈ Ker(O(M ⊥ ) → O(A(M ⊥)). It is easy to check
+that any σ with A(σ) = (1, vσ ) satisfies this condition if and only if vmσ ∈ M̌ . Each σ with
+A(σ) = (σ̃, 0) satifies this condition if and only if σ̃ ∈ O(M̌ )∗ . Since G is the semi-direct
+product of M̌ and O(M̌ ), we get that the image of ZM (f ) is the semi-diect product of
+mM̌ and O(M̌ )∗ . This proves the lemma.
+Let ZM (f )+ be the subgroup of ZM (f ) whose image in O(M̌ )∗ consists of elements
++
+by the formula
+preserving C(M̌ )+ . The group ZM (f ) acts naturally on Ωf = M̌R + iM̌R
+(σ̃, vσ )(x + iy) = x + vσ + iσ̃(y).
+19
+
+++
+The subgroup ZM (f )+ preserves the tube domain Ω+
+= M̌R + iC(M̌ )+
+R . It
+f = Vf + iVf
+follows from the theory of compactification of homogeneous symmetric domains that there
+∗
+exists a NΓ (F )-invariant neighborhood Ũ ∗ of F in DM
+such that the map Ũ ∗ /NΓ (F ) →
+∗
+∗
+DM /Γ is an analytic isomorphism to a neighborhood U of the boundary point F/NΓ (F )
+of DM /Γ. Restricting this isomorphism to Ũ = Ũ ∗ ∩ Ω+
+f we obtain an isomorphism
+
+α : Ũ /ZM (f )+ → UF ⊂ UF∗ .
+The multi-valued map
+
+′
+∼
+α−1 : UF → ŨF ⊂ Ω+
+f = Ptd(X )
+
+with the monodromy group ZM (f )+ is the mirror map MS4′ mentioned in the introduction.
+Remark (6.3). By the Global Torelli Theorem for algebraic K3 surfaces the group
+ZM (f )+ /M̌ contains a subgroup of finite index isomorphic to the automorphism group of
+any surface with Pic(X) ∼
+= M̌ .
+Let (X, j) be a M -polarized K3 surface such that its isomorphism class [(X, j)] belongs
+to the open subset UF from above. The pre-image of UF in DM is equal to the disjoint
+union of Γ-translates of ŨF . So, we can choose a marking φ of (X, j) such that the period
+point P (X, φ) belongs to ŨF . Let ω be a holomorphic 2-form on X, the function
+Z
+ψ([(X, j)]) =
+ω
+φ−1 (f )
+
+is a single-valued holomorphic function on UF (because the 2-cycle φ−1 (f ) does not depend
++
+on the marking modulo the
+R action of the group ZM (f ) ). Thus if we normalize ω by
+′
+replacing it with ω = ω/ φ−1 (f ) ω, we will be able to choose a representative ℓ of P (X, φ)
+with the property (ℓ, f ) = 1. By Corollary (4.4) to Theorem (4.2), we obtain that this
+normalization allows us to identify the Griffiths-Yukawa quadratic form on H 1 (X, ΘX )
+with the complex quadratic form M̌C . In particular, it gives an integral structure on
+H 1 (X, ΘX ) compatible with the quadratic forms. This gives MS3′ from introduction.
+7. Mirrors for the family of degree 2n polarized K3 surfaces. Here we consider
+the mirror construction in the case M =< 2n >. It is known ([17], Theorem 1.1.2) that
+M admits a primitive embedding in L, which is unique modulo O(L). Since the lattice U
+represents any even integer, we may assume that M ⊂ U where L = U ⊥3 ⊥ E8⊥2 . This
+immediately implies that M ⊥ ∼
+= U ⊥ U ⊥ E8 ⊥ E8 ⊥< −2n >. Write
+n = ñk 2 ,
+where ñ is square free. Then the group ΓM has exactly [ k+2
+] orbits in the set of primitive
+2
+⊥
+isotropic vectors in the lattice M (see [37], Theorem 4.01). Each orbit is represented by
+a vector f with divf = d, d|k, and
+(Zf )⊥ /Zf ∼
+= U ⊥ E8 ⊥ E8 ⊥< −2N >:= MN ,
+20
+
+where N = n/d. So we have [ k+2
+2 ] mirror families, each one is isomorphic to KMn/d for
+some d|k. Since the lattice MN admits a unique embedding into L up to isometry of L,
+the number of non-isomorphic mirror moduli spaces for KM is equal to the number of
+divisors of k. To study the mirror moduli spaces we may assume that d = 1 by replacing
+n with n′ = n/k. The corresponding isotropic vector can be taken from a copy of U .
+The mirror family KM̌ is one-dimensional and is isomorphic to DMn /ΓMn . We have
+(Mn )⊥ = U ⊥< 2n >. So if we choose a standard basis (f, g) of U , then we can find a
++
+representative µ of a point from DM
+in the form
+n
+µ = −nt2 f + g + te, t ∈ C.
++
+The map µ → t defines an isomorphism from DM
+to Ω+
+f . The latter can be identified with
+n
+the upper half-plane H = {t = x + iy ∈ C : y > 0}. The group ZΓ(Mn ) (F )+ is isomorphic
+to < 2n >∼
+= Z. Let T be a generator of ZΓ(Mn ) (F )+ corresponding to the generator e of
+< 2n >. Then T (m̌) = m̌ for m̌ ∈ M̌ = Mn , T (f ) = f, T (g) = g − nf + e, T (e) = e − 2nf
+(see the proof of Proposition (6.2)). Then T −1 (e) = e + 2nf and
+
+(µ, f ) = 1,
+
+1
+(µ, e) = t.
+2n
+
+From this it follows that T acts on H by the formula T (t) = t − 1. We can choose the open
+set ŨF to be equal to {t = x + iy : y > r} for sufficiently large r. The map t → q = e2πit
+defines an isomorphism
+ŨF /ZΓ(Mn ) (F )+ ∼
+= UF = {q ∈ C∗ : |q| ≤ 1/r}.
+Choose any marking φ : H2 (X, Z) → L of a Mn -polarized K3 surface (X, j) ∈ UF such
++
+that the period Cφ(ω) of (X, φ) belongs to DM
+and is equal to C(−nt2 f + g + te). Then
+n
+t=
+
+1
+2n
+
+R
+
+R φ
+
+−1 (e)
+
+φ−1 (f )
+
+ω
+
+ω
+
+.
+
+This is analogous to the situation in mirror symmetry for quintic 3-folds (see [26]).
+Let us now compute the global monodromy group ΓMn . Let
+
+
+a b
+Γ0 (n) = {
+c d
+
+
+
+∈ SL(2, Z) : n|c}/(±1) ⊂ Γ = P SL(2, Z).
+
+F =
+
+
+
+√0
+n
+
+The element
+
+√ 
+−1/ n
+∈ P SL(2, R)
+0
+
+is of order 2 and belongs to the normalizer of Γ0 (n) in P SL(2, R). It is called the Fricke
+involution. If we add it to Γ0 (2) we obtain a subgroup of P SL(2, R) denoted by Γ0 (n)+ .
+It is called the Fricke modular group of level n.
+21
+
+Theorem (7.1). Let Γ′Mn be the subgroup of index 2 of ΓMn which stabilizes the
++ ∼
+connected component DM
+= H of DMn . Up to a conjugation in P SL(2, R) = Aut(H),
+n
+we have
+Γ′Mn = Γ0 (n)+ .
+In particular,
+
+K Mn ∼
+= H/Γ0 (n)+ .
+
+Proof. The group ΓMn is isomorphic to the group O(U ⊥< 2n >)∗ . Since −1 6∈
+O(U ⊥< 2n >)∗ , the canonical homomorphism O(U ⊥< 2n >)∗ → P SO(1, 2) is injective.
+It is known that the groups P SL(2, R) = Aut(H) and P SO(1, 2) are isomorphic. For
+example, we can establish such isomorphism by √considering a natural representation of
+SL(2, R) in the space E of binary forms αx2 + 2β nxy + γy 2 equipped with the quadratic
+2
+formQ(α, β,
+ γ) = 2(nβ − αγ) (=twice the discriminant). This allows us to view any
+a b
+g=
+∈ SL(2, R) as an isometry of (U ⊥< 2n >)R defined by the matrix
+c d
+a2
+A(g) =  −ac/n
+c2
+
+
+√
+−2ab n
+ad√
++ bc
+−2 ncd
+
+
+b2
+−bd/n  ∈ SO(1, 2).
+d2
+
+√
+Here the basis (y 2 , 2 nxy, x2 ) of E corresponds to the basis (f, e, g) of U ⊥< 2n >. The
+kernel of the map A : SL(2, R) → SO(1, 2), g → A(g) is equal to {±1}. The image of the
+map A is subgroup SO(1, 2)′ of index 2 of SO(1, 2) which preserves a connected component
+of DMn . Note that −1 acts as the identity on DMn , so when we extend Γ′Mn by adding
+−1Mn⊥ and take the intersection with SO(1, 2), we obtain a a subgroup Γ′′Mn of SO(1, 2)′
+isomorphic to Γ′Mn . So we may assume now that Γ′Mn = Γ′′Mn . Let Γ′ be the pre-image
+of Γ′Mn under the map A. Let us describe its elements. First of all we use that, for any
+matrix g ∈ Γ′ , the coefficients of the matrix A(g) are integers.
+Write
+p
+p
+√
+√
+a = a1 a2 , b = b1 b2 , c = c1 c2 , d = d1 d2 ,
+where a2 , b2 , c2 , d2 are square free. We have
+p
+√
+ab n = ka1 b1 ña2 b2 ∈ Z =⇒ a2 b2 ñ ∈ Z =⇒ a2 b2 = s2 ñ
+
+√
+for some integer s. Since s divides a21 , b21 and ab n, it must divide the first row of the
+matrix A(g). This implies that s = ±1 and hence
+a2 b2 = ñ.
+
+Similarly, we obtain
+c2 d2 = ñ.
+p
+p
+√
+Now, in view of above, ac/ n ∈ Z gives c2 /b2 , a2 /d2 ∈ Z. This implies that
+c2 = b2 , d2 = a2 , k|a1 c1 , k|b1 d1 .
+22
+
+Let us rewrite the matrix A(g) using the previous information.
+
+
+a21 a2
+−2a1 a2 b1 b2 k
+b21 b2
+A(g) =  −a1 c1 /k a1 d1 a2 + b1 c1 b2 −b1 d1 /k 
+c21 b2
+−2c1 d1 c2 b2 k
+d21 a2
+
+Next we use that the discriminant group A(U ⊥< 2n >) is generated by the coset of
+Thus elements of O(U ⊥< 2n >)∗
+send e to e + nv for some v ∈ U . This implies that ad + bc ≡ ±1 mod 2n. Assume that
+ad + bc ≡ 1 mod 2n. Together with ad − bc = 1 this implies that n|bc, and hence k 2 a2 |c1 b1 .
+If a prime p divides a2 , it must divide c1 since p|b1 implies that p divides the first row of
+A(g). On the other hand, p|c1 implies that p divides the third row of A(g). Thus a2 = 1,
+hence
+a2 = d2 = 1, b2 = c2 = ñ, k 2 |b1 c1
+1
+e modulo U ⊥< 2n >, where e generates < 2n >.
+2n
+
+Let p be a prime dividing k. It divides a1 c1 and b1 d1 . Assume p|b1 , then p|c1 since
+otherwise p divides the whole first row of A(g). Conversely, if p|c1 then p|b1 . Thus k|c1
+and k|b1 , and we get
+√   ′
+
+√ 
+a√
+kb′1 ñ
+a√
+b′ n
+1
+g=
+,
+(∗)
+=
+kc′1 ñ
+d1
+d′
+c′ n
+where a′ , b′ , c′ , d′ ∈ Z. If ad + bc ≡ −1 mod 2n, we obtain similarly that
+
+ ′√
+b√′
+a n
+.
+g=
+c′
+d′ n
+
+(∗∗)
+
+Thus we obtain that Γ′ is equal to the subgroup of P SL(2, R of matrices of form (*) and
+′
+(**). Obviously matrices of form (*) form a subgroup
+ of index
+ 2 in Γ . The whole group
+0 −1
+is generated by this subgroup and the matrix g0 =
+. Now
+1 0
+
+
+
+√
+1/ 4 n
+0
+
+0
+√
+4
+n
+
+  ′
+a√
+·
+c′ n
+
+√   √
+1/ 4 n
+b′ n
+·
+′
+d
+0
+
+√
+1/ 4 n
+0
+
+0
+√
+4
+n
+
+ 
+0
+·
+1
+
+  √
+1/ 4 n
+·
+0
+
+−1
+0
+
+0
+√
+4
+n
+
+0
+√
+4
+n
+
+−1
+
+−1
+
+
+
+=
+
+=
+
+√0
+n
+
+
+
+a′
+nc′
+
+b′
+d′
+
+
+
+,
+
+√ 
+−1/ n
+.
+0
+
+This proves the theorem.
+
+g=
+and
+
+
+
++
+, t → −nt2 f +g+te. Then
+Remarks (7.2) 1. Let use the isomorphism Φ : H → DM
+n
+
+α β
+∈ SL(2, R) acts on H by the Moebius transformation t → (αt + β)/(γt + δ),
+γ δ
+
+Φ(g(t)) = −n(αt + β)2 f + (γt + δ)2 g + (αt + β)(γt + δ)e =
+= −nt2 (α2 f −
+
+αγ
+γ2
+g−
+e) + (−nβ 2 f + δ 2 g + βδe) + t(−2nαβf + 2γδg + (αδ + βγ)e).
+n
+n
+23
+
++
+is defined, in the basis (f, e, −g)
+This shows that the transformation Φ ◦ g ◦ Φ−1 of DM
+n
+by the matrix
+
+
+α2
+−2nαβ nβ 2
+A′ (g) =  −αγ/n αδ + γβ βδ  .
+γ 2 /n
+−2γδ
+δ2
+
+Now if g ∈ Γ0 (n)+ we observe that A′ (g) ∈ Γ′Mn . This shows that
+Φ ◦ Γ0 (n)+ ◦ Φ−1 = Γ′Mn .
+
+2. It is known that the orthogonal group of the discriminant group of the lattice
+U ⊥< 2n > is isomorphic to the group (Z/2Z)s , where s is the number of distinct prime
+divisors of n ([37], Lemma 3.6.1). If n = k 2 ñ as above with (k, ñ) = 1, this group is
+isomorphic to Γ̄0 (n)/Γ0 (n) where Γ̄0 (n) is the abelian normalizer of Γ0 (n) in SL(2, R) (see
+[20], Theorem 3). Using Nikulin’s results from [31], one can show that the homomorphism
+O(U ⊥< 2n >) → O(A(U ⊥< 2n >)) is surjective. Since Φ ◦ Γ0 (n) ◦ Φ−1 is equal to
+ΓMn ∩ SO(U ⊥< 2n >), this easily implies that
+Φ ◦ Γ̄0 (n) ◦ Φ−1 = O(U ⊥< 2n >).
+The group O(A(U ⊥< 2n >)) acts on KMn with kernel isomorphic to {±1}. The quotient
+is the moduli space of K3 surfaces admiting a pseudo-ample Mn -polarization.
+Let us now find the subset KaMn ⊂ H/Γ0 (n)+ of isomorphism classes of ample Mn polarized K3 surfaces.
+Theorem (7.3). Let S ⊂ H/Γ0 (n)+ be the set of orbits of the points bc + b√i n , where
+c ∈ Z and b|cn2 + 1. Then
+KaMn = H/Γ0 (n)+ \ S.
+Moreover,
+
+1
+
+
+2h(−4n)
+#S =
+
+ 4h(−4n)/3
+h(−4n)
+
+if n ≤ 4,
+if n ≡ 7 mod 8,
+if n ≡ 3 mod 8, n ≥ 4,
+otherwise.
+
+Here h(k) denotes the number of classes of primitive binary quadratic forms of discriminant
+k.
+Proof. Recall from section 3 that KMn \ KaMn is equal to the set of ΓMn -orbits in
+DMn of hyperplanes Hv = {z ∈ DMn : (z, v) = 0}, v ∈ U ⊥< 2n >, (v, v) = −2. Let us
++
+, t → −nt2 f + g + te. Let v = af + bg + ce with
+use the isomorphism Φ : H → DM
+n
+(v, v) = 2ab + 2nc2 = −2. Then (−t2 f + g + te, v) = −nbt2 + a + 2nct = 0 implies
+c
+t= ±
+b
+
+r
+
+a
+c
+c2
++
+= ±
+2
+b
+nb
+b
+
+r
+
+24
+
+c
+i
+nc2 + ab
+= + √ .
+2
+nb
+b b n
+
+(∗)
+
+This proves our first assertion. Let t ∈ H such that Φ(t) ∈ H(v) for some hyperplane
+H(v) as above. Since h(v) is fixed by an automorphism of order 2 corresponding to the
++
+reflection isometry x → x + (x, v)v, wesee that
+ t is fixed by some involution g ∈ Γ0 (n) .
+a b
+Let g be represented by a matrix g̃ =
+. We have either g̃ 2 = 1 or g̃ 2 = −1. Since
+c d
+the characteristic polynomial of g̃ is equal to X 2 −(a+d)X
++1, 
+we see that only the second
+
+a
+b
+case occurs, and a + d = 0. If g ∈ Γ0 (n), then g̃ =
+where a, b, c, d ∈ Z. The
+nc −a
+a
+i
+fixed points t of g can be computed, and we find that t = cn
++ cn
+. This differs from points
++
+(*) unless n = 1. If n = 1, Γ0 (1) = Γ, and there is only one orbit of such points. If n > 1,
+and g is an involution from the coset F · Γ0 (n) of the Fricke involution F , we find that its
+fixed points look like (*). Consider the double cover p : X0 (n) → X0 (n)+ = X0 (n)/(T ),
+where X0 (n) (resp. X0 (n)+ ) is a nonsingular projective model of the quotient H/Γ0 (n)
+(resp. H/Γ0 (n)+ ). We have a bijective correspondence between the ramification points
+of this cover and Γ0 (n)-orbits in H̄ = H ∪ {∞} ∪ Q whose stabilizer belongs to the coset
+F · Γ0 (n). When n ≥ 5 one checks that F · Γ0 (n) does not have parabolic elements (i.e..
+elements which fixes t ∈ Q ∪ {∞}) and elements of finite order greater than 2. This shows
+that #S is equal to the number of ramification points of the double cover p. This number
+was computed by R. Fricke in [12], and it is equal to the number which we gave in the
+statement of the theorem. Now, it is known that the modular curve X0 (n) is of genus 0
+when n = 2, 3, 4. Thus there are only 2 ramification points. One of them is an orbit with
+stabilizer of order 2 contained in Γ0 (2). Another one is an orbit of with stabilizer of order
+2 whose generator belongs to F · Γ0 (n). This proves the assertion.
+Assume now that the curve X0 (n)+ = H/Γ0 (n)+ is rational. All such n can be listed
+(see [18]) (as was observed by A. Ogg, the primes from this list are just those which divide
+the order of the Fisher-Griess Monster group). Let
+C(n) = H/Γ0 (n)+ \ (H/Γ0 (n)+ )
+be the set of cusp points.
+Proposition (7.3). Let φ be the Euler function. Then
+#C(n) =
+
+(1
+
+2
+
+2
+
+P
+
+d|n,d>0
+
+φ((d, n/d)) if n 6= 4
+if n = 4.
+
+Proof. The number of cusps for the modular curve X0 (n) is equal to
+
+P
+
+φ((d, n/d))
+
+d|n,d>0
+
+(see [38], Proposition 1.4.1). It is known that the Fricke involution acts on this set without
+fixed points if n 6= 4 (see [18]) and has one fixed point if n = 4. From this the result follows.
+Corollary (7.4). Let n = p be a prime number, M =< 2p >. Assume that X0 (p)+ is
+rational. Then
+KM̌ ∼
+= A1 .
+25
+
+Theorem (7.5). Assume X0 (n)+ is rational. There exists a unique holomorphic
+function (called the Hauptmodule)
+jn : H → C
+satisfying the following conditions:
+(i) jn is invariant with respect to Γ0 (n)+ ;
+(ii) jn has a Fourier expansion
+jn (t) = q
+
+−1
+
++
+
+∞
+X
+
+cm q m ,
+
+q = e2πit ;
+
+m=1
+
+(iii) the coefficients of the Fourier expansion are all integers;
+(iv) considered as a meromorphic function on X0 (n)+ , the function jn has a simple point
+at the cusp Γ0 (n)+ · ∞ and generates the field of meromorphic functions on X0 (n)+ .
+Proof. See [18].
+Let us restrict the meromorphic function jn−1 to a neihborhood ŨF = {t = x+iy ∈ H :
+y > r} for sufficiently large r chosen so that jn−1 is holomorphic on ŨF . Then the properties
+of jn assure that jn−1 defines an isomorphism from ŨF /(Γ0 (n)+ )∞ to a neihborhood of the
+cusp Γ0 (n)+ · ∞. Comparing it with the discussion in the beginning of the section, we find
+that the mirror map at the cusp can be given by the inverse of the Hauptmodule function
+jn−1 . This should be compared to [21].
+It is well-known that H/Γ0 (n) is a coarse moduli space for the isomorphism classes of
+pairs (E, A), where E is an elliptic curve, and A is a cyclic subgroup of order n of of E. The
+Fricke involution acts on H/Γ0 (n) by sending the pair (E, A) to the pair (E/A, En/A). Let
+us give an explicit geometric relationship between the isomorphism class of a Mn -polarized
+K3 surface respesented by a point z ∈ H/Γ0 (n)+ and the isomorphism class of the pair
+of isogeneous elliptic curves (E, E ′ = E/A) represented by the same point z. This can
+be used to explain the observation of B. Lian and S. Yau that the periods of certain onedimensional families of K3 surfaces can be expressed as the products of periods of some
+family of elliptic curves (see [22]). I am grateful to Dan Burns who suggested that our K3
+surfaces should be related to Kummer surfaces Kum(E × E ′ ).
+Theorem (7.6). Let M =< 2n > and X be a Mn -polarized K3 surface with period
+t ∈ H. Let Et = C/Z + tZ and Et′ = C/Z + (−1/nt)Z be the corresponding pair of
+isogeneous elliptic curves. Then there exists a canonical involution τ on X such that
+X/(τ ) is birationally isomorphic to the Kummer surface Et × Et′ /(±1).
+Proof. The fact that there exists an involution τ on X such that X/(τ ) is birationally
+isomorphic to some Kummer surface A/{±1} follows from the property that rkMn = 19
+[25]. As is explained in loc.cit. and in [30] such an involution corresponds to a primitive
+embedding i : E8 (2) → Mn (the image is the sublattice of τ -antiinvariant divisor classes).
+Here E8 (2) denote the lattice obtained from the lattice E8 by multiplying its quadratic
+form by 2. We define this embedding to be the canonical one: i : E8 (2) → E8 ⊥ E8 ⊥
+U ⊥< −2n >, x → (x, x, 0, 0). Then it is shown that X/(τ ) ∼
+= Kum(A) = A/{±1}, where
+26
+
+A is an abelian surface. Let Y be a minimal nonsingular model of Kum(A). The rational
+map π : X → Y induces an embedding of lattices of trancendental cycles π ∗ : TY (2) → TX .
+It is also known [32] that π ∗ (TY (2)) = 2S where S ⊂ TX ⊗ Q with S/TX ∼
+= (Z/2Z)α ⊂
+A(TX ). If X satisfies P ic(X) = Mn , then TX = U ⊥< 2n >, and it is easy to see that
+TY = U (2) ⊥< 4n >= TX (2). Also, it is known that TA (2) ∼
+= TY (see [4], Chapter
+VIII, §5). Let p : A → Y be the rational map of degree 2 defined by the canonical map
+A → Kum(A). It follows from loc.cit. that the homomorphism p∗ : H 2 (Y, C) → H 2 (A, C)
+preserves the Hodge structures, i.e., p∗ (H 2,0 (Y )) = H 2,0 (A). The same property is true
+∗
+for πC
+: (TY )C → (TX )C . Thus the isomorphism p∗ ◦ (π ∗ )−1 (TX )C → (TA )C preserves the
+Hodge structures. So let us compute the period of the abelian surface A, knowing that
++
+the period of X is equal to µ = −nt2 f + g + te ∈ DM
+. Recall that for any complex torus
+n
+2
+T , we have an isomorphism of lattices H (T, Z) ∼
+= U ⊥ U ⊥ U = U ⊥3 . Fix a primitive
+embedding i : U ⊥< 2n >֒→VU ⊥3 . To be more precise, let Λ = Ze1 + Ze2 + Ze
+V32 + Ze4
+4
+with a fixed isomorphism d :
+Λ → Z such that d(e1 ∧ e2 ∧ e3 ∧ e4 ) = 1. Then
+Λ has
+a structure of a lattice with respect to the bilinear form (α, β) = d(α ∧ β). Consider the
+V2
+following basis of
+Λ:
+f1 = e1 ∧ e2 , g1 = e3 ∧ e4 , f2 = e1 ∧ e3 , g2 = e4 ∧ e2 , f3 = e1 ∧ e4 , g3 = e2 ∧ e3 .
+
+Then Zfi + Zgi ∼
+= U , and Zfi + Zgi is orthogonal to Zfi + Zgi for i 6= j. Our embedding
+i : U ⊥< 2n >→ U 3 can be chosen as follows: i(f ) = f1 , i(g) = g1 , i(e) = f2 + ng2 . For
+simplicity of notation we denote by i : (U ⊥< 2n >)C → (U ⊥3 )C the extension of the
+embedding i to the injective map of the complexified spaces. We have
+i(µ) = −nt2 f1 + g1 + t(f2 + ng2 ) = −nt2 e1 ∧ e2 + e3 ∧ e4 + t(e1 ∧ e3 + ne4 ∧ e2 ).
+We immediately verify that
+i(µ) = (−te1 + e4 ) ∧ (nte2 − e3 ).
+Using [13], Exposé VIII, we can interpret it as follows. Let
+Et = C/Z + tZ, Et′ = C/Z + (−1/nt)Z
+be the pair of isogeneous elliptic curves. Then under a certain marking φ : H 2 (Et ×Et′ , Z) →
+U ⊥3 , φ(H 2,0 (Et × Et′ )) = i(µ). Now the assertion follows from the Global Torelli Theorem.
+Let us exhibit explicitly some mirror families of the family of polarized K3 surfaces
+of degree 2n. We shall use the notation An , Dn , En to denote the negative definite even
+lattice defined by the negative of the Cartan matrix of the root system of a simple Lie
+algebra of type An , Dn , En , respectively. We shall use the following well-known description
+of the Picard lattice of an elliptic surface f : X → S with a section:
+27
+
+Lemma (7.7)(Shioda-Tate). Let P ic(X)′ be the subgroup of P ic(X) generated by irreducible components of fibres and by a section. Then the quotient group P ic(X)/P ic(X)′
+is isomorphic to the Mordell-Weil group M W (X/S) of sections of the fibration.
+Proof. See [7], Proposition 5.3.4.
+This lemma is applied as follows. We exhibit an elliptic fibration such that P ic(X)′
+is a subgroup of finite index in P ic(X). The lemma implies that the Mordell-Weil group
+is finite. Then we show that it is in fact trivial. Now it is easy to find the structure
+of the lattice P ic(X)′ . Its sublattice generated by a section and a fibre is isomorphic
+to the lattice U . Its orthogonal complement is isomorphic to the sum of lattices of type
+An , Dn , En , each is spanned by the irreducible components of a fibre which do not intersect
+the chosen section.
+Example (7.8) (n = 1). We have
+Mn ∼
+= U ⊥ E8 ⊥ E8 ⊥ h−2i.
+Using the previous remark, it suggests to look for a K3 surface with an elliptic fibration
+f : X → P1 with a section and two reducible fibres of types Ẽ8 (or II ∗ in Kodaira’s
+notation), and one reducible fibre of type Ã1 (Kodaira’s I2 or III). Since the group F ♮
+of non-singular points of a fibre F of type Ẽ8 is isomorphic the additive group C, and
+the restriction homomorphism MW(X/P1 ) → F ♮ is known to be injective on the torsion
+subgroup ([7], Proposition 5.3.4), we obtain that Tors(MW(X/P1 )) is trivial. Hence, if
+P ic(X) is known to be of rank 19, it must be isomorphic to Mn .
+To construct such a surface X, we take a nonsingular plane cubic C and the tangent
+line L at its inflection point. The pencil of plane cubics spanned by C and 3L defines a
+rational map P2 → P1 . In appropriate coordinate system we can represent the pencil in
+the form:
+λ(Y 2 Z + X 3 + aXZ 2 ) + µZ 3 = 0.
+After resolving its nine fundamental points (infinitely near to the point (0, 1, 0)) we arrive
+at a rational elliptic surface f : V (a) → P1 . It contains a degenerate fibre of type Ẽ8
+corresponding to (λ, µ) = (0, 1). The irreducible singular fibres correspond to (λ, µ) = (1, b)
+where 4a3 + 27b2 = 0. If a 6= 0 we have two irreducible singular fibres with ordinary double
+points. If a = 0 we have one irreducible singular fibre with a cusp singularity. Let Fa (b)
+denote the fibre of f corresponding to (λ, µ) = (1, b). Let F1 = Fa (b), where 4a3 +27b2 = 0,
+be an irreducible singular fibre, and let F2 = Fa (b + 1). Consider the double cover X(a, b)′
+of V (a) branched along the union F1 ∪ F2 . After resolving its singularities we obtain a K3
+surface X(a, b) with two reducible fibres of type Ẽ8 . It has additional reducible fibres: one
+fibre of type Ã1 if F1 has a node, F2 is nonsingular (a 6= 0, b 6= − 12 ); two fibres of type Ã1
+if F1 , F2 have nodes (b = − 12 ); one fibre of type Ã∗2 (Kodaira’s IV) if F1 has a cusp (a = 0).
+We have a one-parameter family X ′ → C of singular surfaces X(a, b)′ parametrized by
+the affine curve C : 4A3 + 27B 2 = 0. The map X ′ → C is equivariant with respect to the
+natural action of the group µ3 of third roots of unity. Its generator ρ = e2πi/3 acts on C
+by (a, b) → (ρa, b) and on X ′ via its action on P2 by the formula X → ρX, Y → Y, Z → Z.
+After dividing X ′ by this action, we obtain a family π ′ : Y ′ = X ′ /µ3 → A1 = C/µ3 . Let
+28
+
+0 ∈ A1 be the orbit of (0, 0) ∈ C and 1 ∈ A1 be the orbit of (a, − 21 ). For any t ∈ A1 \{0, 1},
+the fibre Yt′ = π ′−1 (t) has one ordinary double point. The fibre Y0′ ∼
+= X(0, 0)/µ3 , it is a
+1
+∼
+rational singular surface. The fibre Y1 = X(a, − 2 ). It has two ordinary double points.
+Let
+π : Y → A1 \ {0, 1}
+
+be the composition of π ′ and the blowing up Y → π ′−1 (A1 ⊂ {0, 1} of the locus of
+singular points of the fibres Yt′ , t 6= 0, 1. We have constructed a family of pseudo-ample
+M1 -polarized K3 surfaces. The period map for the family Y → A1 \ {0, 1} defines a regular
+map:
+p : A1 \ {0, 1} → KM1 ∼
+= H/Γ ∼
+= A1 .
+
+One can show that the period mapping p can be extended to an isomorphism A1 →
+H/Γ which sends the point 0 to the orbit of e2πi/3 and 1 to the orbit of i. The first point is
+a period of the surface X(0, 0), the second point is a period of the surface X(a, − 21 ). The
+latter surface is non-ample M -polarized surface. The monodromy group of our family is
+generated by the local monodromies at 0, 1 and ∞. They are isomorphic to the subgroups
+of Γ which stabilize e2πi/3 , i and ∞, respectively. Thus the global monodromy of our family
+is isomorphic to Γ.
+Since not all fibres are isomorphic, the period map is not constant. Hence there exists
+a dense subset U of A1 \ {0, 1} such that the Picard number of Yt , t ∈ U, is equal to 19,
+and hence PicYt ∼
+= M1 .
+Observe that X(0, 0) ∼
+= X0 has the Picard lattice of rank 20 isomorphic to U ⊥ E8 ⊥
+1
+E8 ⊥ A2 , and X(a, − 2 ) has Picard lattice of rank 20 isomorphic to U ⊥ E8 ⊥ E8 ⊥<
+−2 >⊥< −2 > .
+Example (7.9) (n = 2). So we want to describe a mirror family for quartic surfaces.
+One can show, for example, using the uniqueness results from [31], that
+Mn = U ⊥ E8 ⊥ E8 ⊥< −4 >∼
+= U ⊥ E8 ⊥ D9 .
+Similar to the previous example, we should construct a one-dimensional family of elliptic
+K3 surfaces X with a section, one reducible fibre of type D̃9 (Kodaira’s I5∗ ) and one
+reducible fibre of type Ẽ8 . To construct the family F of such elliptic surfaces we use the
+same idea as in the previous example. Consider the pencil of cubic curves:
+F (λ, µ) = λX 3 + µZ(Y 2 − XZ + aX 2 ) = 0.
+Let V → P1 be the associated rational elliptic surface. It has a degenerate fibre of type Ẽ7
+(Kodaira’s III ∗ ) and a reducible fibre F1 of type Ã1 (a 6= 0) or Ã∗1 (a = 0). Let X be the
+double cover of V branched along the union of F1 and another irreducible fibre F2 . X is
+an elliptic surface with two reducible fibres of type Ẽ7 and a reducible fibre of type Ã3 (or
+D̃4 ). If F2 is singular (this happens when µa2 = 4λ) it has an additional fibre of type Ã1 .
+The elliptic fibration has also two sections. We claim that X has another elliptic fibration
+with two reducible fibres of type Ẽ8 and D̃9 . To see this we assume for simplicity that F
+is of type Ã3 . Let
+D = 2R0 + R1 + 2R2 + 3R3 + 4R4 + 3R5 + 2R6 + R7
+29
+
+D′ = 2R0′ + R1′ + 2R2′ + 3R3′ + 4R4′ + 3R5′ + 2R6′ + R7′
+be the reducible fibres of type Ẽ7 , let F = E0 + E1 + E2 + E3 be the other reducible fibre.
+Without loss of generality we may assume that the two sections S1 and S2 intersect the
+fibre D at R1 and R7 , respectively, and the fibre D′ at R1′ and R7′ , respectively. Also S1
+intersects F at E0 and S2 intersects F at E2 . Now consider the following disjoint curves
+with self-intersection 0:
+D1 = 3R0 + 2R2 + 3R3 + 6R4 + 5R5 + 4R6 + 3R7 + 2S2 + R7′ ,
+D2 = R5′ + R0′ + 2R4′ + 2R3′ + 2R2′ + 2R1′ + 2S1 + 2E0 + E1 + E3 .
+By Hodge’s Index Theorem, the divisors D1 and D2 are linearly equivalent. They span a
+pencil which defines an elliptic fibration with fibre D1 of type Ẽ8 and fibre D2 of type D̃9 .
+Let X(t; a) be the elliptic surface obtained by the above construction when we take
+F2 = F (λ, µ) with t = λ/µ 6= 0, ∞. The linear substitution X → cX, Y → Y, Z → c−1 Z
+extends to an isomorphism X(t; a) ∼
+= X(c4 t, c2 a). Let the group C∗ act on C∗ ×C∗ \{(t, a) :
+2
+4
+a = t} by the formula (t, a) → (c t, c2 a). The orbit space is isomorphic to P1 \ {0, 1, ∞}.
+When we vary (t, a) ∈ C∗ × C, we obtain a family Y → C∗ × C of M2 -polarized K3
+surfaces with X(t; a) ∼
+= Y(t,a) for a2 6= 4t, 0. When a2 = 4t, 0, the fibre Y(t,a) is singular
+but birationally isomorphic to X(t; a). The surface X(t; 0) has a fibre of type D̃4 and its
+Picard number equals 20. The surface X(a2 /4, a), a 6= 0, has a reducible fibre of type Ã1
+and its Picard lattice is isomorphic to U ⊥ E8 ⊥ D9 ⊥< −2 >. Let f : C∗ × C → C given
+by the formula (t, a) → a2 /4t. As in the previous example, we can descend the family
+Y → C∗ × C to a family Ȳ → C of pseudo-ample M2 -polarized K3 surfaces with singular
+fibres over 0 = f (t, 0) and 1 = f (a2 /4, a). The period map extends to an isomorphism
+A1 → KM2 which sends 0 to the isomorphism class of the surface X(0) and sends 4 to
+the isomorphism class of the surface X(2). The latter surface is a pseudo-ample but not
+ample M -polarized K3 surface.
+Example (7.10) (n = 3) We skip the details. We have
+M3 ∼
+= U ⊥ E8 ⊥ E8 ⊥< −6 > .
+We consider a rational elliptic surface V with a section, one reducible fibre F1 of type
+Ẽ6 and one reducible fibre F2 of type Ã2 . To construct such a surface we take a plane
+nonsingular cubic C and three inflection points on it lying on a line (this means that they
+add up to 0 in the group law on the cubic with an inflection point taken as the origin).
+Then we take the pencil of cubic curves spanned by C and the union of the tangent lines
+at the three inflection points. After resolving the base points of this pencil we arrive at the
+surface V . The surface X is obtained as a minimal nonsingular model of the double cover of
+V branched over F2 and a nonsingular fibre. The surface X is an elliptic K3 surfaces with
+a section, two reducible fibres of type Ẽ6 (Kodaira’s IV ) and one reducible fibre of type
+Ã5 (Kodaira’s I5 ). Its Mordell-Weyl group is Z/3 and the sublattice of Pic(X) spanned
+by the section and components of the reducible fibres is isomorphic to E6 ⊥ E6 ⊥ A5 . By
+Lemma (7.4), we get that Pic(X) is a hyperbolic lattice of discriminant 6. One can find
+30
+
+another pencil on this surface with three reducible fibres of type Ẽ8 , Ẽ7 , and Ã2 . Since its
+discriminant equals 6, it must coincide with PicX. On the other hand, it has the same
+discriminant group as the lattice M3 . By Nikulin’s uniqueness results, we conclude that
+PicX ∼
+= M3 .
+Remark (7.11). The following remark may be appropriate. As we have already
+noticed in the previous section, the rational one-dimensional boundary components of DM
+correspond to rank 2 primitive isotropic sublattices S of N = M ⊥ . Each component
+contains in its closure the 0-dimensional boundary component defined by an isotropic
+vector f ∈ S. If N = U ⊥ Mn and f ∈ U , then S is determined by a primitive isotropic
+vector in Mn . Now if identify Mn with Pic(X ′ ) for some ample Mn -polarized K3 surface
+X ′ from the mirror moduli space, we find a bijection between one-dimensional rational
+boundary components of DM /ΓM containing the given 0-dimensional boundary component
+and isomorphism classes of elliptic fibrations on X ′ . When M =< 2 > or < 4 > the list
+of ΓM -orbits of two-dimensional isotropic sublattices of N containing a given primitive
+⊥
+isotropic vector is given in [37]. We find that SN
+/S can be isomorphic to one of the
+following lattices:
+A1 ⊥ E8 ⊥ E8 , A1 ⊥ D16 , E7 ⊥ D10 , A17 (M =< 2 >).
+
+E82 ⊥< −4 >, D16 ⊥< −4 >, E8 ⊥ D9 , E72 ⊥ A3 , D17 , D12 ⊥ D5 ,
+D82 ⊥< −4 >, A15 ⊥ A21 , E6 ⊥ A11 (M =< 4 >).
+
+In our interpretation we obtain that the mirror surfaces contain elliptic fibrations with
+reducible fibres of type:
+Ã1 , Ẽ8 , Ẽ8 ; Ã1 , D̃16 ;
+Ẽ8 , Ẽ8 ;
+D̃12 , D̃5 ;
+
+D̃16 ;
+
+D̃8 , D̃8 ;
+
+Ẽ7 , D̃10 ;
+Ẽ8 , D̃9 ;
+
+Ã17 (M =< 2 >).
+
+Ẽ7 , Ẽ7 , Ã3 ; D̃17 ;
+
+Ã15 , Ã1 , Ã1 ;
+
+Ẽ6 , Ã11 (M =< 4 >).
+
+We have seen already a pencil of type Ẽ8 + Ẽ8 + Ã1 on surfaces from the mirror family
+of K<2> and the pencils of type Ã1 + Ã1 + Ã15 and Ẽ8 + D̃9 on surfaces from the mirror
+family of K<4> .
+Similar computation is known for the case M =< 6 > (see [39]). We have the
+following types of elliptic fibrations on surfaces from KM3 :
+Ẽ8 , Ẽ8 ;
+
+D̃16 ;
+
+Ẽ8 , Ẽ7 , Ã2 ;
+
+Ã15 ,
+
+D̃14 , Ã2 , Ã1 ;
+
+Ẽ6 , Ẽ6 , Ã5 ;
+
+D̃10 , D̃6 ;
+
+Ã11 , D̃5 , Ã1 ;
+
+D̃8 , Ẽ7 , Ã1 ;
+
+Ã9 , D̃7 .
+
+In example (7.10) we have seen an elliptic fibration of type Ẽ6 , Ẽ6 , Ã5 .
+8. Toric hypersurfaces. Recall the following mirror construction of Batyrev [5]
+which generalizes the original construction of Green-Plesser. Let ∆ ⊂ Rn be a convex
+n-dimensional lattice polytope given by inequalities:
+n
+X
+j=1
+
+aij xj ≤ 1, i = 1, . . . , k,
+31
+
+where aij ∈ Z (a reflexive polytope). Let ∆∗ be the polytope equal to the convex hull of
+the vectors li = (ai1 , . . . , ain ). It is also a reflexive polytope. Let P∆ (resp. P∆∗ ) be the
+corresponding toric variety, and F (∆) (resp. F (∆∗ )) be the family of hypersurfaces in P∆
+(resp. P∆∗ ) defined by ∆-nondegenerate (resp. ∆∗ -nondegenerate) Laurent polynomials.
+For n ≤ 4 there exists a map f : P̃∆ → P∆ such that the proper transform of a general
+member of the family F (∆) is a Calabi-Yau manifold. A similar construction with ∆∗
+defines another family of Calabi-Yau manifolds. In the case n = 4 the two families of
+Calabi-Yau 3-folds satisfy the first attribute of mirror symmetry: the dimension of the
+local moduli space for a member of the first family is equal to the Picard number of a
+member of the second family [5].
+Consider the special case of Batyrev’s construction when ∆ is a 3-dimensional simplex:
+4
+
+∆(w) = {(t0 , t1 , t2 , t3 ) ∈ R :
+
+3
+X
+i=0
+
+wi ti = 0, ti ≥ −1, i = 0, . . . , 3},
+
+where w = (w0 , w1 , w2 , w3 ) is a collection of four positive integers with greatest common
+divisor equal to 1 and such that d =Pw0 + w1 + w2 + w3 is divisible by each wi . Here
+3
+we identify R3 with the hyperplane i=0 wi ti = 0. The toric space P∆ is the weighted
+projective space P(w) = P(w0 , w1 , w2 , w3 ). The family F (∆) is the family of quasi-smooth
+hypersurfaces of degree d in P(w). One of its representatives is the surface
+xd00 + xd11 + xd22 + xd33 = 0,
+where di = d/wi , i = 0, . . . , 3. Let Π be the finite abelian group of order d0 d1 d2 d3 /d2 equal
+to the kernel of the homomorphism
+(µd0 × µd1 × µd2 × µd3 )/µd → µd , g0a0 · · · g3an → g w0 a0 +...+w3 a3 ,
+where µdi denotes the group of di -th roots of unity with generator gi ; the subgroup µd of
+the product is generated by g = g0 g1 g2 g3 . Then, by Corollary 5.5.6 of [5], the dual family
+F (∆∗ ) consists of quotients by Π of the family of Π-invariant hypersurfaces of degree d in
+P(w)
+X
+ai0 i1 i2 i3 xi00 xi11 xi22 xi33 = 0.
+w0 i0 +w1 i1 +w2 i2 +w3 i3 =d
+
+Example (8.1). Let us consider the special case where w = (1, 1, 1, 1), d = 4. The
+family F (∆(w)) is the family of quartic hypersurfaces in P3 . Modulo projective transformation this family defines an open subset of the moduli space K<4> . The group Π is
+isomorphic to (Z/4)2 and its two generators act by the formula:
+g1 : (x0 , x1 , x2 , x3 ) → (x0 , ζx1 , x2 , ζ 3 x3 ),
+g2 : (x0 , x1 , x2 , x3 ) → (ζx0 , x1 , ζ 3 x2 , x3 ),
+32
+
+where ζ is a primitive 4-th root of unity. The Π-invariant family of quartics is the onedimensional family
+V (λ) : x40 + x41 + x42 + x43 + 4λx0 x1 x2 x3 = 0.
+The quotient V (λ)/Π is isomorphic to the surface in P4 given by the equations:
+u0 u1 u2 u3 − u44 = 0,
+
+u0 + u1 + u2 + u3 + 4λu4 = 0.
+
+(∗)
+
+If λ4 6= 1, the surface V (λ)/Π has six rational double points of type A3 . Let Vλ be the
+family of K3 surfaces obtained by simultaneous resolution of singularities of the surfaces
+V (λ)/Π, λ4 6= 1.
+Theorem (8.2). The family of surfaces Vλ is a family of M2 -polarized surfaces.
+Proof. Consider the following four lines on the surface
+li : ui = u3 = 0, i = 0, 1, 2, l3 : u0 + u1 + u2 = u3 = 0.
+It is easy to check that the six points Pij = li ∩ lj , 0 ≤ i < j ≤ 3, are the singular points of
+type A3 of V (λ)/Π. Let Dij be the 6 exceptional divisors coming from a minimal resolution
+of singularities Vλ → V (λ)/Π, and let Ri , i = 0, . . . , 3, be the proper inverse transforms of
+the lines. Each divisor Dij consists of three irreducible (−2)-curves with the intersection
+graph isomorphic to the Dynkin diagram of type A3 . Let S be the sublattice of Pic(X)
+spanned by the curves Ri and the irreducible components of the divisors Dij . We shall
+show that S ∼
+= M2 . Consider the divisor
+D = R0 + R1 + R2 + R3 + R4 + D01 + D12 + D23 + D03 .
+The linear system |D| defines an elliptic fibration on Vλ with reducible fibre D of type Ã15
+(Kodaira’s I16 ). Let E02 and E13 be the irreducible components of the divisors D02 and
+D13 which are disjoint from the divisor D. They must be components of some reducible
+fibres of the elliptic fibration. Since the sublattice of Pic(Vλ ) generated by irreducible
+components of fibres is of rank at most 19, we have only two possibilities. Either E02 , E13
+′
+′
+are components of one fibre of type Ã3 , or there exist irreducible curves E01
+and E12
+such
+′
+′
+that E02 + E02 and E13 + E13 are two fibres of type Ã1 . In the first case we find that
+Pic(Vλ ) is of rank 20. Since the family (*) admits a degeneration (λ = ∞) with infinite
+local monodromy, its image in the moduli space KS is not a point. Thus for generic λ,
+Pic(Vλ ) is of rank 19, and we have the second possibility. Let E0 be the component of D02
+which intersects R0 . Then E0 is a section of our fibration, and as such it must intersect
+′
+′
+the fibre E13 + E13
+at one point. Since it does not intersect E13 , it intersects E13
+with
+multiplicity 1. Now we leave to the reader to verify that Vλ admits another elliptic fibration
+′
+which contains E02 + E0 + E13
++ D01 in its fibre of type D̃9 and D23 in its fibre of type
+Ẽ8 . Arguing as in Example (7.8), we deduce from this that Pic(Xλ ) = S ∼
+= M2 .
+Notice also that the period map
+p : A1 \ {λ : λ4 = 1} → KM2 , λ → [Xλ ]
+33
+
+is of degree 4. Indeed, the group µ4 of 4th roots of unity acts on F by the formula λ → ρλ
+so that p factors through a map p′ : A1 \ {1} → A1 . The map p′ can also be extended to
+a map p̄′ : A1 → A1 by sending 1 to the period of a minimal nonsingular model of the
+surface V (1)/Π. This surface represents the unique isomorphism class of pseudo-ample
+but not ample M2 -polarized K3 surface. One can show by computing the monodromy at
+infinity that p̄′ is an isomorphism.
+Example (8.3). Let w = (3, 1, 1, 1), d = 6. The dual polyhedron ∆∗ can be identified
+with the convex hull of the vectors (1, 0, 0), (0, 1, 0), (0, 0, 1), and (−1, −1, −3). The toric
+hypersurfaces defining the family F (∆∗ ) are given by the Laurent polynomials
+aT1 + bT2 + cT3 + dT1−1 T2−1 T3−3 + e = 0.
+Multiplying both sides by T1 T2 T33 and homogenizing, we obtain a projective model of
+V ∈ F (∆∗ ) defined by the equation
+aT12 T2 T33 + bT1 T22 T33 + cT1 T2 T34 + dT06 + eT0 T1 T2 T33 = 0.
+This model is not normal. To normalize it, we introduce a new variable T4 = T02 /T3 . Then
+a normal projective model can be given by the equations
+T1 T2 (aT1 + bT2 + cT3 + eT0 ) + dT43 = 0, T02 = T4 T3 .
+After some obvious linear transformation of the variables, we may assume that the generic
+member of F (∆(w)∗ ) is isomorphic to the surface Xλ in P4 given by the equations
+u1 u2 u3 − u34 = 0, (λu0 + u1 + u2 + u3 )u4 + u20 = 0.
+This is a double cover of the cubic surface u1 u2 u3 − u34 = 0 in P3 branched along the union
+of two curves C1 and C2 cut out by the planes u4 = 0 and 4(u1 + u2 + u3 ) − λ2 u4 = 0,
+respectively. The cubic surface has three singular points which are cyclic singularities of
+type A2 . After we resolve them, and then resolve the base points of the pencil of elliptic
+curves spanned by the inverse transforms of the curves C1 and C2 , we find a rational
+elliptic surface Vλ with a singular fibre of type Ã8 (originating from the curve C1 ). Its
+double cover branched over this fibre and another fibre (originating from C2 ) is birationally
+isomorphic to Xλ . After we resolve its singular points, we obtain an elliptic K3 surface X̄λ
+with a reducible fibre of type Ã17 . The elliptic fibration has also three disjoint sections.
+They come from the three exceptional curves on Vλ obtained from the resolution of the base
+points of the elliptic pencil on the nonsingular model of the cubic surface. Applying Lemma
+(7.7), we obtain that Pic(X̄λ ) is a hyperbolic lattice of rank 19 and discriminant 2. There
+is only one such lattice, up to isomorphism. This is the lattice U ⊥ E8 ⊥ E8 ⊥< −2 > .
+Thus the mirror family for K<2> considered in Example (7.8) can be represented by the
+surfaces from the family F (∆(w)∗ ). Also observe that we have demonstrated the existence
+of two different elliptic fibrations on X from the list given in Remark (7.11).
+Example (8.4). In our next example we take
+w = (1, 6, 14, 26), d = 42, (d1 , d2 , d3 , d4 ) = (42, 7, 3, 2).
+34
+
+In this case the group Π is trivial, and according to Batyrev we should have the selfmirrored family. This is true for our mirrors too. The family is KM , where
+M∼
+= M̌ = U ⊥ E8 .
+We shall see the latter family again in the next example.
+Example (8.5). Consider the affine surface
+−1
+−1
+xd11 + xd22 + xd33 = 0, d−1
+1 + d2 + d3 < 1.
+
+According to [24] the link space L of the singular point 0 is diffeomorphic to the quotient G/[Γ̃, Γ̃], where G is the universal cover of P SL(2, R) and [Γ̃, Γ̃] is the commutator
+subgroup of the discrete group Γ̃ of G isomorphic to an extension
+1 → Z → Γ̃ → Γ(d1 , d2 , d3 ) → 1.
+Here Γ(d1 , d2 , d3 ) is the Fuchsian subgroup of P SL(2, R) of signature (0; d1 , d2 , d3 ). Let
+K = Γ̃/[Γ̃, Γ̃]. Its order is d1 d2 d3 /d, where d = l.c.m.(d1 , d2 , d3 ). The quotient L/K =
+G/Γ̃(d1 , d2 , d3 ) is the link space of a quasi-homogeneous triangle singularity Dd1 ,d2 ,d3 (see
+[10,29]). There exist exactly 14 triples d1 , d2 , d3 for which the singularity Dd1 ,d2 ,d3 is
+isomorphic to the singularity at the origin of the affine surface P (x, y, z) = 0, where P is a
+quasi-homogeneous polynomial of degree N with weights (q1 , q2 , q3 ) given in the following
+table:
+name
+Q10
+Q11
+Q12
+Z11
+Z12
+Z13
+S11
+S12
+W12
+W13
+K12
+K13
+K14
+U12
+
+(d1 , d2 , d3 ) (q1 , q2 , q3 ) N (d′1 , d′2 , d′3 ) d0
+(2, 3, 9)
+(6, 8, 9) 24
+(3, 3, 4) 18
+(2, 4, 7)
+(4, 6, 7) 18
+(3, 3, 5) −
+(3, 3, 6)
+(3, 5, 6) 15
+(3, 3, 6) 6
+(2, 3, 8)
+(6, 8, 15) 30
+(2, 4, 5) 24
+(2, 4, 6)
+(4, 6, 11) 22
+(2, 4, 6) 12
+(3, 3, 5)
+(3, 5, 9) 18
+(2, 4, 7)
+(2, 5, 6)
+(4, 5, 6) 16
+(3, 4, 4)
+(3, 4, 5)
+(3, 4, 5) 13
+(3, 4, 5)
+(2, 5, 5)
+(4, 5, 10) 20
+(2, 5, 5) 10
+(3, 4, 4)
+(3, 4, 8) 16
+(2, 5, 6)
+(2, 3, 7) (6, 14, 21) 42
+(2, 3, 7) 42
+(2, 4, 5) (4, 10, 15) 30
+(2, 3, 8) 20
+(3, 3, 4)
+(3, 8, 12) 24
+(2, 3, 9) 12
+(4, 4, 4)
+(3, 4, 4) 12
+(4, 4, 4) 4
+
+P (x, y, z)
+z x + y 3 + x4
+z 2 x + y 3 + yx3
+z 2 x + y 3 + x5
+y 3 x + x5 + z 2
+3
+y x + yx4 + z 2
+y 3 x + x6 + z 2
+2
+z x + zy 2 + x4
+y 2 z + xz 2 + x3 y
+x5 + y 4 + z 2
+y 4 + yx4 + z 2
+x7 + y 3 + z 2
+y 3 + yx5 + z 2
+x8 + y 3 + z 2
+x4 + y 3 + z 3
+2
+
+For each of the fourteen triples (d1 , d2 , d3 ) consider the family of hypersurfaces of
+degree N in P(1, q1 , q2 , q3 ) given by the equation
+Q(w, x, y, z) = P (x, y, z) +
+
+X
+
+aijk wN−iq1 −jq2 −kq3 xi y j z k = 0
+
+35
+
+where the monomials xi1 y i2 z i3 form a basis of the Jacobian algebra C[x, y, z]/(partials of
+P ) of the polynomial P . There exists a morphism Y → P(1, q1 , q2 , q3 ) such that the proper
+inverse transforms of the quasi-smooth hypersurfaces Q = 0 form a family F (d1 , d2 , d3 ) of
+M -polarized K3 surfaces, where M is the lattice of rank d1 + d2 + d3 − 2 generated by
+vectors ei with (ei , ei ) = −2 and (ei , ej ) ∈ {0, 1}, i 6= j, determined by the incidence graph
+Td1 ,d2 ,d3 of Dynkin type (for example T2,3,5 corresponds to E8 ). Note that the dimension
+of the family is equal to dim KM . It is equal to the subscript in the first column minus 2.
+The family F (d′1 , d′2 , d′3 ) corresponds to the mirror moduli space KM̌ . The involution on
+the set of fourteen triples
+(d1 , d2 , d3 ) ←→ (d′1 , d′2 , d′3 )
+is the so-called Arnold’s Strange Duality (see [1,9]). If we take the triple (2, 3, 7) corresponding to the singularity K12 we obtain that F (2, 3, 7) coincides with the family F (∆(w))
+where w = (1, 6, 14, 21). It is self-dual with respect to Batyrev’s duality and mirror duality.
+On the other hand let us consider the 12-dimensional family F (3, 3, 4) corresponding
+to the singularity K14 . It coincides with the family F (∆(w)), where w = (1, 3, 8, 12). The
+group Π is of order 2. The Batyrev dual is the 6-dimensional family F (∆(w)∗ ) obtained
+by dividing Π-invariant members of F (∆(w)) by Π. The mirror family of F (∆(w)) is the
+8-dimensional family F (2, 3, 9) corresponding to the singularity Q10 .
+Suppose (d1 , d2 , d3 ) is such that there exists an integer d0 such that
+1
+1
+1
+1
++
++
++
+= 1.
+d0
+d1
+d2
+d3
+This happens for 9 triples from the above list. Then we can consider the family F (∆(w))
+where wi = d/di , d = g.c.d.(d0, d1 , d2 , d3 ). The group Π is isomorphic to the group K
+from above. The Π-quotients of surfaces from F (∆(w)) are smoothings of the singularity
+Dd1 ,d2 ,d3 and hence belong to the family F (d1 , d2 , d3 ). This shows that the Batyrev dual
+family F (∆(w)∗ ) is a subfamily of F (d1 , d2 , d3 ).
+For example, F (∆(1, 3, 8, 12)∗) is a subfamily of F (2, 3, 8) of dimension 9 corresponding to the singularity Z11 . Also, F (∆(1, 4, 5, 10)∗) is a subfamily of F (2, 4, 5) of dimension
+11 corresponding to the singularity K13 .
+The exact relationship between the two mirror constructions seems to be the following.
+Let X be a member of the family F (∆). Then Pic(X) contains the primitive sublattice
+generated by the image of the restriction homomorphism Pic(P̃∆ ) → Pic(X). Let M∆ be
+the abstract lattice isomorphic to this lattice. One can show that M∆ ∼
+= Pic(X) for general
+member F (∆) if and only if ∆ satisfies the following condition: for any 1-dimensional face
+Γ of ∆,
+l∗ (Γ) = l∗ (Γ∗ ) = 0,
+(∗)
+where Γ∗ is the dual one-dimensional face of ∆∗ , and l∗ (F ) denotes the number of integral
+points in the interior of a face F (see [2]).
+Conjecture (8.6). The lattice M∆ always contains a 1-admissible isotropic vector such
+that there exists a primitive embedding
+M∆∗ ⊂ M̌∆ .
+36
+
+Moreover, the equality takes place if and only if condition (*) is satisfied.
+This conjecture is confirmed by a result of Batyrev (unpublished) and Kobayashi [19]
+implying that
+rank M∆ + rank M∆∗ ≤ 20.
+Also, Kobayashi shows that rank M∆∗ = rank M̌∆ if (*) is satisfied. Finally, the conjecture
+is consistent with the examples from above. If ∆ = ∆(1, 3, 8, 12), we have M∆ ∼
+= T3,3,4 .
+Since F (∆∗ ) is a subfamily of F (2, 3, 8) we have M∆∗ ∼
+T
+.
+On
+the
+other
+hand
+= 2,3,8
+M̌∆ = T2,3,9 and obviously T2,3,8 embeds naturally in T2,3,9 . In the second example where
+∆ = ∆(1, 4, 5, 10) we have M∆∗ ∼
+= T2,4,5 and M̌ = T2,5,5 .
+In some cases when (*) is not satisfied, it is still possible to find a polyhedron ∆′
+satisfying (*) and such that F (∆′ ) is a subfamily of F (∆). For example, it is always
+possible in the case of the fourteen families from Example (8.5) [19]. In this case, one can
+verify that M∆′∗ = M̌∆′ .
+Remark (8.7). There is a list of weighted projective K3-hypersurfaces with Gorenstein singularities first derived by Miles Reid (unpublished) and later rediscovered by Yonemura [42]). It consists of 95 families. It contains the family of quartic hypersurfaces and
+its mirror family represented by surfaces of degree 36 in P(7, 8, 9, 12) (number 52 in the
+list of Yonemura).
+9. Other examples. Here we consider the examples related to Enriques and Kummer surfaces.
+Example (9.1). Let F be an Enriques surface, and p : X → F be its K3-cover (see
+[4,7]). We have
+H 2 (F, Z)/T ors ∼
+= P ic(F )/T ors ∼
+= E8 ⊥ U.
+Thus p∗ (Pic(F )) is a sublattice of Pic(X) isomorphic to M = E8 (2) ⊥ U (2) and X
+acquires a canonical structure of an M -polarized K3 surface. Since M does not contain
+vectors δ with (δ, δ) = −2, we can choose C(M )+ to be equal to V (M )+ . Replacing
+j : M → Pic(X) by −j, if needed, we may assume that j(V (M )+ ) contains the class of
+an ample divisor p∗ (D), where D is an ample divisor on F . Thus any marked Enriques
+surface (F, φ : H 2 (F, Z)/T ors → E8 ⊥ U ) defines an ample M -polarized K3 surface
+(X, j). Conversely, given such (X, j), it defines an involution σ on H 2 (X, Z) by setting
+σ(v) = x, for any v ∈ j(M ), and σ(v) = −v, for any v ∈ (j(M ))⊥. One can show
+that any two primitive embeddings of the lattice M on L differ by an isometry of L (see
+[28]). Thus, we can choose a marking of φ : H 2 (X, Z) → L such that jφ = j. Since the
+involution σ leaves the period H 2,0 (X) of X unchanged, by the Global Torelli Theorem
+(Corollary (3.2)), there is a unique involution τ of X such that σ = τ ∗ . By using the
+the Lefschetz fixed-point formula, it is not difficult to show that the set of fixed points
+of τ is empty (see [28], p.221). Thus X = F/(τ ) is an Enriques surface together with
+a marking defined by descending the isomorphism j : E8 (2) ⊥ U (2) → Pic(F ) to the
+isomorphism E8 ⊥ U → Pic(X) = Pic(F )τ . This esablishes a bijective correspondence
+between the isomorphism classes of marked Enriques surfaces and isomorphism classes of
+37
+
+ample M -polarized K3 surfaces. In particular, KaE8 (2)⊥U(2) can be viewed as the moduli
+space of marked Enriques surfaces.
+We may embed E8 (2) ⊥ U (2) diagonally into E8 ⊥ E8 ⊥ U ⊥ U to obtain that
+∼
+(E8 (2) ⊥ U (2))⊥
+L = E8 (2) ⊥ U (2) ⊥ U.
+In particular, if we define the mirror lattice by taking f ∈ U , we obtain
+M̌ ∼
+= M.
+Thus the moduli space KM is its own mirror. If we take f from U (2) instead, we obtain
+M̌ = U ⊥ E8 (2).
+One can show that the moduli space KU⊥E8 (2) can be represented by the family of double
+covers of the plane branched along the union of two cubics.
+Example (9.2). The mirror family for the family of nonsingular minimal models of
+the Kummer surfaces X = Kum(A) associated to principally polarized abelian surfaces
+A is the family KM , where M ⊥ = U (2) ⊥ U (2) ⊥< −4 >. This must be well known
+but let me give a proof due to J. Keum. By Theorem 1.4.14 from [31] the embedding
+< 2 >֒→ U ⊥ U ⊥ U is unique. Therefore we may assume that the class h of the
+polarization of A is mapped to e + f where e, f ∈ U, (e, e) = (f, f ) = 0, (e, f ) = 1.
+∼
+Therefore TA = Pic(A)⊥
+H 2 (A,Z) = U ⊥ U ⊥< −2 >. On the other hand it follows from
+∼
+∼
+([4], Chapter VIII, §5) that TX = Pic(X)⊥
+H 2 (X,Z) = TA (2) = U (2) ⊥ U (2) ⊥< −4 >.
+Now if we take f from a copy of U (2) we get
+
+
+0 2 2
+M̌ = U (2) ⊥< −4 >∼
+= 2 0 2.
+2 2 0
+
+The miror family is the moduli space of hypersurfaces of degree (2, 2, 2) in P1 × P1 × P1 .
+This family is equal to the family F (∆) where ∆ = [−1, 1]3 ⊂ R3 . As was shown by
+Batyrev the dual family F (∆∗ ) is the family KM ′ where M ′⊥ = U ⊥ M̌ . This family of
+K3 surfaces was studied by C. Peters and J. Stienstra in [33]. If we take f ∈ U , the dual
+moduli space of KM ′ is equal to KM̌ . So the Kummer family and the Peters-Stienstra
+family share the same mirror family.
+References
+
+[1] V. Arnold, Critical points of smooth functions, Proc. I.C.M, Vancouver, 1974, pp.
+18-39.
+[2] P. Aspinwall, D. Morrison, String theory on K3 surfaces, 1994, IASSNS-hep-94/23
+[3] P. Aspinwall, D. Morrison, Mirror symmetry and the moduli space of K3 surfaces, (to
+appear).
+38
+
+[4] W. Barth, C. Peters, A. Van de Ven, Compact Complex Surfaces, Ergenbnisse der
+Mathematik und ihrer Grenzgebiete, 3. Folge, Band 4, Springer-Verlag, 1984.
+[5] V. Batyrev, Dual polyhedra and mirror symmetry for Calabi-Yau hypersurfaces in toric
+varieties, J. Alg. Geometry, 3 (1994), 493-535.
+[6] C. Borcea, K3 surfaces with involution and mirror pairs of Calabi-Yau manifolds, Rider
+College, preprint
+[7] F. Cossec, I. Dolgachev, Enriques surfaces I, Birkhäuser. 1989.
+[8] I. Dolgachev, V. Nikulin, Exceptional singularities of V. I. Arnold and K3 surfaces,
+Proc. USSR Topological Conference in Minsk, 1977.
+[9] I. Dolgachev, Integral quadratic forms:applications to algebraic geometry, Sem. Bourbaki, 1982/83, n◦ 611, Asterisque, vol. 105/106, Soc. Math. France, pp. 251-275.
+[10] I. Dolgachev, On algebraic properties of algebras of automorphic forms, in “Modular
+Functions in Analysis and Number Theory”, Lect. Notes in Mathematics and Statistics,
+vol. 5, Univ. Pittsburgh, 1983, pp. 21-29.
+[11] Essays on Mirror Symmetry (ed. S.-T. Yau), Int. Press Co., Hong Kong, 1992.
+[12] R. Fricke, Lehrbuch der Algebra, B. 3, Braunschweig, 1928.
+[13] Géometrie des surfaces K3: modules et périodes, Astérisque, vol. 126, Soc. Math.
+France, 1985.
+[14] A. Giveon, D.-J. Smit, Symmetries of the moduli space of (2,2) superstring vacua,
+Nucl. Phys. B349 (1991), 168-206.
+[15] Ph. Griffiths, Periods of integrals on algebraic manifolds, I,II, Amer. J. Math. 90
+(1968), 568-626, 805-865.
+[16] Ph. Griffiths, L. Tu, Infinitesimal variation of Hodge structure, In ‘Topics in Transcendental Algebraic Geometry”, Ann. Math. Studies, vol. 106 , Princeton University
+Press, 1984.
+[17] D. James, On Witt’s Theorem for unimodular quadratic forms, Pac. J. Math. 26:2
+(1968), 303-316.
+[18] P.G. Kluit, On the normalizer of Γ0 (N ), in “Modular Functions of One Variable, V”,
+Lect. Notes in Math., vol. 601, Springer, 1977, pp. 239-246.
+[19] M. Kobayashi, Duality of weights, mirror symmetry and Arnold’s strange duality, 1994,
+preprint
+[20] J. Lehner, W. Newman, Weierstrass points of Γ0 (n)∗ , Ann. Math., 79 (1964), 360-368.
+[21] B. Lian, S.-T. Yau, Arithmetic properties of mirror map and quantum coupling,
+preprint, 1994, hep-th.
+[22] B. Lian, S.-T. Yau, Mirror maps, modular relations and hypergeometric series II,
+preprint, 1994, hep-th.
+[23] E. Martinec, Criticality, catastrophes, and compactifications, in “Physics and Mathematics of Strings”, World Scientific, 1990,pp.389-433.
+[24] J. Milnor, On the 3-dimensional Brieskorn manifolds, in “Knots, groups and 3manifolds”, Ann. Math. Studies, vol. 84, Princeton Univ. Press 1975, pp. 175-224.
+39
+
+[25] D. Morrison, On K3 surfaces with large Picard number, Invent. Math. 75 (1984),
+105–121.
+[26] D. Morrison, Mirror symmetry and rational curves on quintic 3-folds: A guide for
+mathematicians, J. Amer. Math. Soc. 6 (1993), 223-247.
+[27] M. Nagura, K. Sugiyama, Mirror symmetry of the K3 surface, Intern. J. Modern
+Physics A, vol. 10, No 2 (1995), 233-252.
+[28] Y. Namikawa, Periods of Enriques surfaces, Math. Ann., 270 (1985), 201-222.
+[29] W. Neumann, Abelian covers of quasihomogeneous singularities, in “Singularities”,
+Proc. Symp. Pure Math., vol. 40, Part 2, A.M.S. Providence, 1983, pp. 233-243.
+[30] V. Nikulin, Finite groups of automorphisms of Kähler K3 surfaces, Proc. Moscow
+Math. Society, 38(1980), 71-135.
+[31] V. Nikulin, Integral quadratic forms and some of its geometric applications, Izv. Akad.
+Nauk SSSR, Ser. Math. 43 (1979), 103-167.
+[32] V. Nikulin, On rational maps between K3 surfaces,in “Constantin Caratheodory: an
+international tribute”, Vol. I, II, World Sci. Publishing. 1991, pp. 964–995.
+[33] C. Peters, J. Stienstra, A pencil of K3 surfaces related to Apéry’s recurrence for ζ(3)
+and Fermi surfaces for potential zero, in “Arithmetics of Complex Manifolds”, Lect. Notes
+in Math., vol.1399 , Springer-Verlag, 1989.
+[34] H. Pinkham, Singularités exceptionnelles, la dualité étrange d’Arnold et les surfaces
+K-3, C.R. Acad. Sci. Paris, Ser. A-B, 284 (1977), 615-618.
+[35] S.-S. Roan, Mirror symmetry and Arnold’s duality, 1993, preprint MPI.
+[36] Y. Ruan, G. Tian, A mathematical theory of quantum cohomology, Math. Res. Lett.
+1, no. 2 (1994), 269–278.1994.
+[37] F. Scattone, On the compactification of moduli spaces for algebraic K3 surfaces, Mem.
+A.M.S. 70 (1987). No. 374.
+[38] G. Shimura, Introduction to the arithmetic theory of automorphic functions, Publ.
+Math. Soc. Japan, v. 11, 1971.
+[39] H. Sterk, Lattices and K3 surfaces of degree 6, Lin. Alg. and Appl., 226-228 (1995),
+297-309.
+[40] A. Todorov, Some ideas from mirror geometry applied to the moduli space of K3,
+preprint.
+[41] C. Voisin, Miroirs et involutions sur les surfaces K3, in “Journées de Géométrie
+Algébrique d’Orsay”, vol. 218, Astérisque, Soc. Math. France, 1993, pp. 273-323.
+[42] T. Yonemura, Hypersurface simple K3 singularities, Tôhoku Math. J. 42(1990), 351380.
+
+40
+
+
