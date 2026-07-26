@@ -38,10 +38,64 @@ note    Freely hosted by the Massey University institutional repository (MRO) �
         A002652, not something this thesis asserts; ESCALATIONS.md's citation there
         should be read as supporting only the g.f./level-7 identity, not the CM claim.
 
+ZARHIN 1983 — "Hodge groups of K3 surfaces", J. reine angew. Math. (Crelle) 341, 193-220.
+        FETCHED + HASH-PINNED 2026-07-26.  docs/literature/zarhin_1983_crelle341.pdf
+        sha256 148ce5ce39388d213b4ed6b019e8d7783e21b898f0d164c3191df69a43d73689
+        Source: GDZ Goettingen, which hosts Crelle vol. 341 OPENLY —
+          https://gdz.sub.uni-goettingen.de/download/pdf/PPN243919689_0341/LOG_0016.pdf
+          (plain unauthenticated curl; the De Gruyter/Brill page IS paywalled and EuDML's
+          full-text link dead-ends, so the earlier "no OA mirror" note was wrong for this
+          paper — corrected here.)
+        SCAN, no usable text layer (1686 chars extracted). Verified by RENDERING the pages
+        and reading them directly; page images from pdftoppm, PDF page = article page - 191.
+        Title page (p.193), verbatim: "The purpose of this paper is to study the rational
+          Hodge structure attached to the second rational cohomology group H^2(Y,Q) of a
+          SMOOTH IRREDUCIBLE PROJECTIVE SURFACE Y over the field C of complex numbers. We
+          shall prove that the Hodge group of Y acts IRREDUCIBLY on the Q-lattice V(Y) of
+          transcendental cycles if the geometric genus P_g is one (par. 1)."
+        p.200, definitions: A(Y) = H^2(Y) cap H^{1,1}(Y) is "the lattice of algebraic
+          cycles"; "Let us denote the rank of A(Y) by rho(Y). rho(Y) is called the Picard
+          number of Y." Then "Let V(Y) be the ORTHOGONAL COMPLEMENT of A(Y) in H^2(Y,Q)",
+          with H^2(Y,Q) = A(Y)_Q (+) V(Y) and **dim_Q V(Y) = b_2(Y) - rho(Y)**.
+          => V(Y) IS the transcendental lattice tensored with Q.
+        p.207, Theorem 1.6, verbatim: "Let P_g = h^{2,0}(Y) = 1 (for example Y is a K3
+          surface). Then: a) The Hdg-module V(Y) is SIMPLE and the algebra E = E_Y is a
+          commutative field; b) U(Y) subset mu_E subset E* where mu_E is the group of roots
+          of unity in E."
+        HYPOTHESES: smooth irreducible projective surface over C, p_g = 1. NO genericity
+          hypothesis. Holds for every projective K3.
+        NOTE: the proof 1.6.1 opens "By (1.5.1) the Hdg-module V(Y) is simple", but the item
+          printed as 1.5.1 is the Albert-classification statement about E — the internal
+          cross-reference looks like a misprint. The STATEMENT of 1.6 a) is unambiguous and
+          is what this repo cites.
+
+HUYBRECHTS — "Lectures on K3 Surfaces", CUP 2016 (author's free pre-publication PDF).
+        FETCHED + HASH-PINNED 2026-07-26. docs/literature/huybrechts_K3Global.pdf
+        sha256 59da72d5807fd05d08ce28ceaf30a030cfc7e52b92e27778d824ac86cb1dd287
+        Source: https://www.math.uni-bonn.de/people/huybrech/K3Global.pdf (open, author's page)
+        Text layer present; docs/literature/huybrechts_K3Global.txt extracted.
+        The draft uses chapter-local numbering; published numbers are 3.2.5 / 3.2.7 / 3.3.1 / 3.3.2.
+        Definition 2.5 [publ. 3.2.5], verbatim: "For an integral or rational Hodge structure
+          of K3 type V one defines the transcendental lattice or transcendental part T as
+          the MINIMAL PRIMITIVE SUB-HODGE STRUCTURE T subset V with V^{2,0} = T^{2,0} subset T_C."
+        Lemma 2.7 [publ. 3.2.7], verbatim: "The transcendental lattice T of a polarizable
+          Hodge structure V of K3 type is a polarizable IRREDUCIBLE Hodge structure of K3 type."
+        Lemma 3.1 [publ. 3.3.1], verbatim: "The transcendental lattice of a complex K3 surface
+          is the orthogonal complement of the Neron-Severi group: T(X) = NS(X)^perp. IF X IS
+          PROJECTIVE, then T(X) is a polarizable irreducible Hodge structure, cf. Lemma 2.7."
+        Example 3.2 [publ. 3.3.2] — PROJECTIVITY IS A REAL HYPOTHESIS, not decoration:
+          "For a non projective K3 surface, T(X) = NS(X)^perp need NOT be irreducible or
+          polarizable." Explicit counterexample with NS spanned by a square-zero line bundle.
+        => Our use must discharge projectivity. It does: A-vS's models are complete
+          intersections in G(2,6) (Plucker) and P^3 x P^3 (Segre), hence projective (E-009).
+
 # NOT YET FETCHED (still required to close Phase 1 fully):
 #   Cooper 2012, Ramanujan J. 29, 163-183 (paywalled; s7/s10/s18 naming)
 #   Chan-Cooper-Sica 2010 (Conj 5.4)
-#   Stienstra-Beukers 1985, Math. Ann. 271, 269-304 (K3 Picard rank — would settle E-009 Lead 2 fully)
+#   Stienstra-Beukers 1985, Math. Ann. 271, 269-304 (K3 Picard rank)
+#     ** NO LONGER ON THE CRITICAL PATH (2026-07-26).** The rho/T step is closed by
+#     Zarhin 1983 Thm 1.6(a) + Huybrechts Lemma 2.7/3.1 above, both fetched and read.
+#     Still paywalled; still worth having, but nothing now depends on it.
 #     CONFIRMED PAYWALLED 2026-07-26 (search attempt, no fetch of paywalled content):
 #     Springer DOI 10.1007/BF01455990 requires institutional/paid auth (idp.springer.com
 #     login redirect). No open-access mirror found after checking: EUDML (doc/163967,

@@ -1,0 +1,76 @@
+{
+  "checker": "check_C2_transcendental_rank.py",
+  "checker_version": "1.0.0",
+  "date": "2026-07-26",
+  "operator": "cooper_s10",
+  "bulk_oeis": "A005260",
+  "supersedes": "C2_cooper_s10_partner_v2.json (RETRACTED, E-007: rho=4/T=18 came from a hardcoded components=2)",
+  "picard_rank": 19,
+  "transcendental_rank": 3,
+  "b2": 22,
+  "how_rho_was_obtained": {
+    "formula": "rho = b_2 - rank T = 22 - 3 = 19",
+    "rank_T_equals_rank_V_because": "T tensor Q is irreducible (step 4) and V is a nonzero sub-Hodge-structure of it (step 5)",
+    "rank_V_source": "data/certificates/L3_IRREDUCIBLE.json (read at runtime, not hardcoded)",
+    "b2_source": "Zarhin p.200 gives dim V(Y) = b_2(Y) - rho(Y); b_2 = 22 for a K3"
+  },
+  "tier": "B",
+  "tier_reason": "steps 1-3 computed or directly cited; steps 5-7 formal; step 4 is a citation to two independent published sources, not re-derived here",
+  "premises": {
+    "projective": {
+      "status": "discharged",
+      "how": {
+        "source": "Almkvist & van Straten, arXiv:2103.08651, 'the three sporadic third order operators'",
+        "s7": "K3 = intersection of six hyperplane sections of G(2,6) in its Plucker embedding",
+        "s10": "K3 = intersection of four (1,1)-type hyperplane sections in P^3 x P^3 (Segre)",
+        "why_it_discharges": "a closed subvariety of projective space is projective",
+        "ticket": "E-009"
+      }
+    },
+    "p_g_equals_1": {
+      "status": "discharged",
+      "how": "X is a K3 surface"
+    },
+    "very_general_member": {
+      "status": "ASSUMED",
+      "note": "rho = 19 is the generic value; it jumps to 20 on a countable dense subset (Noether-Lefschetz locus). NOT a statement about every fibre."
+    }
+  },
+  "citations": {
+    "irreducibility_of_T": [
+      {
+        "source": "Zarhin, 'Hodge groups of K3 surfaces', J. reine angew. Math. 341 (1983) 193-220",
+        "statement": "Theorem 1.6(a), p.207: the Hdg-module V(Y) is simple",
+        "V_is_T": "p.200: V(Y) := orthogonal complement of the algebraic-cycle lattice A(Y) in H^2(Y,Q); dim_Q V(Y) = b_2(Y) - rho(Y)",
+        "hypotheses": "Y a smooth irreducible projective surface over C with p_g = 1; no genericity hypothesis",
+        "local_copy": "docs/literature/zarhin_1983_crelle341.pdf",
+        "sha256": "148ce5ce39388d213b4ed6b019e8d7783e21b898f0d164c3191df69a43d73689",
+        "read_how": "scan with no text layer; read as rendered page images (pp. 193, 200, 207)"
+      },
+      {
+        "source": "Huybrechts, 'Lectures on K3 Surfaces', CUP 2016",
+        "statement": "Lemma 3.2.7 (draft 2.7): the transcendental lattice of a polarizable Hodge structure of K3 type is a polarizable irreducible Hodge structure; Lemma 3.3.1 (draft 3.1): T(X) = NS(X)^perp, and if X is projective then T(X) is polarizable irreducible",
+        "minimality": "Definition 3.2.5 (draft 2.5): T is the minimal primitive sub-Hodge structure with V^{2,0} = T^{2,0}",
+        "counterexample_without_projectivity": "Example 3.3.2 (draft 3.2): for a non-projective K3, NS(X)^perp need not be irreducible",
+        "local_copy": "docs/literature/huybrechts_K3Global.pdf",
+        "sha256": "59da72d5807fd05d08ce28ceaf30a030cfc7e52b92e27778d824ac86cb1dd287"
+      }
+    ],
+    "projectivity_of_our_K3": {
+      "source": "Almkvist & van Straten, arXiv:2103.08651, 'the three sporadic third order operators'",
+      "s7": "K3 = intersection of six hyperplane sections of G(2,6) in its Plucker embedding",
+      "s10": "K3 = intersection of four (1,1)-type hyperplane sections in P^3 x P^3 (Segre)",
+      "why_it_discharges": "a closed subvariety of projective space is projective",
+      "ticket": "E-009"
+    }
+  },
+  "not_claimed": [
+    "no Kodaira fibre types (E-007: none derivable from L2)",
+    "discriminant remains null; the retracted value was -3 and nothing here re-derives it",
+    "no Mordell-Weil rank",
+    "nothing about s18"
+  ],
+  "discriminant": null,
+  "mordell_weil_rank": null,
+  "verdict": "C2_v3_DERIVED"
+}

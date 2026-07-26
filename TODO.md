@@ -169,14 +169,24 @@ annihilating the period. So the only real question is whether L₃ is minimal.
       - Controls: `checkers/test_L3_irreducible_minimal_controls.py` (16 assertions). A
         known-reducible operator must fail step 2; an operator with no log at 0 must fail
         step 1. Writing them found a real bug. **Per E-010: a test that cannot fail is not a test.**
-- [ ] **Step B — T0 decision, not a computation.** rank T = rank V is standard Hodge theory
-      (Huybrechts, *Lectures on K3 Surfaces*, ch. 3 §3.1 and ch. 17 §17.1). Accepting that
-      citation promotes **T = 3, ρ = 19** to derived. **Notably NOT** the paywalled
-      Stienstra–Beukers 1985 — that source is no longer on the critical path.
-      ⚠️ Must travel with the caveat: **very general member**; ρ jumps to 20 on a countable
-      dense subset (singular K3s).
-- [ ] Only after Step B: emit `C2_cooper_s{7,10}_v3.json` with non-null ρ/T, and notify Stream 3
-      that criterion 1 is re-scorable (**no batch re-run needed**)
+- [x] **Step B — DONE 2026-07-26. ρ = 19, T = 3 emitted.** → `ESCALATIONS.md` **E-011**,
+      `checkers/check_C2_transcendental_rank.py`, `C2_cooper_s{7,10}_v3.json` (tier **[B]**).
+      T0 condition ("accept, but require a second source first") met: **both sources fetched,
+      hash-pinned and READ** —
+      **Zarhin 1983 Thm 1.6(a) p.207** (*"the Hdg-module V(Y) is simple"*; smooth projective,
+      p_g=1, **no genericity**; his p.200 also gives `dim V(Y) = b₂ − ρ`) — open at GDZ, a scan
+      with no text layer, so read as **rendered page images**; and **Huybrechts Lemma 3.2.7 +
+      3.3.1**. Projectivity discharged via A–vS's complete-intersection models (E-009).
+      ρ is **computed** as `b₂ − rank_V` from the step-A certificate at runtime, never typed in —
+      controls confirm the checker refuses on degraded input and reports ρ=17 if `rank_V`=5.
+      ⚠️ Caveats that travel with it: **very general member** (ρ jumps to 20 on a countable dense
+      subset); **projectivity is load-bearing** (Huybrechts Ex. 3.3.2 is a counterexample without
+      it); tier **B**, not A; `discriminant` stays **null**.
+- [x] Stream 3 notified → `briefs/STREAM2_TO_STREAM3_RHO_T_DERIVED_v2_2026_07_26.md`
+      (criterion 1 re-scorable, **no batch re-run**; includes a table distinguishing it from the
+      withdrawn E-010 brief of the same name, and tells them to verify by reading the source)
+- [x] **Stienstra–Beukers 1985 is OFF the critical path** — still paywalled, still unfetched,
+      nothing now depends on it
 - [x] **Néron–Severi cross-check — ATTEMPTED, corroborates the EASY half only.**
       (`checkers/check_neron_severi_ambient.py`, `data/certificates/NS_AMBIENT_BOUND.json`,
       commit `c8f66f3`.) **Do not retry this route.** The ambient models give only
