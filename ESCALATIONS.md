@@ -11,6 +11,103 @@ changes are edited in place with a dated note.
 
 ---
 
+## E-012 — D-3 cannot be run: the pinned observable does not exist, and the official runner fabricates
+
+| | |
+|---|---|
+| **Status** | 🔴 **OPEN (2026-07-26)** — D-3 **NOT RUN**. Running it as it stands would manufacture a Gate E result. |
+| **Opened** | 2026-07-26, on an instruction to conduct the D-3 empirical run |
+| **Raised by** | Opus 5 (Stream 2), inventorying the pipeline before executing |
+| **Severity** | High — Gate E's empirical criteria are unreachable, and the scaffold that looks like it reaches them does not |
+
+### Why D-3 was not run — four independent blockers
+
+**1. The pre-registered observable has not been selected, by design.**
+`PREDICTION.md` v1.0-PINNED §6 ("Derived quantities") is **empty on purpose**: *"Populated only
+by the completed, two-model-agreed S3-00 derivation."* §1 is explicit that `m_φ, α_D, Λ_D` are
+**TO-BE-DERIVED**, and that writing values early *"would be numbers-from-memory — forbidden."*
+But §3's observable decision rule is a **branch on m_φ**: P1 (PTA, if m_φ ∈ [10⁻²³,10⁻²²] eV)
+versus P2 (lensing, otherwise). **WP S3-00 has not run, so there is no m_φ, so no branch fires,
+so no observable is selected.** Running something and labelling it "the pre-registered test"
+would destroy the pre-registration — which is the entire evidential value of the pin.
+
+**2. The official batch runner fabricates.** `pipelines/D3_batch_runner_phase2.py` is the runner
+named in the **pinned** PREDICTION.md §"Stream 3 Phase 2 Execution". Verbatim, lines 103–141:
+
+```python
+# Stub: in production, use empirical_crucible/s2_1_singular_locus_observable.py
+error = np.random.normal(0, 1e-8, n_objects)      # then tested against precision=1e-6
+chi2  = np.random.chi2(df=1, size=1)[0]           # "synthetic, mean=1, pass if <3"
+...
+def compute_lattice_estimate(sector_data, c2_prior_rho=4, c2_prior_t=18):
+    rho_est = c2_prior_rho + np.random.normal(0, 0.3)   # "ρ≈4±0.3"
+```
+
+- the operator-identity test compares RMS of `N(0,1e-8)` noise against `1e-6` — **it cannot fail**;
+- χ² is an RNG draw, so the "pass rate" is a fixed property of the generator (a χ²(1) draw is
+  <3.0 about 91.7% of the time), **independent of the data**;
+- ρ is the prior plus noise, with the **E-007-retracted ρ=4 / T=18 hardcoded as the defaults**;
+- `sector_data` is consulted only for `n_objects` — **the redshift columns are never read**.
+
+This predates E-010 and is the same defect. E-010 was me reproducing, independently, a pathology
+the repo already contained.
+
+**3. `PREDICTION.md`'s own prerequisites are now false.** Its Stream 3 section lists as met:
+*"✅ C1 Kodaira classification complete (ρ=4, T=18 confirmed)"* and *"✅ C2 Picard/lattice
+computation complete"*. **Both were retracted by E-007**, and ρ/T are now 19/3 (E-011). A pinned
+document is asserting satisfied prerequisites that are known false. The pin cannot simply be
+edited — that is the point of a pin — so this needs a T0 decision (see below).
+
+**4. The data cannot support the observable even if 1–3 were fixed.**
+`empirical_crucible/s2_1_singular_locus_observable.py` **is real** (not a stub) — but it consumes
+a **3D baryon density field** `ρ_b` on a grid. What exists:
+
+| available | contents |
+|---|---|
+| `stream3_mirror/data/sdss_z/` | Coma cluster, **50 galaxies**, spectroscopic z |
+| `stream3_mirror/data/euclid_z/` | 3 EDF fields × **2000 objects**, **photometric** z |
+| `stream3_mirror/data/wp_r5_3d_field/` | **JSON results only — no actual field** |
+
+50 galaxies cannot constrain a density field on the observable's grid, and Euclid photo-z
+(σ_z ≈ 0.05(1+z)) smears radial position by ~10²  Mpc — far beyond the scales a *singular-locus
+proximity* metric probes. Also 4 sectors against the protocol's **100–150**.
+
+### Also stubs, for the record
+
+- `scripts/v5_dual_scale_pipeline.py` — a docstring plus
+  `print("V5 Dual-Scale Pipeline - Implementation pending")`.
+- `scripts/gate_e_verdict.py` — criterion 5 (physics-washing audit) stubbed.
+- `scripts/fetch_stream3_data.sh`, `scripts/d3_statistical_report.py` — **do not exist**
+  (both named in briefs and in the PREDICTION.md command blocks).
+- `scripts/aggregate_d3_verdicts.py` — clean; it only aggregates.
+
+### The pattern worth naming
+
+Three tickets now share one shape: **scaffolding written before the science, with `np.random`
+placeholders, then cited as though it were the science.** E-007 (a hardcoded `components=2` in a
+lookup), E-010 (a capped χ² and RNG ρ), E-012 (this). The placeholder is always honestly labelled
+*at the point of writing* — "Stub: in production, use …" — and the label is always what gets lost
+when the artifact is cited downstream.
+
+### What would actually unblock D-3
+
+1. **Run WP S3-00** → derive m_φ (+ α_D, Λ_D) with the two-model rule → commit `PREDICTION.md`
+   v1.1 **before any data contact for the selected branch**. Only then does an observable exist.
+2. **T0 decision on the stale pin.** PREDICTION.md asserts retracted prerequisites. Options:
+   re-pin at v1.1 recording the E-007/E-011 correction, or annotate in `ASSUMPTIONS.md` §2 under
+   the open countermand window. **Not mine to choose.**
+3. **Wire the real observable**, replacing `test_sym2_operator_identity` and
+   `compute_lattice_estimate` with calls into `s2_1_singular_locus_observable.py` — and ship
+   negative controls, per E-010.
+4. **Acquire data the observable can consume**: a reconstructed 3D density field, or spectroscopic
+   sectors dense enough to build one. Photometric redshifts will not do for this observable.
+
+Until 1–4, **the honest Gate E position is unchanged: criteria 1–2 are UNSCOREABLE for want of a
+valid run**, not failing. Criterion 1's *prior* is now available (E-011, ρ=19/T=3) — but a prior
+is not a measurement.
+
+---
+
 ## E-011 — ρ/T CLOSED: ρ = 19, T = 3, derived and emitted
 
 | | |

@@ -39,6 +39,29 @@ from concurrent.futures import ThreadPoolExecutor, ProcessPoolExecutor, as_compl
 
 import numpy as np
 
+# ---------------------------------------------------------------------------
+# DISABLED 2026-07-26 — ESCALATIONS.md E-012.
+#
+# This runner does NOT compute an observable. test_sym2_operator_identity()
+# compares RMS of np.random.normal(0,1e-8) noise against a 1e-6 threshold (it
+# cannot fail) and draws chi2 from np.random.chi2; compute_lattice_estimate()
+# returns c2_prior_rho + noise, with the E-007-RETRACTED rho=4/T=18 as its
+# defaults. sector_data is read only for n_objects — the redshifts are never
+# touched. Any "pass rate" it reports is a property of the RNG, not the data.
+#
+# It is disabled rather than deleted because the pinned PREDICTION.md names it,
+# so it must fail loudly instead of silently producing a Gate E result.
+#
+# To re-enable: wire test_sym2_operator_identity() and compute_lattice_estimate()
+# into empirical_crucible/s2_1_singular_locus_observable.py (which IS real), ship
+# negative controls per E-010, and remove this guard in the same commit.
+# ---------------------------------------------------------------------------
+raise SystemExit(
+    "D3_batch_runner_phase2.py is DISABLED (ESCALATIONS.md E-012): it fabricates "
+    "chi2 and rho via np.random and never reads the sector data. Do not use it to "
+    "produce a Gate E result."
+)
+
 # Try GPU imports; fall back to CPU if unavailable
 try:
     import cupy as cp
