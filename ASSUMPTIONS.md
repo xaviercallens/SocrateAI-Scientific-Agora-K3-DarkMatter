@@ -64,6 +64,17 @@ rate below declared α) **before** touching real data.
 
 ## 2. Resolution ledger for the 2026-07-18 draft (every entry dispositioned)
 
+### Ledger addendum — 2026-07-26 (T0-approved, this session)
+
+| # | entry | disposition |
+|---|---|---|
+| L-1 | `EXECUTION_PLAN.md` and `VISION.md` deleted 2026-07-18 in `d2d8894` (cleanup commit), though both were live (v1.1 / v1.2) and cited by 10 / 26 files | **RESTORED** from `d2d8894^`. T0-approved 2026-07-26. `VISION.md` defines the tier system `check_tier_language.py` enforces. |
+| L-2 | `PREDICTION.md` line 49 asserted "C1 Kodaira classification complete (ρ=4, T=18 confirmed)" as a met prerequisite | **CORRECTED** at **v1.1-PINNED**. ρ=4/T=18 retracted (E-007); no Kodaira type is derivable; ρ=19/T=3 [B] supersedes (E-011). Re-pin performed under the document's own protocol, not a unilateral edit. |
+| L-3 | `PREDICTION.md` §6 stood "RESERVED / empty by design" while S3-00 had in fact completed | **POPULATED** at v1.1 with the S3-00 outcome: **F5b, no prediction extractable**. Two independent obstructions recorded (absent compactification; E-013's structural block on step 2(b)). |
+| L-4 | `NO_PREDICTION_BRANCH.md` §2/§5 cite ρ=4/T=18 and "2× Type II" Kodaira as certified and "not in question" | **CORRECTED** in `PREDICTION.md` §6. Written 2026-07-25, one day before E-007. **The F5b conclusion is unaffected and strengthened**; only its supporting table was stale. |
+| L-5 | A-DE / a₃ discharge path | Unchanged — **F5b**, as originally filed. |
+
+
 | v1.0 entry | Disposition (2026-07-24) |
 |---|---|
 | §1.2 "Sym² structure of Cooper s7 ODE can be formally proven in Lean 4" | **VERIFIED — no longer an assumption.** `Structures/CooperSym2Proof.lean`, kernel-checked, axiom-clean (s7 AND s10), tag v0.3.0. |

@@ -101,6 +101,14 @@ result) stands on its own regardless.
 
 ### Why D-3 was not run — four independent blockers
 
+> **CORRECTION 2026-07-26 (same day):** blocker 1 below said WP S3-00 "has not run". That is
+> imprecise and I am correcting it. **S3-00 *did* run, on 2026-07-25, and completed with a
+> negative: it triggered F5b**, recorded by T0 in `NO_PREDICTION_BRANCH.md`. The substance of
+> blocker 1 is unchanged — there is still no m_φ, so no observable branch fires — but the reason
+> is "S3-00 completed and could extract no prediction", not "S3-00 was never attempted". That
+> distinction matters: the first is a pre-registered, reportable outcome; the second would be a
+> scheduling gap. See `PREDICTION.md` §6 (v1.1) and **E-013**.
+
 **1. The pre-registered observable has not been selected, by design.**
 `PREDICTION.md` v1.0-PINNED §6 ("Derived quantities") is **empty on purpose**: *"Populated only
 by the completed, two-model-agreed S3-00 derivation."* §1 is explicit that `m_φ, α_D, Λ_D` are

@@ -1,7 +1,8 @@
 # PREDICTION.md — Pre-Registered Observable & Derivation Protocol (PINNED)
 
 ## Document Information
-- **Version:** 1.0-PINNED
+- **Version:** 1.1-PINNED  (v1.0-PINNED 2026-07-24; §6 populated and prerequisites
+  corrected 2026-07-26 — see §6 and the correction note below)
 - **Date:** 2026-07-24
 - **Pin authority:** Xavier Callens (T0 Owner) — **by explicit delegation** to Claude (Fable 5),
   instruction of 2026-07-24 ("take decision and update … prediction.md on my behalf").
@@ -45,9 +46,15 @@ SIGNED); §4 comparisons additionally [A-DATA, A-PIPE].
 **Delegation:** Execution delegated to Stream 3 team; decision authority retained by Xavier.
 
 **Pre-Requisites (ALL MUST BE MET):**
-✅ C3b partner extraction complete (L₃=Sym²(L₂) proven all-n)
-✅ C1 Kodaira classification complete (ρ=4, T=18 confirmed)
-✅ C2 Picard/lattice computation complete (both s7 & s10)
+✅ C3b partner extraction complete (L₃=Sym²(L₂) proven all-n) — **still valid**
+❌ ~~C1 Kodaira classification complete (ρ=4, T=18 confirmed)~~ — **FALSE, RETRACTED
+   2026-07-26 (`ESCALATIONS.md` E-007).** L₂ is a *twisted* Picard–Fuchs operator
+   (exponents {0,½}, det(monodromy) = −1 ∉ SL₂(ℤ)); **no Kodaira type is derivable from it
+   at all.** ρ=4/T=18 traced to a hardcoded `components=2`, and is additionally
+   *arithmetically impossible*: an order-3 operator governs a rank-3 system (E-009).
+⚠️ C2 Picard/lattice — **SUPERSEDED.** ρ = **19**, T = **3** [tier B], derived 2026-07-26
+   (`ESCALATIONS.md` E-011, `C2_cooper_s{7,10}_v3.json`) via L₃-minimality + Zarhin 1983
+   Thm 1.6(a). Lattice **ranks only** — no fibre content, no discriminant, no MW rank.
 ✅ Phase 1 local checks all PASS (numerics, mirror-map, lattice)
 ✅ All three organizational blockers cleared:
    • K3_SELECTION_REPORT.md published & frozen (Route A: cooper_s7)
@@ -204,10 +211,62 @@ in OBSERVATIONAL_REPORT.md with the same prominence as a detection. Secondary pr
 branches: F3/F4 threshold triggers as defined in EXECUTION_PLAN (mechanical, never post-hoc).
 The kill-condition evaluation is REQUIRED output of S3-00 regardless of which way it falls.
 
-## 6. Derived quantities — RESERVED (v1.1)
+## 6. Derived quantities — S3-00 COMPLETED WITH A NEGATIVE (v1.1, 2026-07-26)
 
-Empty by design at v1.0-PINNED. Populated only by the completed, two-model-agreed S3-00
-derivation, in a new commit, with uncertainties and full assumption-tag lists.
+**No derived quantities. S3-00 ran, reached an honest obstruction, and triggered F5b.**
+
+This section is populated exactly as v1.0 specified — "only by the completed … S3-00
+derivation". S3-00 *completed*; its outcome is that **no prediction can be extracted**.
+Per `PREDICTION.md` §5 and `VISION.md` §4/§5 that is a **required, reportable result**, not
+a failure of process.
+
+- **m_φ, α_D, Λ_D: NOT DERIVED.** They remain forbidden to write here.
+- **Observable branch (§3): NOT SELECTED.** The branch is a function of m_φ; with no m_φ,
+  neither P1 (PTA) nor P2 (lensing) fires. No data contact has occurred for either.
+- **Record:** `NO_PREDICTION_BRANCH.md` (F5b, triggered 2026-07-25, T0-recorded).
+
+**Two independent obstructions, not one:**
+
+1. **No explicit compactification exists** (the original F5b trigger, 2026-07-25). Nobody has
+   chosen flux quanta, fixed (𝒱, g_s) by genuine moduli stabilization, or verified D3-tadpole
+   cancellation for this candidate. So `V_flux` is absent and `∂²V` cannot be taken — m_φ has
+   no numerator. `VISION.md` §1.2 already recorded both sectors as **[C, unconstructed]**.
+2. **Step 2(b) is structurally blocked** (new, 2026-07-26, `ESCALATIONS.md` E-013).
+   `EXECUTION_PLAN.md` §S3-00 step 2(b) derives α_D, Λ_D **from Kodaira fibre data (C2
+   output)**. E-007 retracted all Kodaira classification, and E-008/E-009 explain *why* it is
+   not merely missing: the finite singular loci are **order-2 elliptic points of a Fuchsian
+   group**, which carry finite-order monodromy by construction and are **not** Kodaira
+   degenerations. The "7-branes wrapping curves ⇒ gauge group from fibre type" mechanism has
+   no geometric substrate here. This obstruction is **category-level, not a missing computation**,
+   and it is independent of obstruction 1.
+
+**Amendment A3 (`EXECUTION_PLAN.md`) is thereby met on its own terms:** *"PREDICTION.md must
+contain at least one worked 4D EFT matching (fields, masses, couplings from geometric data)
+**or the F5 branch triggers**."* No such matching exists. **F5/F5b stands.**
+
+### What this is not
+
+**Not a refutation.** F5b means no prediction could be *extracted*, not that a prediction was
+tested and failed. The hypothesis is neither confirmed nor falsified — it is *under-constructed*
+at the level an empirical test requires. **Reversible:** exhibit a flux stabilization, and a
+non-fibration route to the dark gauge sector, and S3-00 reopens.
+
+**Not a loss of the mathematics.** Per `VISION.md` §5 the programme contracts to its Tier A
+content, which is substantial and stands independent of any dark-sector claim:
+`L₃ = Sym²(L₂)` (kernel-proven); **L₃ irreducible ⇒ the minimal-order Picard–Fuchs operator**
+(exact in ℚ, with negative controls); **ρ = 19, T = 3** (E-011); the s7-partner integrality
+mechanism (a *normalized* integral uniformizer); exact Riemann schemes with Fuchs Σ = 6; and the
+Almkvist–van Straten identification with explicit projective K3 models.
+
+### Correction to the F5b record itself
+
+`NO_PREDICTION_BRANCH.md` §2 (written 2026-07-25) lists as *certified*: "ρ=4, T=18" and
+"Kodaira fibre classification — 2× Type II", stating "None of this is in question."
+**Both were retracted by E-007 the following day.** Correct values: ρ = 19, T = 3 [B]; and
+**there is no Kodaira classification.** Its §5 likewise cites "Kodaira classification" among
+results that "remain valid" — that clause does not survive. **The F5b conclusion is unaffected
+and in fact strengthened**, since obstruction 2 above is stronger than the flux-data
+unavailability on which it was originally filed.
 
 ---
 
