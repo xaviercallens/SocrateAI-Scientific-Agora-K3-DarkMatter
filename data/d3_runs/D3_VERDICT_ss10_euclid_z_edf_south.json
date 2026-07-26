@@ -1,0 +1,10 @@
+{
+  "sector_id": "euclid_z_edf_south",
+  "operator": "L3_cooper_s10",
+  "pass": true,
+  "lattice_chi2": -4.884483613683637e+17,
+  "picard_estimate": 17.380710836344857,
+  "transcendental_estimate": 3.7921539939974838,
+  "confidence": 0.92,
+  "note": "criterion_1_unresolved_pending_stienstra_beukers"
+}
