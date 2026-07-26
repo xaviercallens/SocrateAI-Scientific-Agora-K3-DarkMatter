@@ -1,4 +1,15 @@
 {
+  "RETRACTED": {
+    "ticket": "E-007",
+    "date": "2026-07-26",
+    "reason": "rho=4/T=18 traced to a hardcoded components=2 in exponents_to_kodaira_type(), not to geometry. L2 is a twisted PF operator (exponents {0,1/2}, det(monodromy)=-1 not in SL2(Z)), so no Kodaira type is derivable from it. Independently reinforced by E-009 Lead 2: an order-3 operator governs a rank-3 local system, so T=18 is arithmetically incompatible with the operator that generates the sequence.",
+    "standing_rule": "Emit no rho and no T until one is derived.",
+    "retracted_values": {
+      "picard_rank": 4,
+      "transcendental_rank": 18,
+      "verdict": "C2_CORRECTED_v2 (rho=4, T=18)"
+    }
+  },
   "checker": "generate_C1C2_v2_certificates.py (derived from C1-v2)",
   "checker_version": "2.0.0",
   "correction_notes": [
@@ -19,7 +30,7 @@
     "rank": 18
   },
   "partner": "cooper_s10_partner",
-  "picard_rank": 4,
+  "picard_rank": null,
   "provenance": "Generated-by: scripts/generate_C1C2_v2_certificates.py (derived from C1-v2 + Shioda-Tate) | Verified-by: exact algebra (Hodge structure) | Reviewed-by: T0 + Deep Think (2026-07-25)",
   "refs_sha256": "17f54915417277ea80480fb3ff32edfc5bf7753435a5d634e3c998fc3dd1b6ce",
   "shioda_tate_decomposition": {
@@ -29,7 +40,7 @@
     "total": "\u03c1 = 4"
   },
   "supersedes": "C2_cooper_s{7,10}_partner.json (F6 retracted: fabricated from incorrect C1)",
-  "transcendental_rank": 18,
-  "verdict": "C2_CORRECTED_v2 (rho=4, T=18)",
+  "transcendental_rank": null,
+  "verdict": "RETRACTED (E-007) \u2014 see RETRACTED block",
   "warning": "Transcendental lattice Gram matrix not yet computed (requires full Picard-Fuchs integration). Values \u03c1 and T are correct (from Shioda-Tate); sublattice structure deferred to v2.1."
 }

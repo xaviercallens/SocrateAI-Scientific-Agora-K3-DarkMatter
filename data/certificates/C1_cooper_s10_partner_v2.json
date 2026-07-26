@@ -1,4 +1,13 @@
 {
+  "RETRACTED": {
+    "ticket": "E-007",
+    "date": "2026-07-26",
+    "reason": "rho=4/T=18 traced to a hardcoded components=2 in exponents_to_kodaira_type(), not to geometry. L2 is a twisted PF operator (exponents {0,1/2}, det(monodromy)=-1 not in SL2(Z)), so no Kodaira type is derivable from it. Independently reinforced by E-009 Lead 2: an order-3 operator governs a rank-3 local system, so T=18 is arithmetically incompatible with the operator that generates the sequence.",
+    "standing_rule": "Emit no rho and no T until one is derived.",
+    "retracted_values": {
+      "verdict": "C1_CORRECTED_v2 (n_fibres=2, rho=4, singular_loci_exact_z)"
+    }
+  },
   "checker": "generate_C1C2_v2_certificates.py (merged: check_C1_singular_loci + compute_C1_monodromy)",
   "checker_version": "2.0.0",
   "correction_notes": [
@@ -77,6 +86,6 @@
     "formula": "T = 22 - \u03c1 = 22 - 4 = 18",
     "transcendental_rank": 18
   },
-  "verdict": "C1_CORRECTED_v2 (n_fibres=2, rho=4, singular_loci_exact_z)",
+  "verdict": "RETRACTED (E-007) \u2014 see RETRACTED block",
   "warning": "Kodaira types marked '(tentative)' pending full Weierstrass-model resolution. Exponent-based classification is rigorous; fibre component structure heuristic. Will be upgraded to v2.1 with full monodromy-orbit analysis (commit pending T0 approval)."
 }

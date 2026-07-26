@@ -1,4 +1,15 @@
 {
+  "RETRACTED": {
+    "ticket": "E-007",
+    "date": "2026-07-26",
+    "reason": "rho=4/T=18 traced to a hardcoded components=2 in exponents_to_kodaira_type(), not to geometry. L2 is a twisted PF operator (exponents {0,1/2}, det(monodromy)=-1 not in SL2(Z)), so no Kodaira type is derivable from it. Independently reinforced by E-009 Lead 2: an order-3 operator governs a rank-3 local system, so T=18 is arithmetically incompatible with the operator that generates the sequence.",
+    "standing_rule": "Emit no rho and no T until one is derived.",
+    "retracted_values": {
+      "picard_rank": 4,
+      "transcendental_rank": 18,
+      "verdict": "C1_KODAIRA_TENTATIVE(n_fibres=2, rho=4)"
+    }
+  },
   "assumption": "Mordell-Weil rank = 0 (fibre has no rational points besides identity)",
   "checker": "compute_C1_monodromy.py",
   "checker_version": "1.0.0",
@@ -30,11 +41,11 @@
   "mordell_weil_rank": 0,
   "n_singular_fibres": 2,
   "partner": "cooper_s7_partner",
-  "picard_rank": 4,
+  "picard_rank": null,
   "provenance": "Generated-by: scripts/compute_C1_monodromy.py v1.0.0 (Tier B, exponent-based) | Verified-by: exact algebra (Fuchs relation) | Reviewed-by: pending T0",
   "refs_sha256": "17f54915417277ea80480fb3ff32edfc5bf7753435a5d634e3c998fc3dd1b6ce",
   "shioda_tate_formula": "\u03c1 = 2 + \u03a3(m_i - 1) + rank(MW) = 2 + 2 + 0 = 4",
-  "transcendental_rank": 18,
-  "verdict": "C1_KODAIRA_TENTATIVE(n_fibres=2, rho=4)",
+  "transcendental_rank": null,
+  "verdict": "RETRACTED (E-007) \u2014 see RETRACTED block",
   "warning": "Kodaira types are TENTATIVE. Full resolution requires Weierstrass model analysis at each singular fibre. This script uses exponent differences as a heuristic; the exact types require local discriminant analysis (monodromy-orbit refinement). See compute_C1_monodromy.py v1.1 for full SL2(Z)-orbit classification."
 }
