@@ -90,20 +90,25 @@
       `C2_cooper_s7_v4.json`** (draft retained for audit; v3 remains runtime source for
       ranks). **H-M7 upgrade is PARTIAL: T-half [B], NS-half stays [C]** (Nikulin step
       unexecuted). Phase M: Option B — dormant, re-gated on an exhibited X₄/B₃ (D3′).
-      Record: `briefs/T0_DECISIONS_2026_07_27_STREAM2.md`.
+      **Superseded as of D5′ (below): `C2_cooper_s7_v5.json` is now the LIVE lattice
+      certificate** (v4/v4_DRAFT retained unchanged for audit; v3 still the rank
+      source). Record: `briefs/T0_DECISIONS_2026_07_27_STREAM2.md`.
 - [x] **E-016 → Stream 3: told**, with the one-line self-check, in
       `briefs/STREAM2_TO_STREAM3_WPE5_RESPONSE_2026_07_26.md` §5.
-- [x] **U1 witness serialization — DONE (2026-07-27, T0-ruled).** Motivated by
-      Stream 1's independent-verification finding (their
-      `briefs/STREAM1_U1_INDEPENDENT_VERIFICATION_2026_07_27.md`): the
+- [x] **U1 witness serialization — DONE (2026-07-27, T0-ruled); v5 PROMOTED TO LIVE
+      (2026-07-27, D5′).** Motivated by Stream 1's independent-verification finding
+      (their `briefs/STREAM1_U1_INDEPENDENT_VERIFICATION_2026_07_27.md`): the
       base-change matrix P was computed but not serialized. `derived.u_splitting
       .basis_change_matrix` added to `check_U1_lattice.py`'s output (additive
-      only); `C2_cooper_s7_v5_DRAFT.json` emitted via `--emit-cert-v5`; v3/v4
-      untouched (SHA256-verified). New checker `checkers/check_U1_witness_
-      serialization.py` + `checkers/test_U1_witness_serialization_controls.py`
-      (6 controls, python3 + pytest green; missing-witness on v3/v4 reports
-      WITNESS_ABSENT, not FAIL). Record:
-      `briefs/STREAM2_P_WITNESS_SERIALIZATION_2026_07_27.md`.
+      only); `C2_cooper_s7_v5_DRAFT.json` emitted via `--emit-cert-v5`, then
+      **accepted by T0 and promoted to `C2_cooper_s7_v5.json` (now LIVE, supersedes
+      v4 in that role)**; v3/v4/v4_DRAFT untouched (SHA256-verified before and after
+      promotion). Checker `checkers/check_U1_witness_serialization.py`
+      (`--all` now checks v3, v4, v5, v5_DRAFT) + `checkers/test_U1_witness_
+      serialization_controls.py` (7 controls, python3 + pytest green;
+      missing-witness on v3/v4 reports WITNESS_ABSENT, not FAIL; v5 and v5_DRAFT
+      both PASS). Records: `briefs/STREAM2_P_WITNESS_SERIALIZATION_2026_07_27.md`,
+      `briefs/T0_DECISIONS_2026_07_27_STREAM2.md` (D5′).
 
 ## ⛔ Do NOT do these
 

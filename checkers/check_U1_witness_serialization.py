@@ -24,9 +24,9 @@ serialized witness (it does not re-derive P from G independently — Stream 1's
 check_U1_splitting_independent.py, in the Stream 1 repo, already does that).
 
 Usage:
-  python3 checkers/check_U1_witness_serialization.py                # v5 draft
+  python3 checkers/check_U1_witness_serialization.py                # v5 LIVE
   python3 checkers/check_U1_witness_serialization.py --cert <path>
-  python3 checkers/check_U1_witness_serialization.py --all           # v3,v4,v5
+  python3 checkers/check_U1_witness_serialization.py --all           # v3,v4,v5,v5_DRAFT
 
 Exit codes: 0 PASS or WITNESS_ABSENT (both legitimate non-failure outcomes),
 3 FAIL (structural inconsistency), 2 usage/data (missing file).
@@ -44,7 +44,7 @@ from pathlib import Path
 import sympy as sp
 
 REPO = Path(__file__).resolve().parent.parent
-DEFAULT_CERT = REPO / "data" / "certificates" / "C2_cooper_s7_v5_DRAFT.json"
+DEFAULT_CERT = REPO / "data" / "certificates" / "C2_cooper_s7_v5.json"
 
 
 class ControlFailure(Exception):
@@ -128,7 +128,7 @@ def main():
     if args.all:
         paths = [REPO / "data" / "certificates" / f
                   for f in ("C2_cooper_s7_v3.json", "C2_cooper_s7_v4.json",
-                             "C2_cooper_s7_v5_DRAFT.json")]
+                             "C2_cooper_s7_v5.json", "C2_cooper_s7_v5_DRAFT.json")]
 
     worst = 0
     for path in paths:

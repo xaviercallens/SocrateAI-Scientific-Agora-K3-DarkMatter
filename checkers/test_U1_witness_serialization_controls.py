@@ -5,18 +5,20 @@ check_U1_witness_serialization.py. "A test that cannot fail is not a test"
 (TODO.md standing rule 1).
 
 Controls:
-  1. TAMPERED P: corrupt one entry of the real v5-draft basis_change_matrix.
+  1. TAMPERED P: corrupt one entry of the real v5 (LIVE) basis_change_matrix.
      P^T G P no longer equals gram_after -> must FAIL.
   2. NON-UNIMODULAR P: scale a column of the real P by 2. det(P) becomes even
      -> must FAIL at the GL_3(Z) gate.
   3. TAMPERED gram_after: corrupt one entry of the certificate's own claimed
      gram_after. The real P no longer matches it -> must FAIL.
-  4. WITNESS ABSENT (v4.json): the LIVE v4 certificate predates this field
-     entirely -> must report WITNESS_ABSENT, NOT FAIL (so the regression
-     stays green on v4).
+  4. WITNESS ABSENT (v4.json): the (now-superseded, still audit-retained) v4
+     certificate predates this field entirely -> must report WITNESS_ABSENT,
+     NOT FAIL (so the regression stays green on v4).
   5. WITNESS ABSENT (v3.json): a differently-shaped certificate with no
      "derived" block at all -> must also report WITNESS_ABSENT, not crash.
-  6. POSITIVE sanity: the unmodified v5-draft certificate PASSes.
+  6. POSITIVE sanity: the unmodified v5.json (LIVE) certificate PASSes.
+  7. POSITIVE sanity: the retained v5_DRAFT.json certificate PASSes too
+     (identical witness content to v5.json, only metadata differs).
 
 Run:
   python3 checkers/test_U1_witness_serialization_controls.py
@@ -37,6 +39,10 @@ CERTS = REPO / "data" / "certificates"
 
 
 def _v5():
+    return W.load_cert(CERTS / "C2_cooper_s7_v5.json")
+
+
+def _v5_draft():
     return W.load_cert(CERTS / "C2_cooper_s7_v5_DRAFT.json")
 
 
@@ -137,12 +143,20 @@ def test_v3_witness_absent():
 # 6. positive sanity
 # ---------------------------------------------------------------------------
 
-def test_v5_draft_passes():
+def test_v5_live_passes():
     cert = _v5()
     result = W.verify_certificate(cert, verbose=False)
     assert result["detP"] in (1, -1)
     assert result["PtGP"] == result["gram_after"]
-    return "v5 draft witness verified PASS as expected"
+    return "v5 (LIVE) witness verified PASS as expected"
+
+
+def test_v5_draft_passes():
+    cert = _v5_draft()
+    result = W.verify_certificate(cert, verbose=False)
+    assert result["detP"] in (1, -1)
+    assert result["PtGP"] == result["gram_after"]
+    return "v5_DRAFT witness verified PASS as expected"
 
 
 # ---------------------------------------------------------------------------
@@ -155,6 +169,7 @@ CONTROLS = [
     ("tampered-gram_after (must FAIL)", test_tampered_gram_after_fails),
     ("v4 witness absent (must NOT fail)", test_v4_witness_absent),
     ("v3 witness absent (must NOT fail)", test_v3_witness_absent),
+    ("v5 LIVE unmodified (must PASS)", test_v5_live_passes),
     ("v5 draft unmodified (must PASS)", test_v5_draft_passes),
 ]
 

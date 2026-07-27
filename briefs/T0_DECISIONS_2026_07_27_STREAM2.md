@@ -49,8 +49,27 @@ reachable on current evidence and stays parked until a valid empirical route exi
 (candidates: the re-gated S3-00 §2(b) given an X₄; a T0-ratified WP-E5 successor; a
 pinned WP-E6 program). The TODO item closes as ANSWERED, not as achieved.
 
+## D5′ — C2 v5 (P-witness serialization) ACCEPTED, promoted to LIVE
+
+`C2_cooper_s7_v5.json` is now the LIVE lattice certificate for cooper_s7, superseding
+`C2_cooper_s7_v4.json` in that role (v4 and `v4_DRAFT.json` retained unchanged for audit,
+same treatment as v3 when v4 was promoted). v5 adds exactly one field vs v4 —
+`derived.u_splitting.basis_change_matrix`, the explicit GL₃(ℤ) witness P that
+`stage3_lattice()` computed in memory but previously discarded — motivated directly by
+Stream 1's independent-verification finding
+(`briefs/STREAM1_U1_INDEPENDENT_VERIFICATION_2026_07_27.md`, Stream 1 repo: the v4
+certificate recorded det(P) and PᵀGP but not P itself, forcing third parties to
+re-derive their own witness). No other derived/how/controls/tier field values changed.
+`C2_cooper_s7_v3.json` remains the unaffected runtime source for ranks (ρ=19, T=3); no
+checker rewiring implied. Verification: `checkers/check_U1_witness_serialization.py
+--all` and its 6 controls (`test_U1_witness_serialization_controls.py`), plus the full
+13-command regression, all green pre- and post-promotion.
+
+Authority: Xavier Callens (T0), verbal via T1 coordinator, 2026-07-27 (same session as
+D1′–D4′, decided in parallel with WP-E6b's option-A ruling in the Dark Home repo).
+
 ---
 Generated-by: Fable 5 (T1 coordinator) | Verified-by: n/a (decision record); certificate
-promotion in `data/certificates/C2_cooper_s7_v4.json` carries the acceptance field |
-Reviewed-by: Xavier (T0) — records his own in-session decisions; the D3′ Option-B reading
-is explicitly flagged for his confirmation
+promotions in `data/certificates/C2_cooper_s7_v4.json` and `C2_cooper_s7_v5.json` carry
+the acceptance fields | Reviewed-by: Xavier (T0) — records his own in-session decisions;
+the D3′ Option-B reading is explicitly flagged for his confirmation
