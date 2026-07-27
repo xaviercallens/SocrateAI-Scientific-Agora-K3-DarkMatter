@@ -47,10 +47,12 @@
 
 ## 🟡 Open — mechanical, any agent can pick up
 
-- [ ] **Correct `stream3_mirror/NO_PREDICTION_BRANCH.md` §2/§5 at source.** It lists ρ=4/T=18 and
-      "2× Type II" Kodaira as certified and "not in question" — both retracted by E-007 the day
-      after it was written. Corrected *downstream* in `PREDICTION.md` §6, but the mirror copy is
-      still stale. **The F5b conclusion is unaffected**; only its supporting table is wrong.
+- [x] **Correct `stream3_mirror/NO_PREDICTION_BRANCH.md` §2/§5 at source — DONE (2026-07-27).**
+      Dated correction notes added at source (Dark Home repo: §2 certificate table + §8
+      obstruction basis; also `PREDICTION_APPENDIX_A.md` §A.1.4/§A.3.4, whose Type II veto
+      cited the retracted certificates); mirror refreshed from corrected source. F5b
+      unaffected, as expected. See
+      `briefs/EXTERNAL_UNBLOCK_PLAN_RECONCILIATION_2026_07_27.md`.
 - [x] **`t103` status — RESOLVED (E-014, 2026-07-26): not vetoed.** No T0 record vetoing it exists
       anywhere in the repo; every classification artifact (Phase A/B/C findings, GATE-C, the Lean
       file itself) already agreed it is K3-type, order-3 ODE, GATE-C finalist. The "order-4 CY3"

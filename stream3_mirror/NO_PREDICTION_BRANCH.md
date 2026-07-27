@@ -34,7 +34,17 @@ The candidate's **pure mathematics** is genuinely certified:
 | Kodaira fibre classification | 2× Type II, exponents [0, 1/2] | `C1loci_cooper_s7_partner.json` |
 | Mirror map F(z_e) | Certified to q¹⁴ | `C3b_symsqrt_cooper_s7.json` |
 
-None of this is in question. What `PREDICTION_APPENDIX_A.md` requires *beyond* this
+> **Correction (2026-07-27) — two rows above are superseded.** The ρ=4/T=18 row and the
+> "2× Type II" Kodaira row were retracted by Stream 2 escalation E-007 on 2026-07-26 — the
+> day after this document was written (the ρ=4 traced to a hardcoded constant in a faulty
+> exponent→Kodaira lookup, not to geometry). Current derived values: **ρ = 19, T = 3**,
+> Tier B (E-011, Zarhin 1983 Thm 1.6(a) route; independently verified by Stream 1). No
+> Kodaira fibre classification is available for this family at all: E-008/E-009 found the
+> finite singular loci are order-2 elliptic points of the X₀(7)+ modular curve, not Kodaira
+> degenerations. The Sym² and mirror-map rows are unaffected. The F5b conclusion of this
+> document does not rest on the retracted rows — see the §8 correction note.
+
+The Sym² and mirror-map rows are not in question. What `PREDICTION_APPENDIX_A.md` requires *beyond* this
 geometric data are three physical coefficients, each needing an **explicit string
 compactification** (flux quanta, brane wrapping, moduli stabilization) that has never
 been constructed for this candidate — only its abstract K3/elliptic lattice data has been
@@ -150,6 +160,16 @@ coefficient is in `PREDICTION_APPENDIX_A.md` A.1.4, A.2.5, A.3.4:
    but not posable. Choosing χ(X₄) to permit a KKLT-style uplift would be a fit dressed as a
    derivation (`.agents/AGENTS.md` Rule 7).
 
+> **Correction (2026-07-27).** The parenthetical "(ρ=4, T=18, 2× Type II fibres)" reflects
+> certificates retracted the day after this section was written (Stream 2 E-007; derived
+> values now ρ=19, T=3, Tier B, E-011). The three obstructions survive on corrected grounds:
+> (1) the Type II veto strengthens — no gauge-algebra reading exists at these loci at all
+> (E-008/E-009: order-2 elliptic points, not Kodaira degenerations), and X₄ remains
+> unspecified; (2) the flat-direction count changes arithmetic (T = 3, not 18) but the flux
+> potential remains unconstructible (A.2.5), so the wall stands; (3) the topology void is
+> independent of the lattice ranks — χ(X₄) depends on the unspecified base B₃ (see also T0
+> decision D4 / assumption A-DE). **F5b stands as recorded.**
+
 **Two-model status:** unified concurrence, no dispute — logged in `DERIVATION_DISPUTES.md`.
 Deep Think's independent pass reached the same three obstructions and confirmed no numerical
 fabrication was attempted.
@@ -260,10 +280,27 @@ same prominence as a positive. Residue: monitoring trigger **F-LAB**
 infrastructure remains valid engineering (G1 scope); no comparison-data fetch, no
 TEST/FIT label, no v2.0 pin.
 
+## 9. Monitoring trigger — F-LAB (the only path back to Gate 0)
+
+**What F-LAB is:**
+Future public ISL data excluding |α|=1 below 38.6 μm reopens Gate 0 re-evaluation, and nothing else does (per `WP_A2_CIRCULARITY_AUDIT.md` §5).
+
+**What class of public dataset would satisfy it:**
+Short-range inverse-square-law (ISL) / torsion-balance exclusion experiments conducted at gravitational strength (α ≈ 1). Specifically: peer-reviewed results claiming exclusion of |α|=1 at ranges λ < 38.6 μm, pushing past the current published gravitational-strength ISL reach (≥ 38.6 μm; arXiv:2002.11761). The short-range regime allows α ≲ 10¹² (hep-ph/0502025), but any new data constraining gravitational-strength coupling below 38.6 μm would begin to intersect the non-circular parameter window.
+
+**What does NOT satisfy F-LAB:**
+- **General astrophysical data** (galaxies, lensing, PTA, CMB): these measure Mpc scales and are ruled out in principle (adjudication R3, `briefs/T0_ADJUDICATION_WPA_2026_07_25.md`).
+- **SDSS/Euclid catalog updates or any other Mpc-scale cosmological measurement**: same exclusion as above.
+- **Casimir / van der Waals / sub-micron regime bounds**: short-range public limits allow α ≲ 10¹², remaining ~12 decades above gravitational sensitivity; these do not close the gap.
+- **Pre-print or internal data**: F-LAB requires public peer-reviewed publication so the community's methodological scrutiny applies before any Gate 0 re-run.
+
+**How the check should be performed when new data appears:**
+When a new ISL publication is released, a human / T0 must (1) read the exclusion claim and extract the smallest range λ (in μm) at which it excludes a coupling strength |α| — call this pair (excluded_alpha, excluded_lambda_um); (2) perform a numeric pre-check: `pipeline.gate.check_flab_trigger(excluded_alpha, excluded_lambda_um)` returns True only if excluded_alpha ≤ 1.0 AND excluded_lambda_um < 38.6, flagging the publication as a candidate for further review; (3) read the actual paper in full — its measurement method, systematic uncertainties, and caveats — before authorizing a new WP-A2 Gate 0 run. The numeric check is advisory only and cannot substitute for human judgment.
+
 ---
 
-`Generated-by: Fable 5 (T0) WP S3-00b, session 2026-07-25 | Verified-by: cross-reference to
+`Generated-by: Fable 5 (T0) WP S3-00b, session 2026-07-25; §9 added by Claude Haiku 4.5 | Verified-by: cross-reference to
 certificate files (C1/C2/C3b, both repos), PREDICTION_APPENDIX_A.md, VISION.md §4,
 EXECUTION_PLAN.md S3-00, ASSUMPTIONS.md [A-DATA-LEGACY] entry; scripts/verify_appendix_A4.py
-executed; Deep Think (T0s) adversarial concurrence | Reviewed-by: T0 N — pending Xavier review
+executed; Deep Think (T0s) adversarial concurrence; §9 wording verified against §8.5 source | Reviewed-by: T0 N — pending Xavier review
 of §8.2's two flagged blockers`
