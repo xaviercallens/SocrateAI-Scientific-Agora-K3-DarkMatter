@@ -882,7 +882,14 @@ def stage3_lattice(family, L2, loci, Ns, scramble=False, verbose=True):
         target = sp.Matrix([[0, 1, 0], [1, 0, 0], [0, 0, d]])
         chk(Gsplit == target, f"{family}: splitting Gram is {Gsplit.tolist()}, not U + <d>")
         chk(abs(det) == abs(d), f"{family}: internal inconsistency det vs splitting")
+        # explicit witness matrix P = T = [f | e | w] (columns), so that
+        # P^T Gi P = Gsplit = gram_after. Serialized alongside basis_change_det
+        # so third parties don't have to re-derive P themselves (T0 ruling
+        # 2026-07-27, motivated by Stream 1's independent-verification finding
+        # that only det(P) and P^T G P were being recorded, not P itself; see
+        # briefs/STREAM2_P_WITNESS_SERIALIZATION_2026_07_27.md).
         splitting = {"basis_change_det": int(T.det()), "d": int(d),
+                     "basis_change_matrix": [[int(x) for x in row] for row in T.tolist()],
                      "gram_after": [[int(x) for x in row] for row in Gsplit.tolist()]}
     chk(int(two_n) == int(abs(det)), f"{family}: derived 2n {two_n} != |det| {abs(det)} "
         "(internal consistency)")
@@ -1085,19 +1092,132 @@ def emit_cert(res_s7, res_s10):
     print(f"\nWrote {out.relative_to(REPO)} (DRAFT, pending T0)")
 
 
+def emit_cert_v5(res_s7, res_s10):
+    """v5 DRAFT: same derived/how/controls/tier content as C2_cooper_s7_v4.json
+    (LIVE), plus ONE new field: derived.u_splitting.basis_change_matrix (the
+    explicit integral base-change witness P, P^T G P = gram_after) — now
+    serialized so third parties don't have to re-derive it. T0 RULING (Xavier,
+    2026-07-27, verbal via coordinator): APPROVED, motivated by Stream 1's
+    independent-verification finding (briefs/STREAM1_U1_INDEPENDENT_
+    VERIFICATION_2026_07_27.md, Stream 1 repo) that the certificate recorded
+    only det(P) and P^T G P, not P itself. Does NOT touch C2_cooper_s7_v4.json
+    (LIVE) or C2_cooper_s7_v3.json (runtime rank source). Goes live only by a
+    future, separate T0 acceptance."""
+    lat = res_s7["stage3"]
+    cert = {
+        "certificate": "C2_cooper_s7_v5_DRAFT",
+        "status": (
+            "DRAFT - pending T0 (Xavier) review; does NOT supersede "
+            "C2_cooper_s7_v4.json (LIVE) or C2_cooper_s7_v3.json. Adds ONE field "
+            "vs v4 LIVE: derived.u_splitting.basis_change_matrix, the explicit "
+            "base-change witness P (previously computed in stage3_lattice() but "
+            "not serialized). All other derived/how/controls/tier field VALUES "
+            "are unchanged from C2_cooper_s7_v4.json. Motivated by Stream 1's "
+            "independent-verification finding "
+            "(briefs/STREAM1_U1_INDEPENDENT_VERIFICATION_2026_07_27.md, Stream 1 "
+            "repo). T0 RULING (Xavier, 2026-07-27, verbal via coordinator): "
+            "APPROVED - serialize P in future certificate versions. Goes LIVE "
+            "only by a future, separate T0 acceptance."
+        ),
+        "checker": "check_U1_lattice.py",
+        "checker_version": "1.1.0",
+        "date": "2026-07-27",
+        "operator": "cooper_s7",
+        "claim": (
+            "The joint monodromy-invariant lattice of the cooper_s7 family "
+            "(orbit lattice of the cusp-invariant isotropic vector under the "
+            "computed monodromy group, primitive even scaling) is isometric to "
+            "U + <14> by an explicit integral base change. Identification of this "
+            "lattice with the transcendental lattice T of the family is Tier B via "
+            "the read framework sources (Dolgachev Thm 7.1/sec 7 p.20, Doran Thm 5.13)."
+        ),
+        "derived": {
+            "gram_primitive_even": lat["gram_primitive_even"],
+            "det": lat["det"],
+            "signature": lat["signature"],
+            "disc_group_elementary_divisors": lat["disc_group_elementary_divisors"],
+            "disc_form": lat["disc_form"],
+            "derived_2n_from_cusp_unipotent": lat["derived_2n"],
+            "u_splitting": lat["u_splitting"],
+            "proper_even_invariant_overlattices": lat["proper_even_invariant_overlattices"],
+            "yukawa": res_s7["stage1"],
+        },
+        "how": {
+            "stage0": "Dolgachev sec-7 framework re-derived symbolically (sympy) before use",
+            "stage1": "exact q-series Yukawa; constancy asserted; VALUE is normalization-"
+                      "dependent and NOT claimed as independent evidence (see brief)",
+            "stage2": f"numerical analytic continuation at {DPS} dps, Taylor order "
+                      f"{TAYLOR_ORDER}; cusp-loop machinery control err "
+                      f"{res_s7['stage2']['cusp_control_err']:.2e}; rational recognition "
+                      f"tolerance 1e-35, denominators {res_s7['stage2']['recognition_denominators']}",
+            "stage3": "exact sympy rational lattice pipeline; all structural conditions "
+                      "asserted; basis_change_matrix is the in-memory witness T=[f|e|w] "
+                      "(columns), now serialized rather than discarded",
+        },
+        "controls": {
+            "different_level_cooper_s10": {
+                "det": res_s10["stage3"]["det"],
+                "derived_2n": res_s10["stage3"]["derived_2n"],
+                "discriminates": True,
+            },
+            "scrambled_matrix": "pipeline fails loudly (test_U1_controls.py)",
+            "yukawa_scramble": "constancy check fails loudly (test_U1_controls.py)",
+            "witness_serialization": "checkers/check_U1_witness_serialization.py + "
+                                     "checkers/test_U1_witness_serialization_controls.py "
+                                     "(tampered P / tampered gram_after FAIL; missing "
+                                     "witness on v3/v4 reported WITNESS_ABSENT, not FAIL)",
+        },
+        "tier": "B",
+        "tier_reason": (
+            "monodromy entries enter via numerical recognition (60-digit numerics, "
+            "1e-35 gate, exact structural post-verification); lattice-to-T "
+            "identification cites read framework theorems; not kernel-proven"
+        ),
+        "u1b_status": (
+            "NOT NEEDED in the Eichler/genus form: an explicit integral base change "
+            "realizing U + <14> was found and verified exactly, which is stronger than "
+            "a one-class-genus argument for this lattice. Cassels Ch. 11 therefore not "
+            "fetched; no 2-adic spinor-norm claim is made anywhere."
+        ),
+        "not_claimed": [
+            "no Kodaira fibre types (E-007/E-008/E-009 stand)",
+            "no physical coupling of any kind (VISION sec 1.3)",
+            "rho/T ranks unchanged (ρ=19, T=3 per C2_cooper_s7_v3.json, E-011)",
+            "no claim about which lattice T is beyond the stated Tier-B identification",
+            "this v5 DRAFT is not live; C2_cooper_s7_v4.json remains the LIVE lattice "
+            "certificate until a future, separate T0 acceptance of v5",
+        ],
+        "refs_sha256": {
+            "recurrences_v1.json": sha256(REFS),
+            "oeis_A279618_bfile.txt": sha256(REPO / "refs" / "oeis_A279618_bfile.txt"),
+        },
+        "provenance": "Generated-by: Sonnet 5 (Stream 2) | Verified-by: check_U1_lattice.py "
+                      "structural assertions + test_U1_controls.py + "
+                      "check_U1_witness_serialization.py + "
+                      "test_U1_witness_serialization_controls.py | "
+                      "Reviewed-by: pending T0 (Xavier) acceptance of v5",
+    }
+    out = REPO / "data" / "certificates" / "C2_cooper_s7_v5_DRAFT.json"
+    out.write_text(json.dumps(cert, indent=2))
+    print(f"\nWrote {out.relative_to(REPO)} (DRAFT, pending T0)")
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--family", default="cooper_s7", choices=sorted(FAMILIES))
     ap.add_argument("--controls", action="store_true", help="run all negative controls")
     ap.add_argument("--emit-cert", action="store_true",
                     help="run s7 pipeline + ALL controls, then write the DRAFT v4 certificate")
+    ap.add_argument("--emit-cert-v5", action="store_true",
+                    help="run s7 pipeline + ALL controls, then write the DRAFT v5 certificate "
+                         "(v4 content + serialized basis_change_matrix witness P; v4 untouched)")
     args = ap.parse_args()
 
     mp.mp.dps = DPS
     try:
         stage0_framework()
         print("[stage0] Dolgachev sec-7 framework re-derived symbolically: OK")
-        if args.controls or args.emit_cert:
+        if args.controls or args.emit_cert or args.emit_cert_v5:
             res_s7 = run_family("cooper_s7")
             print("\n=== controls (mandatory: a run without them is not evidence) ===")
             res_s10 = control_different_level(res_s7)
@@ -1105,6 +1225,8 @@ def main():
             control_yukawa_scramble()
             if args.emit_cert:
                 emit_cert(res_s7, res_s10)
+            if args.emit_cert_v5:
+                emit_cert_v5(res_s7, res_s10)
         else:
             run_family(args.family)
         print("\ncheck_U1_lattice.py: all structural assertions passed")
