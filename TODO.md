@@ -24,14 +24,13 @@
 
 ## 🔴 Open — needs a human
 
-- [ ] **T0: does `v0.4.0` still mean "Gate E PASS"?** Gate E in its original form may now be
-      unreachable (E-012: no valid D-3 possible; F5b: empirical programme contracted). Either
-      redefine v0.4.0 or retire it. **Blocking nothing**, but the reservation is currently
-      pointing at an event that may never occur.
-- [ ] **T0: amend `EXECUTION_PLAN.md` §S3-00 step 2(b)** — it derives α_D, Λ_D from *Kodaira
-      fibre data*, which E-007 retracted and E-008/E-009 showed is category-mismatched (the
-      finite loci are order-2 elliptic points, not Kodaira degenerations). Either supply a
-      replacement route or formally strike the step. F5b already stands without it.
+- [x] **T0: v0.4.0 — ANSWERED (2026-07-27, D4′):** it still means "Gate E PASS", original
+      meaning retained; stays parked until a valid empirical route exists (D1/E-012
+      unchanged). Record: `briefs/T0_DECISIONS_2026_07_27_STREAM2.md`.
+- [x] **T0: `EXECUTION_PLAN.md` §S3-00 step 2(b) — RE-SCOPED (2026-07-27, D2′/AL-1):**
+      re-posed on the certified M₇-polarized lattice data (C2 v4), posable only given an
+      exhibited X₄/B₃; Kodaira wording retracted-retained for audit; amendment AL-1
+      propagated to all three mirrored copies. F5b stands.
 - [x] **Stream 3 asks — ALL ANSWERED** (2026-07-26 night, their
       `STREAM3_TO_STREAM2_DIRECTIVE_RESPONSE_2026_07_26.md` + WP-E5 findings, Dark Home repo
       `~/SocrateAI-Scientific-Agora-Home`): **(a)** no D-3 run, no 3D data anywhere — 50
@@ -87,8 +86,11 @@
       the route design anticipated; (ii) residual Tier-B links: numerical recognition of
       monodromy entries (~1e−59 residuals vs 1e−35 gate) and the framework identification of
       the monodromy lattice with T (Dolgachev/Doran, read; overlattices enumerated: none).
-      `C2_cooper_s7_v4_DRAFT.json` emitted (DRAFT — **v3 stays live**; H-M7 upgrade to [B] and
-      the S3-00 2(b) re-scope option are now a **T0 decision**, see brief §4).
+      `C2_cooper_s7_v4_DRAFT.json` emitted → **ACCEPTED by T0 2026-07-27 (D1′): live as
+      `C2_cooper_s7_v4.json`** (draft retained for audit; v3 remains runtime source for
+      ranks). **H-M7 upgrade is PARTIAL: T-half [B], NS-half stays [C]** (Nikulin step
+      unexecuted). Phase M: Option B — dormant, re-gated on an exhibited X₄/B₃ (D3′).
+      Record: `briefs/T0_DECISIONS_2026_07_27_STREAM2.md`.
 - [x] **E-016 → Stream 3: told**, with the one-line self-check, in
       `briefs/STREAM2_TO_STREAM3_WPE5_RESPONSE_2026_07_26.md` §5.
 
