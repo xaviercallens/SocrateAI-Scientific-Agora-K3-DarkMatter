@@ -74,17 +74,21 @@
       minus countable S = our very-general caveat at source), Doran Thm 5.13 (PF of
       Mₙ-polarized = Sym² of 2nd-order Fuchsian). Record:
       `briefs/STREAM2_PHASE4_STEP2_SOURCES_READ_2026_07_26.md`.
-- [ ] **U1 — the ONE residual before lattice certification. ROUTE DESIGNED, not executed:**
-      see `docs/U1_ROUTE_DESIGN_2026_07_26.md`. Decomposition: **U1a** = derive disc(T) from
-      the family itself (⚠️ the cusp monodromy does NOT see n — it sits in the elliptic/Fricke
-      monodromies; plus the Yukawa constant Q(∂ϖ,∂ϖ) = 2n = 14 as exact-q-series cross-check);
-      **U1b** = one-class genus via Eichler (needs Cassels Ch. 11 **fetched and read** — do not
-      hand-wave the 2-adic spinor norms). **Execute NEXT SESSION, fresh** — deliberately not
-      run at end-of-session under freshly-granted authority (E-010 conditions). Order: Yukawa
-      first (self-controlling), then elliptic-monodromy lattice, then Cassels. On U1-PASS:
-      emit `C2_cooper_s7_v4.json` (lattices [B]) and put the S3-00 2(b) **re-scope** option to
-      T0. On FAIL: that is a finding — report as-is. Until then: H-M7 stays [C]; **v3 (ranks
-      only) stays live**.
+- [x] **U1 — EXECUTED fresh-context 2026-07-27, U1a PASS with all controls; U1 CLOSED [B]
+      pending T0.** Full record: `briefs/STREAM2_U1_EXECUTION_2026_07_27.md`; pipeline
+      `checkers/check_U1_lattice.py`; controls `checkers/test_U1_controls.py` (different-level
+      s10 → det −20/2n = 20, scrambled-matrix ×3, Yukawa-scramble — all fail loudly as
+      required). **Derived (never typed): Gram [[0,0,−1],[0,14,0],[−1,0,0]], det = −14,
+      signature (2,1), disc form ℤ/14 (q = 1/14), 2n = 14 from (T_cusp−1)² divisibility, and
+      an EXPLICIT integral base change realizing U⊕⟨14⟩** (constructive isometry ⇒ the Eichler/
+      Cassels genus route became unnecessary — Cassels NOT fetched, no 2-adic claim made).
+      Honest findings: (i) the Yukawa VALUE is not extractable independently of the integral
+      lattice — constancy (exact to q³¹) is the checkable part, value 14 comes from stage 3, as
+      the route design anticipated; (ii) residual Tier-B links: numerical recognition of
+      monodromy entries (~1e−59 residuals vs 1e−35 gate) and the framework identification of
+      the monodromy lattice with T (Dolgachev/Doran, read; overlattices enumerated: none).
+      `C2_cooper_s7_v4_DRAFT.json` emitted (DRAFT — **v3 stays live**; H-M7 upgrade to [B] and
+      the S3-00 2(b) re-scope option are now a **T0 decision**, see brief §4).
 - [x] **E-016 → Stream 3: told**, with the one-line self-check, in
       `briefs/STREAM2_TO_STREAM3_WPE5_RESPONSE_2026_07_26.md` §5.
 
@@ -129,6 +133,8 @@ python3 checkers/check_s7_hauptmodul_gamma07plus.py      # A279618 is Gamma_0(7)
 python3 checkers/test_gate_e_verdict_controls.py         # Gate E script fails closed (7 controls)
 python3 scripts/check_tier_language.py                   # wrapper — HONORS file args (E-016);
                                                          # scans root + briefs by default
+python3 checkers/check_U1_lattice.py                     # U1 lattice pipeline (s7), derived values
+python3 checkers/test_U1_controls.py                     # U1 negative controls (incl. s10 level control)
 ```
 
 ## The Tier A result, for the record
