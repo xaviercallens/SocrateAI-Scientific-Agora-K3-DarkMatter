@@ -94,6 +94,7 @@
       "Bash(git reset --hard*)",
       "Bash(git filter-branch*)",
       "Bash(git filter-repo*)"
-    ]
+    ],
+    "defaultMode": "auto"
   }
 }
