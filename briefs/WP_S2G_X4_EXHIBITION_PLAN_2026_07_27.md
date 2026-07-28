@@ -143,3 +143,9 @@ until the G0 certificate is on the table.
   primary; Route B stays contingency-only per §2. Agents assigned per §5 (Sonnet checker
   implementation, Haiku regression/controls); coordinator reviews and commits all
   decision-changing results before acting, per the standing rule in §5's footer.
+- **2026-07-28, G0 result: PROCEED (DRAFT, pending T0 review).** NS = T^perp ≅
+  U⊕E8(-1)⊕E8(-1)⊕⟨-14⟩, rank 19; U-summand match criterion YES — the stop condition did not
+  fire. Full result, method, coordinator-independent verification log, and caveats (weak
+  discriminating power; fiberwise-only, not yet relative) in
+  briefs/G0_NS_GENUS_RESULT_2026_07_28.md and commit 9a386d9. **G1 is still NOT authorized** —
+  remains a separate T0 gate, to be requested once the DRAFT certificate is reviewed.
