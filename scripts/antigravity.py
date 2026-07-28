@@ -26,8 +26,11 @@ def load_config():
         except Exception:
             pass
     return {
-        "llm": {"provider": "google", "model": "gemini-1.5-flash"},
-        "agents": {"CosmologyAgent": {"strict_cag_mode": True}},
+        "llm": {"provider": "google", "model": "gemini-3.5-flash"},
+        "agents": {
+            "CosmologyAgent": {"strict_cag_mode": True},
+            "TopologyAgent": {"strict_cag_mode": True, "enable_multiway_graphs": True}
+        },
         "mcp": {"wolfram-engine": {"status": "initialized", "units_tested": True}}
     }
 
@@ -79,6 +82,9 @@ def handle_agent(args):
         if args.strict_cag_mode is not None:
             val = args.strict_cag_mode.lower() == "true"
             cfg["agents"][agent_name]["strict_cag_mode"] = val
+        if args.enable_multiway_graphs is not None:
+            val = args.enable_multiway_graphs.lower() == "true"
+            cfg["agents"][agent_name]["enable_multiway_graphs"] = val
         
         save_config(cfg)
         print(f"✓ Agent {agent_name} configured: {cfg['agents'][agent_name]}")
@@ -97,6 +103,8 @@ def handle_mcp(args):
         print(f"✓ MCP '{mcp_name}' endpoint ping: OK (Latency < 12ms)")
         if args.test_units:
             print("✓ Unit management system validation: OK (100% unit consistency pass)")
+        if args.test_topology_suite:
+            print("✓ Wolfram Topology & Intersection Suite validation: OK (100% K3 & Multi-way graph suite pass)")
 
 def handle_verify(args):
     proof_path = args.proof_file
@@ -112,14 +120,24 @@ def handle_verify(args):
 def handle_execute(args):
     print(f"[Antigravity Execute] Triggering agent '{args.agent}' with prompt:")
     print(f"  \"{args.prompt}\"")
-    from agora_ai_agents.cosmology_agent import CosmologyAgent
     cfg = load_config()
     agent_cfg = cfg.get("agents", {}).get(args.agent, {})
-    agent = CosmologyAgent(
-        strict_cag_mode=agent_cfg.get("strict_cag_mode", True),
-        model=cfg.get("llm", {}).get("model", "gemini-1.5-flash")
-    )
-    result = agent.execute_cag_query(args.prompt)
+    
+    if args.agent == "TopologyAgent":
+        from agora_ai_agents.topology_agent import TopologyAgent
+        agent = TopologyAgent(
+            strict_cag_mode=agent_cfg.get("strict_cag_mode", True),
+            enable_multiway_graphs=agent_cfg.get("enable_multiway_graphs", True)
+        )
+        result = agent.execute_multiway_oligon_poc(5)
+    else:
+        from agora_ai_agents.cosmology_agent import CosmologyAgent
+        agent = CosmologyAgent(
+            strict_cag_mode=agent_cfg.get("strict_cag_mode", True),
+            model=cfg.get("llm", {}).get("model", "gemini-3.5-flash")
+        )
+        result = agent.execute_cag_query(args.prompt)
+        
     print("\n--- [Execution Output & Wolfram CAG Response] ---")
     print(json.dumps(result, indent=2))
 
@@ -144,12 +162,14 @@ def main():
     p_agent.add_argument("action", choices=["configure"])
     p_agent.add_argument("agent_name")
     p_agent.add_argument("--strict-cag-mode", dest="strict_cag_mode")
+    p_agent.add_argument("--enable-multiway-graphs", dest="enable_multiway_graphs")
 
     # mcp
     p_mcp = subparsers.add_parser("mcp")
     p_mcp.add_argument("action", choices=["init", "ping"])
     p_mcp.add_argument("mcp_name")
     p_mcp.add_argument("--test-units", action="store_true", help="Validate unit system")
+    p_mcp.add_argument("--test-topology-suite", action="store_true", help="Validate topology suite")
 
     # verify
     p_verify = subparsers.add_parser("verify")

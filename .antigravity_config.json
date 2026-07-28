@@ -6,6 +6,10 @@
   "agents": {
     "CosmologyAgent": {
       "strict_cag_mode": true
+    },
+    "TopologyAgent": {
+      "strict_cag_mode": true,
+      "enable_multiway_graphs": true
     }
   },
   "mcp": {
