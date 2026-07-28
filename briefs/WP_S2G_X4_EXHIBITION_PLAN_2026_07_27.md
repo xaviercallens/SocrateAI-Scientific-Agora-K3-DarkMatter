@@ -136,4 +136,10 @@ match criterion every route needs, and its own stop condition can kill the plan 
 cost before any construction work begins. Recommendation: open G0; defer the G1 decision
 until the G0 certificate is on the table.
 
-*Countermand/decision log: (empty — awaiting T0)*
+*Countermand/decision log:*
+- **2026-07-28, T0 (Xavier Callens): Phase G0 OPENED.** Decision: "Go for phase S2-G, and I
+  agree with your proposal" (accepting the recommendation above: open G0, defer G1 until the
+  G0 certificate is on the table). G1 is NOT authorized by this decision. Route A remains
+  primary; Route B stays contingency-only per §2. Agents assigned per §5 (Sonnet checker
+  implementation, Haiku regression/controls); coordinator reviews and commits all
+  decision-changing results before acting, per the standing rule in §5's footer.
