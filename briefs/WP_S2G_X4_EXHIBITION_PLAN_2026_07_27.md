@@ -149,3 +149,42 @@ until the G0 certificate is on the table.
   discriminating power; fiberwise-only, not yet relative) in
   briefs/G0_NS_GENUS_RESULT_2026_07_28.md and commit 9a386d9. **G1 is still NOT authorized** —
   remains a separate T0 gate, to be requested once the DRAFT certificate is reviewed.
+- **2026-07-28, T0: G0 certificate ACCEPTED, promoted LIVE [Tier B]. Phase G1 GATE OPENED
+  (Route A).** `briefs/T0_DECISIONS_2026_07_28_STREAM2.md`, commit `256017d`. Authorized to
+  proceed to G1-a (CY condition), G1-b (resolution), G1-c (posability) over the B₂ ladder,
+  exact symbolic computation only.
+- **2026-07-28, G0 cross-model verification: AGREE — VERIFIED, three independent lineages.**
+  Deep Think (T0s), responding to a coordinator-initiated adversarial-review request, performed
+  a genuinely independent zero-shot re-derivation of NS = T^perp (same Nikulin-complement
+  route, different execution: invariant bookkeeping + genus-uniqueness bound, not the
+  constructive witness) and reached the identical result. G0 now rests on three fully
+  independent checks: (1) two in-house Sonnet routes (constructive witness + genus argument,
+  bit-identical Gram matrix), (2) coordinator reproduction + 5-control suite, (3) Deep Think
+  zero-shot. Coordinator hand-verified every step of the Deep Think derivation before
+  accepting (discriminant form q=1/14, complement rank/signature, Nikulin uniqueness bound
+  19≥1+2). Full audit: `briefs/DEEPTHINK_DEBRIEF_AUDIT_2026_07_28.md` (S3, mirrored context
+  only — this repo stays canonical for S2 results). No change to the certificate's LIVE status
+  or content; this entry records the additional verification.
+- **2026-07-28, G1-a result: naive-pullback B₂ ladder OBSTRUCTED (DRAFT, exact, unconditional
+  in ℓ).** For P² (no φ: P²→curve exists at all, any genus — Picard lattice is rank-1
+  positive-definite, no isotropic class; independently corroborated via Bezout) and every F_n
+  including P¹×P¹ (K_{F_n} = −2s−(n+2)f by adjunction, never proportional to the fiber class
+  for any n) — the naive fiber-product pullback of the certified family cannot be
+  Calabi-Yau, for **every** value of the family's own (uncomputed) Hodge-bundle degree ℓ. A
+  dP9 positive control confirms the checker correctly ADMITS a structurally different input
+  (ℓ solved = 1, matching the classical rational-elliptic-surface fact). Does NOT claim CY4s
+  fail to exist over these bases by any construction — only the naive-pullback route the
+  plan's G1-a bullet asked about; the plan's own "twisted Weierstrass" escape hatch is
+  explicitly untested. 5/5 controls independently re-run by the coordinator (PASS); the F_n
+  canonical-class formula independently re-derived by the coordinator from scratch via
+  adjunction (not read from the checker) — matches exactly. Full result:
+  `briefs/G1a_CY_CONDITION_RESULT_2026_07_28.md`, commit `d6146c4`.
+  **Converges with, and sharpens, Deep Think's independent "Trap 1" finding**
+  (`briefs/DEEPTHINK_DEBRIEF_AUDIT_2026_07_28.md` §C2, S3) — same conclusion (ladder fails on
+  K²≠0 grounds) reached via two fully independent routes (in-house exact symbolic checker vs.
+  external zero-shot derivation), with the in-house result additionally exact/ℓ-independent
+  rather than resting on the K² necessary condition alone, and additionally proving P²
+  categorically inadmissible (no φ exists) rather than only K²(P²)≠0. **DRAFT — pending T0
+  review/promotion.** Open scoping question named in the brief, not resolved: whether G0's
+  U-summand argument (certified fiberwise, not yet relative) needs re-deriving for a
+  non-simply-connected candidate base if the ladder is revised.
