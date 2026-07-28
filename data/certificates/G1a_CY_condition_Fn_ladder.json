@@ -1,0 +1,430 @@
+{
+  "certificate": "G1a_CY_condition_Fn_ladder",
+  "status": "DRAFT - pending T0 (Xavier) / verification-pass review. WP S2-G Phase G1-a (briefs/WP_S2G_X4_EXHIBITION_PLAN_2026_07_27.md sec.1 & sec.5; phase opened by T0 2026-07-28, briefs/T0_DECISIONS_2026_07_28_STREAM2.md item 2). Producing tier does not self-promote to LIVE.",
+  "operator": "cooper_s7 (Route A, F_n rung of the B2 ladder, n>=0; n=0 is P^1xP^1)",
+  "claim": "For EVERY Hirzebruch surface B2=F_n (n>=0, including P^1xP^1=F_0) with its standard ruling phi:F_n->P^1 (fiber class f), the naive fiber-product pullback X4=B2 x_{zline} Y of the certified cooper_s7 K3 family CANNOT be Calabi-Yau, for every value of the family's (uncomputed) Hodge-bundle degree ell -- because K_{F_n} = -2s - (n+2)f (derived here via adjunction, not assumed) has a nonzero s-coefficient (-2) for every n, so K_{F_n} is never proportional to the fiber class f: no ell solves K_{F_n} = -ell*f. Corollary (ell-blind) cross-check: K_{F_n}^2 = 8 != 0 for every n (Noether's formula K^2=12-e, e(F_n)=4). The constant-phi case also fails for every n (same nonzero s-coefficient).",
+  "cy_twist_condition": "c1(X4)=0 for the naive fiber-product pullback X4=B2 x_{zline} Y is equivalent, on the base, to K_B2 = -ell*F where F is the fiber class of phi:B2->(z-line) and ell is the (fixed, family-determined) degree of the Hodge/relative-dualizing line bundle of Y over its modular curve; F must be isotropic (F^2=0) to be a genuine fibration fiber class.",
+  "match_determination": "OBSTRUCTED (uniform in n, uniform in ell)",
+  "derived": {
+    "symbolic_n": {
+      "B2": "F_n",
+      "n": "n",
+      "picard_basis": [
+        "s (section, s^2=-n)",
+        "f (fiber, f^2=0)"
+      ],
+      "picard_gram": [
+        [
+          "-n",
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "fiber_class_F": {
+        "coeffs": [
+          0,
+          1
+        ],
+        "F_sq": 0,
+        "source": "standard P^1-bundle ruling phi:F_n->P^1 -- the natural fibration the plan itself proposes for F_n; no claim of exhaustiveness over all possible fibrations is made (see not_claimed)"
+      },
+      "K_B2": {
+        "coeffs": [
+          "-2",
+          "-n - 2"
+        ],
+        "expr": "-2*s + (-n - 2)*f",
+        "derivation": "adjunction on the two spanning rational curves s (g=0,s^2=-n) and f (g=0,f^2=0); linear system solved exactly, not assumed"
+      },
+      "K_sq": "8",
+      "cy_twist_condition": {
+        "determination": "OBSTRUCTED",
+        "ell": null,
+        "K_sq": 8,
+        "corollary_K_sq_is_zero": false,
+        "reasoning": "No ell in Q solves K=-ell*F for this (Gram,K,F): component 0: K has nonzero coefficient -2 where F's coefficient is 0 -- no scalar ell can satisfy K=-ell*F. Corollary cross-check: K^2=8 != 0, independently confirming no ell can work since K=-ell*F would force K^2=ell^2*F^2=0."
+      },
+      "cy_twist_condition_determination": "OBSTRUCTED",
+      "constant_phi_case": {
+        "requires_K_B2_zero": true,
+        "K_B2_is_zero": false,
+        "determination": "OBSTRUCTED",
+        "reasoning": "K_{F_n} s-coefficient is -2 != 0 for every n -- constant phi also fails."
+      },
+      "overall_determination": "OBSTRUCTED"
+    },
+    "concrete_instances_n_0_to_5": [
+      {
+        "B2": "F_0 (= P^1 x P^1)",
+        "n": "0",
+        "picard_basis": [
+          "s (section, s^2=-n)",
+          "f (fiber, f^2=0)"
+        ],
+        "picard_gram": [
+          [
+            "0",
+            1
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "fiber_class_F": {
+          "coeffs": [
+            0,
+            1
+          ],
+          "F_sq": 0,
+          "source": "standard P^1-bundle ruling phi:F_n->P^1 -- the natural fibration the plan itself proposes for F_n; no claim of exhaustiveness over all possible fibrations is made (see not_claimed)"
+        },
+        "K_B2": {
+          "coeffs": [
+            "-2",
+            "-2"
+          ],
+          "expr": "-2*s + (-2)*f",
+          "derivation": "adjunction on the two spanning rational curves s (g=0,s^2=-n) and f (g=0,f^2=0); linear system solved exactly, not assumed"
+        },
+        "K_sq": "8",
+        "cy_twist_condition": {
+          "determination": "OBSTRUCTED",
+          "ell": null,
+          "K_sq": 8,
+          "corollary_K_sq_is_zero": false,
+          "reasoning": "No ell in Q solves K=-ell*F for this (Gram,K,F): component 0: K has nonzero coefficient -2 where F's coefficient is 0 -- no scalar ell can satisfy K=-ell*F. Corollary cross-check: K^2=8 != 0, independently confirming no ell can work since K=-ell*F would force K^2=ell^2*F^2=0."
+        },
+        "cy_twist_condition_determination": "OBSTRUCTED",
+        "constant_phi_case": {
+          "requires_K_B2_zero": true,
+          "K_B2_is_zero": false,
+          "determination": "OBSTRUCTED",
+          "reasoning": "K_{F_0} s-coefficient is -2 != 0 for every n -- constant phi also fails."
+        },
+        "overall_determination": "OBSTRUCTED"
+      },
+      {
+        "B2": "F_1",
+        "n": "1",
+        "picard_basis": [
+          "s (section, s^2=-n)",
+          "f (fiber, f^2=0)"
+        ],
+        "picard_gram": [
+          [
+            "-1",
+            1
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "fiber_class_F": {
+          "coeffs": [
+            0,
+            1
+          ],
+          "F_sq": 0,
+          "source": "standard P^1-bundle ruling phi:F_n->P^1 -- the natural fibration the plan itself proposes for F_n; no claim of exhaustiveness over all possible fibrations is made (see not_claimed)"
+        },
+        "K_B2": {
+          "coeffs": [
+            "-2",
+            "-3"
+          ],
+          "expr": "-2*s + (-3)*f",
+          "derivation": "adjunction on the two spanning rational curves s (g=0,s^2=-n) and f (g=0,f^2=0); linear system solved exactly, not assumed"
+        },
+        "K_sq": "8",
+        "cy_twist_condition": {
+          "determination": "OBSTRUCTED",
+          "ell": null,
+          "K_sq": 8,
+          "corollary_K_sq_is_zero": false,
+          "reasoning": "No ell in Q solves K=-ell*F for this (Gram,K,F): component 0: K has nonzero coefficient -2 where F's coefficient is 0 -- no scalar ell can satisfy K=-ell*F. Corollary cross-check: K^2=8 != 0, independently confirming no ell can work since K=-ell*F would force K^2=ell^2*F^2=0."
+        },
+        "cy_twist_condition_determination": "OBSTRUCTED",
+        "constant_phi_case": {
+          "requires_K_B2_zero": true,
+          "K_B2_is_zero": false,
+          "determination": "OBSTRUCTED",
+          "reasoning": "K_{F_1} s-coefficient is -2 != 0 for every n -- constant phi also fails."
+        },
+        "overall_determination": "OBSTRUCTED"
+      },
+      {
+        "B2": "F_2",
+        "n": "2",
+        "picard_basis": [
+          "s (section, s^2=-n)",
+          "f (fiber, f^2=0)"
+        ],
+        "picard_gram": [
+          [
+            "-2",
+            1
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "fiber_class_F": {
+          "coeffs": [
+            0,
+            1
+          ],
+          "F_sq": 0,
+          "source": "standard P^1-bundle ruling phi:F_n->P^1 -- the natural fibration the plan itself proposes for F_n; no claim of exhaustiveness over all possible fibrations is made (see not_claimed)"
+        },
+        "K_B2": {
+          "coeffs": [
+            "-2",
+            "-4"
+          ],
+          "expr": "-2*s + (-4)*f",
+          "derivation": "adjunction on the two spanning rational curves s (g=0,s^2=-n) and f (g=0,f^2=0); linear system solved exactly, not assumed"
+        },
+        "K_sq": "8",
+        "cy_twist_condition": {
+          "determination": "OBSTRUCTED",
+          "ell": null,
+          "K_sq": 8,
+          "corollary_K_sq_is_zero": false,
+          "reasoning": "No ell in Q solves K=-ell*F for this (Gram,K,F): component 0: K has nonzero coefficient -2 where F's coefficient is 0 -- no scalar ell can satisfy K=-ell*F. Corollary cross-check: K^2=8 != 0, independently confirming no ell can work since K=-ell*F would force K^2=ell^2*F^2=0."
+        },
+        "cy_twist_condition_determination": "OBSTRUCTED",
+        "constant_phi_case": {
+          "requires_K_B2_zero": true,
+          "K_B2_is_zero": false,
+          "determination": "OBSTRUCTED",
+          "reasoning": "K_{F_2} s-coefficient is -2 != 0 for every n -- constant phi also fails."
+        },
+        "overall_determination": "OBSTRUCTED"
+      },
+      {
+        "B2": "F_3",
+        "n": "3",
+        "picard_basis": [
+          "s (section, s^2=-n)",
+          "f (fiber, f^2=0)"
+        ],
+        "picard_gram": [
+          [
+            "-3",
+            1
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "fiber_class_F": {
+          "coeffs": [
+            0,
+            1
+          ],
+          "F_sq": 0,
+          "source": "standard P^1-bundle ruling phi:F_n->P^1 -- the natural fibration the plan itself proposes for F_n; no claim of exhaustiveness over all possible fibrations is made (see not_claimed)"
+        },
+        "K_B2": {
+          "coeffs": [
+            "-2",
+            "-5"
+          ],
+          "expr": "-2*s + (-5)*f",
+          "derivation": "adjunction on the two spanning rational curves s (g=0,s^2=-n) and f (g=0,f^2=0); linear system solved exactly, not assumed"
+        },
+        "K_sq": "8",
+        "cy_twist_condition": {
+          "determination": "OBSTRUCTED",
+          "ell": null,
+          "K_sq": 8,
+          "corollary_K_sq_is_zero": false,
+          "reasoning": "No ell in Q solves K=-ell*F for this (Gram,K,F): component 0: K has nonzero coefficient -2 where F's coefficient is 0 -- no scalar ell can satisfy K=-ell*F. Corollary cross-check: K^2=8 != 0, independently confirming no ell can work since K=-ell*F would force K^2=ell^2*F^2=0."
+        },
+        "cy_twist_condition_determination": "OBSTRUCTED",
+        "constant_phi_case": {
+          "requires_K_B2_zero": true,
+          "K_B2_is_zero": false,
+          "determination": "OBSTRUCTED",
+          "reasoning": "K_{F_3} s-coefficient is -2 != 0 for every n -- constant phi also fails."
+        },
+        "overall_determination": "OBSTRUCTED"
+      },
+      {
+        "B2": "F_4",
+        "n": "4",
+        "picard_basis": [
+          "s (section, s^2=-n)",
+          "f (fiber, f^2=0)"
+        ],
+        "picard_gram": [
+          [
+            "-4",
+            1
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "fiber_class_F": {
+          "coeffs": [
+            0,
+            1
+          ],
+          "F_sq": 0,
+          "source": "standard P^1-bundle ruling phi:F_n->P^1 -- the natural fibration the plan itself proposes for F_n; no claim of exhaustiveness over all possible fibrations is made (see not_claimed)"
+        },
+        "K_B2": {
+          "coeffs": [
+            "-2",
+            "-6"
+          ],
+          "expr": "-2*s + (-6)*f",
+          "derivation": "adjunction on the two spanning rational curves s (g=0,s^2=-n) and f (g=0,f^2=0); linear system solved exactly, not assumed"
+        },
+        "K_sq": "8",
+        "cy_twist_condition": {
+          "determination": "OBSTRUCTED",
+          "ell": null,
+          "K_sq": 8,
+          "corollary_K_sq_is_zero": false,
+          "reasoning": "No ell in Q solves K=-ell*F for this (Gram,K,F): component 0: K has nonzero coefficient -2 where F's coefficient is 0 -- no scalar ell can satisfy K=-ell*F. Corollary cross-check: K^2=8 != 0, independently confirming no ell can work since K=-ell*F would force K^2=ell^2*F^2=0."
+        },
+        "cy_twist_condition_determination": "OBSTRUCTED",
+        "constant_phi_case": {
+          "requires_K_B2_zero": true,
+          "K_B2_is_zero": false,
+          "determination": "OBSTRUCTED",
+          "reasoning": "K_{F_4} s-coefficient is -2 != 0 for every n -- constant phi also fails."
+        },
+        "overall_determination": "OBSTRUCTED"
+      },
+      {
+        "B2": "F_5",
+        "n": "5",
+        "picard_basis": [
+          "s (section, s^2=-n)",
+          "f (fiber, f^2=0)"
+        ],
+        "picard_gram": [
+          [
+            "-5",
+            1
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "fiber_class_F": {
+          "coeffs": [
+            0,
+            1
+          ],
+          "F_sq": 0,
+          "source": "standard P^1-bundle ruling phi:F_n->P^1 -- the natural fibration the plan itself proposes for F_n; no claim of exhaustiveness over all possible fibrations is made (see not_claimed)"
+        },
+        "K_B2": {
+          "coeffs": [
+            "-2",
+            "-7"
+          ],
+          "expr": "-2*s + (-7)*f",
+          "derivation": "adjunction on the two spanning rational curves s (g=0,s^2=-n) and f (g=0,f^2=0); linear system solved exactly, not assumed"
+        },
+        "K_sq": "8",
+        "cy_twist_condition": {
+          "determination": "OBSTRUCTED",
+          "ell": null,
+          "K_sq": 8,
+          "corollary_K_sq_is_zero": false,
+          "reasoning": "No ell in Q solves K=-ell*F for this (Gram,K,F): component 0: K has nonzero coefficient -2 where F's coefficient is 0 -- no scalar ell can satisfy K=-ell*F. Corollary cross-check: K^2=8 != 0, independently confirming no ell can work since K=-ell*F would force K^2=ell^2*F^2=0."
+        },
+        "cy_twist_condition_determination": "OBSTRUCTED",
+        "constant_phi_case": {
+          "requires_K_B2_zero": true,
+          "K_B2_is_zero": false,
+          "determination": "OBSTRUCTED",
+          "reasoning": "K_{F_5} s-coefficient is -2 != 0 for every n -- constant phi also fails."
+        },
+        "overall_determination": "OBSTRUCTED"
+      }
+    ]
+  },
+  "positive_control_dP9": {
+    "B2": "dP9 (positive control, NOT part of the plan's B2 ladder)",
+    "picard_basis": [
+      "H",
+      "E1..E9"
+    ],
+    "picard_gram": "diag(1,-1,-1,-1,-1,-1,-1,-1,-1,-1)",
+    "K_B2": {
+      "coeffs": [
+        -3,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "expr": "-3H+E1+...+E9",
+      "derivation": "[B: cited classical blow-up canonical-bundle formula K_Bl=pi*K+sum(Ei), not re-derived by adjunction here -- this is the sanity input, not the load-bearing new result]"
+    },
+    "fiber_class_F": {
+      "coeffs": [
+        3,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "F_sq": 0,
+      "source": "[B: cited classical fact -- the anticanonical pencil |-K| gives the elliptic fibration on a (generic) rational elliptic surface]"
+    },
+    "cy_twist_condition": {
+      "determination": "ADMISSIBLE",
+      "ell": "1",
+      "K_sq": 0,
+      "corollary_K_sq_is_zero": true,
+      "reasoning": "K = -ell*F solved exactly with ell=1; verified component-wise."
+    },
+    "overall_determination": "ADMISSIBLE",
+    "note": "PROVES THIS CHECKER IS NOT A STUB: on a genuinely different input where the classical answer is admissible, solve_proportionality() returns ADMISSIBLE and SOLVES (does not assume) ell=1, matching the classical chi_top(dP9)/12=1 fact for a generic rational elliptic surface."
+  },
+  "checker": "check_G1a_CY_twist_condition.py",
+  "checker_version": "1.0.0",
+  "date": "2026-07-28",
+  "tier": "E",
+  "tier_reason": "Every step is exact classical algebraic geometry (adjunction/genus-degree formula to derive K_B2, exact Picard-lattice linear algebra, Bezout/isotropy) computed with sympy Integer/Rational only -- no floats, no numerical tolerance. Unlike G0 (data/certificates/G0_NS_genus_cooper_s7.json), this derivation does NOT use the family's monodromy-derived transcendental lattice T or any Tier-B input -- the unknown Hodge-bundle degree ell of the cooper_s7 family over its modular curve cancels out of the argument entirely (the obstruction holds for every value of ell). This certificate is therefore Tier E in its own right, not inheriting a lower tier from an upstream Tier-B quantity.",
+  "not_claimed": [
+    "does not compute ell (the cooper_s7 family's Hodge-bundle degree over X0(7)+/z-line) -- not needed for this result, and no orbifold Riemann-Hurwitz/Roch computation on X0(7)+ is attempted here",
+    "does not address G1-b (degenerate-fiber crepant resolution) or G1-c (elliptic/F-theory posability) -- moot for a B2 that already fails G1-a",
+    "does NOT claim K3-fibered Calabi-Yau fourfolds fail to exist over P^2 or F_n by ANY construction -- only the NAIVE fiber-product pullback of the FIXED cooper_s7 family along a FIXED moduli map phi:B2->(z-line) is shown obstructed; a more general Weierstrass-like twisted construction (the plan's own '-4K/-6K twisting' analogy, read as a free choice of twisted sections rather than a pullback of a fixed family) is NOT tested here and would need an explicit Weierstrass-type presentation of the M-polarized family directly on B2",
+    "does not claim to have found the unique or exhaustive fibration structure on F_n for n>0 (only the standard/unique ruling is used, which is the natural candidate and the one the plan itself proposes)",
+    "no observable of any kind (m_phi, alpha_D, Lambda_D) -- F5b stands",
+    "no physical coupling of any kind (VISION sec 1.3)"
+  ],
+  "how": {
+    "adjunction": "genus-degree formula 2g(C)-2=C^2+K.C, g=0 for all spanning curves used (lines in P^2; section+fiber in F_n), solved as an exact linear system in the unknown K-coefficients, sympy sp.solve",
+    "proportionality_test": "K_B2=-ell*F solved component-wise exactly over Q (solve_proportionality()); K^2=0 kept as an independent ell-blind corollary cross-check",
+    "isotropy_precondition": "F^2=0 checked exactly via the Gram pairing before any proportionality test is attempted -- a non-isotropic candidate F is rejected as a malformed input, not silently tested"
+  },
+  "provenance": "Generated-by: Sonnet 5 (Stream 2, WP S2-G Phase G1-a session 2026-07-28) | Verified-by: check_G1a_CY_twist_condition.py structural assertions + checkers/test_G1a_CY_condition_controls.py | Reviewed-by: pending T0 (Xavier) -- coordinator reviews and commits, no agent commits"
+}
