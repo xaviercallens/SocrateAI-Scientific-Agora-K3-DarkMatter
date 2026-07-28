@@ -1,0 +1,2 @@
+#!/bin/bash
+python3 /mnt/disks/disk-socrateai-local-1/callensxavier_home_data/SocrateAI-Scientific-Agora-K3-DarkMatter/scripts/antigravity.py "$@"

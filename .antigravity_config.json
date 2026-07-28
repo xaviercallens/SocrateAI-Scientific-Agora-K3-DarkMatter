@@ -1,0 +1,17 @@
+{
+  "llm": {
+    "provider": "google",
+    "model": "gemini-1.5-flash"
+  },
+  "agents": {
+    "CosmologyAgent": {
+      "strict_cag_mode": true
+    }
+  },
+  "mcp": {
+    "wolfram-engine": {
+      "status": "initialized",
+      "endpoint": "local/gcp-wolfram"
+    }
+  }
+}
