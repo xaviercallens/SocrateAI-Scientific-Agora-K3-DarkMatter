@@ -54,6 +54,37 @@ STREAM2_U1_EXECUTION_2026_07_27.md). **Recommended before promoting this certifi
 DRAFT status**: a from-scratch re-derivation by a fresh session that does not read
 `check_NS_genus_G0.py` first, matching the U1 precedent.
 
+## Independent from-scratch re-derivation (2026-07-28, second agent, blind to the checker)
+
+Completed. **Verdict: AGREE.** A fresh agent, instructed not to read `check_NS_genus_G0.py` or
+`test_NS_genus_G0_controls.py` until after producing its own result, independently: verified
+T's certified basis-change witness by exact matrix multiplication; built its own E8 Cartan
+matrix from a *different* Dynkin-diagram node labeling than the checker's and independently
+verified it symmetric/even/positive-definite/unimodular; constructed Λ = U³⊕E8(-1)² and
+verified its defining properties; embedded T and computed NS = T^⊥ explicitly (not by genus
+argument alone); re-derived the discriminant-form value **27/14 mod 2Z independently**, matching
+the checker exactly; confirmed NS contains U as a literal orthogonal direct summand by explicit
+construction. Also checked the Huybrechts theorem citations (1.12, 0.2, 1.5, 1.11) against the
+repo's own hash-pinned `docs/literature/huybrechts_K3Global.txt` — real, correctly numbered,
+used in matching contexts, not fabricated.
+
+**Two honest limits on how independent this was, both worth keeping attached to any future
+citation of "independently verified":**
+1. The task prompt handed to the second agent stated the specific embedding construction
+   verbatim (`f→e_U1, e→f_U1, w→e_U2+7f_U2`) rather than leaving the agent to discover it —
+   this is the canonically forced construction (a norm-2n vector in a hyperbolic plane is
+   e+nf; there is no other natural choice), not a free design decision, but the re-derivation
+   was not blind to *that specific step*. The genuinely independent pieces are the E8 basis
+   (a different matrix reaching the same conclusion), the signature/discriminant-group
+   computation routines, the primitivity checks (Smith normal form), and the 27/14 value.
+2. Uniqueness-of-embedding (the Nikulin/Eichler bound: rank(Λ)−rank(T)=19 ≥ ℓ(A_T)+2=3) is
+   load-bearing for the argument, not optional — the second agent confirmed this explicitly
+   rather than treating the explicit witness as sufficient on its own.
+
+**Status update: the U1-precedent independent-verification standard is now met**, with the
+above two caveats recorded rather than smoothed over. Certificate remains formally DRAFT
+pending T0's own review and explicit promotion — this session does not self-promote it.
+
 ## Caveats (carried verbatim from the certificate — do not drop these in any summary)
 
 1. **Weak discriminating power.** Both cooper_s7 (d=14) and cooper_s10 (d=20) pass with a U
