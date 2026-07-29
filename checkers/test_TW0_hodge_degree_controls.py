@@ -70,6 +70,7 @@ def test_cooper_s7_passes():
     print(f"TEST 1 (cooper_s7 should give ℓ=2): {'PASS' if passed else 'FAIL'}")
     print(f"  Computed: ℓ = {deg}")
 
+    assert passed
     return passed
 
 
@@ -87,6 +88,7 @@ def test_perturbed_degree_1():
     print(f"TEST 2 (Apery-zeta2 should NOT give ℓ=2): {'PASS' if passed else 'FAIL'}")
     print(f"  Computed: ℓ = {deg} (should be ≠ 2)")
 
+    assert passed
     return passed
 
 
@@ -103,6 +105,7 @@ def test_perturbed_degree_2():
     print(f"TEST 3 (perturbed P1 should NOT give ℓ=2): {'PASS' if passed else 'FAIL'}")
     print(f"  Computed: ℓ = {deg} (should be ≠ 2)")
 
+    assert passed
     return passed
 
 
@@ -119,6 +122,7 @@ def test_certificate_exists():
             cert = json.load(f)
         print(f"  Verification passes: {cert.get('verification', {}).get('passes')}")
 
+    assert passed
     return passed
 
 

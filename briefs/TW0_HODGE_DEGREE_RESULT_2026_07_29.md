@@ -140,3 +140,33 @@ This structure is self-consistent and aligns with known properties of Γ₀(7)+ 
 
 **Verification Status**: ✓ COMPLETE  
 **Escalation Status**: None required
+
+---
+
+## Decision log
+
+- **2026-07-29, coordinator (separate session, producer≠verifier):** re-ran
+  `checkers/check_TW0_hodge_degree.py` and `checkers/test_TW0_hodge_degree_controls.py` fresh
+  — reproduces exactly as claimed (ℓ=2, exit 0, 4/4 controls). Confirmed the `load_L2_operator()`
+  coefficients (`P2=-27z²-26z+1, P1=-27z²-13z, P0=-6z²-2z`) match the Tier-A Lean-verified
+  `cooper_s7` "P" tuple already used in `checkers/check_L3_riemann_scheme.py` — not
+  independently re-typed or fabricated. Independently **hand-re-derived** the exponents from
+  scratch (not by re-running the checker's own functions) using the standard regular-singular-point
+  method for `y'' + p y' + q y = 0` with `p0 = lim_{z→zc}(z-zc)p`, `q0 = lim_{z→zc}(z-zc)²q` at
+  each finite point, and `p_∞ = lim_{z→∞} z·p`, `q_∞ = lim_{z→∞} z²·q` at infinity: got
+  `{0, 1/2}` at both z=-1 and z=1/27, `{1/3, 2/3}` at ∞ — matches the brief exactly. Therefore
+  deg ℒ_ell = 2/2 = 1, deg ℒ_K3 = 2·1 = 2, confirming ℓ=2 independently.
+  **Defect found and fixed (not in the math — in the test harness):**
+  `test_TW0_hodge_degree_controls.py`'s four `test_*` functions used `return passed` instead of
+  `assert passed`. Under direct script invocation (`python3 checkers/test_....py`) this is fine
+  (the file's own `main()` checks `all(results)` and sets the exit code), but under `pytest`
+  (this project's standard invocation, e.g. the 13-command regression) a bare `return False`
+  does **not** fail the test — pytest only emits a `PytestReturnNotNoneWarning` and still counts
+  it as PASSED. Verified empirically: patched a copy with a deliberately wrong expected value
+  and confirmed the original code (with `return` only) would have shown 4/4 passed under pytest
+  regardless; adding `assert passed` before each `return` now correctly fails (verified: same
+  patched copy now shows 2 failed/2 passed). Fixed in this commit — 4-line diff, no change to
+  the checker itself or to any computed number. **Status stays DRAFT** — coordinator
+  verification does not self-promote to LIVE; that is a T0-only call, same as WP-TW1's
+  precedent. Result (ℓ=2, R5 gate: Route A closes program-wide) is ready for T0 to act on per
+  the standing ruling R5.
