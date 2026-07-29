@@ -1,0 +1,84 @@
+{
+  "certificate": "TW1_two_e8_P3",
+  "operator": "cooper_s7 (two E8(-1) requirement per G0, data/certificates/G0_NS_genus_cooper_s7.json)",
+  "necessary_condition": "E8 (Kodaira II*) Tate orders v(f)>=4, v(g)>=5, v(Delta)=10 along a divisor D; for two divisors D1,D2: 4[D1]+4[D2]<=[-4K], 5[D1]+5[D2]<=[-6K], 10[D1]+10[D2]<=[-12K] in the effective cone, PLUS collision analysis.",
+  "result": {
+    "base": "P^3",
+    "picard_rank": 1,
+    "minus_K": {
+      "expr": "O(4)",
+      "value": 4
+    },
+    "bounds": {
+      "-4K": 16,
+      "-6K": 24,
+      "-12K": 48
+    },
+    "raw_degree_budget_symbolic": {
+      "need_f_expr": "4*d1 + 4*d2",
+      "need_g_expr": "5*d1 + 5*d2",
+      "need_delta_expr": "10*d1 + 10*d2",
+      "s_max_from_f_bound": 4,
+      "s_max_from_g_bound": 4,
+      "s_max_from_delta_bound": 4,
+      "s_max_overall": 4,
+      "interpretation": "raw arithmetic allows d1+d2 <= 4 (e.g. d1=d2=2 fits) -- ARITHMETICALLY PASSES in isolation"
+    },
+    "raw_degree_budget_boundary_case_d1_2_d2_2": {
+      "margins": [
+        "0",
+        "4",
+        "8"
+      ],
+      "chain": [
+        "f (deg): need=16, bound=16, margin=0 (>=0: True)",
+        "g (deg): need=20, bound=24, margin=4 (>=0: True)",
+        "Delta (deg): need=40, bound=48, margin=8 (>=0: True)"
+      ],
+      "all_components_pass": true
+    },
+    "collision_analysis": {
+      "reasoning": "Pic(P^3)=Z*H rank 1: any two nonzero effective divisors D1=d1*H, D2=d2*H (d1,d2>=1) satisfy dim(D1)+dim(D2)=2+2=4>=3=dim(P^3), forcing D1 \u2229 D2 != empty by the classical projective dimension theorem; confirmed numerically via the intersection number D1.D2 = d1*d2*(H^3) = d1*d2 > 0 for every d1,d2 >= 1.",
+      "intersection_number_expr": "d1*d2",
+      "collision_unavoidable_for_every_d1_d2": true,
+      "v_f_at_collision_curve": 8,
+      "v_g_at_collision_curve": 10,
+      "v_delta_at_collision_curve": 20,
+      "non_minimality_test_4_6_curse": true,
+      "non_minimality_test_discriminant_order_ge_12": true,
+      "reading_convergence": {
+        "reading_1_no_minimal_model_over_B3_as_given": {
+          "v_f_at_C": 8,
+          "v_g_at_C": 10,
+          "curse_4_6_triggered": true,
+          "v_delta_at_C": 20,
+          "discriminant_order_flag_ge_12": true,
+          "verdict": "no minimal Weierstrass CY over P^3 as given -- FAIL (adopted here)"
+        },
+        "reading_2_standard_blow_up_cure": {
+          "note": "In the standard F-theory literature, a codim-2 (4,6) locus is routinely CURED by blowing up the base along the offending curve C, producing a strictly different base X' = Bl_C(P^3) (not P^3 itself). Under this reading, P^3-AS-GIVEN still fails (the model over P^3 itself is non-minimal), but this reading says NOTHING about whether Bl_C(P^3) would pass a re-run of this same check -- that base is NOT checked by this WP (explicit in the certificate's not_claimed)."
+        },
+        "convergence": "Both readings agree P^3-AS-GIVEN fails (additivity is forced regardless of which reading of the 'blow-up or not' question is taken) -- the raw per-divisor degree budget is irrelevant once collision is accounted for, for every d1,d2 >= 1. They differ in SCOPE (whether a blow-up escapes the verdict), which is recorded, not silently resolved, and is flagged in not_claimed rather than answered."
+      }
+    },
+    "overall_verdict": "FAIL",
+    "overall_verdict_reasoning": "Raw per-divisor degree budget ARITHMETICALLY PASSES (e.g. d1=d2=2 gives need_f=16<=16, need_g=20<=24, need_delta=40<=48), but the MANDATORY collision analysis shows this is irrelevant: because Pic(P^3) has rank 1, D1 and D2 ALWAYS intersect, and at the intersection curve the combined orders (v_f=8, v_g=10) trigger BOTH standard non-minimality flags (the (4,6)-curse and v(Delta)>=12) UNCONDITIONALLY, for every choice of d1,d2>=1. P^3 therefore FAILS the two-E8 necessary-condition screen: no configuration on P^3 survives the collision, regardless of the raw degree budget passing."
+  },
+  "status": "DRAFT - pending T0 (Xavier) / verification-pass review. WP-TW1 (S3 briefs/EXECUTION_PLAN_2026_07_29_TWISTED_AND_WPE6.md, WP-TW1 section; T0 countermand R2 2026-07-29). Producing tier does not self-promote to LIVE.",
+  "not_claimed": [
+    "This is a NECESSARY-CONDITION SCREEN ONLY. A PASS does not assert the M-polarized cooper_s7 family (rho=19, T \u2245 U (+) <14>) actually EXISTS on that base -- exhibiting f, g sections that realize the specific M-polarization is separate, harder, NOT-YET-attempted future work (S3 audit $A5: 'the honest hard part... this, not the E8 degree count, is where the route most plausibly dies').",
+    "Does not construct any explicit f, g polynomial.",
+    "Does not address whether the resulting singularities (beyond the two E8 loci) admit a crepant resolution.",
+    "P^3's FAIL verdict is for P^3 AS GIVEN only. Does NOT claim that a blow-up of P^3 along the forced collision curve D1 \u2229 D2 also fails -- the standard F-theory cure for a codim-2 (4,6) locus is exactly such a blow-up, producing a DIFFERENT base not checked here (see the P^3 certificate's 'collision_analysis' block for the two-readings discussion this scopes).",
+    "Placing BOTH E8 loci on a single divisor (D1=D2) is not separately re-checked as a numeric case -- it is ruled out by inspection (would require v(g)>=10 on one divisor, immediately past the (4,6) curse) and is not among the configurations reported PASS/FAIL above.",
+    "On the P^1-bundle family, exact-order realizability is verified ONLY for the SPECIFIC configuration (D1,D2)=(C0,C_infty) checked here, and ONLY for n<=18 (where g's residual restricted to C0 stays effective). This is NOT a claim that the scroll itself fails realizability for n>18 -- the budget has slack there (in the C0- and h-components of g and Delta) that a DIFFERENT divisor-class choice could exploit; that possibility is simply UNCHECKED by this WP, not shown to fail.",
+    "No physical coupling of any kind claimed (VISION sec 1.3).",
+    "No observable of any kind (m_phi, alpha_D, Lambda_D) -- F5b stands."
+  ],
+  "checker": "check_TW1_two_e8_feasibility.py",
+  "checker_version": "1.0.0",
+  "date": "2026-07-29",
+  "tier": "E",
+  "tier_reason": "Exact classical algebraic geometry (canonical class of P^3/product/scroll via cited standard formulas, Picard-lattice linear algebra, projective dimension theorem, Tate order divisibility arithmetic) computed with sympy Integer/Rational only -- no floats, no numerical tolerance. This is a repo-local computation-quality tag (distinct from VISION.md's epistemic Tier A/B/C), matching the convention used in check_G1a_CY_twist_condition.py's certificates. Depends on G0 (Tier B, LIVE) only for the QUALITATIVE fact 'two E8(-1) summands must be supportable' -- does not use the rho=19/T=3 numeric derivation in its own arithmetic, so this result is unconditional given G0's NS(cooper_s7) \u2287 E8(-1)(+)E8(-1) finding.",
+  "provenance": "Generated-by: Sonnet 5 (Stream 2, WP-TW1 session 2026-07-29) | Verified-by: check_TW1_two_e8_feasibility.py structural assertions + checkers/test_TW1_two_e8_feasibility_controls.py | Reviewed-by: pending T0 (Xavier) -- coordinator reviews and commits, no agent commits"
+}
