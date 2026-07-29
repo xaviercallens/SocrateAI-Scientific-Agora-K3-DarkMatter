@@ -188,3 +188,12 @@ until the G0 certificate is on the table.
   review/promotion.** Open scoping question named in the brief, not resolved: whether G0's
   U-summand argument (certified fiberwise, not yet relative) needs re-deriving for a
   non-simply-connected candidate base if the ladder is revised.
+- **2026-07-29, T0 RULING (Fable 5 as T0): G1-a promoted DRAFT→LIVE [Tier B] (R1); B₂ ladder
+  REVISED to K²=0 bases, dP9 first rung, HARD-GATED on O1 (deg ℒ_curve for cooper_s7 — must be
+  computed before any new rung is attempted; ℓ=1 → dP9 proceeds, ℓ≥2 → twisted construction
+  becomes primary) (R2); bounded desk-scoping memo on the twisted-Weierstrass alternative
+  authorized in parallel (no code, no proof attempts); G1-b execution stays HELD pending Deep
+  Think adversarial read; O2/O3 routed to Deep Think.** Full ruling with justifications:
+  `briefs/T0_RULING_G1A_LADDER_AND_ACTIONS_2026_07_29.md`. Companion T0s work order:
+  `DEEPTHINK_ALIGNMENT_BRIEF_2026_07_29.md` (S3). Xavier countermand window on R2 closes
+  2026-07-30 EOD; absent countermand, O1 launches.
