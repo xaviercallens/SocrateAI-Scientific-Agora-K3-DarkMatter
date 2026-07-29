@@ -1,0 +1,40 @@
+{
+  "checker": "check_TW0_hodge_degree.py",
+  "date": "2026-07-29",
+  "family": "cooper_s7",
+  "riemann_scheme": {
+    "-1": [
+      "0",
+      "1/2"
+    ],
+    "1/27": [
+      "0",
+      "1/2"
+    ],
+    "oo": [
+      "1/3",
+      "2/3"
+    ]
+  },
+  "hodge_bundle_elliptic": {
+    "sum_exponents_finite": "1",
+    "sum_exponents_infinity": "1",
+    "degree": "1"
+  },
+  "hodge_bundle_K3": {
+    "degree_computed": "2",
+    "orbifold_correction": "0"
+  },
+  "infinity_point": {
+    "exponents": [
+      "1/3",
+      "2/3"
+    ],
+    "monodromy_type": "finite_order_3"
+  },
+  "verification": {
+    "target": "2",
+    "computed": "2",
+    "passes": true
+  }
+}
