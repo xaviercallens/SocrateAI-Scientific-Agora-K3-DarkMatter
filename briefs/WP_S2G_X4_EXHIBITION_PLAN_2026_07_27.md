@@ -216,3 +216,15 @@ until the G0 certificate is on the table.
   (T1, parallel with R5): formalize + run the corrected two-E8 degree-feasibility kill-check,
   lead with the M-polarization constraint. G1-b: zero T1 effort (three strikes). dP9 rung
   SUSPENDED pending R5. Xavier countermand window (merged with R2's): 2026-07-30 EOD.**
+- **2026-07-29 (evening), T0 COUNTERMAND EXECUTED — ROUTE A CLOSED, TWISTED-WEIERSTRASS
+  PRIMARY.** T0 (Xavier) exercised the R2 countermand window: Route A (strict pullback)
+  ABANDONED (safe on verified grounds alone: G1-a exact + O2/O3 hand-verified; ℓ=2 ratified
+  Tier B-external, in-house check WP-TW0 attached non-blocking); G1-b: zero compute, ever;
+  dP9 ladder dead. Twisted-Weierstrass promoted PRIMARY, gated on the two-E8
+  degree-feasibility check (WP-TW1, deg Δ=48 on P³). Ask-4 "Type IV at ∞" EXCLUDED from
+  ratification (E-008/E-009 exponent→Kodaira ban, ledger rule 3). Paper drafting GREEN-LIT
+  (S1). WP-E6 sweep authorized VIA the PREDICTION v2 pin protocol (ledger rule 5). GitHub
+  token revocation COMPLETED by T0 — standing URGENT item closed. Ledger entry 6 added to
+  CLAUDE.md. Full record + Fable review annotations: `briefs/T0_COUNTERMAND_R2_2026_07_29.md`.
+  Execution plan (7 WPs w/ DoD + validation criteria for autonomous T1/T2 execution):
+  S3 `briefs/EXECUTION_PLAN_2026_07_29_TWISTED_AND_WPE6.md`.

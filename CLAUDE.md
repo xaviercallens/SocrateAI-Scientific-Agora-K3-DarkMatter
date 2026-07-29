@@ -45,6 +45,15 @@ contradicts it, the document carries (or needs) a dated correction note.
    via a pre-registered PREDICTION v2 amendment under the pin protocol; outputs are labeled
    exclusion/FIT — never TEST — until pinned. The WP-E5 2D transverse route stays CLOSED by
    its data floors (~1.6 Mpc, ~10⁴ objects per slice); a sweep does not reopen it.
+6. **Route A (strict pullback) is CLOSED — T0 countermand 2026-07-29** (`briefs/
+   T0_COUNTERMAND_R2_2026_07_29.md`). Tier B structural negative: no strict-pullback
+   Calabi-Yau realization of the cooper_s7 family exists over K²≠0 bases (G1-a, in-house
+   exact, LIVE) nor via any even-ramification escape on K²=0 bases (O2/O3, hand-verified —
+   S3 `DEEPTHINK_DEBRIEF_AUDIT_2026_07_29.md`). The Hodge-bundle degree ℓ = 2 is ratified
+   **Tier B-external** (T0s derivation via the Tier-A Sym² theorem; in-house verification
+   WP-TW0 pending — if it lands ≠ 2, F6 disclosure + T0 escalation). Do not spend compute on
+   G1-b or any strict-pullback geometry. Twisted-Weierstrass is the PRIMARY route; its gate
+   is the two-E8 degree-feasibility check (WP-TW1; use deg Δ = 48 on P³, not 144).
 
 ## Escalation
 Anything touching a pinned document, a frozen criterion, or this ledger is T0-owned
