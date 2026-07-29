@@ -197,3 +197,22 @@ until the G0 certificate is on the table.
   `briefs/T0_RULING_G1A_LADDER_AND_ACTIONS_2026_07_29.md`. Companion T0s work order:
   `DEEPTHINK_ALIGNMENT_BRIEF_2026_07_29.md` (S3). Xavier countermand window on R2 closes
   2026-07-30 EOD; absent countermand, O1 launches.
+- **2026-07-29 (later), Deep Think O1–O6 debrief received + audited; T0 rulings R4–R6.**
+  Audit (canonical, cite only this): `DEEPTHINK_DEBRIEF_AUDIT_2026_07_29.md` (S3). Key
+  verdicts: **O1 ℓ=2 claim PLAUSIBLE** (leans on the Tier-A Sym² theorem; two sub-steps
+  unverified; the debrief's own headline said ℓ=1, contradicting its own §1 — drafting error
+  discarded); **O2 CLOSED-VERIFIED** (dP9-section vs even-ramification jointly unsatisfiable);
+  **O3 CLOSED-VERIFIED with corrected lemma** (Halphen covers one locus; two even multiple
+  fibers ⇒ Enriques-type ⇒ non-effective −K; debrief's "m₁=m₂ only" lemma false as stated —
+  Dolgachev (2,3) exists); G1-b lethality L1 conditional (Z₂ weights underived), **L2 flagged
+  DISCREPANCY** (∞-point: today "order 3/Type IV" vs yesterday's audited "infinite-order
+  monodromy" — in-house exponent check settles it); twisted scoping ADOPTED with arithmetic
+  correction (deg Δ = 48 on P³, not 144). **Coordinator corollary recorded: if ℓ=2 confirms
+  in-house, Route A closes over EVERY base** (effective-−K case hits the A2/A3 parity trap;
+  trivial/torsion-K case can't satisfy −K=φ*(D>0) at all; K²≠0 closed by G1-a).
+  **RULINGS: R5 — in-house exact ℓ computation from the L₂/L₃ Riemann scheme is THE gate
+  task (T1, next to launch); ℓ=2 confirmed ⇒ Route A CLOSED program-wide, ℓ=1 ⇒ escalate
+  cross-model discrepancy. R6 — twisted-Weierstrass promoted to primary-candidate scoping
+  (T1, parallel with R5): formalize + run the corrected two-E8 degree-feasibility kill-check,
+  lead with the M-polarization constraint. G1-b: zero T1 effort (three strikes). dP9 rung
+  SUSPENDED pending R5. Xavier countermand window (merged with R2's): 2026-07-30 EOD.**
