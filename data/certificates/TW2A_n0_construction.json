@@ -1,0 +1,160 @@
+{
+  "certificate": "TW2A_n0_construction",
+  "wp": "WP-TW2-A (T0 order D5 via delegated ruling R4, 2026-07-31)",
+  "scope": "n = 0 ONLY: B3 = P^1 x P^2",
+  "inputs": {
+    "refs": {
+      "x0_7_inose_cm.json": "17732a41b200f03c2ae82621c9ab6c34e38d7471fff5fb8f114bf81de6ce9aa0"
+    },
+    "certificates": {
+      "G0_NS_genus_cooper_s7.json": "da6fe218fddb735e127cd46fc0be70631e05fa4772d5d292d5e724441afb8cd3"
+    }
+  },
+  "model": {
+    "h0": "1",
+    "j1": "1168429123449 = 63*2647^3",
+    "j2": "21609",
+    "J1": "129825458161/192",
+    "J2": "2401/192",
+    "tau": "89393842037652336698642549281/1358954496",
+    "a": "1",
+    "b": "-25636762629061969186490898192787367964668401/25048249270272",
+    "c": "2291768708819154300038653714595247401301922196660375325044860012465969681/68078861925529707085824",
+    "w": "x^6 + y^6 - 2 z^6",
+    "f": "-3*tau*w^2*s^4*t^4",
+    "g": "s^5*t^5*w^3*(a*s^2 + b*s*t + c*t^2)",
+    "orders": {
+      "bidegree_f": [
+        8,
+        12
+      ],
+      "bidegree_g": [
+        12,
+        18
+      ],
+      "orders_C0": [
+        4,
+        5,
+        10
+      ],
+      "orders_Cinf": [
+        4,
+        5,
+        10
+      ],
+      "kodaira_type_both": "II* (v(f)>=4, v(g)=5, v(Delta)=10; same Tate convention as TW1)"
+    },
+    "wall_orders_w0": [
+      2,
+      3,
+      6
+    ],
+    "fiber": {
+      "disc_quartic_nonzero": true,
+      "euler": 24,
+      "chi": 2,
+      "fiber_configuration": "II* + II* + 4 I1 (e = 10+10+4 = 24)"
+    },
+    "normalized_scaling": {
+      "alpha_cubed": "311710925044561/36864",
+      "beta_squared": "286784436653521/36864",
+      "scaling_verified": true,
+      "note": "every fiber over {w != 0} is Q-bar-isomorphic to the single normalized Inose K3 X_{alpha,beta} (isotrivial)"
+    }
+  },
+  "lattice": {
+    "trivial_lattice": {
+      "rank": 18,
+      "det": -1,
+      "signature": [
+        1,
+        17
+      ]
+    },
+    "e8_dynkin_automorphisms": 1,
+    "component_group_orders": "II*: |disc E8| = 1 (both fibers) => contr_v = 0 for every section",
+    "Pbar": "P - O - 7F",
+    "Pbar_sq": -14,
+    "M19_block_form_verified": true,
+    "M19_det": 14,
+    "M19_signature": [
+      1,
+      18
+    ],
+    "matches_G0_candidate_genus": true
+  },
+  "shioda_tate": {
+    "mw_rank": 1,
+    "mw_torsion": "trivial",
+    "height_generator": 14,
+    "P_dot_O": 5,
+    "chi_used": 2,
+    "conditional_on": "rho = 19 and T ~= U + <14> for the Inose K3 of a non-CM 7-isogenous pair \u2014 CITED (refs x0_7_inose_cm.json, Tier B), not re-proven"
+  },
+  "exclusion": {
+    "ade_enhancement_excluded": true,
+    "base_pullbacks": "restrict to multiples of F (inside U) \u2014 cannot give <-14>",
+    "multisections": "fiber classes lie in span(trivial lattice, MW projections) by Shioda-Tate \u2014 no independent source",
+    "saturation": "14 squarefree => overlattice index m has m^2 | 14 => m = 1",
+    "conclusion": "the MW section P (height 14, P.O = 5) is the ONLY possible source of <-14>"
+  },
+  "obstruction_square_twist": {
+    "lift_identity": "verified symbolically",
+    "orders_along_v0": [
+      4,
+      6,
+      12
+    ],
+    "verdict": "FATAL \u2014 codim-1 (4,6) divisor: non-minimal under BOTH readings (the unambiguous case); the CY structure cannot coexist with the square twist"
+  },
+  "obstruction_monodromy": {
+    "wall_fiber_type": "I0* (orders (2,3,6) along {w=0}, verified in main)",
+    "deck_action": "sigma -> -sigma induces fiberwise inversion (X,Y) -> (X,-Y)",
+    "invariant_rank": 18,
+    "verdict": "NO divisor on the isotrivial X4 restricts to the <-14> generator: divisor restrictions are monodromy-invariant, Pbar is anti-invariant (Pbar != -Pbar since Pbar^2 = -14 != 0)"
+  },
+  "obstruction_universal_codim2": {
+    "g_order_t_a": 6,
+    "g_order_s_c": 6,
+    "f_order": ">=4",
+    "unconditional": "every term of g = s^5 t^5 (a s^2 + b s t + c t^2) has (t,a)-adic order >= 6 \u2014 no genericity needed",
+    "nonempty": "a, c are degree-18 forms on P^2 (nonconstant), so their zero curves are nonempty; explicit point (1:1:1) on the model's {a=0}",
+    "verdict": "codim-2 (4,6) curves are UNAVOIDABLE in every n=0 two-E8 model \u2014 Reading 1 (TW1-adopted): non-minimal as given; Reading 2: base blow-up cure leaves n=0 scope. Readings DIVERGE materially for the first time -> T0"
+  },
+  "disjoint_pair_enumeration": {
+    "admissible_disjoint_irreducible_pairs": [
+      [
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    ],
+    "note": "exhaustive within the budget box; classes (d,0) with d>1 have no irreducible members (d disjoint fibers)"
+  },
+  "verdicts": {
+    "f_g_exhibited": "YES \u2014 exact II* along both C0, Cinf (checker-verified)",
+    "fiber_level_M19": "IDENTIFIED, conditional Tier B \u2014 NS(generic fiber) contains U+E8(-1)^2 unconditionally; equals M19 = U+E8^2+<-14> given the CITED Shioda-Inose facts (rho=19, T=U+<14> for non-CM 7-isogenous pair); <-14> generator = Pbar = P - O - 7F, forced unique source (MW section, height 14, P.O = 5)",
+    "fourfold_level_M19": "OBSTRUCTED for the isotrivial ansatz (monodromy; square-twist escape codim-1 (4,6) fatal) AND, under TW1 Reading 1, EVERY n=0 model is non-minimal as given (universal codim-2 (4,6) curves) \u2014 T0 ruling required on the Reading question"
+  },
+  "status": "DRAFT - pending T0 (Xavier) / coordinator verification pass. Producing tier does not self-promote.",
+  "not_claimed": [
+    "Nothing at n > 0 is claimed. (One structural remark \u2014 the c-side coefficient has positive degree 18+n for ALL n, suggesting the codim-2 (4,6) phenomenon persists \u2014 is flagged UNCHECKED.)",
+    "rho = 19 and T ~= U + <14> for the Inose K3 of a non-CM 7-isogenous pair are CITED literature facts (refs/x0_7_inose_cm.json), Tier B, not re-proven here; every downstream number is exact arithmetic conditional on them.",
+    "No explicit polynomial coordinates for the MW section P are exhibited (identified follow-up; three attempt paths documented in the brief).",
+    "No claim that the fourfold Weierstrass model admits a crepant resolution (G1-b-type question, open).",
+    "No claim about non-isotrivial n=0 families (modular-pencil route documented as open in the brief).",
+    "cooper_s10 / U+<20> not used (not in ledger). No AlphaEvolve/Stream-4 input used (sandbox).",
+    "No physical coupling of any kind (VISION sec 1.3). No observable (m_phi, alpha_D, Lambda_D) \u2014 F5b stands."
+  ],
+  "checker": "check_TW2A_n0_construction.py",
+  "checker_version": "1.0.0",
+  "date": "2026-07-31",
+  "tier": "E",
+  "tier_reason": "Exact classical algebraic geometry with sympy Integer/Rational and exact radicals only \u2014 no floats. Repo-local computation-quality tag (as in TW1 certificates), distinct from VISION.md epistemic tiers; the SI-theory inputs are flagged Tier B wherever used.",
+  "provenance": "Generated-by: Fable 5 (Stream 2, WP-TW2-A 2026-07-31) | Verified-by: check_TW2A_n0_construction.py structural assertions + checkers/test_TW2A_n0_construction_controls.py | Reviewed-by: pending T0 (Xavier)"
+}

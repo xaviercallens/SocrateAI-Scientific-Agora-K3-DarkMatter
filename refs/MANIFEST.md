@@ -12,6 +12,7 @@ first, then read it from the checker. Never transcribe numbers from memory.
 | oeis_A002895_bfile.txt | b2e750030034aa64ae02daf6a89a46c5503c4a0bf4cdb95949187c4d94b283a0 | OEIS A002895 b-file — Domb numbers, K3-class; fetched 2026-07-24 | 2026-07-24 |
 | oeis_A125143_bfile.txt | 977daaeb90c900465d5963d424249a8d3745f5e42c3230a9f67947b862e312f7 | OEIS A125143 b-file — Almkvist–Zudilin 2nd K3-class; fetched 2026-07-24 | 2026-07-24 |
 | oeis_A006077_bfile.txt | 0084a70705396f0f5bc1b2b053f310b0e5799c233065a5da8fb111828436184a | OEIS A006077 b-file — Zagier order-2 sporadic (elliptic); fetched 2026-07-24 | 2026-07-24 |
+| x0_7_inose_cm.json | 17732a41b200f03c2ae82621c9ab6c34e38d7471fff5fb8f114bf81de6ce9aa0 | X₀(7) hauptmodul j-parametrization (Klein/Fricke; Maier 2009, N=7), the 13 rational CM j-invariants (Silverman ATAEC App. A §3), Inose-pencil normalization α³=J₁J₂, β²=(1−J₁)(1−J₂) (Inose 1978; Shioda 2006; Schütt–Shioda survey), Shioda height/Shioda–Tate conventions (Shioda 1990). Transcribed 2026-07-31 for WP-TW2-A; every entry carries an internal exact cross-check (Fricke-involution identity, cube factored forms, CM-degeneration fingerprint at h=±7) that `check_TW2A_n0_construction.py` verifies before consuming any value. | 2026-07-31 |
 
 **Recurrences for the 4 sequences above were DERIVED by exact nullspace from these b-files
 (`scripts/derive_refs_entry.py`), never transcribed. A005259 and A006077 derived recurrences

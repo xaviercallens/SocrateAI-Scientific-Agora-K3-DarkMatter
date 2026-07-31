@@ -1,0 +1,48 @@
+{
+  "_purpose": "Literature data for WP-TW2-A (n=0 twisted-Weierstrass construction): X_0(7) hauptmodul j-parametrization, the 13 rational CM j-invariants, and the Inose-pencil normalization. Transcribed 2026-07-31; every value carries an internal cross-check that checkers/check_TW2A_n0_construction.py verifies by exact arithmetic before use (Fricke-involution identity for the hauptmodul; perfect-cube/near-cube factored forms for every CM j; CM-degeneration fingerprint at the Fricke fixed points h=7 and h=-7 for the joint hauptmodul+Inose-normalization transcription).",
+  "x0_7_hauptmodul": {
+    "citation": "Classical (Klein/Fricke; see e.g. Fricke, Die elliptischen Funktionen und ihre Anwendungen II; modern statement e.g. Maier, 'On rationally parametrized modular equations', J. Ramanujan Math. Soc. 24 (2009), Table for N=7). h is the standard hauptmodul h = (eta(tau)/eta(7 tau))^4 of X_0(7).",
+    "j1_of_h": "(h^2 + 13*h + 49) * (h^2 + 245*h + 2401)^3 / h^7",
+    "j2_of_h": "(h^2 + 13*h + 49) * (h^2 + 5*h + 1)^3 / h",
+    "meaning": "For h a point of X_0(7), (j1(h), j2(h)) are the j-invariants of a pair of elliptic curves (E1, E2) related by a cyclic 7-isogeny.",
+    "fricke_involution": "h -> 49/h exchanges j1 and j2; the identity j1(49/h) = j2(h) must be verified symbolically by the checker before either formula is used.",
+    "fixed_points_note": "h = 7 and h = -7 are the fixed points of the Fricke involution; there j1 = j2 and the pair is a CM point (self-7-isogenous curve). The checker must find j(7) = 16581375 = 255^3 (CM disc -28) and j(-7) = -3375 = -(15^3) (CM disc -7), reproducing two textbook CM values as an independent transcription cross-check."
+  },
+  "rational_cm_j_invariants": {
+    "citation": "Silverman, Advanced Topics in the Arithmetic of Elliptic Curves, Appendix A sec. 3 (the 13 imaginary quadratic orders of class number 1).",
+    "values": [
+      {"disc": -3,   "j": "0",                     "crosscheck_form": "0"},
+      {"disc": -4,   "j": "1728",                  "crosscheck_form": "12^3"},
+      {"disc": -7,   "j": "-3375",                 "crosscheck_form": "-(15^3)"},
+      {"disc": -8,   "j": "8000",                  "crosscheck_form": "20^3"},
+      {"disc": -11,  "j": "-32768",                "crosscheck_form": "-(32^3)"},
+      {"disc": -12,  "j": "54000",                 "crosscheck_form": "2*30^3"},
+      {"disc": -16,  "j": "287496",                "crosscheck_form": "66^3"},
+      {"disc": -19,  "j": "-884736",               "crosscheck_form": "-(96^3)"},
+      {"disc": -27,  "j": "-12288000",             "crosscheck_form": "-3*160^3"},
+      {"disc": -28,  "j": "16581375",              "crosscheck_form": "255^3"},
+      {"disc": -43,  "j": "-884736000",            "crosscheck_form": "-(960^3)"},
+      {"disc": -67,  "j": "-147197952000",         "crosscheck_form": "-(5280^3)"},
+      {"disc": -163, "j": "-262537412640768000",   "crosscheck_form": "-(640320^3)"}
+    ],
+    "crosscheck_rule": "The checker must verify every j value equals its factored crosscheck_form exactly before using the table; a transcription error in either column makes the pair disagree."
+  },
+  "inose_pencil": {
+    "citation": "Inose, 'Defining equations of singular K3 surfaces and a notion of isogeny', Intl. Symp. on Algebraic Geometry Kyoto 1977 (1978); Shioda, 'Kummer sandwich theorem of certain elliptic K3 surfaces', Proc. Japan Acad. 82A (2006); Schuett-Shioda, 'Elliptic surfaces' (survey, Adv. Stud. Pure Math. 60), Shioda-Inose structures section.",
+    "normalized_model": "y^2 = x^3 - 3*alpha*s^4*t^4*x + s^5*t^5*(s^2 - 2*beta*s*t + t^2) over P^1_(s:t)",
+    "parameter_correspondence": "alpha^3 = J1*J2 and beta^2 = (1-J1)*(1-J2), where J_i = j_i/1728. X_{alpha,beta} is the Inose K3 attached to E1 x E2.",
+    "shioda_inose_facts_cited": [
+      "T(X_{alpha,beta}) is Hodge-isometric to T(E1 x E2) (Shioda-Inose structure; Morrison, 'On K3 surfaces with large Picard number', Invent. Math. 75 (1984), Thm 6.3 and Inose 1978).",
+      "For E1, E2 non-CM and related by a cyclic n-isogeny, NS(E1 x E2) has rank 3 and T(E1 x E2) ~= U + <2n>; hence rho(X) = 19 and T(X) ~= U + <2n>. For n = 7: T(X) ~= U + <14>.",
+      "Corroboration only (not load-bearing): MWL of the Inose pencil ~= Hom(E1, E2) with height pairing 2*deg (Shioda, 'Correspondence of elliptic curves and Mordell-Weil lattices of certain elliptic K3 surfaces', in Algebraic Cycles and Motives II (2007)); consistent with the height-14 generator derived independently via Shioda-Tate in the checker."
+    ],
+    "internal_fingerprint": "At a Fricke fixed point (j1 = j2 = J*1728) the formulas force beta + alpha^(3/2) = +-((1-J) + J) = +-1, which is exactly the condition for the residual discriminant quartic (u^2-2*beta*u+1)^2 - 4*alpha^3*u^2 to acquire a double root. The checker must observe disc(quartic) = 0 exactly at h = 7 and h = -7, and disc != 0 at the working point h = 1. A wrong constant in either alpha^3 = J1*J2 or beta^2 = (1-J1)(1-J2) breaks this joint identity."
+  },
+  "standard_elliptic_surface_facts": {
+    "citation": "Shioda, 'On the Mordell-Weil lattices', Comment. Math. Univ. St. Pauli 39 (1990); Kodaira/Tate fiber classification as already used by checkers/check_TW1_two_e8_feasibility.py (same Tate-order convention: II* iff v(f)>=4, v(g)=5, v(Delta)=10).",
+    "height_formula": "h(P) = 2*chi + 2*(P.O) - sum_v contr_v(P), chi = chi(O_S) (= e(S)/12 for an elliptic surface with section).",
+    "II_star_contributions": "The component group of a II* fiber is trivial (order = det of the E8 Cartan matrix = 1), so every section passes through the identity component and contr_v = 0 at a II* fiber.",
+    "shioda_tate": "NS(S) = (trivial lattice) + (image of MW under the orthogonal projection); rank NS = 2 + sum (m_v - 1) + rank MW; for torsion-free MW of rank 1 with trivial lattice U + E8(-1)^2: |disc NS| = h(generator).",
+    "torsion_note": "MW torsion injects into the product of the fiber component groups; if all component groups are trivial, MW is torsion-free."
+  }
+}
