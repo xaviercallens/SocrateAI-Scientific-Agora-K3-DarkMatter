@@ -54,6 +54,25 @@ contradicts it, the document carries (or needs) a dated correction note.
    WP-TW0 pending — if it lands ≠ 2, F6 disclosure + T0 escalation). Do not spend compute on
    G1-b or any strict-pullback geometry. Twisted-Weierstrass is the PRIMARY route; its gate
    is the two-E8 degree-feasibility check (WP-TW1; use deg Δ = 48 on P³, not 144).
+7. **"AutoEvolve R2 Hypothesis Foundry" / K3-T2-Chameleon / DarkMatterK3@Home track is an
+   EXPLORATORY SANDBOX** (T0 ruling, 2026-08-01, same standing as rule 4's Route-A-adjacent
+   discipline and mirroring the identical S3 CLAUDE.md rule 7). Covers
+   `AUTORESEARCH_IMPLEMENTATION_GUIDE.md` — the pre-ledger 2026-07-14 sieve
+   (`k3_sieve_analysis.py`) + G1/G2/QT physics-viability gate funnel
+   (`candidate_pool.yaml`, 13→5→3 selection) — and its S3 counterpart (`api/discoveries.json`
+   35 `K3-DISC-*` entries, `ui_loom/`, `core_wasm/`, `public/wasm/`, `AGORA_K3_T2_BRIDGE_PLAN.md`,
+   `PHASE5_IMPLEMENTATION_PLAN.md`). **No claim from this material — including any candidate's
+   "K3/T2" geometry-class assignment, achievable-mass contour, or the Chameleon coupling
+   formula — may be cited as evidence for cooper_s7/s10 or into this repo's Tier A/B/C
+   certificates.** **Naming collision, explicit — three similarly-named, UNRELATED systems in
+   this program:** (a) **"AutoEvolve"** (this repo, `autoevolve-harness` skill, top of this
+   file) is the CURRENT, sanctioned, checker-certificate-ONLY scoring harness over cooper_s7/s10
+   — legitimate, part of Streams 1–3, unaffected by this rule. (b) **"AutoEvolve R2 Hypothesis
+   Foundry"** (this rule) is the pre-ledger sieve+physics-gate funnel over binomial-sum
+   sequences — sandboxed by this rule, despite sharing the word "AutoEvolve" with (a). (c)
+   **"AlphaEvolve"** (Stream-4, Vertex AI, S3 CLAUDE.md rule 5) is a third, unrelated codebase.
+   Do not conflate any of the three. Resumed work on (b)/DarkMatterK3@Home stays on its own
+   branch(es), not `main`, labeled `sandbox/`, until a future T0 ruling reconciles or retires it.
 
 ## Escalation
 Anything touching a pinned document, a frozen criterion, or this ledger is T0-owned
