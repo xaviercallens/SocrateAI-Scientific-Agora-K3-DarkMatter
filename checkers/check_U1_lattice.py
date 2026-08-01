@@ -1202,6 +1202,126 @@ def emit_cert_v5(res_s7, res_s10):
     print(f"\nWrote {out.relative_to(REPO)} (DRAFT, pending T0)")
 
 
+def emit_cert_s10_v4(res_s10, res_s7):
+    """s10 lattice certificate DRAFT, emitted directly at the s7-v5 bar
+    (lattice claim + serialized basis_change_matrix witness). Numbering: the
+    only existing s10 certificate is C2_cooper_s10_v3.json (rank ρ=19/T=3,
+    LIVE) — there is no s10 lattice certificate at any version, so this v4
+    DRAFT is the FIRST titled lattice claim for the family; no
+    witness-less intermediate (s7's v4 stage) is emitted, per the T0 ruling
+    (2026-07-27) that a splitting witness must be serialized, not implicit.
+    Motivated by the gap stated in G0_NS_genus_cooper_s10.json's
+    input_provenance.T_certificate_status (2026-08-01): the U+<20>
+    identification existed only as a regression control and an unreviewed
+    pipeline run. Roles are the mirror image of emit_cert_v5: cooper_s7 (LIVE
+    v5, det -14) is the cross-family discriminating control here."""
+    lat = res_s10["stage3"]
+    cert = {
+        "certificate": "C2_cooper_s10_v4_DRAFT",
+        "status": (
+            "DRAFT - pending T0 (Xavier) review; does NOT supersede "
+            "C2_cooper_s10_v3.json (LIVE rank certificate, which stays the "
+            "runtime rho/T source). FIRST titled lattice certificate for "
+            "cooper_s10: emitted directly at the s7-v5 bar (serialized "
+            "u_splitting.basis_change_matrix witness included from the start, "
+            "per the 2026-07-27 T0 witness-serialization ruling; no "
+            "witness-less v4-stage intermediate exists for this family). "
+            "Until accepted, T(s10) ~= U+<20> remains formally UNCERTIFIED "
+            "and downstream users (e.g. G0_NS_genus_cooper_s10.json) must "
+            "keep saying so. Goes LIVE only by a separate T0 acceptance."
+        ),
+        "checker": "check_U1_lattice.py",
+        "checker_version": "1.2.0",
+        "date": "2026-08-01",
+        "operator": "cooper_s10",
+        "claim": (
+            "The joint monodromy-invariant lattice of the cooper_s10 family "
+            "(orbit lattice of the cusp-invariant isotropic vector under the "
+            "computed monodromy group, primitive even scaling) is isometric to "
+            "U + <20> by an explicit integral base change. Identification of this "
+            "lattice with the transcendental lattice T of the family is Tier B via "
+            "the read framework sources (Dolgachev Thm 7.1/sec 7 p.20, Doran Thm 5.13), "
+            "exactly as for cooper_s7's C2_cooper_s7_v5.json — the pipeline is "
+            "family-generic and no s10-specific framework step was added or skipped."
+        ),
+        "derived": {
+            "gram_primitive_even": lat["gram_primitive_even"],
+            "det": lat["det"],
+            "signature": lat["signature"],
+            "disc_group_elementary_divisors": lat["disc_group_elementary_divisors"],
+            "disc_form": lat["disc_form"],
+            "derived_2n_from_cusp_unipotent": lat["derived_2n"],
+            "u_splitting": lat["u_splitting"],
+            "proper_even_invariant_overlattices": lat["proper_even_invariant_overlattices"],
+            "yukawa": res_s10["stage1"],
+        },
+        "how": {
+            "stage0": "Dolgachev sec-7 framework re-derived symbolically (sympy) before use",
+            "stage1": "exact q-series Yukawa; constancy asserted; VALUE is normalization-"
+                      "dependent and NOT claimed as independent evidence (see s7 brief)",
+            "stage2": f"numerical analytic continuation at {DPS} dps, Taylor order "
+                      f"{TAYLOR_ORDER}; cusp-loop machinery control err "
+                      f"{res_s10['stage2']['cusp_control_err']:.2e}; rational recognition "
+                      f"tolerance 1e-35, denominators {res_s10['stage2']['recognition_denominators']}",
+            "stage3": "exact sympy rational lattice pipeline; all structural conditions "
+                      "asserted; basis_change_matrix is the in-memory witness T=[f|e|w] "
+                      "(columns), serialized",
+        },
+        "controls": {
+            "different_level_cooper_s7": {
+                "det": res_s7["stage3"]["det"],
+                "derived_2n": res_s7["stage3"]["derived_2n"],
+                "discriminates": res_s7["stage3"]["det"] != lat["det"],
+                "note": "mirror image of C2_cooper_s7_v5.json's own s10 control: "
+                        "the LIVE s7 result (det -14) is the discriminating "
+                        "cross-family control for this s10 certificate",
+            },
+            "scrambled_matrix": "pipeline fails loudly (test_U1_controls.py)",
+            "yukawa_scramble": "constancy check fails loudly (test_U1_controls.py)",
+            "witness_serialization": "checkers/check_U1_witness_serialization.py --cert "
+                                     "data/certificates/C2_cooper_s10_v4_DRAFT.json "
+                                     "(tampered P / tampered gram_after FAIL)",
+        },
+        "tier": "B",
+        "tier_reason": (
+            "monodromy entries enter via numerical recognition (60-digit numerics, "
+            "1e-35 gate, exact structural post-verification); lattice-to-T "
+            "identification cites read framework theorems; not kernel-proven. "
+            "Same tier and same reasons as C2_cooper_s7_v5.json — nothing about "
+            "the s10 run is weaker EXCEPT review status, which this DRAFT "
+            "requests rather than claims."
+        ),
+        "u1b_status": (
+            "NOT NEEDED in the Eichler/genus form: an explicit integral base change "
+            "realizing U + <20> was found and verified exactly, which is stronger than "
+            "a one-class-genus argument for this lattice. No 2-adic spinor-norm claim "
+            "is made anywhere."
+        ),
+        "not_claimed": [
+            "no Kodaira fibre types (E-007/E-008/E-009 stand)",
+            "no physical coupling of any kind (VISION sec 1.3)",
+            "rho/T ranks unchanged (rho=19, T=3 per C2_cooper_s10_v3.json)",
+            "no claim about which lattice T is beyond the stated Tier-B identification",
+            "no claim originating from the AlphaEvolve/Vertex report of the same "
+            "lattice (Stream-4 exploratory sandbox, DL-3 firewall) — this "
+            "certificate's derivation chain does not touch it",
+            "this v4 DRAFT is not live; until T0 acceptance the s10 lattice "
+            "identification remains uncertified and G0_NS_genus_cooper_s10.json's "
+            "input-provenance gap statement stands",
+        ],
+        "refs_sha256": {
+            "recurrences_v1.json": sha256(REFS),
+        },
+        "provenance": "Generated-by: Fable 5 (T1 coordinator, Stream 2, 2026-08-01) | "
+                      "Verified-by: check_U1_lattice.py structural assertions + "
+                      "test_U1_controls.py + check_U1_witness_serialization.py --cert "
+                      "<this file> | Reviewed-by: pending T0 (Xavier) acceptance",
+    }
+    out = REPO / "data" / "certificates" / "C2_cooper_s10_v4_DRAFT.json"
+    out.write_text(json.dumps(cert, indent=2))
+    print(f"\nWrote {out.relative_to(REPO)} (DRAFT, pending T0)")
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--family", default="cooper_s7", choices=sorted(FAMILIES))
@@ -1211,13 +1331,17 @@ def main():
     ap.add_argument("--emit-cert-v5", action="store_true",
                     help="run s7 pipeline + ALL controls, then write the DRAFT v5 certificate "
                          "(v4 content + serialized basis_change_matrix witness P; v4 untouched)")
+    ap.add_argument("--emit-cert-s10", action="store_true",
+                    help="run BOTH family pipelines + ALL controls, then write the s10 "
+                         "DRAFT v4 lattice certificate (first titled lattice claim for "
+                         "cooper_s10, at the s7-v5 witness bar; s7 is the cross-family control)")
     args = ap.parse_args()
 
     mp.mp.dps = DPS
     try:
         stage0_framework()
         print("[stage0] Dolgachev sec-7 framework re-derived symbolically: OK")
-        if args.controls or args.emit_cert or args.emit_cert_v5:
+        if args.controls or args.emit_cert or args.emit_cert_v5 or args.emit_cert_s10:
             res_s7 = run_family("cooper_s7")
             print("\n=== controls (mandatory: a run without them is not evidence) ===")
             res_s10 = control_different_level(res_s7)
@@ -1227,6 +1351,8 @@ def main():
                 emit_cert(res_s7, res_s10)
             if args.emit_cert_v5:
                 emit_cert_v5(res_s7, res_s10)
+            if args.emit_cert_s10:
+                emit_cert_s10_v4(res_s10, res_s7)
         else:
             run_family(args.family)
         print("\ncheck_U1_lattice.py: all structural assertions passed")
