@@ -166,6 +166,72 @@ def control_e8_matrix_sanity():
                              "non-even matrix passed the evenness/unimodularity gates")
 
 
+def control_scrambled_candidate_twist_s10():
+    """Same two-offset scramble as control 1, on cooper_s10's T (d=20):
+      offset=1 (d=21, odd)  -> caught by the evenness check
+      offset=2 (d=22, even) -> caught by the disc-form MATCH check
+    Added with checker_version 1.1.0 (s10 titled-certificate emission path):
+    the decision gates must be demonstrably able to fail on THIS family's
+    numbers, not only on s7's."""
+    mp.mp.dps = U1.DPS
+    res = U1.run_family("cooper_s10", verbose=False)
+    T_gram = sp.Matrix(res["stage3"]["gram_primitive_even"])
+
+    for offset, why in ((1, "odd d=21, breaks evenness"), (2, "even d=22, breaks the disc-form match")):
+        try:
+            G0.nikulin_complement(T_gram, f"cooper_s10-SCRAMBLED-offset{offset}",
+                                   scramble_d_offset=offset)
+        except G0.ControlFailure as e:
+            print(f"  [control] s10 scrambled candidate twist (offset={offset}, {why}): "
+                  f"pipeline failed loudly as required: PASS\n            ({e})")
+            continue
+        raise G0.ControlFailure(f"s10 scrambled-candidate-twist control (offset={offset}) "
+                                 "FAILED: pipeline accepted a candidate with the wrong disc form")
+    return True
+
+
+def control_s10_certificate_roundtrip():
+    """s10 emission path (checker_version 1.1.0): (a) the emitted certificate
+    must round-trip — reloaded JSON reproduces the freshly derived candidate
+    Gram, the exhibited NS Gram equals it, determination YES, det -20; (b) the
+    in-repo anchor gate must fail loudly on a tampered T det (the known-bad
+    control for the new verify_s10_against_in_repo_anchors gate)."""
+    import copy
+    import json
+    import tempfile
+
+    mp.mp.dps = U1.DPS
+    result_s10, _ = G0.run_family_G0("cooper_s10", verbose=False)
+
+    with tempfile.TemporaryDirectory() as td:
+        out = Path(td) / "G0_NS_genus_cooper_s10.json"
+        G0.emit_certificate_s10(result_s10, out)
+        cert = json.loads(out.read_text())
+    assert cert["derived"]["candidate"]["gram"] == result_s10["candidate"]["gram"], \
+        "s10 roundtrip FAILED: emitted candidate Gram != fresh derivation"
+    assert cert["derived"]["constructive_witness"]["NS_gram_exhibited"] == \
+        cert["derived"]["candidate"]["gram"], \
+        "s10 roundtrip FAILED: exhibited NS Gram != candidate Gram in emitted cert"
+    assert cert["match_determination"] == "YES", \
+        "s10 roundtrip FAILED: match_determination != YES"
+    assert cert["derived"]["T_input"]["det"] == -20, \
+        f"s10 roundtrip FAILED: T det {cert['derived']['T_input']['det']} != -20"
+    print("  [control] s10 certificate round-trip: emitted cert reproduces the "
+          "fresh derivation (candidate Gram, exhibited Gram, YES, det=-20): PASS")
+
+    tampered = copy.deepcopy(result_s10)
+    tampered["T"]["det"] = -22
+    try:
+        G0.verify_s10_against_in_repo_anchors(tampered, verbose=False)
+    except G0.ControlFailure as e:
+        print(f"  [control] s10 tampered-det anchor gate: failed loudly as "
+              f"required: PASS\n            ({e})")
+        return True
+    raise G0.ControlFailure("s10 anchor-gate control FAILED: "
+                             "verify_s10_against_in_repo_anchors accepted a "
+                             "tampered T det")
+
+
 def main():
     print("=" * 78)
     print("test_NS_genus_G0_controls.py")
@@ -176,6 +242,8 @@ def main():
         ("oversized/non-cyclic disc-group guard", control_oversized_disc_group_guard),
         ("cross-family discrimination", control_cross_family_discrimination),
         ("E8 matrix sanity", control_e8_matrix_sanity),
+        ("s10 scrambled candidate twist", control_scrambled_candidate_twist_s10),
+        ("s10 certificate round-trip + anchor gate", control_s10_certificate_roundtrip),
     ]
     worst = 0
     for name, fn in controls:

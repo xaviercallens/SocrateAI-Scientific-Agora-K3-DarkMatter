@@ -123,6 +123,7 @@ import check_U1_lattice as U1  # noqa: E402  (re-derive T from source, not the c
 
 REPO = Path(__file__).resolve().parent.parent
 CERT_S7_LIVE = REPO / "data" / "certificates" / "C2_cooper_s7_v5.json"
+CERT_S10_C2V3 = REPO / "data" / "certificates" / "C2_cooper_s10_v3.json"
 HUYBRECHTS_PDF = REPO / "docs" / "literature" / "huybrechts_K3Global.pdf"
 
 MATCH_CRITERION = (
@@ -694,10 +695,221 @@ def emit_certificate(result_s7, result_s10, res_s7_raw, out_path):
     print(f"\nWrote {out_path.relative_to(REPO)}")
 
 
+def verify_s10_against_in_repo_anchors(result_s10, verbose=True):
+    """Integrity gate for the s10 emission path. cooper_s10 has NO C2-v5-style
+    LIVE lattice certificate to cross-check against (unlike s7); the two
+    in-repo anchors that DO exist are checked instead, both read at runtime:
+      (a) C2_cooper_s7_v5.json's own controls block, which pinned s10's
+          det = -20 / d = 2n = 20 as its cross-family discriminating control
+          when that certificate was reviewed and accepted;
+      (b) C2_cooper_s10_v3.json's picard_rank = 19, derived by an entirely
+          independent route (Zarhin 1983 Thm 1.6(a) via L3-irreducibility,
+          E-011 style — no lattice arithmetic involved), which must equal
+          the NS rank this Nikulin-complement computation produces."""
+    ctrl = json.loads(CERT_S7_LIVE.read_text())["controls"]["different_level_cooper_s10"]
+    chk(result_s10["T"]["det"] == ctrl["det"],
+        f"fresh s10 T det {result_s10['T']['det']} != C2_cooper_s7_v5.json "
+        f"controls anchor {ctrl['det']}")
+    d = abs(result_s10["T"]["det"])
+    chk(d == ctrl["derived_2n"],
+        f"fresh s10 d={d} != C2_cooper_s7_v5.json controls anchor 2n={ctrl['derived_2n']}")
+    v3 = json.loads(CERT_S10_C2V3.read_text())
+    chk(v3["picard_rank"] == result_s10["NS"]["rank"],
+        f"s10 NS rank {result_s10['NS']['rank']} != C2_cooper_s10_v3.json "
+        f"picard_rank {v3['picard_rank']} (independent Zarhin route)")
+    if verbose:
+        print("  [integrity] fresh s10 T matches C2_cooper_s7_v5.json controls anchor "
+              "(det=-20, 2n=20) and NS rank matches C2_cooper_s10_v3.json "
+              "picard_rank=19 (independent Zarhin route): PASS")
+
+
+def emit_certificate_s10(result_s10, out_path):
+    """Titled certificate for cooper_s10 — promotes what was previously only
+    the cross-family regression control inside the s7 certificate to a
+    reviewed, standalone artifact (T0 directive 2026-07-31/08-01). The
+    pipeline is byte-identical to s7's (same run_family_G0 code path); only
+    the input family and the provenance framing differ."""
+    verify_s10_against_in_repo_anchors(result_s10, verbose=False)
+    cert = {
+        "certificate": "G0_NS_genus_cooper_s10",
+        "status": "DRAFT - pending T0 (Xavier) review. Emitted under T0 "
+                  "strategic-pivot directive 2026-07-31 (cooper_s10 ingestion, "
+                  "sec.1 task 1: G0 lattice derivation, NS Gram + U-summand "
+                  "boolean).",
+        "checker": "check_NS_genus_G0.py",
+        "checker_version": "1.1.0",
+        "date": "2026-08-01",
+        "operator": "cooper_s10",
+        "claim": (
+            "The Neron-Severi lattice NS of the generic K3 fiber of the "
+            "cooper_s10 family, computed as the Nikulin orthogonal complement "
+            "NS = T^perp of the in-house-derived transcendental lattice "
+            "T ~= U + <20> inside the K3 lattice Lambda = U^3 (+) E8(-1)^2, "
+            f"is isometric to {result_s10['candidate']['construction']}. "
+            "EXHIBITED, not just genus-argued: an explicit integral embedding "
+            "matrix T -> Lambda (checked primitive) and an explicit integral "
+            "basis for NS = T^perp are constructed (Huybrechts Ch.14 Example "
+            "1.11(i)) and checked to reproduce this exact Gram matrix; an "
+            "independent genus-uniqueness argument (Thm 1.12 / Prop 0.2(i) / "
+            "Thm 1.5) is carried alongside and checked to agree on the "
+            "identical Gram matrix. NS contains U as an orthogonal direct "
+            "summand (manifest in the exhibited block form), hence the "
+            "generic fiber admits an elliptic fibration WITH SECTION over "
+            "P^1 (Huybrechts Ch.14 Ex 0.3)."
+        ),
+        "match_criterion": MATCH_CRITERION,
+        "match_determination": result_s10["u_summand_determination"],
+        "match_reasoning": result_s10["u_summand_reasoning_primary"],
+        "match_reasoning_secondary_crosscheck": result_s10["u_summand_reasoning"],
+        "input_provenance": {
+            "T_source": "re-derived fresh via checkers/check_U1_lattice.py "
+                        "run_family('cooper_s10') at DPS precision (NOT read "
+                        "from any certificate, report, or external table)",
+            "T_certificate_status": (
+                "GAP, stated explicitly: unlike cooper_s7 (whose T ~= U+<14> "
+                "is the reviewed LIVE certificate C2_cooper_s7_v5.json), "
+                "cooper_s10 has NO titled, T0-reviewed lattice certificate. "
+                "Its T ~= U+<20> exists in-repo only as (a) this same U1 "
+                "pipeline run on the s10 family and (b) the cross-family "
+                "control block pinned inside C2_cooper_s7_v5.json (det=-20, "
+                "2n=20, checked here at runtime). Promoting T(s10) itself to "
+                "a reviewed C2-style lattice certificate (the s7-v5 bar: "
+                "serialized U-splitting witness, monodromy provenance, "
+                "negative controls) is a SEPARATE deliverable this "
+                "certificate does not supply."
+            ),
+            "external_reports_not_used": (
+                "The AlphaEvolve/Vertex sweep also reports T ~= U+<20> for "
+                "cooper_s10. That report is Stream-4 EXPLORATORY-SANDBOX "
+                "provenance (T0 ruling DL-3, 2026-07-31) and is NOT an input "
+                "to this computation — the agreement is a corroborating "
+                "coincidence recorded for awareness, not evidence relied on."
+            ),
+        },
+        "caveats": [
+            "WEAK DISCRIMINATING POWER, same as the s7 G0 certificate's "
+            "caveat verbatim: for this family's construction T ~= U+<2n>, "
+            "the genus-representative construction essentially always places "
+            "a U summand in front (any n works in the ell=e+nf construction). "
+            "A YES here rules out one specific failure mode; it is weak "
+            "evidence about any downstream construction step.",
+            "FIBERWISE, NOT RELATIVE: certifies the abstract-lattice "
+            "statement for the generic K3 fiber only. Monodromy-invariance "
+            "of the isotropic class along the family, and any fourfold-level "
+            "statement, are NOT checked. For cooper_s7 the fourfold-level "
+            "divisor realization is an official Open Problem (T0 TW2A Q2 "
+            "ruling, 2026-07-31) with the Reading-1-vs-2 question referred "
+            "to Deep Think; every fourfold-level question for cooper_s10 "
+            "sits behind that same unresolved gate.",
+            "TIER B INPUT: T(s10)'s identification with the actual "
+            "transcendental lattice of the cooper_s10 family rests on the "
+            "same numerically-recognized-monodromy route as s7's (loud "
+            "tolerance gate, framework-theorem citations, not kernel "
+            "proofs), and additionally lacks s7's reviewed-certificate "
+            "status — see input_provenance.T_certificate_status.",
+        ],
+        "derived": {
+            "T_input": result_s10["T"],
+            "K3_lattice": {"construction": "U^3 (+) E8(-1)^2", "rank": 22,
+                            "signature": [3, 19], "det": -1, "even": True,
+                            "unimodular": True,
+                            "note": "verified computationally in this checker, "
+                                    "not assumed (see e8_gram()/k3_lattice_gram())"},
+            "constructive_witness": result_s10["constructive_witness"],
+            "embedding_conditions": result_s10["embedding_conditions"],
+            "NS_genus": result_s10["NS"],
+            "candidate": result_s10["candidate"],
+            "consistency_check_rho": {
+                "NS_rank": result_s10["NS"]["rank"],
+                "rho_C2_cooper_s10_v3": json.loads(CERT_S10_C2V3.read_text())["picard_rank"],
+                "match": True,
+                "note": "NS rank (this Nikulin-complement route) equals "
+                        "picard_rank=19 from C2_cooper_s10_v3.json (Zarhin "
+                        "1983 Thm 1.6(a) via L3-irreducibility — an entirely "
+                        "independent derivation route); checked as a hard "
+                        "gate in verify_s10_against_in_repo_anchors()",
+            },
+        },
+        "how": {
+            "pipeline": "identical code path to G0_NS_genus_cooper_s7.json "
+                        "(run_family_G0), which was coordinator-verified and "
+                        "cross-verified against a Deep Think independent "
+                        "lineage for s7; only the input family differs",
+            "lattice_theory": "Huybrechts *Lectures on K3 Surfaces* Ch.14 "
+                              "(docs/literature/huybrechts_K3Global.pdf, "
+                              "hash-pinned); PRIMARY: Example 1.11(i) explicit "
+                              "construction; SECONDARY cross-check: Thm 1.12, "
+                              "Prop 0.2, Thm 1.5",
+            "arithmetic": "exact sympy Integer/Rational throughout; no "
+                          "floating point, no numerical tolerance anywhere "
+                          "in this file",
+        },
+        "controls": {
+            "cross_family_s7": "same-run cooper_s7 must produce numerically "
+                               "different NS genus data (d=14 vs d=20) — "
+                               "asserted in main() before emission",
+            "in_repo_anchors": "verify_s10_against_in_repo_anchors(): fresh "
+                               "T must match C2_cooper_s7_v5.json's pinned "
+                               "s10 control block (det=-20, 2n=20) and NS "
+                               "rank must equal C2_cooper_s10_v3.json's "
+                               "picard_rank (independent Zarhin route)",
+            "negative_controls": "checkers/test_NS_genus_G0_controls.py "
+                                 "(incl. s10-specific scrambled-twist and "
+                                 "emission round-trip controls added with "
+                                 "checker_version 1.1.0)",
+        },
+        "tier": "B",
+        "tier_reason": (
+            "The lattice arithmetic in this certificate is exact and "
+            "would be Tier A/E in isolation, but the overall claim inherits "
+            "Tier B AT BEST from its input: T(s10)'s identification with the "
+            "family's actual transcendental lattice is numerically "
+            "recognized (same route as s7's Tier B), and — unlike s7 — is "
+            "not yet itself a reviewed, titled certificate. A claim cannot "
+            "be more certain than its input; if T(s10) is later certified "
+            "or upgraded, this certificate's exact content inherits the "
+            "upgrade without rework."
+        ),
+        "not_claimed": [
+            "no Kodaira fibre types (E-007/E-008/E-009 stand)",
+            "no physical coupling of any kind (VISION sec 1.3)",
+            "no CY condition, resolution analysis, or elliptic-fibration "
+            "CONSTRUCTION for any fourfold (fourfold-level questions are "
+            "gated on the TW2A Reading-1-vs-2 Deep Think referral)",
+            "no observable of any kind (m_phi, alpha_D, Lambda_D) — F5b stands",
+            "no promotion of T(s10) ~= U+<20> to reviewed-certificate "
+            "status (see input_provenance.T_certificate_status)",
+            "no claim about the AlphaEvolve-reported lambda_1 = 3.0 spectral "
+            "radius or any other Stream-4-reported quantity (DL-3 firewall)",
+        ],
+        "refs_sha256": {
+            "recurrences_v1.json": hashlib.sha256((REPO / "refs" / "recurrences_v1.json").read_bytes()).hexdigest(),
+            "huybrechts_K3Global.pdf": hashlib.sha256(HUYBRECHTS_PDF.read_bytes()).hexdigest()
+            if HUYBRECHTS_PDF.exists() else "FILE_NOT_FOUND_AT_CHECK_TIME",
+            "C2_cooper_s7_v5.json": hashlib.sha256(CERT_S7_LIVE.read_bytes()).hexdigest(),
+            "C2_cooper_s10_v3.json": hashlib.sha256(CERT_S10_C2V3.read_bytes()).hexdigest(),
+        },
+        "provenance": "Generated-by: Fable 5 (T1 coordinator, Stream 2, "
+                      "cooper_s10 ingestion session 2026-08-01) | Verified-by: "
+                      "check_NS_genus_G0.py structural assertions + "
+                      "verify_s10_against_in_repo_anchors() + "
+                      "checkers/test_NS_genus_G0_controls.py | Reviewed-by: "
+                      "pending T0 (Xavier)",
+    }
+    out_path.write_text(json.dumps(cert, indent=2))
+    try:
+        shown = out_path.relative_to(REPO)
+    except ValueError:  # e.g. a test writing to a temp dir outside the repo
+        shown = out_path
+    print(f"\nWrote {shown}")
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--emit-cert", action="store_true")
+    ap.add_argument("--emit-cert-s10", action="store_true")
     ap.add_argument("--out", default=str(REPO / "data" / "certificates" / "G0_NS_genus_cooper_s7.json"))
+    ap.add_argument("--out-s10", default=str(REPO / "data" / "certificates" / "G0_NS_genus_cooper_s10.json"))
     args = ap.parse_args()
 
     try:
@@ -716,8 +928,14 @@ def main():
         print(result_s7["u_summand_reasoning_primary"])
         print(f"\n[secondary cross-check, genus-uniqueness]\n{result_s7['u_summand_reasoning']}")
 
+        verify_s10_against_in_repo_anchors(result_s10)
+        print(f"\n=== G0 DETERMINATION (cooper_s10): {result_s10['u_summand_determination']} ===")
+        print(result_s10["u_summand_reasoning_primary"])
+
         if args.emit_cert:
             emit_certificate(result_s7, result_s10, res_s7_raw, Path(args.out))
+        if args.emit_cert_s10:
+            emit_certificate_s10(result_s10, Path(args.out_s10))
 
         print("\ncheck_NS_genus_G0.py: all structural assertions passed")
         return 0
