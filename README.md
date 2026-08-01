@@ -25,14 +25,21 @@
 - [DarkMatterK3-Home.github.io](https://github.com/xaviercallens/DarkMatterK3-Home.github.io)
 
 ## Key Files
-- [DUAL_SCALE_HYPOTHESIS.md](DUAL_SCALE_HYPOTHESIS.md)
-- [K3_CRITERIA_INTERFACE.md](K3_CRITERIA_INTERFACE.md)
 - [weak_lensing_overlay.py](scripts/weak_lensing_overlay.py)
 - [NANOGrav_prediction.py](scripts/NANOGrav_prediction.py)
 
 > Note (2026-07-26): `v5_dual_scale_pipeline.py` was deleted — it was an empty stub citing the
 > retracted legacy program (Δ-spikes / weak lensing / NANOGrav observables). Current status
 > lives in `TODO.md`; the empirical position is `PREDICTION.md` v1.1 §6 (F5b).
+
+> Note (2026-08-01, low-tier queue A-S2-4): `DUAL_SCALE_HYPOTHESIS.md` and
+> `K3_CRITERIA_INTERFACE.md` (removed from the list above, links were dead) moved to
+> [archive/pre-ledger/](archive/pre-ledger/README.md) along with 23 other pre-ledger root
+> docs, consistent with the retraction this file already documented above — see the
+> archive's own README for the full classification and rationale. `K3_CRITERIA_INTERFACE.md`
+> is very likely the never-finalized draft predecessor of the `K3_CRITERIA.md` that
+> `VISION.md`/`EXECUTION_PLAN.md` cite as frozen but which does not currently exist in this
+> repo — flagged there, not resolved here.
 
 ## Workflow Files
 - [Dual-Scale Model Validation](.github/workflows/dual_scale_validation.yml)
