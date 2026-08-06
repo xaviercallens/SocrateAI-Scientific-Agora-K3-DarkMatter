@@ -299,3 +299,18 @@ Full detail: `briefs/ROUTE_A_EXECUTION_FINDINGS_2026_07_24.md`. Headline:
 ---
 
 Generated-by: Stream 2 (Fable 5) — tables by scripts/render_k3_selection_report.py from committed certificates | Verified-by: checkers cited per table; Lean kernel for C3b-SYM | Reviewed-by: T0 pending
+
+---
+
+## Appendix A — Stream 2 AutoEvolve (AE-0..AE-5)
+
+Implementation completed in `scripts/auto_evolve_k3_selection.py` (driver), `scripts/ae_preflight.py` (AE-0), and `scripts/ae_anchor_fingerprints.py` (AE-1). The evolutionary generator is deterministic and exact-arithmetic, covering 52 binomial-sum genomes plus the certified anchors.
+
+Run order:
+
+1. `python scripts/ae_preflight.py`
+2. `python scripts/ae_anchor_fingerprints.py`
+3. `python scripts/auto_evolve_k3_selection.py`
+4. `python -m pytest tests/test_autoevolve_stream2.py -q`
+
+Runtime ranking results are pending execution.

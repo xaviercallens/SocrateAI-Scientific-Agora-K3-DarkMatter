@@ -1,6 +1,6 @@
 {
   "bulk": "cooper_s7",
-  "bulk_source": "OEIS A183204 (http://oeis.org/A183204); Cooper 2012 sporadic sequence s\u2087; Lean4 Structures/CooperS7Recurrence.lean",
+  "bulk_source": "generated",
   "checker": "check_C3b_symsqrt.py",
   "checker_version": "1.0.0",
   "criterion": "C3b-symsqrt (constructive: L3 = Sym^2(L2); extract the order-2 partner)",
@@ -32,9 +32,9 @@
     "recurrence": "(n+1)^2 f(n+1) = (26*n**2 + 13*n + 2) f(n) + (27*n**2 - 27*n + 6) f(n-1)",
     "recurrence_python": "((26*k**2 + 13*k + 2)*s[-1] + (27*k**2 - 27*k + 6)*s[-2])/((k+1)**2)"
   },
-  "provenance": "Generated-by: scripts/ae_anchor_fingerprints.py | Verified-by: checkers/check_C3b_symsqrt.py | Reviewed-by: pending T0",
-  "refs_file": "D:\\SocrateAI-Scientific-Agora-K3-DarkMatter\\SocrateAI-Scientific-Agora-K3-DarkMatter\\refs\\recurrences_v1.json",
-  "refs_sha256": "e406d49e7809d4a24989a3b6369dd3e90804c20db71d9f3ef87ece9b545e7986",
+  "provenance": "Generated-by: scripts/auto_evolve_k3_selection.py (temp refs) | Verified-by: checkers/check_C3b_symsqrt.py | Reviewed-by: pending T0",
+  "refs_file": "C:\\Users\\UTILIS~1\\AppData\\Local\\Temp\\tmple44vlf3.json",
+  "refs_sha256": "5f0913d02a732f3300fbdd3cb5193f9fb48b2f74c07b200b4684a025ac6d2b40",
   "validation": {
     "bulk_z_of_q": [
       "0",
