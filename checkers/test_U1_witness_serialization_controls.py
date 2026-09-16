@@ -19,9 +19,10 @@ Controls:
   6. POSITIVE sanity: the unmodified v5.json (LIVE) certificate PASSes.
   7. POSITIVE sanity: the retained v5_DRAFT.json certificate PASSes too
      (identical witness content to v5.json, only metadata differs).
-  8. POSITIVE sanity (added 2026-09-16, D6'): C2_cooper_s10_v4.json (LIVE)
-     PASSes — the checker is family-generic, not tied to s7's Gram.
-  9. TAMPERED P on s10 v4: corrupt one entry -> must FAIL.
+  8. POSITIVE sanity (added 2026-09-16): C2_cooper_s10_v4_DRAFT.json PASSes —
+     the checker is family-generic, not tied to s7's Gram. (Checks witness
+     self-consistency only; the certificate stays DRAFT per T0, 2026-09-16.)
+  9. TAMPERED P on s10 v4_DRAFT: corrupt one entry -> must FAIL.
  10. CROSS-FAMILY SWAP: s10's P applied to s7's Gram cannot reproduce s10's
      gram_after (det 14 vs 20) -> must FAIL.
 
@@ -148,20 +149,20 @@ def test_v3_witness_absent():
 # 6. positive sanity
 # ---------------------------------------------------------------------------
 
-def _s10_v4():
-    return W.load_cert(CERTS / "C2_cooper_s10_v4.json")
+def _s10_v4_draft():
+    return W.load_cert(CERTS / "C2_cooper_s10_v4_DRAFT.json")
 
 
-def test_s10_v4_live_passes():
-    cert = _s10_v4()
+def test_s10_v4_draft_passes():
+    cert = _s10_v4_draft()
     result = W.verify_certificate(cert, verbose=False)
     assert result["detP"] in (1, -1)
     assert result["PtGP"] == result["gram_after"]
-    return "s10 v4 (LIVE) witness verified PASS as expected"
+    return "s10 v4_DRAFT witness verified PASS as expected"
 
 
 def test_s10_tampered_P_fails():
-    cert = _s10_v4()
+    cert = _s10_v4_draft()
 
     def scramble(P):
         P[1][1] += 1
@@ -175,7 +176,7 @@ def test_s10_tampered_P_fails():
 
 
 def test_cross_family_gram_swap_fails():
-    cert = _s10_v4()
+    cert = _s10_v4_draft()
     cert["derived"] = dict(cert["derived"])
     cert["derived"]["gram_primitive_even"] = _v5()["derived"]["gram_primitive_even"]
     try:
@@ -213,7 +214,7 @@ CONTROLS = [
     ("v3 witness absent (must NOT fail)", test_v3_witness_absent),
     ("v5 LIVE unmodified (must PASS)", test_v5_live_passes),
     ("v5 draft unmodified (must PASS)", test_v5_draft_passes),
-    ("s10 v4 LIVE unmodified (must PASS)", test_s10_v4_live_passes),
+    ("s10 v4_DRAFT unmodified (must PASS)", test_s10_v4_draft_passes),
     ("s10 tampered-P (must FAIL)", test_s10_tampered_P_fails),
     ("s10 witness vs s7 Gram (must FAIL)", test_cross_family_gram_swap_fails),
 ]

@@ -20,17 +20,13 @@ weakest and would most like to be wrong.
 > **Does the M_n ⟹ T = U⊕⟨2n⟩ correspondence still apply when the family's moduli map
 > factors through Γ₀(n)\* ⊋ Γ₀(n)+? If not, what is the correct transcendental lattice?**
 
-> **Correction note (2026-09-16):** "now LIVE" below and "It is LIVE" in §3 were wrong when written. The
-> only s10 lattice certificate is `data/certificates/C2_cooper_s10_v4_DRAFT.json`, whose
-> `status` field reads "DRAFT - pending T0 (Xavier) review … Goes LIVE only by a separate T0
-> acceptance". No T0 acceptance record and no promotion commit exist in the repo, so
-> `T(s10) ≅ U⊕⟨20⟩` was formally **UNCERTIFIED** when this brief was written. **Update, same
-> day:** T0 accepted it; `C2_cooper_s10_v4.json` is LIVE as of 2026-09-16 (D6′,
-> `briefs/T0_DECISIONS_2026_09_16_STREAM2.md`), so the "LIVE" wording is now accurate. The independent re-derivation
-> (`briefs/INDEPENDENT_REDERIVATION_C2_s10_v4_2026_08_01.md`) *recommends* promotion; it
-> does not perform it. The question in §0 is unaffected.
+> **Correction note (2026-09-16):** as first written, this brief called `C2_cooper_s10_v4`
+> LIVE (here and in §3). It never was. The certificate is
+> `data/certificates/C2_cooper_s10_v4_DRAFT.json`, and T0 ruled on 2026-09-16 that it stays
+> DRAFT (`briefs/T0_DECISIONS_2026_09_16_STREAM2.md`). Both sentences are corrected below.
+> The question in §0 is unaffected.
 
-The practical stake: `C2_cooper_s10_v4` (now LIVE) asserts `T(s10) ≅ U ⊕ ⟨20⟩`. It is
+The practical stake: `C2_cooper_s10_v4_DRAFT` (not T0-accepted) asserts `T(s10) ≅ U ⊕ ⟨20⟩`. It is
 independently verified downstream of its Gram matrix, but the value **20** rests on a
 single lineage (60-dps monodromy numerics). This modular route was our attempt at a second,
 disjoint lineage. It got as far as "level 10" and then hit the group mismatch above.
@@ -134,8 +130,8 @@ Möbius in u:
 
 ## 3. What we are NOT asking, and what must not be assumed
 
-- We are **not** asking whether `T(s10) ≅ U⊕⟨20⟩` is true. It is LIVE, independently
-  verified downstream of its Gram matrix (`briefs/INDEPENDENT_REDERIVATION_C2_s10_v4_2026_08_01.md`,
+- We are **not** asking whether `T(s10) ≅ U⊕⟨20⟩` is true. It is a DRAFT certificate,
+  independently verified downstream of its Gram matrix (`briefs/INDEPENDENT_REDERIVATION_C2_s10_v4_2026_08_01.md`,
   23/23 checks + 10/10 discriminating controls). We are asking whether *this modular route*
   can supply a second, independent lineage for the number **20**.
 - Please do **not** import the Nikulin complement from `G0_NS_genus_cooper_s10.json` as
