@@ -58,3 +58,14 @@ S₂,₁ = A005258 are both elliptic (order-2), not K3 — corrects the guide's 
 *Generated-by: Claude Sonnet 5 (T1 executor, sandboxed) | Verified-by: exact integer arithmetic,
 held-out validated; OEIS matches confirmed via direct oeis.org search, not typed from memory |
 Reviewed-by: pending T0*
+
+## T0 Ruling — 2026-09-16
+
+**A079727 — HOLD on G1-3 (mirror integrality) and G1-4 (monodromy).** No further gate runs on
+A079727 until it is analytically checked for being a partial sum / twist of a known
+hypergeometric family (it is Σₖ₌₀ⁿ C(2k,k)³) rather than new geometry. The other two new
+survivors (the OEIS-unlisted (0,1,1) sequence and A274789) were not ruled on; nothing is
+promoted to `candidate_pool.yaml`. Ruled by T0 (Xavier Callens) in session; recorded by Claude
+(Opus 5). Mirror: S3 `briefs/T0_RULINGS_2026_09_16.md` §B1.
+
+Generated-by: Claude (Opus 5) | Verified-by: n/a (ruling record) | Reviewed-by: T0 Y
