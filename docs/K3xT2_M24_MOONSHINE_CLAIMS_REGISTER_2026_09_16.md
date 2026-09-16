@@ -133,4 +133,19 @@ of closing here.
 
 Generated-by: Claude (Sonnet 5), this session | Verified-by: 12 direct OEIS fetches (§1), grep
 against pinned `docs/literature/huybrechts_K3Global.txt` (§2), direct Python computation (§3),
-manual read of the supplied Lean block (§4) | Reviewed-by: T0 — pending
+manual read of the supplied Lean block (§4) | Reviewed-by: T0 — REJECTED 2026-09-16 (§7)
+
+---
+
+## 7. T0 Ruling — 2026-09-16
+
+**REJECTED.** The supplied document is rejected outright as a K3-selection input. Grounds, all
+already checked in §1–§4 of this register: fabricated or misattributed OEIS citations; wrong
+Kummer node count (16, not 24, per the pinned Huybrechts reference); and an impossible
+"M24 → A4 quotient" (M24 is simple). The document was never committed to this repo, so there
+is nothing to purge; this register is retained as the rejection record. The separate
+Mukai-theorem proposal is on HOLD for its own reasons (S3 `briefs/T0_RULINGS_2026_09_16.md`
+§B2), not because of this document. Ruled by T0 (Xavier Callens) in session; recorded by
+Claude (Opus 5).
+
+Generated-by: Claude (Opus 5) | Verified-by: n/a (ruling record) | Reviewed-by: T0 Y
