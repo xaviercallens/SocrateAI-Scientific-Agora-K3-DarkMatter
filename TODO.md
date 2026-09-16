@@ -1,6 +1,6 @@
 # ✅ TODO — restart here
 
-**Last updated:** 2026-07-26 (evening) · **Release:** `v0.3.4` · **Previous TODO:** commit history
+**Last updated:** 2026-09-16 (s10 lattice cert kept DRAFT by T0; orientation block below dates from 2026-07-26) · **Release:** `v0.3.6-k3xt2-criteria-proposal` · **Previous TODO:** commit history
 
 > ## 30-second orientation
 >
@@ -110,6 +110,23 @@
       both PASS). Records: `briefs/STREAM2_P_WITNESS_SERIALIZATION_2026_07_27.md`,
       `briefs/T0_DECISIONS_2026_07_27_STREAM2.md` (D5′).
 
+- [x] **cooper_s10 lattice certificate — T0 ruling 2026-09-16: stays DRAFT.** Asked
+      explicitly; answer: keep `C2_cooper_s10_v4_DRAFT.json` as DRAFT. T(s10) ≅ U⊕⟨20⟩ stays
+      formally uncertified, and G0-s10's gap statement stands. The independent re-derivation
+      (23/23 + 10/10) remains on record as a recommendation only. Record:
+      `briefs/T0_DECISIONS_2026_09_16_STREAM2.md`. (A promotion commit made earlier the same
+      day on a menu selection was reverted.)
+- [ ] **Deep Think referrals — no reply on record in any of the three repos (checked
+      2026-09-16):** TW2A Reading 1/2 (`briefs/DEEPTHINK_ALIGNMENT_BRIEF_TW2A_Q1_2026_07_31.md`)
+      and s10 composite level (`briefs/DEEPTHINK_ALIGNMENT_BRIEF_S10_COMPOSITE_LEVEL_2026_08_01.md`).
+      T0 transmits; audit the reply before anything cites it.
+- [ ] **T0: review the K3×T² criteria proposal** —
+      `briefs/STREAM2_K3xT2_SELECTION_CRITERIA_PROPOSAL_2026_09_16.md` (Reading S vs P, new
+      two-lineage gate T3, replace Kodaira C2 with the lattice gate, no scoring yet). Not a
+      freeze; `K3_CRITERIA.md` unchanged.
+- [ ] **T0: candidate register** — S1 `K3_CRITERIA.md` still lists t103 as dropped, although
+      E-014 found no veto (S1 `briefs/T0_FLAG_K3_CRITERIA_T103_STALE_2026_08_01.md`, unanswered).
+
 ## ⛔ Do NOT do these
 
 - **Do not run `pipelines/D3_batch_runner_phase2.py`.** Disabled 2026-07-26; it raises. It
@@ -153,8 +170,10 @@ python3 scripts/check_tier_language.py                   # wrapper — HONORS fi
                                                          # scans root + briefs by default
 python3 checkers/check_U1_lattice.py                     # U1 lattice pipeline (s7), derived values
 python3 checkers/test_U1_controls.py                     # U1 negative controls (incl. s10 level control)
-python3 checkers/check_U1_witness_serialization.py --all # P witness self-check; v3/v4 -> WITNESS_ABSENT
-python3 checkers/test_U1_witness_serialization_controls.py # 6 controls (tampered P/gram_after -> FAIL)
+python3 checkers/check_U1_witness_serialization.py --all # P witness self-check; s7 v5 + s10 v4_DRAFT PASS, v3/v4 -> WITNESS_ABSENT
+python3 checkers/test_U1_witness_serialization_controls.py # 10 controls (tampered P/gram_after, s10 tamper + cross-family -> FAIL)
+python3 checkers/independent_rederivation_C2_s10_v4.py   # s10 DRAFT T = U+<20>, independent code path (23 checks)
+python3 checkers/independent_rederivation_C2_s10_v4_controls.py # 10 discriminating controls
 ```
 
 ## The Tier A result, for the record

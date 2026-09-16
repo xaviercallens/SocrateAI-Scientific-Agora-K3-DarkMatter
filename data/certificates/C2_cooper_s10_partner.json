@@ -1,4 +1,14 @@
 {
+  "RETRACTED": {
+    "date_marked_in_band": "2026-09-16",
+    "date_retracted": "2026-07-26",
+    "reason": "v1 certificate, superseded by *_v2 and retracted with it but never marked in-band until 2026-09-16. Kodaira types here came from exponent->Kodaira lookup on L2, which is a twisted PF operator (exponents {0,1/2}, det(monodromy)=-1 not in SL2(Z)); no Kodaira type is derivable (E-007), and the listed singular loci were also the F6 index-space error (corrected loci per ledger item 3). rho=4/T=18 traced to a hardcoded components=2. Derived values: rho=19, T=3 (C2_cooper_*_v3.json, E-011, Tier B).",
+    "retracted_values": {
+      "verdict": "C2_LATTICE_COMPUTED(\u03c1=4, T=18)"
+    },
+    "standing_rule": "Do not use, cite, or 'confirm' any Kodaira label, rho or T in this file (CLAUDE.md ledger items 2-3).",
+    "ticket": "E-007 (+F6 loci)"
+  },
   "c1_source": "data/certificates/C1_cooper_s10_partner.json",
   "checker": "check_C2.py",
   "checker_version": "1.0.0",
@@ -13,5 +23,5 @@
   },
   "partner": "cooper_s10_partner",
   "provenance": "Generated-by: checkers/check_C2.py v1.0.0 (Tier B) | Verified-by: Shioda\u2013Tate formula (exact arithmetic) | Reviewed-by: pending T0",
-  "verdict": "C2_LATTICE_COMPUTED(\u03c1=4, T=18)"
+  "verdict": "RETRACTED (E-007, F6) \u2014 see RETRACTED block"
 }
