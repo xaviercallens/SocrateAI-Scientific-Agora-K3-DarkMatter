@@ -1,0 +1,435 @@
+{
+ "label": "EXPLORATORY SANDBOX \u2014 not citable in Streams 1-3",
+ "nmax": 160,
+ "oeis_recurrence_holds_n2_to_nmax": true,
+ "A112029": {
+  "ode": {
+   "ode_order": 3,
+   "ode_degree": 5,
+   "fit_rows": 36,
+   "held_out_terms": 117,
+   "held_out_pass": true
+  },
+  "q": [
+   "60*(15*z**2 - 20*z + 8)",
+   "4*(1025*z**3 - 2215*z**2 + 1412*z - 24)",
+   "7*z*(400*z**3 - 1339*z**2 + 854*z - 32)",
+   "z**2*(z - 4)*(16*z - 1)*(25*z - 16)"
+  ],
+  "leading": "z**2*(z - 4)*(16*z - 1)*(25*z - 16)",
+  "singular_points": [
+   "0",
+   "1/16",
+   "16/25",
+   "4"
+  ],
+  "exponents": {
+   "0": {
+    "regular_singular_top": true,
+    "exponents": [
+     "-1/2",
+     "0",
+     "0"
+    ]
+   },
+   "1/16": {
+    "regular_singular_top": true,
+    "exponents": [
+     "0",
+     "0",
+     "1"
+    ]
+   },
+   "16/25": {
+    "regular_singular_top": true,
+    "exponents": [
+     "0",
+     "1",
+     "3"
+    ]
+   },
+   "4": {
+    "regular_singular_top": true,
+    "exponents": [
+     "-1/2",
+     "0",
+     "1"
+    ]
+   }
+  },
+  "sym2": {
+   "is_sym2": false,
+   "residual": "-2*(8000000*z**9 + 29010000*z**8 + 552652425*z**7 + 16994935*z**6 + 1035715866*z**5 - 9265410912*z**4 + 699675472*z**3 + 17383680*z**2 + 841728*z + 32768)/(27*z**3*(z - 4)**3*(16*z - 1)**3*(25*z - 16)**3)",
+   "L2": {
+    "a": "7*(400*z**3 - 1339*z**2 + 854*z - 32)/(3*z*(z - 4)*(16*z - 1)*(25*z - 16))",
+    "b": "(2440000*z**6 - 18822500*z**5 + 34566521*z**4 - 30057524*z**3 + 7243088*z**2 - 414080*z - 2048)/(36*z**2*(z - 4)**2*(16*z - 1)**2*(25*z - 16)**2)"
+   }
+  }
+ },
+ "A005259_control": {
+  "ode": {
+   "ode_order": 3,
+   "ode_degree": 4,
+   "fit_rows": 32,
+   "held_out_terms": 122,
+   "held_out_pass": true
+  },
+  "q": [
+   "z - 5",
+   "7*z**2 - 112*z + 1",
+   "3*z*(2*z**2 - 51*z + 1)",
+   "z**2*(z**2 - 34*z + 1)"
+  ],
+  "leading": "z**2*(z**2 - 34*z + 1)",
+  "singular_points": [
+   "0",
+   "17 - 12*sqrt(2)",
+   "12*sqrt(2) + 17"
+  ],
+  "exponents": {
+   "0": {
+    "regular_singular_top": true,
+    "exponents": [
+     "0",
+     "0",
+     "0"
+    ]
+   },
+   "17 - 12*sqrt(2)": {
+    "regular_singular_top": true,
+    "exponents": [
+     "0",
+     "1/2",
+     "1"
+    ]
+   },
+   "12*sqrt(2) + 17": {
+    "regular_singular_top": true,
+    "exponents": [
+     "0",
+     "1/2",
+     "1"
+    ]
+   }
+  },
+  "sym2": {
+   "is_sym2": true,
+   "residual": "0",
+   "L2": {
+    "a": "(2*z**2 - 51*z + 1)/(z*(z**2 - 34*z + 1))",
+    "b": "(z - 10)/(4*z*(z**2 - 34*z + 1))"
+   }
+  }
+ },
+ "A005260_control": {
+  "ode": {
+   "ode_order": 3,
+   "ode_degree": 4,
+   "fit_rows": 32,
+   "held_out_terms": 122,
+   "held_out_pass": true
+  },
+  "q": [
+   "2*(30*z + 1)",
+   "444*z**2 + 40*z - 1",
+   "3*z*(128*z**2 + 18*z - 1)",
+   "z**2*(4*z + 1)*(16*z - 1)"
+  ],
+  "leading": "z**2*(4*z + 1)*(16*z - 1)",
+  "singular_points": [
+   "0",
+   "1/16",
+   "-1/4"
+  ],
+  "exponents": {
+   "0": {
+    "regular_singular_top": true,
+    "exponents": [
+     "0",
+     "0",
+     "0"
+    ]
+   },
+   "1/16": {
+    "regular_singular_top": true,
+    "exponents": [
+     "0",
+     "1/2",
+     "1"
+    ]
+   },
+   "-1/4": {
+    "regular_singular_top": true,
+    "exponents": [
+     "0",
+     "1/2",
+     "1"
+    ]
+   }
+  },
+  "sym2": {
+   "is_sym2": true,
+   "residual": "0",
+   "L2": {
+    "a": "(128*z**2 + 18*z - 1)/(z*(4*z + 1)*(16*z - 1))",
+    "b": "(15*z + 1)/(z*(4*z + 1)*(16*z - 1))"
+   }
+  }
+ },
+ "A036917": {
+  "ode": {
+   "ode_order": 3,
+   "ode_degree": 4,
+   "fit_rows": 32,
+   "held_out_terms": 122,
+   "held_out_pass": true
+  },
+  "q": [
+   "8*(32*z - 1)",
+   "1792*z**2 - 112*z + 1",
+   "3*z*(16*z - 1)*(32*z - 1)",
+   "z**2*(16*z - 1)**2"
+  ],
+  "leading": "z**2*(16*z - 1)**2",
+  "singular_points": [
+   "0",
+   "1/16"
+  ],
+  "exponents": {
+   "0": {
+    "regular_singular_top": true,
+    "exponents": [
+     "0",
+     "0",
+     "0"
+    ]
+   },
+   "1/16": {
+    "regular_singular_top": true,
+    "exponents": [
+     "0",
+     "0",
+     "0"
+    ]
+   }
+  },
+  "sym2": {
+   "is_sym2": true,
+   "residual": "0",
+   "L2": {
+    "a": "(32*z - 1)/(z*(16*z - 1))",
+    "b": "4/(z*(16*z - 1))"
+   }
+  }
+ },
+ "A079727_T003": {
+  "ode": {
+   "ode_order": 3,
+   "ode_degree": 4,
+   "fit_rows": 32,
+   "held_out_terms": 122,
+   "held_out_pass": true
+  },
+  "q": [
+   "9*(24*z - 1)",
+   "784*z**2 - 215*z + 1",
+   "3*z*(160*z**2 - 98*z + 1)",
+   "z**2*(z - 1)*(64*z - 1)"
+  ],
+  "leading": "z**2*(z - 1)*(64*z - 1)",
+  "singular_points": [
+   "0",
+   "1/64",
+   "1"
+  ],
+  "exponents": {
+   "0": {
+    "regular_singular_top": true,
+    "exponents": [
+     "0",
+     "0",
+     "0"
+    ]
+   },
+   "1/64": {
+    "regular_singular_top": true,
+    "exponents": [
+     "0",
+     "1/2",
+     "1"
+    ]
+   },
+   "1": {
+    "regular_singular_top": true,
+    "exponents": [
+     "-1",
+     "0",
+     "1"
+    ]
+   }
+  },
+  "sym2": {
+   "is_sym2": true,
+   "residual": "0",
+   "L2": {
+    "a": "(160*z**2 - 98*z + 1)/(z*(z - 1)*(64*z - 1))",
+    "b": "9*(16*z**2 - 25*z + 2)/(4*z*(z - 1)**2*(64*z - 1))"
+   }
+  }
+ },
+ "unlisted_T011": {
+  "ode": {
+   "ode_order": 3,
+   "ode_degree": 6,
+   "fit_rows": 40,
+   "held_out_terms": 112,
+   "held_out_pass": true
+  },
+  "q": [
+   "12*(3*z**3 - 448*z**2 + 256*z + 114)",
+   "4*(41*z**4 - 4840*z**3 - 544*z**2 + 3570*z - 1152)",
+   "112*z**5 - 11125*z**4 - 9013*z**3 + 21730*z**2 - 8706*z + 252",
+   "z*(z - 1)*(z + 3)*(16*z - 1)*(z**2 - 88*z + 42)"
+  ],
+  "leading": "z*(z - 1)*(z + 3)*(16*z - 1)*(z**2 - 88*z + 42)",
+  "singular_points": [
+   "0",
+   "1/16",
+   "44 - sqrt(1894)",
+   "1",
+   "-3",
+   "sqrt(1894) + 44"
+  ],
+  "exponents": {
+   "0": {
+    "regular_singular_top": true,
+    "exponents": [
+     "0",
+     "0",
+     "1"
+    ]
+   },
+   "1/16": {
+    "regular_singular_top": true,
+    "exponents": [
+     "0",
+     "0",
+     "1"
+    ]
+   },
+   "44 - sqrt(1894)": {
+    "regular_singular_top": true,
+    "exponents": [
+     "0",
+     "1",
+     "3"
+    ]
+   },
+   "1": {
+    "regular_singular_top": true,
+    "exponents": [
+     "-1/2",
+     "0",
+     "1"
+    ]
+   },
+   "-3": {
+    "regular_singular_top": true,
+    "exponents": [
+     "-1/2",
+     "0",
+     "1"
+    ]
+   },
+   "sqrt(1894) + 44": {
+    "regular_singular_top": true,
+    "exponents": [
+     "0",
+     "1",
+     "3"
+    ]
+   }
+  },
+  "sym2": {
+   "is_sym2": false,
+   "residual": "-2*(512*z**15 + 192720*z**14 + 275961681*z**13 + 2760679243*z**12 + 7261551267*z**11 - 48480838329*z**10 + 51544727956*z**9 - 299196138150*z**8 + 653839346514*z**7 - 544584506536*z**6 + 94981889286*z**5 + 67951949544*z**4 - 11934715176*z**3 + 1061879868*z**2 - 87730776*z + 2000376)/(27*z**3*(z - 1)*",
+   "L2": {
+    "a": "(112*z**5 - 11125*z**4 - 9013*z**3 + 21730*z**2 - 8706*z + 252)/(3*z*(z - 1)*(z + 3)*(16*z - 1)*(z**2 - 88*z + 42))",
+    "b": "(3904*z**10 - 904292*z**9 + 38380373*z**8 + 68383774*z**7 - 347161111*z**6 + 194070400*z**5 + 78261424*z**4 - 74637096*z**3 + 7208568*z**2 - 24192*z - 31752)/(36*z**2*(z - 1)**2*(z + 3)**2*(16*z - 1)**2*(z**2 - 88*z + 42)**2)"
+   }
+  }
+ },
+ "A274789_T112": {
+  "ode": {
+   "ode_order": 3,
+   "ode_degree": 8,
+   "fit_rows": 48,
+   "held_out_terms": 102,
+   "held_out_pass": true
+  },
+  "q": [
+   "z**5 - 5*z**4 - 30*z**3 - 254*z**2 + 169*z - 9",
+   "7*z**6 - 200*z**5 - 665*z**4 - 112*z**3 + 937*z**2 - 224*z + 1",
+   "3*z*(z - 1)*(z + 1)*(2*z**4 - 97*z**3 - 133*z**2 + 101*z - 1)",
+   "z**2*(z - 1)**2*(z + 1)**2*(z**2 - 66*z + 1)"
+  ],
+  "leading": "z**2*(z - 1)**2*(z + 1)**2*(z**2 - 66*z + 1)",
+  "singular_points": [
+   "0",
+   "33 - 8*sqrt(17)",
+   "1",
+   "-1",
+   "8*sqrt(17) + 33"
+  ],
+  "exponents": {
+   "0": {
+    "regular_singular_top": true,
+    "exponents": [
+     "0",
+     "0",
+     "0"
+    ]
+   },
+   "33 - 8*sqrt(17)": {
+    "regular_singular_top": true,
+    "exponents": [
+     "0",
+     "1/2",
+     "1"
+    ]
+   },
+   "1": {
+    "regular_singular_top": true,
+    "exponents": [
+     "0",
+     "0",
+     "0"
+    ]
+   },
+   "-1": {
+    "regular_singular_top": true,
+    "exponents": [
+     "0",
+     "2",
+     "4"
+    ]
+   },
+   "8*sqrt(17) + 33": {
+    "regular_singular_top": true,
+    "exponents": [
+     "0",
+     "1/2",
+     "1"
+    ]
+   }
+  },
+  "sym2": {
+   "is_sym2": true,
+   "residual": "0",
+   "L2": {
+    "a": "(2*z**4 - 97*z**3 - 133*z**2 + 101*z - 1)/(z*(z - 1)*(z + 1)*(z**2 - 66*z + 1))",
+    "b": "(z**3 - 14*z**2 - 133*z + 18)/(4*z*(z - 1)*(z + 1)*(z**2 - 66*z + 1))"
+   }
+  }
+ }
+}

@@ -69,3 +69,8 @@ promoted to `candidate_pool.yaml`. Ruled by T0 (Xavier Callens) in session; reco
 (Opus 5). Mirror: S3 `briefs/T0_RULINGS_2026_09_16.md` §B1.
 
 Generated-by: Claude (Opus 5) | Verified-by: n/a (ruling record) | Reviewed-by: T0 Y
+
+
+## Correction note — 2026-09-16 (later, Claude Opus 5, sandbox)
+
+T(0,1,1) (OEIS-unlisted) is **not** MUM at z = 0 (exponents 0,0,1) and **not** a symmetric square. ODE order 3 alone over-labels it "K3-type". A079727 is ₃F₂(½,½,½;1,1;64z)/(1−z) (partial sums; answers the T0 HOLD question). A274789 passes both checks. Details: `R2_ORDER3_SURVIVORS_ANALYTIC_CHECK_2026_09_16.md`.
