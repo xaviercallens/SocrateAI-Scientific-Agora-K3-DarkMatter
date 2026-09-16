@@ -26,7 +26,7 @@ check_U1_splitting_independent.py, in the Stream 1 repo, already does that).
 Usage:
   python3 checkers/check_U1_witness_serialization.py                # v5 LIVE
   python3 checkers/check_U1_witness_serialization.py --cert <path>
-  python3 checkers/check_U1_witness_serialization.py --all           # v3,v4,v5,v5_DRAFT
+  python3 checkers/check_U1_witness_serialization.py --all           # s7 v3,v4,v5,v5_DRAFT + s10 v4,v4_DRAFT
 
 Exit codes: 0 PASS or WITNESS_ABSENT (both legitimate non-failure outcomes),
 3 FAIL (structural inconsistency), 2 usage/data (missing file).
@@ -121,14 +121,15 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--cert", default=str(DEFAULT_CERT))
     ap.add_argument("--all", action="store_true",
-                     help="check v3, v4, and v5-draft certificates in one run")
+                     help="check s7 v3/v4/v5/v5-draft and s10 v4/v4-draft certificates in one run")
     args = ap.parse_args()
 
     paths = [Path(args.cert)]
     if args.all:
         paths = [REPO / "data" / "certificates" / f
                   for f in ("C2_cooper_s7_v3.json", "C2_cooper_s7_v4.json",
-                             "C2_cooper_s7_v5.json", "C2_cooper_s7_v5_DRAFT.json")]
+                             "C2_cooper_s7_v5.json", "C2_cooper_s7_v5_DRAFT.json",
+                             "C2_cooper_s10_v4.json", "C2_cooper_s10_v4_DRAFT.json")]
 
     worst = 0
     for path in paths:

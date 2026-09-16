@@ -20,13 +20,15 @@ weakest and would most like to be wrong.
 > **Does the M_n ⟹ T = U⊕⟨2n⟩ correspondence still apply when the family's moduli map
 > factors through Γ₀(n)\* ⊋ Γ₀(n)+? If not, what is the correct transcendental lattice?**
 
-> **Correction note (2026-09-16):** "now LIVE" below and "It is LIVE" in §3 are wrong. The
+> **Correction note (2026-09-16):** "now LIVE" below and "It is LIVE" in §3 were wrong when written. The
 > only s10 lattice certificate is `data/certificates/C2_cooper_s10_v4_DRAFT.json`, whose
 > `status` field reads "DRAFT - pending T0 (Xavier) review … Goes LIVE only by a separate T0
 > acceptance". No T0 acceptance record and no promotion commit exist in the repo, so
-> `T(s10) ≅ U⊕⟨20⟩` is still formally **UNCERTIFIED**. The independent re-derivation
+> `T(s10) ≅ U⊕⟨20⟩` was formally **UNCERTIFIED** when this brief was written. **Update, same
+> day:** T0 accepted it; `C2_cooper_s10_v4.json` is LIVE as of 2026-09-16 (D6′,
+> `briefs/T0_DECISIONS_2026_09_16_STREAM2.md`), so the "LIVE" wording is now accurate. The independent re-derivation
 > (`briefs/INDEPENDENT_REDERIVATION_C2_s10_v4_2026_08_01.md`) *recommends* promotion; it
-> does not perform it. The question in §0 is unaffected. Correct this before transmitting.
+> does not perform it. The question in §0 is unaffected.
 
 The practical stake: `C2_cooper_s10_v4` (now LIVE) asserts `T(s10) ≅ U ⊕ ⟨20⟩`. It is
 independently verified downstream of its Gram matrix, but the value **20** rests on a

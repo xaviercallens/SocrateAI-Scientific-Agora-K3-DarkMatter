@@ -1502,5 +1502,11 @@
     "C2_cooper_s7_v5.json": "54565d3919f1bd5592618e8fd1cbfe7d807a29d010d99c308641bc5d253730f3",
     "C2_cooper_s10_v3.json": "da270e930fd5eee5801fa16e4b157aea2e01421fb3ed790d116d7d3007d777fc"
   },
-  "provenance": "Generated-by: Fable 5 (T1 coordinator, Stream 2, cooper_s10 ingestion session 2026-08-01) | Verified-by: check_NS_genus_G0.py structural assertions + verify_s10_against_in_repo_anchors() + checkers/test_NS_genus_G0_controls.py | Reviewed-by: pending T0 (Xavier)"
+  "provenance": "Generated-by: Fable 5 (T1 coordinator, Stream 2, cooper_s10 ingestion session 2026-08-01) | Verified-by: check_NS_genus_G0.py structural assertions + verify_s10_against_in_repo_anchors() + checkers/test_NS_genus_G0_controls.py | Reviewed-by: pending T0 (Xavier)",
+  "correction_notes": [
+    {
+      "date": "2026-09-16",
+      "note": "input_provenance.T_certificate_status and caveat 3 ('lacks s7's reviewed-certificate status') are SUPERSEDED: T(s10) ~= U+<20> is now the T0-accepted LIVE certificate data/certificates/C2_cooper_s10_v4.json (D6\u2032, briefs/T0_DECISIONS_2026_09_16_STREAM2.md). No value in this certificate changes (T was re-derived fresh, not read from that file). This G0 certificate itself remains DRAFT pending its own T0 review."
+    }
+  ]
 }
