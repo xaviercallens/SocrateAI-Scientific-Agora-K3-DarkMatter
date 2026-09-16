@@ -1,6 +1,6 @@
 # T0 PROPOSAL — M24/Mukai symplectic-automorphism criterion for K3 selection
 
-**Date:** 2026-09-16 | **Status:** PROPOSAL — not authorized, not implemented, no checker exists yet
+**Date:** 2026-09-16 | **Status:** T0 RULED 2026-09-16 — Option 3 HOLD, returned for corrections (see §5); checker NOT authorized
 **Branch:** `sandbox/m24-moonshine-criterion-2026-09-16` (this file only; nothing on `main`)
 **Requested by:** Xavier Callens ("continue stream 3 with experimentation of K3 selection
 based on K3 M24 Mathieu moonshine inspired from other science domain")
@@ -162,3 +162,26 @@ computed by me; nothing here should be cited elsewhere until T0 marks it reviewe
 Generated-by: Claude (Sonnet 5), this session | Verified-by: certificate JSONs read directly
 (§2 table); Huybrechts excerpt grep'd directly, hash not re-verified this session (§1) |
 Reviewed-by: T0 — **pending**
+
+---
+
+## 5. T0 Ruling — 2026-09-16
+
+**Disposition: Option 3 — HOLD. Checker not authorized. Returned for corrections.**
+Ruled by T0 (Xavier Callens) in session; recorded by Claude (Opus 5). Mirror:
+S3 `briefs/T0_RULINGS_2026_09_16.md` §B2.
+
+Corrections required before any resubmission:
+1. **§2 framing is backwards.** A symplectic automorphism group fixes the holomorphic 2-form
+   and acts trivially on the transcendental lattice T; the "G embeds into O(T)" test is not
+   the right condition. The lattice condition belongs on G's coinvariant lattice inside
+   NS(X). Re-derive §2 from the pinned Huybrechts text before restating it.
+2. **Discrimination not shown.** Per T0, both ρ = 19 candidates admit Shioda–Inose
+   structures, so a bare "admits a symplectic involution" test cannot separate cooper_s7
+   from cooper_s10. A resubmission must name which finer group-level condition could
+   differ between them, with the source table pinned in `refs/`.
+3. **§2 table depends on an open item.** The T column for cooper_s7 comes from a DRAFT
+   certificate and is exactly the open U1 question (is T ≅ U⊕⟨14⟩?); nothing may be built
+   on it until U1 closes.
+
+Generated-by: Claude (Opus 5) | Verified-by: n/a (ruling record) | Reviewed-by: T0 Y
