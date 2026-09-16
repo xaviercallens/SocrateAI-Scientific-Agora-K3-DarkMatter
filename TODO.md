@@ -1,6 +1,6 @@
 # ✅ TODO — restart here
 
-**Last updated:** 2026-09-16 (s10 lattice cert kept DRAFT by T0; orientation block below dates from 2026-07-26) · **Release:** `v0.3.4` · **Previous TODO:** commit history
+**Last updated:** 2026-09-16 (s10 lattice cert kept DRAFT by T0; orientation block below dates from 2026-07-26) · **Release:** `v0.3.6-k3xt2-criteria-proposal` · **Previous TODO:** commit history
 
 > ## 30-second orientation
 >
@@ -120,6 +120,10 @@
       2026-09-16):** TW2A Reading 1/2 (`briefs/DEEPTHINK_ALIGNMENT_BRIEF_TW2A_Q1_2026_07_31.md`)
       and s10 composite level (`briefs/DEEPTHINK_ALIGNMENT_BRIEF_S10_COMPOSITE_LEVEL_2026_08_01.md`).
       T0 transmits; audit the reply before anything cites it.
+- [ ] **T0: review the K3×T² criteria proposal** —
+      `briefs/STREAM2_K3xT2_SELECTION_CRITERIA_PROPOSAL_2026_09_16.md` (Reading S vs P, new
+      two-lineage gate T3, replace Kodaira C2 with the lattice gate, no scoring yet). Not a
+      freeze; `K3_CRITERIA.md` unchanged.
 - [ ] **T0: candidate register** — S1 `K3_CRITERIA.md` still lists t103 as dropped, although
       E-014 found no veto (S1 `briefs/T0_FLAG_K3_CRITERIA_T103_STALE_2026_08_01.md`, unanswered).
 
