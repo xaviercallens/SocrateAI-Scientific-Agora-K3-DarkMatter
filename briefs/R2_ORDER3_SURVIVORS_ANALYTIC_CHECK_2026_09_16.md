@@ -29,7 +29,7 @@ on the search.
 | **T(0,1,1)** Σ C(n+k,k)C(2k,k) (not in OEIS; LR-3 "new") | 3,6 | **0, 0, 1** | **no** | **order-3 false positive: not MUM, not Sym²** |
 | A079727 Σ C(2k,k)³ (T0 HOLD) | 3,4 | 0,0,0 | yes | **partial sum of a hypergeometric family** (below) |
 | A036917 Σ C(2k,k)²C(2n−2k,n−k)² | 3,4 | 0,0,0 | yes | MUM + Sym²; OEIS g.f. is (4/π²)K(4√x)², so expected |
-| **A274789** T(1,1,2) | 3,8 | 0,0,0 | yes | **passes both; the only survivor still unexplained** |
+| A274789 T(1,1,2) | 3,8 | 0,0,0 | yes | passes both, and is **a pullback of the same ₃F₂ as A079727** (addendum) |
 
 Other facts from the JSON:
 - A112029: the OEIS recurrence (Kotesovec 2012, live fetch) holds for n = 2…160. Singular
@@ -50,7 +50,27 @@ g.f. is ₃F₂(½,½,½; 1,1; 64z)/(1−z). The extra singular point z = 1 (exp
   Weil-bound pass. Under this check **it is not MUM and not a symmetric square**. A weight-3
   Weil-bound pass does not rescue that.
 - `R2_OVERNIGHT_SWEEP_RESULTS_2026_09_16.md` names A112029 as the lead. **It is an order-3 false
-  positive.** The remaining unexplained survivor across both sieves is **A274789**.
+  positive.** After the addendum below, **no unexplained survivor remains in either sieve.**
+
+## Addendum — A274789 is explained (same day)
+
+The OEIS entry (live fetch, 2026-09-16; formulas attributed there to P. Bala, 2023) gives
+a(n) = Σ C(n+k,n−k) C(2k,k)³ and A(x) = Σ C(2n,n)³ xⁿ/(1−x)^{2n+1}. Proved here from first principles:
+- **Termwise:** C(n,k)C(n+k,k) = (n+k)!/(k!²(n−k)!) = C(n+k,2k)·C(2k,k), and C(n+k,2k) = C(n+k,n−k).
+- **Coefficients:** [xᵐ] xⁿ(1−x)^{−(2n+1)} = C(m+n,2n), which gives the g.f.
+
+So **A(x) = (1−x)⁻¹ · ₃F₂(½,½,½; 1,1; 64t) at t = x/(1−x)²**: a rational pullback of the same
+hypergeometric function behind A079727. Singular points agree: 64t = 1 ⇔ x² − 66x + 1 = 0
+(roots 33 ± 8√17); x = 1 is t = ∞. Mechanical checks: termwise identity exact for n ≤ 150;
+pullback series matches for n ≤ 25; our independently found minimal ODE is exactly −1 × the
+OEIS ODE. The entry also cites Bostan–Boukraa–Maillard–Weil, arXiv:1507.03227 (diagonals of
+rational functions); not read here.
+
+**Net result of both sieves (LR-3 + overnight, 2026-09-16): no order-3 survivor is unexplained
+K3-type geometry.** Two are not K3-type (A112029, T(0,1,1)). Two are transforms of
+₃F₂(½,½,½;1,1;64t) (A079727, A274789). A036917 is Sym² of an elliptic integral. The rest are
+known anchors (A005259, A002895, A005260, T103). This is an honest negative for this search
+space (3-/4-factor binomial sums in these exponent ranges), not for K3 selection in general.
 
 ## Engineering recommendation (not implemented)
 Add the MUM + Sym² check to the sieve's classification step, so ODE order 3 is no longer labeled
@@ -58,4 +78,4 @@ Add the MUM + Sym² check to the sieve's classification step, so ODE order 3 is 
 
 ---
 *Generated-by: Claude (Opus 5), sandboxed | Verified-by: exact ℚ(z) arithmetic; 2 positive controls,
-2 discriminating failures; OEIS recurrence re-checked to n = 160 | Reviewed-by: T0 pending*
+2 discriminating failures; OEIS recurrence re-checked to n = 160; A274789 pullback proved termwise + checked | Reviewed-by: T0 pending*

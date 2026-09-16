@@ -74,3 +74,5 @@ Generated-by: Claude (Opus 5) | Verified-by: n/a (ruling record) | Reviewed-by: 
 ## Correction note — 2026-09-16 (later, Claude Opus 5, sandbox)
 
 T(0,1,1) (OEIS-unlisted) is **not** MUM at z = 0 (exponents 0,0,1) and **not** a symmetric square. ODE order 3 alone over-labels it "K3-type". A079727 is ₃F₂(½,½,½;1,1;64z)/(1−z) (partial sums; answers the T0 HOLD question). A274789 passes both checks. Details: `R2_ORDER3_SURVIVORS_ANALYTIC_CHECK_2026_09_16.md`.
+
+**Addendum (same day):** A274789 is a rational pullback of the same ₃F₂ as A079727 (proved termwise). None of the three LR-3 "new" survivors is unexplained K3-type geometry. See `R2_ORDER3_SURVIVORS_ANALYTIC_CHECK_2026_09_16.md`.

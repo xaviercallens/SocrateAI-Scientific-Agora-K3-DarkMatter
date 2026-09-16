@@ -48,3 +48,5 @@ known-answer controls; OEIS by live query | Reviewed-by: T0 pending*
 ## Correction note — 2026-09-16 (later, same session)
 
 A112029 is an order-3 **false positive** (z = 0 exponents −1/2,0,0; not Sym²). The only unexplained survivor across both sieves is A274789. See `R2_ORDER3_SURVIVORS_ANALYTIC_CHECK_2026_09_16.md`.
+
+**Addendum (same day):** A274789 is also explained: A(x) = (1−x)⁻¹·₃F₂(½,½,½;1,1;64t) at t = x/(1−x)², proved termwise. **No unexplained order-3 survivor remains.** See `R2_ORDER3_SURVIVORS_ANALYTIC_CHECK_2026_09_16.md`.
