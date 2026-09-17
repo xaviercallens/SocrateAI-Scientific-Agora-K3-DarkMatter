@@ -5,6 +5,19 @@
 frozen 2026-07-20, thresholds not frozen) is unchanged. If T0 adopts any part, it goes in
 through that file's §6 amendment protocol.
 
+> **Update 2026-09-17 (gate K3 now has a checker; nothing else in this brief changes).**
+> `checkers/check_C1_mirror_integrality.py` (+ `test_C1_mirror_integrality_controls.py`,
+> 5 controls including a b-file match against A279618 and three that must fail) emitted
+> `data/certificates/C1_mirror_integrality_<key>.json` for all six order-3 register entries:
+> every one is **PASS(60)** in the register's own normalization, the three non-candidates
+> included. So K3 is met at order 60 for s7, s10 and s18, and, as §0 predicted, it filters
+> without ranking. N₁ is still TBD-AT-FREEZE. The table in §3 and the "no candidate fully
+> passes Layer 1" sentence are superseded on that point only: s7 and s10 now pass all of
+> Layer 1 (K0–K4), and s18 still fails K4.
+> Unexplained observation, recorded in the certificates and not proposed as a criterion:
+> the largest k ≤ 24 for which (q/z)^(1/k) is integral to order 60 differs by family
+> (s7: 3, s10: 4, s18: 4, Apéry ζ(3): 12, Domb: 6, Almkvist–Zudilin: 4).
+
 ---
 
 ## 0. Why write new criteria at all
