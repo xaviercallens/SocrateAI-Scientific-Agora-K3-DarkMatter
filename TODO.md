@@ -176,6 +176,7 @@ python3 checkers/independent_rederivation_C2_s10_v4.py   # s10 DRAFT T = U+<20>,
 python3 checkers/independent_rederivation_C2_s10_v4_controls.py # 10 discriminating controls
 python3 checkers/test_C1_mirror_integrality_controls.py  # 7 controls (A279618 match; A112019 real known-bad + tamper/swap/corrupt/round-trip must fail)
 python3 checkers/check_C1_mirror_integrality.py --order 30 # all order-3 refs entries PASS(30); certs are at order 60 (--emit)
+python3 checkers/check_s10_hauptmodul_gamma010star.py   # s10 z(q) Hauptmodul for Gamma_0(10)*; controls N1-N4
 ```
 
 ## The Tier A result, for the record
