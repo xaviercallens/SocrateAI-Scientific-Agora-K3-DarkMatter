@@ -120,6 +120,12 @@
       2026-09-16):** TW2A Reading 1/2 (`briefs/DEEPTHINK_ALIGNMENT_BRIEF_TW2A_Q1_2026_07_31.md`)
       and s10 composite level (`briefs/DEEPTHINK_ALIGNMENT_BRIEF_S10_COMPOSITE_LEVEL_2026_08_01.md`).
       T0 transmits; audit the reply before anything cites it.
+- [ ] **CI gates fix — waiting on a GitHub token with `workflow` scope.** Local branch
+      `ci/fix-gates-2026-09-17` fixes the 404 Lean installer (Gate A + 4 workflows), replaces
+      Gate B with `scripts/ci_ledger_regression.sh` (T0 decision 2026-09-17), makes Gate D able
+      to fail (pytest was piped into tee), and removes `dual_scale_validation.yml` /
+      `update_dashboards.yml`. GitHub rejects the push without `workflow` scope; Xavier will
+      update the token. Until then CI on `main` stays red for the known reasons.
 - [ ] **T0: review the K3×T² criteria proposal** —
       `briefs/STREAM2_K3xT2_SELECTION_CRITERIA_PROPOSAL_2026_09_16.md` (Reading S vs P, new
       two-lineage gate T3, replace Kodaira C2 with the lattice gate, no scoring yet). Not a
@@ -156,6 +162,9 @@
    certificate; break that certificate and the number moves or the checker refuses.
 
 ## Regression — all green as of `v0.3.4`
+
+One command runs this whole block plus every `checkers/test_*.py` control suite, fail-closed:
+`bash scripts/ci_ledger_regression.sh` (self-test: `--self-test`).
 
 ```bash
 python3 checkers/test_refs_self_regenerate.py            # 11/11 entries, both encodings agree
