@@ -17,6 +17,7 @@ METHOD (exact Fraction arithmetic, no floats)
      refuses. The deformation (the g part) is checked indirectly: s7's z(q) must equal
      the pinned A279618 b-file (control 1), which fails if the deformation is wrong.
   2. q(z) = z * exp(g / f0);  z(q) = series reversion.
+  2b. Round trip: q(z(q)) must equal q exactly to order N, or the checker refuses.
   3. Verdict: PASS(N) if every coefficient of q(z) and z(q) up to z^N / q^N is an
      integer; otherwise FAIL with the first non-integral index. The normalization is
      the register's own (no rescaling of z); integrality in another normalization is
@@ -32,6 +33,9 @@ CONTROLS (run by test_C1_mirror_integrality_controls.py; they must be able to fa
      integrality.
   4. Corrupted recurrence (one coefficient changed) -> f0 must fail to reproduce the
      stored terms, and the checker must refuse to emit a verdict.
+  5. Known-bad real case: A112019's minimal order-2 operator (MINODE_A112019.json,
+     from the pinned b-file) run through the same Frobenius + q(z) code must FAIL
+     integrality. It does, at q^2 (coefficient 81/8).
 
 Finite-order integrality is evidence, not proof: always report PASS(N), never PASS.
 
@@ -54,7 +58,7 @@ REPO = Path(__file__).resolve().parent.parent
 REFS = REPO / "refs" / "recurrences_v1.json"
 BFILE_A279618 = REPO / "refs" / "oeis_A279618_bfile.txt"
 CERTS = REPO / "data" / "certificates"
-CHECKER_VERSION = "1.0.0"
+CHECKER_VERSION = "1.1.0"
 
 
 class Refused(Exception):
@@ -176,6 +180,18 @@ def mirror_map(recurrence, order, g_scale=F(1)):
     return f0, Q, Z
 
 
+def compose(Q, Z, n):
+    """Q(Z(q)) up to q^n, for Q[0] = Z[0] = 0."""
+    out = [F(0)] * (n + 1)
+    P = [F(0)] * (n + 1); P[0] = F(1)
+    for j in range(1, n + 1):
+        P = ps_mul(P, Z, n)
+        if Q[j]:
+            for i in range(n + 1):
+                out[i] += Q[j] * P[i]
+    return out
+
+
 def first_nonintegral(series, start=1):
     for i in range(start, len(series)):
         if series[i].denominator != 1:
@@ -221,6 +237,9 @@ def check_entry(key, entry, order):
     f0_raw, g_raw = frobenius(entry["recurrence_python"], order + 1)
     root_k = max(k for k in range(1, 25)
                  if first_nonintegral(q_of_z(f0_raw, g_raw, order, g_scale=F(1, k))) is None)
+    identity = [F(0), F(1)] + [F(0)] * (order - 1)
+    if compose(Q, Z, order) != identity:
+        raise Refused(f"{key}: series reversion failed the round trip q(z(q)) = q to order {order}")
     bad_q = first_nonintegral(Q)
     bad_z = first_nonintegral(Z)
     verdict = f"PASS({order})" if bad_q is None and bad_z is None else "FAIL"
@@ -228,6 +247,7 @@ def check_entry(key, entry, order):
         "key": key, "order_checked": order, "verdict": verdict,
         "first_nonintegral_q_of_z": bad_q, "first_nonintegral_z_of_q": bad_z,
         "f0_reproduces_stored_terms": n_stored,
+        "round_trip_q_of_z_of_q_exact_to_order": order,
         "observation_largest_k_le_24_integral_kth_root_of_q_over_z": root_k,
         "z_of_q_first_terms": [str(x) for x in Z[1:13]],
         "q_of_z_first_terms": [str(x) for x in Q[1:13]],
@@ -266,7 +286,7 @@ def main():
                 "verdict": r["verdict"],
                 "order_checked": r["order_checked"],
                 "evidence": {k: r[k] for k in ("first_nonintegral_q_of_z", "first_nonintegral_z_of_q",
-                                               "f0_reproduces_stored_terms", "z_of_q_first_terms",
+                                               "f0_reproduces_stored_terms", "round_trip_q_of_z_of_q_exact_to_order", "z_of_q_first_terms",
                                                "observation_largest_k_le_24_integral_kth_root_of_q_over_z",
                                                "q_of_z_first_terms")},
                 "normalization": "register's own z (no rescaling); q = z*exp(g/f0), g = d/d(eps) of the Frobenius coefficients",

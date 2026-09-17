@@ -5,18 +5,12 @@
 frozen 2026-07-20, thresholds not frozen) is unchanged. If T0 adopts any part, it goes in
 through that file's §6 amendment protocol.
 
-> **Update 2026-09-17 (gate K3 now has a checker; nothing else in this brief changes).**
-> `checkers/check_C1_mirror_integrality.py` (+ `test_C1_mirror_integrality_controls.py`,
-> 5 controls including a b-file match against A279618 and three that must fail) emitted
-> `data/certificates/C1_mirror_integrality_<key>.json` for all six order-3 register entries:
-> every one is **PASS(60)** in the register's own normalization, the three non-candidates
-> included. So K3 is met at order 60 for s7, s10 and s18, and, as §0 predicted, it filters
-> without ranking. N₁ is still TBD-AT-FREEZE. The table in §3 and the "no candidate fully
-> passes Layer 1" sentence are superseded on that point only: s7 and s10 now pass all of
-> Layer 1 (K0–K4), and s18 still fails K4.
-> Unexplained observation, recorded in the certificates and not proposed as a criterion:
-> the largest k ≤ 24 for which (q/z)^(1/k) is integral to order 60 differs by family
-> (s7: 3, s10: 4, s18: 4, Apéry ζ(3): 12, Domb: 6, Almkvist–Zudilin: 4).
+> **Update 2026-09-17: gate K3 now has a checker.** `checkers/check_C1_mirror_integrality.py`
+> emitted `data/certificates/C1_mirror_integrality_<key>.json` for all six order-3 register
+> entries. Every one is **PASS(60)** in the register's own normalization, the three
+> non-candidates included, so K3 filters without ranking (as §0 expected). Its 7 controls
+> include a real known-bad case: A112019's minimal operator (pinned b-file) fails
+> integrality at q² = 81/8. N₁ is still TBD-AT-FREEZE. §3 has been updated in place.
 
 ---
 
@@ -27,7 +21,7 @@ criteria no longer do what they claim:
 
 | Skeleton criterion | What happened | Consequence |
 |---|---|---|
-| C1 mirror-map integrality | Never certified: the `C1_*` certificates hold (retracted) Kodaira classifications instead; integrality exists only as spike output | Needed as a gate; unlikely to rank Cooper candidates |
+| C1 mirror-map integrality | Was never certified (the old `C1_*` files are retracted Kodaira certificates); since 2026-09-17 every order-3 register entry is PASS(60) | Needed as a gate; does not rank |
 | C2 Kodaira fibre content | A category error for this family (E-007/E-008/E-009; ledger 3) | Must be **replaced**, not scored |
 | C3 Sym² (`W = 0`) | Holds identically for the whole Cooper ansatz (C3's own 2026-07-18 note) | Structural consistency check only |
 | C4 lattice data | Thresholds "must be derived from the EFT-matching draft"; S3-00b is BLOCKED (F5b) | Cannot be given thresholds now without fitting them to the candidates |
@@ -154,15 +148,13 @@ break it. On current certificates:
 
 | Candidate | Where it stands | Blocking items |
 |---|---|---|
-| cooper_s7 | K0–K2, K4 met; T1, T2, T3 met; L2/L3 on DRAFT certificates | K3 (no mirror-map integrality certificate at a frozen N exists for the K3 operator; only spike evidence), L2/L3 review, F2 (TW2A Q1) |
-| cooper_s10 | K0–K2, K4 met | K3 (same as s7), T1 (spike only, no certificate), T2 (kept DRAFT, D6′), T3 (Γ₀(10)\* question) |
-| cooper_s18 | Layer 0 at most | K4 (no K3 established), register quarantine |
+| cooper_s7 | Layer 1 (K0–K4) met, K3 at PASS(60); T1, T2, T3 met; L2/L3 on DRAFT certificates | L2/L3 review, F2 (TW2A Q1) |
+| cooper_s10 | Layer 1 (K0–K4) met, K3 at PASS(60) | T1 (spike only, no certificate), T2 (kept DRAFT, D6′), T3 (Γ₀(10)\* question) |
+| cooper_s18 | K3 at PASS(60); fails K4 | K4 (no K3 established), register quarantine |
 | t103 | Not assessable | Register status (S1 flag) |
 
-**No candidate fully passes Layer 1 today**, because K3 has no certificate at a frozen N for
-either family. `data/certificates/C1_*` holds Kodaira-classification certificates (all
-retracted), not mirror-map integrality. Writing that checker is the first mechanical task
-if T0 adopts K3.
+K3 (mirror-map integrality) was added 2026-09-17 via `C1_mirror_integrality_<key>.json`.
+N₁ is not frozen, so "met" means PASS(60), not a frozen threshold.
 
 This is a snapshot built from pointers to the certificates named above, not the
 auto-generated live table (`K3_CRITERIA.md` §5). It says s7 is further along on Layer 2. **It does not

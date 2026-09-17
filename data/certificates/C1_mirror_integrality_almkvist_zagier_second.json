@@ -2,7 +2,7 @@
   "candidate": "almkvist_zagier_second",
   "certificate": "C1_mirror_integrality_almkvist_zagier_second",
   "checker": "check_C1_mirror_integrality.py",
-  "checker_version": "1.0.0",
+  "checker_version": "1.1.0",
   "controls": "checkers/test_C1_mirror_integrality_controls.py",
   "criterion": "C1 mirror-map integrality (K3_CRITERIA.md C1; proposal gate K3)",
   "evidence": {
@@ -24,6 +24,7 @@
       "118660552",
       "-749836136"
     ],
+    "round_trip_q_of_z_of_q_exact_to_order": 60,
     "z_of_q_first_terms": [
       "1",
       "4",
