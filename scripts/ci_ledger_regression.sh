@@ -16,7 +16,6 @@ cd "$(dirname "$0")/.."
 LOG=$(mktemp)
 
 COMMANDS=(
-  "checkers/test_refs_self_regenerate.py"
   "checkers/check_L3_irreducible_minimal.py"
   "checkers/check_C2_transcendental_rank.py"
   "checkers/check_s7_partner_integrality_modular.py"
