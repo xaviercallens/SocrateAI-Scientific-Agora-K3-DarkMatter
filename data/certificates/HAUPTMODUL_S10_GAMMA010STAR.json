@@ -1,0 +1,110 @@
+{
+  "atkin_lehner_numerical": {
+    "w2": {
+      "constant": "1/16",
+      "matrix": [
+        [
+          2,
+          1
+        ],
+        [
+          10,
+          6
+        ]
+      ],
+      "one_over_z_invariant": true,
+      "t_transform": "anti"
+    },
+    "w5": {
+      "constant": "1",
+      "matrix": [
+        [
+          5,
+          1
+        ],
+        [
+          20,
+          5
+        ]
+      ],
+      "one_over_z_invariant": true,
+      "t_transform": "inv"
+    }
+  },
+  "certificate": "HAUPTMODUL_S10_GAMMA010STAR",
+  "checker": "check_s10_hauptmodul_gamma010star.py",
+  "claim": "the cooper_s10 inverse mirror map z(q) is a Hauptmodul for Gamma_0(10)* (Gamma_0(10) extended by all Atkin-Lehner involutions w_2, w_5, w_10)",
+  "coordinate_t": {
+    "cusp_orders": {
+      "1": "-1",
+      "10": "1",
+      "2": "1",
+      "5": "-1"
+    },
+    "degree_on_X0_10": "2",
+    "eta_exponents": {
+      "1": -4,
+      "10": 4,
+      "2": 4,
+      "5": -4
+    },
+    "newman_conditions": {
+      "prod_d_r_is_square": true,
+      "sum_Nd_r_mod24": true,
+      "sum_d_r_mod24": true,
+      "sum_r_zero": true
+    }
+  },
+  "date": "2026-09-17",
+  "degree_of_z_on_X0_10": "4",
+  "fricke_w10": {
+    "constant_K": "1/16",
+    "method": "exact eta transformation",
+    "one_over_z_invariant": true,
+    "t_anti_invariant": true
+  },
+  "negative_controls": {
+    "N1_wrong_level_s7_fit_fails": true,
+    "N2_corrupted_z_verify_fails": true,
+    "N3_non_AL_map_no_constant": true,
+    "N4_numerics_reproduce_exact_fricke_7": true
+  },
+  "not_claimed": [
+    "that the moduli space of the cooper_s10 family IS X_0(10)* (open, Deep Think brief sec 2.1)",
+    "anything about T(s10) or the value 20 (C2_cooper_s10_v4_DRAFT stays DRAFT, D6')",
+    "identities beyond the stated order"
+  ],
+  "numerics": {
+    "dps": 50,
+    "max_denominator": 100,
+    "recognition_tolerance": "1e-30",
+    "sample_points": [
+      "(0.13 + 0.21j)",
+      "(-0.31 + 0.19j)",
+      "(0.42 + 0.23j)"
+    ]
+  },
+  "orders": {
+    "degree2_fit_passes": true,
+    "held_out_verified": [
+      13,
+      40
+    ],
+    "mobius_fit_passes": false,
+    "solved_on": [
+      0,
+      12
+    ],
+    "z_series_order": 40
+  },
+  "provenance": "Generated-by: Claude (Opus 5), Stream 2 | Verified-by: negative controls N1-N4 in this checker | Reviewed-by: N",
+  "relation": {
+    "alpha": "16",
+    "beta": "8",
+    "form": "1/z = alpha*t + beta + gamma/t",
+    "gamma": "1"
+  },
+  "tier": "B",
+  "tier_reason": "q-series identity and Fricke constant exact; w_2/w_5 constants by 50-digit numerical recognition at 3 points; Newman/Ligozat modularity criterion and Atkin-Lehner theory cited, not re-derived",
+  "verdict": "GAMMA010STAR_HAUPTMODUL"
+}

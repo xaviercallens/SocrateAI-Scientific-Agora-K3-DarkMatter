@@ -106,6 +106,16 @@ Möbius in u:
 
 > **z_s10 is a Hauptmodul for Γ₀(10)\*, not Γ₀(10)+.**
 
+> **Note added 2026-09-17 (closes a gap in the argument above, does not change the question).**
+> The divisor argument only shows t∘w₅ = c·t for some constant c; with c = −1, u = 16t + 1/t
+> would not be w₅-invariant. `checkers/check_s10_hauptmodul_gamma010star.py` computes the
+> constants: t∘w₁₀ = (1/16)/t exactly; t∘w₂ = (1/16)/t and **t∘w₅ = t (c = 1)** by 50-digit
+> numerical recognition at three points with explicit Atkin–Lehner matrices, with controls
+> (a non-Atkin–Lehner map gives no constant; the same numerics reproduce the exact level-7
+> Fricke constant 1/49). The fitted relation comes out as 1/z = 16t + 8 + 1/t (exact to
+> order 40). Certificate: `data/certificates/HAUPTMODUL_S10_GAMMA010STAR.json` (Tier B).
+> §2.1 — whether the family's moduli space *is* X₀(10)\* — remains the open question.
+
 ## 2. Where our reasoning is weakest (please attack these first)
 
 1. **The step 1.5 → "the family's moduli is X₀(10)\*".** We have shown the *mirror-map
