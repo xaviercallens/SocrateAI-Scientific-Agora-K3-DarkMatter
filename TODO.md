@@ -1,6 +1,6 @@
 # ✅ TODO — restart here
 
-**Last updated:** 2026-09-16 (s10 lattice cert kept DRAFT by T0; orientation block below dates from 2026-07-26) · **Release:** `v0.3.6-k3xt2-criteria-proposal` · **Previous TODO:** commit history
+**Last updated:** 2026-09-16 (s10 lattice cert kept DRAFT by T0; orientation block below dates from 2026-07-26) · **Release:** `v0.3.7-c1-mirror-integrality` · **Previous TODO:** commit history
 
 > ## 30-second orientation
 >
