@@ -1,6 +1,6 @@
 # ✅ TODO — restart here
 
-**Last updated:** 2026-09-16 (s10 lattice cert kept DRAFT by T0; orientation block below dates from 2026-07-26) · **Release:** `v0.3.6-k3xt2-criteria-proposal` · **Previous TODO:** commit history
+**Last updated:** 2026-09-16 (s10 lattice cert kept DRAFT by T0; orientation block below dates from 2026-07-26) · **Release:** `v0.3.7-c1-mirror-integrality` · **Previous TODO:** commit history
 
 > ## 30-second orientation
 >
@@ -174,6 +174,8 @@ python3 checkers/check_U1_witness_serialization.py --all # P witness self-check;
 python3 checkers/test_U1_witness_serialization_controls.py # 10 controls (tampered P/gram_after, s10 tamper + cross-family -> FAIL)
 python3 checkers/independent_rederivation_C2_s10_v4.py   # s10 DRAFT T = U+<20>, independent code path (23 checks)
 python3 checkers/independent_rederivation_C2_s10_v4_controls.py # 10 discriminating controls
+python3 checkers/test_C1_mirror_integrality_controls.py  # 7 controls (A279618 match; A112019 real known-bad + tamper/swap/corrupt/round-trip must fail)
+python3 checkers/check_C1_mirror_integrality.py --order 30 # all order-3 refs entries PASS(30); certs are at order 60 (--emit)
 ```
 
 ## The Tier A result, for the record

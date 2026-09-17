@@ -1,0 +1,61 @@
+{
+  "candidate": "almkvist_zagier_second",
+  "certificate": "C1_mirror_integrality_almkvist_zagier_second",
+  "checker": "check_C1_mirror_integrality.py",
+  "checker_version": "1.1.0",
+  "controls": "checkers/test_C1_mirror_integrality_controls.py",
+  "criterion": "C1 mirror-map integrality (K3_CRITERIA.md C1; proposal gate K3)",
+  "evidence": {
+    "f0_reproduces_stored_terms": 10,
+    "first_nonintegral_q_of_z": null,
+    "first_nonintegral_z_of_q": null,
+    "observation_largest_k_le_24_integral_kth_root_of_q_over_z": 4,
+    "q_of_z_first_terms": [
+      "1",
+      "-4",
+      "14",
+      "-12",
+      "-403",
+      "4784",
+      "-33244",
+      "128576",
+      "338258",
+      "-11469512",
+      "118660552",
+      "-749836136"
+    ],
+    "round_trip_q_of_z_of_q_exact_to_order": 60,
+    "z_of_q_first_terms": [
+      "1",
+      "4",
+      "18",
+      "52",
+      "159",
+      "396",
+      "1004",
+      "2260",
+      "5103",
+      "10680",
+      "22260",
+      "44028"
+    ]
+  },
+  "inputs": {
+    "refs": {
+      "recurrences_v1.json": "f6c7ee9e34ba2c9b8d8132c6aa9109db951ab696de09f23aab3ef03ce8679a76"
+    }
+  },
+  "normalization": "register's own z (no rescaling); q = z*exp(g/f0), g = d/d(eps) of the Frobenius coefficients",
+  "not_claimed": [
+    "integrality beyond order_checked",
+    "integrality under any other normalization of z",
+    "that N = order_checked is the frozen C1 threshold (N1 is TBD-AT-FREEZE)",
+    "anything about Kodaira fibres (E-007) or physics (VISION sec 1.3)",
+    "any meaning for the observation_largest_k field (computed, unexplained)"
+  ],
+  "order_checked": 60,
+  "provenance": "Generated-by: Claude (Opus 5), Stream 2 | Verified-by: test_C1_mirror_integrality_controls.py | Reviewed-by: N",
+  "tier": "B",
+  "tier_reason": "finite-order integrality is evidence, not proof",
+  "verdict": "PASS(60)"
+}
