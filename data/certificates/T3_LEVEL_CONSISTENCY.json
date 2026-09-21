@@ -111,6 +111,11 @@
       "n_modular": 7,
       "agree": true,
       "verdict": "T3_AGREE(n=7)",
+      "atkin_lehner_action": {
+        "verified": true,
+        "evidence": "ATKIN_LEHNER_DISC_FORM.json",
+        "pass_order_n": 30
+      },
       "open_flags": [],
       "status": "CONSISTENT"
     },
@@ -193,9 +198,13 @@
       "n_modular": 10,
       "agree": true,
       "verdict": "T3_AGREE(n=10)",
+      "atkin_lehner_action": {
+        "verified": true,
+        "evidence": "ATKIN_LEHNER_DISC_FORM.json",
+        "pass_order_n": 30
+      },
       "open_flags": [
-        "LATTICE_CERT_DRAFT",
-        "ATKIN_LEHNER_ACTION_UNVERIFIED"
+        "LATTICE_CERT_DRAFT"
       ],
       "status": "CONSISTENT_WITH_OPEN_ITEMS"
     }

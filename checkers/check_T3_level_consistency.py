@@ -101,7 +101,9 @@ CANDIDATES = {
         "t1_cert": "HAUPTMODUL_S7_GAMMA07PLUS.json",
         "t1_verdict_expected": "GAMMA07PLUS_HAUPTMODUL",
         "group": "Gamma_0(7)+",
-        "al_action_verified": True,   # prime level: the normalizer is Fricke only
+        # Atkin-Lehner action on the discriminant form: verified at lattice level, PASS(30)
+        # over n (ATKIN_LEHNER_DISC_FORM.json, 2026-09-21). Prime level: normalizer = Fricke.
+        "al_action": {"verified": True, "evidence": "ATKIN_LEHNER_DISC_FORM.json", "pass_order_n": 30},
     },
     "cooper_s10": {
         "lattice_cert": "C2_cooper_s10_v4_DRAFT.json",
@@ -109,7 +111,12 @@ CANDIDATES = {
         "t1_cert": "HAUPTMODUL_S10_GAMMA010STAR.json",
         "t1_verdict_expected": "GAMMA010STAR_HAUPTMODUL",
         "group": "Gamma_0(10)*",
-        "al_action_verified": False,  # counts matched only; see module docstring
+        # Was ATKIN_LEHNER_ACTION_UNVERIFIED (counts matched only, 4 = 4). RETIRED 2026-09-21:
+        # W(n) -> O(q_A) is an explicit isomorphism, PASS(30) over n, built from the action on
+        # periods rather than counted (ATKIN_LEHNER_DISC_FORM.json; T0 D8', AM-4). The one open
+        # flag left on cooper_s10 is LATTICE_CERT_DRAFT, a PROCESS item -- the two are reported
+        # separately and must never be merged into one flag.
+        "al_action": {"verified": True, "evidence": "ATKIN_LEHNER_DISC_FORM.json", "pass_order_n": 30},
     },
 }
 
@@ -264,7 +271,7 @@ def evaluate(key, order=ORDER):
     flags = []
     if spec["lattice_cert_status"] != "LIVE":
         flags.append("LATTICE_CERT_DRAFT")
-    if not spec["al_action_verified"]:
+    if not spec["al_action"]["verified"]:
         flags.append("ATKIN_LEHNER_ACTION_UNVERIFIED")
     if not t1_ok:
         flags.append("T1_CERT_VERDICT_MISMATCH")
@@ -281,6 +288,7 @@ def evaluate(key, order=ORDER):
         "n_modular": n if agree else None,
         "agree": agree,
         "verdict": verdict,
+        "atkin_lehner_action": spec["al_action"],
         "open_flags": flags,
         "status": ("CONSISTENT" if agree and not flags
                    else "CONSISTENT_WITH_OPEN_ITEMS" if agree else "INCONSISTENT"),

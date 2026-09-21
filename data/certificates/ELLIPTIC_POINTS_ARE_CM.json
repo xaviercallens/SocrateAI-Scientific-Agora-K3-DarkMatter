@@ -4,7 +4,7 @@
  "date": "2026-09-21",
  "tier": "B",
  "checker_version": {
-  "git_describe_HEAD": "v0.3.9-thought-experiments-tested-1-gb344c73",
+  "git_describe_HEAD": "v0.3.9-thought-experiments-tested-17-gbfe4907",
   "checker_sha256": "186dab5adc55ccdd106722dc6cdb684dbafa8534bab2764a02b78299bd8b4c9d"
  },
  "status": "RECORD, NOT A GATE. The rho = 20 cut was ADOPTED by T0 on 2026-09-21 (D7', briefs/T0_DECISIONS_2026_09_21_STREAM2.md), read narrowly: no ranking of candidates, no minimum-|D| rule, no physical reading; T3 is not adopted; nothing is scored. cooper_s10 is ADVISORY (lattice certificate DRAFT).",

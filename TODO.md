@@ -137,9 +137,23 @@
       minimum-|D| rule, promotion of s10 (still ADVISORY), any physical reading, any edit of
       `K3_CRITERIA.md`, gate T3. Certificates re-emitted with the new status wording; no computed
       value changed. Content of the cut: `CM_POINTS_RHO20.json`, `A2_MEMBERSHIP.json`.
-- [ ] **T0: how does the adopted cut enter `K3_CRITERIA.md`?** (§6 amendment protocol.) Bears on the
-      same freeze as Stream 3's open D-2 (C3: integral in which coordinate?) and D-3 (register).
-      Note: this repo has NO root `K3_CRITERIA.md`; Stream 1's and Stream 3's copies differ in 6 hunks.
+- [x] **T0 D8′ (2026-09-21): `K3_CRITERIA.md` is now CANONICAL HERE**, seeded byte-identical from
+      Stream 1 @ `6c09d2d` (`f62f2c8`) then amended (`ea2b181`). **C6** = the ρ = 20 cut (narrow,
+      unscored); **C3** literal — integrality is NOT part of it, the constant c is reported only, so
+      both primaries clear C3 and Stream 3's D-2 is closed; **C2** → transcendental lattice (T2),
+      Kodaira text struck with E-007; **T1/T3** adopted as unscored consistency gates; the
+      Atkin–Lehner flag is retired (verified, PASS(30)) leaving `LATTICE_CERT_DRAFT` alone on s10.
+      §4 now says a DRAFT certificate is neither a pass nor a failure. Record:
+      `briefs/T0_DECISIONS_2026_09_21_STREAM2.md` (questions + selected options verbatim).
+      **Not a freeze** — thresholds stay SKELETON, §7 still blocks v1.0.
+- [ ] **Write `scripts/render_status_table.py`** (certificates only, never hand input), then restore
+      a generated §5 table. The old table was removed, not edited: it cited a renderer that has
+      never existed here and its body contradicted every certificate on `main`.
+- [ ] **T0: the `K-t103` row of §1** — §1 is FROZEN and was copied untouched, but Stream 1's
+      `T0_FLAG_K3_CRITERIA_T103_STALE_2026_08_01.md` (E-014: never vetoed) is still unanswered.
+- [ ] **T0: C4 and C5 still carry `TBD-AT-FREEZE`** — implementing their checkers is blocked until
+      the freeze resolves them (`criteria-checkers` contract).
+
 - [ ] **T0: flux bound on D — decision request** `briefs/T0_DECISION_REQUEST_FLUX_BOUND_ON_D_2026_09_21.md`
       (5 sources fetched, pinned, read; NOTHING executed; S3-00b stays BLOCKED). Brief's own
       recommendation: Q1 "is K3×P¹ a specified B₃?" **no**; Q2 **option A (park)**.
@@ -152,10 +166,14 @@
       primaries: `briefs/STREAM2_TO_STREAM3_C3_BRANCH_REPLY_2026_09_21.md`. New input 09-21:
       integrality is coordinate-dependent — s10 and s18 partners are integral in 2z
       (`PARTNER_GLOBAL_BOUNDEDNESS.json`, e(n) ≤ n−1 for all n modulo two Stream 1 theorems).
-- [ ] **Defect, mechanical:** `check_C3b_symsqrt.py` `mum2` tests C(n) == −(n+1)² literally, so
-      its Apéry-ζ(3) golden control fires on a normalisation artifact (C = −4(n+1)²), not on a
-      real non-MUM operator. s7/s10 verdicts unaffected. Normalise before the test; fix the
-      golden test's docstring.
+- [x] **Defect FIXED 2026-09-21:** `check_C3b_symsqrt.py` tested C(n) == −(n+1)² literally, so a
+      genuine MUM partner whose fit clears denominators (Apéry ζ(3): C = −4(n+1)²) was reported
+      non-MUM / `FAIL_PARTNER_VALIDATION`. Now `mum_normalise` tests proportionality with a positive
+      constant and reports the constant. The golden test that ASSERTED the wrong verdict is
+      replaced by a regression (Apéry ζ(3) → `SYM2_OPERATOR_IDENTITY_PROVEN`, constant 4) plus
+      function-level known-bads. s7/s10 verdicts unchanged; both certs re-emitted at (n_fit 30,
+      deg 5) — the earlier (26, 2) vs (30, 5) parameter drift between them is gone.
+      Limitation kept in the test docstring: no end-to-end real non-MUM Sym² bulk in the suite.
 - [ ] **T0: candidate register** — S1 `K3_CRITERIA.md` still lists t103 as dropped, although
       E-014 found no veto (S1 `briefs/T0_FLAG_K3_CRITERIA_T103_STALE_2026_08_01.md`, unanswered).
 
