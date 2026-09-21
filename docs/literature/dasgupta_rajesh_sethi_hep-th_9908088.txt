@@ -1,0 +1,1262 @@
+                                                                                       hep-th/9908088
+                                                                                       IASSNS–HEP–99/75, NSF-ITP-99-095
+
+
+
+
+                                                     M Theory, Orientifolds and G-Flux
+arXiv:hep-th/9908088v3 25 Sep 2001
+
+
+
+
+                                                      Keshav Dasgupta1 , Govindan Rajesh2 and Savdeep Sethi3
+
+                                                                     School of Natural Sciences
+                                                                    Institute for Advanced Study
+                                                                    Princeton, NJ 08540, USA
+
+
+
+
+                                           We study the properties of M and F theory compactifications to three and four di-
+                                     mensions with background fluxes. We provide a simple construction of supersymmetric
+                                     vacua, including some with orientifold descriptions. These vacua, which have warp factors,
+                                     typically have fewer moduli than conventional Calabi-Yau compactifications. The mecha-
+                                     nism for anomaly cancellation in the orientifold models involves background RR and NS
+                                     fluxes. We consider in detail an orientifold of K3 × T 2 with background fluxes. After a
+                                     combination of T and S-dualities, this type IIB orientifold is mapped to a compactification
+                                     of the SO(32) heterotic string on a non-Kähler space with torsion.
+
+
+
+
+                                     8/99
+
+                                       1
+                                           keshav@sns.ias.edu
+                                       2
+                                           rajesh@sns.ias.edu
+                                       3
+                                           sethi@sns.ias.edu
+1. Introduction
+
+    The realization that certain string compactifications can be described in multiple ways
+has provided a significant improvement in our understanding of non-perturbative string
+dynamics. Among the more interesting compactifications are those with N=1 and N=2
+supersymmetry in four dimensions. An intriguing class of such four dimensional vacua are
+described by compactifying F theory on a Calabi-Yau four-fold M [1]. These vacua are
+naturally related to compactifications of type IIA string theory and M theory to two and
+three dimensions, respectively. The strong coupling limit of type IIA compactified on M
+is well described by the three dimensional theory obtained by compactifying M theory on
+the same four-fold. If the four-fold admits an elliptic fibration with base B, then we can
+consider a particular degeneration of this M theory compactification in which the area of
+the elliptic fiber shrinks to zero. In this limit, M theory on the four-fold goes over to type
+IIB compactified on the base B with a varying coupling constant. The coupling constant
+is τ of the elliptic fiber. This four-dimensional type IIB vacuum is known as an F theory
+compactification.
+    Among the novel features of these vacua is the need to cancel a tadpole anomaly.
+For this class of compactifications, the anomaly is given by χ/24, where χ is the Euler
+characteristic of the four-fold. If χ/24 is integral, then the anomaly can be cancelled by
+placing a sufficient number of spacetime filling branes on points of the compactification
+manifold [2]. For type IIA, the required branes are strings, while in M and F theory,
+membranes and D3-branes are required, respectively.
+    However, there is at least one other way of cancelling the anomaly in type IIA or M
+theory, which is by introducing a background flux for the four-form field strength G [3].
+The G-flux contributes to the membrane tadpole in M theory through the Chern-Simons
+interaction,                           Z
+                                           C ∧ G ∧ G.                                    (1.1)
+
+For cases where χ/24 is not integral, G-flux is actually required to obtain a consistent
+vacuum. In general, the anomaly can be cancelled by a combination of background flux
+and branes. With n background branes, the tadpole cancellation condition
+                                        Z
+                              χ      1
+                                 =         G ∧ G + n,                                    (1.2)
+                              24   8π 2
+
+must be satisfied for type IIA or M theory [4].
+
+                                              1
+    Compactifications with G-flux have a number of interesting features, but have received
+little attention. The goal of this paper is to explore some of the properties of these vacua.
+In the following section, we review the results of [3] where conditions on supersymmetric
+vacua with G-flux were derived from eleven-dimensional supergravity. These conditions
+are quite difficult to satisfy. As a consequence, the presence of G-flux typically freezes
+some of the geometric moduli of the four-fold in a way that we describe.
+    Some of these M theory vacua can be lifted to four-dimensional N=1 F theory vacua.
+The corresponding F theory vacua have background fluxes of two kinds. The first kind in-
+volves non-zero NS and RR three-form field strengths, denoted H and H ′ respectively. The
+three-form fluxes contribute to the D3-brane tadpole through the type IIB supergravity
+interaction,                         Z
+                                          D+ ∧ H ∧ H ′ ,                                (1.3)
+
+where D+ is the four-form gauge field. In the second kind of background, some of the
+seven-brane gauge fields have non-zero instanton number. In F theory, this possibility has
+been discussed in [5]. These instantons contribute to the D3-brane tadpole through the
+seven-brane world-volume coupling,
+                                      Z
+                                          D+ ∧ F ∧ F,                                   (1.4)
+
+where F is the field strength for the seven-brane gauge-field.
+    F theory is a useful description of these compactifications only when the base B is
+large compared to the string scale. However, for special choices of four-fold M, F theory
+can be related to a type IIB orientifold which is a complete perturbative string theory
+[6]. In turn, some of these IIB orientifolds can be related to type I compactifications via
+T -duality. Largely for their simplicity, orientifolds of tori are most commonly studied. In
+conventional models, tadpole cancellation is achieved by adding branes: either D9 and
+D5-branes or D7 and D3-branes depending on the choice of orientifold action. In four
+dimensions, the possibility of using the type IIB interactions (1.3) and (1.4) to cancel the
+D3-brane tadpole suggests that novel orientifolds should exist with backgrounds involving
+H and H ′ -fluxes and gauge-field instantons. The possible types of orientifold are then
+classified by the choice of C-flux and G-flux in M theory on M.
+    In section three, we present examples of vacua with G-flux, including a simple orbifold
+construction and an example where G-flux is required. In the final section, we consider an
+example of a type IIB orientifold with constant background H and H ′ -fluxes. Depending on
+
+                                               2
+the choice of background flux, the model has either N=1 or N=2 spacetime supersymmetry.
+The compactification space B is conformal to K3 × T 2 . This orientifold is related to F
+theory on K3 × K3, some aspects of which have been discussed in [7].
+     However, our interest is largely with a heterotic dual of this orientifold. By T-dualizing
+along the T 2 , we map the IIB orientifold to a type I compactification on a new space B′
+with non-zero H ′ -torsion. A further S-duality turns the type I vacuum into a perturbative
+SO(32) heterotic vacuum with non-zero H-flux. The non-Kähler space B′ is no longer con-
+formally Calabi-Yau. This is a concrete example, possibly the first, of a four-dimensional
+string compactification with torsion.
+     There are a number of promising directions to explore. For example, associated to
+each of the type I/heterotic supergravity solutions is a world-sheet conformal field theory.
+Finding ways of constructing and analyzing these conformal field theories is a potentially
+rewarding enterprise. There should be analogues in this more general class of compactifica-
+tions of phenomena associated with Calabi-Yau compactifications, such as mirror symme-
+try and its (0, 2) cousin [8,9]. There are also intriguing connections between these solutions
+and the work of [10,11,12]. During the completion of this project, an interesting paper
+appeared [13] with some overlap with section 2.
+
+
+
+2. Supersymmetry and G-flux
+
+2.1. C-field instantons
+
+     We begin by recalling the results of [3] for M theory compactified on an eight-
+dimensional Calabi-Yau manifold M. Let Mpl denote the eleven-dimensional Planck scale.
+At leading order in a momentum expansion, the M theory effective action is given by
+eleven-dimensional supergravity. A product metric on IR3 × M is a solution to the super-
+gravity equations of motion when the metric for the internal space M is Ricci flat. Let us
+parametrize IR3 by coordinates xµ where µ = 0, 1, 2 and the internal space M by complex
+coordinates y a where a = 1, . . . , 4.
+     At next order in the derivative expansion, there are terms with eight derivatives
+which are therefore suppressed by six additional powers of Mpl . Among these terms is an
+interaction of the form [14,15],              Z
+                                          −       C ∧ X8 (R),                             (2.1)
+
+                                                    3
+where X8 is an eight-form constructed from curvature tensors. This term induces a tadpole
+for the C-field. A way to cancel the tadpole is to turn on a non-trivial G-flux. The metric
+is then modified from a simple product and takes the form:
+
+                                                               1
+                        ds2 = e−φ(y) ηµν dxµ dxν + e 2 φ(y) gab̄ dy a dy b̄ .            (2.2)
+
+                                                                                    c
+The metric g for M is Kähler and Ricci flat. Let us call the warped internal space M.
+          c is therefore conformal to a Calabi-Yau manifold.
+The space M
+    There is also a non-vanishing four-form field strength G on M which satisfies the
+conditions:
+                            Gabcd = Gabcd¯ = 0,            g cd̄ Gab̄cd̄ = 0.            (2.3)
+
+The only other non-vanishing component of G is given in terms of the warp factor,
+
+                                                                   3
+                                      Gµνρa = ǫµνρ ∂a e− 2 φ .                           (2.4)
+
+Lastly, the warp factor satisfies the equation:
+                               (                     n
+                                                                    )
+                      3φ                  1          X
+                  ∆(e 2 ) = ∗ 4π 2 X8 − G ∧ G − 4π 2   δ 8 (y − yi ) .                   (2.5)
+                                          2
+                                                                       i=1
+
+The Laplacian and the Hodge star operator in (2.5) are defined with respect to g. We have
+                                                                     c The combination
+included the possibility of n membranes located at the points yi on M.
+of G-flux and membranes must satisfy (1.2).
+    The first condition in (2.3) tells us that G is a (2, 2) form on M. Dirac quantization
+requires that the cohomology class [G/π] be an element of H (2,2) (M, ZZ). If χ/24 ∈ ZZ then
+[G/2π] is an integer cohomology class [16]. The second condition in (2.3) is the analogue
+of the following condition for a two-form field strength F :
+
+                                             g ab̄ Fab̄ = 0.                             (2.6)
+
+In the two-form case, (2.6) implies that F is anti-self-dual because,
+
+                    (∗F )ab̄ = ǫacb̄d̄ F cd̄ = (gab̄ gcd̄ − gad̄ gcb̄ )F cd̄ = −Fab̄ .   (2.7)
+
+In the four-form case, we can again express the epsilon tensor in the following way:
+
+                          ǫabcdp̄q̄r̄s̄ = gap̄ gbq̄ gcr̄ gds̄ ± permutations.
+
+                                                    4
+In much the same way as the two-form case (2.7), the conditions (2.3) imply that,
+
+                                           G = ∗G,                                     (2.8)
+
+where the Hodge star acts on the internal eight manifold with metric g. This M theory
+background therefore involves an abelian ‘instanton’ of the C-field. Lastly, let us rephrase
+the second condition (2.3) in terms of the Kähler form of M,
+
+                                     J ≡ igab̄ dz a ∧ dz b̄ .                          (2.9)
+
+In terms of J, the second condition states that the self-dual G-field is primitive:
+
+                                         J ∧ G = 0.                                   (2.10)
+
+This condition actually means that G is a singlet of the sl2 -algebra generated by J, its
+adjoint J † and their commutator [J, J † ]. See, for example, [17].
+
+2.2. Compactifications with extended supersymmetry
+
+    For compactifications on IR3 × M, we decompose a 32 component Majorana-Weyl
+spinor under SO(2, 1) × SO(8) in the following way,
+
+                                   32 = (2, 8s ) ⊕ (2, 8c ).                          (2.11)
+
+For spaces M with holonomy SU (4) and not a proper subgroup, we can further decompose
+the SO(8) representations under SU (4):
+
+                                       8s = 6 ⊕ 1 ⊕ 1,
+                                                                                      (2.12)
+                                       8c = 4 ⊕ 4̄.
+
+The two singlets in 8s give the four real unbroken supersymmetries needed for a model
+with N=2 supersymmetry.
+    If the holonomy of M is a proper subgroup of SU (4), the theory may have extended
+supersymmetry. See [18] for a discussion of the possible holonomies of an eight manifold.
+We will discuss two examples which appear in later discussion. The first is compactifi-
+cation on a hyperKähler manifold with holonomy Sp(2). On decomposing the 8s and 8c
+representations, we find
+                                     8s = 5 ⊕ 1 ⊕ 1 ⊕ 1,
+                                                                                      (2.13)
+                                    8c = 4 ⊕ 4.
+
+                                                5
+Therefore, this compactification can have N=3 supersymmetry. Since the space is hy-
+perKähler, there is a IP1 of choices of complex structure. To see this, note that we can
+construct a complex structure tensor J i j from any complex covariantly constant spinor η
+in the usual way:
+                                        J i j = iη † γ i j η.                            (2.14)
+
+The indices i, j = 1, . . . , 8 and γ i are gamma matrices for M. For each of the IP1 of choices
+for η, where η has norm one, there is a corresponding complex structure tensor.
+    The second example has holonomy Sp(1) × Sp(1). In this case,
+
+                        8s = (2, 2) ⊕ (1, 1) ⊕ (1, 1) ⊕ (1, 1) ⊕ (1, 1),
+                                                                                         (2.15)
+                        8c = (2, 1) ⊕ (2, 1) ⊕ (1, 2) ⊕ (1, 2).
+
+This compactification has at most N=4 supersymmetry. There is a IP1 × IP1 of complex
+structures. Whether there is extended supersymmetry actually depends on the choice of
+G-flux. To preserve more than N=2 supersymmetry, the G-flux must be a primitive (2, 2)
+class with respect to more than a single complex structure. In section three, we will meet
+examples of G-flux which do not preserve all the supersymmetries of the compactification
+manifold.
+
+2.3. Kaluza-Klein reduction with a warp factor
+
+    In the presence of background fluxes and a warp factor, the counting of light degrees of
+freedom is typically quite difficult because the equations obeyed by the metric and C-field
+fluctuations are coupled. The metric takes the form,
+                                        −φ                
+                                        e ηµν          0
+                                                                ,                        (2.16)
+                                          0            g
+                                                       b
+            1
+      g = e 2 φ g. Let us begin by considering purely metric deformations. Since the metric
+where b
+g is Calabi-Yau, infinitesimal deformations of g are classified in the usual way by elements
+of H 3,1 (M) and H 1,1 (M). However, those complex structure deformations that do not
+keep G a (2, 2) class become massive. Likewise, deformations of the Kähler structure that
+do not keep G primitive become massive. In this way, we generically lose a large number
+of geometric moduli.
+    Let us take the generic case where N=2 spacetime supersymmetry is preserved. The
+moduli that we wish to count appear in two kinds of multiplet: the first is the dimensional
+
+                                                 6
+reduction of a four-dimensional N=1 chiral multiplet. The second is the reduction of an
+N=1 vector multiplet. In three dimensions, the vector multiplet can be dualized to a chiral
+multiplet containing a dual scalar. Each surviving deformation in H 3,1 (M) gives rise to
+a chiral multiplet, while each deformation in H 1,1 (M) gives rise to the scalar field of a
+vector multiplet. The vector field itself comes from a C-field zero-mode.
+     Let us consider the effect of just a warp factor on the C-field equations. Without
+G-flux, the C-field obeys the free-field equation,
+                                          d ˆ∗ dC = 0.                                (2.17)
+By using the gauge invariance C→C + dΛ, we can demand that C satisfy
+                                           d ˆ∗ C = 0.                                (2.18)
+Combined with the field equation, this gives the usual condition,
+                                           b = 0.
+                                           ∆C                                         (2.19)
+Decomposing (2.19) into spacetime and internal components gives,
+                                                         
+                         µ       −φ b     3 −φ ab
+                       ∂ ∂µ + e ∆g − e gb (∂a φ)∂b C = 0.                          (2.20)
+                                          2
+The last two terms in (2.20) will look like mass terms from the perspective of the three-
+dimensional observer. The second term is conventional and leads to the usual harmonicity
+condition on the internal components of C. However, the third term is a new consequence
+of the warp factor.
+    In the presence of non-trivial background G-flux, equation (2.17) for a fluctuation δC
+becomes:
+                                   d ˆ∗ d δC = −G ∧ d δC.                            (2.21)
+We have set all metric fluctuations to zero in (2.21). We decompose δC into a product of
+spacetime and internal fields,
+                              δC = ψ(x)C (3) (y) + Aµ (x)C (2) (y),                   (2.22)
+where we only consider spacetime multiplets with vector or scalar fields, and C (n) is an
+n-form on the eight manifold. We can dispense immediately with the counting of vector
+fields Aµ (x) since each zero-mode of C (2) pairs with a Kähler class deformation to give a
+vector multiplet. We only need to count the number of massless modes from H 1,1 (M) to
+count the number of vector multiplets.
+    The final source of moduli are the analogues of Wilson lines for the C-field. In the
+absence of G-flux, any element of H 2,1 (M) gives rise to a zero-mode for C (3) and therefore
+a chiral multiplet.1 In the presence of G-flux, the conditions on C (3) are modified. We can
+  1
+      Note that H 3,0 (M) is empty for a simply connected Calabi-Yau.
+
+                                               7
+expand the left hand side of (2.21) as follows,
+
+        d ˆ∗ d δC = d ∗ dψ ∧ ∗C (3) + ∗dψ ∧ d ∗ C (3) + ∗ψ ∧ d(e−3φ/2 ∗ dC (3) ),     (2.23)
+
+where each Hodge star appearing on the right hand side is with respect to the unwarped
+spacetime and internal metrics.
+    Combining (2.23) with the right hand side of (2.21) gives the following set of equations:
+
+                       ψ G ∧ dC (3) = 0,
+                    dψ ∧ G ∧ C (3) = 0,
+                                                                                      (2.24)
+                    ∗ dψ ∧ d ∗ C (3) = 0,
+                                                                    
+                                  (3)             −3φ/2     (3)  (3)
+                    d ∗ dψ ∧ ∗C         = ∗ψ ∧ d e      {∗dC − dC } .
+
+To satisfy the third equation in (2.24), we can fix the gauge by demanding that,
+
+                                            d ∗ δC = 0.                               (2.25)
+
+This choice differs from the usual gauge fixing condition (2.18) by an exact form. As
+a consequence of (2.25), d ∗ C (3) = 0. The first equation in (2.24) is a consequence of
+equation two which requires that,
+
+                                           G ∧ C (3) = 0.                             (2.26)
+
+This condition is the analogue of the primitivity condition (2.10) for the metric.
+    The right hand side of the final equation in (2.24) must vanish since this term gives
+a mass to the spacetime field ψ. Requiring that the perturbation dC (3) take us to a
+supersymmetric vacuum implies that dC (3) must be self-dual, which in turn implies that
+C (3) is harmonic. Therefore any element of H 2,1 (M) which satisfies (2.26) gives rise to a
+chiral multiplet.
+
+2.4. Lifting G-flux to F theory
+
+    If the eight manifold M is elliptically-fibered with base B, then by shrinking the
+volume of the fiber, we can lift our M theory compactification to a four-dimensional type
+IIB compactification on IR4 × B. Since the power of the warp factor is different for the
+spacetime and internal metric in (2.16), we might worry that the resulting four-dimensional
+metric breaks Lorentz invariance.
+
+                                                 8
+       Let us first show that this is not the case. M theory on T 2 with area A maps to type
+IIB on a circle S 1 with radius proportional to 1/A. Locally, the warp factor rescales the
+metric sending:
+                                          A → eφ/2 A.
+
+However, this corresponds to rescaling the IIB circle metric by
+
+                                         1         1
+                                           2
+                                             → e−φ 2 ,
+                                         A        A
+
+which is precisely the power needed to obtain a Lorentz invariant four-dimensional metric.
+       How does the G-flux lift to type IIB? Let us start with the Gµνρa component. This
+component has the form dCµνρ , and the this C-field lifts to a component of the four-form
+D+ of type IIB:
+                                                +
+                                        Cµνρ → Dµνρλ .                                 (2.27)
+
+Note that λ is a spacetime index and that dD+ is not required to be self-dual. What is
+required to be self-dual is the combination,
+
+                                         1         1
+                              F + = dD+ − B ′ ∧ H + B ∧ H ′ .                          (2.28)
+                                         2         2
+
+Therefore the presence of this spacetime D+ field does not imply that there is a D+ field
+in the internal space.
+       We can divide the remaining G-flux involving Gab̄cd̄ into two cases. There could be a
+component of G with no legs along the fiber. This component would map in the following
+way,
+                                      Gab̄cd̄ → (dD)+
+                                                    ab̄cd̄λ
+                                                            .
+
+This flux breaks four-dimensional Lorentz invariance. By self-duality of G, this case also
+rules out the possibility of components with two legs along the fiber.
+       The remaining possibility is the case where G is locally the product of a three-form on
+B and a one-form in the fiber. In this case, we can also differentiate between two kinds of
+G-flux. We can see this already in the relation between M theory on K3 = T 4 /ZZ2 and the
+type IIB orientifold of T 2 by Ω(−1)FL ZZ2 , where Ω is world-sheet parity [19]. M theory on
+T 4 /ZZ2 has 22 gauge-fields obtained by reducing the C-field on the 22 forms in H 2 (K3, ZZ).
+The 22 forms on T 4 /ZZ2 are grouped in the following way: there are 16 twisted sector
+(1, 1) forms. Each twisted sector form comes from an A1 singularity so the gauge group is
+
+                                                9
+enhanced to SU (2). The (2, 0) and (0, 2) forms descend from T 4 as do 4 more untwisted
+(1, 1) forms. The gauge group is SU (2)16 × U (1)6 .
+    In the limit where A→0, the two untwisted sector forms corresponding to the class of
+the fiber and its Hodge dual are no longer normalizable. We can identify the remaining
+20 forms with gauge-fields in the orientifold theory in the following manner: note that the
+action Ω(−1)FL is an element of SL(2, ZZ) given by the matrix,
+                                               
+                                       −1 0
+                                                  ,                                     (2.29)
+                                        0 −1
+
+which projects out both B and B ′ . The only components which survive the projection
+have a leg along T 2 . The 4 Kaluza-Klein gauge-fields obtained by reducing B and B ′ along
+one-cycles of T 2 are then identified with the 4 surviving untwisted sector forms of T 4 /ZZ2 .
+The 16 fixed points coalesce into 4 groups of coincident A1 singularities. The gauge group
+is enhanced from SU (2)4 →SO(8). The SO(8) arises in the orientifold picture from placing
+4 D7-branes at the location of each O7-plane.
+    Therefore, if our G-flux is localized around a singular fiber of the elliptic fibration, it
+will lift to the field strength of a seven-brane gauge-field. The gauge-field will have non-
+zero instanton number on the 4-cycle wrapped by the seven-brane. If there are multiple
+seven-branes then the gauge-group can be non-abelian as in the T 4 /ZZ2 example. In this
+situation, the supergravity analysis is incomplete since the enhanced gauge symmetry is
+non-perturbative in M theory. From F theory, we certainly expect the gauge-field to sat-
+isfy the non-abelian Donaldson-Uhlenbeck-Yau equation. Any holomorphic stable vector
+bundle would then give a supersymmetric solution.
+    For the most part, we will consider the last choice for G. In this case, we can express
+G locally in terms of a basis for one-forms on the torus,
+
+                             dz = dx + τ dy        dz = dx + τ̄ dy,
+
+in the following way,
+                                   G
+                                      = dz ∧ ω − dz ∧ ∗ω,                               (2.30)
+                                   2π
+where ω ∈ H 1,2 (B). The flux then lifts to a combination of the NS field strength H and
+RR field strength H ′ . The field strengths are given in terms of ω,
+
+                                       H = ω − ∗ω
+                                                                                        (2.31)
+                                       H ′ = ωτ − ∗ωτ̄ .
+
+                                              10
+The anomaly cancellation condition then becomes,
+                                          Z
+                                 χ
+                                    = n − H ∧ H ′,                                          (2.32)
+                                 24
+where n is the number of D3-branes.
+      The NS field strength H and the RR field strength H ′ are naturally arranged in an
+SL(2, ZZ) doublet of type IIB supergravity:2
+                                          1
+                                     Λ = √ (H ′ − τ H)
+                                          τ2
+                                                                                            (2.33)
+                                          1
+                                    Λ∗ = √ (H ′ − τ̄ H) .
+                                          τ2
+In terms of ω,
+                                    √                             √
+                               Λ∼       τ2 (∗ω)            Λ∗ ∼       τ2 ω.
+
+In a generic F theory compactification, the IIB fields undergo non-trivial monodromies by
+elements of SL(2, ZZ) around singular fibers. Under an SL(2, ZZ) transformation
+                                                aτ + b
+                                           τ→          ,
+                                                cτ + d
+Λ and Λ∗ transform in the following way,
+                                   1/2                                       −1/2
+                            cτ̄ + d                    ∗      ∗       cτ̄ + d
+                   Λ→Λ                             Λ →Λ                                 .   (2.34)
+                            cτ + d                                    cτ + d
+Our H and H ′ field strengths can therefore be rotated non-trivially by SL(2, ZZ) as we
+move along the base space B.
+
+
+3. Constructing Vacua With G-Flux
+
+3.1. K3 × K3
+
+      The first example that we will consider is M theory on K31 × K32 . This compactifica-
+tion space gives N=4 supersymmetry in three dimensions. The anomaly χ/24 = 24 which
+must be cancelled by a combination of branes and G-flux. We therefore require that,
+                                    Z
+                                  1    G    G
+                                          ∧    ≤ 24.
+                                  2    2π 2π
+  2
+      Unfortunately, the natural complex combinations of H and H ′ are usually denoted G and
+G∗ in the literature. To avoid confusion, we have chosen the notation Λ and Λ∗ . See [20] for an
+explanation of the mapping between the SU (1, 1)/U (1) and the SL(2, IR)/U (1) parametrizations
+of the supergravity moduli space.
+
+                                                  11
+Let J1 and J2 denote the Kähler forms for K31 and K32 , respectively. We will initially
+choose G-flux of the form,
+                                        G
+                                           = ω1 ∧ ω2 ,                                    (3.1)
+                                        2π
+where ωi ∈ H 1,1 (K3i , ZZ). Each ωi must also be primitive with respect to Ji . By definition,
+each ωi is an element of the Picard group P ic(K3i ).
+    For a generic K3, the Picard group will be empty. To find a solution, let us construct
+a K3 surface in the following way: take a hypersurface in IP1 × IP1 × IP1 of degree (2, 2, 2).
+There are three natural elements of P ic(K3) which we will denote C1 , C2 , C3 . These classes
+are determined by the three hyperplanes,
+
+                                       {p} × IP1 × IP1 ,
+                                       IP1 × {p} × IP1 ,                                  (3.2)
+                                       IP1 × IP1 × {p},
+
+for {p} a point. With a standard abuse of notation, we will use Ci to denote both the
+cohomology class and the cycle dual to the Poincaré dual of Ci . The intersection matrix
+for the Ci is easily computed. Any two distinct Ci intersect on a IP1 . A quadratic in
+IP1 gives two points. The self-intersection number of any Ci vanishes, so we obtain the
+following intersection matrix:                
+                                         0 2 2
+                                        2 0 2.                                          (3.3)
+                                         2 2 0
+We can take J = C1 + C2 + C3 as the Kähler form for this surface. As our basic primitive
+class, let us take α = C1 − C2 . The self-intersection number of α is −4.
+    We can take both K31 and K32 to be surfaces of the kind described above. Each space
+is endowed with a primitive form denoted α1 and α2 . To cancel the anomaly completely,
+we can place 16 membranes on K31 × K32 and turn on,
+
+                                        G
+                                           = α1 ∧ α2 .                                    (3.4)
+                                        2π
+
+We can also cancel the anomaly completely without branes in the following way: in addition
+to α, let us consider the primitive class β = C1 − C3 with self-intersection −4. Then
+α · β = −2 and we can turn on the flux,
+
+                                    G
+                                       = (α1 + β1 ) ∧ α2 .                                (3.5)
+                                    2π
+                                              12
+Note that this choice of G-flux is a primitive (2, 2) class with respect to each of the IP1 ×IP1
+choices of complex structure. The full N=4 supersymmetry is therefore preserved.
+     As a second more exotic example, let us consider the K3 surface obtained by quoti-
+enting a square T 4 with coordinates (z 1 , z 2 ) by,
+
+                                     g1 : (z 1 , z 2 )→(iz 1 , −iz 2 ).                    (3.6)
+
+Under this ZZ4 quotient action, there are no untwisted (1, 1) forms. The resulting K3 has
+Picard number 20 [21]. Linear combinations of the twenty twisted sector (1, 1) forms are
+therefore integral classes. This implies that combinations of (2, 0) and (0, 2) forms are
+also integral classes because H 2 (K3, ZZ) has 22 elements. The intersection matrix for these
+transcendental integral classes is given by [21]
+                                                
+                                            2 0
+                                                   .
+                                            0 2
+
+For this orbifold case, we note that the untwisted sector holomorphic (2, 0) form
+
+                                              γ = dz 1 dz 2                                (3.7)
+            R
+satisfies       γ ∧ γ̄ = 4. Let us take both K31 and K32 to be T 4 /ZZ4 orbifolds. Then the
+(2, 2) form
+                                        {γ1 ∧ γ̄2 + γ̄1 ∧ γ2 } ,                           (3.8)
+
+defined on K31 × K32 is primitive and integral.
+     We also require a class λ, which we take to be a primitive (1, 1) class with self-
+intersection −4. For example, the class obtained by taking the difference of the cycles
+coming from the resolution of the
+
+                           (z 1 = 1/2, z 2 = 1/2),       (z 1 = i/2, z 2 = i/2)
+
+fixed points in the (g1 )2 twisted sector. This class has zero intersection with every other
+(1, 1) form. There are a number of other choices for λ. We can then cancel the anomaly
+completely with the following G-flux:
+                                G
+                                   = λ1 ∧ λ2 + γ1 ∧ γ̄2 + γ̄1 ∧ γ2 .                       (3.9)
+                                2π
+Note that this choice of G-flux does not preserve the full N=4 supersymmetry. Varying
+the complex structure of K3i rotates γi , γ̄i and Ji into each other. The resulting G is no
+
+                                                    13
+longer supersymmetric. Therefore, only N=2 supersymmetry survives. We will contruct
+another example of a K3 × K3 compactification with G-flux in the following section.
+     Before leaving this case, let us see how special choices of G-flux appear in the E8 × E8
+heterotic dual. For illustration, let us take the form (3.1) for our G-flux. M theory on
+K31 × K32 has a dual realization in terms of the heterotic string on T 3 × K32 . Away
+from points of enhanced symmetry, the heterotic string on T 3 has 22 abelian gauge-fields.
+As mentioned before, the gauge-fields arise in M theory by reducing the C-field on the
+22 elements of H 2 (K3, ZZ). We can then express G reduced on K31 in terms of the field
+strength F for an abelian gauge-field,
+
+                                            G
+                                               = F ∧ ω1 .
+                                            2π
+
+We then take F = ω2 , which corresponds on the heterotic side to taking an abelian
+connection with some instanton number on K32 . Any membranes used to cancel the
+anomaly correspond to heterotic five-branes wrapping T 3 . For the 16 gauge-fields coming
+from the Cartan of E8 × E8 , supersymmetry requires that,
+
+                                            g ab̄ Fab̄ = 0,
+
+and that F be a (1, 1) form. Clearly these constraints are satisfied by any G-flux of the
+form (3.1).
+
+3.2. Some orbifold examples with constant G-flux
+
+     The next class of examples that we will construct have orbifold singularities. These
+examples all have constant G-fluxes. In cases with F theory lifts, the corresponding H
+and H ′ -fluxes will be also be constant. Let (z 1 , z 2 , z 3 , z 4 ) coordinatize T 8 . Since we will
+consider only ZZ2 quotients, we restrict T 8 to T 2 × T 2 × T 2 × T 2 with each T 2 rectangular.
+We choose each T 2 to have periods,
+                            Z                            Z
+                                dz i = δji                         dz i = i δji ,
+                                    j
+                                   γx                        γyj
+
+
+where γxi and γyi are the x and y one-cycles.
+     Since our spaces will be ZZ2 quotients of T 8 , the metric is flat away from the singular-
+ities and the Kähler form is,
+                                              X
+                                         J=         dz i ∧ dz̄ i .                              (3.10)
+                                                i
+
+                                                    14
+Let us take G to have the form,
+
+                G
+                   =A dz 1 dz 2 dz 3 dz 4 + A∗ dz 1 dz 2 dz 3 dz 4 + B dz 1 dz 2 dz 3 dz 4 +
+                2π                                                                                (3.11)
+                    B ∗ dz 1 dz 2 dz 3 dz 4 + C dz 1 dz 2 dz 3 dz 4 + C ∗ dz 1 dz 2 dz 3 dz 4 .
+
+This choice of (2, 2) form certainly satisfies J ∧ G = 0. By construction, G is real. We also
+require that G/2π be (half)-integer quantized. Requiring that G/2π be integral over all
+four-cycles of T 8 gives the conditions:
+
+                2 {ReA ± ReB ± ReC} ∈ ZZ,                 2 {ImA ± ImB ± ImC} ∈ ZZ.               (3.12)
+
+The anomaly condition becomes,
+                                                            χ
+                                 16 |A|2 + |B|2 + |C|2 + n =    ,                                 (3.13)
+                                                             24
+where n is the number of branes.
+      Since we will consider orbifolds of T 8 , we also need to ensure the following two con-
+ditions: the first is that G/2π satisfy the quantization condition (3.12) modified to take
+the orbifold action into account.3 The second condition is that G/2π has (half)-integer
+intersections with all 4-cycles coming from the twisted sectors. We will need to check both
+these conditions on a case by case basis, but one possibility can be removed immediately.
+Certain twisted sectors can give rise to operators O which correspond to (2, 2) forms.
+However the two-point function of O with G satisfies,
+
+                                              < G O >= 0,                                         (3.14)
+
+because O is charged under the orbifold gauge group. The remaining possibility is three-
+point functions of the form,
+                                               < G P P ′ >,                                       (3.15)
+
+where the two-forms P and P ′ carry opposite discrete charge.
+      As a first example of this kind, let us revisit K31 × K32 where we realize K3i by
+T /ZZ2 . We therefore quotient T 8 by ZZ2 × ZZ2 generated by,
+ 4
+
+
+                                      g1 : (z 1 , z 2 )→(−z 1 , −z 2 )
+                                      g2 : (z 3 , z 4 )→(−z 3 , −z 4 ).
+
+  3
+      We wish to thank J. Polchinski for correcting our original quantization condition.
+
+                                                     15
+The form (3.11) is invariant under this action. The first issue is how the quantization
+condition is modified. The volume of the fundamental domain for the orbifold has volume
+reduced by 1/4. For example, we can parametrize the fundamental domain by restricting
+the range of x1 and x3 to be 0 to 1/2 rather than 0 to 1. There are now 4-cycles with 1/4
+the volume. These give a modified quantization condition,
+             1                                             1
+               {ReA ± ReB ± ReC} ∈ ZZ,                       {ImA ± ImB ± ImC} ∈ ZZ,              (3.16)
+             2                                             2
+and anomaly constraint:
+                                                          χ
+                                4 |A|2 + |B|2 + |C|2 + n =    .                                   (3.17)
+                                                           24
+For appropriate choices of A, B and C, we obtain supersymmetric compactifications. For
+example, the choice
+                                   A=2            B=1            C = 1,
+
+cancels the anomaly without any branes. To check that G/2π is an integer form, we also
+need to compute (3.15). First we note that G ∧ ω1 = G ∧ ω2 = 0 for ωi the volume form of
+K3i . This guarantees that if P and P ′ are two-forms from the same K3, (3.15) vanishes.
+The remaining possibility is when P and P ′ are charged under different ZZ2 actions in
+which case (3.15) vanishes by charge conservation.
+    A more interesting example is the ZZ2 quotient by the action,
+
+                          g1 : (z 1 , z 2 , z 3 , z 4 )→(−z 1 , −z 2 , −z 3 , −z 4 ).
+
+This space has singularities which cannot be resolved. However, it is perfectly fine as an
+M theory or type IIA compactification. String orbifold techniques give χ/24 = 16. The
+Hodge numbers are:
+
+             H 2,0 = 6,     H 1,1 = 16,        H 2,1 = 0,       H 3,1 = 16,        H 2,2 = 292.
+
+As usual, H 4,0 = 1. There are now 4-cycles with volume reduced by 1/2. These give the
+following quantization condition:
+
+               {ReA ± ReB ± ReC} ∈ ZZ,                    {ImA ± ImB ± ImC} ∈ ZZ,                 (3.18)
+
+and anomaly constraint:
+                                                          χ
+                                8 |A|2 + |B|2 + |C|2 + n =    .                                   (3.19)
+                                                           24
+                                                     16
+Tuning A, B and C appropriately gives solutions that cancel the tadpole either partially or
+completely. For example, the choices A = 1 + i or A = B = 1 both completely cancel the
+tadpole with just G-flux. Checking that G/2π is integer is easy in this case because there
+are no twisted sector two-forms P. The only operators are four-forms O whose intersection
+with G/2π vanishes.
+    Our next example is the symmetric product of K3. It is of a quite different flavor
+because we will not be able to find a supersymmetric solution with flux of the form (3.11).
+We define the quotient by the action,
+
+                            g1 : (z 1 , z 2 )→(−z 1 , −z 2 )
+                            g2 : (z 3 , z 4 )→(−z 3 , −z 4 )
+                            g3 : (z 1 , z 2 , z 3 , z 4 )→(z 3 , z 4 , z 1 , z 2 ).
+
+This compactification space has N=3 supersymmetry in three dimensions because S 2 (K3)
+is a hyperKähler space. In this case, χ/24 = 27/2. The Hodge numbers are:
+
+              H 2,0 = 1,   H 1,1 = 21,        H 2,1 = 0,         H 3,1 = 21,          H 2,2 = 232.
+
+To obtain a consistent compactification, we therefore need to turn on G-flux. Note that
+invariance under the g3 action requires that B and C be real. In this case, G/2π can
+be half-integer quantized [16]. At first sight it seems that this additional freedom is not
+enough to find a solution to (3.13). Let us begin by examining the integrality condition on
+G/2π. For the moment, let us ignore the effect of quotienting by g3 and start by considering
+just K3 × K3. The integrality condition becomes,
+
+                           {ReA ± B ± C} ∈ ZZ,                    {ImA} ∈ ZZ.                        (3.20)
+
+Including the effect of symmetrizing can only make this condition more stringent. The
+anomaly constraint (including the effect of symmetrizing) becomes,
+                                                       27
+                               2 |A|2 + B 2 + C 2 + n =    .                                         (3.21)
+                                                        2
+
+    Let us derive the condition that the intersection of G/2π with all twisted sector states
+is half-integral. The intersections with the twisted sector states corresponding to the
+generators g1 and g2 vanish by exactly the arguments given for the T 8 /(ZZ2 )2 example
+above. We therefore only need to check the condition for twisted sector states generated by
+
+                                                     17
+g3 . For this purpose, it is easier to consider S 2 (T 4 ) rather than S 2 (K3). This simplification
+is possible because the unique twisted sector (1, 1) form on S 2 (K3) descends from the
+unique twisted sector (1, 1) form on S 2 (T 4 ).
+                                   e be its resolution obtained by blowing up over the fixed
+    Denote S 2 (T 4 ) by X and let X
+                                          . Let Y = T 4 × T 4 and Ye be the space obtained
+                                        4 4
+locus which is the diagonal four-torus TD
+by blowing up Y over the diagonal T 4 . There are projections q and p from Ye to Y and
+                                         D
+e to X respectively. The involution i : Y → X lifts to an involution s : Ye → X,
+X                                                                             e which is
+branched over the exceptional divisor. We can summarize this information in the following
+commutative diagram:
+                                                  s
+                                          Ye     −→         e
+                                                            X
+
+                                         ↓q                 ↓p                               (3.22)
+                                                  i
+                                          Y      −→         X.
+
+Now consider a form ω ∈ H 2,2 (Y ) ∩ H 4 (Y, ZZ). For example, the form defined in (3.11).
+This form can be pulled back to Ye giving q ∗ ω ∈ H 2,2 (Ye ) and then pushed forward to a
+form:
+                                                            e
+                                    e = s∗ (q ∗ ω) ∈ H 2,2 (X).
+                                    ω
+
+Note that Ye is a double cover of X.e Therefore s∗ (s∗ v) = 2v for any form v on Ye and we
+        e = 2q ∗ ω. Consider the integral twisted sector (1, 1) form e
+have s∗ ω                                                                       e ∩ H 4 (X,
+                                                                     t ∈ H 1,1 (X)       e ZZ)
+                                                      e Then
+which is Poincaré dual to the exceptional divisor in X.
+
+                                               s∗ e
+                                                  t = 2t,
+
+where t ∈ H 1,1 (Ye ) ∩ H 4 (Ye , ZZ) is Poincaré dual to the exceptional divisor in Ye . This is
+true again because Ye is a double cover of X   e and s is branched over the exceptional divisor.
+The relevant three point function we wish to compute is
+                           1
+            t2 · ω
+           <e    e >X
+                    e=             t2 · ω
+                             < s∗ (e    e ) >Ye = 2 < t2 · s∗ ω
+                                                              e >Ye = 4 < t2 · q ∗ ω >Ye .
+                           2
+                                         4
+Since the normal bundle of the diagonal TD is trivial, we see that the exceptional divisor
+D corresponding to t is just IP1 × TD
+                                    4
+                                      . The intersection is then
+
+                                  4                     4
+                            −8 < TD · q ∗ ω >Ye = −8 < TD · ω >Y .
+
+  4
+      We wish to thank D.-E. Diaconescu for explaining the following argument.
+
+                                                  18
+But this can now be readily computed: first it is easy to check that the contributions from
+                                                                  4
+the A and A∗ terms vanish because the forms themselves vanish on TD . The other terms
+yield the following integrality condition for half-integral G-flux,
+
+                                        128(B + C) ∈ ZZ.
+
+While this was derived for S 2 (T 4 ), the same condition can be seen to hold for the symmetric
+product of K3 in the orbifold limit.5
+      What remains is for us to find a solution to these integrality conditions, and here we
+meet a problem. Even the weaker condition (3.20) requires that one of ReA, B or C be
+integral. For example, we can choose
+
+                           A = a + ie
+                                    a,         B = b/2,          C = c/2,
+
+where a, e
+         a, b, c are integers, and where b, c are both even or both odd. However, the anomaly
+cancellation condition imposes the constraint:
+
+                                            b2 + c2  n   3
+                                a2 + e
+                                     a2 +           + =6+ .
+                                               4     2   4
+
+This condition cannot be satisfied! There is therefore no choice of flux of the form (3.11)
+which preserves supersymmetry in this example.
+      Lastly, we consider an example which gives N=2 supersymmetry in three dimensions.
+We quotient by,
+                                   g1 : (z 1 , z 2 )→(−z 1 , −z 2 )
+                                   g2 : (z 1 , z 3 )→(−z 1 , −z 3 )
+                                   g3 : (z 2 , z 4 )→(−z 2 , −z 4 ).
+
+  5
+      The symmetric product is a highly singular space. However, we can smooth the space by
+blowing up the symmetric product X = S 2 (K3) over the fixed locus. This amounts to replacing
+X by the Hilbert scheme of points K3[2] . See, for example, [22]. In a diagram analogous to (3.22),
+e = K3[2] and p : K3[2] →X. If we want p∗ (G/π) to be a primitive element of H 2,2 (K3[2] , ZZ), we
+X
+need to impose at least one additional condition on (3.11). The Kähler class of K3[2] has a term
+proportional to the class of the exceptional divisor. To ensure primitivity, we can require that
+G/π vanish on the fixed locus, which implies that B = C. This is a natural way to get a smooth
+hyperKähler compactification. We wish to thank L. Göttsche for pointing out this generalization.
+
+                                                  19
+The quotient group essentially inverts all possible pairs of tori. For this case, χ/24 = 28.
+The Hodge numbers are:
+
+               H 2,0 = 0,   H 1,1 = 100,     H 2,1 = 0,   H 3,1 = 4,   H 2,2 = 460.
+
+The integrality condition becomes,
+
+               1                                      1
+                 {ReA ± ReB ± ReC} ∈ ZZ,                {ImA ± ImB ± ImC} ∈ ZZ,            (3.23)
+               4                                      4
+
+with anomaly constraint,
+                                
+                               2 |A|2 + |B|2 + |C|2 + n = 28.                              (3.24)
+
+As a sample choice of G-flux, we can take
+
+                                 A = 2,        B = 2,     C = 0,
+
+which cancels the anomaly completely with n = 12 branes. To check that G/2π is integer,
+we need to check that it has integer periods over all integer homology cycles. For the
+untwisted sector cycles, this reduces to verifying (3.23), which is obvious. For the twisted
+sector cycles, it is easy to repeat the arguments presented for the previous T 8 /(ZZ2 )2
+example to show that all three point functions of type (3.15) vanish.
+
+3.3. An orientifold example
+
+     In a similar way, we can construct four-dimensional orientifold examples with constant
+fluxes. We start with an orbifold of the form T 6 /Γ. Again for simplicity let us take
+T 6 = T 2 × T 2 × T 2 with each factor rectangular and coordinates (z 1 , z 2 , z 3 ). We can view
+an orientifold of T 6 /Γ as a special point in the moduli space of F theory compactified on
+the elliptically-fibered four-fold [6],
+
+                                             T 6 /Γ × T 2
+                                          M=              ,
+                                                  ZZ2
+
+where the ZZ2 action inverts both z 3 and the coordinate, z 4 , of the fiber T 2 . This F theory
+compactification reduces to the orientifold of type IIB on T 6 /Γ by the action Ω(−1)FL ZZ2
+where the ZZ2 inverts z 3 . This action produces various O7-planes at complex codimension
+one fixed sets on T 6 . By adding D7-planes, we can cancel the O7-plane charge. Fixed
+
+                                                 20
+points under group elements in the product of Ω(−1)FL ZZ2 and Γ generate O3-planes. The
+total D3-brane tadpole is χ(M)/24.
+    As a specific example, we can take the following generators for Γ,
+
+                                         g1 : (z 1 , z 2 )→(−z 1 , −z 2 )
+                                         g2 : (z 1 , z 3 )→(−z 1 , −z 3 ).
+
+The resulting Calabi-Yau T 6 /Γ has Hodge numbers h1,1 = 51, h2,1 = 3. The associated
+four-fold M is the final example of section 3.2. This orientifold and its relation to F theory
+has been studied in [23,24]. To cancel the anomaly with 12 D3-branes, we can turn on the
+fluxes
+
+         H = A dz1 dz 2 dz 3 + A∗ dz 1 dz 2 dz 3 + B dz 1 dz 2 dz 3 + B ∗ dz 1 dz 2 dz 3 ,
+                                                                                                      (3.25)
+         H ′ = Ai dz 1 dz 2 dz 3 − A∗ i dz 1 dz 2 dz 3 − Bi dz 1 dz 2 dz 3 + B ∗ i dz 1 dz 2 dz 3 ,
+
+with the choice:
+                                             A = 2,          B = 2.
+
+It is interesting to note that the same four-fold can give rise to many different orientifolds
+depending on the choice of C and G-flux. This point will be explored more fully elsewhere.
+
+
+
+4. A Heterotic Compactification With Torsion
+
+    In this section, we will construct an example of a four-dimensional SO(32) heterotic
+string compactification with torsion. This particular example has either N=1 or N=2
+spacetime supersymmetry, depending on the choice of flux. We begin with type IIB com-
+pactified on an orientifold of K3 × T 2 . After a series of T and S dualities, we will arrive
+at our heterotic model.
+    The initial IIB supergravity metric is conformal to the metric on K3 × T 2 . The
+solution still possesses two isometries along the T 2 . Two T-dualities along the two circles
+of T 2 sends Ω(−1)FL ZZ2 to Ω [19]. In other words, it takes our F theory compactification
+with fluxes to a type I theory. In the subsequent discussion, we will specify the resulting
+type I background. If we choose to use only D3-branes and no background flux to cancel
+the anomaly, the resulting theory is type I on K3 × T 2 with 24 D5-branes wrapping the
+T 2 . With background fluxes, the result is quite different. We will find type I compactified
+on a space B′ with the following properties:
+
+                                                        21
+    1. It is a complex manifold which is not Kähler, or even conformally Calabi-Yau.
+    2. It has vanishing first Chern class.
+    3. It has a non-zero H ′ -flux.
+After a further S-duality, we end up with the SO(32) heterotic string compactified on B′
+with a non-zero H-flux.
+
+4.1. Mapping the parameters and couplings
+
+    Let us consider the orientifold of type IIB on K3 × T 2 with a square T 2 by the action
+Ω(−1)FL ZZ2 . The ZZ2 action sends z 1 → − z 1 where z 1 is the coordinate of the T 2 . This
+compactification is a special point in the moduli space of F theory on K3 × K3. Let the
+T 2 have sides of length R1 and R2 , and volume Ve = R1 R2 . We will take the K3 to have
+volume V . At the orientifold point, the ten-dimensional string coupling is a free parameter
+which we will take to be gB .
+    Two T-duality transformations along T 2 invert the radii in the usual way,
+
+                                              Ri → α′ /Ri ,
+
+where i = 1, 2. The resulting type I theory has the following couplings and volumes:
+                      p
+            (4)                    (10)
+           gI = gB / V Ve ,      gI = α′ gB /Ve ,      VeI = α′2 /Ve ,  VI = V.      (4.1)
+
+Here g (4) and g (10) denote the four and ten-dimensional couplings. The O7-planes and
+D7-branes are mapped to an O9 − D9 system. If, for simplicity, we assume a trivial seven-
+brane gauge-field configuration over K31 then the initial gauge group is SO(8)4 . The
+gauge-fields of the resulting O9 − D9 theory then have non-trivial Wilson lines. Under
+a further S-duality transformation, we get the heterotic SO(32) theory. The resulting
+couplings and volumes can again be written in terms of IIB variables,
+   (4)
+           p                   (10)
+  ghet =       gB /(V α′ ),   ghet = Ve /(gB α′ ),    Vehet = α′ /gB ,   Vhet = V Ve 2 /(gB
+                                                                                          2 ′2
+                                                                                            α ).   (4.2)
+
+    Our initial IIB supergravity description is valid in the limit where,
+
+                                        Ve /α′ , V /(α′ )2 >> 1.                                   (4.3)
+
+If we want a weakly coupled orientifold theory, we can also take gB to be small but that
+is not necessary. Under condition (4.3), both the heterotic and type I four-dimensional
+couplings can be made small. If gB is small, then an α′ expansion of the resulting heterotic
+string theory is a good approximation.
+
+                                                     22
+4.2. The type IIB solution
+
+    To obtain the type IIB supergravity metric, we begin with M theory on M = K31 ×
+T 4 /ZZ2 . If we choose a smooth K31 then our resulting type IIB metric will be smooth. We
+can also consider orbifold cases where K31 = T 4 /Γ where the metric is explicitly known.
+Otherwise, our resulting heterotic solution is given in terms of the metric of K31 . We
+will use coordinates wa for K31 . We again take T 4 = T 2 × T 2 with coordinates (z 1 , z 2 )
+and each factor square. Our initial M theory metric is then of the form (2.16) with g the
+metric on M. We can choose to completely or partially cancel the anomaly with G-flux
+satisfying,                            Z
+                                   1     G    G
+                                            ∧    + n = 24.
+                                   2   M 2π   2π
+Using arguments along the lines discussed in section 3, we can construct a G with the form
+
+               G
+                  = α ∧ dz 1 dz 2 + α∗ ∧ dz 1 dz 2 + β ∧ dz 1 dz 2 + β ∗ ∧ dz 1 dz 2 ,    (4.4)
+               2π
+
+where α ∈ H 1,1 (K31 ) and β ∈ H 2,0 (K31 ). Note that if β = 0, the model has N=2
+supersymmetry.
+    We treat the z 2 direction as the elliptic fiber, and lift this M theory vacuum to a type
+IIB orientifold of K31 × T 2 . The resulting background fluxes are given by,
+
+                         H = (α + β ∗ ) ∧ dz 1 + (α∗ + β) ∧ dz 1
+                                                                                          (4.5)
+                        H ′ = (τ̄ α + τ β ∗ ) ∧ dz 1 + (τ α∗ + τ̄ β) ∧ dz 1 .
+
+We note that H and H ′ can be expressed in the form,
+                                
+                         H = d Λα+β ∗ ∧ dz 1 + Λα∗ +β ∧ dz 1
+                                                                                         (4.6)
+                         H ′ = d Λτ̄ α+τ β ∗ ∧ dz 1 + Λτ α∗ +τ̄ β ∧ dz 1 .
+
+The potentials Λγ are not globally defined forms on the space K31 × T 2 , but satisfy
+dΛγ = γ.
+    In string frame, the type IIB supergravity metric has the form:
+                                                                
+                                               ∆′ ηµν     0
+                                                                                          (4.7)
+                                                 0       ∆ ge.
+
+The indices µ, ν = 0, . . . , 4 and ge is the metric of K31 × T 2 /ZZ2 . The warp factors ∆ and
+∆′ depend on the internal coordinates. We can determine ∆ and ∆′ in the following way.
+
+                                                    23
+Let us reduce from M theory to type IIA along a side of the elliptic fiber. The metric of
+the torus is warped,
+                                           eφ/2 dz 2 dz 2 .
+The resulting type IIA metric in string frame is given by [25],
+
+                                        gIIA = eφ/4 G(10) ,                               (4.8)
+
+where G(10) is the straight dimensional reduction of the M theory metric. Using the metric
+(2.16), we find that:
+                                      ∆ = (∆′ )−1 = e3φ/4 .                               (4.9)
+       Lastly, let us recall that the warp factor is determined by equation (2.5). There are
+three source terms on the right hand side of this equation. Both the X8 curvature term and
+the membrane term are suppressed by six powers of Mpl relative to the G ∧ G source term.
+To leading order in the derivative expansion, we can neglect the effect of both terms.6
+With the form of G-flux given in (4.4), the warp factor will have no dependence on (z 1 , z 2 )
+at the level of the supergravity solution.
+       We can see this directly in type IIB supergravity. The only non-vanishing component
+       +
+of D       is given by,
+                                      +
+                                     Dµνρλ = ǫµνρλ e−3φ/2 .
+The self-dual field strength F + given in (2.28) obeys [26],
+                                                     4
+                     +                 2 ′ 2     1 X
+                                ′
+                d ∗ F =H ∧ H + (4π α )                   tr(R ∧ R) δ 2 (z 1 − zi1 )
+                                               64π 2 i=1
+                             n                                                          (4.10)
+                            X
+                                  2 1    1 4
+                          +     δ (z − zj )δ (w − wj ) ,
+                             j=1
+
+where zi1 are the locations of the O7-plane plus four D7-branes, and (zj1 , wj ) are the
+locations of the D3-branes. From (4.10), we obtain an equation for the warp factor:
+                                                   4
+                     +               2 ′ 2     1 X
+                               ′
+               d ∗ dD =H ∧ H + (4π α )                 tr(R ∧ R) δ 2 (z 1 − zi1 )
+                                             64π 2 i=1
+                            n                                                     (4.11)
+                           X
+                                 2 1   1 4
+                         +     δ (z − zj )δ (w − wj ) .
+                              j=1
+
+  6
+      It is worth noting that there is an obstruction to solving the warp factor equation (2.5).
+However, if the anomaly cancellation condition (1.2) is satisfied then the obstruction vanishes.
+The X8 and membrane terms are then crucial for ensuring the existence of a solution for the warp
+factor.
+
+                                                 24
+Again the H ∧ H ′ term is constant in z 1 while the remaining source terms are suppressed
+by powers of α′ .
+
+4.3. Dualizing to a type I solution
+
+      To arrive at a type I solution, we T-dualize along both sides of the T 2 with coordinate
+z 1 = x1 + iy 1 . Using Buscher’s duality [27] and [28,29,30], we can express the type I metric
+                           I
+g I and RR two-form B ′ in terms of our initial type IIB quantities. Since H and H ′ can
+                                                    ′             ′
+be expressed in the form (4.6), we only have Bxa , Bxa and Bya , Bya components. The type
+I metric is then given by,7
+
+                           I                  1                1
+                          gab = ∆e
+                                 gab +            Bxa Bxb +        Bya Byb ,
+                                           ∆e gxx            ∆egyy
+                                     I      1             I        1
+                                    gxa =       Bxa ,    gya =         Bya ,            (4.12)
+                                          ∆egxx                  ∆egyy
+                                    I      1       I       1        I
+                                   gxx  =      , gyy  =        , gxy   = 0,
+                                          ∆e
+                                           gxx           ∆egyy
+where the a, b directions are along K31 . The type I dilaton is inversely proportional to the
+warp factor:
+                                             I      g
+                                           eφ =    p B       .                          (4.13)
+                                                  ∆ e
+                                                    gxx geyy
+        I
+The B ′ -field is given by,
+                           I      3n                       o
+                         B ′ ab =           ′
+                                      Bx[a Bby]     ′
+                                                − Bx[a            ′
+                                                       Bby] + 2Bx[a  Bb]y ,
+                                  2                                                     (4.14)
+                             I                  I                  I
+                         B ′ xa = Bay
+                                    ′
+                                      ,     B ′ ya = −Bax
+                                                        ′
+                                                          ,    B ′ xy = 0.
+
+Note that we have used the fact that D+ has no internal components in the above expres-
+sions. If we set either α or β to zero in (4.5), then one can check using the local expressions
+                               I
+(4.6) for B and B ′ that B ′ ab = 0.
+      Using coordinates wa for K31 , we can rewrite the type I metric in a way that makes
+the structure a little clearer:
+                                     1                  2   1                  2
+        ds2 = ∆e
+               gab dwa dwb +             (dx + Bxa dwa ) +      (dy + Bya dwa ) .       (4.15)
+                                    ∆e
+                                     gxx                   ∆e
+                                                            gyy
+
+The T 2 parametrized by x and y is now non-trivially twisted over the base K31 . By viewing
+Bxa dwa and Bya dwa as Kaluza-Klein gauge-fields, we see that the twisting is encoded in
+the characteristic classes of these gauge-fields on K31 .
+  7
+      We set 4π 2 α′ = 1 for the remainder of the paper.
+
+                                                   25
+    Since T-duality is a perturbative symmetry, we have arrived at a consistent type
+I background (4.12), (4.13) and (4.14). We can S-dualize to a perturbative heterotic
+compactification with dilaton,
+                                              1 p
+                                   eφhet =      ∆ e
+                                                  gxx geyy ,                            (4.16)
+                                             gB
+and string frame metric:                                           
+                                  1 p                ηµν      0
+                                      gxx geyy
+                                      e                                 .               (4.17)
+                                 gB                   0      ∆ gI
+                    I
+Under S-duality, B ′ → B het .
+    Torsional string compactifications satisfy a number of stringent constraints.          See
+[31,32,33,34,35] for a discussion of various aspects of torsional compactifications. As a
+final comment, we note that since our torsional vacuum is T-dual to an anomaly free ori-
+entifold, we can infer a great deal about the resulting metric and B-field. Our space should
+have trivial first Chern class. Since no SO(32) gauge-fields are excited, p1 (B′ ) must also
+be trivial in cohomology to satisfy the usual anomaly cancellation condition,
+                                                            1
+                            dH het = tr(R ∧ R) −              Tr(F ∧ F ).
+                                                           30
+This is not as implausible as it might first seem. In the E8 ×E8 heterotic dual to the original
+type IIB orientifold, p1 (K3) is cancelled by embedding instantons in some abelian gauge-
+fields. It seems reasonable that the instantons in the Kaluza-Klein gauge-fields Bxa dwa
+and Bya dwa could analogously cancel p1 (K3) in this case. Finally, it should be possible
+to show that the metric (4.17) and H het are derivable from a real prepotential, analogous
+to the Kähler potential [31].
+
+
+
+                                    Acknowledgements
+    It is our pleasure to thank S. Mukhi for early participation, and D. R. Morrison
+for late participation in this project. We are particularly grateful to D.-E. Diaconescu
+and D. R. Morrison for numerous suggestions and comments. We have also been aided
+by conversations with L. Göttsche, Z. Kakushadze, A. Klemm, M. Roček, A. Sen and E.
+Witten. The work of K.D. is supported in part by DOE Grant No. DE-FG02-90-ER40542.
+The work of R.G. is supported in part by NSF grant No. DMS-9627351 and by NSF Grant
+No. PHY94-07194, while that of S.S. is supported by the William Keck Foundation and
+by NSF grant No. PHY–9513835.
+
+                                                 26
+                                        References
+
+ [1]   C. Vafa, hep-th/9602022, Nucl. Phys. B469 (1996) 403.
+ [2]   S. Sethi, C. Vafa and E. Witten, hep-th/9606122, Nucl. Phys. B480 (1996) 213.
+ [3]   K. Becker and M. Becker, hep-th/9605053, Nucl. Phys. B477 (1996) 155.
+ [4]   K. Dasgupta and S. Mukhi, hep-th/9612188, Phys. Lett. B398 (1997) 285.
+ [5]   M. Bershadsky, M. Johansen, T. Pantev and V. Sadov, hep-th/9701165, Nucl. Phys.
+       B505 (1997) 165.
+ [6]   A. Sen, hep-th/9709159, Phys. Rev. D55 (1997) 7345.
+ [7]   M. Bershadsky and V. Sadov, hep-th/9703194, Nucl. Phys. B510 (1998) 232.
+ [8]   B. Greene and R. Plesser, Nucl. Phys. B338 (1990) 15.
+ [9]   R. Blumenhagen, R. Schimmrigk and A. Wisskirchen, hep-th/9609167, Nucl. Phys.
+       B486 (1997) 598.
+[10]   J. Polchinski and A. Strominger, hep-th/9510227, Phys. Lett. B388 (1996) 736.
+[11]   P. Candelas, L. Parkes, P. Green and X. de la Ossa, Nucl. Phys. B359 (1991) 21.
+[12]   M. Reid, Math. Ann. 274 (1987) 329.
+[13]   S. Gukov, C. Vafa and E. Witten, hep-th/9906070.
+[14]   C. Vafa and E. Witten, hep-th/9505053, Nucl. Phys. B447 (1995) 261.
+[15]   M. Duff, J. Liu and R. Minasian, hep-th/9506126, Nucl. Phys. B452 (1995) 261.
+[16]   E. Witten, hep-th/9609122, J. Geom. Phys. 22 (1997) 1.
+[17]   P. Griffiths and J. Harris, Principles of Algebraic Geometry, (John Wiley and Sons,
+       1978).
+[18]   D. R. Morrison and R. Plesser, hep-th/9810201, A.T.M.P. 3 (1999) 1.
+[19]   A. Sen, hep-th/9605150, Nucl. Phys. B475 (1996) 562.
+[20]   M. B. Green and S. Sethi, hep-th/9808061, Phys. Rev. D59 (1999) 46006.
+[21]   T. Shioda and H. Inose in Complex Analysis and Algebraic Geometry, ed. by W. Baily,
+       Jr. and T. Shioda, (Cambridge University Press, 1977).
+[22]   H. Nakajima, “Lectures on Hilbert Schemes of Points on Surfaces,” to appear.
+[23]   R. Gopakumar and S. Mukhi, hep-th/9607057, Nucl. Phys. B479 (1996) 260.
+[24]   Z. Kakushadze, G. Shiu and H. Tye, hep-th/9804092, Nucl. Phys. B533 (1998) 25; Z.
+       Kakushadze, hep-th/9904211.
+[25]   E. Witten, hep-th/9503124, Nucl. Phys. B443 (1995).
+[26]   K. Dasgupta, D. P. Jatkar and S. Mukhi, hep-th/9707224, Nucl. Phys. B523 (1998)
+       465.
+[27]   T. Buscher, Phys. Lett. B194 (1987) 59; B201 (1988) 466.
+[28]   E. Kiritsis, C. Kounnas and D. Lüst, hep-th/9308124, Int. J. Mod. Phys. A9 (1994)
+       1361.
+[29]   E. Bergshoeff, C. Hull and T. Ortin, hep-th/9504081, Nucl. Phys. B451 (1995) 547.
+
+                                             27
+[30] E. Bergshoeff, H. J. Boonstra and T. Ortin, hep-th/9508091, Phys. Rev. D53 (1996)
+     7206.
+[31] M. Roček in Essays on Mirror Manifolds vol. 1, ed. by S.-T. Yau, (International Press,
+     1992); S. Gates, C. Hull and M. Roček, Nucl. Phys. B248 (1984) 157.
+[32] E. Kiritsis, C. Kounnas and D. Lüst, hep-th/9312143, in Mirror Symmetry II, ed. by
+     B. Greene and S.-T. Yau, (AMS and International Press, 1997).
+[33] B. de Wit, D. Smit and N. Hari Dass, Nucl. Phys. B283 (1987) 165.
+[34] A. Strominger, Nucl. Phys. B274 (1986) 253.
+[35] C. Hull in Superunification and Extra Dimensions, ed. by R. D’Auria and P. Fré,
+     (World Scientific Publishing, 1986).
+
+
+
+
+                                             28
+

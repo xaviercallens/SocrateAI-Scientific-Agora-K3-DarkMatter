@@ -1,0 +1,4665 @@
+{
+ "certificate": "ATKIN_LEHNER_DISC_FORM",
+ "checker": "check_atkin_lehner_vs_disc_form.py",
+ "code_identity": "b636f08",
+ "date": "2026-09-21",
+ "families": {
+  "cooper_s10": {
+   "advisory": true,
+   "agrees_with_CM_POINTS_RHO20_certificate": true,
+   "candidate": "cooper_s10",
+   "comparison_working_dps": 150,
+   "every_listed_fixed_point_is_a_singular_point_of_L3": true,
+   "fixed_points": [
+    {
+     "D": -40,
+     "T_X_reduced": [
+      1,
+      0,
+      10
+     ],
+     "agrees_with_CM_POINTS_RHO20_certificate": true,
+     "div_v": 1,
+     "elements": [
+      {
+       "Q": 10,
+       "g": [
+        [
+         0,
+         -1
+        ],
+        [
+         10,
+         0
+        ]
+       ],
+       "multiplier_phi": 19,
+       "order": 2,
+       "order_of_phi_on_T": 2,
+       "phi_equals_minus_reflection": true
+      }
+     ],
+     "exponent_denominator_lcm_from_L3_RIEMANN_SCHEME": 2,
+     "fixed_by": {
+      "w10": [
+       2
+      ]
+     },
+     "multiplier_minus_reflection": 19,
+     "multiplier_reflection": 1,
+     "reflection_integral": true,
+     "stabiliser_order_found": 2,
+     "t_consistency_with_T1_certificate": {
+      "w10": {
+       "constraint": "t^2 = 1/16",
+       "counted_in_gate": true,
+       "holds": true
+      }
+     },
+     "t_numeric": "(0.25 + 0.0j)",
+     "tau_im_squared": "1/10",
+     "tau_re": "0",
+     "v": [
+      1,
+      -1,
+      0
+     ],
+     "v2": -2,
+     "z_locus": "1/16"
+    },
+    {
+     "D": -20,
+     "T_X_reduced": [
+      2,
+      2,
+      3
+     ],
+     "agrees_with_CM_POINTS_RHO20_certificate": true,
+     "div_v": 2,
+     "elements": [
+      {
+       "Q": 5,
+       "g": [
+        [
+         -5,
+         -3
+        ],
+        [
+         10,
+         5
+        ]
+       ],
+       "multiplier_phi": 9,
+       "order": 2,
+       "order_of_phi_on_T": 2,
+       "phi_equals_minus_reflection": true
+      }
+     ],
+     "exponent_denominator_lcm_from_L3_RIEMANN_SCHEME": 2,
+     "fixed_by": {
+      "w5": [
+       2
+      ]
+     },
+     "multiplier_minus_reflection": 9,
+     "multiplier_reflection": 11,
+     "reflection_integral": true,
+     "stabiliser_order_found": 2,
+     "t_consistency_with_T1_certificate": {
+      "w5": {
+       "constraint": "t -> 1 t: no constraint on t at a fixed point (checked instead: closure of the t-set, family level)",
+       "counted_in_gate": false,
+       "holds": true
+      }
+     },
+     "t_numeric": "(-0.09549150281252628794885329 - 1.214556249999155698794323e-147j)",
+     "tau_im_squared": "1/20",
+     "tau_re": "-1/2",
+     "v": [
+      2,
+      -6,
+      -1
+     ],
+     "v2": -4,
+     "z_locus": "-1/4"
+    },
+    {
+     "D": -20,
+     "T_X_reduced": [
+      2,
+      2,
+      3
+     ],
+     "agrees_with_CM_POINTS_RHO20_certificate": true,
+     "div_v": 2,
+     "elements": [
+      {
+       "Q": 5,
+       "g": [
+        [
+         5,
+         -3
+        ],
+        [
+         10,
+         -5
+        ]
+       ],
+       "multiplier_phi": 9,
+       "order": 2,
+       "order_of_phi_on_T": 2,
+       "phi_equals_minus_reflection": true
+      }
+     ],
+     "exponent_denominator_lcm_from_L3_RIEMANN_SCHEME": 2,
+     "fixed_by": {
+      "w5": [
+       2
+      ]
+     },
+     "multiplier_minus_reflection": 9,
+     "multiplier_reflection": 11,
+     "reflection_integral": true,
+     "stabiliser_order_found": 2,
+     "t_consistency_with_T1_certificate": {
+      "w5": {
+       "constraint": "t -> 1 t: no constraint on t at a fixed point (checked instead: closure of the t-set, family level)",
+       "counted_in_gate": false,
+       "holds": true
+      }
+     },
+     "t_numeric": "(-0.09549150281252628794885329 + 1.214556249999155698794323e-147j)",
+     "tau_im_squared": "1/20",
+     "tau_re": "1/2",
+     "v": [
+      2,
+      -6,
+      1
+     ],
+     "v2": -4,
+     "z_locus": "-1/4"
+    },
+    {
+     "D": -20,
+     "T_X_reduced": [
+      2,
+      2,
+      3
+     ],
+     "agrees_with_CM_POINTS_RHO20_certificate": true,
+     "div_v": 2,
+     "elements": [
+      {
+       "Q": 5,
+       "g": [
+        [
+         -5,
+         -1
+        ],
+        [
+         30,
+         5
+        ]
+       ],
+       "multiplier_phi": 9,
+       "order": 2,
+       "order_of_phi_on_T": 2,
+       "phi_equals_minus_reflection": true
+      }
+     ],
+     "exponent_denominator_lcm_from_L3_RIEMANN_SCHEME": 2,
+     "fixed_by": {
+      "w5": [
+       2
+      ]
+     },
+     "multiplier_minus_reflection": 9,
+     "multiplier_reflection": 11,
+     "reflection_integral": true,
+     "stabiliser_order_found": 2,
+     "t_consistency_with_T1_certificate": {
+      "w5": {
+       "constraint": "t -> 1 t: no constraint on t at a fixed point (checked instead: closure of the t-set, family level)",
+       "counted_in_gate": false,
+       "holds": true
+      }
+     },
+     "t_numeric": "(-0.6545084971874737120511467 + 5.484838602962581438854144e-146j)",
+     "tau_im_squared": "1/180",
+     "tau_re": "-1/6",
+     "v": [
+      6,
+      -2,
+      -1
+     ],
+     "v2": -4,
+     "z_locus": "-1/4"
+    },
+    {
+     "D": -20,
+     "T_X_reduced": [
+      2,
+      2,
+      3
+     ],
+     "agrees_with_CM_POINTS_RHO20_certificate": true,
+     "div_v": 2,
+     "elements": [
+      {
+       "Q": 5,
+       "g": [
+        [
+         5,
+         -1
+        ],
+        [
+         30,
+         -5
+        ]
+       ],
+       "multiplier_phi": 9,
+       "order": 2,
+       "order_of_phi_on_T": 2,
+       "phi_equals_minus_reflection": true
+      }
+     ],
+     "exponent_denominator_lcm_from_L3_RIEMANN_SCHEME": 2,
+     "fixed_by": {
+      "w5": [
+       2
+      ]
+     },
+     "multiplier_minus_reflection": 9,
+     "multiplier_reflection": 11,
+     "reflection_integral": true,
+     "stabiliser_order_found": 2,
+     "t_consistency_with_T1_certificate": {
+      "w5": {
+       "constraint": "t -> 1 t: no constraint on t at a fixed point (checked instead: closure of the t-set, family level)",
+       "counted_in_gate": false,
+       "holds": true
+      }
+     },
+     "t_numeric": "(-0.6545084971874737120511467 - 5.484838602962581438854144e-146j)",
+     "tau_im_squared": "1/180",
+     "tau_re": "1/6",
+     "v": [
+      6,
+      -2,
+      1
+     ],
+     "v2": -4,
+     "z_locus": "-1/4"
+    },
+    {
+     "D": -4,
+     "T_X_reduced": [
+      1,
+      0,
+      1
+     ],
+     "agrees_with_CM_POINTS_RHO20_certificate": true,
+     "div_v": 10,
+     "elements": [
+      {
+       "Q": 2,
+       "g": [
+        [
+         -2,
+         -1
+        ],
+        [
+         10,
+         4
+        ]
+       ],
+       "g_squared_is_in_Gamma0_n_up_to_scalar": true,
+       "multiplier_phi": 11,
+       "order": 4,
+       "order_of_phi_on_T": 4,
+       "phi_equals_minus_reflection": false,
+       "phi_squared_equals_minus_reflection": true
+      },
+      {
+       "Q": 2,
+       "g": [
+        [
+         -4,
+         -1
+        ],
+        [
+         10,
+         2
+        ]
+       ],
+       "g_squared_is_in_Gamma0_n_up_to_scalar": true,
+       "multiplier_phi": 11,
+       "order": 4,
+       "order_of_phi_on_T": 4,
+       "phi_equals_minus_reflection": false,
+       "phi_squared_equals_minus_reflection": true
+      }
+     ],
+     "exponent_denominator_lcm_from_L3_RIEMANN_SCHEME": 4,
+     "fixed_by": {
+      "w2": [
+       4
+      ]
+     },
+     "multiplier_minus_reflection": 1,
+     "multiplier_reflection": 19,
+     "reflection_integral": true,
+     "stabiliser_order_found": 4,
+     "t_consistency_with_T1_certificate": {
+      "w2": {
+       "constraint": "t^2 = 1/16",
+       "counted_in_gate": true,
+       "holds": true
+      }
+     },
+     "t_numeric": "(-0.25 - 4.359216737046882796800598e-147j)",
+     "tau_im_squared": "1/100",
+     "tau_re": "-3/10",
+     "v": [
+      10,
+      -10,
+      -3
+     ],
+     "v2": -20,
+     "z_locus": "infinity"
+    },
+    {
+     "D": -4,
+     "T_X_reduced": [
+      1,
+      0,
+      1
+     ],
+     "agrees_with_CM_POINTS_RHO20_certificate": true,
+     "div_v": 10,
+     "elements": [
+      {
+       "Q": 2,
+       "g": [
+        [
+         4,
+         -1
+        ],
+        [
+         10,
+         -2
+        ]
+       ],
+       "g_squared_is_in_Gamma0_n_up_to_scalar": true,
+       "multiplier_phi": 11,
+       "order": 4,
+       "order_of_phi_on_T": 4,
+       "phi_equals_minus_reflection": false,
+       "phi_squared_equals_minus_reflection": true
+      },
+      {
+       "Q": 2,
+       "g": [
+        [
+         2,
+         -1
+        ],
+        [
+         10,
+         -4
+        ]
+       ],
+       "g_squared_is_in_Gamma0_n_up_to_scalar": true,
+       "multiplier_phi": 11,
+       "order": 4,
+       "order_of_phi_on_T": 4,
+       "phi_equals_minus_reflection": false,
+       "phi_squared_equals_minus_reflection": true
+      }
+     ],
+     "exponent_denominator_lcm_from_L3_RIEMANN_SCHEME": 4,
+     "fixed_by": {
+      "w2": [
+       4
+      ]
+     },
+     "multiplier_minus_reflection": 1,
+     "multiplier_reflection": 19,
+     "reflection_integral": true,
+     "stabiliser_order_found": 4,
+     "t_consistency_with_T1_certificate": {
+      "w2": {
+       "constraint": "t^2 = 1/16",
+       "counted_in_gate": true,
+       "holds": true
+      }
+     },
+     "t_numeric": "(-0.25 + 4.359216737046882796800598e-147j)",
+     "tau_im_squared": "1/100",
+     "tau_re": "3/10",
+     "v": [
+      10,
+      -10,
+      3
+     ],
+     "v2": -20,
+     "z_locus": "infinity"
+    }
+   ],
+   "flags": [
+    "LATTICE_CERT_DRAFT"
+   ],
+   "group": "Gamma_0(10)*",
+   "lattice_cert": "C2_cooper_s10_v4_DRAFT.json",
+   "lattice_cert_status": "DRAFT",
+   "loci_fixed_by": {
+    "w10": [
+     "1/16"
+    ],
+    "w2": [
+     "infinity"
+    ],
+    "w5": [
+     "-1/4"
+    ]
+   },
+   "loci_from_C1_cert": [
+    "-1/4",
+    "1/16"
+   ],
+   "n": 10,
+   "stabiliser_orders_match_L3_riemann_scheme": true,
+   "sweep": {
+    "O_qA": [
+     1,
+     9,
+     11,
+     19
+    ],
+    "exact_divisors": [
+     1,
+     2,
+     5,
+     10
+    ],
+    "fricke_maps_to_minus_one": true,
+    "image_equals_O_qA_as_sets": true,
+    "injective_into_O_qA": true,
+    "injective_modulo_pm1": false,
+    "kernel_modulo_pm1": [
+     1,
+     10
+    ],
+    "map_Q_to_m": {
+     "1": 1,
+     "10": 19,
+     "2": 11,
+     "5": 9
+    },
+    "n": 10,
+    "reflection_lift_pairs_failing_in_O_qA": 0,
+    "reflection_lift_pairs_tested": 0,
+    "representatives_per_class": 9,
+    "rows": [
+     {
+      "Q": 1,
+      "fixed_point_in_H_exists": null,
+      "multiplier_phi": 1,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        1,
+        0
+       ],
+       [
+        10,
+        1
+       ]
+      ],
+      "trace0_representative_exists": false
+     },
+     {
+      "Q": 2,
+      "fixed_point_in_H_exists": true,
+      "multiplier_phi": 11,
+      "order_4_or_6_representative_exists": true,
+      "representative": [
+       [
+        2,
+        1
+       ],
+       [
+        10,
+        6
+       ]
+      ],
+      "trace0_representative_exists": false
+     },
+     {
+      "Q": 5,
+      "fixed_point_in_H_exists": true,
+      "fixed_vector": [
+       2,
+       -6,
+       1
+      ],
+      "multiplier_phi": 9,
+      "multiplier_reflection": 11,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        5,
+        2
+       ],
+       [
+        10,
+        5
+       ]
+      ],
+      "trace0_element": [
+       [
+        5,
+        -3
+       ],
+       [
+        10,
+        -5
+       ]
+      ],
+      "trace0_representative_exists": true,
+      "v2": -4
+     },
+     {
+      "Q": 10,
+      "fixed_point_in_H_exists": true,
+      "fixed_vector": [
+       1,
+       -1,
+       0
+      ],
+      "multiplier_phi": 19,
+      "multiplier_reflection": 1,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        10,
+        9
+       ],
+       [
+        10,
+        10
+       ]
+      ],
+      "trace0_element": [
+       [
+        0,
+        -1
+       ],
+       [
+        10,
+        0
+       ]
+      ],
+      "trace0_representative_exists": true,
+      "v2": -2
+     }
+    ],
+    "rule_minus1_mod_2Q_plus1_mod_2n_over_Q_holds": true
+   },
+   "t_closure_checks": {
+    "t-set of w10 fixed points closed under t -> 1/16/t (w10)": true,
+    "t-set of w10 fixed points closed under t -> 1/16/t (w2)": true,
+    "t-set of w2 fixed points closed under t -> 1/16/t (w10)": true,
+    "t-set of w2 fixed points closed under t -> 1/16/t (w2)": true,
+    "t-set of w5 fixed points closed under t -> 1/16/t (w10)": true,
+    "t-set of w5 fixed points closed under t -> 1/16/t (w2)": true
+   },
+   "t_consistent_with_T1_certificate": true,
+   "t_constraints_counted_in_gate": 3,
+   "t_transform_constants": {
+    "w10": [
+     "anti",
+     "1/16"
+    ],
+    "w2": [
+     "anti",
+     "1/16"
+    ],
+    "w5": [
+     "inv",
+     "1"
+    ]
+   }
+  },
+  "cooper_s7": {
+   "advisory": false,
+   "agrees_with_CM_POINTS_RHO20_certificate": true,
+   "candidate": "cooper_s7",
+   "comparison_working_dps": 150,
+   "every_listed_fixed_point_is_a_singular_point_of_L3": true,
+   "fixed_points": [
+    {
+     "D": -28,
+     "T_X_reduced": [
+      1,
+      0,
+      7
+     ],
+     "agrees_with_CM_POINTS_RHO20_certificate": true,
+     "div_v": 1,
+     "elements": [
+      {
+       "Q": 7,
+       "g": [
+        [
+         0,
+         -1
+        ],
+        [
+         7,
+         0
+        ]
+       ],
+       "multiplier_phi": 13,
+       "order": 2,
+       "order_of_phi_on_T": 2,
+       "phi_equals_minus_reflection": true
+      }
+     ],
+     "exponent_denominator_lcm_from_L3_RIEMANN_SCHEME": 2,
+     "fixed_by": {
+      "w7": [
+       2
+      ]
+     },
+     "multiplier_minus_reflection": 13,
+     "multiplier_reflection": 1,
+     "reflection_integral": true,
+     "stabiliser_order_found": 2,
+     "t_consistency_with_T1_certificate": {
+      "w7": {
+       "constraint": "t^2 = 1/49",
+       "counted_in_gate": true,
+       "holds": true
+      }
+     },
+     "t_numeric": "(0.1428571428571428571428571 + 0.0j)",
+     "tau_im_squared": "1/7",
+     "tau_re": "0",
+     "v": [
+      1,
+      -1,
+      0
+     ],
+     "v2": -2,
+     "z_locus": "1/27"
+    },
+    {
+     "D": -7,
+     "T_X_reduced": [
+      1,
+      1,
+      2
+     ],
+     "agrees_with_CM_POINTS_RHO20_certificate": true,
+     "div_v": 2,
+     "elements": [
+      {
+       "Q": 7,
+       "g": [
+        [
+         -7,
+         -4
+        ],
+        [
+         14,
+         7
+        ]
+       ],
+       "multiplier_phi": 13,
+       "order": 2,
+       "order_of_phi_on_T": 2,
+       "phi_equals_minus_reflection": true
+      }
+     ],
+     "exponent_denominator_lcm_from_L3_RIEMANN_SCHEME": 2,
+     "fixed_by": {
+      "w7": [
+       2
+      ]
+     },
+     "multiplier_minus_reflection": 13,
+     "multiplier_reflection": 1,
+     "reflection_integral": true,
+     "stabiliser_order_found": 2,
+     "t_consistency_with_T1_certificate": {
+      "w7": {
+       "constraint": "t^2 = 1/49",
+       "counted_in_gate": true,
+       "holds": true
+      }
+     },
+     "t_numeric": "(-0.1428571428571428571428571 + 1.020836056925008136251142e-147j)",
+     "tau_im_squared": "1/28",
+     "tau_re": "-1/2",
+     "v": [
+      2,
+      -4,
+      -1
+     ],
+     "v2": -2,
+     "z_locus": "-1"
+    },
+    {
+     "D": -7,
+     "T_X_reduced": [
+      1,
+      1,
+      2
+     ],
+     "agrees_with_CM_POINTS_RHO20_certificate": true,
+     "div_v": 2,
+     "elements": [
+      {
+       "Q": 7,
+       "g": [
+        [
+         7,
+         -4
+        ],
+        [
+         14,
+         -7
+        ]
+       ],
+       "multiplier_phi": 13,
+       "order": 2,
+       "order_of_phi_on_T": 2,
+       "phi_equals_minus_reflection": true
+      }
+     ],
+     "exponent_denominator_lcm_from_L3_RIEMANN_SCHEME": 2,
+     "fixed_by": {
+      "w7": [
+       2
+      ]
+     },
+     "multiplier_minus_reflection": 13,
+     "multiplier_reflection": 1,
+     "reflection_integral": true,
+     "stabiliser_order_found": 2,
+     "t_consistency_with_T1_certificate": {
+      "w7": {
+       "constraint": "t^2 = 1/49",
+       "counted_in_gate": true,
+       "holds": true
+      }
+     },
+     "t_numeric": "(-0.1428571428571428571428571 - 1.020836056925008136251142e-147j)",
+     "tau_im_squared": "1/28",
+     "tau_re": "1/2",
+     "v": [
+      2,
+      -4,
+      1
+     ],
+     "v2": -2,
+     "z_locus": "-1"
+    },
+    {
+     "D": -7,
+     "T_X_reduced": [
+      1,
+      1,
+      2
+     ],
+     "agrees_with_CM_POINTS_RHO20_certificate": true,
+     "div_v": 2,
+     "elements": [
+      {
+       "Q": 7,
+       "g": [
+        [
+         -7,
+         -2
+        ],
+        [
+         28,
+         7
+        ]
+       ],
+       "multiplier_phi": 13,
+       "order": 2,
+       "order_of_phi_on_T": 2,
+       "phi_equals_minus_reflection": true
+      }
+     ],
+     "exponent_denominator_lcm_from_L3_RIEMANN_SCHEME": 2,
+     "fixed_by": {
+      "w7": [
+       2
+      ]
+     },
+     "multiplier_minus_reflection": 13,
+     "multiplier_reflection": 1,
+     "reflection_integral": true,
+     "stabiliser_order_found": 2,
+     "t_consistency_with_T1_certificate": {
+      "w7": {
+       "constraint": "t^2 = 1/49",
+       "counted_in_gate": true,
+       "holds": true
+      }
+     },
+     "t_numeric": "(-0.1428571428571428571428571 - 8.279414753382064863421381e-147j)",
+     "tau_im_squared": "1/112",
+     "tau_re": "-1/4",
+     "v": [
+      4,
+      -2,
+      -1
+     ],
+     "v2": -2,
+     "z_locus": "-1"
+    },
+    {
+     "D": -7,
+     "T_X_reduced": [
+      1,
+      1,
+      2
+     ],
+     "agrees_with_CM_POINTS_RHO20_certificate": true,
+     "div_v": 2,
+     "elements": [
+      {
+       "Q": 7,
+       "g": [
+        [
+         7,
+         -2
+        ],
+        [
+         28,
+         -7
+        ]
+       ],
+       "multiplier_phi": 13,
+       "order": 2,
+       "order_of_phi_on_T": 2,
+       "phi_equals_minus_reflection": true
+      }
+     ],
+     "exponent_denominator_lcm_from_L3_RIEMANN_SCHEME": 2,
+     "fixed_by": {
+      "w7": [
+       2
+      ]
+     },
+     "multiplier_minus_reflection": 13,
+     "multiplier_reflection": 1,
+     "reflection_integral": true,
+     "stabiliser_order_found": 2,
+     "t_consistency_with_T1_certificate": {
+      "w7": {
+       "constraint": "t^2 = 1/49",
+       "counted_in_gate": true,
+       "holds": true
+      }
+     },
+     "t_numeric": "(-0.1428571428571428571428571 + 8.279414753382064863421381e-147j)",
+     "tau_im_squared": "1/112",
+     "tau_re": "1/4",
+     "v": [
+      4,
+      -2,
+      1
+     ],
+     "v2": -2,
+     "z_locus": "-1"
+    }
+   ],
+   "flags": [],
+   "group": "Gamma_0(7)+",
+   "lattice_cert": "C2_cooper_s7_v5.json",
+   "lattice_cert_status": "LIVE",
+   "loci_fixed_by": {
+    "w7": [
+     "-1",
+     "1/27"
+    ]
+   },
+   "loci_from_C1_cert": [
+    "-1",
+    "1/27"
+   ],
+   "n": 7,
+   "stabiliser_orders_match_L3_riemann_scheme": true,
+   "sweep": {
+    "O_qA": [
+     1,
+     13
+    ],
+    "exact_divisors": [
+     1,
+     7
+    ],
+    "fricke_maps_to_minus_one": true,
+    "image_equals_O_qA_as_sets": true,
+    "injective_into_O_qA": true,
+    "injective_modulo_pm1": false,
+    "kernel_modulo_pm1": [
+     1,
+     7
+    ],
+    "map_Q_to_m": {
+     "1": 1,
+     "7": 13
+    },
+    "n": 7,
+    "reflection_lift_pairs_failing_in_O_qA": 0,
+    "reflection_lift_pairs_tested": 0,
+    "representatives_per_class": 9,
+    "rows": [
+     {
+      "Q": 1,
+      "fixed_point_in_H_exists": null,
+      "multiplier_phi": 1,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        1,
+        0
+       ],
+       [
+        7,
+        1
+       ]
+      ],
+      "trace0_representative_exists": false
+     },
+     {
+      "Q": 7,
+      "fixed_point_in_H_exists": true,
+      "fixed_vector": [
+       1,
+       -1,
+       0
+      ],
+      "multiplier_phi": 13,
+      "multiplier_reflection": 1,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        7,
+        6
+       ],
+       [
+        7,
+        7
+       ]
+      ],
+      "trace0_element": [
+       [
+        0,
+        -1
+       ],
+       [
+        7,
+        0
+       ]
+      ],
+      "trace0_representative_exists": true,
+      "v2": -2
+     }
+    ],
+    "rule_minus1_mod_2Q_plus1_mod_2n_over_Q_holds": true
+   },
+   "t_closure_checks": {
+    "t-set of w7 fixed points closed under t -> 1/49/t (w7)": true
+   },
+   "t_consistent_with_T1_certificate": true,
+   "t_constraints_counted_in_gate": 5,
+   "t_transform_constants": {
+    "w7": [
+     "anti",
+     "1/49"
+    ]
+   }
+  }
+ },
+ "findings": {
+  "map": "w_Q -> multiplier of phi_{w_Q} on A is a group isomorphism W(n) -> O(q_A) for every n in 1..30 (exact at each n; PASS(30) as a statement over n); Fricke w_n -> -1",
+  "monodromy_realises": "on the loop side only the multipliers listed in monodromy_leg.*.multipliers_seen occur; a loop is matched to an Atkin-Lehner class only modulo +-1 (for s10, 11 = m(w_2) = -m(w_5))",
+  "s10_monodromy_acts_nontrivially_on_A_mod_pm1": true,
+  "s7_monodromy_acts_trivially_on_A_mod_pm1": true,
+  "sign": "into O(q_A)/{+-1} the map is NOT injective for n > 1: its kernel is {1, w_n}. The reflection lift w_Q -> r_v has multiplier -m_Q and is a homomorphism only modulo +-1"
+ },
+ "gates": {
+  "F_agrees_with_CM_POINTS_RHO20_certificate": true,
+  "F_every_listed_fixed_point_is_a_singular_point_of_L3": true,
+  "F_stabiliser_orders_match_L3_riemann_scheme": true,
+  "F_t_consistent_with_T1_certificates": true,
+  "M_monodromy_reflections_agree_with_fixed_point_reflections": true,
+  "W_fricke_maps_to_minus_one_for_every_n": true,
+  "W_image_equals_O_qA_for_every_n": true,
+  "W_injective_into_O_qA_for_every_n": true,
+  "W_kernel_modulo_pm1_is_1_and_fricke": true
+ },
+ "hand_estimate_scored": {
+  "builder_prior_expectation": {
+   "clauses": {
+    "each of the three s10 loci is the fixed point of an Atkin-Lehner INVOLUTION whose lattice image is the reflection in the listed vector": "REFUTED"
+   },
+   "source": "builder's own working expectation; NOT in the orchestrator's estimate, which left the locus-to-w_Q assignment to be determined"
+  },
+  "clauses": {
+   "O(q_A) at n = 10 is {1, 9, 11, 19}": "confirmed",
+   "n = 10: the three vectors give reflection multipliers 1, 11, 19": "confirmed",
+   "n = 10: with -1 they generate all of O(q_A)": "confirmed",
+   "rule: w_Q acts by -1 on the Q-part and +1 on the rest (exactly: -1 mod 2Q, +1 mod 2n/Q), up to the global sign": "confirmed",
+   "the map is a group homomorphism compatible with w_2 w_5 = w_10": "confirmed",
+   "the map is injective modulo +-1": "REFUTED"
+  },
+  "determined_which_w_Q_fixes_which_locus": {
+   "w10": [
+    "1/16"
+   ],
+   "w2": [
+    "infinity"
+   ],
+   "w5": [
+    "-1/4"
+   ]
+  },
+  "reflection_multipliers_computed": [
+   1,
+   11,
+   19
+  ],
+  "source": "orchestrator's hand estimate, issued UNVERIFIED"
+ },
+ "implied_not_gated": {
+  "M_product_multiplier_is_in_image_of_W": true
+ },
+ "inputs": {
+  "note": "docs/literature/MANIFEST.md is deliberately NOT pinned here: no number in this certificate is computed from it, and it was modified and uncommitted in the working tree at emit time. code_identity is the HEAD at emit, which predates this checker; the checker and its controls are identified by the self-hashes below.",
+  "sha256": {
+   "checkers/check_CM_points_rho20.py": "f7dd388f53454d7e4e32ff552a4c3e3d62429390f6a6bd529fa5529449a7e62c",
+   "checkers/check_T3_level_consistency.py": "62db82b635a863170199b7fba2ba39462ecd123593a6f7f38ff044ce3cffd296",
+   "checkers/check_U1_lattice.py": "d75bbb7719f37d85ef19df3f99fd635992ae8dc20ebb6c66044518e08de3583f",
+   "checkers/check_atkin_lehner_vs_disc_form.py": "198b5df51892c2572ed38e66f86706c34074f3620cc0aaaf6c92a6a3b49fee1e",
+   "checkers/check_s10_hauptmodul_gamma010star.py": "3f8d034460d7d5b310cca0448bda9e8ebf44f8b50164a68651dc88e411fcc995",
+   "checkers/test_atkin_lehner_vs_disc_form_controls.py": "2d67af5a883387953127b415f64ae9e23e7d745a250cf881b373627d17d9a26b",
+   "data/certificates/C1_L3_cooper_s10.json": "503cfe63b7d20d78c53344ee091e4b39517bd2966181c1ff38a45e21f44721e8",
+   "data/certificates/C1_L3_cooper_s7.json": "c9d82f76bef8eee279ce91540a2b7cfddd98d79965162e8598b29aee458edbfc",
+   "data/certificates/C2_cooper_s10_v4_DRAFT.json": "3558343b84751a0682cadc985a76272b50d7bc98b0f2d0f44a9c46edf9ae57ac",
+   "data/certificates/C2_cooper_s7_v5.json": "54565d3919f1bd5592618e8fd1cbfe7d807a29d010d99c308641bc5d253730f3",
+   "data/certificates/CM_POINTS_RHO20.json": "328add3fb9864bc09ab20d050c73d36c7fb71d514eab138a8a8fc1feff4e625d",
+   "data/certificates/HAUPTMODUL_S10_GAMMA010STAR.json": "8cd79878b7d4828c44ef15e4881b2cf35a1344ded9057b3dd20458da5aca1e40",
+   "data/certificates/HAUPTMODUL_S7_GAMMA07PLUS.json": "c1f7bb0798eac4a3eac5aced9f535c3826444bd3bbd33592f4460b2cc73adcc1",
+   "data/certificates/L3_RIEMANN_SCHEME.json": "b15dc064214b55685c892ac6de7fd751b72945b97defad9f151cf8c8007bf151",
+   "refs/recurrences_v1.json": "f6c7ee9e34ba2c9b8d8132c6aa9109db951ab696de09f23aab3ef03ce8679a76"
+  }
+ },
+ "leg_O": {
+  "congruence_equals_bruteforce_everywhere": true,
+  "control_mod_2n_instead_of_4n_disagrees_at": [
+   4,
+   8,
+   12,
+   16,
+   20,
+   24,
+   28
+  ],
+  "n_range": [
+   1,
+   30
+  ]
+ },
+ "leg_W_sweep": {
+  "n_range": [
+   1,
+   30
+  ],
+  "pairs_n_Q_without_any_fixed_point_in_H": [
+   [
+    12,
+    4
+   ],
+   [
+    14,
+    2
+   ],
+   [
+    15,
+    3
+   ],
+   [
+    20,
+    5
+   ],
+   [
+    21,
+    7
+   ],
+   [
+    24,
+    3
+   ],
+   [
+    28,
+    4
+   ],
+   [
+    30,
+    2
+   ],
+   [
+    30,
+    3
+   ],
+   [
+    30,
+    10
+   ]
+  ],
+  "pairs_n_Q_without_trace0_representative": [
+   [
+    10,
+    2
+   ],
+   [
+    12,
+    4
+   ],
+   [
+    14,
+    2
+   ],
+   [
+    15,
+    3
+   ],
+   [
+    20,
+    5
+   ],
+   [
+    21,
+    7
+   ],
+   [
+    24,
+    3
+   ],
+   [
+    26,
+    2
+   ],
+   [
+    28,
+    4
+   ],
+   [
+    30,
+    2
+   ],
+   [
+    30,
+    3
+   ],
+   [
+    30,
+    10
+   ]
+  ],
+  "per_n": [
+   {
+    "O_qA": [
+     1
+    ],
+    "exact_divisors": [
+     1
+    ],
+    "fricke_maps_to_minus_one": true,
+    "image_equals_O_qA_as_sets": true,
+    "injective_into_O_qA": true,
+    "injective_modulo_pm1": true,
+    "kernel_modulo_pm1": [
+     1
+    ],
+    "map_Q_to_m": {
+     "1": 1
+    },
+    "n": 1,
+    "reflection_lift_pairs_failing_in_O_qA": 0,
+    "reflection_lift_pairs_tested": 0,
+    "representatives_per_class": 9,
+    "rows": [
+     {
+      "Q": 1,
+      "fixed_point_in_H_exists": null,
+      "multiplier_phi": 1,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        1,
+        0
+       ],
+       [
+        1,
+        1
+       ]
+      ],
+      "trace0_representative_exists": false
+     }
+    ],
+    "rule_minus1_mod_2Q_plus1_mod_2n_over_Q_holds": true
+   },
+   {
+    "O_qA": [
+     1,
+     3
+    ],
+    "exact_divisors": [
+     1,
+     2
+    ],
+    "fricke_maps_to_minus_one": true,
+    "image_equals_O_qA_as_sets": true,
+    "injective_into_O_qA": true,
+    "injective_modulo_pm1": false,
+    "kernel_modulo_pm1": [
+     1,
+     2
+    ],
+    "map_Q_to_m": {
+     "1": 1,
+     "2": 3
+    },
+    "n": 2,
+    "reflection_lift_pairs_failing_in_O_qA": 0,
+    "reflection_lift_pairs_tested": 0,
+    "representatives_per_class": 9,
+    "rows": [
+     {
+      "Q": 1,
+      "fixed_point_in_H_exists": null,
+      "multiplier_phi": 1,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        1,
+        0
+       ],
+       [
+        2,
+        1
+       ]
+      ],
+      "trace0_representative_exists": false
+     },
+     {
+      "Q": 2,
+      "fixed_point_in_H_exists": true,
+      "fixed_vector": [
+       1,
+       -1,
+       0
+      ],
+      "multiplier_phi": 3,
+      "multiplier_reflection": 1,
+      "order_4_or_6_representative_exists": true,
+      "representative": [
+       [
+        2,
+        1
+       ],
+       [
+        2,
+        2
+       ]
+      ],
+      "trace0_element": [
+       [
+        0,
+        -1
+       ],
+       [
+        2,
+        0
+       ]
+      ],
+      "trace0_representative_exists": true,
+      "v2": -2
+     }
+    ],
+    "rule_minus1_mod_2Q_plus1_mod_2n_over_Q_holds": true
+   },
+   {
+    "O_qA": [
+     1,
+     5
+    ],
+    "exact_divisors": [
+     1,
+     3
+    ],
+    "fricke_maps_to_minus_one": true,
+    "image_equals_O_qA_as_sets": true,
+    "injective_into_O_qA": true,
+    "injective_modulo_pm1": false,
+    "kernel_modulo_pm1": [
+     1,
+     3
+    ],
+    "map_Q_to_m": {
+     "1": 1,
+     "3": 5
+    },
+    "n": 3,
+    "reflection_lift_pairs_failing_in_O_qA": 0,
+    "reflection_lift_pairs_tested": 0,
+    "representatives_per_class": 9,
+    "rows": [
+     {
+      "Q": 1,
+      "fixed_point_in_H_exists": null,
+      "multiplier_phi": 1,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        1,
+        0
+       ],
+       [
+        3,
+        1
+       ]
+      ],
+      "trace0_representative_exists": false
+     },
+     {
+      "Q": 3,
+      "fixed_point_in_H_exists": true,
+      "fixed_vector": [
+       1,
+       -1,
+       0
+      ],
+      "multiplier_phi": 5,
+      "multiplier_reflection": 1,
+      "order_4_or_6_representative_exists": true,
+      "representative": [
+       [
+        3,
+        2
+       ],
+       [
+        3,
+        3
+       ]
+      ],
+      "trace0_element": [
+       [
+        0,
+        -1
+       ],
+       [
+        3,
+        0
+       ]
+      ],
+      "trace0_representative_exists": true,
+      "v2": -2
+     }
+    ],
+    "rule_minus1_mod_2Q_plus1_mod_2n_over_Q_holds": true
+   },
+   {
+    "O_qA": [
+     1,
+     7
+    ],
+    "exact_divisors": [
+     1,
+     4
+    ],
+    "fricke_maps_to_minus_one": true,
+    "image_equals_O_qA_as_sets": true,
+    "injective_into_O_qA": true,
+    "injective_modulo_pm1": false,
+    "kernel_modulo_pm1": [
+     1,
+     4
+    ],
+    "map_Q_to_m": {
+     "1": 1,
+     "4": 7
+    },
+    "n": 4,
+    "reflection_lift_pairs_failing_in_O_qA": 0,
+    "reflection_lift_pairs_tested": 0,
+    "representatives_per_class": 9,
+    "rows": [
+     {
+      "Q": 1,
+      "fixed_point_in_H_exists": null,
+      "multiplier_phi": 1,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        1,
+        0
+       ],
+       [
+        4,
+        1
+       ]
+      ],
+      "trace0_representative_exists": false
+     },
+     {
+      "Q": 4,
+      "fixed_point_in_H_exists": true,
+      "fixed_vector": [
+       1,
+       -1,
+       0
+      ],
+      "multiplier_phi": 7,
+      "multiplier_reflection": 1,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        4,
+        3
+       ],
+       [
+        4,
+        4
+       ]
+      ],
+      "trace0_element": [
+       [
+        0,
+        -1
+       ],
+       [
+        4,
+        0
+       ]
+      ],
+      "trace0_representative_exists": true,
+      "v2": -2
+     }
+    ],
+    "rule_minus1_mod_2Q_plus1_mod_2n_over_Q_holds": true
+   },
+   {
+    "O_qA": [
+     1,
+     9
+    ],
+    "exact_divisors": [
+     1,
+     5
+    ],
+    "fricke_maps_to_minus_one": true,
+    "image_equals_O_qA_as_sets": true,
+    "injective_into_O_qA": true,
+    "injective_modulo_pm1": false,
+    "kernel_modulo_pm1": [
+     1,
+     5
+    ],
+    "map_Q_to_m": {
+     "1": 1,
+     "5": 9
+    },
+    "n": 5,
+    "reflection_lift_pairs_failing_in_O_qA": 0,
+    "reflection_lift_pairs_tested": 0,
+    "representatives_per_class": 9,
+    "rows": [
+     {
+      "Q": 1,
+      "fixed_point_in_H_exists": null,
+      "multiplier_phi": 1,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        1,
+        0
+       ],
+       [
+        5,
+        1
+       ]
+      ],
+      "trace0_representative_exists": false
+     },
+     {
+      "Q": 5,
+      "fixed_point_in_H_exists": true,
+      "fixed_vector": [
+       1,
+       -1,
+       0
+      ],
+      "multiplier_phi": 9,
+      "multiplier_reflection": 1,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        5,
+        4
+       ],
+       [
+        5,
+        5
+       ]
+      ],
+      "trace0_element": [
+       [
+        0,
+        -1
+       ],
+       [
+        5,
+        0
+       ]
+      ],
+      "trace0_representative_exists": true,
+      "v2": -2
+     }
+    ],
+    "rule_minus1_mod_2Q_plus1_mod_2n_over_Q_holds": true
+   },
+   {
+    "O_qA": [
+     1,
+     5,
+     7,
+     11
+    ],
+    "exact_divisors": [
+     1,
+     2,
+     3,
+     6
+    ],
+    "fricke_maps_to_minus_one": true,
+    "image_equals_O_qA_as_sets": true,
+    "injective_into_O_qA": true,
+    "injective_modulo_pm1": false,
+    "kernel_modulo_pm1": [
+     1,
+     6
+    ],
+    "map_Q_to_m": {
+     "1": 1,
+     "2": 7,
+     "3": 5,
+     "6": 11
+    },
+    "n": 6,
+    "reflection_lift_pairs_failing_in_O_qA": 3,
+    "reflection_lift_pairs_tested": 3,
+    "representatives_per_class": 9,
+    "rows": [
+     {
+      "Q": 1,
+      "fixed_point_in_H_exists": null,
+      "multiplier_phi": 1,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        1,
+        0
+       ],
+       [
+        6,
+        1
+       ]
+      ],
+      "trace0_representative_exists": false
+     },
+     {
+      "Q": 2,
+      "fixed_point_in_H_exists": true,
+      "fixed_vector": [
+       3,
+       -3,
+       1
+      ],
+      "multiplier_phi": 7,
+      "multiplier_reflection": 5,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        2,
+        1
+       ],
+       [
+        6,
+        4
+       ]
+      ],
+      "trace0_element": [
+       [
+        2,
+        -1
+       ],
+       [
+        6,
+        -2
+       ]
+      ],
+      "trace0_representative_exists": true,
+      "v2": -6
+     },
+     {
+      "Q": 3,
+      "fixed_point_in_H_exists": true,
+      "fixed_vector": [
+       2,
+       -4,
+       1
+      ],
+      "multiplier_phi": 5,
+      "multiplier_reflection": 7,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        3,
+        1
+       ],
+       [
+        6,
+        3
+       ]
+      ],
+      "trace0_element": [
+       [
+        3,
+        -2
+       ],
+       [
+        6,
+        -3
+       ]
+      ],
+      "trace0_representative_exists": true,
+      "v2": -4
+     },
+     {
+      "Q": 6,
+      "fixed_point_in_H_exists": true,
+      "fixed_vector": [
+       1,
+       -1,
+       0
+      ],
+      "multiplier_phi": 11,
+      "multiplier_reflection": 1,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        6,
+        5
+       ],
+       [
+        6,
+        6
+       ]
+      ],
+      "trace0_element": [
+       [
+        0,
+        -1
+       ],
+       [
+        6,
+        0
+       ]
+      ],
+      "trace0_representative_exists": true,
+      "v2": -2
+     }
+    ],
+    "rule_minus1_mod_2Q_plus1_mod_2n_over_Q_holds": true
+   },
+   {
+    "O_qA": [
+     1,
+     13
+    ],
+    "exact_divisors": [
+     1,
+     7
+    ],
+    "fricke_maps_to_minus_one": true,
+    "image_equals_O_qA_as_sets": true,
+    "injective_into_O_qA": true,
+    "injective_modulo_pm1": false,
+    "kernel_modulo_pm1": [
+     1,
+     7
+    ],
+    "map_Q_to_m": {
+     "1": 1,
+     "7": 13
+    },
+    "n": 7,
+    "reflection_lift_pairs_failing_in_O_qA": 0,
+    "reflection_lift_pairs_tested": 0,
+    "representatives_per_class": 9,
+    "rows": [
+     {
+      "Q": 1,
+      "fixed_point_in_H_exists": null,
+      "multiplier_phi": 1,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        1,
+        0
+       ],
+       [
+        7,
+        1
+       ]
+      ],
+      "trace0_representative_exists": false
+     },
+     {
+      "Q": 7,
+      "fixed_point_in_H_exists": true,
+      "fixed_vector": [
+       1,
+       -1,
+       0
+      ],
+      "multiplier_phi": 13,
+      "multiplier_reflection": 1,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        7,
+        6
+       ],
+       [
+        7,
+        7
+       ]
+      ],
+      "trace0_element": [
+       [
+        0,
+        -1
+       ],
+       [
+        7,
+        0
+       ]
+      ],
+      "trace0_representative_exists": true,
+      "v2": -2
+     }
+    ],
+    "rule_minus1_mod_2Q_plus1_mod_2n_over_Q_holds": true
+   },
+   {
+    "O_qA": [
+     1,
+     15
+    ],
+    "exact_divisors": [
+     1,
+     8
+    ],
+    "fricke_maps_to_minus_one": true,
+    "image_equals_O_qA_as_sets": true,
+    "injective_into_O_qA": true,
+    "injective_modulo_pm1": false,
+    "kernel_modulo_pm1": [
+     1,
+     8
+    ],
+    "map_Q_to_m": {
+     "1": 1,
+     "8": 15
+    },
+    "n": 8,
+    "reflection_lift_pairs_failing_in_O_qA": 0,
+    "reflection_lift_pairs_tested": 0,
+    "representatives_per_class": 9,
+    "rows": [
+     {
+      "Q": 1,
+      "fixed_point_in_H_exists": null,
+      "multiplier_phi": 1,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        1,
+        0
+       ],
+       [
+        8,
+        1
+       ]
+      ],
+      "trace0_representative_exists": false
+     },
+     {
+      "Q": 8,
+      "fixed_point_in_H_exists": true,
+      "fixed_vector": [
+       1,
+       -1,
+       0
+      ],
+      "multiplier_phi": 15,
+      "multiplier_reflection": 1,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        8,
+        7
+       ],
+       [
+        8,
+        8
+       ]
+      ],
+      "trace0_element": [
+       [
+        0,
+        -1
+       ],
+       [
+        8,
+        0
+       ]
+      ],
+      "trace0_representative_exists": true,
+      "v2": -2
+     }
+    ],
+    "rule_minus1_mod_2Q_plus1_mod_2n_over_Q_holds": true
+   },
+   {
+    "O_qA": [
+     1,
+     17
+    ],
+    "exact_divisors": [
+     1,
+     9
+    ],
+    "fricke_maps_to_minus_one": true,
+    "image_equals_O_qA_as_sets": true,
+    "injective_into_O_qA": true,
+    "injective_modulo_pm1": false,
+    "kernel_modulo_pm1": [
+     1,
+     9
+    ],
+    "map_Q_to_m": {
+     "1": 1,
+     "9": 17
+    },
+    "n": 9,
+    "reflection_lift_pairs_failing_in_O_qA": 0,
+    "reflection_lift_pairs_tested": 0,
+    "representatives_per_class": 9,
+    "rows": [
+     {
+      "Q": 1,
+      "fixed_point_in_H_exists": null,
+      "multiplier_phi": 1,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        1,
+        0
+       ],
+       [
+        9,
+        1
+       ]
+      ],
+      "trace0_representative_exists": false
+     },
+     {
+      "Q": 9,
+      "fixed_point_in_H_exists": true,
+      "fixed_vector": [
+       1,
+       -1,
+       0
+      ],
+      "multiplier_phi": 17,
+      "multiplier_reflection": 1,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        9,
+        8
+       ],
+       [
+        9,
+        9
+       ]
+      ],
+      "trace0_element": [
+       [
+        0,
+        -1
+       ],
+       [
+        9,
+        0
+       ]
+      ],
+      "trace0_representative_exists": true,
+      "v2": -2
+     }
+    ],
+    "rule_minus1_mod_2Q_plus1_mod_2n_over_Q_holds": true
+   },
+   {
+    "O_qA": [
+     1,
+     9,
+     11,
+     19
+    ],
+    "exact_divisors": [
+     1,
+     2,
+     5,
+     10
+    ],
+    "fricke_maps_to_minus_one": true,
+    "image_equals_O_qA_as_sets": true,
+    "injective_into_O_qA": true,
+    "injective_modulo_pm1": false,
+    "kernel_modulo_pm1": [
+     1,
+     10
+    ],
+    "map_Q_to_m": {
+     "1": 1,
+     "10": 19,
+     "2": 11,
+     "5": 9
+    },
+    "n": 10,
+    "reflection_lift_pairs_failing_in_O_qA": 0,
+    "reflection_lift_pairs_tested": 0,
+    "representatives_per_class": 9,
+    "rows": [
+     {
+      "Q": 1,
+      "fixed_point_in_H_exists": null,
+      "multiplier_phi": 1,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        1,
+        0
+       ],
+       [
+        10,
+        1
+       ]
+      ],
+      "trace0_representative_exists": false
+     },
+     {
+      "Q": 2,
+      "fixed_point_in_H_exists": true,
+      "multiplier_phi": 11,
+      "order_4_or_6_representative_exists": true,
+      "representative": [
+       [
+        2,
+        1
+       ],
+       [
+        10,
+        6
+       ]
+      ],
+      "trace0_representative_exists": false
+     },
+     {
+      "Q": 5,
+      "fixed_point_in_H_exists": true,
+      "fixed_vector": [
+       2,
+       -6,
+       1
+      ],
+      "multiplier_phi": 9,
+      "multiplier_reflection": 11,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        5,
+        2
+       ],
+       [
+        10,
+        5
+       ]
+      ],
+      "trace0_element": [
+       [
+        5,
+        -3
+       ],
+       [
+        10,
+        -5
+       ]
+      ],
+      "trace0_representative_exists": true,
+      "v2": -4
+     },
+     {
+      "Q": 10,
+      "fixed_point_in_H_exists": true,
+      "fixed_vector": [
+       1,
+       -1,
+       0
+      ],
+      "multiplier_phi": 19,
+      "multiplier_reflection": 1,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        10,
+        9
+       ],
+       [
+        10,
+        10
+       ]
+      ],
+      "trace0_element": [
+       [
+        0,
+        -1
+       ],
+       [
+        10,
+        0
+       ]
+      ],
+      "trace0_representative_exists": true,
+      "v2": -2
+     }
+    ],
+    "rule_minus1_mod_2Q_plus1_mod_2n_over_Q_holds": true
+   },
+   {
+    "O_qA": [
+     1,
+     21
+    ],
+    "exact_divisors": [
+     1,
+     11
+    ],
+    "fricke_maps_to_minus_one": true,
+    "image_equals_O_qA_as_sets": true,
+    "injective_into_O_qA": true,
+    "injective_modulo_pm1": false,
+    "kernel_modulo_pm1": [
+     1,
+     11
+    ],
+    "map_Q_to_m": {
+     "1": 1,
+     "11": 21
+    },
+    "n": 11,
+    "reflection_lift_pairs_failing_in_O_qA": 0,
+    "reflection_lift_pairs_tested": 0,
+    "representatives_per_class": 9,
+    "rows": [
+     {
+      "Q": 1,
+      "fixed_point_in_H_exists": null,
+      "multiplier_phi": 1,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        1,
+        0
+       ],
+       [
+        11,
+        1
+       ]
+      ],
+      "trace0_representative_exists": false
+     },
+     {
+      "Q": 11,
+      "fixed_point_in_H_exists": true,
+      "fixed_vector": [
+       1,
+       -1,
+       0
+      ],
+      "multiplier_phi": 21,
+      "multiplier_reflection": 1,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        11,
+        10
+       ],
+       [
+        11,
+        11
+       ]
+      ],
+      "trace0_element": [
+       [
+        0,
+        -1
+       ],
+       [
+        11,
+        0
+       ]
+      ],
+      "trace0_representative_exists": true,
+      "v2": -2
+     }
+    ],
+    "rule_minus1_mod_2Q_plus1_mod_2n_over_Q_holds": true
+   },
+   {
+    "O_qA": [
+     1,
+     7,
+     17,
+     23
+    ],
+    "exact_divisors": [
+     1,
+     3,
+     4,
+     12
+    ],
+    "fricke_maps_to_minus_one": true,
+    "image_equals_O_qA_as_sets": true,
+    "injective_into_O_qA": true,
+    "injective_modulo_pm1": false,
+    "kernel_modulo_pm1": [
+     1,
+     12
+    ],
+    "map_Q_to_m": {
+     "1": 1,
+     "12": 23,
+     "3": 17,
+     "4": 7
+    },
+    "n": 12,
+    "reflection_lift_pairs_failing_in_O_qA": 0,
+    "reflection_lift_pairs_tested": 0,
+    "representatives_per_class": 9,
+    "rows": [
+     {
+      "Q": 1,
+      "fixed_point_in_H_exists": null,
+      "multiplier_phi": 1,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        1,
+        0
+       ],
+       [
+        12,
+        1
+       ]
+      ],
+      "trace0_representative_exists": false
+     },
+     {
+      "Q": 3,
+      "fixed_point_in_H_exists": true,
+      "fixed_vector": [
+       4,
+       -4,
+       1
+      ],
+      "multiplier_phi": 17,
+      "multiplier_reflection": 7,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        3,
+        2
+       ],
+       [
+        12,
+        9
+       ]
+      ],
+      "trace0_element": [
+       [
+        3,
+        -1
+       ],
+       [
+        12,
+        -3
+       ]
+      ],
+      "trace0_representative_exists": true,
+      "v2": -8
+     },
+     {
+      "Q": 4,
+      "fixed_point_in_H_exists": false,
+      "multiplier_phi": 7,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        4,
+        1
+       ],
+       [
+        12,
+        4
+       ]
+      ],
+      "trace0_representative_exists": false
+     },
+     {
+      "Q": 12,
+      "fixed_point_in_H_exists": true,
+      "fixed_vector": [
+       1,
+       -1,
+       0
+      ],
+      "multiplier_phi": 23,
+      "multiplier_reflection": 1,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        12,
+        11
+       ],
+       [
+        12,
+        12
+       ]
+      ],
+      "trace0_element": [
+       [
+        0,
+        -1
+       ],
+       [
+        12,
+        0
+       ]
+      ],
+      "trace0_representative_exists": true,
+      "v2": -2
+     }
+    ],
+    "rule_minus1_mod_2Q_plus1_mod_2n_over_Q_holds": true
+   },
+   {
+    "O_qA": [
+     1,
+     25
+    ],
+    "exact_divisors": [
+     1,
+     13
+    ],
+    "fricke_maps_to_minus_one": true,
+    "image_equals_O_qA_as_sets": true,
+    "injective_into_O_qA": true,
+    "injective_modulo_pm1": false,
+    "kernel_modulo_pm1": [
+     1,
+     13
+    ],
+    "map_Q_to_m": {
+     "1": 1,
+     "13": 25
+    },
+    "n": 13,
+    "reflection_lift_pairs_failing_in_O_qA": 0,
+    "reflection_lift_pairs_tested": 0,
+    "representatives_per_class": 9,
+    "rows": [
+     {
+      "Q": 1,
+      "fixed_point_in_H_exists": null,
+      "multiplier_phi": 1,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        1,
+        0
+       ],
+       [
+        13,
+        1
+       ]
+      ],
+      "trace0_representative_exists": false
+     },
+     {
+      "Q": 13,
+      "fixed_point_in_H_exists": true,
+      "fixed_vector": [
+       1,
+       -1,
+       0
+      ],
+      "multiplier_phi": 25,
+      "multiplier_reflection": 1,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        13,
+        12
+       ],
+       [
+        13,
+        13
+       ]
+      ],
+      "trace0_element": [
+       [
+        0,
+        -1
+       ],
+       [
+        13,
+        0
+       ]
+      ],
+      "trace0_representative_exists": true,
+      "v2": -2
+     }
+    ],
+    "rule_minus1_mod_2Q_plus1_mod_2n_over_Q_holds": true
+   },
+   {
+    "O_qA": [
+     1,
+     13,
+     15,
+     27
+    ],
+    "exact_divisors": [
+     1,
+     2,
+     7,
+     14
+    ],
+    "fricke_maps_to_minus_one": true,
+    "image_equals_O_qA_as_sets": true,
+    "injective_into_O_qA": true,
+    "injective_modulo_pm1": false,
+    "kernel_modulo_pm1": [
+     1,
+     14
+    ],
+    "map_Q_to_m": {
+     "1": 1,
+     "14": 27,
+     "2": 15,
+     "7": 13
+    },
+    "n": 14,
+    "reflection_lift_pairs_failing_in_O_qA": 0,
+    "reflection_lift_pairs_tested": 0,
+    "representatives_per_class": 9,
+    "rows": [
+     {
+      "Q": 1,
+      "fixed_point_in_H_exists": null,
+      "multiplier_phi": 1,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        1,
+        0
+       ],
+       [
+        14,
+        1
+       ]
+      ],
+      "trace0_representative_exists": false
+     },
+     {
+      "Q": 2,
+      "fixed_point_in_H_exists": false,
+      "multiplier_phi": 15,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        2,
+        1
+       ],
+       [
+        14,
+        8
+       ]
+      ],
+      "trace0_representative_exists": false
+     },
+     {
+      "Q": 7,
+      "fixed_point_in_H_exists": true,
+      "fixed_vector": [
+       2,
+       -8,
+       1
+      ],
+      "multiplier_phi": 13,
+      "multiplier_reflection": 15,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        7,
+        3
+       ],
+       [
+        14,
+        7
+       ]
+      ],
+      "trace0_element": [
+       [
+        7,
+        -4
+       ],
+       [
+        14,
+        -7
+       ]
+      ],
+      "trace0_representative_exists": true,
+      "v2": -4
+     },
+     {
+      "Q": 14,
+      "fixed_point_in_H_exists": true,
+      "fixed_vector": [
+       1,
+       -1,
+       0
+      ],
+      "multiplier_phi": 27,
+      "multiplier_reflection": 1,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        14,
+        13
+       ],
+       [
+        14,
+        14
+       ]
+      ],
+      "trace0_element": [
+       [
+        0,
+        -1
+       ],
+       [
+        14,
+        0
+       ]
+      ],
+      "trace0_representative_exists": true,
+      "v2": -2
+     }
+    ],
+    "rule_minus1_mod_2Q_plus1_mod_2n_over_Q_holds": true
+   },
+   {
+    "O_qA": [
+     1,
+     11,
+     19,
+     29
+    ],
+    "exact_divisors": [
+     1,
+     3,
+     5,
+     15
+    ],
+    "fricke_maps_to_minus_one": true,
+    "image_equals_O_qA_as_sets": true,
+    "injective_into_O_qA": true,
+    "injective_modulo_pm1": false,
+    "kernel_modulo_pm1": [
+     1,
+     15
+    ],
+    "map_Q_to_m": {
+     "1": 1,
+     "15": 29,
+     "3": 11,
+     "5": 19
+    },
+    "n": 15,
+    "reflection_lift_pairs_failing_in_O_qA": 0,
+    "reflection_lift_pairs_tested": 0,
+    "representatives_per_class": 9,
+    "rows": [
+     {
+      "Q": 1,
+      "fixed_point_in_H_exists": null,
+      "multiplier_phi": 1,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        1,
+        0
+       ],
+       [
+        15,
+        1
+       ]
+      ],
+      "trace0_representative_exists": false
+     },
+     {
+      "Q": 3,
+      "fixed_point_in_H_exists": false,
+      "multiplier_phi": 11,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        3,
+        1
+       ],
+       [
+        15,
+        6
+       ]
+      ],
+      "trace0_representative_exists": false
+     },
+     {
+      "Q": 5,
+      "fixed_point_in_H_exists": true,
+      "fixed_vector": [
+       3,
+       -6,
+       1
+      ],
+      "multiplier_phi": 19,
+      "multiplier_reflection": 11,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        5,
+        3
+       ],
+       [
+        15,
+        10
+       ]
+      ],
+      "trace0_element": [
+       [
+        5,
+        -2
+       ],
+       [
+        15,
+        -5
+       ]
+      ],
+      "trace0_representative_exists": true,
+      "v2": -6
+     },
+     {
+      "Q": 15,
+      "fixed_point_in_H_exists": true,
+      "fixed_vector": [
+       1,
+       -1,
+       0
+      ],
+      "multiplier_phi": 29,
+      "multiplier_reflection": 1,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        15,
+        14
+       ],
+       [
+        15,
+        15
+       ]
+      ],
+      "trace0_element": [
+       [
+        0,
+        -1
+       ],
+       [
+        15,
+        0
+       ]
+      ],
+      "trace0_representative_exists": true,
+      "v2": -2
+     }
+    ],
+    "rule_minus1_mod_2Q_plus1_mod_2n_over_Q_holds": true
+   },
+   {
+    "O_qA": [
+     1,
+     31
+    ],
+    "exact_divisors": [
+     1,
+     16
+    ],
+    "fricke_maps_to_minus_one": true,
+    "image_equals_O_qA_as_sets": true,
+    "injective_into_O_qA": true,
+    "injective_modulo_pm1": false,
+    "kernel_modulo_pm1": [
+     1,
+     16
+    ],
+    "map_Q_to_m": {
+     "1": 1,
+     "16": 31
+    },
+    "n": 16,
+    "reflection_lift_pairs_failing_in_O_qA": 0,
+    "reflection_lift_pairs_tested": 0,
+    "representatives_per_class": 9,
+    "rows": [
+     {
+      "Q": 1,
+      "fixed_point_in_H_exists": null,
+      "multiplier_phi": 1,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        1,
+        0
+       ],
+       [
+        16,
+        1
+       ]
+      ],
+      "trace0_representative_exists": false
+     },
+     {
+      "Q": 16,
+      "fixed_point_in_H_exists": true,
+      "fixed_vector": [
+       1,
+       -1,
+       0
+      ],
+      "multiplier_phi": 31,
+      "multiplier_reflection": 1,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        16,
+        15
+       ],
+       [
+        16,
+        16
+       ]
+      ],
+      "trace0_element": [
+       [
+        0,
+        -1
+       ],
+       [
+        16,
+        0
+       ]
+      ],
+      "trace0_representative_exists": true,
+      "v2": -2
+     }
+    ],
+    "rule_minus1_mod_2Q_plus1_mod_2n_over_Q_holds": true
+   },
+   {
+    "O_qA": [
+     1,
+     33
+    ],
+    "exact_divisors": [
+     1,
+     17
+    ],
+    "fricke_maps_to_minus_one": true,
+    "image_equals_O_qA_as_sets": true,
+    "injective_into_O_qA": true,
+    "injective_modulo_pm1": false,
+    "kernel_modulo_pm1": [
+     1,
+     17
+    ],
+    "map_Q_to_m": {
+     "1": 1,
+     "17": 33
+    },
+    "n": 17,
+    "reflection_lift_pairs_failing_in_O_qA": 0,
+    "reflection_lift_pairs_tested": 0,
+    "representatives_per_class": 9,
+    "rows": [
+     {
+      "Q": 1,
+      "fixed_point_in_H_exists": null,
+      "multiplier_phi": 1,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        1,
+        0
+       ],
+       [
+        17,
+        1
+       ]
+      ],
+      "trace0_representative_exists": false
+     },
+     {
+      "Q": 17,
+      "fixed_point_in_H_exists": true,
+      "fixed_vector": [
+       1,
+       -1,
+       0
+      ],
+      "multiplier_phi": 33,
+      "multiplier_reflection": 1,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        17,
+        16
+       ],
+       [
+        17,
+        17
+       ]
+      ],
+      "trace0_element": [
+       [
+        0,
+        -1
+       ],
+       [
+        17,
+        0
+       ]
+      ],
+      "trace0_representative_exists": true,
+      "v2": -2
+     }
+    ],
+    "rule_minus1_mod_2Q_plus1_mod_2n_over_Q_holds": true
+   },
+   {
+    "O_qA": [
+     1,
+     17,
+     19,
+     35
+    ],
+    "exact_divisors": [
+     1,
+     2,
+     9,
+     18
+    ],
+    "fricke_maps_to_minus_one": true,
+    "image_equals_O_qA_as_sets": true,
+    "injective_into_O_qA": true,
+    "injective_modulo_pm1": false,
+    "kernel_modulo_pm1": [
+     1,
+     18
+    ],
+    "map_Q_to_m": {
+     "1": 1,
+     "18": 35,
+     "2": 19,
+     "9": 17
+    },
+    "n": 18,
+    "reflection_lift_pairs_failing_in_O_qA": 3,
+    "reflection_lift_pairs_tested": 3,
+    "representatives_per_class": 9,
+    "rows": [
+     {
+      "Q": 1,
+      "fixed_point_in_H_exists": null,
+      "multiplier_phi": 1,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        1,
+        0
+       ],
+       [
+        18,
+        1
+       ]
+      ],
+      "trace0_representative_exists": false
+     },
+     {
+      "Q": 2,
+      "fixed_point_in_H_exists": true,
+      "fixed_vector": [
+       9,
+       -9,
+       2
+      ],
+      "multiplier_phi": 19,
+      "multiplier_reflection": 17,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        2,
+        1
+       ],
+       [
+        18,
+        10
+       ]
+      ],
+      "trace0_element": [
+       [
+        4,
+        -1
+       ],
+       [
+        18,
+        -4
+       ]
+      ],
+      "trace0_representative_exists": true,
+      "v2": -18
+     },
+     {
+      "Q": 9,
+      "fixed_point_in_H_exists": true,
+      "fixed_vector": [
+       2,
+       -10,
+       1
+      ],
+      "multiplier_phi": 17,
+      "multiplier_reflection": 19,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        9,
+        4
+       ],
+       [
+        18,
+        9
+       ]
+      ],
+      "trace0_element": [
+       [
+        9,
+        -5
+       ],
+       [
+        18,
+        -9
+       ]
+      ],
+      "trace0_representative_exists": true,
+      "v2": -4
+     },
+     {
+      "Q": 18,
+      "fixed_point_in_H_exists": true,
+      "fixed_vector": [
+       1,
+       -1,
+       0
+      ],
+      "multiplier_phi": 35,
+      "multiplier_reflection": 1,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        18,
+        17
+       ],
+       [
+        18,
+        18
+       ]
+      ],
+      "trace0_element": [
+       [
+        0,
+        -1
+       ],
+       [
+        18,
+        0
+       ]
+      ],
+      "trace0_representative_exists": true,
+      "v2": -2
+     }
+    ],
+    "rule_minus1_mod_2Q_plus1_mod_2n_over_Q_holds": true
+   },
+   {
+    "O_qA": [
+     1,
+     37
+    ],
+    "exact_divisors": [
+     1,
+     19
+    ],
+    "fricke_maps_to_minus_one": true,
+    "image_equals_O_qA_as_sets": true,
+    "injective_into_O_qA": true,
+    "injective_modulo_pm1": false,
+    "kernel_modulo_pm1": [
+     1,
+     19
+    ],
+    "map_Q_to_m": {
+     "1": 1,
+     "19": 37
+    },
+    "n": 19,
+    "reflection_lift_pairs_failing_in_O_qA": 0,
+    "reflection_lift_pairs_tested": 0,
+    "representatives_per_class": 9,
+    "rows": [
+     {
+      "Q": 1,
+      "fixed_point_in_H_exists": null,
+      "multiplier_phi": 1,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        1,
+        0
+       ],
+       [
+        19,
+        1
+       ]
+      ],
+      "trace0_representative_exists": false
+     },
+     {
+      "Q": 19,
+      "fixed_point_in_H_exists": true,
+      "fixed_vector": [
+       1,
+       -1,
+       0
+      ],
+      "multiplier_phi": 37,
+      "multiplier_reflection": 1,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        19,
+        18
+       ],
+       [
+        19,
+        19
+       ]
+      ],
+      "trace0_element": [
+       [
+        0,
+        -1
+       ],
+       [
+        19,
+        0
+       ]
+      ],
+      "trace0_representative_exists": true,
+      "v2": -2
+     }
+    ],
+    "rule_minus1_mod_2Q_plus1_mod_2n_over_Q_holds": true
+   },
+   {
+    "O_qA": [
+     1,
+     9,
+     31,
+     39
+    ],
+    "exact_divisors": [
+     1,
+     4,
+     5,
+     20
+    ],
+    "fricke_maps_to_minus_one": true,
+    "image_equals_O_qA_as_sets": true,
+    "injective_into_O_qA": true,
+    "injective_modulo_pm1": false,
+    "kernel_modulo_pm1": [
+     1,
+     20
+    ],
+    "map_Q_to_m": {
+     "1": 1,
+     "20": 39,
+     "4": 31,
+     "5": 9
+    },
+    "n": 20,
+    "reflection_lift_pairs_failing_in_O_qA": 0,
+    "reflection_lift_pairs_tested": 0,
+    "representatives_per_class": 9,
+    "rows": [
+     {
+      "Q": 1,
+      "fixed_point_in_H_exists": null,
+      "multiplier_phi": 1,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        1,
+        0
+       ],
+       [
+        20,
+        1
+       ]
+      ],
+      "trace0_representative_exists": false
+     },
+     {
+      "Q": 4,
+      "fixed_point_in_H_exists": true,
+      "fixed_vector": [
+       5,
+       -5,
+       1
+      ],
+      "multiplier_phi": 31,
+      "multiplier_reflection": 9,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        4,
+        3
+       ],
+       [
+        20,
+        16
+       ]
+      ],
+      "trace0_element": [
+       [
+        4,
+        -1
+       ],
+       [
+        20,
+        -4
+       ]
+      ],
+      "trace0_representative_exists": true,
+      "v2": -10
+     },
+     {
+      "Q": 5,
+      "fixed_point_in_H_exists": false,
+      "multiplier_phi": 9,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        5,
+        1
+       ],
+       [
+        20,
+        5
+       ]
+      ],
+      "trace0_representative_exists": false
+     },
+     {
+      "Q": 20,
+      "fixed_point_in_H_exists": true,
+      "fixed_vector": [
+       1,
+       -1,
+       0
+      ],
+      "multiplier_phi": 39,
+      "multiplier_reflection": 1,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        20,
+        19
+       ],
+       [
+        20,
+        20
+       ]
+      ],
+      "trace0_element": [
+       [
+        0,
+        -1
+       ],
+       [
+        20,
+        0
+       ]
+      ],
+      "trace0_representative_exists": true,
+      "v2": -2
+     }
+    ],
+    "rule_minus1_mod_2Q_plus1_mod_2n_over_Q_holds": true
+   },
+   {
+    "O_qA": [
+     1,
+     13,
+     29,
+     41
+    ],
+    "exact_divisors": [
+     1,
+     3,
+     7,
+     21
+    ],
+    "fricke_maps_to_minus_one": true,
+    "image_equals_O_qA_as_sets": true,
+    "injective_into_O_qA": true,
+    "injective_modulo_pm1": false,
+    "kernel_modulo_pm1": [
+     1,
+     21
+    ],
+    "map_Q_to_m": {
+     "1": 1,
+     "21": 41,
+     "3": 29,
+     "7": 13
+    },
+    "n": 21,
+    "reflection_lift_pairs_failing_in_O_qA": 0,
+    "reflection_lift_pairs_tested": 0,
+    "representatives_per_class": 9,
+    "rows": [
+     {
+      "Q": 1,
+      "fixed_point_in_H_exists": null,
+      "multiplier_phi": 1,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        1,
+        0
+       ],
+       [
+        21,
+        1
+       ]
+      ],
+      "trace0_representative_exists": false
+     },
+     {
+      "Q": 3,
+      "fixed_point_in_H_exists": true,
+      "fixed_vector": [
+       7,
+       -28,
+       3
+      ],
+      "multiplier_phi": 29,
+      "multiplier_reflection": 13,
+      "order_4_or_6_representative_exists": true,
+      "representative": [
+       [
+        3,
+        2
+       ],
+       [
+        21,
+        15
+       ]
+      ],
+      "trace0_element": [
+       [
+        9,
+        -4
+       ],
+       [
+        21,
+        -9
+       ]
+      ],
+      "trace0_representative_exists": true,
+      "v2": -14
+     },
+     {
+      "Q": 7,
+      "fixed_point_in_H_exists": false,
+      "multiplier_phi": 13,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        7,
+        2
+       ],
+       [
+        21,
+        7
+       ]
+      ],
+      "trace0_representative_exists": false
+     },
+     {
+      "Q": 21,
+      "fixed_point_in_H_exists": true,
+      "fixed_vector": [
+       1,
+       -1,
+       0
+      ],
+      "multiplier_phi": 41,
+      "multiplier_reflection": 1,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        21,
+        20
+       ],
+       [
+        21,
+        21
+       ]
+      ],
+      "trace0_element": [
+       [
+        0,
+        -1
+       ],
+       [
+        21,
+        0
+       ]
+      ],
+      "trace0_representative_exists": true,
+      "v2": -2
+     }
+    ],
+    "rule_minus1_mod_2Q_plus1_mod_2n_over_Q_holds": true
+   },
+   {
+    "O_qA": [
+     1,
+     21,
+     23,
+     43
+    ],
+    "exact_divisors": [
+     1,
+     2,
+     11,
+     22
+    ],
+    "fricke_maps_to_minus_one": true,
+    "image_equals_O_qA_as_sets": true,
+    "injective_into_O_qA": true,
+    "injective_modulo_pm1": false,
+    "kernel_modulo_pm1": [
+     1,
+     22
+    ],
+    "map_Q_to_m": {
+     "1": 1,
+     "11": 21,
+     "2": 23,
+     "22": 43
+    },
+    "n": 22,
+    "reflection_lift_pairs_failing_in_O_qA": 3,
+    "reflection_lift_pairs_tested": 3,
+    "representatives_per_class": 9,
+    "rows": [
+     {
+      "Q": 1,
+      "fixed_point_in_H_exists": null,
+      "multiplier_phi": 1,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        1,
+        0
+       ],
+       [
+        22,
+        1
+       ]
+      ],
+      "trace0_representative_exists": false
+     },
+     {
+      "Q": 2,
+      "fixed_point_in_H_exists": true,
+      "fixed_vector": [
+       11,
+       -33,
+       4
+      ],
+      "multiplier_phi": 23,
+      "multiplier_reflection": 21,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        2,
+        1
+       ],
+       [
+        22,
+        12
+       ]
+      ],
+      "trace0_element": [
+       [
+        8,
+        -3
+       ],
+       [
+        22,
+        -8
+       ]
+      ],
+      "trace0_representative_exists": true,
+      "v2": -22
+     },
+     {
+      "Q": 11,
+      "fixed_point_in_H_exists": true,
+      "fixed_vector": [
+       2,
+       -12,
+       1
+      ],
+      "multiplier_phi": 21,
+      "multiplier_reflection": 23,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        11,
+        5
+       ],
+       [
+        22,
+        11
+       ]
+      ],
+      "trace0_element": [
+       [
+        11,
+        -6
+       ],
+       [
+        22,
+        -11
+       ]
+      ],
+      "trace0_representative_exists": true,
+      "v2": -4
+     },
+     {
+      "Q": 22,
+      "fixed_point_in_H_exists": true,
+      "fixed_vector": [
+       1,
+       -1,
+       0
+      ],
+      "multiplier_phi": 43,
+      "multiplier_reflection": 1,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        22,
+        21
+       ],
+       [
+        22,
+        22
+       ]
+      ],
+      "trace0_element": [
+       [
+        0,
+        -1
+       ],
+       [
+        22,
+        0
+       ]
+      ],
+      "trace0_representative_exists": true,
+      "v2": -2
+     }
+    ],
+    "rule_minus1_mod_2Q_plus1_mod_2n_over_Q_holds": true
+   },
+   {
+    "O_qA": [
+     1,
+     45
+    ],
+    "exact_divisors": [
+     1,
+     23
+    ],
+    "fricke_maps_to_minus_one": true,
+    "image_equals_O_qA_as_sets": true,
+    "injective_into_O_qA": true,
+    "injective_modulo_pm1": false,
+    "kernel_modulo_pm1": [
+     1,
+     23
+    ],
+    "map_Q_to_m": {
+     "1": 1,
+     "23": 45
+    },
+    "n": 23,
+    "reflection_lift_pairs_failing_in_O_qA": 0,
+    "reflection_lift_pairs_tested": 0,
+    "representatives_per_class": 9,
+    "rows": [
+     {
+      "Q": 1,
+      "fixed_point_in_H_exists": null,
+      "multiplier_phi": 1,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        1,
+        0
+       ],
+       [
+        23,
+        1
+       ]
+      ],
+      "trace0_representative_exists": false
+     },
+     {
+      "Q": 23,
+      "fixed_point_in_H_exists": true,
+      "fixed_vector": [
+       1,
+       -1,
+       0
+      ],
+      "multiplier_phi": 45,
+      "multiplier_reflection": 1,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        23,
+        22
+       ],
+       [
+        23,
+        23
+       ]
+      ],
+      "trace0_element": [
+       [
+        0,
+        -1
+       ],
+       [
+        23,
+        0
+       ]
+      ],
+      "trace0_representative_exists": true,
+      "v2": -2
+     }
+    ],
+    "rule_minus1_mod_2Q_plus1_mod_2n_over_Q_holds": true
+   },
+   {
+    "O_qA": [
+     1,
+     17,
+     31,
+     47
+    ],
+    "exact_divisors": [
+     1,
+     3,
+     8,
+     24
+    ],
+    "fricke_maps_to_minus_one": true,
+    "image_equals_O_qA_as_sets": true,
+    "injective_into_O_qA": true,
+    "injective_modulo_pm1": false,
+    "kernel_modulo_pm1": [
+     1,
+     24
+    ],
+    "map_Q_to_m": {
+     "1": 1,
+     "24": 47,
+     "3": 17,
+     "8": 31
+    },
+    "n": 24,
+    "reflection_lift_pairs_failing_in_O_qA": 0,
+    "reflection_lift_pairs_tested": 0,
+    "representatives_per_class": 9,
+    "rows": [
+     {
+      "Q": 1,
+      "fixed_point_in_H_exists": null,
+      "multiplier_phi": 1,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        1,
+        0
+       ],
+       [
+        24,
+        1
+       ]
+      ],
+      "trace0_representative_exists": false
+     },
+     {
+      "Q": 3,
+      "fixed_point_in_H_exists": false,
+      "multiplier_phi": 17,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        3,
+        1
+       ],
+       [
+        24,
+        9
+       ]
+      ],
+      "trace0_representative_exists": false
+     },
+     {
+      "Q": 8,
+      "fixed_point_in_H_exists": true,
+      "fixed_vector": [
+       3,
+       -9,
+       1
+      ],
+      "multiplier_phi": 31,
+      "multiplier_reflection": 17,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        8,
+        5
+       ],
+       [
+        24,
+        16
+       ]
+      ],
+      "trace0_element": [
+       [
+        8,
+        -3
+       ],
+       [
+        24,
+        -8
+       ]
+      ],
+      "trace0_representative_exists": true,
+      "v2": -6
+     },
+     {
+      "Q": 24,
+      "fixed_point_in_H_exists": true,
+      "fixed_vector": [
+       1,
+       -1,
+       0
+      ],
+      "multiplier_phi": 47,
+      "multiplier_reflection": 1,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        24,
+        23
+       ],
+       [
+        24,
+        24
+       ]
+      ],
+      "trace0_element": [
+       [
+        0,
+        -1
+       ],
+       [
+        24,
+        0
+       ]
+      ],
+      "trace0_representative_exists": true,
+      "v2": -2
+     }
+    ],
+    "rule_minus1_mod_2Q_plus1_mod_2n_over_Q_holds": true
+   },
+   {
+    "O_qA": [
+     1,
+     49
+    ],
+    "exact_divisors": [
+     1,
+     25
+    ],
+    "fricke_maps_to_minus_one": true,
+    "image_equals_O_qA_as_sets": true,
+    "injective_into_O_qA": true,
+    "injective_modulo_pm1": false,
+    "kernel_modulo_pm1": [
+     1,
+     25
+    ],
+    "map_Q_to_m": {
+     "1": 1,
+     "25": 49
+    },
+    "n": 25,
+    "reflection_lift_pairs_failing_in_O_qA": 0,
+    "reflection_lift_pairs_tested": 0,
+    "representatives_per_class": 9,
+    "rows": [
+     {
+      "Q": 1,
+      "fixed_point_in_H_exists": null,
+      "multiplier_phi": 1,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        1,
+        0
+       ],
+       [
+        25,
+        1
+       ]
+      ],
+      "trace0_representative_exists": false
+     },
+     {
+      "Q": 25,
+      "fixed_point_in_H_exists": true,
+      "fixed_vector": [
+       1,
+       -1,
+       0
+      ],
+      "multiplier_phi": 49,
+      "multiplier_reflection": 1,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        25,
+        24
+       ],
+       [
+        25,
+        25
+       ]
+      ],
+      "trace0_element": [
+       [
+        0,
+        -1
+       ],
+       [
+        25,
+        0
+       ]
+      ],
+      "trace0_representative_exists": true,
+      "v2": -2
+     }
+    ],
+    "rule_minus1_mod_2Q_plus1_mod_2n_over_Q_holds": true
+   },
+   {
+    "O_qA": [
+     1,
+     25,
+     27,
+     51
+    ],
+    "exact_divisors": [
+     1,
+     2,
+     13,
+     26
+    ],
+    "fricke_maps_to_minus_one": true,
+    "image_equals_O_qA_as_sets": true,
+    "injective_into_O_qA": true,
+    "injective_modulo_pm1": false,
+    "kernel_modulo_pm1": [
+     1,
+     26
+    ],
+    "map_Q_to_m": {
+     "1": 1,
+     "13": 25,
+     "2": 27,
+     "26": 51
+    },
+    "n": 26,
+    "reflection_lift_pairs_failing_in_O_qA": 0,
+    "reflection_lift_pairs_tested": 0,
+    "representatives_per_class": 9,
+    "rows": [
+     {
+      "Q": 1,
+      "fixed_point_in_H_exists": null,
+      "multiplier_phi": 1,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        1,
+        0
+       ],
+       [
+        26,
+        1
+       ]
+      ],
+      "trace0_representative_exists": false
+     },
+     {
+      "Q": 2,
+      "fixed_point_in_H_exists": true,
+      "multiplier_phi": 27,
+      "order_4_or_6_representative_exists": true,
+      "representative": [
+       [
+        2,
+        1
+       ],
+       [
+        26,
+        14
+       ]
+      ],
+      "trace0_representative_exists": false
+     },
+     {
+      "Q": 13,
+      "fixed_point_in_H_exists": true,
+      "fixed_vector": [
+       2,
+       -14,
+       1
+      ],
+      "multiplier_phi": 25,
+      "multiplier_reflection": 27,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        13,
+        6
+       ],
+       [
+        26,
+        13
+       ]
+      ],
+      "trace0_element": [
+       [
+        13,
+        -7
+       ],
+       [
+        26,
+        -13
+       ]
+      ],
+      "trace0_representative_exists": true,
+      "v2": -4
+     },
+     {
+      "Q": 26,
+      "fixed_point_in_H_exists": true,
+      "fixed_vector": [
+       1,
+       -1,
+       0
+      ],
+      "multiplier_phi": 51,
+      "multiplier_reflection": 1,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        26,
+        25
+       ],
+       [
+        26,
+        26
+       ]
+      ],
+      "trace0_element": [
+       [
+        0,
+        -1
+       ],
+       [
+        26,
+        0
+       ]
+      ],
+      "trace0_representative_exists": true,
+      "v2": -2
+     }
+    ],
+    "rule_minus1_mod_2Q_plus1_mod_2n_over_Q_holds": true
+   },
+   {
+    "O_qA": [
+     1,
+     53
+    ],
+    "exact_divisors": [
+     1,
+     27
+    ],
+    "fricke_maps_to_minus_one": true,
+    "image_equals_O_qA_as_sets": true,
+    "injective_into_O_qA": true,
+    "injective_modulo_pm1": false,
+    "kernel_modulo_pm1": [
+     1,
+     27
+    ],
+    "map_Q_to_m": {
+     "1": 1,
+     "27": 53
+    },
+    "n": 27,
+    "reflection_lift_pairs_failing_in_O_qA": 0,
+    "reflection_lift_pairs_tested": 0,
+    "representatives_per_class": 9,
+    "rows": [
+     {
+      "Q": 1,
+      "fixed_point_in_H_exists": null,
+      "multiplier_phi": 1,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        1,
+        0
+       ],
+       [
+        27,
+        1
+       ]
+      ],
+      "trace0_representative_exists": false
+     },
+     {
+      "Q": 27,
+      "fixed_point_in_H_exists": true,
+      "fixed_vector": [
+       1,
+       -1,
+       0
+      ],
+      "multiplier_phi": 53,
+      "multiplier_reflection": 1,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        27,
+        26
+       ],
+       [
+        27,
+        27
+       ]
+      ],
+      "trace0_element": [
+       [
+        0,
+        -1
+       ],
+       [
+        27,
+        0
+       ]
+      ],
+      "trace0_representative_exists": true,
+      "v2": -2
+     }
+    ],
+    "rule_minus1_mod_2Q_plus1_mod_2n_over_Q_holds": true
+   },
+   {
+    "O_qA": [
+     1,
+     15,
+     41,
+     55
+    ],
+    "exact_divisors": [
+     1,
+     4,
+     7,
+     28
+    ],
+    "fricke_maps_to_minus_one": true,
+    "image_equals_O_qA_as_sets": true,
+    "injective_into_O_qA": true,
+    "injective_modulo_pm1": false,
+    "kernel_modulo_pm1": [
+     1,
+     28
+    ],
+    "map_Q_to_m": {
+     "1": 1,
+     "28": 55,
+     "4": 15,
+     "7": 41
+    },
+    "n": 28,
+    "reflection_lift_pairs_failing_in_O_qA": 0,
+    "reflection_lift_pairs_tested": 0,
+    "representatives_per_class": 9,
+    "rows": [
+     {
+      "Q": 1,
+      "fixed_point_in_H_exists": null,
+      "multiplier_phi": 1,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        1,
+        0
+       ],
+       [
+        28,
+        1
+       ]
+      ],
+      "trace0_representative_exists": false
+     },
+     {
+      "Q": 4,
+      "fixed_point_in_H_exists": false,
+      "multiplier_phi": 15,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        4,
+        1
+       ],
+       [
+        28,
+        8
+       ]
+      ],
+      "trace0_representative_exists": false
+     },
+     {
+      "Q": 7,
+      "fixed_point_in_H_exists": true,
+      "fixed_vector": [
+       4,
+       -8,
+       1
+      ],
+      "multiplier_phi": 41,
+      "multiplier_reflection": 15,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        7,
+        5
+       ],
+       [
+        28,
+        21
+       ]
+      ],
+      "trace0_element": [
+       [
+        7,
+        -2
+       ],
+       [
+        28,
+        -7
+       ]
+      ],
+      "trace0_representative_exists": true,
+      "v2": -8
+     },
+     {
+      "Q": 28,
+      "fixed_point_in_H_exists": true,
+      "fixed_vector": [
+       1,
+       -1,
+       0
+      ],
+      "multiplier_phi": 55,
+      "multiplier_reflection": 1,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        28,
+        27
+       ],
+       [
+        28,
+        28
+       ]
+      ],
+      "trace0_element": [
+       [
+        0,
+        -1
+       ],
+       [
+        28,
+        0
+       ]
+      ],
+      "trace0_representative_exists": true,
+      "v2": -2
+     }
+    ],
+    "rule_minus1_mod_2Q_plus1_mod_2n_over_Q_holds": true
+   },
+   {
+    "O_qA": [
+     1,
+     57
+    ],
+    "exact_divisors": [
+     1,
+     29
+    ],
+    "fricke_maps_to_minus_one": true,
+    "image_equals_O_qA_as_sets": true,
+    "injective_into_O_qA": true,
+    "injective_modulo_pm1": false,
+    "kernel_modulo_pm1": [
+     1,
+     29
+    ],
+    "map_Q_to_m": {
+     "1": 1,
+     "29": 57
+    },
+    "n": 29,
+    "reflection_lift_pairs_failing_in_O_qA": 0,
+    "reflection_lift_pairs_tested": 0,
+    "representatives_per_class": 9,
+    "rows": [
+     {
+      "Q": 1,
+      "fixed_point_in_H_exists": null,
+      "multiplier_phi": 1,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        1,
+        0
+       ],
+       [
+        29,
+        1
+       ]
+      ],
+      "trace0_representative_exists": false
+     },
+     {
+      "Q": 29,
+      "fixed_point_in_H_exists": true,
+      "fixed_vector": [
+       1,
+       -1,
+       0
+      ],
+      "multiplier_phi": 57,
+      "multiplier_reflection": 1,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        29,
+        28
+       ],
+       [
+        29,
+        29
+       ]
+      ],
+      "trace0_element": [
+       [
+        0,
+        -1
+       ],
+       [
+        29,
+        0
+       ]
+      ],
+      "trace0_representative_exists": true,
+      "v2": -2
+     }
+    ],
+    "rule_minus1_mod_2Q_plus1_mod_2n_over_Q_holds": true
+   },
+   {
+    "O_qA": [
+     1,
+     11,
+     19,
+     29,
+     31,
+     41,
+     49,
+     59
+    ],
+    "exact_divisors": [
+     1,
+     2,
+     3,
+     5,
+     6,
+     10,
+     15,
+     30
+    ],
+    "fricke_maps_to_minus_one": true,
+    "image_equals_O_qA_as_sets": true,
+    "injective_into_O_qA": true,
+    "injective_modulo_pm1": false,
+    "kernel_modulo_pm1": [
+     1,
+     30
+    ],
+    "map_Q_to_m": {
+     "1": 1,
+     "10": 19,
+     "15": 29,
+     "2": 31,
+     "3": 41,
+     "30": 59,
+     "5": 49,
+     "6": 11
+    },
+    "n": 30,
+    "reflection_lift_pairs_failing_in_O_qA": 3,
+    "reflection_lift_pairs_tested": 3,
+    "representatives_per_class": 9,
+    "rows": [
+     {
+      "Q": 1,
+      "fixed_point_in_H_exists": null,
+      "multiplier_phi": 1,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        1,
+        0
+       ],
+       [
+        30,
+        1
+       ]
+      ],
+      "trace0_representative_exists": false
+     },
+     {
+      "Q": 2,
+      "fixed_point_in_H_exists": false,
+      "multiplier_phi": 31,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        2,
+        1
+       ],
+       [
+        30,
+        16
+       ]
+      ],
+      "trace0_representative_exists": false
+     },
+     {
+      "Q": 3,
+      "fixed_point_in_H_exists": false,
+      "multiplier_phi": 41,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        3,
+        2
+       ],
+       [
+        30,
+        21
+       ]
+      ],
+      "trace0_representative_exists": false
+     },
+     {
+      "Q": 5,
+      "fixed_point_in_H_exists": true,
+      "fixed_vector": [
+       6,
+       -6,
+       1
+      ],
+      "multiplier_phi": 49,
+      "multiplier_reflection": 11,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        5,
+        4
+       ],
+       [
+        30,
+        25
+       ]
+      ],
+      "trace0_element": [
+       [
+        5,
+        -1
+       ],
+       [
+        30,
+        -5
+       ]
+      ],
+      "trace0_representative_exists": true,
+      "v2": -12
+     },
+     {
+      "Q": 6,
+      "fixed_point_in_H_exists": true,
+      "fixed_vector": [
+       5,
+       -25,
+       2
+      ],
+      "multiplier_phi": 11,
+      "multiplier_reflection": 49,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        6,
+        1
+       ],
+       [
+        30,
+        6
+       ]
+      ],
+      "trace0_element": [
+       [
+        12,
+        -5
+       ],
+       [
+        30,
+        -12
+       ]
+      ],
+      "trace0_representative_exists": true,
+      "v2": -10
+     },
+     {
+      "Q": 10,
+      "fixed_point_in_H_exists": false,
+      "multiplier_phi": 19,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        10,
+        3
+       ],
+       [
+        30,
+        10
+       ]
+      ],
+      "trace0_representative_exists": false
+     },
+     {
+      "Q": 15,
+      "fixed_point_in_H_exists": true,
+      "fixed_vector": [
+       2,
+       -16,
+       1
+      ],
+      "multiplier_phi": 29,
+      "multiplier_reflection": 31,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        15,
+        7
+       ],
+       [
+        30,
+        15
+       ]
+      ],
+      "trace0_element": [
+       [
+        15,
+        -8
+       ],
+       [
+        30,
+        -15
+       ]
+      ],
+      "trace0_representative_exists": true,
+      "v2": -4
+     },
+     {
+      "Q": 30,
+      "fixed_point_in_H_exists": true,
+      "fixed_vector": [
+       1,
+       -1,
+       0
+      ],
+      "multiplier_phi": 59,
+      "multiplier_reflection": 1,
+      "order_4_or_6_representative_exists": false,
+      "representative": [
+       [
+        30,
+        29
+       ],
+       [
+        30,
+        30
+       ]
+      ],
+      "trace0_element": [
+       [
+        0,
+        -1
+       ],
+       [
+        30,
+        0
+       ]
+      ],
+      "trace0_representative_exists": true,
+      "v2": -2
+     }
+    ],
+    "rule_minus1_mod_2Q_plus1_mod_2n_over_Q_holds": true
+   }
+  ]
+ },
+ "monodromy_leg": {
+  "cooper_s10": {
+   "acts_trivially_on_A_modulo_pm1": false,
+   "generators": {
+    "cusp_z=0": {
+     "det": 1,
+     "is_reflection": false,
+     "multiplier_on_A": 1
+    },
+    "product_of_the_three": {
+     "det": 1,
+     "multiplier_on_A": 11,
+     "order": 4
+    },
+    "z=-1/4": {
+     "det": -1,
+     "div_v": 2,
+     "is_reflection": true,
+     "multiplier_on_A": 11,
+     "v2": -4
+    },
+    "z=1/16": {
+     "det": -1,
+     "div_v": 1,
+     "is_reflection": true,
+     "multiplier_on_A": 1,
+     "v2": -2
+    }
+   },
+   "gram_equals_lattice_cert_gram": true,
+   "multipliers_seen": [
+    1,
+    11
+   ]
+  },
+  "cooper_s7": {
+   "acts_trivially_on_A_modulo_pm1": true,
+   "generators": {
+    "cusp_z=0": {
+     "det": 1,
+     "is_reflection": false,
+     "multiplier_on_A": 1
+    },
+    "product_of_the_three": {
+     "det": 1,
+     "multiplier_on_A": 1,
+     "order": 3
+    },
+    "z=-1": {
+     "det": -1,
+     "div_v": 2,
+     "is_reflection": true,
+     "multiplier_on_A": 1,
+     "v2": -2
+    },
+    "z=1/27": {
+     "det": -1,
+     "div_v": 1,
+     "is_reflection": true,
+     "multiplier_on_A": 1,
+     "v2": -2
+    }
+   },
+   "gram_equals_lattice_cert_gram": true,
+   "multipliers_seen": [
+    1
+   ]
+  }
+ },
+ "monodromy_vs_fixed_points": {
+  "cooper_s10": {
+   "z=-1/4": {
+    "agree": true,
+    "fixed_point_reflections": [
+     [
+      -4,
+      2,
+      11
+     ]
+    ],
+    "monodromy": [
+     -4,
+     2,
+     11
+    ]
+   },
+   "z=1/16": {
+    "agree": true,
+    "fixed_point_reflections": [
+     [
+      -2,
+      1,
+      1
+     ]
+    ],
+    "monodromy": [
+     -2,
+     1,
+     1
+    ]
+   }
+  },
+  "cooper_s7": {
+   "z=-1": {
+    "agree": true,
+    "fixed_point_reflections": [
+     [
+      -2,
+      2,
+      1
+     ]
+    ],
+    "monodromy": [
+     -2,
+     2,
+     1
+    ]
+   },
+   "z=1/27": {
+    "agree": true,
+    "fixed_point_reflections": [
+     [
+      -2,
+      1,
+      1
+     ]
+    ],
+    "monodromy": [
+     -2,
+     1,
+     1
+    ]
+   }
+  }
+ },
+ "not_claimed": [
+  "that gate T3 is adopted, or that the flag in check_T3_level_consistency.py is closed: that file is not edited; the recommendation below is addressed to T0",
+  "anything certified about T(cooper_s10): C2_cooper_s10_v4_DRAFT.json is DRAFT by T0 ruling; every s10 row is advisory (LATTICE_CERT_DRAFT)",
+  "that the isometries phi_g extend to the K3 lattice with a prescribed action on the Neron-Severi side: for multipliers other than +-1 that needs surjectivity of O(M_n) -> O(q), which is model-knowledge (Nikulin 1979, Thm 1.14.2), unfetched, not pinned",
+  "that the moduli space of the cooper_s10 family IS X_0(10)*: the Deep Think question stays open",
+  "any Kodaira fibre type at any locus (CLAUDE.md ledger item 3)",
+  "any statement about the rho = 20 cut (not adopted) or any ranking of candidates",
+  "any physical reading whatsoever (VISION sec 1.3; Tier C blocked, F5b)"
+ ],
+ "numerics": {
+  "dps": [
+   60,
+   120
+  ],
+  "relation_order": 40
+ },
+ "pass_orders": {
+  "leg_O_and_leg_W": "PASS(30) - finite sweep over n = 1..30; the rule m = -1 mod 2Q, +1 mod 2n/Q itself is symbolic in n (stage 0)",
+  "locus_identification_and_t_values": "PASS(40) inherited - z is identified through the relation 1/z = alpha t + beta + gamma/t, fitted upstream to q-order 40 (check_CM_points_rho20)",
+  "relation_order": 40,
+  "sweep_order": 30
+ },
+ "provenance": "Generated-by: Claude (Fable 5.1), Stream 2 | Verified-by: test_atkin_lehner_vs_disc_form_controls.py | Reviewed-by: N",
+ "recommendation_to_T0": "NARROW the flag ATKIN_LEHNER_ACTION_UNVERIFIED: the lattice-level action is now explicit and exact (isomorphism, not a count). What stays open is stated in not_claimed (extension to the Neron-Severi side; identification of the moduli space). Not an edit of check_T3.",
+ "stage0_symbolic": {
+  "AL_shape_phi_entries_are_integer_polynomials": true,
+  "fixed_vector_norm_is_minus_2det_over_n": true,
+  "image_of_dual_generator_integral_off_w": true,
+  "m_equals_1_plus_2nprime_bc_on_shape": true,
+  "m_equals_2Qad_minus_1_on_shape": true,
+  "multiplier_is_Qad_plus_nprime_bc": true,
+  "phi_formula_is_the_pullback": true,
+  "phi_gh_equals_phi_h_phi_g": true,
+  "pullback_scales_norm_by_det_squared": true,
+  "trace0_phi_equals_minus_reflection": true
+ },
+ "status": "RECORD - proposal stage. T3 is NOT adopted. cooper_s10 output is ADVISORY (LATTICE_CERT_DRAFT).",
+ "tier": "B",
+ "tier_reason": "stage 0, legs O and W exact; leg F vectors/reflections/multipliers exact, t and 1/z numeric at 60 and 120 digits; leg M inherits the numerical recognition of check_U1_lattice stage 2; s10 lattice certificate DRAFT",
+ "verdict": "AL_ACTION_ON_DISC_FORM_EXPLICIT",
+ "verdict_rendered": "AL_ACTION_ON_DISC_FORM_EXPLICIT - PASS(30) over n for legs O and W; PASS(40) inherited for every z-locus identification"
+}
