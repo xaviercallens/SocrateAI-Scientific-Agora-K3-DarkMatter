@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "leanmaster": {
+      "type": "stdio",
+      "command": "/mnt/disks/disk-socrateai-local-1/callensxavier_home_data/SocrateAI-Scientific-Agora-LeanMaster/tools/leanmaster_mcp.sh",
+      "args": [],
+      "env": {}
+    }
+  }
+}

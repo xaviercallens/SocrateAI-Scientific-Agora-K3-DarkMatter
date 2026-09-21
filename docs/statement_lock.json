@@ -1,0 +1,17 @@
+{
+  "Stream2Lean/CMPoints.lean": {
+    "TN": "7c8d9a8cfbc0058e",
+    "TN_norm": "df5a2b72840e4357",
+    "TN_symm": "a4eec8a73bc02280",
+    "atkin_lehner_multipliers_level_10": "c75a48585c5e922f",
+    "disc_form_automorphisms_level_10": "db8ad1039d699575",
+    "fricke_vector_norm": "ecc456d059b1dba5",
+    "neg_four_is_square_mod_40": "a0179f4b0fb7f5f9",
+    "neg_three_is_square_mod_28": "6027eff6341af7fe",
+    "neg_three_not_square_mod_40": "1f1890141e52e6d8",
+    "s10_locus_norms": "e7426f6e8171b75a",
+    "s7_A2_vector_norm": "cc1bb933171761a6",
+    "s7_second_wall_norm": "4ff60ca113a9208c",
+    "s7_walls_are_reflections": "908051936afd46da"
+  }
+}

@@ -75,11 +75,11 @@ independently-verified S₂,₁ sequence.
 
 ### Python Verification (executed 2026-07-11)
 ```python
-import math
-def u(A, B, n):
-    return sum(math.comb(n,k)**A * math.comb(n+k,k)**B for k in range(n+1))
-for i in range(20):
-    print(i, u(1,2,i), u(2,1,i))
+    import math   # indented on purpose: Lake's import scanner reads a line-initial `import` as a Lean import
+    def u(A, B, n):
+        return sum(math.comb(n,k)**A * math.comb(n+k,k)**B for k in range(n+1))
+    for i in range(20):
+        print(i, u(1,2,i), u(2,1,i))
 ```
 Output confirms u(1,2,1)=5 ≠ u(2,1,1)=3 — the two sequences diverge
 immediately after n=0 (both equal 1 there, as they must: the empty/trivial
