@@ -90,8 +90,9 @@ TBD-AT-FREEZE unless a certificate already fixes them.
 ### Layer 2 — The T² side: which elliptic pair? (hard gates; the part that can actually discriminate)
 - **T1. L₂'s coordinate is a Hauptmodul for an explicit genus-0 group Γ_n, by an exact
   q-series identity `PASS(N)`, with cross-level negative controls.**
-  *s7:* `HAUPTMODUL_S7_GAMMA07PLUS.json` (Γ₀(7)+). *s10:* Hauptmodul for Γ₀(10)\* found by
-  the spike, no certificate yet. *Fails:* a candidate tested against the wrong level (the
+  *s7:* `HAUPTMODUL_S7_GAMMA07PLUS.json` (Γ₀(7)+). *s10:* `HAUPTMODUL_S10_GAMMA010STAR.json`
+  (Γ₀(10)\*, added 2026-09-17; relation 1/z = 16t + 8 + 1/t exact to order 40, Fricke
+  constant exact, w₂/w₅ constants by 50-digit recognition, Tier B). *Fails:* a candidate tested against the wrong level (the
   spike's s7-at-level-10 and s10-at-level-7 rows).
 - **T2. Transcendental lattice T ≅ U⊕⟨2n⟩, certified with a serialized witness and an
   independent re-derivation (producer ≠ verifier), then accepted by T0.**
@@ -149,7 +150,7 @@ break it. On current certificates:
 | Candidate | Where it stands | Blocking items |
 |---|---|---|
 | cooper_s7 | Layer 1 (K0–K4) met, K3 at PASS(60); T1, T2, T3 met; L2/L3 on DRAFT certificates | L2/L3 review, F2 (TW2A Q1) |
-| cooper_s10 | Layer 1 (K0–K4) met, K3 at PASS(60) | T1 (spike only, no certificate), T2 (kept DRAFT, D6′), T3 (Γ₀(10)\* question) |
+| cooper_s10 | Layer 1 (K0–K4) met, K3 at PASS(60); T1 met (Γ₀(10)\*, 2026-09-17) | T2 (kept DRAFT, D6′), T3 (Γ₀(10)\* question) |
 | cooper_s18 | K3 at PASS(60); fails K4 | K4 (no K3 established), register quarantine |
 | t103 | Not assessable | Register status (S1 flag) |
 
