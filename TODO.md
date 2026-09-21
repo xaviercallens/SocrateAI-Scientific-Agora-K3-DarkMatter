@@ -1,6 +1,6 @@
 # ✅ TODO — restart here
 
-**Last updated:** 2026-09-21 (s10 lattice cert kept DRAFT by T0; orientation block below dates from 2026-07-26) · **Release:** `v0.3.9-thought-experiments-tested` · **Previous TODO:** commit history
+**Last updated:** 2026-09-21 (s10 lattice cert kept DRAFT by T0; orientation block below dates from 2026-07-26) · **Release:** `v0.3.10-rho20-adopted-lean-v4.34.0` · **Previous TODO:** commit history
 
 > ## 30-second orientation
 >
