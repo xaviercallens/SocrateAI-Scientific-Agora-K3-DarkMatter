@@ -2,7 +2,21 @@
 
 **Status:** BIFURCATED — **CANDIDATE REGISTER (§1) FROZEN 2026-07-20** (register-level, two-model + Xavier, decision D5); **CRITERIA THRESHOLDS still SKELETON, NOT FROZEN** (§7 pre-freeze checklist open: C1 N₁, C3b N, C4 requirements, C5 bounds, scoring weights are all `TBD-AT-FREEZE`).  
 **Freeze target (full criteria v1.0):** end of Phase 0 (week 2), jointly signed per the two-model rule (`EXECUTION_PLAN.md` §1.2.3) and by Xavier. The register freeze below does NOT constitute the full v1.0 freeze.  
-**Repo of record:** `SocrateAI-Scientific-Agora-K3-DarkMatter`; hash-pinned copies in the other two repos at freeze.
+**Repo of record:** `SocrateAI-Scientific-Agora-K3-DarkMatter`. **This file is that copy** — made
+canonical here on 2026-09-21 (T0, AM-5), seeded byte-identical from the Stream 1 LeanProposal copy
+at its commit `6c09d2d` (seed commit `f62f2c8`) and then amended by AM-1…AM-4 of
+`briefs/K3_CRITERIA_AMENDMENT_PROPOSAL_2026_09_21.md`; record `briefs/T0_DECISIONS_2026_09_21_STREAM2.md`
+(D8′). The copies in the Stream 1 and Stream 3 repositories are **mirrors** from now on, hash-pinned
+against this file; they are not independent authorities. Establishing this copy is **not** a freeze:
+the thresholds remain SKELETON and §7 still blocks v1.0.
+
+> **Open items carried into this copy, visible rather than inherited silently.**
+> (a) §1 is FROZEN (D5, 2026-07-20) and is copied **untouched**, including `K-S22` and `K-t103`;
+> Stream 1's `briefs/T0_FLAG_K3_CRITERIA_T103_STALE_2026_08_01.md` (t103 was never vetoed — E-014)
+> is still unanswered, so §1's t103 row is stale-but-frozen and needs a T0 ruling, not an edit here.
+> (b) §5's table is not regenerable in this repository — see §5.
+> (c) Several `TBD-AT-FREEZE` markers remain (C4, C5, §4); per the `criteria-checkers` contract,
+> implementing those is blocked until the freeze resolves them.
 
 > **Freeze semantics.** After v1.0 is frozen: (1) AutoEvolve may score candidates *only* through the checker scripts listed here; (2) no criterion, threshold, or weight may change except by a versioned amendment (§6) recorded *before* re-running any ranking; (3) every `TBD-AT-FREEZE` field below must be resolved with a literature citation or a first-principles computation — an unfilled TBD blocks the freeze.
 
@@ -70,13 +84,30 @@ Template per criterion: **Definition** (mathematically exact) · **Checking proc
 - **Failure:** F1 removal.
 - **Tier:** B → A(N₁-bounded) on pass.
 
-### C2 — Kodaira Fiber Content
-- **Definition:** the Weierstrass model associated to the candidate family (construction fixed at freeze, with citation) has singular fibers whose Kodaira types are all on the physical list, and the total fiber data is consistent with the Euler-characteristic/K3 constraint used downstream (state the exact constraint at freeze).
-- **Checking procedure:** compute the discriminant and j-invariant of the Weierstrass model symbolically; apply Tate's algorithm at each discriminant component; tabulate types.
-- **Checker:** `checkers/check_C2_kodaira.py` — outputs the fiber table as machine-readable JSON (this table is the *only* admissible source for fiber claims in any report).
-- **Threshold:** exact — all fibers classified, none of excluded type, constraint identity satisfied.
-- **Failure:** F1 removal.
-- **Tier:** B → A on pass.
+### C2 — Transcendental Lattice (T2) — *amended 2026-09-21 (AM-3); replaces the Kodaira criterion*
+- **Definition:** the family's transcendental lattice satisfies `T ≅ U ⊕ ⟨2n⟩`, certified with a
+  **serialized base-change witness** and an **independent re-derivation** (producer ≠ verifier),
+  and then accepted by T0. A DRAFT certificate is **not** a pass and **not** a failure.
+- **Checking procedure:** exact integer arithmetic on the monodromy-invariant lattice; the witness
+  `P` is re-applied by the verifier, and `Pᵀ G P = U ⊕ ⟨d⟩`, `d = |det| = 2n` are recomputed.
+- **Checkers:** `checkers/check_U1_lattice.py`, `checkers/check_U1_witness_serialization.py`,
+  `checkers/independent_rederivation_C2_s10_v4.py` (+ their control files).
+- **Status:** `cooper_s7` LIVE (`C2_cooper_s7_v5.json`, T0 D5′); `cooper_s10` **DRAFT**
+  (`C2_cooper_s10_v4_DRAFT.json`, kept DRAFT by T0 D6′) ⇒ every s10 statement resting on it is
+  ADVISORY.
+- **Threshold:** exact; the identification of the monodromy-invariant lattice with `T` is Tier B via
+  the read framework sources (Dolgachev 1996 §7, Doran 1998 Thm 5.13).
+- **Failure:** F1 removal — **only** on a certificate whose verdict fails, never on DRAFT status.
+- **Tier:** B.
+
+> ~~**C2 — Kodaira Fiber Content.** The Weierstrass model associated to the candidate family has
+> singular fibers whose Kodaira types are all on the physical list … Checker
+> `checkers/check_C2_kodaira.py`; threshold exact; failure F1 removal; Tier B → A on pass.~~
+> **RETRACTED and replaced (E-007, F6; ledger item 3).** Kodaira readings are a category error for
+> this register: the finite singular loci are order-2 elliptic points of the `X₀(n)⁺` modular curve,
+> not Kodaira degenerations. The v1 C1/C2 Kodaira certificates (`2×II`, ρ = 4, T = 18) are retracted
+> in-band. `check_C2_kodaira.py` must not be run on a register candidate. The full original text is
+> preserved in git history at commit `f62f2c8` (the byte-identical seed of this file).
 
 ### C3 — Symmetric-Square Structure (from VISION §1.1, amendment A2)
 - **Definition:** the candidate's order-3 operator L₃ equals Sym²(L₂) for an explicitly exhibited order-2 operator L₂ (equality of operators after the normalization fixed at freeze — state it).
@@ -85,6 +116,14 @@ Template per criterion: **Definition** (mathematically exact) · **Checking proc
   2. *Formal:* Lean statement `sym2_<candidate>` from Stream 1 WP S1-04; status auto-imported from the open-goal export.
 - **Threshold:** route 1 pass clears `SYM2_UNVERIFIED` → `SYM2_SYMBOLIC`; route 2 kernel proof upgrades to `SYM2_PROVED`.
 - **Failure:** symbolic route fails ⇒ F1 removal *for the dual-scale role* (the candidate may remain of independent mathematical interest, outside this program's physics).
+- **Integrality is NOT part of C3 — literal reading, ruled by T0 2026-09-21 (AM-2, D8′).** The
+  definition above asks for an *exhibited order-2 operator*, and nothing more. The partner
+  **sequence**'s integrality is coordinate-dependent: the least `c` with the partner integral in the
+  coordinate `cz` is 1 for `cooper_s7` and 2 for `cooper_s10` and `avs_sporadic3_s18`
+  (`checkers/check_partner_global_boundedness.py`, `PARTNER_GLOBAL_BOUNDEDNESS.json`, PASS(160);
+  the bound `e(n) ≤ n−1` holds for all n modulo two Stream 1 theorems). That constant is **reported
+  as an attribute, never used as a gate and never scored.** Under this reading both register
+  primaries clear C3.
 - **Tier:** B → A on kernel proof.
 - **2026-07-18 status + structural note (symbolic route done, T0).** `scripts/check_C3_symsquare.py`
   computes the self-adjointness polynomial `W = ⅓a₂″ + ⅔a₂a₂′ + 4⁄27 a₂³ + 2a₀ − ⅔a₁a₂ − a₁′`
@@ -122,6 +161,52 @@ Template per criterion: **Definition** (mathematically exact) · **Checking proc
 - **Failure:** flag `SWAMPLAND_TENSION`, score penalty per §4; removal only if the freeze designates the bound as hard.
 - **Tier:** B (ceiling).
 
+### C6 — Definiteness cut (ρ = 20) — *added 2026-09-21 (AM-1); T0 D7′*
+- **Definition:** within a register family, the **candidate surfaces** are the members whose
+  transcendental lattice has rank 2 and is positive definite (ρ = 20) — the CM points of the
+  family's modular curve. A member is named `(family, D, z)`, with `T_X` its reduced binary form.
+- **Checkers:** `checkers/check_CM_points_rho20.py` (the table); `checkers/check_A2_membership.py`
+  (occurrence criterion: **D occurs at level n iff D is a square mod 4n**, an all-vectors
+  statement); `checkers/check_CM_completeness_classnumber.py` (completeness per listed discriminant).
+- **Threshold:** membership is exact lattice arithmetic. Every `z` is a **numeric recognition**
+  (fitted at one precision, re-checked at a strictly higher one) through a Hauptmodul relation
+  quoted `PASS(N)`, and is reported as such.
+- **Failure:** a proposed surface that is not a CM point of a register family is outside C6. No
+  candidate is removed by C6.
+- **What C6 is NOT** (the ruling is read narrowly; widening any of these needs its own T0 text):
+  not a **ranking** — no ordering by `|D|`, no preference between families, and "A₂ is in the s7
+  family and not in the s10 family" is a lattice fact; not **corroboration** — elliptic point ⇒ CM
+  is forced, and the binary-form and modular sides agree by Shioda–Inose; not **complete** beyond
+  the discriminants a certificate lists, since CM points are dense on the curve; not **physical** —
+  no member maps to any observable (F5b, ledger item 4).
+- **Tier:** B. **Scoring:** none — see §4.
+
+### T1 — Modular coordinate — *added 2026-09-21 (AM-4); consistency gate, never scored*
+- **Definition:** `L₂`'s coordinate is a Hauptmodul for an explicit genus-0 group, by an exact
+  q-series identity, with cross-level negative controls.
+- **Checkers:** `checkers/check_s7_hauptmodul_gamma07plus.py` (Γ₀(7)⁺),
+  `checkers/check_s10_hauptmodul_gamma010star.py` (Γ₀(10)\*). Verdicts quoted `PASS(N)`.
+- **Failure:** no removal; the candidate simply has no certified modular coordinate.
+- **Tier:** B. **Scoring:** none.
+
+### T3 — Level consistency — *added 2026-09-21 (AM-4); consistency gate, never scored*
+- **Definition:** the `n` re-derived from the lattice certificate (C2) equals the level at which the
+  candidate's inverse mirror map is verified to uniformize.
+- **Wording that is part of the criterion:** these are **two disjoint computations on the same
+  operator**, *not* independent measurements — both legs start from the same operator/recurrence.
+  No text in this program may describe T3 as independent corroboration.
+- **Checker:** `checkers/check_T3_level_consistency.py` (+ its control file).
+- **Stated limits, part of the criterion:** no real candidate having **both** legs and disagreeing
+  is known, so T3's discriminating power against such a candidate is **UNESTABLISHED**; and the
+  teeth are **directional** — leg M is only ever run at the `n` the lattice names.
+- **Atkin–Lehner:** the action of the Atkin–Lehner group on the discriminant form is **verified at
+  lattice level** — `W(n) → O(q_A)` is an explicit isomorphism, `PASS(30)` over `n`
+  (`ATKIN_LEHNER_DISC_FORM.json`); the former flag `ATKIN_LEHNER_ACTION_UNVERIFIED` is therefore
+  retired. The one open flag on `cooper_s10` is `LATTICE_CERT_DRAFT`, a **process** item (C2 above),
+  not a mathematical one. The two are never to be merged into one flag.
+- **Failure:** disagreement is a finding to escalate, not an automatic removal.
+- **Tier:** B. **Scoring:** none.
+
 ---
 
 ## 3. Checker Contract (applies to every `checkers/*.py`)
@@ -137,6 +222,13 @@ Template per criterion: **Definition** (mathematically exact) · **Checking proc
 ## 4. Scoring (consumed by AutoEvolve)
 
 - Hard criteria (fail ⇒ F1): **C1, C2, C3-symbolic** — TBD-AT-FREEZE: confirm the hard set.
+- **A hard criterion is failed only by a certificate whose verdict fails.** A **DRAFT** or absent
+  certificate is neither a pass nor a failure and triggers **no** F1 removal; it makes every
+  statement resting on it ADVISORY. (Added 2026-09-21 with AM-3: `cooper_s10`'s lattice certificate
+  is DRAFT by T0 D6′ and must not read as failing the amended C2.)
+- **C6, T1 and T3 are neither hard nor soft: they are not scored at all.** C6 records which members
+  of a family are candidates; T1 and T3 are consistency gates. None contributes a term to any score,
+  and AutoEvolve may not read them as one.
 - Soft criteria (margin-scored): C4, C5 — weights TBD-AT-FREEZE, fixed before any ranking run, hash-pinned with this file.
 - Score formula: TBD-AT-FREEZE (proposed: lexicographic — hard criteria as gates, then weighted soft margins). AutoEvolve may not modify weights at runtime.
 
@@ -144,14 +236,21 @@ Template per criterion: **Definition** (mathematically exact) · **Checking proc
 
 ## 5. Live Status Table (auto-generated — do not edit by hand)
 
-| Candidate | C1 | C2 | C3 | C4 | C5 | Flags | Verdict |
-|---|---|---|---|---|---|---|---|
-| K-s7 | — | — | — | — | — | `SYM2_UNVERIFIED` | pending |
-| K-s10 | — | — | — | — | — | `SYM2_UNVERIFIED` | pending |
-| K-S22 | — | — | — | — | — | `SYM2_UNVERIFIED` | pending |
-| K-t103 | — | — | — | — | — | `SYM2_UNVERIFIED` | pending |
-
-*Regenerated by `scripts/render_status_table.py` from checker certificates + the Stream 1 open-goal export. A hand edit here is a reportable integrity incident (VISION F6 spirit).*
+> **NOT REGENERATED IN THIS REPOSITORY — 2026-09-21, in band.** `scripts/render_status_table.py`
+> **does not exist here and never has** (absence verified by repo search 2026-07-26,
+> `briefs/STREAM1_S1_10_11_12_STATUS_AND_UNBLOCK_2026_07_26.md`; the `criteria-checkers` skill
+> records citing it as a phantom-artifact incident under standing rule 4). The table that stood here
+> was the pre-2026-07-18 skeleton — all `—` and `SYM2_UNVERIFIED` for s7/s10 — which contradicts
+> every certificate now on `main`. Copying it into the canonical file would give a stale table fresh
+> authority, and hand-editing it is the integrity incident this section itself forbids. It is
+> therefore **removed, not edited** (original preserved in the seed commit `f62f2c8`), and until a
+> renderer is written and committed:
+>
+> **The table of record is `data/certificates/`.** Each criterion's checker and certificate are
+> named in §2 above; finite-order verdicts are quoted `PASS(N)` there.
+>
+> Open item: write `scripts/render_status_table.py` (reading certificates only, never hand input),
+> then restore a generated table here. A hand edit remains a reportable integrity incident.
 
 ---
 
