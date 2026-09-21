@@ -124,6 +124,13 @@
       `briefs/STREAM2_K3xT2_SELECTION_CRITERIA_PROPOSAL_2026_09_16.md` (Reading S vs P, new
       two-lineage gate T3, replace Kodaira C2 with the lattice gate, no scoring yet). Not a
       freeze; `K3_CRITERIA.md` unchanged.
+      **2026-09-21: T3 is now runnable** — `checkers/check_T3_level_consistency.py`
+      (+ 21 controls incl. four REAL order-3 known-bads, and the Stream-1-sourced
+      Gauss-discriminant conflation control). s7 → AGREE(n=7) CONSISTENT; s10 → AGREE(n=10)
+      with two *separate* open flags (`LATTICE_CERT_DRAFT` process, `ATKIN_LEHNER_ACTION_
+      UNVERIFIED` mathematics). Proposal's "independent computations" corrected to "two
+      disjoint computations on the same operator". Record + asks:
+      `briefs/STREAM2_T3_LEVEL_CONSISTENCY_2026_09_21.md`. T3 still NOT adopted.
 - [ ] **T0: candidate register** — S1 `K3_CRITERIA.md` still lists t103 as dropped, although
       E-014 found no veto (S1 `briefs/T0_FLAG_K3_CRITERIA_T103_STALE_2026_08_01.md`, unanswered).
 
@@ -155,7 +162,7 @@
 5. **Numbers are computed, never typed.** ρ is derived at runtime as `b₂ − rank_V` from the step-A
    certificate; break that certificate and the number moves or the checker refuses.
 
-## Regression — all green as of `v0.3.4`
+## Regression — all green as of `v0.3.7` (T3 lines added 2026-09-21)
 
 ```bash
 python3 checkers/test_refs_self_regenerate.py            # 11/11 entries, both encodings agree
@@ -177,6 +184,8 @@ python3 checkers/independent_rederivation_C2_s10_v4_controls.py # 10 discriminat
 python3 checkers/test_C1_mirror_integrality_controls.py  # 7 controls (A279618 match; A112019 real known-bad + tamper/swap/corrupt/round-trip must fail)
 python3 checkers/check_C1_mirror_integrality.py --order 30 # all order-3 refs entries PASS(30); certs are at order 60 (--emit)
 python3 checkers/check_s10_hauptmodul_gamma010star.py   # s10 z(q) Hauptmodul for Gamma_0(10)*; controls N1-N4
+python3 checkers/check_T3_level_consistency.py          # T3 two-leg agreement on n; s7 AGREE(7), s10 AGREE(10)+flags
+python3 checkers/test_T3_level_consistency_controls.py  # 21 controls (4 REAL order-3 known-bads x 2 levels; conflation S1)
 ```
 
 ## The Tier A result, for the record

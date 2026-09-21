@@ -1,0 +1,163 @@
+#!/usr/bin/env python3
+"""
+test_T3_level_consistency_controls.py -- negative controls for check_T3_level_consistency.py.
+
+Standing rule 1: a test that cannot fail is not a test.  The bar set by the immediately
+preceding C1 work (commit 297425e) is a REAL known-bad, not only synthetic tampering, so
+the controls here are in two groups:
+
+  R-controls (REAL candidates, real data, no tampering)
+    R1  The other four order-3 entries in refs -- apery_zeta3, domb,
+        almkvist_zagier_second, avs_sporadic3_s18 -- are real candidates whose mirror maps
+        are integral (all six PASS(60) in C1).  Each must FAIL leg M at level 7 and at
+        level 10.  8 real fits; if leg M passed for an arbitrary order-3 mirror map it
+        would be measuring nothing.
+    R2  Real cross-family: cooper_s7's z at level 10, and cooper_s10's z at level 7, must
+        both FAIL.  (These are the T1 checkers' own N1/N3 controls, re-run through leg M.)
+    R3  Non-vacuity: the two real pairs must PASS, so R1/R2 are not failing for a dumb
+        reason (e.g. the fitter is broken).
+
+  S-controls (synthetic tampering of leg L; each must make the checker REFUSE)
+    S1  The CONFLATION control.  Feed the Gauss discriminant lattice of Gamma_0(n)-forms,
+        Gram(b^2 - 4nac) = [[0,0,-2n],[0,1,0],[-2n,0,0]], in place of U + <2n>.  Stream 1
+        proved these are not isometric for any n >= 1 (no_isometry_G0N_TN, commit e801d6e);
+        a checker that read n off it would report 2n^2 instead of n.  Must refuse.
+    S2  Tampered witness P (one entry changed) -> P^T G P is no longer U + <d>.
+    S3  Tampered Gram entry -> |det| no longer equals the splitting's d.
+    S4  Witness with det(P) = 2 -> not a lattice isometry.
+    S5  Odd d (U + <15>, so the +-summand is not <2n>) -> refuse.
+    S6  Missing witness -> refuse (a certificate without a serialized P cannot be checked;
+        this is why the 2026-07-27 serialization ruling exists).
+    S7  A lattice at the wrong level: s10's Gram fed through the s7 row must make leg M
+        test level 10, not 7 -- i.e. leg L really drives the level tested.
+
+Generated-by: Claude (Opus 5), Stream 2 | Verified-by: python3 + pytest, this file
+Reviewed-by: N
+"""
+import copy
+import json
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import check_T3_level_consistency as T3  # noqa: E402
+
+ORDER = 40
+REAL_KNOWN_BADS = ["apery_zeta3", "domb", "almkvist_zagier_second", "avs_sporadic3_s18"]
+results = []
+
+
+def record(name, ok, detail=""):
+    results.append((name, ok, detail))
+    print(f"  {'ok  ' if ok else 'FAIL'}  {name}" + (f"  -- {detail}" if detail else ""))
+
+
+def leg_M_passes(key, level):
+    try:
+        return T3.modular_leg(key, level, ORDER)["uniformizes_at_level"]
+    except T3.Refused:
+        return False
+
+
+def refuses(fn):
+    try:
+        fn()
+    except T3.Refused as e:
+        return True, str(e)[:70]
+    return False, "no refusal"
+
+
+def gram_with_d(d):
+    """A certificate-shaped dict for U + <d> in the repo's primitive-even basis."""
+    return {"derived": {
+        "gram_primitive_even": [[0, 0, -1], [0, d, 0], [-1, 0, 0]],
+        "u_splitting": {"basis_change_matrix": [[1, 0, 0], [0, 0, 1], [0, -1, 0]]}}}
+
+
+def as_cert_file(tmp, obj):
+    tmp.write_text(json.dumps(obj))
+    return tmp
+
+
+def main():
+    tmpdir = Path(__file__).resolve().parent / "__pycache__"
+    tmpdir.mkdir(exist_ok=True)
+    tmp = tmpdir / "_t3_control_cert.json"
+
+    print("=" * 78)
+    print("T3 controls")
+    print("=" * 78)
+    print("\nR -- REAL known-bads (real refs candidates, untampered data)")
+    for key in REAL_KNOWN_BADS:
+        for level in (7, 10):
+            record(f"R1 {key} does NOT uniformize at level {level}",
+                   not leg_M_passes(key, level))
+    record("R2 cooper_s7 z does NOT uniformize at level 10", not leg_M_passes("cooper_s7", 10))
+    record("R2 cooper_s10 z does NOT uniformize at level 7", not leg_M_passes("cooper_s10", 7))
+    record("R3 cooper_s7 DOES uniformize at level 7 (non-vacuity)",
+           leg_M_passes("cooper_s7", 7))
+    record("R3 cooper_s10 DOES uniformize at level 10 (non-vacuity)",
+           leg_M_passes("cooper_s10", 10))
+
+    print("\nS -- synthetic tampering of leg L (each must REFUSE)")
+    # S1: the conflation control, for n = 7 and n = 10.
+    for n in (7, 10):
+        g0n = {"derived": {
+            "gram_primitive_even": [[0, 0, -2 * n], [0, 1, 0], [-2 * n, 0, 0]],
+            "u_splitting": {"basis_change_matrix": [[1, 0, 0], [0, 1, 0], [0, 0, 1]]}}}
+        ok, why = refuses(lambda: T3.lattice_leg(as_cert_file(tmp, g0n)))
+        record(f"S1 Gauss discriminant lattice b^2-4*{n}ac (det {-4*n*n}) refused "
+               "(Stream 1 no_isometry_G0N_TN)", ok, why)
+
+    live = json.loads((T3.CERTS / "C2_cooper_s7_v5.json").read_text())
+
+    bad = copy.deepcopy(live)
+    bad["derived"]["u_splitting"]["basis_change_matrix"][0][1] += 1
+    ok, why = refuses(lambda: T3.lattice_leg(as_cert_file(tmp, bad)))
+    record("S2 tampered witness P refused", ok, why)
+
+    bad = copy.deepcopy(live)
+    bad["derived"]["gram_primitive_even"][1][1] = 16
+    ok, why = refuses(lambda: T3.lattice_leg(as_cert_file(tmp, bad)))
+    record("S3 tampered Gram entry refused", ok, why)
+
+    bad = copy.deepcopy(live)
+    bad["derived"]["u_splitting"]["basis_change_matrix"] = [[2, 0, 0], [0, 0, 1], [0, -1, 0]]
+    ok, why = refuses(lambda: T3.lattice_leg(as_cert_file(tmp, bad)))
+    record("S4 witness with det P = 2 refused", ok, why)
+
+    ok, why = refuses(lambda: T3.lattice_leg(as_cert_file(tmp, gram_with_d(15))))
+    record("S5 odd U-complement <15> refused", ok, why)
+
+    bad = copy.deepcopy(live)
+    del bad["derived"]["u_splitting"]["basis_change_matrix"]
+    ok, why = refuses(lambda: T3.lattice_leg(as_cert_file(tmp, bad)))
+    record("S6 missing serialized witness refused", ok, why)
+
+    # S7: leg L drives the level tested -- a d = 20 lattice must send leg M to level 10.
+    n20 = T3.lattice_leg(as_cert_file(tmp, gram_with_d(20)))["n_lattice"]
+    n14 = T3.lattice_leg(as_cert_file(tmp, gram_with_d(14)))["n_lattice"]
+    record("S7 leg L drives the level: <20> -> n 10, <14> -> n 7",
+           n20 == 10 and n14 == 7, f"got {n20}, {n14}")
+
+    # positive sanity on the real, untampered certificate
+    record("S0 untampered C2_cooper_s7_v5.json gives n = 7",
+           T3.lattice_leg(T3.CERTS / "C2_cooper_s7_v5.json")["n_lattice"] == 7)
+
+    tmp.unlink(missing_ok=True)
+    bad_n = [n for n, ok, _ in results if not ok]
+    print("-" * 78)
+    print(f"{len(results) - len(bad_n)}/{len(results)} controls behaved as required")
+    if bad_n:
+        for n in bad_n:
+            print(f"  FAILED: {n}")
+        return 1
+    return 0
+
+
+def test_t3_controls():
+    assert main() == 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
