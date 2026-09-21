@@ -152,10 +152,14 @@
       primaries: `briefs/STREAM2_TO_STREAM3_C3_BRANCH_REPLY_2026_09_21.md`. New input 09-21:
       integrality is coordinate-dependent — s10 and s18 partners are integral in 2z
       (`PARTNER_GLOBAL_BOUNDEDNESS.json`, e(n) ≤ n−1 for all n modulo two Stream 1 theorems).
-- [ ] **Defect, mechanical:** `check_C3b_symsqrt.py` `mum2` tests C(n) == −(n+1)² literally, so
-      its Apéry-ζ(3) golden control fires on a normalisation artifact (C = −4(n+1)²), not on a
-      real non-MUM operator. s7/s10 verdicts unaffected. Normalise before the test; fix the
-      golden test's docstring.
+- [x] **Defect FIXED 2026-09-21:** `check_C3b_symsqrt.py` tested C(n) == −(n+1)² literally, so a
+      genuine MUM partner whose fit clears denominators (Apéry ζ(3): C = −4(n+1)²) was reported
+      non-MUM / `FAIL_PARTNER_VALIDATION`. Now `mum_normalise` tests proportionality with a positive
+      constant and reports the constant. The golden test that ASSERTED the wrong verdict is
+      replaced by a regression (Apéry ζ(3) → `SYM2_OPERATOR_IDENTITY_PROVEN`, constant 4) plus
+      function-level known-bads. s7/s10 verdicts unchanged; both certs re-emitted at (n_fit 30,
+      deg 5) — the earlier (26, 2) vs (30, 5) parameter drift between them is gone.
+      Limitation kept in the test docstring: no end-to-end real non-MUM Sym² bulk in the suite.
 - [ ] **T0: candidate register** — S1 `K3_CRITERIA.md` still lists t103 as dropped, although
       E-014 found no veto (S1 `briefs/T0_FLAG_K3_CRITERIA_T103_STALE_2026_08_01.md`, unanswered).
 

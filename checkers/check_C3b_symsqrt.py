@@ -98,6 +98,17 @@ def fit_order2_recurrence(f, n_fit, deg):
     return Cpoly, Apoly, Bpoly
 
 
+def mum_normalise(C_expr, n):
+    """(is_mum, c): is C(n) = -c (n+1)^2 for a positive rational constant c?  c = 1 is the
+    literal MUM form; any other c is the same operator with denominators cleared."""
+    q = sp.cancel(sp.expand(C_expr) / (-(n + 1) ** 2))
+    if q.free_symbols or q == 0:
+        return False, None
+    q = sp.Rational(q)
+    pos = bool(q > 0)          # a plain bool, not a sympy Boolean
+    return pos, (q if pos else None)
+
+
 def validate_recurrence(f, Cpoly, Apoly, Bpoly, n_val):
     """Check C(m) f_{m+1} + A(m) f_m + B(m) f_{m-1} == 0 for m = 1..n_val-2. Return first
     failing m or None."""
@@ -214,7 +225,13 @@ def run_check(refs_path, bulk_id, n_fit=26, n_val=60, deg=2, mirror_order=14):
         return result, 1
 
     n = sp.Symbol("n")
-    mum2 = sp.expand(Cpoly.as_expr() + (n + 1) ** 2) == 0  # C(n) == -(n+1)^2
+    # MUM gate. fit_order2_recurrence clears denominators to integer content, so a partner whose
+    # rational recurrence has half-integers (e.g. Apery zeta(3), template (17,5,1,0): b odd) comes
+    # back as C(n) = -4(n+1)^2. Testing C == -(n+1)^2 LITERALLY then fired on that normalisation
+    # artifact and reported a genuine MUM partner as non-MUM (defect found 2026-09-21 by the
+    # independent verifier of briefs/STREAM2_TO_STREAM3_C3_BRANCH_REPLY_2026_09_21.md). The
+    # intrinsic statement is C(n) PROPORTIONAL to -(n+1)^2 with a positive constant.
+    mum2, mum_c = mum_normalise(Cpoly.as_expr(), n)
     partner_integral = all(x.denominator == 1 for x in f)
 
     # Build the partner recurrence string in the checker's a_{k+1} convention and confirm the
@@ -224,8 +241,11 @@ def run_check(refs_path, bulk_id, n_fit=26, n_val=60, deg=2, mirror_order=14):
     Aexpr = sp.expand(Apoly.as_expr())
     Bexpr = sp.expand(Bpoly.as_expr())
     k = sp.Symbol("k")
+    # the constant goes in the DENOMINATOR so the string keeps integer coefficients (the parser
+    # evals it as Python; a rational like 5/2 would become a float).
+    den = "((k+1)**2)" if (not mum2 or mum_c == 1) else f"({mum_c}*(k+1)**2)"
     rec_str = (f"(({str(Aexpr).replace('n','k')})*s[-1] + "
-               f"({str(Bexpr).replace('n','k')})*s[-2])/((k+1)**2)")
+               f"({str(Bexpr).replace('n','k')})*s[-2])/{den}")
     A2, B2, C2, _ = base.extract_recurrence_polys(rec_str, 2)
     f_init = [f[0], f[1]]
     a2, _ = base.generate_sequence(A2, B2, C2, f_init, mirror_order)
@@ -244,12 +264,15 @@ def run_check(refs_path, bulk_id, n_fit=26, n_val=60, deg=2, mirror_order=14):
         "B_coefficient_factored": str(sp.factor(Bexpr)),
     }
     # ALL-n operator-level proof: verify L3 = Sym^2(L2) symbolically over Q(z).
-    op_identity, collapse_ok, op_detail = sym2_operator_identity(A3, B3, Aexpr, Bexpr)
+    # sym2_operator_identity assumes the monic form (n+1)^2 f(n+1) = A f(n) + B f(n-1): divide exactly.
+    Amon, Bmon = (Aexpr, Bexpr) if (not mum2 or mum_c == 1) else (sp.expand(Aexpr / mum_c), sp.expand(Bexpr / mum_c))
+    op_identity, collapse_ok, op_detail = sym2_operator_identity(A3, B3, Amon, Bmon)
 
     result["validation"] = {
         "sqrt_is_order2_holonomic": True,
         "recurrence_validated_to_n": n_val - 2,
         "partner_MUM": bool(mum2),
+        "partner_MUM_normalising_constant": (str(mum_c) if mum2 else None),
         "mirror_map_z_L2_eq_z_L3": bool(mirror_match),
         "mirror_map_order": mirror_order,
         "bulk_z_of_q": [str(x) for x in z_l3[:8]],

@@ -74,26 +74,45 @@ def test_known_bad_generic_order3_not_symsquare(tmp_path):
     assert result["verdict"] == "NOT_SYMMETRIC_SQUARE"
 
 
-def test_known_bad_non_mum_symsquare_rejected(tmp_path):
-    """SECONDARY control (MUM gate): Apéry ζ(3) (A005259). Its series square root IS order-2
-    holonomic, but with C(n) = -4(n+1)^2 (constant 4 ≠ 1) — a symmetric square of a NON-MUM
-    order-2 operator. It has no matching elliptic mirror map, so the checker must refuse to
-    certify it as an elliptic partner: verdict FAIL_PARTNER_VALIDATION (partner_MUM False)."""
+def test_apery_zeta3_is_mum_after_normalisation(tmp_path):
+    """REGRESSION for the defect found 2026-09-21. Apery zeta(3) (A005259) is the Cooper-template
+    member (17, 5, 1, 0); its series square root IS an order-2 MUM partner. The fit clears
+    denominators and returns C(n) = -4(n+1)^2; the old literal test C == -(n+1)^2 called that
+    non-MUM and returned FAIL_PARTNER_VALIDATION -- a branch-(iii)-shaped verdict for a genuine
+    symmetric square. This test used to ASSERT that wrong verdict. It now asserts the right one,
+    and that the normalising constant is reported rather than hidden."""
     import json
     refs = json.loads(Path(REFS).read_text())
     refs["sequences"]["_test_apery_zeta3"] = {
         "type": "order-3",
         "status": "OK",
-        "source": "TEST-ONLY A005259 Apéry ζ(3); Sym^2 of a non-MUM operator (control).",
+        "source": "TEST-ONLY A005259 Apery zeta(3); Cooper template (17,5,1,0).",
         "initial_terms": [1, 5],
         "recurrence_python": ("((34*k**3+51*k**2+27*k+5)*s[-1] - (k)**3*s[-2])/((k+1)**3)"),
     }
     p = tmp_path / "refs_test.json"
     p.write_text(json.dumps(refs))
     result, code = chk.run_check(str(p), "_test_apery_zeta3", n_fit=30, n_val=60)
-    assert code != 0
-    assert result["verdict"] == "FAIL_PARTNER_VALIDATION"
-    assert result["validation"]["partner_MUM"] is False
+    assert result["validation"]["partner_MUM"] is True
+    assert result["validation"]["partner_MUM_normalising_constant"] == "4"
+    assert code == 0, result["verdict"]
+    assert result["verdict"].startswith("SYM2_OPERATOR_IDENTITY_PROVEN")
+
+
+def test_mum_gate_known_bads():
+    """The MUM gate must still be able to FAIL. Real non-MUM leading coefficients: the
+    2F1(1/2,1/2;2;.) shape -(n+1)(n+2), a shifted square -(2n+1)^2, the WRONG SIGN +(n+1)^2,
+    and zero. And it must pass the literal form and any positive multiple of it.
+    LIMITATION, stated: no END-TO-END bulk sequence that is a symmetric square of a genuinely
+    non-MUM operator is in this suite; the gate is exercised at the function level only."""
+    import sympy as sp
+    n = sp.Symbol("n")
+    for bad in (-(n + 1) * (n + 2), -(2 * n + 1) ** 2, (n + 1) ** 2, sp.Integer(0), -(n + 1) ** 3):
+        ok, c = chk.mum_normalise(sp.expand(bad), n)
+        assert ok is False and c is None, bad
+    for good, c_expected in ((-(n + 1) ** 2, 1), (-4 * (n + 1) ** 2, 4), (-sp.Rational(1, 2) * (n + 1) ** 2, sp.Rational(1, 2))):
+        ok, c = chk.mum_normalise(sp.expand(good), n)
+        assert ok is True and c == c_expected, good
 
 
 if __name__ == "__main__":
