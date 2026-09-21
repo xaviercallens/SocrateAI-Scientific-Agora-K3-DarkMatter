@@ -1,0 +1,2112 @@
+                                         HD-THEP-08-27
+
+
+
+                                                               Fixing D7 Brane Positions
+                                                                  by F-Theory Fluxes
+arXiv:0811.2416v2 [hep-th] 12 Dec 2008
+
+
+
+
+                                                     A. P. Braun1, A. Hebecker1, C. Lüdeling1,2, R. Valandro1
+                                                           1
+                                                               Institut für Theoretische Physik, Universität Heidelberg,
+                                                                 Philosophenweg 16-19, 69120 Heidelberg, Germany
+                                         2
+                                             Bethe Center for Theoretical Physics and Physikalisches Institut der Universität Bonn,
+                                                                    Nussallee 12, 53115 Bonn, Germany
+                                                      a.braun, a.hebecker, r.valandro @thphys.uni-heidelberg.de,
+                                                                   luedeling@th.physik.uni-bonn.de
+
+
+
+
+                                                                                     Abstract
+
+
+                                                   To do realistic model building in type IIB supergravity, it is important to under-
+                                               stand how to fix D7-brane positions by the choice of fluxes. More generally, F-theory
+                                               model building requires the understanding of how fluxes determine the singularity
+                                               structure (and hence gauge group and matter content) of the compactification. We
+                                               analyse this problem in the simple setting of M-theory on K3 × K3. Given a certain
+                                               flux which is consistent with the F-theory limit, we can explicitly derive the positions
+                                               at which D7 branes or stacks of D7 branes are stabilised. The analysis is based on a
+                                               parameterization of the moduli space of type IIB string theory on T 2 /Z2 (including
+                                               D7-brane positions) in terms of the periods of integral cycles of M-theory on K3.
+                                               This allows us, in particular, to select a specific desired gauge group by the choice of
+                                               flux numbers.
+Contents
+1 Introduction                                                                            3
+
+2 K3 Flux Potential                                                                       5
+  2.1 M-Theory on K3 × K3 . . . . . . . . . . . . . . . . . . . . . . . . . . . . .       6
+  2.2 The Scalar Potential . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .    7
+  2.3 Gauge Symmetry Breaking by Flux . . . . . . . . . . . . . . . . . . . . . .        10
+
+3 Moduli Stabilisation                                                                   13
+  3.1 Minkowski Minima . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .     13
+  3.2 F-Theory Limit . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   15
+
+4 Brane Localisation                                                                     18
+  4.1 D-Brane Positions and Complex Structure . . . . . . . . . . . . . . . . . .        18
+  4.2 Fixing D7-brane Configurations by Fluxes . . . . . . . . . . . . . . . . . .       21
+  4.3 Fixing an SO(8)4 Point . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   22
+  4.4 Moving Branes by Fluxes . . . . . . . . . . . . . . . . . . . . . . . . . . . .    24
+  4.5 Fixing almost all Moduli . . . . . . . . . . . . . . . . . . . . . . . . . . . .   28
+
+5 SUSY Vacua                                                                             29
+
+6 Conclusions                                                                            30
+
+A Lattice of Integral Cycles of K3                                                       33
+
+B The Potential in Terms of W and W̌                                                     33
+
+C Linear Algebra on Spaces with Indefinite Metric                                        35
+
+D F-Theory Point in the Kähler Moduli Space                                             37
+
+References                                                                               38
+
+
+
+
+                                             2
+1         Introduction
+Over the past years, significant progress in some of the central phenomenological problems
+of string theory compactifications has been made. These problems include, in particular,
+moduli stabilisation, SUSY breaking, inflation and the possibility of fine-tuning the cos-
+mological constant in the landscape of flux vacua. Much of this has been realised most
+successfully and explicitly in type IIB Calabi–Yau orientifold models in the supergravity
+regime (for reviews, see e.g. [1–5]). However, obtaining the standard model particle spec-
+trum remains difficult in this context, although successful local constructions exist [6–11].
+    Motivated by the desire to make progress towards a type IIB (or, more generally, F-
+theory) derivation of the standard model, the present paper analyses the way in which fluxes
+determine D7 brane positions. This is central to weakly coupled type IIB models, where D7
+brane stacks and their intersections are responsible for non-Abelian gauge symmetries and
+charged matter. We approach such compactifications from the F-theory perspective [12,13],
+where the value of the type IIB dilaton is encoded in the complex structure of a torus
+attached to every point of the type IIB manifold. D7 branes are characterised by the
+degeneration loci of this torus fibration and non-Abelian gauge symmetries arise if the
+degeneration is so bad that the 8d compact space develops a singularity. Such singularities
+are associated with the shrinking of M-theory cycles, which is easy to ensure by the flux
+choice. In addition, in weakly coupled situations, the periods of M-theory cycles measure
+the relative positions of D7 branes.
+    Working in the simple setting of F-theory on K3 × K3 (which corresponds to type IIB
+on K3 × T 2 /Z2 ), we are able to demonstrate how fluxes stabilise D7 branes or stacks of
+D7 branes in a completely explicit fashion. This allows us to select a specific desired gauge
+group by the choice of flux numbers. As explained above, this is the same procedure re-
+quired for the flux stabilisation of non-Abelian gauge symmetries in the (non-perturbative)
+F-theory context, which has recently attracted significant attention in the context of GUT
+model building [6, 7, 14–16]. We therefore expect that straightforward generalisations of
+our methods will be useful both for more complicated D7 brane models as well as for their
+non-perturbative F-theory cousins.
+    Moduli stabilisation by fluxes in M-theory on K3 × K3 has been studied extensively
+in the past, especially in relation with the type IIB dual (see, e.g. [17–19]). In our work
+we derive the flux potential for the geometric moduli from dimensional reduction. We
+express it in a form manifestly invariant under the SO(3) symmetry of the K3 moduli
+space. In this form, it is immediate to see how the minimisation condition is translated
+into a condition on fluxes and on geometric data of the two K3’s. We find all Minkowski
+minima, both supersymmetric and non-supersymmetric. An analogous explicit search for
+(supersymmetric) flux vacua has been reported in [20]. Our results are more general since
+we do not restrict ourselves to attractive K3 surfaces, where a maximal number of integral
+2-cycles are holomorphic.1
+    1
+        At a technical level, this means that only a discrete set of values are allowed for the various complex
+
+                                                        3
+    Our analysis of moduli stabilisation is also more explicit than the previous works on
+K3 × K3, since we use a parameterisation of D7-brane motion by the size of integral two-
+cycles, as derived in [21]. Thus, at least in the weak coupling limit, we have a simple
+geometric interpretation for every integral basis cycle. Using the choice of flux numbers,
+this gives us full control over the positions of 4 O7 planes and 16 D7 branes moving on a
+CP1 base (corresponding to type IIB on T 2 /Z2 ).
+    Our techniques can be used to study the stabilisation of all the gauge groups that can
+be realised by F-theory on K3. It turns out that tadpole cancellation is very restrictive
+and allows only very special flux choices.
+    We begin our analysis in Section 2 with a derivation of the K3×K3 flux potential, which
+closely follows the generic Calabi-Yau derivation of [22–24]. We emphasise the fact that,
+due to the hyper-Kähler structure of K3, its geometric moduli space can be visualised by
+the motion of a three-plane in the 22-dimensional space of homology classes of two-cycles.
+This three-plane is spanned by the real and imaginary parts of the holomorphic 2-form and
+by the Kähler form. The resulting SO(3) symmetry of the geometric moduli is manifest
+in the expression for the scalar potential we arrive at. The three-dimensional theory also
+has a number of gauge fields, and the flux induces mass terms for some of them, which
+we derive explicitly. This breaking of gauge symmetries can be understood in the dual
+type IIB picture as the gauging of some shift symmetry in the flux background.
+    In Section 3 we analyse the minima of the above flux potential. To preserve four-
+dimensional Poincaré invariance, we consider 4-form fluxes that belong to H 2 (K3) ⊗
+H 2(K3). A flux of this form gives rise to a linear map between the spaces of two-cycles of
+the two K3’s: integrating the flux on a 2-cycle of one K3 we get a 2-form on the other K3
+(which is Poincaré dual to a 2-cycle). Minkowski vacua arise if the flux maps the three-
+planes determining the metric of the K3’s onto each other. We derive the conditions the
+flux matrix has to satisfy in order for two such planes to exist and to be completely fixed
+by the choice of fluxes. Furthermore, we clarify the more restrictive conditions under which
+the plane determined by the flux is consistent with the F-theory limit. In this case, the
+plane cannot be fixed completely. The unfixed moduli correspond to Wilson lines around
+the S 1 of the type IIB model which decompactifies in the F-theory limit. These degrees
+of freedom are not part of the moduli space of type IIB compactified to four dimensions,
+as they characterise the (unphysical) constant background value of one component of the
+four-dimensional vector fields. In fact, the corresponding propagating degrees of freedom
+become part of the four-dimensional vector fields (see [25] for a comprehensive analysis of
+the duality map between the 4d fields of M-theory on K3 × K3 and type IIB string theory
+on K3 × T 2 /Z2 ).
+    The main point of our paper, the explicit stabilisation of D-brane positions, is the
+subject of Section 4. After recalling the parameterisation of D7-brane motion in terms of
+M-theory cycles derived in [21], we provide explicit examples of flux matrices which fix
+structure moduli. There is then also only a very restricted set of fluxes which are suitable for stabilising
+such points.
+
+                                                     4
+situations with gauge symmetries SO(8)4 , SO(8)3 × SO(6) and SO(8)3 × SO(4) × SU(2).
+In all cases we also fix the complex structure moduli of the lower K3. The first case
+corresponds to the orientifold, where 4 D7 branes lie on top of each O7 plane. In the
+second case, one D7 brane is moved away from an O plane. Finally, in the third case, a
+stack of two D7 branes is separated from one of the O planes. In these examples almost all
+the Kähler moduli (which correspond to deformations of the lower K3 and do not affect
+the positions of the D7 branes) are not stabilised. When one of them is stabilised, a Kähler
+modulus of the upper K3 is stabilised, too. As mentioned before, this corresponds to some
+gauge field becoming massive. To clarify this point, we present two examples where one
+of the D7 branes is fixed at a certain distance from its O plane: In the first example,
+one further Kähler modulus is fixed, breaking the U(1) gauge group. This phenomenon
+of gauging by fluxes is common in flux compactifications [26–29]. In the second example,
+we stabilise the single D7 brane without fixing further Kähler moduli and hence without
+gauge symmetry breaking. We also provide an example where almost all moduli are fixed.
+In this case, only the fibre volume of F-theory, the volume moduli of the two K3s, and
+three metric moduli of the lower K3 remain undetermined.
+    Section 5 contains a brief discussion of supersymmetry. Generically, we obtain N = 0
+vacua of no-scale type. For specific, non-generic choices of the flux matrix, we find three-
+dimensional N = 2 or N = 4 supersymmetry. To determine the amount of surviving
+supersymmetry, it suffices to know the eigenvalues of the flux matrix restricted to the two
+three-planes.
+    After summarizing our main results in Section 6, we collect some technical issues in
+the appendices. Appendix A contains some basic definitions concerning the geometry of
+K3, Appendix B gives the flux potential in terms of the two superpotentials of M-theory
+compactifications. Some facts about self-adjoint operators on spaces with indefinite metric
+are collected in Appendix C. Finally, Appendix D supplies some further details concerning
+the F-theory limit, especially the way in which certain M-theory moduli are lost in the
+F-theory limit.
+
+
+2    K3 Flux Potential
+In this chapter we compactify M-theory to three dimensions on K3 × K3 and analyse
+the effects of four-form flux. The main new points of our presentation are the following:
+We maintain a manifest SO(3) × SO(3) symmetry of the moduli space of K3 × K3 in
+the calculation of the potential in Section 2.2. Furthermore, we explicitly derive the flux-
+induced masses for the vector fields arising from the three-form C3 in Section 2.3.
+
+
+
+
+                                             5
+2.1     M-Theory on K3 × K3
+The compactification of M-theory on a generic four-fold is described in detail in [22].
+Here we specialise to the case of K3 × K3. To distinguish the two K3’s, we write the
+compactification manifold as K3 × K3.f Correspondingly, all quantities related to the
+second K3 will have a tilde.
+   The relevant M-theory bosonic action is [30]
+                        Z                              Z              
+                     2π       11 √           1    2     1
+               SM = 9        d x −g R − |F4 | −             C3 ∧ F4 ∧ F4
+                     ℓM                      2          6
+                         Z                   Z                                (2.1)
+                         2π                         11 √
+                    + 3           C3 ∧ I8 (R) + d x −g J8 (R) ,
+                         ℓM
+
+where ℓM is the eleven-dimensional Planck length, F4 = dC3, and I8 (R) and J8 (R) are
+polynomials of degree 4 in the curvature tensor [31, 32]. When we compactify on K3 ×
+f we obtain a three-dimensional theory with eight supercharges, i.e. N = 4 in three
+K3,
+dimensions. This can be inferred from the fact that each K3 has holonomy group SU(2)
+and correspondingly two invariant spinors.
+    Let us analyse the geometric moduli. K3 is a hyper-Kähler manifold: its metric is
+defined by three two-forms ωi in H 2 (K3) plus the overall scale. H 2 (K3) is a 22-dimensional
+vector space equipped with a natural scalar product,2
+                                  Z
+                         v·w ≡ v∧w              ∀ v, w ∈ H 2 (K3) ,                      (2.2)
+                                      K3
+
+which has signature (3, 19), i.e. there are three positive-norm directions. The three vectors
+ωi defining the metric must have positive norm and be orthogonal to each other. Hence
+they can be normalised according to ωi · ωj = δij . The Kähler form and holomorphic
+two-form and can then be given as
+                          √
+                     j = 2ν ω3 ,                          ω = ω1 + iω2 .                (2.3)
+
+This definition is not unique: we have an S 2 of possible complex structures and associated
+Kähler forms. Each of them defines the same metric, which is then invariant under the
+SO(3) that rotates the ωi ’s.
+   The motion in moduli space can now be visualised as the motion of the three-plane
+Σ spanned by the ωi ’s, which is characterised by the deformations of the ωi preserving
+orthonormality. The corresponding δωi are in the subspace orthogonal to Σ, which is 19-
+dimensional. Together with the volume, this gives 3 · 19 + 1 = 58 scalars in the moduli
+space of one K3. The same parameterisation can be used for the second K3, where the
+   2
+    Throughout this work, we freely identify forms, their cohomology classes, the Poincaré-dual cycles and
+their homology classes.
+
+                                                    6
+corresponding scalars are νe and the components of δe
+                                                    ωj . Altogether one finds 58 + 58 = 116
+scalars from the metric on K3 × K3.f Furthermore, since K3 has no harmonic one-forms,
+there are no 3d vectors coming from the metric.
+
+2.2     The Scalar Potential
+We now allow for an expectation value for the field strength F4 of the form
+                                      hF4 i ≡ G4 = GIΛ ηI ∧ ηeΛ ,                                     (2.4)
+                                                                                   f The flux
+where {ηI , ηeΛ } (with I, Λ = 1, ..., 22) is an integral basis of H 2 (K3) × H 2 (K3).
+                                               3     −3 IΛ
+satisfies a (Dirac) quantisation condition : ℓM G ∈ Z. In the following, we will always
+denote this type of flux by G4 while the generic four-form field strength will be F4 .
+    The flux potential for the moduli is found by reducing the M-theory action. In the
+presence of fluxes, the solution to the equations of motion is a warped product of a Calabi–
+Yau fourfold and a three-dimensional non-compact space [19, 22, 34]. In the following, we
+neglect backreaction and work with the undeformed Calabi–Yau space K3 × K3             f as the
+internal manifold. The underlying assumption is that, in analogy to [34], for any zero-
+energy minimum of the unwarped potential a corresponding zero-energy warped solution
+will always exist. After Weyl rescaling, the potential is given by [24]
+                                                                       
+                                            Z        p
+                               4π 1             8                  ℓ6
+                                                         (8) |G |2 − M χ ,
+                          V = 9               d   ξ   g       4                         (2.5)
+                               ℓM 4V 3                               12
+                                                f
+                                             K3×K3
+
+where χ is the Euler number of the compact manifold. For K3 × K3, f it is χ = 242 = 576.
+Given our previous discussion of K3 moduli space, we expect that (2.5) will be invariant
+under SO(3) × SO(3) rotations once we express the metric in terms of ωi and ω ej .
+   In the absence of spacetime-filling M2 branes, the cancellation of M2-brane-charge on
+the compact manifold K3 × K3 f requires [22]
+                                       Z
+                                    1                χ
+                                     6
+                                         G4 ∧ G4 =      .                           (2.6)
+                                  2 ℓM              24
+This allows us to express the second term in (2.5) through the flux. It is convenient to set
+ℓM = 1 and to introduce a volume-independent potential V0 by writing V = V2π3 V0 . Here
+V = νe                          f Our result now reads
+      ν is the volume of K3 × K3.
+                                    Z
+                                  1
+                             V0 =      (G4 ∧ ∗G4 − G4 ∧ G4 ) ,                         (2.7)
+                                  2
+                                           f
+                                        K3×K3
+
+   3                                                                           p1   4
+                                                                     M [G4 ] − 4 ∈ H (Y, Z), where p1 is the
+     The precise quantisation condition for a generic fourfold Y is ℓ−3
+                                   p1
+first Pontryagin class [33]. Since 2 is even for Y = K3 × K3, the quantisation condition becomes simply
+             4
+  M [G4 ] ∈ H (Y, Z).
+ℓ−3
+
+                                                     7
+with G4 given by (2.4).
+   On K3, each ηI can be split into a sum of two vectors, parallel and perpendicular to
+the 3-plane Σ:
+                             X                             k
+                        ηI =     (ηI · ωi ) ωi + P[ηI ] = ηI + ηI⊥ .              (2.8)
+                                      i
+
+Here P is the projector on the subspace orthogonal to Σ. The first term, which corresponds
+to the projection on Σ, has been given in a more explicit form using the orthonormal basis
+ωi of the Σ plane for later convenience. The two terms of (2.8) represent a selfdual and an
+anti-selfdual two-form [23], allowing us to write the Hodge dual of a basis vector as
+                                                                 k
+                                                  ∗K3 ηI = ηI − ηI⊥ .                                  (2.9)
+
+The same applies to K3. f
+    If we insert (2.4) and (2.8) into the expression (2.7) for V0 and we use the relation (2.9)
+for the action of the Hodge ∗, we find
+                                n                ⊥          ⊥ 
+                                   k   k     IΛ          JΣ
+                        V0 = − ηI · ηJ G ηeΛ · G ηeΣ
+                                             ⊥          ⊥  k k o                     (2.10)
+                                   + ηI GIΛ · ηJ GJΣ          ηeΛ · ηeΣ .
+
+Since
+                                  k           k
+                                                     X
+                                 ηI · ηJ =                 (ηI · ωi ) (ηJ · ωi ) ,                    (2.11)
+                                                       i
+
+we can write V0 as
+              (
+                X
+       V0 = −      e IΛ (ηI · ωi ) ηeΛ ] · P[G
+                   P[G                     e JΣ (ηJ · ωi ) ηeΣ ]
+                    i
+                                                                                              )       (2.12)
+                                      X
+                                 +                P[GIΛ (e    ej ) ηI ] · P[GJΣ (ηΣ · ω
+                                                         ηΛ · ω                       ej ) ηJ ]   .
+                                          j
+
+    To write it in a more compact form, we define two natural homomorphisms G :
+     f → H 2 (K3) and Ga : H 2 (K3) → H 2 (K3)
+H 2(K3)                                    f by
+           Z                                   Z
+                        IΛ f    Σ
+     G ṽ = G4 ∧ ṽ = (G MΛΣ ṽ ) ηI ,    G v = G4 ∧ v = (v J MJI GIΛ )e
+                                           a
+                                                                       ηΛ . (2.13)
+           f
+           K3                                                        K3
+
+                                                  f and MIJ , M
+where v = v J ηJ ∈ H 2 (K3), ṽ = ṽ Σ ηeΣ ∈ H 2 (K3)             fΛΣ represent the metrics in
+the bases ηI , ηeΛ . The operator Ga is the adjoint of G, i.e. (v · Gṽ) = (Ga v, ṽ). The matrix
+                                                                            
+components of these operators are GI Σ ≡ GIΛ M    fΛΣ and (Ga )Σ ≡ GT ΣJ MJI .
+                                                                   I
+
+
+                                                             8
+       The moduli potential is then given by
+                                                                                          !
+                            2π         X                      2       X               2
+                        V =− 3                     e a ωi ]
+                                                   P[G            +        P[G ω
+                                                                               ej ]           .   (2.14)
+                            V              i                           j
+
+As expected, it is symmetric under SO(3) rotation of the ωi ’s and of the ω         ei ’s4 .
+    This potential is positive definite since the metrics for H 2 (K3)f and H 2 (K3) defined in
+(2.2) are negative definite on the subspace orthogonal to the ωi ’s and the ω          ei ’s. We note
+also that the volumes of the two K3’s are flat directions parameterizing the degeneracy of
+the absolute minimum of the potential, in which V = 0.
+    We can also rewrite this potential expressing the projectors through the ω’s:
+                                                                                      !
+            2π        X               X                  X
+      V =       3
+                   −      kGa ωi k2 −     kG ωe j k2 + 2      ωj · Ga ωi )(ωi · G ω
+                                                             (e                   ej ) .       (2.15)
+           (νe
+             ν)        i               j                 i,j
+
+This is again manifestly symmetric under SO(3) rotations. The potential can also be
+expressed in terms of two superpotentials (see Appendix B). We will not need this formu-
+lation in the following.
+    In (2.4) we have only considered fluxes G4 with two legs on each K3. More generally
+the flux could be of this form:
+                                        hF4 i = G4 + Gρ + Geρ̃ ,                                  (2.16)
+
+where ρ and ρ̃ are the volume forms on K3 and K3.f 5 To obtain the general potential, we
+need to compute ∗ hF4 i. Using our previous result for ∗G4 and the Hodge duals
+                                           νe                                  ν
+                                 ∗ρ =         ρ̃       and            ∗ ρ̃ =      ρ               (2.17)
+                                           ν                                   νe
+of ρ and ρ̃, we find
+                                       Z
+                                π
+                       Vnew =                  (F4 ∧ ∗F4 − F4 ∧ F4 )
+                                ν )3
+                              (νe
+                                      f
+                                   K3×K3
+                                                                               (2.18)
+                               2π     1 2 νe        1 e2  ν 
+                            =    V0 + G          + G           − G Ge .
+                                ν )3
+                              (νe     2      ν      2      νe
+                                      q
+                            ν and ξ = ννe , the potential can be concisely written as
+With the substitutions V = νe
+                                    (                    2 )
+                                2π         1            1
+                         Vnew = 3 V0 +         G ξ − Ge        .                   (2.19)
+                                V          2            ξ
+   4                       e are obviously symmetric as they project onto the space orthogonal to all the
+      The projectors P and P
+ωi ’s.                    R       R
+    5
+      The normalisation is K3 ρ = K3f ρ̃ = 1.
+
+
+
+                                                         9
+This potential is still positive definite and has minima at points where it vanishes, but it
+now has only one unavoidable flat direction, the overall volume of K3 × K3.f The ratio of
+                          2    e
+the volumes is fixed at ξ = G/G.
+
+2.3     Gauge Symmetry Breaking by Flux
+In our context, F-theory emerges from the duality between M-theory on K3× K3,      f with K3  f
+being elliptically fibred, and type IIB on K3 × T 2 /Z2 × S 1 . The F-theory limit consists
+in taking the fibre volume to zero on the M-theory side, and in taking the radius of the
+S 1 to infinity on the type IIB side (see Section 3.2 for the details of this limit). Before
+analysing the effect of gauge symmetry breaking by fluxes, we recall the different origins
+of four-dimensional gauge fields in type IIB and in F-theory.
+    Type IIB theory on K3 × T 2 /Z2 contains 16 vectors from gauge theories living on D7
+branes and 4 vectors from the reduction of B2 and C2 along one-cycles of T 2 /Z2 . In three
+dimensions, one then has 20 three-dimensional gauge fields and 20 scalars corresponding
+to Wilson lines along the S 1 . In the F-theory limit, these scalars combine with the vectors
+to give the required 20 four-dimensional vector fields.
+    In M-theory on K3 × K3, f vectors arise from the reduction of the three-form C3 along
+two-cycles in K3 or K3.f Since we are in three dimensions we have the freedom to dualise
+some of these vectors, treating them as three-dimensional scalars. To match the type IIB
+description, the correct choice is to treat only the fields coming from the reduction of
+C3 on two-cycles of K3 f as vectors6 . This reduction gives 22 vectors in three dimensions.
+However, since K3 f is elliptically fibred, there are two distinguished two-cycles: the base
+and the fibre. They require a special treatment in the F-theory limit and, as a result,
+three-dimensional vectors arising from these two cycles do not become four-dimensional
+gauge fields in the F-theory limit. Instead, one of them corresponds to the type IIB metric
+with one leg on the S 1 , while the other is related to C4 with three legs on T 2 /Z2 × S 1 [25].
+We will not consider these two vectors in the following and focus on the remaining 20
+three-dimensional vectors associated with the reduction of C3 on generic two-cycles of K3.   f
+    Each of these vectors absorbs a three-dimensional scalar (corresponding to a Wilson
+line degree of freedom on the type IIB side) to become a four-dimensional vector. These
+20 scalars come from the metric moduli space of K3.    f More precisely, 18 arise from the
+variations δeω3 of the Kähler form in directions orthogonal to the three-plane and to the
+base-fibre subspace7 . The two remaining scalars come from variations δe    ω1 and δe ω2 of the
+   6
+     A simple intuitive argument for this choice can be given by comparing the seven-dimensional theories
+coming from M-theory on K3    f and type IIB on T 2 /Z2 ×S 1 . In M-theory, we have seven-dimensional vectors
+associated with two-cycles stretched between the pairs of degeneration loci of the fibre (which characterise
+D7 branes). In type IIB, the corresponding vectors come directly from the D7-brane world-volume theories.
+The fact that they are associated with branes rather than with pairs of branes is simply a matter of basis
+choice in the space of U (1)s.
+   7                            f two directions of the three-plane are orthogonal to base and fibre subspace,
+     For an elliptically fibred K3,
+
+
+                                                     10
+holomorphic two-form which lie in the base-fibre subspace and are orthogonal to ω       e3 . For
+a detailed analysis of the matching of fields on both sides of the duality, see [25].
+    Given these preliminaries, it is now intuitively clear why F-theory flux generically breaks
+gauge symmetries: The flux induces a potential for the metric moduli, making them mas-
+sive. This applies, in particular, to those moduli which become vector degrees of freedom
+in four dimensions. Hence, the full four-dimensional vector becomes massive by Lorentz
+invariance8 .
+    To derive the vector mass term explicitly, we begin by writing C3 in the form
+                                                  eΣ ∧ ηeΣ + C flux .
+                                  C3 = C1I ∧ ηI + C                                                 (2.20)
+                                                    1         3
+
+
+Here ηI and ηeΣ are basis two-forms on the K3 factors, C1I and C    eΣ are one-form fields in
+                                                                     1
+three dimensions, and C3flux is the contribution responsible for the four-form flux (which is
+only locally defined). As before, the flux
+                                         R is given  by G4 = GIΣ ηI ∧ ηeΣ = dC flux
+                                                                             R 3 .2
+                                               2
+    In the reduction of the action, the |F4 | term leads to the flux term |G4 | (which is
+irrelevant for our present discussion) and to kinetic terms for C1I and C eΣ . The metric for
+                                                                           1
+the kinetic terms is given by
+                     Z                  Z                    
+                                             k    k    ⊥    ⊥
+                        ηI ∧ ∗8 ηJ = νe     ηI ∧ ηJ − ηI ∧ ηJ = νe gIJ ,               (2.21)
+                        f
+                     K3×K3                 K3
+                        Z                      Z                           
+                                                       k     k
+                            ηeΛ ∧ ∗8 ηeΣ = ν         ηeΛ ∧ ηeΣ − ηeΛ⊥ ∧ ηeΣ⊥ = ν g̃ΛΣ .             (2.22)
+                        f
+                     K3×K3                     f
+                                               K3
+
+We have split off the volume dependence, so that gIJ and g̃ΛΣ are dimensionless. Note
+that these metrics are positive definite since the subspace orthogonal to the three-plane
+has negative-definite metric. Note also that there is no kinetic mixing between the C1I and
+              R
+    e Σ since ηI ∧ ∗8 ηeΣ = 0.
+the C 1                                        R
+   We now turn to the Chern–Simons term C3 ∧ RF4 ∧ F4 . Evaluating this term with
+C3 of the form (2.20), we see that the contribution C3flux ∧ F4 ∧ F4 vanishes: C3flux has
+                     f so F4 ∧ F4 would need to have three legs on R1,2 and five legs on
+three legs on K3 × K3,
+K3 × K3.f This is, however, inconsistent with (2.20). The other contributions give
+                     Z                  Z                           
+                                                     I eΣ     e Σ  I
+                        C3 ∧ F4 ∧ F4 =     2GIΣ C1 dC1 + C1 dC1 .                    (2.23)
+                                                R1,2
+
+while ωe3 has a component along the base-fibre subspace. This explains the above number of independent
+variations as 18 = 22 − (3 + 2 − 1). The variation of ω
+                                                      e3 within the base-fibre subspace corresponds to part
+of the metric in the F-theory limit.
+    8
+      Correspondingly in type IIB, putting two-form flux on certain cycles of wrapped D7 branes breaks the
+gauge symmetry of the brane [26–29].
+
+
+
+                                                       11
+Thus, the flux matrix GIΣ = MIJ GJΛ MfΛΣ couples C I and C eΣ . (Note that flux proportional
+                                                    1       1
+to the volume forms of K3 and K3 f would, in addition, lead to couplings ∼ C I dC J and
+                                                                                  1   1
+∼C eΣ dC
+       eΛ .)
+    1    1
+    We have now arrived at the three-dimensional effective action
+                           Z 
+                      (3)                                   eΛ ∧ ∗dCeΣ
+                    SC =       νegIJ dC1I ∧ ∗dC1J + νg̃ΛΣ dC 1       1
+                            R1,2
+                                                                                        (2.24)
+                                      2                         
+                                                  eΛ + C
+                                     + GIΛ C1I ∧ dC    eΛ ∧ dC I              .
+                                                    1    1    1
+                                      3
+
+As explained before, only the vectors C  eΣ become four-dimensional vectors in the F-theory
+                                          1
+limit [25]. It is convenient to dualise the remaining vectors C1I , replacing them by scalars
+C0I . To this end, we turn the equation of motion,
+                                                         
+                                      I   2 1 IJ      e Σ
+                              d ∗dC1 +         g GJΣ dC 1   = 0,                       (2.25)
+                                          3 νe
+into a Bianchi identity by defining C0I through
+                                             2 1 IJ     e1Σ = dC0I .
+                                   ∗dC1I +        g GJΣ C                                (2.26)
+                                             3 νe
+It follows that the C0I have to transform non-trivially under the gauge transformations of
+the CeΣ:
+       1
+
+              eΣ −→ C
+                    eΣ + dΛΣ ,                                         2 1 IJ
+              C 1     1    0                            C0I −→ C0I +        g GJΣ ΛΣ
+                                                                                   0 .   (2.27)
+                                                                       3 νe
+In other words, the vectors C eΣ gauge shift symmetries of the scalars C I , with the charges
+                               1                                         0
+determined by the flux.
+     The equation of motion of C0I follows formally from ddC1I = 0, the Bianchi identity of
+C1I . Since ∗∗ = −1 on R1,2 , we find
+                                                                       
+                          I              I           I   2 1 IJ     e Σ
+                  0 = ddC1 = −d ∗ ∗dC1 = d ∗ dC0 −            g GJΣ C1 .               (2.28)
+                                                         3 νe
+We now want to find a gauge invariant action from which this equation of motion can be
+derived. Such an action is given by
+                      Z            (                                       )
+                                                                         2
+                             √            2            2  1
+             SCdual =    d3 x −g3 ν dC e1Σ + νe dC0I −               e1Σ
+                                                            g IJ GJΣ C       .   (2.29)
+                                                       3 νe
+                     R1,2
+
+The corresponding Einstein-Hilbert term has the usual volume prefactor and can be
+brought to canonical form by a Weyl rescaling of the three-dimensional metric. This gives
+
+                                                   12
+the kinetic term of the vectors a prefactor (νe
+                                              ν )ν, which we can absorb in a redefinition of
+e Σ
+C1 . The resulting mass matrix has the form
+                                            1
+                                 m2ΣΛ ∼        3 GIΣ GJΛ g
+                                                           IJ
+                                                              ,                         (2.30)
+                                          (νe
+                                            ν)
+which is positive semidefinite since g IJ is a positive definite metric. The number of gauge
+fields which become massive is determined by the rank of the flux matrix. Comparing with
+Eq. (2.14), we see that the masses are of the same order as the masses of the flux stabilised
+geometric moduli. This confirms the intuitive idea put forward at the beginning of this
+section: The vectors C eΣ and some geometric moduli are combined in the F-theory limit
+                        1
+to produce four-dimensional vectors. For this to work in the presence of fluxes, both the
+three-dimensional vectors and scalars need to have the same flux-induced masses.
+
+
+3     Moduli Stabilisation
+In this section we turn to the flux stabilisation of moduli. First, we will analyse under which
+conditions the potential (2.14) has minima at V = 0, and whether there are flat directions.
+Then we will see which restrictions we have to impose in order to map the M-theory
+situation to F-theory, and discuss possible implications for gauge symmetry breaking.
+    Let us first comment on the flux components which are proportional to the volume
+forms. In what follows, we do not consider these components, in other words, we set
+G = Ge = 0. The reason is that we want to end up with a Lorentz-invariant four-dimensional
+theory. By going through the M-theory/F-theory duality explicitly, one can see that this
+requires that the flux needs to have exactly one leg in the fibre torus and hence two legs
+along each K3. Thus, we can without loss of generality use a flux in the form of Eq. (2.4),
+and the associated potential (2.14).
+
+3.1    Minkowski Minima
+Clearly, the potential (2.14) cannot stabilise the volumes ν and νe. They are runaway
+directions in general, and flat directions exactly if the term in brackets vanishes. This
+term is a sum of positive definite terms, so each of these must vanish if we want to realise a
+minimum with vanishing energy. Since each term contains a projection onto the subspace
+orthogonal to the three-planes spanned by the ωi ’s and ω   ei ’s, the bracket clearly vanishes
+if and only if the flux homomorphisms map the three-planes into each other, though not
+necessarily bijectively:
+                         e ⊂ Σ,
+                        GΣ                                          e.
+                                                             Ga Σ ⊂ Σ                     (3.1)
+
+Note that what is required is not merely the existence of three-dimensional subspaces which
+are mapped to each other, but that both subspaces are positive-norm. If the metrics were
+
+                                              13
+positive definite, this condition would be trivial since
+                                                      any
+                                                          real matrix can be diagonalised
+                                      2             2 f
+by choosing appropriate bases in H (K3) and H K3 .
+    We will now show that the conditions (3.1) are equivalent to the conditions that the
+map Ga G is diagonalisable and all its eigenvalues are real and non-negative9 .
+    Let us assume that there exist two three-planes Σ and Σ  e such that the relations (3.1)
+                                                                                   2
+hold. The cohomology
+                  groups can be decomposed into orthogonal subspaces, H (K3) =
+Σ ⊕ R and H 2 K3  f =Σ    e ⊕ R,
+                               e such that the metric (2.2) defined by the wedge product is
+positive (negative) definite on Σ and Σ e (R and R).
+                                                  e The conditions (3.1) imply that G and
+  a
+G are block-diagonal, i.e. we also have GR   e ⊂ R and Ga R ⊂ R.  e It is then obvious that
+                            a        10
+the selfadjoint operator G G obeys
+                                                   e ⊂Σ
+                                               Ga GΣ  e.                                                (3.2)
+
+As each block is selfadjoint relative to definite metrics, Ga G is diagonalisable with real and
+non-negative eigenvalues.
+    We now show that the converse also holds. Assume that Ga G is diagonalisable with
+non-negative eigenvalues11 . This defines a decomposition of H 2 (K3)  f in Σ e ⊕ R,
+                                                                                   e where Σ  e
+is the three-dimensional subspace given by the eigenvectors with positive norm. The fact
+that Ga G maps Σ e into itself implies that G maps positive norm vectors into positive norm
+vectors: Indeed, give ẽ ∈ Σ,
+
+                                     (Gẽ · Gẽ) = (Ga Gẽ · ẽ) ≥ 0 ,                                  (3.3)
+
+                                                  e then we can define Σ as the image of
+If Ga G|Σe is invertible (non-zero eigenvalues in Σ),
+G|Σe . The fact that Σe is invariant under Ga G implies that the image of Ga |Σ is Σ
+                                                                                   e and (3.1)
+                                  a
+is proved. The case in which G G has non-trivial kernel does not present any complication.
+Since the kernel of Ga G coincides with the kernel of G 12 , the image of G|Σe is no more
+three dimensional. One then defines Σ as the image of G|Σe plus the positive norm vectors
+in the kernel of Ga .
+    To summarise, the conditions (3.1) are equivalent to the condition that Ga G is diago-
+nalisable and all its eigenvalues are real and non-negative. In this case (see Appendix C)
+                                 
+   9
+      Note that Ga G maps H 2 K3  f onto itself, so it makes sense to speak of eigenvalues and eigenvectors.
+Note also, however, that although Ga G is a selfadjoint operator, this does not imply that its eigenvalues
+are real since the metric is indefinite. We have collected some facts about linear algebra on spaces with
+indefinite metric in Appendix C.
+   10
+      Similarly G Ga obeys G Ga Σ ⊂ Σ.
+   11
+      In this case, because of the non-degeneracy of the inner product, there alway exists a basis of non-null
+eigenvectors.
+   12
+      Since G and Ga are adjoint to each other, there is an orthogonal decomposition H 2 (K3) = Im G ⊕
+Ker Ga . Take ẽ ∈ Ker Ga G; since Gẽ is both in Im G and in Ker Ga , it is the zero vector, proving that
+ẽ ∈ Ker G.
+
+
+                                                     14
+the matrices for Ga G, G and Ga take the form
+                                                        
+    (Ga G)d = diag a21 , a22 , a23 , b21 , . . . , b219   Gd = Gad = diag(a1 , a2 , a3 , b1 , . . . , b19 )   (3.4)
+
+in appropriate bases, where a2i are the eigenvalues of Ga G relative to positive norm eigen-
+vectors, while b2c are relative to negative norm eigenvectors.
+
+    Finally, we want to see whether there are flat directions. The potential has a flat
+direction, if there are infinitesimally different positions of the three-planes Σ,     e Σ which
+                                                            a
+give Minkowski minima. Given a flux (such that G G is diagonalizable with positive
+eigenvalues), the minima correspond to Σ     e (Σ) generated by the positive norm eigenvectors
+     a         a
+of G G (G G ). If all the eigenvalues are different from each other, there can be only
+three positive norm eigenvectors, and the minimum is isolated. If a positive norm and a
+negative norm eigenvector have the same eigenvalue, e.g. a1 = b1 , then a flat direction
+arises: Any three-dimensional space spanned by ṽa2 , ṽa3 and ṽa′ 1 = ṽa1 + ǫ ũb1 (ǫ ≪ 1) will
+                 e that still satisfies the conditions (3.1). It is easy to see that an analogous
+give a different Σ
+flat direction develops for Σ. Note that if some ai are degenerate then the rotation of the
+vectors does not move the three-planes.
+    This shows that flat directions of the potential are absent if and only if the sets of
+eigenvalues {a2i } and {b2a } are pairwise distinct.
+
+3.2      F-Theory Limit
+We are interested in stabilising points in the moduli space of K3× K3  f which can be mapped
+to F-theory. This means we require that K3   f is an elliptic fibration over a base CP1 , and
+that the fibre volume vanishes.
+   The first requirement means that K3   f needs to have two elements B      e (the base) and Fe
+(the fibre) in the Picard group, i.e. two integral (1,1)-cycles, whose intersection matrix is
+                                                  
+                                            −2 1
+                                                      .                                    (3.5)
+                                             1 0
+                                                               
+Note that by a change of basis from B,     e Fe to B    e + Fe, Fe , this intersection matrix is
+equivalent to one U block in the general form (A.1) of the metric in an integral basis.
+   As (1,1)-cycles, B  e and Fe must be orthogonal to the holomorphic two-form. In our
+case                       e
+D this E means that the Σ plane has a two-dimensional subspace orthogonal orthogonal to
+  e Fe . This subspace is spanned by the real and imaginary part of the holomorphic two-
+  B,
+                                          D      E
+form ωe=ω  e1 + ie                          e  e
+                 ω2 . On the other hand, B, F contains the third positive-norm direction,
+                                     D      E
+so ω
+   e3 cannot be also orthogonal to B,  e Fe . For the following discussion it is convenient to
+
+
+                                                         15
+consider directly the Kähler form e
+                                   j instead of νe and ω
+                                                       e3 separately. The Kähler form can
+be parametrised as
+                                        e    e + f Fe + ca ũa ,
+                                        j = bB                                                       (3.6)
+
+where ũa is an orthonormal basis (i.e. ũa · ũb = −δab ) of the space orthogonal to Fe, B
+                                                                                          e and
+e . This is the most general form of e
+ω                                    j for an elliptically fibred K3.f
+
+    Now we turn to the second requirement: the fibre must have vanishing volume. This
+is what is called the F-theory limit. For the Kähler form (3.6), we find the volumes of the
+fibre and the base to be13
+                                                    
+                    e     e  e
+                 ρ F = j · F = b,                   ρ Be =e  j·Be = f − 2b .           (3.7)
+
+Hence, the F-theory limit involves b → 0, and in this limit, the base volume will be given
+                                                   f is
+by f . On the other hand, the volume of the entire K3
+                                     1e e                 1
+                                       j · j = b (f − b) − ca ca .                                   (3.8)
+                                     2                    2
+This volume is required to be positive, so we get a bound on the ca ,
+                                          1 a a
+                                            c c < b (f − b) .                                        (3.9)
+                                          2
+                                                                                          √
+Thus, in the F-theory limit we have to take the ca to zero at least as fast as                b. Once the
+                              f vanishes and the Kähler form is given by
+limit is taken, the volume of K3
+
+                                                j = f Fe ,
+                                                e                                                   (3.10)
+
+regardless of the initial value of the ca . Note that the constraint (3.9) is consistent with
+the intuitive picture of the fibre torus shrinking simultaneously in both directions: The ca
+measure the volume of cycles which have one leg in the fibre and one in the base, so they
+shrink like the square root of the fibre volume b.
+    The Kähler moduli space is reduced in the F-theory limit: We lose not only the direction
+along which we take the limit, but also all transverse directions except for the base volume
+f , which becomes the single Kähler modulus of the torus orbifold. In the duality to type
+IIB on K3 × T 2 /Z2 × S 1 , the ca parametrise Wilson lines of the gauge fields along the
+  13
+    More generally the volume of a two-cycle C2 is given by the projection on the three-plane Σ, multiplied
+by the K3 volume:                             v
+                                              u 3
+                                              uX
+                              ρ (C2 ) = ν 1/2 t (ωi · C2 )2 = ν 1/2 kC2 |Σ k .
+                                               i=1
+
+
+
+
+                                                     16
+S 1 as long as the fibre volume is finite. In the F-theory limit, which corresponds to the
+radius of the S 1 going to infinity, the Wilson lines disappear from the moduli space. The
+propapagating degrees of freedom related to them combine with the three-dimensional
+vectors from the three-form C3 reduced along two-cycles of K3       f to form four-dimensional
+vectors (cf. Section 2.3, see also [25]).
+    From this perspective, we see that it is important not to fix the modulus controlling the
+size of the fibre. In fact, if we leave it unfixed, we have a line in the M-theory moduli space
+corresponding to this flat direction of the potential. Of this line, only the point at infinity
+(b = 0) corresponds to F-theory. This limit is singular in the sense that the F-theory point
+is not strictly speaking in the moduli space of K3,   f but on its boundary. As we show in
+Appendix D, this point is at infinite distance from every other point in the moduli space
+of e
+   j, and it actually corresponds to the decompactification limit in type IIB.
+    To see which fluxes are compatible with this limit, we first note that there must be
+no flux along either B   e or Fe because Lorentz invariance of the four-dimensional theory
+requires
+       that
+            the flux must have exactly one leg along the fibre. This means that in a basis
+     2 f                      e Fe and orthogonal forms, the flux matrix must be of the form
+of H K3 consisting of B,
+                                                       
+                                       0       0
+                                       ..     ..       
+
+
+                                                    *
+                                   IΣ
+                                  G = .        .       .                              (3.11)
+                                            0 0
+                  a
+This leads to a G G with two rows and columns of zeroes,
+                                                  
+                                       0 0 ... 0
+                                      0 0 . . . 0
+                                                  
+                               Ga G =  .. ..      ,                                   (3.12)
+
+
+                                                    *
+                                      . .         
+                                       0 0
+
+hence the direction along which we take the F-theory limit is automatically flat.
+     To discuss the matrix form of G, it is convenient to choose an equivalent basis for
+   2
+H (K3), i.e. a basis containing B and F and 20 orthogonal vectors. We then restrict to
+fluxes of the type
+                                                    
+                                          0 0
+                                                 0 
+                                GIΣ = 0 0             ,                          (3.13)
+                                           0 GF-th
+                                                 IΛ
+
+
+although this is not the most general form. Here, GIΣ
+                                                   F-th is a 20 × 20 matrix which we will
+           IΣ
+also call G for simplicity.
+
+
+
+                                              17
+4      Brane Localisation
+One of our aims is to find a flux that fixes a given configuration of branes. The results
+obtained so far allow us to do that: As we will review in the next subsection, the positions
+of the D7 branes are encoded in the complex structure ω    e = ω e1 + ie     f [21]. This
+                                                                       ω2 of K3
+can be understood as follows: We can find certain cycles which measure the distance
+between branes. A given brane configuration can thus be characterised by the volumes
+of such cycles. Most relevant for the low-energy theory is the question whether there are
+brane stacks (corresponding to gauge enhancement) which is signalled by the vanishing
+of interbrane cycles. So choosing a given brane configuration determines a set of integral
+cycles which are to shrink, i.e. which should be orthogonal to the complex structure14 . We
+want to find what is the flux that fixes such a complex structure.
+    The flux needs to satisfy some constraints: It must be integral and it must satisfy
+the tadpole cancellation condition (2.6). The first condition means that the entries of the
+flux matrix GIΣ in a basis of integral cycles must be integers. The tadpole cancellation
+condition translates into a condition on the trace of Ga G,
+                                                     f = 48 .
+                                    tr Ga G = tr GTMGM                                              (4.1)
+
+Of course, we also require that the flux gives Minkowski minima, i.e. Ga G needs to have
+only non-negative eigenvalues. These conditions turn out to be rather restrictive, and a
+scan of all 20 × 20-matrices is computationally beyond our reach. Fortunately, the block-
+diagonal structure alluded to above allows us to restrict to smaller submatrices of size 2 × 2
+or 3 × 3, where an exhaustive scan is feasible.
+
+4.1     D-Brane Positions and Complex Structure
+In the weak coupling limit, in which the F-theory background can be described by per-
+turbative type IIB theory, the complex structure deformations of the upper K3 have an
+interpretation in terms of the movement of D-branes and O-planes on CP1 [13]. From the
+                                       f D-branes and O-planes are points on the CP1
+perspective of the elliptically fibred K3,
+                   2
+base where the T fibre degenerates. The positions of these points are encoded in the
+                      f The 18 complex structure deformations15 specify the 16 D-brane
+complex structure of K3:
+positions, the complex structure of T 2 /Z2 ∼ CP1 , and the value of the complex dilaton.
+The map between the two descriptions is worked out in detail in [21]. In the following, we
+summarise the basic results.
+                                         f surface develops singularities which reflect the
+    When several D-branes coincide, the K3
+corresponding gauge enhancement [35–40]. These singularities can also be seen to arise
+  14
+     These are cycles with one leg in the base and one in the fibre and which are orthogonal to ω
+                                                                                                e3 once we
+take the F-theory limit (3.10).
+  15
+     These are the deformations of ωe1 and ωe2 in the space orthogonal to Fe and B.
+                                                                                  e
+
+
+                                                   18
+when the volume of certain cycles shrinks to zero:
+                            Z       Z
+                               e = γi ∧ ω
+                               ω           e = γi · ω
+                                                    e −→ 0 .                                         (4.2)
+                                  γi      f
+                                          K3
+
+Note that these cycles have one leg on the base√ and and one leg on the fibre torus, so
+γi · e
+     j = 0 16 . Hence their volume is given by νe |γi · ω
+                                                        e |. If the γi are integral cycles (for
+the structure of integral cycles on K3 see Appendix A) with self-intersection −2, their
+shrinking produces a singularity that corresponds to a gauge enhancement. Since these
+cycles can be thought of as measuring distances between branes, this is equivalent to D-
+branes that are coinciding. The Cartan matrix that displays the gauge enhancement is
+given by the intersection matrix of the shrinking γi .
+                                              f degenerates to T 4 /Z2 . From the D-brane
+     Let us consider an SO(8)4 point at which K3
+perspective this corresponds to putting four D-branes on each of the four O-planes. In
+terms of the basis given in Appendix A, the complex structure of K3   f is given by
+                                      1
+                            eSO(8)4 = (α + Ue2 + Sβ − USe1 ) .
+                            ω                                                             (4.3)
+                                      2
+For the sake of brevity we have introduced17
+                                   
+            α ≡ 2 e1 + e1 + WI1 EI ,                      β ≡ 2(e2 + e2 + WI2 EI ) ,      (4.4)
+where
+                                     
+                        1 4 1
+                              4
+                                4 1
+                                    4                                                
+                     W = 0 , ,0 ,                    and       W 2 = 1, 07 , 1, 07                   (4.5)
+                            2     2
+describe the mixing of cycles from the U and E8 blocks. Note that they can be interpreted
+as Wilson lines, breaking E8 × E8 to SO(8)4 in the duality to heterotic string theory.
+The cycles that are dual to the forms ei , α and β are shown in Figure 1. The parameter U
+describes the positions of the four O-planes, which is equivalent to the complex structure of
+the T 2 in type IIB before orientifolding. The dilaton, which is constant in this configuration,
+is given by the complex structure of the fibre torus, S.
+    One can check that the cycles which have vanishing periods at an SO(8)4 point span
+the lattice D44 . They are given by
+                     A                   B                     C                 D
+          1       E7 − E8            −E15 + E16          −e2 − E1 + E2     e2 + E9 − E10
+          2       E6 − E7            −E14 + E15            −E2 + E3          E10 − E11               (4.6)
+          3    −e1 − E5 − E6       e1 + E13 + E14          −E3 + E4          E11 − E12
+          4       E5 − E6            −E13 + E14            −E3 − E4          E11 + E12 .
+  16
+           we areEinterested in the F-theory limit, we will only consider vacua corresponding to e
+     Since D                                                                                     j being in
+             e e
+the block F , B .
+  17                                                          f we omit the tildes to avoid unnecessary
+     Note that although ei , ei , EI , α and β are forms on K3,
+notational clutter.
+
+                                                    19
+                                                  e2
+
+
+                                         C                 A
+
+                                     β                                α
+
+
+
+                                         D                  B
+
+
+                                                   e1
+
+
+
+     Figure 1: For an SO(8)4 configuration, the two degrees of freedom of the O-planes and the
+     dilaton are encoded in cycles that surround two of the four blocks in the CP1 base and wrap
+     an arbitrary direction in the fibre torus. The four SO(8) blocks are denoted by A,B,C and D.
+     The four cycles displayed here form a basis that is dual to the four forms ei , α and β. Note
+     that we also have indicated the fibre part of each cycle.
+
+
+
+   These cycles can be constructed geometrically. Their projections to the base CP1
+connect the D-branes and are displayed for one block in Figure 2.
+                     3
+                                                                  3
+                                 2        1
+                                                                           2     1
+                                                                  4
+                     4
+                           (a)                                            (b)
+
+     Figure 2: (a) The assignment between the geometrically constructed cycles between D-branes
+     and the cycles that are given in the table above. This assignment is the same for each of
+     the four SO(8) blocks. The cross marks the position of the O plane, grey dots denote the
+     D7 branes. Due to the fibre involution in the O-plane monodromy, cycles 3 and 4 do not
+     intersect. (b) The corresponding gauge enhancement: The cycles become the nodes of the
+     Dykin diagram, lines are drawn for intersections.
+
+
+
+   We can now move away from the SO(8)4 configuration by rotating ω
+                                                                  e . A convenient
+parameterisation is given by
+                         1                                   
+                                                          bI zI ,
+                    ω
+                    e=      α + Ue2 + Sβ − US − z 2 e1 + 2E                  (4.7)
+                         2
+
+
+
+                                                  20
+                                   bI = EI + W 1 e1 + W 2 e2 . Explicitly, they are
+with shifted E8 × E8 block vectors E          I        I
+
+                       b1 = E1 + e2 ,
+                       E                       bI = EI ,
+                                               E                I = 2..4, 10..12 ,
+                                                                                         (4.8)
+                       b9 = E9 + e2 ,
+                       E                       bJ = EJ + e1 /2, J = 5..8, 13..16 .
+                                               E
+
+The E bI are orthogonal to α and β and still satisfy E bI · E
+                                                            bJ = −δIJ . Using Table (4.6) and
+Figure 2, one can show [21] that the zI are the positions of the branes relative to their
+respective O-planes in the double cover of CP1 ≃ T 2 /Z2 .
+    Now we can deduce the brane positions and the gauge enhancement from a given
+expansion of the holomorphic two-form ω      e (which is equivalent to knowing the complex
+               f
+structure of K3). We can either match any expansion of ω    e in the basis given in Appendix A
+to (4.7), or we can compute the intersection numbers between ω       e and the cycles given in
+                                                  f
+Table 4.6 to find the periods of the cycles of K3. In this way we obtain the value of the
+dilaton and the D-brane and O-plane positions. Note that contrary to the basis given by
+α, β, e1, e2 and the cycles in Table (4.6), the basis we used in the expansion (4.7) is not an
+integral basis (as the EbI are half-integral).
+
+
+4.2       Fixing D7-brane Configurations by Fluxes
+We are now ready to outline a systematic procedure for choosing a flux which fixes a
+given D7-brane gauge group. In particular, we will be interested in non-Abelian gauge
+enhancement. The Cartan matrix of the underlying Lie-Algebra is given by the intersection
+matrix of the lattice of shrinking two-cycles. Thus, we need to understand which fluxes
+make a particular subspaceD    ofE two-cycles shrink. We will take these cycles as part of
+                            e  e
+the basis orthogonal to B, F discussed at the end of Section 3. Then we consider the
+orthogonal lattice,
+              D      i.e.
+                      E the lattice made up of (integral) cycles orthogonal to the shrinking
+                 e  e
+ones (and to B, F ). Choosing an integral basis for this lattice completes the basis of
+                                   D     E
+              f                      e e
+cycles of H2 (K3) orthogonal to B, F . Note that in this basis the metric on H2 (K3)  f is
+block-diagonal, with a negative definite block for the subspace of shrinking cycles. We also
+choose a basis of integral cycles of H2 (K3) such that the metric has two blocks with the
+same dimensions as on the K3  f side.
+    In this basis it is easy to write down a flux that fixes ωe orthogonal to the shrinking
+                                                         18
+cycles: It can be taken to have the block-diagonal form
+                                                   
+                                          G⊥
+                                                      .                                 (4.9)
+                                               Gshk
+Thus, when diagonalising Ga G, the positive norm eigenvectors are in the first block and
+hence orthogonal to the shrinking cycles.
+ 18
+      Actually, it is enough that Ga G is of this form.
+
+                                                      21
+   One has finally to check whether there are more shrinking cycles than those we imposed.
+
+4.3    Fixing an SO(8)4 Point
+In this section, we will follow the procedure described in the previous section to construct
+a flux that fixes the F-theory moduli corresponding to four D7 branes on top of each O7
+plane. This SO(8)4 configuration is realised when there are sixteen shrinking cycles whose
+intersection matrix is D44 . These shrinking cycles are given by the four blocks A, B, C, D as
+defined in (4.6). The basis of the orthogonal lattice is given by α, e1 , β, e2 (see Eq. (4.4)).
+Since the only nonvanishing intersections in this set are α · e1 = β · e2 = 2, the intersection
+matrix is
+                                                          
+                                          0 2
+                                        2 0               
+                                                          
+                                  f=
+                                  M             0  2       .                            (4.10)
+                                                          
+                                               2 0        
+                                                       D44
+For K3 we choose the same basis. Note that we are ignoring the U block spanned by base
+and fibre.
+   Then we take the 20 × 20 flux matrix with respect to these bases to be
+                                                    
+                                        G1
+                              GIΛ =        G2       ,                         (4.11)
+                                                 016
+where G1 and G2 are 2×2 blocks (which form the G⊥ of (4.9)) and the zero block is 16×16
+(Gshk of (4.9)). If G1 and G2 satisfy the condition to have minima, then one ω       ej is fixed
+along the space hα, e1 i, while the other is fixed in the space hβ, e2 i. This immediately gives
+a complex structure ω e that is orthogonal to the D44 blocks A, B, C, D and hence realises
+an SO(8)4 point.
+    An explicit example of an integral flux that satisfies the tadpole cancellation condition
+(tr GaG = 48) and fixes an SO(8)4 point is given by:
+                                                                      
+                                1 1                              1 1
+                      G1 =              ,                G2 =              .              (4.12)
+                                1 1                              1 3
+The corresponding blocks for Ga G are
+                                                                             
+                a          8 8                               a         16 24
+              (G G)1 =             ,                  (G G)2 =                      ,      (4.13)
+                           8 8                                         8 16
+and the corresponding eigenvalues are
+                                                      √                         √
+        λωe1 = 16 ,    λũ1 = 0 ,      λωe2 = 8(2 +       3) ,   λũ4 = 8(2 −       3) .   (4.14)
+
+                                              22
+We see that their sum is precisely 48, as required by tadpole cancellation, and that they
+are all non-negative, as required by the minimum condition. Moreover, the ones corre-
+sponding to positive norm eigenvectors are different from those relative to negative norm
+eigenvectors, as required by the stabilisation condition.
+    The positive norm eigenvectors of the two matrices give ω
+                                                            e1 , ω
+                                                                 e2 :
+                         α e1                                    β   1 e2
+                  ω
+                  e1 =     + ,                       e2 = 31/4
+                                                     ω             + 1/4   .           (4.15)
+                         2  2                                    2 3     2
+From the comparison of ω  e=ω e1 + ieω2 with the general form (4.7), we see that indeed the
+complex structure is fixed at a (non-integral) point where zI = 0, and that the complex
+structures of base and fibre are given by
+                             1                                    √
+                                                                  4
+                         U= √
+                            4
+                                i,                          S=        3i.              (4.16)
+                              3
+Since S is the type IIB axiodilaton, we have stabilised the string coupling at a moder-
+ately small value of 3−1/4 ∼ = 0.76. However, we can probably realise smaller coupling by
+considering generic 4 × 4 matrices rather than the 2 × 2 block structure of Eq. (4.11).
+    This flux fixes also the deformations of ω1 and ω2 . On the other hand, ω3 and ω    e3 are
+                     a        a
+eigenvectors of G G and G G relative to zero eigenvalues. Then their deformation along
+all negative eigenvectors relative to zero eigenvalues are left unfixed. In type IIB, this
+corresponds to leaving unfixed Kähler moduli of K3 × T 2 /Z2 , while fixing the complex
+structure and the D7-brane positions. The unfixed deformations of ω     e3 correspond to gauge
+fields in type IIB that remain massless [25]. In the studied case, two√of the 19 × 2 defor-
+mations of ω3 and ω  e3 , the ones along ũ4 , are fixed (as λũ4 = 8(2 − 3) is different from
+zero). Fixing a deformation of ω e3 corresponds to giving a mass to the corresponding gauge
+field in type IIB dual. In fact, this flux corresponds to the type IIB flux that makes one
+four-dimensional vector massive [26–29]. One can see this also from the M-theory point of
+view: One three-dimensional vector gets a mass from fluxes. This vector combines with
+the deformation of ω e3 to give a four-dimensional massive vector.
+    Finally we note that the lower K3 is generically non-singular, as ω3 will generically not
+be orthogonal to the E8 block cycles.
+
+   As a second example we will reproduce one of the solutions given in [20] by using our
+methods. As it is discussed there, attractive K3 surfaces are classified in terms of a matrix
+                                                    
+                                           p·p p·q
+                                   Q=                   ,                              (4.17)
+                                           p·q q·q
+
+                                                                     f is then given by
+in which p and q are integral two-forms. The holomorphic two-form of K3
+
+                                        ω
+                                        e = p̃ + τ q̃ .                                (4.18)
+
+                                              23
+Of the 13 pairs of attractive K3’s given in [20], we will discuss the one defined by
+                                                              
+                                8 4                e=      4  2
+                         Q=             ,          Q               .                 (4.19)
+                                4 8                        2 4
+
+This pair has the advantage that both K3’s have an orientifold interpretation which means
+that we can expand p̃ and q̃ in terms of e1 , e2 , α and β (and similarly, for the lower K3,
+p and q in terms of e′1 , e′2 , α′ and β ′). Clearly, there are many ways to do this which
+correspond to different embeddings of the lattice spanned by p and q into the lattice
+spanned by e1 , e2 , α and β. We make the following choice:
+
+                               p =e′1 + 2α′ + 2β ′ , p̃ =e1 + α + β ,
+                                                                                                 (4.20)
+                               q =e′2 + 2β ′ ,       q̃ =e2 + β .
+
+According to [20], stabilization at this point occurs through the flux
+                                          1            
+                                    G=      γω ∧ ω
+                                                 e+γω∧ω
+                                                      e                                          (4.21)
+                                          2
+with γ = 1 + √i3 . In the basis given by α, e1 , β, e2 and α′ , e′1 , β ′ , e′2 , the flux matrix reads
+                                                               
+                                            2  2          2   0
+                                           1  1          1   0
+                                    GIΛ = 
+                                          0
+                                                                .                               (4.22)
+                                               0          2   2
+                                           −1 −1          0   1
+
+    The positive norm eigenvectors of Ga G are given by ω       e1 = (1, 1, 21 , − 12 ) and ω
+                                                                                            e2 =
+(0, 0, 1, 1). Rescaling
+                √
+                          the second one so that they both have the same norm, we arrive
+                  3
+at ω̃ = ω e1 + i 2 ωe2 . This is precisely the same result as what one obtains from inserting
+(4.20) into (4.18).
+    The eigenvalues of Ga G are λωe1 = λωe2 = 24, λũ1 = λũ2 = 0. In the last section we will
+see that this corresponds to an N = 1 (4d) vacuum. Moreover, in this case all the Kähler
+moduli of both K3’s are left unfixed by fluxes, as all the eigenvalues ba are equal to zero.
+
+4.4     Moving Branes by Fluxes
+Now we want to see how to change the flux (4.11), with G1 and G2 given by (4.12), to fix a
+different D7-brane configuration in which some D7 branes have been moved away from the
+orientifold planes. In particular, we will find fluxes that fix configurations where we move
+one or two branes off one of the stacks, breaking one SO(8) to SO(6) or SO(4) × SU(2).
+In the following we will consider only the C-block. The cycles belonging to blocks A, B, D
+will remain shrunk.
+
+
+                                                   24
+SO(8)3 × SO(6)
+Moving one D7 brane from one stack in type IIB corresponds to blowing up one of the
+4 cycles of this block. For the first example, consider the complex structure determined
+by (4.7) with z1 = d and al other zI = 0. One can check that all cycles given in Table 4.6
+except C1 remain orthogonal to ω     e . Looking at Figure 2, it is clear that this means we
+have moved one D-brane away from the O-plane, as claimed. Thus SO(8) is broken to
+SO(6). At the same time the cycles that remain shrunk in block C have an intersection
+matrix that is equivalent to minus the Cartan matrix of SO(6). This means that we have
+effectively crossed out the first line and the first column of the Cartan matrix of SO(8) by
+removing C1 from the set of shrunk cycles:
+                                            
+                          −2 1         0   0                       
+                         1 −2 1                        −2   1    1
+                                          1 −→  1 −2 0  .
+                        0                                                             (4.23)
+                                 1 −2 0 
+                                                         1   0 −2
+                           0     1     0 −2
+
+We want an integral basis in which shrunk and blown-up cycles do not intersect each other.
+To achieve this we keep the shrunk cycles C2 , C3 , C4 and instead of C1 we take the integral
+cycle 2Eb1 = 2 (e2 + E1 ) (see (4.8)) to describe the brane motion in block C. We find the
+intersection matrix
+                                                       
+                                      −4 0       0    0
+                                     0 −2 1          1
+                                                       .                             (4.24)
+                                    0      1 −2 0 
+                                       0    1    0 −2
+
+We choose an analogous basis for the lower K3.
+
+                              b1 , C2 , C3 , C4 , A, B, D, is the one that gives the flux matrix the
+   The basis α, e1 , β, e2 , 2E
+block-diagonal form (4.9), with the shrinking cycles given by C2 , C3 , C4 , A, B, D and the
+orthogonal ones by α, e1 , β, e2, 2E  b1 . Such a block-diagonal flux matrix generally gives ω   ea
+component along E b1 . An example is given by:
+                                                                   
+                                              1 1
+                                            1 1                    
+                                                                   
+                                                     1 1 0         
+                                    IΛ
+                                  G =                             .                        (4.25)
+                                                      1  3   1      
+                                                                   
+                                                     0 1 0         
+                                                                015
+
+                                                             b1 for both K3’s. From the type
+where the 3 × 3 block is with respect to the cycles β, e2 , 2E
+IIB perspective, we are also turning on fluxes on the D7 branes.
+
+                                                25
+    Ga G satisfies the tadpole cancellation condition. The eigenvalues corresponding to the
+first block are the same as in Eq. (4.14), the ones in the second block are
+
+                        λωe2 = 24.6 ,          λũ2 = 5.5 ,    λũ4 = 1.9 .             (4.26)
+
+They are all positive and different from each other. The positive norm eigenvectors give
+ω
+e1 and ω
+       e2 :
+                           α e1                            β      e2     b1 .
+                    ω
+                    e1 =     +             ,    ω
+                                                e2 = 0.9     + 1.3 + 0.3 E              (4.27)
+                           2   2                           2      2
+The corresponding ω e is orthogonal the S 2 cycles with intersection matrix SO(6) ×SO(8)    3
+                                                                                            ,
+but it is not orthogonal to the cycle 2E  b1 which is now blown up, at a volume ρ 2E    b1 =
+    √
+0.6 νe. This corresponds to the motion of one D7 brane away from the orientifold plane
+of block C. Note that again the coupling is moderately weak, g = 1/1.61 = 0.6.
+    We also note that, with respect to our SO(8)4-example, we have fixed one more defor-
+mation of ω3 and one of ω e3 . The stabilisation of the extra ω
+                                                              e3 deformation is the signal of a
+mass for the gauge field on the D7 brane that has been moved. This mass is explained in
+type IIB by the fact that D7 fluxes gauge some shift symmetries by vectors on the branes.
+Since the U(1) on the brane is broken, the resulting gauge group is SO(8)3 ×SO(6) [26–29].
+
+SO(8)3 × SO(6) × U (1)
+In the example studied above, we have given a flux that fixes the desired brane configura-
+tion. Moreover it fixes one further deformation of ω3 and one of ω e3 , with respect to the
+      4
+SO(8) example presented before. This is related to the fact that the rank of the 3 × 3
+block has been increased to 3; so we get two negative norm eigenvectors with non-zero
+eigenvalues. But we can choose a different flux, such that the number of negative norm
+eigenvectors relative to non-zero eigenvalues does not change with respect to the SO(8)4
+case:
+                                                         
+                                       1 1
+                                     1 1                 
+                                                         
+                                            1 1 0        
+                                IΛ
+                              G =                       ,                         (4.28)
+                                             1  3  1      
+                                                         
+                                            0 0 0        
+                                                      015
+
+                                                                   b1 .
+where the 3 × 3 block is still with respect to the cycles β, e2 , 2E
+    Again, Ga G satisfies the tadpole cancellation condition. The eigenvalues relative to the
+first block are the same as in Eq. (4.14). The eigenvalues of the second block are
+
+                           λωe2 = 27.3 ,       λũ2 = 4.7 ,     λũ4 = 0 .              (4.29)
+
+                                                  26
+They are all non-negative and different from each other. The positive norm eigenvectors
+give ω
+     e1 and ω
+            e2 :
+                           α e1                        β      e2     b1 .
+                    ω
+                    e1 =     +        ,     ω
+                                            e2 = 0.8     + 1.4 + 0.3 E                  (4.30)
+                           2   2                       2      2
+As before, the corresponding ω e is orthogonal the S 2 cycles with intersection matrix SO(6)×
+SO(8)  3                                            b
+      , but it√is not orthogonal to the cycle 2E1 which is now blown up, at a volume
+ρ 2E b1 = 0.6 νe. Again, one D7 brane is moved from the orientifold plane of block C.
+    In this case, we do not break any further U(1). In fact, the flux we turned on contributes
+to the gauging of an isometry that has been gauged also in the SO(8)4 case. This can be
+easily understood in the M-theory context, where the relevant gauge field is one of the C e1µ
+                                                                                            Λ
+                                                                                              .
+
+SO(8)3 × SO(4) × SU (2)
+As a further example, let us choose z1 = z2 = d and all other zI = 0. We now find that
+e · C2 = d. For all other cycles in Table (4.6) the intersection with ω
+ω                                                                       e still vanishes, so
+we have blown up a different cycle than in the previous examples. From the assignment
+between cycles and forms it is clear that we have moved two branes away from the O-plane.
+As C1 remains shrunk, these branes are on top of each other. From the type IIB perspective,
+we thus expect the gauge symmetry SO(4) × SU(2). Examining the intersection matrix
+of the shrunk cycles C1 , C3 and C4 we indeed find a diagonal matrix with entries −2.
+This happens because we have blown up the cycle C2 and thus deleted the second row and
+second column from the Cartan matrix of SO(8):
+                                           
+                        −2 1         0    0                     
+                       1 −2 1                     −2 0       0
+                                         1
+                      0                      −→  0 −2 0  .                         (4.31)
+                               1 −2 0 
+                                                     0    0 −2
+                         0     1     0 −2
+
+The result is minus the Cartan matrix of SO(4)×SU(2), as expected. As before, we need a
+basis of integral cycles in which shrunk and blown-up cycles do not intersect. To construct
+it, we replace the cycle C2 with the cycle E b1 + Eb2 = e2 + E1 + E2 . It has self-intersection
+−2, so that the intersection matrix in the new basis of cycles which we use for D-brane
+motion in the C block is
+                                                       
+                                     −2 0        0    0
+                                    0 −2 0           0
+                                                       .                               (4.32)
+                                   0      0 −2 0 
+                                      0    0     0 −2
+
+
+
+
+                                              27
+In this basis, a flux that stabilises the desired gauge group is given by:
+                                                           
+                                           1 1
+                                        1 1                
+                                                           
+                                                1 1 1 
+                                   IΛ
+                                 G =                      ,                        (4.33)
+                                                 1  3  1    
+                                                           
+                                                1 1 2 
+                                                          0
+                                                                b1 + E
+where now the 3 × 3 block is with respect to the cycles β, e2 , E    b2 . The eigenvalues
+corresponding to this block are:
+
+                        λωe2 = 19.6 ,     λũ2 = 11.2 ,    λũ4 = 1.2 .               (4.34)
+
+They are all positive and different from each other. ω
+                                                     e1 and ω
+                                                            e2 are given by:
+                   α e1                         β       e2               
+             ω
+             e1 = + ,                   ω                          b
+                                        e2 = 1.5 + 0.8 − 0.3 E1 + E2 .  b             (4.35)
+                   2    2                       2        2
+The corresponding ω e is orthogonal the S 2 cycles with intersection matrix SO(4) × SU(2) ×
+       3
+SO(8) , but it is not orthogonal to the cycle E b1 + Eb2 which is now blown up.
+    Also in this example, we have fixed one further deformation of ω3 and one of ω  e3 . This
+in particular breaks the gauge group on the two D7 branes from U(2) to SU(2).
+
+4.5    Fixing almost all Moduli
+In the previous examples we have considered fluxes that stabilise the D7-brane positions
+and part of the metric moduli of K3, while leaving some geometric moduli unfixed. This
+was due to the large amount of zero eigenvalues of Ga G. In what follows, we will present
+an example of an integral flux that satisfies the tadpole cancellation condition and fixes
+almost all geometric moduli. The remaining unstabilised moduli are the size of the fiber
+   f as prescribed by the F-theory limit, three deformations of Σ, and the two volumes
+in K3,
+            f
+of K3 and K3.
+    To write down the flux we will choose two different bases of integral cycles in H 2 (K3)
+            f The second one is the same as in the example SO(8)4, while for H 2 (K3)
+and in H 2 (K3).
+we choose an integral basis with intersection matrix
+                                                          
+                               0 1
+                             1 0                          
+                                                          
+                                       0   1              
+                                                          
+                                       1 0                .                         (4.36)
+                                                          
+                                               0 1        
+                                                          
+                                               1 0        
+                                                         4
+                                                       D4
+
+                                              28
+In these bases, we choose the flux matrix to be
+                                                                         
+                                    1 −1
+                                −1       1                               
+                                                                         
+                          IΛ
+                        G =                   1 −1                      .                     (4.37)
+                                                                          
+                                              −1  1                      
+                                                                  G4(4)
+
+where                                                
+                                            −1 −1 0 0
+                                           0   0 1 1 
+                                   G(4) = 
+                                           0
+                                                      .                                         (4.38)
+                                                0 1 0 
+                                             0 −1 0 0
+    This flux satisfies tr Ga G = 8 + 8 + 4 × 8 = 48. Moreover, the G(4) blocks have
+eigenvalues equal to 2, while the 2 × 2 blocks have eigenvalues equal to 0 for the positive
+norm eigenvectors and 8 for the negative norm eigenvectors. In the next section, we will see
+that the resulting minimum is supersymmetric (N = 2 in 4d). The eigenvalues relative to
+positive norm eigenvectors are such that all moduli are fixed apart from the deformations
+                     ej ’s in the first U-block19 .
+of the ωi ’s and the ω
+
+
+5      SUSY Vacua
+Finally, we want to study the question of supersymmetric vacua. This question has been
+analysed for M-theory on a generic eight-dimensional manifold in [19, 22]. In the presence
+of fluxes a supersymmetric solution is a warped product of R1,2 and some internal manifold
+which is conformally Calabi–Yau [22]. The flux G4 must be primitive (J ∧ G4 = 0)
+and of Hodge type (2, 2) with respect to the Kähler form and the complex structure of
+the underlying Calabi–Yau20 . Given a metric with SU(4) holonomy, there is only one
+associated Kähler form J and one holomorphic four-form Ω. Moreover there are only
+two invariant Majorana–Weyl spinors, which implies N = 2 supersymmetry in the three-
+dimensional theory.
+     In our case, K3 × K3 has holonomy SU(2) × SU(2). As we have seen previously, for
+each K3 factor, the metric is invariant under the SO(3) that rotates the ωi ’s. This means
+that, given the metric of K3 × K3, there is an S 2 × S 2 of possible complex structures and
+associated Kähler forms. Moreover, the holonomy SU(2) × SU(2) implies that the number
+of globally defined Majorana–Weyl spinors is four, corresponding to N = 4 supersymmetry
+in three dimensions. The R-symmetry is the SO(4) ≃ SO(3) × SO(3) that rotates the four
+real spinors and the corresponding S 2 × S 2 of complex structures. When this symmetry is
+  19
+   This is a singular example, as now the lower K3 is singular.
+  20
+   In the following, all the quantities of the internal manifold are relative to the unwarped Calabi–Yau
+metric.
+
+                                                  29
+broken to the SO(2) which rotates the real and imaginary part of Ω, then we have N = 2
+supersymmetry. On the other hand, if it is completely broken we have N = 0.
+    A minimum is supersymmetric if we can associate with the metric a Kähler form J and
+a complex structure Ω, such that G4 is primitive and√of Hodge-type
+                                                               √    (2,2). This means that
+there must be a choice of ωi and ω  ej , let us say J = 2ν ω3 + 2e
+                                                                 νωe3 and Ω = ω ∧ ωe (with
+ω = ω1 + iω2 and ω e=ω        ω2 ), such that G4 ∧ J = 0 and G4 ∧ Ω = G4 ∧ Ω̄ = 0. In our
+                        e1 + ie
+formalism, this is equivalent to:
+
+    • Primitivity, G4 ∧ J = 0 :
+
+                            Gω
+                             e3 = 0 ,                       Ga ω 3 = 0 .                 (5.1)
+
+      In terms of the eigenvalues of Ga G this means a3 = 0. We see that the primitivity
+      condition translates to the existence of a non-trivial kernel of Ga G|Σe and G Ga |Σ .
+      The vectors in the kernels make the Kähler form.
+             (2,2)
+    • G4 = G4        :
+                                     0 = (ω · Ge
+                                               ω ) = a1 − a2 .                           (5.2)
+      This means a1 = a2 ≡ a.
+
+   To summarise, the necessary and sufficient condition for the flux to preserve susy in
+                                                    e Σ) takes the form
+the minimum is that G (when restricted to the block Σ,
+                                                 
+                                          a
+                                G Σe =  a  .                                     (5.3)
+                                                0
+
+For a = 0, the SO(4) R-symmetry is unbroken and the minimum preserves all the N = 4
+supersymmetries. For a 6= 0, only an SO(2) subgroup of the R-symmetry is preserved and
+we have N = 2 supersymmetries in three dimensions.
+    We note that in the case of fluxes which are compatible with the F-theory limit, the
+condition a3 = 0 is always satisfied and so one has simply to check that the other two
+eigenvalues are equal to each other or possibly zero.
+
+
+6     Conclusions
+In this paper, we have analysed in detail the stabilisation of D7-brane configurations by
+fluxes. To do that we have used the F-theory language, i.e. we have studied the stabilisation
+problem in M-theory and then mapped the results to type IIB.
+    We studied the stabilization of D7/O7 configurations on K3 × T 2 /Z2 . The O7 planes
+and the D7 branes are wrapped on K3 and localised on T 2 /Z2 ; in particular, the O-planes
+sit at the four singularities of T 2 /Z2 . The D7 moduli are the positions of the D7 branes on
+
+                                             30
+T 2 /Z2 . The M-theory dual of this background is given by the compactification on K3×K3
+(in the F-theory limit), where the second K3 is elliptically fibred.
+     Our aim was to analyse the moduli stabilisation, in this background, by integral three-
+form closed string fluxes and by D7 worldvolume two-form fluxes, using F-theory language.
+The type IIB geometric and D7 moduli are all mapped to M-theory geometric moduli.
+Three-form and two-form fluxes are both mapped to four-form fluxes.
+     We have considered M-theory on K3 × K3 and derived the four-form flux generated
+potential for the geometric moduli in the Section 2. We have expressed it in terms of the
+three orthogonal vectors of H 2 (K3) that determine the metric of K3. Furthermore, we
+explictly found the flux-induced mass terms for the vector fields coming from the three-
+form field. In the Section 3 we have worked out in detail the moduli stabilisation, finding
+the geometric conditions for a flux to minimise the potential: It must map the three-plane
+of one K3 to the three-plane of the other K3 and back. Using the duality, we can map the
+stabilised point found in M-theory moduli space to a point in type IIB moduli space. In
+this way we can see which D7 configuration is stabilised by a particular flux.
+     The M-theory fluxes dual to Poincaré-symmetry-preserving type IIB fluxes do not sta-
+bilise the size of the fibre. So we always have a flat direction in the M-theory moduli space.
+Of this line, only one point corresponds to a four dimensional vacuum, the one associated
+with zero fibre size. We have verified that it is at infinite distance from any other point
+in the moduli space. The F-theory limit consists in going to this specific point along the
+flat direction. We have described this limit in detail in Section 3.2. In particular, we have
+seen which moduli disappear from the M-theory moduli space when we take the F-theory
+limit.
+     In Section 4 we have studied some examples. First, we have reviewed the map between
+the D7 moduli and the dual M-theory geometric dual moduli worked out in [21]. This
+map enabled us to outline an explicit procedure to find a flux that stabilises a desired
+gauge group via its pattern of shrinking cycles. Using this procedure, we have shown a
+flux that stabilises 4 D7 branes on top of each O-plane. Then we have found which fluxes
+we have to turn on to modify this configuration and move one or two branes away from
+one O-plane. This changes the gauge group in type IIB. Correspondingly, the flux fixes a
+different singularity in the upper K3, i.e. some cycles are blown up.
+     In the examples we have also checked whether there are some stabilised Kähler moduli
+of the lower K3. When this is the case, some Kähler moduli of the upper K3 are stabilised
+too. These are mapped to the fourth components of four-dimensional vector fields [25].
+The corresponding three-dimensional scalars acquire a mass since they are stabilised. The
+corresponding three-dimensional vectors also become massive (see Section 2.3). So we
+concluded that the resulting four-dimensional vectors acquire a mass. This result matches
+with what was found in [26,27], studying directly type IIB on K3×T 2 /Z2 (see also [28,29]).
+     At the end of Section 4, we have reported one further example. We have presented a
+flux that stabilises almost all the moduli, showing that a general F-theory flux would fix
+almost all the moduli (except one Kähler modulus in the lower K3, that corresponds to
+
+                                             31
+the fibre size in the upper K3).
+    In the last section we have considered the sypersymmetry conditions on the set of the
+four-dimensional Minkowski vacua we have studied. In general supersymmetry is com-
+pletely broken, but under some conditions, the N = 1 or even N = 2 supersymmetry
+in four dimensions can be preserved. We have found these conditions using an eleven-
+dimensional approach.
+
+   In this work we have studied a particular example, K3×K3, in which we have complete
+control over D7-brane stabilisation by fluxes. This is due to the simplicity of the eight
+dimensional manifold. Our final goal is to reproduce the results found in this paper using
+more complicated CY fourfolds, in which the D7 configurations include also intersecting
+branes. A first step would be to consider some Voisin–Borcea manifold, modding out
+K3 × K3 by a freely acting involution. This breaks the SO(3) symmetry of K3 and gives a
+unique complex structure to the fourfold. Starting from such examples, we hope to further
+develop our intuition for geometric moduli stabilisation in F-theory and eventually move
+forward to generic four-folds.
+
+
+
+
+Acknowledgements
+We are grateful to Hagen Triendl for discussions and to Rainer Ebert for comments on
+the manuscript. This work was supported by SFB-Transregio 33 ”The Dark Universe”
+by Deutsche Forschungsgemeinschaft (DFG). CL acknowledges partial support from the
+European Union 6th framework program MRTN-CT-2006-035863 ”UniverseNet”.
+
+
+
+
+                                           32
+A       Lattice of Integral Cycles of K3
+The scalar product defined in (2.2), or equivalently, the counting of oriented intersection
+numbers of 2-cycles gives us a natural symmetric bilinear form on H2 (K3, Z). It can be
+shown [37] that with this scalar product, H2 (K3, Z) is an even self-dual lattice of signature
+(3, 19). By the classification of even self-dual lattices we know that we may choose a basis
+for H2 (K3, Z) such that the inner product is characterised by the matrix
+
+                               U ⊕ U ⊕ U ⊕ (−E8 ) ⊕ (−E8 ) ,                             (A.1)
+
+where
+                                                     
+                                                0 1
+                                      U=                  ,                              (A.2)
+                                                1 0
+
+and E8 denotes the Cartan matrix of E8 .
+   Any vector in the lattice of integral cycles of an elliptically fibred K3 can now be written
+as
+
+                                  D = pi ei + pj ej + qI EI ,                            (A.3)
+
+where i, j run from one to three and I, J from 1 to 16.
+                                                      P The pi as wellPas the pi are all
+integers. The E8⊕2 lattice is spanned by qI fulfilling I=1..8 qI = 2Z,  I=9..16 qI = 2Z.
+In each of the two E8 blocks, the coefficients furthermore have to be all integer or all
+half-integer. The only nonvanishing inner products among the vectors in this expansion
+are
+
+                     EI · EJ = −δIJ ,                           ei · ej = δji .          (A.4)
+
+
+
+
+B       The Potential in Terms of W and W̌
+For completeness, we also give the flux induced scalar potential in terms of two superpo-
+tentials. For a CY4 , it reads [24]
+                                                                      
+                        eK αβ̄             1 1 mn                    2
+                  V = 3 G Dα W Dβ̄ W + 4         Ǧ ∂m W̌ ∂n W̌ − W̌     .          (B.1)
+                        V                  V   2
+                R
+Here K = − ln CY4 Ω ∧ Ω and W and W̌ are given by
+                         Z                                Z
+                                                        1
+                  W =       Ω ∧ G4 ,              W̌ =       J ∧ J ∧ G4 .           (B.2)
+                                                        4
+                      CY4                                       CY4
+
+
+
+                                                33
+The complex structure moduli are labelled by α = 1, . . . , h3,1 , while m = 1, . . . , h1,1 counts
+the Kähler moduli.
+   For K3 ×K3, we get a similar but not identical form. Note fist that the above potential
+depends on h1,1 + 2h3,1 real moduli. This is the dimension of the metric moduli space of a
+                                      f whose moduli space has dimension
+CY4. But it is not the case for K3 × K3,
+                                                               
+                             2 × 58 = 2 3(h1,1 (K3) − 1) + 1 .                                (B.3)
+
+The moduli are the volume and the deformations of the ωi ’s that are orthogonal to all the
+ωi ’s and whose number is then h2 (K3) − 3 = h1,1 − 1. On the other hand ,
+                                    
+                 f + 2h3,1 K3 × K3
+       h1,1 K3 × K3                  f
+                                                                                  (B.4)
+                               = 2 h1,1 (K3) + 2h2,0 (K3) h1,1 (K3) = 2 × 60 .
+
+This is again a reflection of the fact that for K3, only the three-plane itself is geometri-
+cally meaningful: The two “missing” moduli correspond to the rotation of j into real and
+imaginary parts of ω.
+    By an explicit computation one can get the new form of the potential:
+
+                  V = VG3,1 + VG2,2
+                                                                                 
+                     eK αβ̄               1           1 mn                                   (B.5)
+                    = 3 G(0) Dα W Dβ̄ W + 4             Ǧ ∂m W̌ ∂n W̌ 2 − W̌ 2       .
+                     V                   V            2
+
+                                                                                         f
+The second term, VG2,2 is the same as for the CY4 (note that m = 1, ..., h1,1 (K3)+h1,1 (K3)).
+The only difference is in VG3,1 : In the CY4 case it is given by the integral of G3,1 ∧ G1,3 ,
+where the subscript denotes the Hodge decomposition. In that case it is also equal to the
+                 (0)     (0)                                                     f it is not
+primitive part G3,1 ∧ G1,3 , since G3,1 is automatically primitive. On K3 × K3,
+primitive and one must remove from G3,1 the piece proportional to J. This is what the
+metric G(0) does. It is given by
+                                     R                            
+                                           χα ∧χ̄β̄
+                                      − K3
+                                         R
+                                          K3 ω∧ω̄
+                             G(0) =                 R
+                                                              ¯  ,
+                                                       g χ̃ρ ∧χ̃σ̄
+                                                                                         (B.6)
+                                                    − K3
+                                                       R
+                                                           e ∧ω
+                                                           ω  ē
+                                                           g
+                                                           K3
+
+
+where {χα } is a basis for (1,1)-forms orthogonal to ω3 .
+   The supersymmetry condition for the vacua can be written in terms of these two su-
+perpotentials. In this case they assume the standard form (see for example [18, 23, 24])
+
+                Dα W = 0 ,                   W = 0,                     ∂m W̌ = 0 .          (B.7)
+
+The first two conditions say that the G4 is a (2,2)-form, while the last one implies G4 is
+primitive.
+
+                                                34
+C         Linear Algebra on Spaces with Indefinite Metric
+Since some of the usual theorems about eigenvalues and eigenvectors of self-adjoint oper-
+ators do not carry over to the case of an indefinite scalar product, we collect some useful
+facts in this appendix (see also [41]). We consider a real vector space Ve equipped with
+a non-degenerate scalar product (ṽ · w̃) of signature (n,m), where n < m and n refers to
+positive norm. In the case we are interested in, Ve = H 2 K3  f and the signature is (3, 19).
+Let A be an endomorphism of Ve which is selfadjoint with respect to this scalar product.
+We denote the set of eigenvalues of A by {λi }. Since the eigenvalues are the roots of the
+real characteristic polynomial, they are either real or come in complex conjugate pairs.
+We consider the complexification VeC of Ve , such that the scalar product involves complex
+conjugation of the first entry.
+    In VeC , A has n + m eigenvalues. Note that a self-adjoint operator A is not necessarily
+diagonalisable in a space with indefinite metric. However, this problem only occurs if
+there exists a zero-norm eigenvector relative to a degenerate eigenvalue [42]. We will not
+consider this non-generic case. Then A is diagonalizable in VeC with eigenvectors given by
+{ei }. From the selfadjointness, we have
+                                            
+                                    λ̄i − λj (ei · ej ) = 0 .                          (C.1)
+Since the metric is indefinite, (ei · ei ) = 0 does not imply ei = 0, so that not all eigenvalues
+need to be real.
+   If there exist one non-real eigenvalue λ with eigenvector e, then λ̄ is also an eigen-
+value.The corresponding eigenvector is ē. Equation (C.1) tells us that e and ē are null. In
+the case we are considering, λ is non-degenerate. Then, the non-degeneracy of the inner
+product implies (ē, e) 6= 0. With these vector we can construct two real vectors
+                            ṽ + = e + ē ,                         ṽ − = −i (e − ē)     (C.2)
+that have opposite norm. Then, ṽ ± generate a subspace of the original real space Ve ,
+such that the scalar product on this subspace is of signature (1, 1). One can define the
+orthogonal complement of this subspace in Ve and look for the next complex eigenvalue
+and the corresponding 2 × 2 block. There can be at most n of these 2 × 2 blocks. Then
+there are at least m − n real eigenvalues.
+    We conclude that the canonical form of a generic matrix A selfadjoint with respect to a
+indefinite inner product with signature (n, m) is block diagonal, with n 2 × 2 block relative
+to subspaces of signature (1, 1) and a positive definite (m − n)-diagonal block21 . Vectors
+belonging to different blocks are orthogonal to each other.
+    Let us concentrate on a 2 × 2 block. We choose a basis such that the metric has the
+matrix form                                       
+                                       f      0 1
+                                      M=             .                                 (C.3)
+                                              1 0
+  21
+       A matrix selfadjoint with respect to a definite metric is positive definite
+
+                                                        35
+                                        f= M
+The selfadjointness condition on A is A M    f AT , implying that
+                                               
+                                            a b
+                                      A=          .                                                (C.4)
+                                            c a
+
+                                  f invariant, A can be brought to the canonical form22
+With a transformation that leaves M
+                                                        
+                             ′    a b          ′      a −b
+                           A =           or A =               .                   (C.5)
+                                   b a                b a
+                                                        
+                                             1     1   1
+If we now change basis with the matrix P = √2             , then M and A go to:
+                                                   1 −1
+                                                                  
+                f=     1   0           ′    λ 1   0         ′     a  b
+               M               ,     A =               or A =            .        (C.6)
+                       0 −1                 0 λ2                  −b a
+
+     Let us now specialise to the case of A = Ga G, i.e. V is another vector space, equipped
+with a scalar product of the same signature, and G is a map from Ve to V . Ga denotes
+its adjoint with respect to these scalar products, i.e. (v, Gṽ) = (Ga v, ṽ) (where ṽ ∈ Ve and
+v ∈ V ). Clearly, the composition Ga G is a selfadjoint map from Ve to itself.
+     We want to determine the canonical form for G. It will be of the same structure of
+A, with n 2 × 2 blocks of signature (1, 1) and a diagonal part relative to a metric in the
+form −1m−n . The diagonal part will be simply given by the square root of the diagonal
+block of A. Regarding the 2 × 2 blocks, we find that both canonical forms can be written
+as A′ = g a g with a “square root” matrix g. Since A is of the form Ga G, the eigenvalues
+λ1 , λ2 in (C.6) must be either both positive or both negative. We consider these two cases
+separately. The canonical forms for g are
+                  √                               p                         
+                     λ1 √0                     0        |λ 2 |            γ    δ
+              g=                 ,     g= p                      , g=              ,        (C.7)
+                     0      λ2                 |λ1 |    0               −δ γ
+
+where in the last matrix we have defined γ and δ such that α = γ 2 − δ 2 and β = 2γδ.
+   Then, the matrix of G can be brought with a change of basis into the form:
+                                                            
+                               g1
+                                  ..                        
+                                     .                      
+                                       gn √                 
+                                                            
+                       Gd =                                 .                     (C.8)
+                                            λ 1             
+                                                 ..         
+                                                    .       
+                                                       p
+                                                        λn−m
+  22
+    If b, c are either both zero or both non-zero. Otherwise, the matrix is of the form we said before: It
+has a degenerate real eigenvalue relative to a zero norm eigenvector.
+
+                                                   36
+    If we call the matrix of the change of basis Pe, then we can summarise our results as:
+                           Pe−1 Ga GPe = Gad Gd        ,   PeT M
+                                                               fPe = M                 (C.9)
+where M is the diagonal matrix given by n 2 × 2 blocks (+1, −1) and an m − n block
+(−1, ..., −1).
+
+   We now show that there exists a change of basis in the space V such that the matrix
+of G can be brought to the form Gd , i.e. there exists a matrix P such that
+                                         P −1 GPe = Gd .                              (C.10)
+
+This matrix is given by P ≡ Ga −1 PeGad . Let us check that:
+
+                       P −1 GPe = Gad −1 Pe−1 Ga GPe = Gad −1 Gad Gd = Gd             (C.11)
+Moreover, we obtain the relations:
+         Pe−1 Ga P = Gad            P −1GGa P = Gd Gad           P T MP = M .         (C.12)
+    Only in the case of all eigenvalues being positive do we get a fully diagonal form for G,
+otherwise we have non-diagonal 2 × 2 blocks.
+    Returning to the potential (and to the K3 case where n = 3 and m = 19), we see that
+if Ga G is diagonalizable with non-negative eigenvalues, then G and Ga can be brought
+to the same diagonal form Gd with respect to bases made up of three positive norm and
+nineteen negative norm vectors. This means that the minimum condition (3.1) is satisfied.
+The converse is also true: If the condition (3.1) is satisfied, then G and Ga can be brought
+to a diagonal form by changes of bases and so Ga G becomes diagonal with non-negative
+entries.
+
+
+D      F-Theory Point in the Kähler Moduli Space
+Let us fix two directions of                   e
+                            √ the three-plane Σ to form the holomorphic two-form,     let us
+say ω
+    e=ω  e1 + ie       e
+               ω2 , so j = 2ν ω  e3 . We are left with 20 moduli: the 19 δe   m
+                                                                             ω2 deformations
+of ω
+   e3 and the volume νe. These remaining 20 moduli can be parametrised with the 20
+deformations of e           f
+                j in H 1,1 (K3):
+                                                               D              E
+             e     e     e     a
+             j = bB + f F + c ũa ,                              e  e
+                                             with ũa a basis ⊥ F , B, ω
+                                                                       e1 , ω
+                                                                            e2 .       (D.1)
+
+So we are essentially left with the Kähler moduli space.
+   The metric on this moduli space is (i, j run over {b, f, ca })
+                                 Z       
+                gij = −∂i ∂j log    e
+                                    j ∧e j = −∂i ∂j log (2 b(f − b) − ca ca ) .        (D.2)
+
+                                                  37
+   We want to use this metric to compute the distance between one general point of the
+moduli space and a point corresponding to the F-theory limit. As discussed in Section 3.2,
+b and f give the volumes of fibre and base, and the F-theory limit involves b → 0 while
+respecting the bound (3.9). We will consider a curve parameterised by ǫ,
+
+                b = b0 ǫ2 ,                      f = const. ,                   ca = ca0 ǫ ,   (D.3)
+
+where ca0 ca0 = 2αb (f − b) and α ∈ [0, 1) parameterises the degree to which the bound is
+saturated. Note that the parameterisation (D.1) is simple, but not exceedingly convenient.
+In particular, one might worry that the volume of K3  f vanishes in the limit of α → 1, even
+though base and fibre volume stay finite. However, before that limit is reached, one can
+reparameterise the basis cycles such that the new ca are again zero, while f is now smaller
+than before. The limit α → 1 is then the same as ǫ → 0.                               R0
+    The metric distance of the F-theory point from any other point (ǫ0 ) is given by ǫ0 ds,
+where                                     q
+                                    ds = gij Ẋ i Ẋ j dǫ .                            (D.4)
+
+X i are b, f, ca and Ẋ i are the derivatives of X i with respect to ǫ. By explicit calculation,
+one can show that all terms in the sum under the square root are of order ǫ−2 in the limit
+ǫ → 0, times some finite coefficient. Hence, the metric distance from any finite point ǫ0 to
+ǫ = 0 is
+                              Z0          Z0
+                                               dǫ
+                                   ds =           · (term finite for ǫ → 0) ,                  (D.5)
+                                               ǫ
+                              ǫ0          ǫ0
+
+i.e. it diverges logarithmically.
+
+
+References
+ [1] M. Grana, “Flux compactifications in string theory: A comprehensive review,” Phys.
+     Rept. 423, 91 (2006) [arXiv:hep-th/0509003]
+
+ [2] M. R. Douglas and S. Kachru, “Flux compactification,” Rev. Mod. Phys. 79 (2007)
+     733 [arXiv:hep-th/0610102]
+
+ [3] R. Blumenhagen, B. Kors, D. Lust and S. Stieberger, “Four-dimensional String Com-
+     pactifications with D-Branes, Orientifolds and Fluxes,” Phys. Rept. 445 (2007) 1
+     [arXiv:hep-th/0610327]
+
+ [4] F. Denef, “Les Houches Lectures on Constructing String Vacua,” [arXiv:0803.1194
+     [hep-th]]
+
+
+                                                      38
+ [5] L. McAllister and E. Silverstein, “String Cosmology: A Review,” Gen. Rel. Grav. 40,
+     565 (2008) [arXiv:0710.2951 [hep-th]]
+
+ [6] C. Beasley, J. J. Heckman and C. Vafa, “GUTs and Exceptional Branes in
+     F-theory - I,” [arXiv:0802.3391 [hep-th]], “GUTs and Exceptional Branes in F-
+     theory - II: Experimental Predictions,” [arXiv:0806.0102 [hep-th]]
+
+ [7] R. Donagi and M. Wijnholt, “Model Building with F-Theory,” [arXiv:0802.2969
+     [hep-th]]
+
+ [8] J. F. G. Cascales, M. P. Garcia del Moral, F. Quevedo and A. M. Uranga, “Realistic
+     D-brane models on warped throats: Fluxes, hierarchies and moduli stabilization,”
+     JHEP 0402 (2004) 031 [arXiv:hep-th/0312051]
+
+ [9] H. Verlinde and M. Wijnholt, “Building the standard model on a D3-brane,” JHEP
+     0701 (2007) 106 [arXiv:hep-th/0508089]
+
+[10] F. Marchesano and G. Shiu, “Building MSSM flux vacua,” JHEP 0411, 041 (2004)
+     [arXiv:hep-th/0409132]
+
+[11] T. Watari and T. Yanagida, “Product-group unification in type IIB string theory,”
+     Phys. Rev. D 70, 036009 (2004) [arXiv:hep-ph/0402160]
+
+[12] C. Vafa, “Evidence for        F-Theory,”    Nucl.   Phys.    B   469,     403   (1996)
+     [arXiv:hep-th/9602022]
+
+[13] A. Sen, “Orientifold limit of F-theory vacua,” Nucl. Phys. Proc. Suppl. 68 (1998) 92
+     [Nucl. Phys. Proc. Suppl. 67 (1998) 81] [arXiv:hep-th/9709159]
+
+[14] R. Donagi and M. Wijnholt,            “Breaking     GUT     Groups   in    F-Theory,”
+     [arXiv:0808.2223 [hep-th]]
+
+[15] J. J. Heckman and C. Vafa,          “F-theory,    GUTs,     and the Weak Scale,”
+     [arXiv:0809.1098 [hep-th]]
+
+[16] J. Marsano, N. Saulina and S. Schafer-Nameki, “Gauge Mediation in F-Theory GUT
+     Models,” [arXiv:0808.1571 [hep-th]]
+
+[17] L. Gorlich, S. Kachru, P. K. Tripathy and S. P. Trivedi, “Gaugino condensation and
+     nonperturbative superpotentials in flux compactifications,” JHEP 0412 (2004) 074
+     [arXiv:hep-th/0407130]
+
+[18] D. Lust, P. Mayr, S. Reffert and S. Stieberger, “F-theory flux, destabilization
+     of orientifolds and soft terms on D7-branes,” Nucl. Phys. B 732, 243 (2006)
+     [arXiv:hep-th/0501139]
+
+                                           39
+[19] K. Dasgupta, G. Rajesh and S. Sethi, “M theory, orientifolds and G-flux,” JHEP 9908
+     (1999) 023 [arXiv:hep-th/9908088]
+
+[20] P. S. Aspinwall and R. Kallosh, “Fixing all moduli for M-theory on K3 x K3,” JHEP
+     0510, 001 (2005) [arXiv:hep-th/0506014]
+
+[21] A. P. Braun, A. Hebecker and H. Triendl, “D7-Brane Motion from M-Theory Cy-
+     cles and Obstructions in the Weak Coupling Limit,” Nucl. Phys. B 800 (2008) 298
+     [arXiv:0801.2163 [hep-th]]
+
+[22] K. Becker and M. Becker, “M-Theory on Eight-Manifolds,” Nucl. Phys. B 477
+     (1996) 155 [arXiv:hep-th/9605053]
+
+[23] S. Gukov, C. Vafa and E. Witten, “CFT’s from Calabi-Yau four-folds,” Nucl. Phys.
+     B 584, 69 (2000) [Erratum-ibid. B 608, 477 (2001)] [arXiv:hep-th/9906070]
+
+[24] M. Haack and J. Louis, “M-theory compactified on Calabi-Yau fourfolds with back-
+     ground flux,” Phys. Lett. B 507 (2001) 296 [arXiv:hep-th/0103068]
+
+[25] R. Valandro, “Type IIB Flux Vacua from M-theory via F-theory,” [arXiv:0811.2873
+     [hep-th]]
+
+[26] L. Andrianopoli, R. D’Auria, S. Ferrara and M. A. Lledo, “4-D gauged super-
+     gravity analysis of type IIB vacua on K3 x T**2/Z(2),” JHEP 0303 (2003) 044
+     [arXiv:hep-th/0302174]
+
+[27] C. Angelantonj, R. D’Auria, S. Ferrara and M. Trigiante, “K3 x T**2/Z(2) orientifolds
+     with fluxes, open string moduli and critical points,” Phys. Lett. B 583 (2004) 331
+     [arXiv:hep-th/0312019]
+
+[28] M. Haack, D. Krefl, D. Lust, A. Van Proeyen and M. Zagermann, “Gaug-
+     ino condensates and D-terms from D7-branes,” JHEP 0701 (2007) 078
+     [arXiv:hep-th/0609211]
+
+[29] H. Jockers and J. Louis, “The effective action of D7-branes in N = 1 Calabi-Yau
+     orientifolds,” Nucl. Phys. B 705, 167 (2005) [arXiv:hep-th/0409098]
+
+[30] E. Cremmer, B. Julia and J. Scherk, “Supergravity theory in 11 dimensions,” Phys.
+     Lett. B 76 (1978) 409
+
+[31] M. J. Duff, J. T. Liu and R. Minasian, “Eleven-dimensional origin of string / string
+     duality: A one-loop test,” Nucl. Phys. B 452 (1995) 261 [arXiv:hep-th/9506126]
+
+[32] A. A. Tseytlin, “R**4 terms in 11 dimensions and conformal anomaly of (2,0) theory,”
+     Nucl. Phys. B 584 (2000) 233 [arXiv:hep-th/0005072]
+
+                                           40
+[33] E. Witten, “On flux quantization in M-theory and the effective action,” J. Geom.
+     Phys. 22 (1997) 1 [arXiv:hep-th/9609122]
+
+[34] S. B. Giddings, S. Kachru and J. Polchinski, “Hierarchies from fluxes in string com-
+     pactifications,” Phys. Rev. D 66 (2002) 106006 [arXiv:hep-th/0105097]
+
+[35] E. Witten, “String theory dynamics in various dimensions,” Nucl. Phys. B 443, 85
+     (1995) [arXiv:hep-th/9503124]
+
+[36] A. Sen, “F-theory and         Orientifolds,”   Nucl.   Phys.        B    475    (1996)   562
+     [arXiv:hep-th/9605150]
+
+[37] P. S. Aspinwall, “K3 surfaces and string duality,” [arXiv:hep-th/9611137]
+
+[38] M. R. Gaberdiel and B. Zwiebach, “Exceptional groups from open strings,” Nucl.
+     Phys. B 518 (1998) 151 [arXiv:hep-th/9709013]
+
+[39] W. Lerche, “On the          heterotic/F-theory    duality      in       eight   dimensions,”
+     arXiv:hep-th/9910207
+
+[40] B. S. Acharya, “On realising N = 1 super Yang-Mills in M theory,”
+     [arXiv:hep-th/0011089], B. S. Acharya and S. Gukov, “M theory and Sin-
+     gularities of Exceptional Holonomy Manifolds,” Phys. Rept. 392, 121 (2004)
+     [arXiv:hep-th/0409191]
+
+[41] T. Ya. Azizov and I. S. Iokhvidov, “Linear Operators in Spaces with an Indefinite
+     Metric,” (Wiley, New York, 1989)
+     U. Gunther and F. Stefani, “Third order spectral branch points in Krein space related
+     setups: P T -symmetric matrix toy model, MHD α2 -dynamo, and extended Squire
+     equation,” Czech. J. Phys. 55 (2005) 1099 [arXiv:math-ph/0506021]
+
+[42] L. K. Pandit, “Linear Vector Spaces with Indefinite Metric,” Nuovo Cimento, 10
+     (1959), 157
+
+
+
+
+                                            41
+

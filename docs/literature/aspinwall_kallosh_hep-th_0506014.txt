@@ -1,0 +1,973 @@
+                                                                                                                DUKE-CGTP-05-04
+                                                                                                                 SLAC-PUB-11257
+                                                                                                                    SU-ITP-05/20
+                                                                                                                   hep-th/0506014
+                                                                                                                         May 2005
+arXiv:hep-th/0506014v1 1 Jun 2005
+
+
+
+
+                                                             Fixing All Moduli for
+                                                             M-Theory on K3×K3
+
+
+                                                     Paul S. Aspinwall 1,2,3 and Renata Kallosh1
+
+                                                 1 Department of Physics, Stanford University, Stanford, CA 94305-4060
+
+                                                                    2 SLAC, Stanford, CA 94305-4060
+
+                                                       3 Center for Geometry and Theoretical Physics, Box 90318
+
+                                                                Duke University, Durham, NC 27708-0318
+
+                                                                                Abstract
+
+                                    We analyze M-theory compactified on K3×K3 with fluxes preserving half the supersymmetry
+                                    and its F-theory limit, which is dual to an orientifold of the type IIB string on K3 × (T 2 /Z2 ).
+                                    The geometry of attractive K3 surfaces plays a significant role in the analysis. We prove that
+                                    the number of choices for the K3 surfaces is finite and we show how they can be completely
+                                    classified. We list the possibilities in one case. We then study the instanton effects and see
+                                    that they will generically fix all of the moduli. We also discuss situations where the instanton
+                                    effects might not fix all the moduli.
+
+
+
+
+                                    email: psa@cgtp.duke.edu, kallosh@stanford.edu
+1     Introduction
+One of the simplest and most accessible forms of flux compactification is given by M-theory
+on K3 × K3. This was first a analyzed in [1]. The fluxes may preserve the full N = 4
+supersymmetry, or break some or all of the supersymmetry. We will be concerned with the
+case where this flux breaks the supersymmetry to N = 2.
+    The F-theory limit of this theory yields an N = 1 theory in four dimensions and is dual,
+via the construction of [2], to the type IIB string on K3 × (T 2 /Z2 ), where the Z2 action
+includes an orientifolding reflection on the world-sheet.
+    This theory, mainly in the orientifold language, was analyzed in [3]. The fluxes themselves
+obstruct many of the moduli of K3 × K3 but, at least if one uses the rules of the supergravity
+limit described in [4], one cannot fix all of the moduli. It is believed that there are possibilities
+of flux obstruction beyond those found in supergravity [5], but the rules for this are not yet
+understood properly so we will not consider this possibility in this paper.
+    The fluxes select a preferred complex structure on K3 × K3 and a given choice of flux de-
+termines this complex structure uniquely. There remain up to 20 undetermined complexified
+Kähler moduli for each K3 surface. We will show that, in certain cases, all of these remaining
+moduli are generically fixed by M5-brane instanton corrections to the superpotential.
+    It has been realized recently [6–10] that fluxes may modify Witten’s [11] analysis of
+which divisors M5-instantons may wrap to give non-trivial effects. This allows for interesting
+instanton effects even in simple geometries, such as a tori and K3 surfaces, where naı̈vely
+one might not expect such things.
+    In particular, in [9] an explicit counting of fermionic zero modes on M5 with the back-
+ground (2,2) primitive flux G was performed. The generalized condition for the non-vanishing
+instanton corrections to the superpotential in this case requires that the new, flux dependent
+index of the Dirac operator equals to one, χD (G) = 1. Here χD (G) = χD − (h(0,2) − n) where
+χD is the arithmetic genus of the divisor and 0 ≤ n ≤ h(0,2) is a number of solutions of a
+certain constraint equation which the fermionic zero modes have to satisfy in presence of
+fluxes. In absence of fluxes this condition is reduced back to Witten’s condition [11] that
+χD = 1.
+    In particular, for the case of K3 × K3 4-fold and divisors of the form K3 × P1 without
+fluxes χD = 2 and no instanton corrections to the superpotential are possible. In presence of
+the background (2,2) primitive flux G it was established in [9] that n = h(0,2) , and therefore
+χD (G) = 1 and instantons corrections to the superpotential are possible. The same result
+for K3 × K3 was obtained in [8].
+    Oddly enough, we will see that if one is overzealous and tries to leave fewer than 20
+Kähler moduli unfixed by the flux, the possibility arises that the instanton effects might be
+unable to fix some of the remaining moduli.
+    Our interest in the model of M-theory compactified on K3 × K3 is two-fold. First of
+all, this is a relatively simple model, well-understood in the framework of IIB string theory
+and 4d gauged supergravity [12]. The geometry of K3 surfaces is far-better understood
+than generic Calabi–Yau threefolds and fourfolds and so this model can be analyzed more
+thoroughly than the many previous examples [13–16] with all moduli fixed. Secondly, this
+
+                                                 1
+model has practical applications to cosmology of D3/D7 brane inflation in type IIB string
+on K3 × (T 2 /Z2 ) [17, 18].
+    The geometry of fluxes on K3 × K3 is a very beautiful subject and has connections
+with number theory as analyzed in [19]. Here we will show that this allows for a complete
+analysis of all possibilities. In the case that the flux is purely of the type that breaks half
+the supersymmetries, we list all 13 possibilities that arise. Of these, only 8 correspond to
+orientifolds.
+    In section 2 we will analyze the conditions imposed on the K3 surfaces by a flux which
+breaks half the supersymmetry. This contains some very pretty mathematics associated to
+“attractive K3 surfaces”. In section 3 we discuss the role of M5-brane instantons and argue
+that all the moduli will be generically fixed, except possibly in some cases where a particular
+choice of flux is made. We conclude in section 4.
+
+
+2         Moduli Spaces and Fluxes
+In this section we review the analysis of fluxes for M-theory on K3 × K3 and its F-theory
+limit. The latter is equivalent to an orientifold of the type IIB string on K3×(T 2 /Z2 ). While
+this has been analyzed quite extensively in [3], we present a slightly different approach which
+more closely follows [19] which we believe is a little more efficient.
+
+2.1         M Theory
+Let us begin with M-theory on S1 × S2 , where each Sj is a K3 surface. For compactification
+on an 8-manifold X, an element of G-flux may be present. This G-flux is subject to a
+quantization condition [20], which asserts that, in our case1
+
+                                             G ∈ H 4 (S1 × S2 , Z).                              (1)
+
+A consistent theory must contain M2-branes and/or nonzero G-flux in this background
+satisfying [21]
+                                  nM2 + 21 G2 = 24.                              (2)
+The M2-branes will not break any supersymmetry, but the G-flux may. The supergrav-
+ity analysis of [4] showed that G must be primitive and of type (2,2) in order that any
+supersymmetry be preserved. Any such integral 4-form may be decomposed
+
+                                                G = G0 + G1 ,                                    (3)
+
+where
+                                                    M
+                                                              (α)   (α)
+                                                    X
+                                             G0 =         ω1 ∧ ω2
+                                                    α=1
+                                                                                                 (4)
+                                             G1 = Re(γΩ1 ∧ Ω2 ),
+    1
+        We have absorbed a factor of 2π into G compared to much of the rest of the literature.
+
+                                                          2
+       (α)
+and ωj are (cohomology classes2 of) integral primitive (1,1)-forms on Sj , Ωj is the holo-
+morphic 2-form on Sj and γ is a complex number which must be chosen to make the last
+term integral.
+   There are essentially three kinds of moduli which arise in such a compactification:
+
+   1. Deformations of the K3 surfaces S1 and S2 .
+
+   2. Motion of the M2-branes.
+
+   3. Deformations of vector bundles with nonabelian structure group associated to enhanced
+      gauge symmetries arising from singular points in S1 and S2 .
+
+By assuming, from now on, that nM 2 = 0 and that our K3 surfaces are smooth, we will
+restrict attention to only the first kind of modulus in this paper.
+    The moduli space of M-theory on K3 × K3 is of the form M1 × M2 , where each factor is
+associated to one of the K3 surfaces. If no supersymmetry is broken by fluxes, each of the
+Mj factors is a quaternionic Kähler manifold. Ignoring instanton corrections, each Mj is of
+the form
+                         O(Γ4,nj )\ O(4, nj )/(O(4) × O(nj )), j = 1, 2                  (5)
+where Γ4,nj is a lattice of signature (4, nj ). The values of nj ≤ 20 will be determined by the
+choice of flux G. The space (5) should be viewed as the Grassmannian of space-like 4-planes
+in Πj ⊂ Γ4,nj ⊗ R divided out by the discrete group of automorphisms of the lattice Γ4,nj .
+    The Grassmannian (5) is familiar (for nj = 20) from the moduli space of N = (4, 4)
+superconformal field theories associated to the sigma model with a K3 target space S. In
+this case, the degrees of freedom parametrized by the conformal field theory are given by a
+Ricci flat metric on S together with a choice of B ∈ H 2 (S, U(1)). The choice of metric on a
+K3 surface of volume one is given by a space-like 3-plane Σ ⊂ H 2 (S, R) = R3,19 . The 3-plane
+Σ is spanned by the real and imaginary parts of Ω, and the Kähler form J. The extra data
+of the B-field and volume extend this to a choice of space-like 4-plane Π ⊂ H ∗ (S, R) = R4,20 .
+We refer to [22] and references therein for a full account of this.
+    Even though M-theory itself has no B-field, the M5-brane wrapped on one K3 gives us
+an effective B-field for compactification on the other K3. Hence the form (5). We refer to [5]
+for examples.
+    A K3 surface is a hyperkähler manifold and thus has a choice of complex structures for
+a fixed metric. This choice corresponds to specifying the direction of J in Σ. Since super-
+symmetries are constructed for complex structures, this multiplicity of complex structures
+implies the existence of a specific extended supersymmetry.
+    If G1 = 0 in (3) then the condition that G be primitive and of type (2,2) preserves the
+freedom to rotate Ω and J within Σ. Thus, values of G purely of the form G0 preserve the
+full N = 4 supersymmetry in three dimensions [1].
+   2
+     We only discuss cohomology classes of forms in this paper but we will usually not state this explicitly
+to avoid cluttering notation.
+
+
+
+
+                                                     3
+   If the term G1 in (3) is non-trivial then we destroy the symmetry of rotations within Σ
+and the supersymmetry is broken to N = 2. This is the case of interest and we therefore
+assume, from now on, that G1 is nonzero.
+
+2.2       Attractive K3 surfaces
+For now, let us assume that G is purely of type G1 , i.e., G0 = 0. Let
+
+                                          Ωj = αj + iβj .                                      (6)
+
+for αj , βj ∈ H 2 (Sj , R). From Sj Ωj ∧ Ωj > 0 and Sj Ωj ∧ Ωj = 0, it follows that3
+                                R                   R
+
+
+                                                        αj2 = βj2 > 0
+                                                αj .βj = 0                                     (7)
+                                                    αj 6= βj
+
+      We also have
+                                         G = α1 ∧ α2 + β1 ∧ β2 ,                               (8)
+where we set γ = 1 in (4) by rescaling Ω1 . Let Ωj be a 2-plane in H 2 (Sj , R) spanned by αj
+and βj . We claim
+
+Theorem 1 Ω1 and Ω2 are uniquely determined by G.
+
+To prove this we first use the Künneth formula which tells us that
+
+ H 4 (S1 ×S2 , Z) ∼
+                  = H 0 (S1 , Z)⊗H 4(S2 , Z)⊕H 2(S1 , Z)⊗H 2(S2 , Z)⊕H 4 (S1 , Z)⊗H 0 (S2 , Z). (9)
+
+We know from (4) that G lies entirely in the second term on the right-hand side of (9). Let
+us assume we are given G, αj , βj solving
+
+                                         G = α1 ⊗ α2 + β1 ⊗ β2 .                              (10)
+
+Now try to find other solutions of the form
+
+                         G = (α1 + α1′ ) ⊗ (α2 + α2′ ) + (β1 + β1′ ) ⊗ (β2 + β2′ ).           (11)
+
+It follows that
+
+                 α1 ⊗ α2′ + α1′ ⊗ α2 + α1′ ⊗ α2′ + β1 ⊗ β2′ + β1′ ⊗ β2 + β1′ ⊗ β2′ = 0.       (12)
+
+Let π1 be the projection
+
+                              π1 : H 2 (S1 , R) → H 2 (S1 , R)/ Span(α1 , β1 ).               (13)
+  3
+                                                R
+      We use the implicit inner product a.b =       S
+                                                        a ∧ b.
+
+
+                                                                 4
+Thus
+                            π1 (α1′ ) ⊗ (α2 + α2′ ) + π1 (β1′ ) ⊗ (β2 + β2′ ) = 0.                      (14)
+The only solution is to put π1 (α1′ ) = π1 (β1′ ) = 0, which corresponds to not rotating Ω1 at
+all; or putting α2 + α2′ or β2 + β2′ equal to zero, or making α2 + α2′ and β2 + β2′ collinear.
+The latter conditions would make the new Ω2 , spanned by α1 + α1′ and β1 + β1′ violate (7).
+We may also reverse the rôles of Ω1 and Ω2 in the argument. This completes the proof of
+theorem 1.
+   The statement that Ω1 and Ω2 are fixed by G means that the complex structures of S1
+and S2 and uniquely determined by a choice of flux.
+       The next thing we prove is
+Theorem 2 The K3 surfaces S1 and S2 whose complex structures are fixed by G are forced
+to both be attractive.
+Before we prove this, we first review the definition of an attractive4 K3 surface. The Picard
+lattice of a K3 surface is given by the lattice H 1,1 (Sj ) ∩ H 2 (Sj , Z). The Picard number ρ(Sj )
+is defined as the rank of this lattice. The surface Sj is said to be attractive if ρ(Sj ) = 20,
+the maximal value.
+    Let us define                                        
+                            Υj = H 2,0 (Sj ) ⊕ H 0,2 (Sj ) ∩ H 2 (Sj , Z),                     (15)
+
+which is the intersection of the 2-plane Ωj with the lattice H 2 (Sj , Z) in the space H 2 (Sj , R).
+For a generic K3 surface Υj will be completely trivial, but the maximal rank of Υj is 2.
+The “transcendental lattice” is defined as the orthogonal complement of the Picard lattice
+in H 2 (Sj , Z). If, and only if, the rank of Υj is 2, the transcendental lattice will coincide with
+Υj and the K3 surface Sj will be attractive. We therefore need to prove that Υj is rank 2.
+   Let ejk , k = 1, . . . , 22 be an integral basis for H 2 (Sj , Z). Expanding
+                                               X
+                                          αj =      ajk ejk
+                                                  k
+                                                  X
+                                           βj =        bjk ejk                                          (16)
+                                                  k
+                                                  X
+                                           G=          Nkl e1k ⊗ e2l ,
+                                                  kl
+
+where ajk and bjk are real numbers and Nkl are integers (since G is an integral 4-form). Then
+(8) becomes
+                             a1k a2l + b1k b2l = Nkl , for all k, l.                      (17)
+Fixing l, the above equation may be read as saying that a real combination of α1 and β1
+lies on a lattice point of H 2 (S1 , Z). By varying l we get 22 different such combinations. The
+   4
+     The standard mathematical term is “singular” but as this is such a singularly misleading term, we prefer
+to follow Moore’s choice of language from [19].
+
+                                                       5
+fact that α2 and β2 are linearly independent means that all these lattice points cannot be
+collinear. Thus Ω1 contains a 2-dimensional lattice. Similarly Ω2 contains a 2-dimensional
+lattice and we complete the proof of theorem 2.
+   Attractive K3 surfaces were completely classified in [23]. They were shown to be in one-to-
+one correspondence with SL(2, Z)-equivalence classes of positive-definite even integral binary
+quadratic forms. Such a quadratic form can be written in terms of a matrix
+                                                   
+                                            2a b
+                                     Q=                ,                                  (18)
+                                             b 2c
+
+where a, b, c ∈ Z, a > 0, c > 0, and det Q = 4ac − b2 > 0. Two forms Q and Q′ define an
+equivalent K3 surface if, and only if, Q′ = M T QM, for some M ∈ SL(2, Z).
+   Let Υj be spanned (over the integers) by integral vectors pj and qj . The above lattice is
+then                                       2          
+                                             pj pj .qj
+                                    Qj =                 ,                              (19)
+                                            pj .qj qj2
+We are free to rescale Ω1 and Ω2 (since they are only defined up to complex multiplication)
+so that
+                                      Ωj = pj + τj qj ,                                (20)
+for a complex number τj , which is fixed by the condition Ω2j = 0 to be
+                                                   p
+                                       −pj .qj + i det Qj
+                                 τj =                     .                               (21)
+                                                qj2
+
+Note that this choice of rescaling means we cannot now assume γ = 1 in (4). We then obtain
+                                                                                   
+        G = Re(γ)p1 ⊗ p2 + Re(γτ1 )q1 ⊗ p2 + Re(γ τ̄2 )q2 ⊗ p1 + Re(γτ1 τ̄2 )q1 ⊗ q2 . (22)
+Consider the condition imposed by the integrality of G. Since p1 ⊗p2 is integral and primitive5
+we must have Re(γ) ∈ Z. The other terms on (22) put further conditions of γ. It is easy to
+show
+  p that a consistent choice of γ making each term in (22) integral is possible if and only
+if det(Q1 Q2 ) is an integer. That is,
+Theorem 3 A pair of attractive K3 surfaces S1 and S2 will correspond to a choice of integral
+G-flux if and only if det(Q1 Q2 ) is a perfect square.
+      Finally we need to impose the tadpole condition 21 G2 = 24. We compute
+
+                                      G2 = 14 (γΩ1 ∧ Ω2 + γ̄Ω2 ∧ Ω1 )2 ,                  (23)
+
+and use the fact that Ω2j = 0 so only the cross term in the square is not vanishing. Therefore
+                                          Z          Z
+                                2    1  2
+                              G = 2 |γ|      Ω1 ∧ Ω1 Ω2 ∧ Ω2 .                            (24)
+  5
+      Primitive in the sense that it is not an integral multiple of a lattice element.
+
+                                                         6
+   Using Ωj = pj + τj qj we find
+                                               2
+                                   1 2   |γ|       det(Q1 Q2 )
+                                   2
+                                     G =                       = 24.                         (25)
+                                                    q12 q22
+
+    Solving (25) together with the integrality of (22) provides all possibilities of flux compact-
+ifications with G = G1 . We may prove that there is a finite number of attractive K3 surfaces
+that yield solutions to this equation as follows. We use the following theorem from [24]:
+
+Theorem 4 In the equivalence class of the matrix (18) under the action of SL(2, Z), as-
+suming that − det(Q) is not a perfect square, one can always find a representative matrix
+satisfying
+                                      |b| ≤ |c| ≤ |a|.                              (26)
+
+
+In our case − det(Q) is negative and so, clearly, not a perfect square. Thus we may restrict
+attention to matrices satisfying the above bounds. Putting
+                                                             
+                                   2a b                  2d e
+                           Q1 =            ,     Q2 =             ,                    (27)
+                                    b 2c                  e 2f
+
+yields
+                            det(Q1 ) = 4ac − b2 ≥ 4ac − ac = 3ac.                            (28)
+Similarly, det(Q2 ) ≥ 3df . Thus (25) yields
+                                         1 2
+                                         2
+                                           G ≥ 49 |γ|2 ad.                                   (29)
+
+Suppose Re(γ) 6= 0. Then |γ|2 ≥ 1, since Re(γ) ∈ Z. In this case we are done since a and d
+are positive integers and b, c, e, f are constrained by theorem 4. On the other hand, if γ is
+purely imaginary, then the integrality of the second term in (22) forces
+                                            p
+                                      Im(γ) det(Q1 )
+                                                       ∈ Z.                              (30)
+                                             2c
+Obviously Im(γ) cannot be zero since then |γ|2 would be zero. We then have
+
+                                    1 2   c det(Q2 )
+                                    2
+                                      G ≥            ≥ 3dc.                                  (31)
+                                                     f
+
+This bounds c and d. Similarly we may use the third term in (22) to bound a and f . Thus
+we complete the proof that there are only a finite number of possibilities for a, b, c, d, e, f ,
+and thus only a finite number of attractive K3 surfaces whenever G2 is bounded.
+    In fact, it is not hard to perform a computer search to yield the full list of possibilities.
+For 21 G2 = 24, i.e., G0 = 0, there are 13 possibilities up to SL(2, Z) equivalence which we list
+in table 1. The column labeled “O?” will be explained in section 2.3. In principle, a given
+
+                                                     7
+                Q1         Q2         γ        O?           Q1       Q2      γ     O?
+                                                                 
+              4 0          4   0                           4 2      2 1
+                                    1 + √i2    ✗                          2 + √2i3 ✓
+              0 2          0   2                           2 4      1 2
+                                                                 
+              4 2          6   0                           6 0      6 0      2i
+                                    1 + √i3    ✓                            √      ✗
+              2 4          0   2                           0 4      0 4       6
+                                                                 
+              6 0          2   0                           6 0      4 0
+                                     1+i       ✗                             1     ✓
+              0 6          0   2                           0 6      0 4
+                                                                 
+              8 4          4   2                          12 0     12 0
+                                    1 + √i3    ✓                            √i     ✗
+              4 8          2   4                           0 2      0 2       6
+                                                                 
+             12 0          2   1                          12 0      6 0
+                                    1 + √i3    ✓                            √i     ✓
+              0 4          1   2                           0 4      0 2       3
+                                                                 
+             12 0          4   0      √i
+                                                          12 0      2 0
+                                               ✗                             1     ✓
+              0 6          0   2           2              0 12      0 2
+                             
+            16 8           2   1
+                                    1 + √i3    ✓
+             8 16          1   2
+
+Table 1: The 13 pairs of matrices Q1 , Q2 yielding the possible attractive K3 surfaces. The
+column headed “O?” shows 8 solutions when one of K3 surfaces is a “Kummer surface”.
+
+pair of attractive K3 surfaces might admit many, but finitely many, inequivalent choices of
+G. In our case, where the numbers are quite small, this never happens.
+    One may, of course, obtain other possibilities by considering a nonzero G0 . In this case,
+we solve the same problem for 12 G2 < 24. As one might expect, the number of possibilities
+for a given 12 G2 < 24 are somewhat fewer than above.
+    As stated above, the complex structures of S1 and S2 are fixed. What remains unfixed is
+the Kähler form and B-field degree of freedom. Using the assumption G0 = 0 in (3), all 20
+such complex degrees of freedom remain undetermined by the fluxes. A non-trivial choice of
+G0 will fix some of these 20 remaining moduli.
+    The choice of G fixes a 2-plane within Πj spanned by the real and imaginary parts of Ωj .
+This means that the moduli space (5) is reduced to
+
+                           Mj ∼
+                              = O(Γ2,nj )\ O(2, nj )/(O(2) × O(nj )).                    (32)
+
+If G0 = 0 then n1 = n2 = 20. If G0 is nonzero, these numbers will decrease.
+
+2.3    The Orientifold
+Now let us turn our attention to the related question of orientifolds on K3 × (T 2 /Z2 ). One
+obtains this orientifold via F-theory.
+   Begin with M-theory on S1 × S2 (ignoring flux for now) to obtain an N = 4 theory in
+three dimensions as above. Assume that S2 is an elliptic K3 surface with a section. Let
+
+                                                    8
+π : S2 → B denote this elliptic fibration of S2 . By shrinking the area of the elliptic fibre,
+one moves to an F-theory fibration corresponding to a type IIB compactification on S1 × B.
+This yields a four-dimensional N = 2 compactification.
+    This four-dimensional theory can be compactified on a circle thus regaining the three-
+dimensional theory we had originally from the M-theory compactification. The relationship
+between the moduli spaces of the three-dimensional theory and four-dimensional theory can
+be understood from this fact. The moduli space of the three-dimensional theory is M1 ×M2 ,
+where each Mj is quaternionic Kähler. The four-dimensional theory has a moduli space
+MH × MV , where MH , the hypermultiplet moduli space, is exactly M1 .
+    The vector multiplet moduli space MV , is special Kähler. The complex dimension of MV
+is one less than the quaternionic dimension of M2 . Quantum corrections make for a very
+complicated relationship between MV and M2 . Let us ignore these quantum corrections for
+now, which we may do since we are only making qualitative statements about the moduli
+space. In this case, ignoring any flux effects or M2-branes, we have, locally
+                                              O(4, 20)
+                                    M2 =                 ,                                 (33)
+                                            O(4) × O(20)
+and, from the c-map [25]
+                                        O(2, 18)     SL(2, R)
+                              MV =                 ×          .                            (34)
+                                      O(2) × O(18)    U(1)
+The first factor of (34) corresponds to the complex structure moduli space of S2 if we declare
+S2 to be an elliptic fibration with a section. In F-theory language, this corresponds to the
+moduli space of the location of 7-branes. The second factor of (34) would naı̈vely correspond
+to the complexified area of the base, B, of the elliptic fibration as this is the only modulus
+remaining once the fibre is shrunk to zero size. When moving between dimensions one must
+be careful with taking into account overall scalings of the metric. The result is that the
+second factor of (34) actually corresponds to the complexified volume of the K3 surface S1 .
+The area of the base becomes a parameter in the hypermultiplet moduli space MH . We refer
+to [12] for more details.
+    Sen [2] showed how type IIB orientifolds could be obtained from F-theory compactifica-
+tions. Elliptic fibrations may contain “bad fibres”, i.e., fibres which are not elliptic curves.
+These bad fibres have been classified by Kodaira. We refer to [22], for example, for a review.
+In Sen’s analysis one takes a limit in the moduli space of complex structures of the elliptic
+fibration such that all the bad fibres become type I∗0 in the Kodaira classification. We now
+have a type IIB string compactified on the orientifold S1 × (C/Z2 ), where C is an elliptic
+curve and the base of the elliptic fibration is B ∼
+                                                  = C/Z2 .
+    This limit freezes the location of the F-theory 7-branes making the moduli space locally
+                                  SL(2, R) SL(2, R) SL(2, R)
+                           MV =           ×        ×         .                             (35)
+                                   U(1)     U(1)     U(1)
+These three complex moduli can be identified as
+
+                                               9
+   • The modulus of the F-theory elliptic fibre — i.e., the axion-dilaton of the type IIB
+     string.
+   • The modulus of the elliptic curve C, where the base of the elliptic fibration of S2 is
+     B∼= C/Z2 .
+   • The complexified volume of S1 , as above.
+The 16 moduli that we have “lost” in passing from (34) to (35) are regained by allowing
+D7-branes to move away from the 4 O7-planes.
+
+    Now consider the effect of flux in the form of G1 so as to yield an N = 1 supersymmetric
+theory in four dimensions. This flux fixes the complex structure of S1 and S2 making both
+of these K3 surfaces attractive. First note that any attractive K3 surface is elliptic with a
+section [23] so our condition for an F-theory limit is automatically satisfied.
+    The flux causes the dimension of MH ∼    = M1 to be halved — exactly as it was in the case
+of M-theory in section 2.2. For MV , the first factor of (34) is a complex structure moduli
+space and so disappears completely. In orientifold language, we fix the dilaton-axion, the
+complex structure of C ∼ = T 2 , and the location of all the D7-branes. All that remains unfixed
+in MV is a single complex modulus corresponding to the complexified volume of S1 .
+    Sen’s orientifold limit of F-theory is a limit of complex structure, but once we turn
+on flux, we have no deformations of the complex structure! The only way our M-theory
+compactification can correspond to an orientifold is if the elliptic fibration of the attractive
+S2 has this fibration structure to begin with.
+    So let us suppose S2 is an attractive K3 surface which is an elliptic fibration with only
+smooth, or type I∗0 fibres. The base of such a fibration must be P1 and there must be exactly
+four I∗0 fibres and no other singular fibres. In this case, the J-invariant of the fibre has no
+zeros or poles and is therefore a constant. This is exactly the same elliptic fibration data as
+one would obtain for a K3 surface which is a “Kummer surface”, i.e., a blow-up of a quotient
+A/Z2 , where A is a 4-torus (or abelian surface to be more precise). It follows that S2 is
+indeed a Kummer surface (following, for example, proposition 2.7 of [26]).
+    Any Kummer surface, which is attractive, must be a Z2 -quotient of an attractive abelian
+surface (see, for example, equation (5.8) of [27]). Such abelian surfaces are classified in much
+the same way as attractive K3 surfaces, that is, they are again in one-to-one correspondence
+with SL(2, Z)-equivalence classes of positive-definite even integral binary quadratic forms. If
+Q is the matrix associated with the binary quadratic form of our attractive Kummer surface
+S2 and R is the matrix associated with the attractive abelian surface A, then one can show
+that (see [28], for example)
+                                             Q = 2R.                                         (36)
+It follows that the attractive K3 surface S2 is a Kummer surface if, and only if, the associated
+even binary quadratic form is twice another even binary quadratic form. Only the F-theory
+compactifications on K3×K3 which satisfy this property will have orientifold interpretations.
+    Looking back at table 1, we see that 8 of our 13 possibilities admit an orientifold inter-
+pretation. The column headed “O?” denotes whether an orientifold model exists.
+
+                                               10
+    One might be concerned that one should check that G is compatible with the F-theory
+limit as spelt out in [29]. That is, G should have “one leg” in the fibre direction. This
+condition turns out to be automatically satisfied, at least in the case G0 = 0, as we explain
+as follows.
+    The spectral sequence for the cohomology of a fibration yields
+
+                    H 2 (S, R) = H 0 (B, R2 π∗ R) ⊕ H 1 (B, R1 π∗ R) ⊕ H 2 (B, π∗ R),                        (37)
+
+where H p (B, Rq π∗ R) may be schematically viewed as a form with p legs in the base direction
+and q legs in the fibre direction.
+    The term H 2 (B, π∗ R) is dual to the base B ∼= P1 . The term H 0 (B, R2 π∗ R) is dual to the
+fibres including components of singular fibres. Both of these terms correspond to curves in
+S and thus forms of type (1,1). Therefore any form of type (0,2) or (2,0) must be contained
+H 1 (B, R1 π∗ R). It follows that G has one leg in the fibre direction assuming G = G1 in (3).
+    Any attractive abelian surface A must be of the form C × C ′ , where C and C ′ are
+isogenous elliptic curves admitting complex multiplication [30]. Here, “isogenous” means
+that C ′ is isomorphic, as an elliptic curve, to a free quotient of C by any finite subgroup
+of U(1) × U(1). We refer to [19, 31] and references therein for a nice account of complex
+multiplication.
+    The elliptic fibration of the Kummer surface S2 will therefore be an elliptic fibration with
+base C/Z2 with fibre C ′ . It follows from Sen’s argument [32] that F-theory on S1 × S2 is
+equivalent to the type IIB orientifold on S1 × (C/Z2 ) where the dilaton-axion of the type IIB
+theory is given by the τ -parameter of the elliptic curve C ′ .
+    The fixing of the complex structures of C and C ′ account for the removal of the first two
+factors of (35) in the vector multiplet moduli space. The fact that C and C ′ are isogenous
+means that their τ -parameters will be related by an GL(2, Q) transformation. In other
+words,
+                                               aτC + b
+                                        τC ′ =         ,                                    (38)
+                                               cτC + d
+where a, b, c, d are integers not necessarily satisfying ad − bc = 1.6
+    We should note the fact that an attractive abelian surface may, in general, be decomposed
+into C × C ′ in many inequivalent ways (other than the trivial exchange of C and C ′ ). Thus,
+a fixed S1 × S2 might be associated to none, or many inequivalent orientifold limits. An
+algorithm for determining a complete set of such factorizations was presented in [27]. For
+example, if the abelian surface corresponds to
+                                                      
+                                                12 6
+                                        R=               ,                               (39)
+                                                6 12
+   6
+    There is an example in [3] which appears to violate this condition. This is because the basis defined in
+the appendix of [3] is not a valid integral basis for H 2 (S, Z) and so the resulting G is not actually in integral
+cohomology.
+
+
+
+
+                                                        11
+then one may factorize into a pair of elliptic curves with τC = ω and τC ′ = 6ω; or τC = 2ω
+and τC ′ = 3ω, where ω = exp(2πi/3). In our cases, listed in table 1, such an ambiguity never
+occurs.
+
+
+3     Instanton Corrections
+So far we have completely ignored any quantum corrections to the moduli space. Consider
+first the case of M-theory on S1 × S2 where the flux does not break any supersymmetry. This
+yields an N = 4 theory in three dimensions. By the usual counting, any instanton solution
+that breaks half the supersymmetry will modify the prepotential and thus deform the metric
+on the moduli space. These instantons will not obstruct any moduli and the dimension of
+the moduli space will be unchanged by these quantum corrections.
+    The only source of such instanton corrections in M-theory will correspond to M5-brane
+instantons wrapping holomorphically embedded complex 3-folds within S1 ×S2 . Such divisors
+are clearly of the form S1 × Cg , or Cg × S2 , where Cg is an algebraic curve of genus g.
+    Following, [11], one can show that these divisors will only contribute nontrivially to the
+prepotential if they have holomorphic Euler characteristic χO = 2. Since χO (K3 × Cg ) =
+2(1 − g), we see that our instantons must be of the form S1 × P1 or P1 × S2 .
+    Now suppose we turn flux on so as to break half the supersymmetry. The superpotential
+of the resulting low-energy effective theory will now receive instanton corrections from M5-
+branes wrapping divisors. A naı̈ve interpretation of [11] would lead one to believe that one
+would look for divisors with χO = 1. There are no such divisors in S1 × S2 and so one would
+arrive at the conclusion that the Kähler moduli cannot be removed.
+    This is not the case however. It was shown in [8–10] that some fermion zero modes on
+the M5-brane worldvolume are lost changing the counting argument of [11]. The result is
+that, with the G-flux we are using, the desired instantons should have χO = 2. That is, the
+instantons which contribute to the superpotential are precisely those wrapping S1 × P1 or
+P 1 × S2 .
+    As discussed in the previous section, the complex structure on S1 and S2 is completely
+fixed by the choice of G-flux. Each K3 surface is attractive and, as such has Picard number
+equal to 20. This leaves each K3 surface with 20 complexified Kähler form moduli. If G is
+purely of the form G = G1 = Re(Ω1 ∧ Ω2 ), then these 20 moduli are unfixed by the fluxes.
+Any terms from G0 in (3) will fix some of these remaining 20 moduli.
+    In any case, at least in the supergravity approximation, one cannot remove all of these
+Kähler moduli by fluxes. It is possible to fix at least 10 of the Kähler moduli but in the F-
+theory limit one is restricted to fixing only 2 Kähler moduli using G0 effects. It is conceivable
+that going beyond the supergravity approximation may change such statements as discussed
+in [5].
+    Let S be an attractive K3 surface and let V = Pic(S) ⊗ R = R20 be the subspace of
+H 2 (S, R) spanned by the Kähler form. We wish to find a convenient basis for V . Let us
+consider an element of H 2 (S, R) as a homomorphism from 2-chains in S to R. If α ∈ H 2 (S, R)
+and x is a 2-chain, we thus denote α(x) ∈ R.
+
+                                               12
+   The following proposition will be useful
+
+Proposition 1 We may find a set {e1 , . . . , e20 } of holomorphically embedded P1 ’s in S and
+a basis {ξ1 , . . . , ξ20 } of V such that ξa (eb ) = δab .
+
+To see this we use the fact that any attractive S is an elliptic fibration π : S → B with at
+least one section as noted in section 2.3. Now take any rational curve (i.e., holomorphically
+embedded P1 ) C ⊂ S. Since π is a holomorphic map, the image of C under π is either a
+point or all of B. In the former case C is a component of a singular fibre and in the latter
+case C is a “section” (or multisection) of the fibration.
+    In theorem 1.1 of [33] it is shown that the complete Picard lattice of an elliptic surface with
+a section is generated by rational combinations of sections, smooth fibres and components
+of singular fibres. If there is at least one bad fibre which is reducible, the smooth elliptic
+fibre itself is homologous to a sum of smooth rational curves. This is indeed the case for
+attractive K3 surfaces as shown in [23]. The proposition then follows.
+    An instanton correction to the superpotential from an M5-brane wrapping a divisor D
+will be of the form ∼ f exp(− Vol(D)), where Vol(D) is the complexified volume of D. The
+coefficient f may depend on complex structure moduli but cannot depend on the Kähler
+moduli. This is because f is computed perturbatively and the “axionic” shift symmetry of
+the complex partner to the Kähler form prevents any contribution to perturbation theory.
+                      (1)          (1)                     (2)          (2)
+    Using the bases {e1 , . . . , e20 } for H2 (S1 ) and {e1 , . . . , e20 } for H2 (S2 ) from our propo-
+sition we have volumes of the form
+                                          Vol(S1 ) Area(e(2)
+                                                         a )
+                                                                                                    (40)
+                                          Area(e(1)
+                                                a ) Vol(S2 ).
+
+The volume of Sj is determined from the Kähler form which is determined by the areas of
+the P1 ’s. Proposition 1 then implies we have 40 independent functions on 40 variables. If
+the superpotential is a suitably generic function then we therefore expect classical vacua to
+be isolated in the Kähler moduli space. That is, we fix all the moduli.
+   There are two known effects that can spoil the genericity of an instanton contribution
+and make it vanish. Firstly, the instanton may have a moduli space of vanishing Euler
+characteristic in some sense. This is not true in our case as rational curves in K3 surface are
+always isolated. The second effect can be caused by fluxes [34] as we now discuss.
+
+3.1     Obstructed Instantons
+Let D be a threefold corresponding to a potential instanton S1 × P1 or P1 × S2 . Without loss
+of generality, we assume the instanton is of the form C1 × S2 from now on, with C1 ∼   = P1 .
+Let i : D ֒→ S1 × S2 be the embedding. The term
+                                        Z
+                                           b2 ∧ i∗ G,                                   (41)
+                                               D
+
+
+
+                                                   13
+in the M5-brane worldvolume action induces a tadpole for the anti-self-dual 2-form b2 if
+i∗ G 6= 0. We therefore demand that i∗ G = 0 is a necessary condition for any divisor D to
+be considered an instanton.
+    How strong is the constraint i∗ G = 0? Let us first consider the supersymmetry-breaking
+part of the flux G1 = Re(Ω1 ∧ Ω2 ). Viewing G ∈ H 4 (S1 × S2 , Z) as a homomorphism from
+chains in S1 × S2 to Z, we may write
+
+                                           i∗ G(x) = G(i(x)),                                         (42)
+
+where x is a 4-chain on D. Purely on dimensionality grounds, from (3), it is easy to see
+that, if G(i(x)) 6= 0, then x must be mapped under i to a 2-chain on S1 and a 2-chain on S2 .
+We therefore suppose that i(x) ∼   = C1 × C2 , for some 2-cycle C2 ⊂ S2 . But then G(i(x)) = 0
+since Ω1 is of type (2, 0) and therefore must vanish on any P1 (as the latter is dual to a
+(1,1)-form). This means that none of our instantons are ruled out by this part of the G-flux.
+    Now let us consider the case where G0 is nonzero and given by (4). These fluxes will
+fix some of the 20 Kähler moduli. The primitivity condition for G means that Jj will be a
+                                                                (α)
+valid Kähler form for Sj only if Jj is perpendicular all the ωj ’s.7 Let is denote this space
+of Kähler forms Vj0 ⊂ H 2 (Sj , R). That is,
+
+                                                            (α) ⊥
+                                                    \
+                                            Vj0 =          ωj       ,                                 (43)
+                                                      α
+
+                                                                            (α)
+where the perpendicular complement is taken with respect to ωj in the 20 dimensional
+space Pic(Sj ) ⊗ R.
+   Such a nonzero G0 will also rule out certain instantons. Consider a 4-cycle x ∼ = C1 × C2 ,
+where both Cj ’s are rational curves in Sj and let ξj denote the Poincaré dual of Cj . Then
+                                           X
+                                G(i(x)) =     (ω1α .ξ1 )(ω2α .ξ2 )                        (44)
+                                                  α
+
+The instanton C1 × S2 is therefore only valid (i.e., i∗ G = 0) if ξ1 is orthogonal to all the
+ (α)
+ω1 ’s. That is,
+                                        ξ1 ∈ V10 .                                       (45)
+    Our instantons only contribute nontrivially to the superpotential if they correspond to
+P × K3, where we assume the P1 is holomorphically and smoothly embedded in the K3
+ 1
+
+surface. That is, the P1 is a rational curve. Fortunately these rational curves can be cat-
+egorized using properties of the lattice at hand. Any rational curve in a K3 surface has
+self-intersection −2. This means it is Poincaré dual to an element of the lattice H 2 (Sj , Z)
+of length squared −2. Conversely, if ξ is an element of length squared −2 in H 2 (Sj , Z) then
+either ξ or −ξ is Poincaré dual to a rational curve.
+    This leads to the following:
+     7
+    Here we have mentioned only the real Kähler form. The complex partner of the Kähler form is similarly
+obstructed as discussed in [5], for example.
+
+                                                      14
+Theorem 5 If G0 is zero we generically fix all moduli. With a nonzero G0 , instanton effects
+will generically fix all moduli if, and only if, the spaces V10 and V20 defined in (43) are spanned
+by elements corresponding to rational curves. That is the Vj0 ’s are spanned by elements in
+Vj0 ∩ H 2 (Sj , Z) of length squared −2.
+
+    In simple cases, all the moduli are fixed. For example, suppose M = 1 in (4) and
+  (1)
+(ω1 )2  = −2. Suppose further that that Picard lattice contains a copy of the (negated)
+                                       (1)
+E8 lattice as a summand and that ω1 is an element of this lattice. Then the orthogonal
+complement of this vector will be the E7 lattice which is generated by vectors of length
+squared −2.
+    It would be interesting to find examples where the moduli are not all fixed by instanton
+effects. This would involve analyzing sublattices in H 2 (S, Z) which are not generated by
+vectors of length squared −2.
+
+3.2      The Orientifold Limit
+By going to the F-theory limit we may obtain the equivalent statement about instanton
+effects in the orientifold on K3 × (T 2 /Z2 ). Begin with M-theory on S1 × S2 , where S2 is an
+elliptic fibration. Let the area of the generic elliptic fibre be A. To take the F-theory limit
+we set A → 0.
+    The rescaling involved in this limit means that the volume of the M5-brane instanton
+must scale as A, as A → 0, in order that this instanton has a nontrivial effect [11]. It follows
+that the instanton must either wrap an elliptic fibre, or a component of a bad fibre.
+    The instantons corresponding to P1 ×S2 indeed wrap the fibre and so descend to D3-brane
+instantons wrapped around P1 ×(T 2 /Z2 ) in the F-theory limit. The instantons corresponding
+to S1 × P1 will be trivial unless the P1 corresponds to a component of a bad fibre. In this
+case, the D3-brane instanton becomes wrapped on S1 × pt.
+    The moduli fixing then proceeds in the same way as it did for M-theory. Unless an
+inauspicious choice of G-flux is used, all the moduli should be fixed by instanton effects
+as follows. After flux was applied, the single remaining modulus in MV corresponded to
+the volume of S1 . Clearly this is fixed by the instantons wrapping S1 × pt. The remaining
+moduli correspond to the areas of rational curves in S1 and the area of T 2 /Z2 . Given that the
+volume of S1 has been fixed, we have precisely the right number of independent constraints
+from the P1 × (T 2 /Z2 ) instantons to fix these latter moduli.
+    The fact that the single vector multiplet corresponding to the volume of S1 is fixed was
+also observed in [10], where a more quantitative analysis was performed using duality.
+
+
+4     Discussion
+If one considers M-theory on K3 × K3 with no M2 branes and a flux chosen to break super-
+symmetry down to N = 2 in three dimensions, then the complex structures of the two K3
+
+
+
+                                                15
+surfaces are fixed. To be precise, the two K3 surfaces are both attractive K3 surfaces. There
+remain 20 complex moduli associated to each K3 surface which vary the Kähler form.
+    If we leave the 40 moduli unfixed by fluxes, then we have argued that generically one
+would expect instanton effects to fix all 40. If flux is used to fix further moduli then we
+showed that there is a possibility that some moduli can remain unfixed by instanton effects.
+    The obvious next step should be to compute these instanton effects more explicitly and
+determine the values of the moduli. This might be a difficult exercise for the following
+reasons.
+    Before the flux was turned on we have an N = 4 supersymmetric theory in three dimen-
+sions. Corrections from M5-brane instantons will effect the metric on the moduli space. The
+moduli space of this theory is a product of quaternionic Kähler moduli spaces. It is a well-
+known difficult problem in string theory to determine the form of such quaternionic Kähler
+moduli spaces when there are nontrivial instanton corrections. The problem of studying M5-
+brane instantons corrections to the moduli space is exactly equivalent to studying worldsheet
+instanton corrections to the heterotic string on a K3 surface. Preliminary analysis in the
+latter was done in [35], for example, but few concrete results have been attained.
+    It should be emphasized that, even though there has been much interesting progress on
+quaternionic Kähler manifolds (such as [36,37]), these results tend to rely on the assumption
+that there is an isometry in the moduli space related to translations in the RR directions.
+This views the hypermultiplet moduli space as a fibration over some special Kähler base with
+a toroidal fibre given by the RR moduli. It is known (see [38], for example) that when non-
+perturbative corrections are taken into account, this fibration must have “bad fibres”. These
+bad fibres will break these isometries in much the same way as an elliptic K3 surface has no
+isometries related to translation in the fibre direction. An interesting proposal for analyzing
+instanton effects on the hypermultiplet moduli space was given in [10] but it appears to rely
+on the existence of these isometries.
+    Now when we turn the flux on, the M5-brane instantons contribute to a superpotential,
+rather than the moduli space metric. This does not mean that the metric remains uncorrected
+however. Now, with the decreased supersymmetry, quantum corrections to the metric are less
+constrained and even more difficult to determine than if they arose purely from instantons.
+We see, therefore, that computing the superpotential directly from instanton computations
+may be very difficult.
+    Even without this detailed knowledge, however, we have shown that one should expect
+a number of flux compactifications associated to M-theory on K3 × K3 (or its equivalent
+orientifold K3 × (T 2 /Z2 )) where all the moduli are fixed by the combined action of the flux
+and the instanton effects.
+    In the context of the F-theory limit, which is equivalent to an orientifold of the type IIB
+string on K3 × (T 2 /Z2 ) the result of this paper shows that the goal of fixing all moduli in
+this model is now accomplished.8 The first part, namely fixing the moduli by fluxes, was
+achieved in [3, 12] and a nice summary of this work was presented in [40]. In absence of
+  8
+    In [39] the counting of fermionic zero modes on D3 brane is performed which leads to an analogous
+result.
+
+
+
+                                                 16
+D3-branes, the 18+1 complex moduli “unfixable” by fluxes span the scalar manifold
+
+                               min         O(2, 18)     SL(2, R)
+                            Munfixed =                ×          .                       (46)
+                                         O(2) × O(18)    U(1)
+
+Here the first factor includes 18 complex fields, the remnant of the N = 2 hypermultiplets.
+It includes the area of (T 2 /Z2 ) and other hypermultiplets. The second factor is the remnant
+of the N = 2 vector multiplet and it describes the volume of the K3 surface S2 and its
+axionic partner. This case in our setting requires that both G1 and G0 are non-vanishing.
+We have to be careful therefore and comply with the conditions of the theorem 5, where it
+is explained that only certain choice of fluxes G0 will allow us enough freedom (18+1 choice
+of proper 4-cycles) to fix by the instantons all remaining 18+1 complex moduli in (46).
+    An even simpler case, from the perspective of instantons, is when we introduce only G1
+flux (breaking N = 2 into N = 1 supersymmetry) will leaves us with the 20+1 complex
+moduli unfixed by fluxes. They span the scalar manifold
+
+                                           O(2, 20)     SL(2, R)
+                            Munfixed =                ×          .                       (47)
+                                         O(2) × O(18)    U(1)
+
+In such case we simply have 20+1 choices for the D3 instantons wrapping the 4-cycles in
+K3 × (T 2 /Z2 ) and all unfixed by fluxes moduli are fixed by instantons.
+    The whole story of fixing all moduli in the M-theory version of this model, compactified
+on K3 × K3 is incredibly simple and elegant. In the compactified three-dimensional model
+there are no vectors. Therefore without fluxes, we have two 80-dimensional quaternionic
+Kähler spaces, one for each K3. With non-vanishing G1 flux, each K3 becomes an attractive
+K3, one-half of all the moduli are fixed, but 40 in each K3 still remain moduli and need to
+be fixed by instantons. There are 20 proper 4-cycles in each K3 and they provide instanton
+corrections from M5-branes wrapped on these cycles: the moduli space is no more.
+
+
+Acknowledgments
+We wish to thank N. Bliznashki, S. Ferrara, L. Fidkowski, C. Haase, S. Kachru, A.-K. Kash-
+ani-Poor, D. Kraines, D. Morrison, G. Moore, S. Sethi, A. Tomasiello and S. Trivedi for useful
+conversations. P.S.A. is supported in part by NSF grant DMS-0301476, Stanford University,
+SLAC and the Packard Foundation. R.K. is supported by NSF grant 0244728.
+
+
+References
+ [1] K. Dasgupta, G. Rajesh, and S. Sethi, M-Theory, Orientifolds and G-Flux, JHEP 08
+     (1999) 023, hep-th/9908088.
+
+ [2] A. Sen, Orientifold Limit of F-theory Vacua, Nucl. Phys. Proc. Suppl. 68 (1998) 92–98,
+     hep-th/9709159.
+
+                                               17
+ [3] P. K. Tripathy and S. P. Trivedi, Compactification with Flux on K3 and Tori, JHEP
+     03 (2003) 028, hep-th/0301139.
+
+ [4] K. Becker and M. Becker, M-Theory on Eight-Manifolds, Nucl. Phys. B477 (1996)
+     155–167, hep-th/9605053.
+
+ [5] P. S. Aspinwall, An Analysis of Fluxes by Duality, hep-th/0504036.
+
+ [6] L. Gorlich, S. Kachru, P. K. Tripathy, and S. P. Trivedi, Gaugino Condensation and
+     Nonperturbative Superpotentials in Flux Compactifications, hep-th/0407130.
+
+ [7] P. K. Tripathy and S. P. Trivedi, D3 Brane Action and Fermion Zero Modes in Presence
+     of Background Flux, hep-th/0503072.
+
+ [8] N. Saulina, Topological Constraints on Stabilized Flux Vacua, hep-th/0503125.
+
+ [9] R. Kallosh, A.-K. Kashani-Poor, and A. Tomasiello, Counting Fermionic Zero Modes
+     on M5 with Fluxes, hep-th/0503138.
+
+[10] P. Berglund and P. Mayr, Non-Perturbative Superpotentials in F-Theory and String
+     Duality, hep-th/0504058.
+
+[11] E. Witten, Non-Perturbative Superpotentials In String Theory, Nucl. Phys. B474
+     (1996) 343–360, hep-th/9604030.
+
+[12] L. Andrianopoli, R. D’Auria, S. Ferrara, and M. A. Lledo, 4-D Gauged Supergravity
+     Analysis of Type IIB Vacua on K3 × T 2 /Z2 , JHEP 03 (2003) 044, hep-th/0302174.
+
+[13] F. Denef, M. R. Douglas, and B. Florea, Building a Better Racetrack, JHEP 06 (2004)
+     034, hep-th/0404257.
+
+[14] F. Denef et al.,      Fixing All Moduli in a Simple F-theory Compactification,
+     hep-th/0503124.
+
+[15] J. P. Derendinger, C. Kounnas, P. M. Petropoulos, and F. Zwirner, Fluxes and Gaugings:
+     N = 1 Effective Superpotentials, hep-th/0503229.
+
+[16] O. DeWolfe, A. Giryavets, S. Kachru, and W. Taylor, Type IIA Moduli Stabilization,
+     hep-th/0505160.
+
+[17] K. Dasgupta, C. Herdeiro, S. Hirano, and R. Kallosh, D3/D7 Inflationary Model and
+     M-Theory, Phys. Rev. D65 (2002) 126002, hep-th/0203019.
+
+[18] F. Koyama, Y. Tachikawa, and T. Watari, Supergravity Analysis of Hybrid Inflation
+     Model from D3-D7 System, Phys. Rev. D69 (2004) 106001, hep-th/0311191.
+
+[19] G. W. Moore, Les Houches Lectures on Strings and Arithmetic, hep-th/0401049.
+
+
+                                            18
+[20] E. Witten, On Flux Quantization in M-Theory and the Effective Action, J. Geom.
+     Phys. 22 (1997) 1–13, hep-th/9609122.
+
+[21] S. Sethi, C. Vafa, and E. Witten, Constraints on Low-Dimensional String Compactifi-
+     cations, Nucl. Phys. B480 (1996) 213–224, hep-th/9606122.
+
+[22] P. S. Aspinwall, K3 Surfaces and String Duality, in C. Efthimiou and B. Greene,
+     editors, “Fields, Strings and Duality, TASI 1996”, pages 421–540, World Scientific,
+     1997, hep-th/9611137.
+
+[23] T. Shioda and H. Inose, On Singular K3 Surfaces, in W. L. Baily and T. Shioda, editors,
+     “Complex Analysis and Algebraic Geometry”, pages 119–136, Cambridge, 1977.
+
+[24] H. L. Keng, Introduction to Number Theory, Springer-Verlag, 1982.
+
+[25] S. Cecotti, S. Ferrara, and L. Girardello, Geometry of Type II Superstrings and the
+     Moduli of Superconformal Field Theories, Int. J. Mod. Phys. A4 (1989) 2475–2529.
+
+[26] R. Miranda, The Moduli of Weierstrass Fibrations, Math. Ann. 255 (1981) 379–394.
+
+[27] T. Shioda and N. Mitani, Singular Abelian Surfaces and Binary Quadratic Forms, in
+     “Classification of Algebraic Varieties and Compact Complex Manifolds”, Lecture Notes
+     in Mathematics 412, pages 259–287, Springer-Verlag, 1974.
+
+[28] W. Barth, C. Peters, and A. van de Ven, Compact Complex Surfaces, Springer, 1984.
+
+[29] S. Gukov, C. Vafa, and E. Witten, CFT’s from Calabi–Yau Four-Folds, Nucl. Phys.
+     B584 (2000) 69–108, hep-th/9906070.
+
+[30] D. Mumford, Abelian Varieties, Tata-Oxford, 1970.
+
+[31] S. Gukov and C. Vafa, Rational Conformal Field Theories and Complex Multiplication,
+     Commun. Math. Phys. 246 (2004) 181–210, hep-th/0203213.
+
+[32] A. Sen, F-theory and Orientifolds, Nucl. Phys. B475 (1996) 562–578, hep-th/9605150.
+
+[33] T. Shioda, On Elliptic Modular Surfaces, J. Math Soc. Japan 24 (1972) 20–59.
+
+[34] D. Robbins and S. Sethi,     A Barren Landscape,     Phys. Rev. D71 (2005) 046008,
+     hep-th/0405011.
+
+[35] E. Witten, World-Sheet Corrections Via D-Instantons, hep-th/9907041.
+
+[36] S. Ferrara and S. Sabharwal, Quaternionic Manifolds for Type II Superstring Vacua of
+     Calabi–Yau Spaces, Nucl. Phys. B332 (1990) 317–332.
+
+[37] R. D’Auria, S. Ferrara, M. Trigiante, and S. Vaula, Gauging the Heisenberg Algebra of
+     Special Quaternionic Manifolds, Phys. Lett. B610 (2005) 147–151, hep-th/0410290.
+
+                                            19
+[38] P. S. Aspinwall and R. Y. Donagi, The Heterotic String, the Tangent Bundle, and
+     Derived Categories, Adv. Theor. Math. Phys. 2 (1998) 1041–1074, hep-th/9806094.
+
+[39] E. Bergshoeff, R. Kallosh, A.-K. Kashani-Poor, D. Sorokin, and A. Tomasiello, to
+     appear.
+
+[40] R. D’Auria, S. Ferrara, and M. Trigiante, No-Scale Supergravity from Higher Dimen-
+     sions, Comptes Rendus Physique 6 (2005) 199–208, hep-th/0409184.
+
+
+
+
+                                          20
+
