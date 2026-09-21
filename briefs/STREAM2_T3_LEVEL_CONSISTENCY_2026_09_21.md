@@ -10,7 +10,7 @@
 ## 1. What was built
 
 `checkers/check_T3_level_consistency.py` (+ `checkers/test_T3_level_consistency_controls.py`,
-21 controls, and `data/certificates/T3_LEVEL_CONSISTENCY.json`).
+25 controls, and `data/certificates/T3_LEVEL_CONSISTENCY.json`).
 
 | leg | what it reads | what it recomputes |
 |---|---|---|
@@ -59,14 +59,28 @@ mirror maps (C1 PASS(60)) — each **fail** the degree-2 fit at level 7 *and* at
 So a passing leg M is candidate-specific, not a property of any order-3 mirror map. Real
 cross-family bads fail too: `cooper_s7`'s z at level 10, `cooper_s10`'s z at level 7.
 
-**Stated limitation, in the certificate:** *no real candidate exists that has both legs and
-disagrees* — only s7 and s10 have a lattice certificate at all, and both agree. T3's power
-against a real disagreeing candidate is **UNESTABLISHED**; leg L is covered by synthetic
-tampering only. T0 should weigh decision 2 with that in front of them.
+**Which clause actually fires.** `uniformizes_at_level` is a conjunction of four clauses
+(Newman, deg-2 solves, deg-2 verifies held-out, Möbius fails), and the checker now reports
+*which* one failed. That exposed a gap worth recording: all ten R1/R2 known-bads fail on
+**`deg2_fit_solves`**, so those controls alone establish only that leg M tests degree-2
+solvability at the level. The Möbius clause — the one separating a Hauptmodul for Γ₀(n)⁺/\*
+from one for Γ₀(n) — needed its own known-bad, and now has one (**R4**): the level-7
+coordinate fed to itself *is* a Γ₀(7) Hauptmodul; it passes Newman, deg-2 solve **and**
+held-out verification, and is rejected **solely** by the Möbius clause. The clause is live.
 
-**Synthetic controls on leg L (each must refuse):** the Gauss-discriminant **conflation**
-control (below), tampered witness `P`, tampered Gram entry, `det P = 2`, odd U-complement,
-missing witness. 21/21 behave as required.
+**Stated limitations, in the certificate:**
+- *No real candidate exists that has both legs and disagrees* — only s7 and s10 have a
+  lattice certificate at all, and both agree. T3's power against a real disagreeing
+  candidate is **UNESTABLISHED**; leg L is covered by synthetic tampering only.
+- *The teeth are **directional***. Leg M is only ever run at `n_L`, so a wrong `n_L` is sent
+  to a failing fit (R2, S7), but nothing here tests a correct lattice paired with a modular
+  certification at some *other* level.
+
+T0 should weigh decision 2 with both in front of them.
+
+**Synthetic controls on leg L (each must refuse):** tampered witness `P`, tampered Gram
+entry, `det P = 2`, odd U-complement, missing witness, and the two conflation rows in §5.
+**25/25** behave as required.
 
 ## 5. What was leveraged from Stream 1 (Tier A-external)
 
@@ -81,9 +95,17 @@ Repo `SocrateAI-DualScaleTopologicalUniverseModel-LeanProposal`, commit `e801d6e
   leg L, so the signature (2,1) is recomputed rather than copied from the certificate.
 - `no_isometry_G0N_TN` — the Gauss discriminant lattice of Γ₀(N)-forms (`b² − 4Nac`,
   Gram det `−4N²`) is **not** isometric to `U⊕⟨2N⟩` (Gram det `−2N`) for any `N ≥ 1`.
-  This is control **S1**: feeding that lattice to leg L must refuse, and does. Stream 1
-  records that a directive had merged the two lattices into one claim; S1 is the machine-
-  visible version of that block on this side of the program.
+  Stream 1 records that a directive had merged the two lattices into one claim; two
+  controls make that block machine-visible on this side, and they are **deliberately kept
+  apart** because they exercise different parts of the theorem:
+  - **S1a (parity, not the determinant).** The Gauss Gram has a `1` on the diagonal, so leg
+    L refuses on evenness and the determinant is never reached. Honest label: this row
+    would fire identically for any odd-diagonal matrix. It is *not* the determinant leg.
+  - **S1b (the determinant leg).** An *even* lattice carrying the Gauss determinant `−4N²`
+    splits as `U⊕⟨4N²⟩`, so leg L reads `n = 2N²` — 98 instead of 7, 200 instead of 10 —
+    and leg M has no coordinate at that level. Substituting one lattice for the other
+    moves the very number T3 compares. That is the consequence of the two not being
+    isometric, and it is what the citation is for.
 
 **Derived here, not by Stream 1:** `U⊕⟨14⟩` and `U⊕⟨20⟩` are not isometric. One line from
 `TN_det` plus determinant invariance (−14 ≠ −20). Stream 1 proved `G0N ≇ TN`; it did not
@@ -114,4 +136,4 @@ two new lines.
 
 ---
 *Generated-by: Claude (Opus 5), Stream 2 | Verified-by: `check_T3_level_consistency.py`,
-`test_T3_level_consistency_controls.py` (21/21), full regression re-run | Reviewed-by: N*
+`test_T3_level_consistency_controls.py` (25/25), full regression re-run | Reviewed-by: N*

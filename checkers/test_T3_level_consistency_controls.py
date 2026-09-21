@@ -52,11 +52,15 @@ def record(name, ok, detail=""):
     print(f"  {'ok  ' if ok else 'FAIL'}  {name}" + (f"  -- {detail}" if detail else ""))
 
 
-def leg_M_passes(key, level):
+def leg_M(key, level, z_override=None):
     try:
-        return T3.modular_leg(key, level, ORDER)["uniformizes_at_level"]
-    except T3.Refused:
-        return False
+        return T3.modular_leg(key, level, ORDER, z_override=z_override)
+    except T3.Refused as e:
+        return {"uniformizes_at_level": False, "failing_clauses": [f"REFUSED: {e}"]}
+
+
+def leg_M_passes(key, level):
+    return leg_M(key, level)["uniformizes_at_level"]
 
 
 def refuses(fn):
@@ -90,24 +94,53 @@ def main():
     print("\nR -- REAL known-bads (real refs candidates, untampered data)")
     for key in REAL_KNOWN_BADS:
         for level in (7, 10):
+            m = leg_M(key, level)
             record(f"R1 {key} does NOT uniformize at level {level}",
-                   not leg_M_passes(key, level))
-    record("R2 cooper_s7 z does NOT uniformize at level 10", not leg_M_passes("cooper_s7", 10))
-    record("R2 cooper_s10 z does NOT uniformize at level 7", not leg_M_passes("cooper_s10", 7))
+                   not m["uniformizes_at_level"], "fails: " + ", ".join(m["failing_clauses"]))
+    for key, level in (("cooper_s7", 10), ("cooper_s10", 7)):
+        m = leg_M(key, level)
+        record(f"R2 {key} z does NOT uniformize at level {level}",
+               not m["uniformizes_at_level"], "fails: " + ", ".join(m["failing_clauses"]))
     record("R3 cooper_s7 DOES uniformize at level 7 (non-vacuity)",
            leg_M_passes("cooper_s7", 7))
     record("R3 cooper_s10 DOES uniformize at level 10 (non-vacuity)",
            leg_M_passes("cooper_s10", 10))
+    # R4: the Mobius clause is load-bearing and has its own REAL known-bad.  The level-7
+    # coordinate t is itself a Gamma_0(7) Hauptmodul (H7's N1 control).  Fed to leg M at
+    # level 7 it must fail, and must fail ON THE MOBIUS CLAUSE -- not on deg-2 solvability.
+    # Without this, leg M would only be shown to test deg-2 solvability at the level.
+    t7 = T3.H10.eta_quotient_series(T3.LEVEL_COORD[7], ORDER)
+    m = leg_M("(Gamma_0(7) Hauptmodul t7)", 7, z_override=t7)
+    record("R4 a Gamma_0(7) Hauptmodul fails leg M at level 7",
+           not m["uniformizes_at_level"], "fails: " + ", ".join(m["failing_clauses"]))
+    record("R4 ... and it fails ON THE MOBIUS CLAUSE (deg-2 solvability alone would not "
+           "have rejected it)",
+           m["failing_clauses"] == ["mobius_fit_fails"],
+           f"clauses {m.get('clauses')}")
 
     print("\nS -- synthetic tampering of leg L (each must REFUSE)")
-    # S1: the conflation control, for n = 7 and n = 10.
+    # S1a: the Gauss discriminant lattice b^2 - 4nac is ODD (a 1 on the diagonal), so leg L
+    # refuses on parity -- the determinant never enters.  Recorded for what it is.
     for n in (7, 10):
         g0n = {"derived": {
             "gram_primitive_even": [[0, 0, -2 * n], [0, 1, 0], [-2 * n, 0, 0]],
             "u_splitting": {"basis_change_matrix": [[1, 0, 0], [0, 1, 0], [0, 0, 1]]}}}
         ok, why = refuses(lambda: T3.lattice_leg(as_cert_file(tmp, g0n)))
-        record(f"S1 Gauss discriminant lattice b^2-4*{n}ac (det {-4*n*n}) refused "
-               "(Stream 1 no_isometry_G0N_TN)", ok, why)
+        record(f"S1a Gauss discriminant lattice b^2-4*{n}ac refused ON PARITY "
+               "(odd diagonal; the determinant path is NOT exercised here)", ok, why)
+    # S1b: the determinant path, which is what no_isometry_G0N_TN is actually about.
+    # An even lattice carrying the Gauss determinant -4n^2 splits as U + <4n^2>, so leg L
+    # reads n' = 2n^2, not n -- and leg M then has no coordinate at that level.  This is
+    # the machine-visible consequence of the two lattices not being isometric: substituting
+    # one for the other moves the number T3 compares.
+    for n in (7, 10):
+        d = 4 * n * n
+        got = T3.lattice_leg(as_cert_file(tmp, gram_with_d(d)))["n_lattice"]
+        ok_n = got == 2 * n * n != n
+        ok_m, why_m = refuses(lambda: T3.modular_leg("x", got, ORDER))
+        record(f"S1b even lattice of Gauss determinant {-d} reads n = {2*n*n}, not {n}, "
+               "and leg M has no coordinate there (Stream 1 no_isometry_G0N_TN, det leg)",
+               ok_n and ok_m, f"n={got}; {why_m}")
 
     live = json.loads((T3.CERTS / "C2_cooper_s7_v5.json").read_text())
 

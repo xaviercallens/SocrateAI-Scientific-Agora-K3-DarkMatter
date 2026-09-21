@@ -38,7 +38,10 @@ DISCRIMINATING POWER (standing rule 1, at the bar set by C1's A112019 control)
   mirror map.  Real cross-family bads (s7's z at level 10, s10's z at level 7) fail too.
   Not established: a real candidate that has BOTH legs and disagrees.  Only s7 and s10
   have a lattice certificate at all, and both agree; the gate's power against a real
-  disagreeing candidate is therefore UNTESTED, and the certificate says so.
+  disagreeing candidate is therefore UNTESTED, and the certificate says so.  Note also
+  that the teeth are DIRECTIONAL: leg M is only ever run at n_L, so a wrong n_L is sent
+  to a failing fit (controls R2, S7), but nothing here tests whether a correct lattice
+  could be paired with a modular certification at some OTHER level.
 
 IMPORTED FROM STREAM 1 (Tier A-external; no Lean build was run from this repo)
   SocrateAI-DualScaleTopologicalUniverseModel-LeanProposal, commit e801d6e,
@@ -187,9 +190,19 @@ def lattice_leg(cert_path):
 
 
 # ------------------------------------------------------------------- leg M ----
-def modular_leg(key, level, order=ORDER):
+def modular_leg(key, level, order=ORDER, z_override=None):
     """Does the candidate's z(q) uniformize at THIS level?  deg-2 fit must solve and
-    verify on held-out orders; the Mobius fit must fail."""
+    verify on held-out orders; the Mobius fit must fail.
+
+    `uniformizes_at_level` is a conjunction of four clauses, and which one fails is part
+    of the result (`failing_clauses`).  Without that, a control showing only "False" would
+    not distinguish "the deg-2 fit did not solve" from "the Mobius clause fired", and the
+    Mobius clause -- the one that separates a Hauptmodul for Gamma_0(n)+/* from one for
+    Gamma_0(n) -- would have no negative evidence behind it anywhere in T3.
+
+    `z_override` lets a control feed an arbitrary q-series in place of a refs candidate's
+    mirror map (used for the Gamma_0(n) Hauptmodul control, which is not a refs entry).
+    """
     if level not in LEVEL_COORD:
         raise Refused(f"no eta-quotient coordinate on file for level {level}; leg M cannot "
                       "be run, and no verdict is emitted")
@@ -198,9 +211,15 @@ def modular_leg(key, level, order=ORDER):
         raise Refused(f"level-{level} coordinate has leading power != q^1")
     newman = H10.newman_conditions(r, level)
     t = H10.eta_quotient_series(r, order)
-    z = z_of(key, order)
+    z = list(z_override) if z_override is not None else z_of(key, order)
     m_s, m_v, _ = H7.rational_fit(z, t, 1, N_SOLVE_MOB, order)
     d_s, d_v, sol = H7.rational_fit(z, t, 2, N_SOLVE_DEG2, order)
+    clauses = {
+        "newman_conditions_hold": bool(all(newman.values())),
+        "deg2_fit_solves": bool(d_s),
+        "deg2_fit_verifies_heldout": bool(d_v),
+        "mobius_fit_fails": not bool(m_s and m_v),
+    }
     return {
         "level_tested": level,
         "eta_exponents": {str(k): v for k, v in r.items()},
@@ -209,8 +228,9 @@ def modular_leg(key, level, order=ORDER):
         "deg2_fit_solves": bool(d_s),
         "deg2_fit_verifies_heldout": bool(d_v),
         "heldout_orders": [N_SOLVE_DEG2 + 1, order],
-        "uniformizes_at_level": bool(all(newman.values()) and d_s and d_v
-                                     and not (m_s and m_v)),
+        "clauses": clauses,
+        "failing_clauses": [k for k, v in clauses.items() if not v],
+        "uniformizes_at_level": all(clauses.values()),
         "relation": ({k: str(v) for k, v in H10.relation_shape(sol).items()}
                      if sol and H10.relation_shape(sol) else None),
     }
@@ -339,10 +359,16 @@ def main():
                 "avs_sporadic3_s18 (all real refs order-3 entries with integral mirror maps) "
                 "each fail the deg-2 fit at level 7 AND at level 10; cooper_s7 fails at level "
                 "10 and cooper_s10 at level 7. See test_T3_level_consistency_controls.py.",
+            "mobius_clause_control": "the Mobius clause (which separates a Hauptmodul for "
+                "Gamma_0(n)+/* from one for Gamma_0(n)) has its own real known-bad: the "
+                "level-7 coordinate fed to itself is a Gamma_0(7) Hauptmodul and fails leg M "
+                "on exactly that clause, not on deg-2 solvability (control R4).",
             "untested": "no real candidate exists that has BOTH legs and disagrees -- only "
                         "cooper_s7 and cooper_s10 have a lattice certificate at all, and both "
                         "agree. The gate's power against a real disagreeing candidate is "
-                        "UNESTABLISHED; synthetic tamper controls only for leg L.",
+                        "UNESTABLISHED; synthetic tamper controls only for leg L. The teeth "
+                        "are also DIRECTIONAL: leg M is only ever run at n_L, so nothing "
+                        "tests a correct lattice paired with some other modular level.",
         },
         "imported_tier_A_external": {
             "repo": "SocrateAI-DualScaleTopologicalUniverseModel-LeanProposal",

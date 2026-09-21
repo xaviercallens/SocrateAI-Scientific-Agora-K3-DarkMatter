@@ -14,7 +14,8 @@
   ],
   "discriminating_power": {
     "real_known_bads_that_fail_leg_M": "apery_zeta3, domb, almkvist_zagier_second, avs_sporadic3_s18 (all real refs order-3 entries with integral mirror maps) each fail the deg-2 fit at level 7 AND at level 10; cooper_s7 fails at level 10 and cooper_s10 at level 7. See test_T3_level_consistency_controls.py.",
-    "untested": "no real candidate exists that has BOTH legs and disagrees -- only cooper_s7 and cooper_s10 have a lattice certificate at all, and both agree. The gate's power against a real disagreeing candidate is UNESTABLISHED; synthetic tamper controls only for leg L."
+    "mobius_clause_control": "the Mobius clause (which separates a Hauptmodul for Gamma_0(n)+/* from one for Gamma_0(n)) has its own real known-bad: the level-7 coordinate fed to itself is a Gamma_0(7) Hauptmodul and fails leg M on exactly that clause, not on deg-2 solvability (control R4).",
+    "untested": "no real candidate exists that has BOTH legs and disagrees -- only cooper_s7 and cooper_s10 have a lattice certificate at all, and both agree. The gate's power against a real disagreeing candidate is UNESTABLISHED; synthetic tamper controls only for leg L. The teeth are also DIRECTIONAL: leg M is only ever run at n_L, so nothing tests a correct lattice paired with some other modular level."
   },
   "imported_tier_A_external": {
     "repo": "SocrateAI-DualScaleTopologicalUniverseModel-LeanProposal",
@@ -86,6 +87,13 @@
           13,
           40
         ],
+        "clauses": {
+          "newman_conditions_hold": true,
+          "deg2_fit_solves": true,
+          "deg2_fit_verifies_heldout": true,
+          "mobius_fit_fails": true
+        },
+        "failing_clauses": [],
         "uniformizes_at_level": true,
         "relation": {
           "alpha": "49",
@@ -161,6 +169,13 @@
           13,
           40
         ],
+        "clauses": {
+          "newman_conditions_hold": true,
+          "deg2_fit_solves": true,
+          "deg2_fit_verifies_heldout": true,
+          "mobius_fit_fails": true
+        },
+        "failing_clauses": [],
         "uniformizes_at_level": true,
         "relation": {
           "alpha": "16",
