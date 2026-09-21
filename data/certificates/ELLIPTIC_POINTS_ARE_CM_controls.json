@@ -1,0 +1,73 @@
+{
+ "controls_for": "checkers/check_elliptic_points_are_CM.py",
+ "results": [
+  {
+   "control": "R1",
+   "behaved": true,
+   "detail": "z = 1/2 (v = [7, -7, -2], D = -12): clauses ['locus_has_trivial_stabilizer_in_box', 'order_neq_exponent_denominator']; exact order 1"
+  },
+  {
+   "control": "R2",
+   "behaved": true,
+   "detail": "refused: tau_not_imaginary_quadratic; bounded numeric hits at 30/60 digits: {30: 0, 60: 0}"
+  },
+  {
+   "control": "R2b",
+   "behaved": true,
+   "detail": "the same function accepts the s7 locus z = -1: quadratic [7, -7, 2]"
+  },
+  {
+   "control": "R3",
+   "behaved": true,
+   "detail": "Fricke-only group at n = 10: orders {'infinity': 2, '-1/4': 1, '1/16': 2}; clauses ['locus_has_trivial_stabilizer_in_box', 'order_neq_exponent_denominator']"
+  },
+  {
+   "control": "R4",
+   "behaved": true,
+   "detail": "s7 loci at level 10: orders [1, 1, 1]; clauses ['lattice_quadratic_not_proportional_to_tau_quadratic', 'locus_has_trivial_stabilizer_in_box', 'order_neq_exponent_denominator']"
+  },
+  {
+   "control": "R5",
+   "behaved": true,
+   "detail": "Gamma_0(7) alone: exact orders {'infinity': 3, '-1': 1, '1/27': 1}"
+  },
+  {
+   "control": "R6",
+   "behaved": true,
+   "detail": "rows of the s10 table with non-trivial stabilizer: 3 in Gamma_0(10)*, 2 in the Fricke-only group"
+  },
+  {
+   "control": "S1",
+   "behaved": true,
+   "detail": "clauses ['lattice_quadratic_not_proportional_to_tau_quadratic', 'stabilizer_quadratic_not_proportional_to_lattice_quadratic']"
+  },
+  {
+   "control": "S2",
+   "behaved": true,
+   "detail": "order_neq_exponent_denominator fired at ['-1']"
+  },
+  {
+   "control": "S3",
+   "behaved": true,
+   "detail": "refused: two_search_paths_disagree"
+  },
+  {
+   "control": "S4",
+   "behaved": true,
+   "detail": "clauses ['locus_has_trivial_stabilizer_in_box', 'order_neq_exponent_denominator', 'stabilizer_not_contained_in_box']"
+  },
+  {
+   "control": "S5",
+   "behaved": true,
+   "detail": "checks_ok requires `is True`"
+  },
+  {
+   "control": "S6",
+   "behaved": true,
+   "detail": "fixes_exact accepts the Fricke involution at i/sqrt7, rejects two others"
+  }
+ ],
+ "behaved": 13,
+ "total": 13,
+ "provenance": "Generated-by: Claude (Fable 5.1), Stream 2 | Verified-by: self (controls) | Reviewed-by: N"
+}

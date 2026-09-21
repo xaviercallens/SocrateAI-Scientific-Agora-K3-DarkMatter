@@ -139,8 +139,18 @@
       `…_A2_MEMBERSHIP_…`, `briefs/STREAM2_TO_STREAM3_MODULAR_RAIL_AND_CM_POINTS_2026_09_21.md`
       (also transmits + reviews Deep Think's "rail modulaire" text: "evolves along the curve"
       is Tier C, not adopted). No ranking follows; a minimum-|D| rule has no warrant.
+- [ ] **T0: flux bound on D — decision request** `briefs/T0_DECISION_REQUEST_FLUX_BOUND_ON_D_2026_09_21.md`
+      (5 sources fetched, pinned, read; NOTHING executed; S3-00b stays BLOCKED). Brief's own
+      recommendation: Q1 "is K3×P¹ a specified B₃?" **no**; Q2 **option A (park)**.
+- [ ] **T0: narrow (not close) `ATKIN_LEHNER_ACTION_UNVERIFIED`** — W(n) → O(q_A) is now an explicit
+      isomorphism PASS(30) (`ATKIN_LEHNER_DISC_FORM.json`); s10 still advisory (lattice cert DRAFT).
+- [ ] **Open thread (hypothesis, zero independent tests):** at div-2 loci (s7 z=−1, s10 z=−1/4) the
+      explicit model shows A₁ points merging / appearing in pairs, not one new node. Next real test:
+      an actual M_n-polarized model. Register: `briefs/THOUGHT_EXPERIMENTS_K3_SELECTION_2026_09_21.md`.
 - [ ] **T0: does C3 require an INTEGRAL partner?** s10's is dyadic. Branch (i) holds for both
-      primaries: `briefs/STREAM2_TO_STREAM3_C3_BRANCH_REPLY_2026_09_21.md`.
+      primaries: `briefs/STREAM2_TO_STREAM3_C3_BRANCH_REPLY_2026_09_21.md`. New input 09-21:
+      integrality is coordinate-dependent — s10 and s18 partners are integral in 2z
+      (`PARTNER_GLOBAL_BOUNDEDNESS.json`, e(n) ≤ n−1 for all n modulo two Stream 1 theorems).
 - [ ] **Defect, mechanical:** `check_C3b_symsqrt.py` `mum2` tests C(n) == −(n+1)² literally, so
       its Apéry-ζ(3) golden control fires on a normalisation artifact (C = −4(n+1)²), not on a
       real non-MUM operator. s7/s10 verdicts unaffected. Normalise before the test; fix the
@@ -203,6 +213,16 @@ python3 checkers/test_T3_level_consistency_controls.py  # 25 controls (4 REAL or
 python3 checkers/test_CM_points_rho20_controls.py        # 46 controls: CM/rho=20 point map (s7 loci = CM points D -28,-7,-3)
 python3 checkers/check_A2_membership.py                  # A2 in s7 family (z=inf), NOT in s10 (all-v congruence); ~30 s
 python3 checkers/test_A2_membership_controls.py          # 35 controls
+python3 checkers/test_nodality_explicit_models_controls.py   # 20 controls: explicit Laurent models, PASS(10); z=-1 literal clause FAILS on model (recorded)
+python3 checkers/check_atkin_lehner_vs_disc_form.py          # W(n) -> O(q_A) isomorphism, PASS(30); s10 advisory
+python3 checkers/test_atkin_lehner_vs_disc_form_controls.py  # 33 controls
+python3 checkers/check_elliptic_points_are_CM.py             # stabilizer orders [2,2,3] / [2,2,4]; agreement FORCED
+python3 checkers/test_elliptic_points_are_CM_controls.py     # 13 controls
+python3 checkers/check_partner_global_boundedness.py         # s10/s18 partner c=2, s7 c=1, PASS(160)
+python3 checkers/test_partner_global_boundedness_controls.py # 16 controls
+python3 checkers/check_CM_completeness_classnumber.py        # P2 table complete where it speaks (30/30 D)
+python3 checkers/test_CM_completeness_classnumber_controls.py # 16 controls
+# slow (~70 s): python3 checkers/check_nodality_explicit_models.py   (Singular optional second CAS)
 # slow (~2.5 min), run before release: python3 checkers/check_CM_points_rho20.py
 ```
 

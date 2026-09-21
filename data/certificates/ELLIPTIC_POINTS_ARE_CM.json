@@ -1,0 +1,627 @@
+{
+ "certificate": "ELLIPTIC_POINTS_ARE_CM",
+ "checker": "checkers/check_elliptic_points_are_CM.py",
+ "date": "2026-09-21",
+ "tier": "B",
+ "checker_version": {
+  "git_describe_HEAD": "v0.3.8-cm-points-rho20-2-gb636f08",
+  "checker_sha256": "f845764a3c229420240ad70b2fad93ee1e875efadcf6673080a6fdc58bf62a7b"
+ },
+ "status": "RECORD, NOT A GATE. The rho = 20 cut is not adopted (open T0 decision); T3 is not adopted; nothing is scored. cooper_s10 is ADVISORY (lattice certificate DRAFT).",
+ "forced_not_corroboration": "The agreement between 'singular locus of L3' and 'rho = 20 (CM) point' is FORCED, not corroboration: a point fixed by a non-scalar integer matrix satisfies an integer quadratic, so every elliptic point of X_0(n)+ / X_0(n)* is a CM point. It adds no independent support to either statement.",
+ "input_consistency_checks_near_tautological": [
+  "the stabilizer's fixed-point quadratic is proportional to the lattice vector's quadratic: the stabilizer is built from the tau of the P2 record and that tau is computed from v, so this can fire only on an internally inconsistent P2 record (tau field versus v field); it guards the input and is no evidence"
+ ],
+ "search_boxes": {
+  "path1_full_box_all_entries": 40,
+  "path2_bruteforce_all_entries": 9
+ },
+ "what_is_not_forced_and_was_checked": [
+  "each locus of the P2 table has a non-trivial stabilizer in Gamma_0(n)* (exact search, box stated)",
+  "stabilizer order = lcm of the denominators of the L3 local exponents at the locus",
+  "no other row of the P2 table has a non-trivial stabilizer"
+ ],
+ "inputs": {
+  "sha256": {
+   "data/certificates/CM_POINTS_RHO20.json": "328add3fb9864bc09ab20d050c73d36c7fb71d514eab138a8a8fc1feff4e625d",
+   "data/certificates/L3_RIEMANN_SCHEME.json": "b15dc064214b55685c892ac6de7fd751b72945b97defad9f151cf8c8007bf151"
+  }
+ },
+ "families": {
+  "cooper_s7": {
+   "candidate": "cooper_s7",
+   "n": 7,
+   "advisory": false,
+   "flags": [],
+   "group": "Gamma_0(7)* : Atkin-Lehner determinants [1, 7]",
+   "box": 40,
+   "loci": [
+    {
+     "locus_z": "infinity",
+     "v": [
+      14,
+      -14,
+      -5
+     ],
+     "tau": {
+      "re": "-5/14",
+      "im_squared": "3/196"
+     },
+     "primitive_quadratic_of_tau": [
+      7,
+      5,
+      1
+     ],
+     "D0": -3,
+     "stabilizer_order_in_box": 3,
+     "stabilizer_order_exact": 3,
+     "elements_up_to_sign": [
+      {
+       "matrix": [
+        [
+         2,
+         1
+        ],
+        [
+         -7,
+         -3
+        ]
+       ],
+       "det": 1,
+       "trace": -1,
+       "order_in_PSL2": 3,
+       "fixed_quadratic_c_dminusa_minusb": [
+        -7,
+        -5,
+        -1
+       ]
+      },
+      {
+       "matrix": [
+        [
+         3,
+         1
+        ],
+        [
+         -7,
+         -2
+        ]
+       ],
+       "det": 1,
+       "trace": 1,
+       "order_in_PSL2": 3,
+       "fixed_quadratic_c_dminusa_minusb": [
+        -7,
+        -5,
+        -1
+       ]
+      }
+     ],
+     "scope": "box: all four entries in [-40, 40]; exact determination (path 3): no box",
+     "lattice_quadratic_nx_m2nz_my": [
+      98,
+      70,
+      14
+     ],
+     "exponents_L3": [
+      "2/3",
+      "1",
+      "4/3"
+     ],
+     "exponent_denominator_lcm": 3,
+     "clauses_fired": [],
+     "generator": {
+      "matrix": [
+       [
+        2,
+        1
+       ],
+       [
+        -7,
+        -3
+       ]
+      ],
+      "det": 1,
+      "trace": -1,
+      "order_in_PSL2": 3,
+      "fixed_quadratic_c_dminusa_minusb": [
+       -7,
+       -5,
+       -1
+      ]
+     }
+    },
+    {
+     "locus_z": "-1",
+     "v": [
+      2,
+      -4,
+      1
+     ],
+     "tau": {
+      "re": "1/2",
+      "im_squared": "1/28"
+     },
+     "primitive_quadratic_of_tau": [
+      7,
+      -7,
+      2
+     ],
+     "D0": -7,
+     "stabilizer_order_in_box": 2,
+     "stabilizer_order_exact": 2,
+     "elements_up_to_sign": [
+      {
+       "matrix": [
+        [
+         7,
+         -4
+        ],
+        [
+         14,
+         -7
+        ]
+       ],
+       "det": 7,
+       "trace": 0,
+       "order_in_PSL2": 2,
+       "fixed_quadratic_c_dminusa_minusb": [
+        14,
+        -14,
+        4
+       ]
+      }
+     ],
+     "scope": "box: all four entries in [-40, 40]; exact determination (path 3): no box",
+     "lattice_quadratic_nx_m2nz_my": [
+      14,
+      -14,
+      4
+     ],
+     "exponents_L3": [
+      "0",
+      "1/2",
+      "1"
+     ],
+     "exponent_denominator_lcm": 2,
+     "clauses_fired": [],
+     "generator": {
+      "matrix": [
+       [
+        7,
+        -4
+       ],
+       [
+        14,
+        -7
+       ]
+      ],
+      "det": 7,
+      "trace": 0,
+      "order_in_PSL2": 2,
+      "fixed_quadratic_c_dminusa_minusb": [
+       14,
+       -14,
+       4
+      ]
+     }
+    },
+    {
+     "locus_z": "1/27",
+     "v": [
+      1,
+      -1,
+      0
+     ],
+     "tau": {
+      "re": "0",
+      "im_squared": "1/7"
+     },
+     "primitive_quadratic_of_tau": [
+      7,
+      0,
+      1
+     ],
+     "D0": -28,
+     "stabilizer_order_in_box": 2,
+     "stabilizer_order_exact": 2,
+     "elements_up_to_sign": [
+      {
+       "matrix": [
+        [
+         0,
+         1
+        ],
+        [
+         -7,
+         0
+        ]
+       ],
+       "det": 7,
+       "trace": 0,
+       "order_in_PSL2": 2,
+       "fixed_quadratic_c_dminusa_minusb": [
+        -7,
+        0,
+        -1
+       ]
+      }
+     ],
+     "scope": "box: all four entries in [-40, 40]; exact determination (path 3): no box",
+     "lattice_quadratic_nx_m2nz_my": [
+      7,
+      0,
+      1
+     ],
+     "exponents_L3": [
+      "0",
+      "1/2",
+      "1"
+     ],
+     "exponent_denominator_lcm": 2,
+     "clauses_fired": [],
+     "generator": {
+      "matrix": [
+       [
+        0,
+        1
+       ],
+       [
+        -7,
+        0
+       ]
+      ],
+      "det": 7,
+      "trace": 0,
+      "order_in_PSL2": 2,
+      "fixed_quadratic_c_dminusa_minusb": [
+       -7,
+       0,
+       -1
+      ]
+     }
+    }
+   ],
+   "non_locus_rows": {
+    "count": 68,
+    "trivial_stabilizer_in_box": 68,
+    "trivial_stabilizer_exact_no_box": 68,
+    "rows_with_nontrivial_stabilizer": []
+   },
+   "orders_found": [
+    2,
+    2,
+    3
+   ],
+   "orders_from_exponent_denominators": [
+    2,
+    2,
+    3
+   ],
+   "violations": []
+  },
+  "cooper_s10": {
+   "candidate": "cooper_s10",
+   "n": 10,
+   "advisory": true,
+   "flags": [
+    "LATTICE_CERT_DRAFT"
+   ],
+   "group": "Gamma_0(10)* : Atkin-Lehner determinants [1, 2, 5, 10]",
+   "box": 40,
+   "loci": [
+    {
+     "locus_z": "infinity",
+     "v": [
+      10,
+      -10,
+      -3
+     ],
+     "tau": {
+      "re": "-3/10",
+      "im_squared": "1/100"
+     },
+     "primitive_quadratic_of_tau": [
+      10,
+      6,
+      1
+     ],
+     "D0": -4,
+     "stabilizer_order_in_box": 4,
+     "stabilizer_order_exact": 4,
+     "elements_up_to_sign": [
+      {
+       "matrix": [
+        [
+         2,
+         1
+        ],
+        [
+         -10,
+         -4
+        ]
+       ],
+       "det": 2,
+       "trace": -2,
+       "order_in_PSL2": 4,
+       "fixed_quadratic_c_dminusa_minusb": [
+        -10,
+        -6,
+        -1
+       ]
+      },
+      {
+       "matrix": [
+        [
+         3,
+         1
+        ],
+        [
+         -10,
+         -3
+        ]
+       ],
+       "det": 1,
+       "trace": 0,
+       "order_in_PSL2": 2,
+       "fixed_quadratic_c_dminusa_minusb": [
+        -10,
+        -6,
+        -1
+       ]
+      },
+      {
+       "matrix": [
+        [
+         4,
+         1
+        ],
+        [
+         -10,
+         -2
+        ]
+       ],
+       "det": 2,
+       "trace": 2,
+       "order_in_PSL2": 4,
+       "fixed_quadratic_c_dminusa_minusb": [
+        -10,
+        -6,
+        -1
+       ]
+      }
+     ],
+     "scope": "box: all four entries in [-40, 40]; exact determination (path 3): no box",
+     "lattice_quadratic_nx_m2nz_my": [
+      100,
+      60,
+      10
+     ],
+     "exponents_L3": [
+      "3/4",
+      "1",
+      "5/4"
+     ],
+     "exponent_denominator_lcm": 4,
+     "clauses_fired": [],
+     "generator": {
+      "matrix": [
+       [
+        2,
+        1
+       ],
+       [
+        -10,
+        -4
+       ]
+      ],
+      "det": 2,
+      "trace": -2,
+      "order_in_PSL2": 4,
+      "fixed_quadratic_c_dminusa_minusb": [
+       -10,
+       -6,
+       -1
+      ]
+     }
+    },
+    {
+     "locus_z": "-1/4",
+     "v": [
+      2,
+      -6,
+      1
+     ],
+     "tau": {
+      "re": "1/2",
+      "im_squared": "1/20"
+     },
+     "primitive_quadratic_of_tau": [
+      10,
+      -10,
+      3
+     ],
+     "D0": -20,
+     "stabilizer_order_in_box": 2,
+     "stabilizer_order_exact": 2,
+     "elements_up_to_sign": [
+      {
+       "matrix": [
+        [
+         5,
+         -3
+        ],
+        [
+         10,
+         -5
+        ]
+       ],
+       "det": 5,
+       "trace": 0,
+       "order_in_PSL2": 2,
+       "fixed_quadratic_c_dminusa_minusb": [
+        10,
+        -10,
+        3
+       ]
+      }
+     ],
+     "scope": "box: all four entries in [-40, 40]; exact determination (path 3): no box",
+     "lattice_quadratic_nx_m2nz_my": [
+      20,
+      -20,
+      6
+     ],
+     "exponents_L3": [
+      "0",
+      "1/2",
+      "1"
+     ],
+     "exponent_denominator_lcm": 2,
+     "clauses_fired": [],
+     "generator": {
+      "matrix": [
+       [
+        5,
+        -3
+       ],
+       [
+        10,
+        -5
+       ]
+      ],
+      "det": 5,
+      "trace": 0,
+      "order_in_PSL2": 2,
+      "fixed_quadratic_c_dminusa_minusb": [
+       10,
+       -10,
+       3
+      ]
+     }
+    },
+    {
+     "locus_z": "1/16",
+     "v": [
+      1,
+      -1,
+      0
+     ],
+     "tau": {
+      "re": "0",
+      "im_squared": "1/10"
+     },
+     "primitive_quadratic_of_tau": [
+      10,
+      0,
+      1
+     ],
+     "D0": -40,
+     "stabilizer_order_in_box": 2,
+     "stabilizer_order_exact": 2,
+     "elements_up_to_sign": [
+      {
+       "matrix": [
+        [
+         0,
+         1
+        ],
+        [
+         -10,
+         0
+        ]
+       ],
+       "det": 10,
+       "trace": 0,
+       "order_in_PSL2": 2,
+       "fixed_quadratic_c_dminusa_minusb": [
+        -10,
+        0,
+        -1
+       ]
+      }
+     ],
+     "scope": "box: all four entries in [-40, 40]; exact determination (path 3): no box",
+     "lattice_quadratic_nx_m2nz_my": [
+      10,
+      0,
+      1
+     ],
+     "exponents_L3": [
+      "0",
+      "1/2",
+      "1"
+     ],
+     "exponent_denominator_lcm": 2,
+     "clauses_fired": [],
+     "generator": {
+      "matrix": [
+       [
+        0,
+        1
+       ],
+       [
+        -10,
+        0
+       ]
+      ],
+      "det": 10,
+      "trace": 0,
+      "order_in_PSL2": 2,
+      "fixed_quadratic_c_dminusa_minusb": [
+       -10,
+       0,
+       -1
+      ]
+     }
+    }
+   ],
+   "non_locus_rows": {
+    "count": 66,
+    "trivial_stabilizer_in_box": 66,
+    "trivial_stabilizer_exact_no_box": 66,
+    "rows_with_nontrivial_stabilizer": []
+   },
+   "orders_found": [
+    2,
+    2,
+    4
+   ],
+   "orders_from_exponent_denominators": [
+    2,
+    2,
+    4
+   ],
+   "violations": []
+  }
+ },
+ "checks": {
+  "cooper_s7: no clause fired": true,
+  "cooper_s7: orders equal exponent denominators (as multisets)": true,
+  "cooper_s10: no clause fired": true,
+  "cooper_s10: orders equal exponent denominators (as multisets)": true
+ },
+ "hand_estimate": {
+  "provenance": "orchestrator hand estimate, issued UNVERIFIED; scored here",
+  "clauses": {
+   "cooper_s7: every singular locus has a non-trivial stabilizer in the group": "confirmed",
+   "cooper_s7: the stabilizer's quadratic is proportional to the lattice vector's (input-consistency only, near-tautological by construction)": "confirmed",
+   "cooper_s7: stabilizer order = lcm of L3 exponent denominators at each locus": "confirmed",
+   "cooper_s10: every singular locus has a non-trivial stabilizer in the group [ADVISORY]": "confirmed",
+   "cooper_s10: the stabilizer's quadratic is proportional to the lattice vector's (input-consistency only, near-tautological by construction) [ADVISORY]": "confirmed",
+   "cooper_s10: stabilizer order = lcm of L3 exponent denominators at each locus [ADVISORY]": "confirmed"
+  }
+ },
+ "controls": "checkers/test_elliptic_points_are_CM_controls.py",
+ "not_claimed": [
+  "any independent support for 'rho = 20 at the singular loci': the agreement is forced",
+  "that rho = 20 is a selection criterion, or that any point or family is preferred",
+  "a machine proof of the exact determination (path 3): its three-line argument is in the docstring; it is cross-checked against the box search on every row",
+  "that z is a Hauptmodul of Gamma_0(n)* : that is the statement of the s7 / s10 Hauptmodul certificates (Tier B), used here only to name the group",
+  "the step from 'v orthogonal to the period' to 'rho = 20': cited framework of CM_POINTS_RHO20.json, Tier B",
+  "any fibre type at any locus (ledger item 3); 'singular' refers to the operator L3 and to the stabilizer in the group, never to a fibre or to the surface",
+  "anything certified about cooper_s10: advisory throughout",
+  "any physical reading whatsoever"
+ ],
+ "provenance": "Generated-by: Claude (Fable 5.1), Stream 2 | Verified-by: checkers/test_elliptic_points_are_CM_controls.py | Reviewed-by: N"
+}

@@ -1,0 +1,88 @@
+{
+ "controls_for": "checkers/check_CM_completeness_classnumber.py",
+ "results": [
+  {
+   "control": "R1",
+   "behaved": true,
+   "detail": "42/42 discriminants with at least two rows flip to INCOMPLETE(missing 1) when their first row is deleted (both families)"
+  },
+  {
+   "control": "R1c",
+   "behaved": true,
+   "detail": "single-row D = -112 (z = 1/125) deleted -> ABSENT(missing all 1); gate clause ['absent_D_has_a_norm_inside_the_window'] (its norm [[8, 1]] is inside the window)"
+  },
+  {
+   "control": "R1b",
+   "behaved": true,
+   "detail": "D = -56, row v = [1, -2, 0] deleted -> INCOMPLETE(missing 1); reported missing vector [2, -1, 0] lies in the deleted row's orbit: True"
+  },
+  {
+   "control": "R2",
+   "behaved": true,
+   "detail": "cooper_s7 with Atkin-Lehner determinants [1]: X2 identical = False (71 numeric groups vs 99 exact orbits); 26/30 D INCOMPLETE; clauses []"
+  },
+  {
+   "control": "R3",
+   "behaved": true,
+   "detail": "cooper_s10 with Atkin-Lehner determinants [1, 10]: X2 identical = False (69 numeric groups vs 101 exact orbits); 30/33 D INCOMPLETE; clauses []"
+  },
+  {
+   "control": "R4",
+   "behaved": true,
+   "detail": "refused: vector_form_not_heegner"
+  },
+  {
+   "control": "R5",
+   "behaved": true,
+   "detail": "200/200 Gamma_0(n)-images keep their class key"
+  },
+  {
+   "control": "R5b",
+   "behaved": true,
+   "detail": "102 SL_2(Z) matrices outside Gamma_0(7), entries in [-3, 3], at D = -3 (2 distinct keys): 32 Heegner images change class key, 0 keep it, 172 images are not Heegner (not counted); first witness M, f, f.M = ([-3, -2, -1, -1], [21, 9, 1], [217, 299, 103])"
+  },
+  {
+   "control": "R6",
+   "behaved": true,
+   "detail": "beta counted modulo n: 85 disagreements of 170"
+  },
+  {
+   "control": "R6b",
+   "behaved": true,
+   "detail": "X1 reaches cooper_s7: 2 of 30 table discriminants [-3, -12]; cooper_s10: 0 of 33 table discriminants []"
+  },
+  {
+   "control": "S1",
+   "behaved": true,
+   "detail": "Fricke image [2, -1, 0] of row [1, -2, 0] added: clauses ['two_table_rows_in_one_orbit']"
+  },
+  {
+   "control": "S2",
+   "behaved": true,
+   "detail": "merged groups -> X2 False"
+  },
+  {
+   "control": "S3",
+   "behaved": true,
+   "detail": "refused: row_D_disagrees_with_form_discriminant"
+  },
+  {
+   "control": "S4",
+   "behaved": true,
+   "detail": "refused: form_vector_round_trip_fails"
+  },
+  {
+   "control": "S5",
+   "behaved": true,
+   "detail": "9 absent D fall inside a pretended bound of 300"
+  },
+  {
+   "control": "S6",
+   "behaved": true,
+   "detail": "checks_ok requires `is True`"
+  }
+ ],
+ "behaved": 16,
+ "total": 16,
+ "provenance": "Generated-by: Claude (Fable 5.1), Stream 2 | Verified-by: self (controls) | Reviewed-by: N"
+}

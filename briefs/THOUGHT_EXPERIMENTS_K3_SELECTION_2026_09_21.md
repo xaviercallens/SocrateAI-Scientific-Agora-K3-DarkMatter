@@ -56,7 +56,11 @@ coupure qui l'a produite*. Ici il faut ajouter : *et nommer ce qui borne le disc
 *Cible vérifiable.* (i) Critère exact d'occurrence : D apparaît dans la famille de niveau n **ssi**
 D est un carré modulo 4n — **(E)**, `A2_MEMBERSHIP.json`, critère = énumération dans les deux sens
 pour |D| ≤ 100. (ii) Complétude de la carte D par D, par comptage de formes de Heegner —
-**en cours** (A6).
+**fait (E)**, `CM_COMPLETENESS.json` : pour s7, les 30 discriminants présents dans la table sont
+**tous complets** (71 points attendus, 71 trouvés) ; l'incomplétude est entièrement dans les D
+*absents* (146 discriminants jusqu'à |D| = 616, le plus petit étant 19), tous hors de la fenêtre
+−v² ≤ 44 annoncée. La carte est donc exacte là où elle parle, et muette ailleurs — ce qu'elle
+disait d'elle-même.
 
 *Évaluation.* La question mathématique est close : la coupure n'est pas un critère. La question
 « qui borne |D| ? » est physique et renvoie à GE-13.
@@ -78,7 +82,13 @@ troisième ne l'était pas, et la clause correspondante de l'estimation est enre
 dans le certificat. Cohérent avec `s7_singular_points_are_selfdual` de Stream 1 **(K)**.
 
 *Cible vérifiable.* Exhiber le stabilisateur entier de chaque gare, son ordre, et vérifier que cet
-ordre est le dénominateur des exposants locaux de L₃ (2, 2, 3 pour s7) — **en cours** (A1).
+ordre est le dénominateur des exposants locaux de L₃ — **fait (E)**, `ELLIPTIC_POINTS_ARE_CM.json`.
+s7 : ordres **[2, 2, 3]**, générateurs [[0,1],[−7,0]], [[7,−4],[14,−7]], [[2,1],[−7,−3]] ;
+s10 (indicatif) : ordres **[2, 2, 4]**. Ils égalent le ppcm des dénominateurs des exposants de L₃
+en chaque lieu, et les 68 (resp. 66) points CM qui ne sont pas des gares ont un stabilisateur
+trivial — détermination exacte, sans boîte. Contrôle réel : dans le groupe « Fricke seul », la gare
+z = ∞ de s10 retombe à l'ordre 2 et z = −1/4 perd son stabilisateur. Le certificat porte la
+phrase : *accord forcé, pas corroboration*.
 
 *Leçon.* Même discipline que G10 : un accord **forcé** ne se présente pas comme une corroboration.
 Avant de s'émerveiller d'une coïncidence, chercher le théorème d'une ligne qui la rend inévitable.
@@ -101,7 +111,30 @@ explicite** qui n'utilise ni le réseau ni la monodromie (polynôme de Laurent d
 constants donnent s(n), ou les modèles d'Almkvist–van Straten) : valeurs critiques = lieux
 singuliers ? point critique non dégénéré (Morse ⇒ nœud A₁) ? combien par valeur ? Ce serait la
 **première vérification réellement indépendante** du programme sur ce sujet : géométrie explicite
-contre théorie des réseaux, et non la même donnée calculée deux fois. — **en cours** (A2).
+contre théorie des réseaux, et non la même donnée calculée deux fois.
+
+*Résultat — (E), PASS(10), niveau « modèle ».* `NODALITY_EXPLICIT_MODELS.json`. Trois polynômes de
+Laurent admis seulement après vérification exacte de l'identité des termes constants (trois faux
+polynômes réels sont refusés). Le texte d'Almkvist–van Straten n'imprime pas d'équations : ses
+modèles n'ont pas pu servir.
+- **z = 1/27 (s7) et z = 1/16 (s10) : confirmé.** Exactement un point critique, non dégénéré, sur
+  le tore ; sur la fermeture (2,2,2), un nœud A₁ nouveau, nombre de Tjurina total 10 → 11.
+- **z = −1 (s7) : la clause littérale ÉCHOUE sur ce modèle.** Aucun point critique sur le tore,
+  aucun nouveau point singulier : trois nœuds A₁ du bord **fusionnent** en un point étiqueté D₄.
+  Le nombre de Tjurina total monte pourtant de +1, comme à z = 1/27. Ce n'est pas une réfutation
+  du côté réseau — aucun des modèles n'est le modèle M₇-polarisé — mais la prédiction « un nœud
+  apparaît » est fausse telle qu'énoncée, et c'est enregistré.
+- **z = −1/4 (s10), sans prédiction : deux nœuds A₁** conjugués sur ℚ(i).
+- **z = ∞ : NON EXAMINÉ** (lieu singulier non isolé dans tous les modèles) — dit, pas deviné.
+- **Contre-exemple utile :** à z = 1/2, un A₁ devient A₂ (Tjurina +1) alors que L₃ y est régulier.
+  Un changement de singularité du modèle ne détecte donc **pas** les points singuliers de
+  l'opérateur. Côté réseau, z = 1/2 est un point CM de vecteur non réflexif (−v² = 42, div 7).
+
+*Évaluation.* **Mi-confirmé, mi-corrigé — et plus instructif que prévu.** L'image « une sphère
+s'évanouit » décrit bien la gare de divisibilité 1. À la gare de divisibilité 2 (z = −1 ; et
+z = −1/4 pour s10) l'image juste semble plutôt : *plusieurs sphères déjà évanouies se rejoignent*
+(ou deux s'évanouissent ensemble). Une lecture par systèmes de racines (A₁³ ⊂ D₄ d'indice 2) est
+consignée dans le brief comme **hypothèse post hoc : zéro test indépendant passé**.
 
 ## GE-11 — Le miroir à deux faces : Atkin–Lehner contre réflexions
 
@@ -118,9 +151,24 @@ singuliers de s10, (1,−1,0), (2,−6,1), (10,−10,−3), donnent les multipli
 ℤ/20 ; avec −1 ils engendrent tout O(q) = {1, 9, 11, 19}. Le multiplicateur 11 vaut −1 sur la
 partie 2-primaire et +1 sur la partie 5-primaire : exactement la forme attendue d'un w_Q.
 
-*Cible vérifiable.* Flèche complète, homomorphisme, injectivité modulo ±1, et quel w_Q fixe quel
-lieu — **en cours** (A3). Si elle tient, le drapeau `ATKIN_LEHNER_ACTION_UNVERIFIED` de T3 peut
-être proposé à la fermeture (recommandation à T0, pas une édition du checker).
+*Résultat — (E), PASS(30) en n ; identification des z héritée de PASS(40).*
+`ATKIN_LEHNER_DISC_FORM.json`, 33 contrôles. La flèche est **construite** à partir de l'action sur
+les périodes : le multiplicateur de w_Q sur ℤ/2n vaut −1 modulo 2Q et +1 modulo 2n/Q — dérivé
+symboliquement en n, pas cité — et w_Q ↦ m_Q est un **isomorphisme** W(n) → O(q) pour n = 1…30,
+Fricke ↦ −1. Pour n = 10 : {1 ↦ 1, w₂ ↦ 11, w₅ ↦ 9, w₁₀ ↦ 19}. Les multiplicateurs à la main
+(1, 11, 19) sont confirmés.
+- **Réfuté dans mon estimation :** « injective modulo ±1 ». Modulo ±1 le noyau est {1, w_n}.
+- **Non anticipé :** w₁₀ fixe z = 1/16, w₅ fixe z = −1/4, mais **z = ∞ n'est le point fixe d'aucune
+  involution d'Atkin–Lehner** : il est fixé par des éléments d'**ordre 4** de la classe de w₂ —
+  ce qui recoupe l'ordre 4 trouvé en GE-9. w₂ n'a aucune réflexion associée.
+- **Monodromie :** les lacets ne réalisent que les multiplicateurs {1, 11} — la moitié de O(q) ;
+  9 et 19 n'appartiennent qu'au relèvement algébrique. Pour s7 la monodromie agit trivialement
+  modulo ±1 ; pour s10, non.
+
+*Évaluation.* Le « 4 = 4 » devient un isomorphisme explicite. Recommandation à T0 : **resserrer**
+le drapeau `ATKIN_LEHNER_ACTION_UNVERIFIED`, pas le fermer (le certificat de réseau de s10 reste
+DRAFT ; `check_T3` n'est pas édité). Dans l'image : le miroir a bien deux faces, mais l'une des
+gares de s10 n'est pas devant un miroir — elle est sur un **tourniquet à quatre temps**.
 
 ## GE-12 — La règle graduée : l'intégralité dépend de l'unité de mesure
 
@@ -135,8 +183,11 @@ l'intégralité d'une série dépend de la coordonnée z.
 pures de 2, d'exposant e(n) < n ; la série en **2z** est entière jusqu'à n < 60. Le partenaire est
 donc *globalement borné* avec c = 2.
 
-*Cible vérifiable.* PASS(120), forme close de e(n), même rapport pour s18, et un vrai contre-exemple
-(série non globalement bornée) — **en cours** (A4).
+*Résultat — (E), PASS(160), et une borne pour tout n.* `PARTNER_GLOBAL_BOUNDEDNESS.json`. Pour le
+partenaire de s10, le plus petit c est **2** ; e(n) = v₂(n!) à l'ordre 160 ; la borne e(n) ≤ n − 1
+est **démontrée pour tout n** (√(1+2w) a pour coefficients ±2·Cat(k−1)/2^k, et Σ C(n,k)⁴ ≡ 2ⁿ mod 2),
+modulo deux identités que Stream 1 énonce comme théorèmes (`s10_satisfies`, `partner_eq_sqrt_s10`,
+lus comme source). s7 : c = 1. s18 : c = 2. Vrais contre-exemples refusés : exp, log(1+z).
 
 *Évaluation.* Recommandation à T0 : C3 demande un L₂ **exhibé sur ℚ** ; la « bornitude globale »
 (et la constante c) se **rapporte** comme attribut, elle ne sert pas de porte. La question reste à
@@ -206,9 +257,29 @@ tadpole seul ne borne rien** ; la finitude n'y vient qu'avec une condition de po
 Si la même chose vaut ici, le « budget » n'existe qu'accompagné de sa condition de définitude —
 retour à G6.
 
-*Cible vérifiable.* Récupérer et lire les sources, citer mot pour mot ce qui est borné et sous
-quelles hypothèses, puis demander à T0 si cela compte comme « base spécifiée » au sens du ledger
-(point 4). **Rien n'est exécuté avant sa décision** — **en cours** (B4).
+*Résultat — (L), cinq sources récupérées, épinglées, lues ; rien d'exécuté.*
+`briefs/T0_DECISION_REQUEST_FLUX_BOUND_ON_D_2026_09_21.md`. **L'image du budget est corrigée en
+deux endroits.**
+1. *Ce qui est borné n'est pas |D|.* Aspinwall–Kallosh éq. (25) borne ½G² = 24 ; leur preuve de
+   finitude borne les six entrées réduites des deux réseaux **conjointement**, en utilisant la
+   **définie-positivité** — aucune inégalité « |D| ≤ c » n'est imprimée.
+2. *Ce n'est pas le tadpole seul qui borne.* C'est le tadpole **plus** la positivité de la
+   supersymétrie : la tension avec Stream 9 (S9.5) se résout en **accord** — K3×K3 est une instance
+   de S9.5/S9.6b, pas un contre-exemple. Retour à G6, comme pressenti.
+3. *La « liste finie » dépend de la question posée :* 13 paires (G₀ = 0, pas de M2, surfaces
+   lisses), 66 (M2 ≥ 0), 313 dans un balayage borné sous d'autres hypothèses — trois problèmes
+   différents, pas comparables ; Dasgupta–Rajesh–Sethi exhibent une solution hors des 13 ; et il
+   existe une série infinie à direction plate.
+4. *Aucune source ne parle d'une famille à un paramètre.* K3×K3 utilise **un membre** isolé, pas
+   la famille fibrée ; B₃ = K3×ℙ¹ est la base d'un **autre** modèle (« toy model », disent ses
+   auteurs), pas le B₃ manquant de la route Twisted-Weierstrass.
+
+*Évaluation.* **Idée largement dégonflée, et c'est le résultat.** Recommandation du brief :
+Q1 (« base spécifiée » ?) **non** ; Q2 (tableau de recoupement ?) **option A — classer**, B
+seulement si T0 veut le tableau, avec pré-enregistrement et contrôle de taux de base. WP S3-00b
+reste BLOQUÉ. Leçon d'image : le budget existe, mais la caisse n'a un fond que si la physique
+fournit d'abord une forme définie ; et appartenir à *une* des listes ne dit presque rien, puisque
+la liste change avec la question.
 
 ---
 
@@ -217,15 +288,29 @@ quelles hypothèses, puis demander à T0 si cela compte comme « base spécifié
 | # | image | cible | statut |
 |---|---|---|---|
 | GE-7 | le promeneur | carte des points ρ = 20 | fait (E/N/L) |
-| GE-8 | poussière d'étoiles | critère D carré mod 4n ; complétude | critère fait (E) ; complétude en cours |
-| GE-9 | les trois gares | stabilisateurs, ordres 2, 2, 3 | en cours |
-| GE-10 | la sphère qui s'évanouit | nodalité sur modèle explicite | en cours — test indépendant |
-| GE-11 | le miroir à deux faces | flèche W(n) → O(q) | préliminaire (E) ; en cours |
-| GE-12 | la règle graduée | bornitude globale, c = 2 | préliminaire PASS(60) ; en cours |
+| GE-8 | poussière d'étoiles | critère D carré mod 4n ; complétude | **fait** — table complète là où elle parle (30/30 D, 71/71 points) |
+| GE-9 | les trois gares | stabilisateurs | **fait** — ordres [2,2,3] (s7), [2,2,4] (s10) ; accord forcé |
+| GE-10 | la sphère qui s'évanouit | nodalité sur modèle explicite | **mi-confirmé** (z = 1/27, 1/16) ; **clause fausse** à z = −1 (fusion A₁³ → D₄) ; z = ∞ non examiné |
+| GE-11 | le miroir à deux faces | flèche W(n) → O(q) | **fait** — isomorphisme, PASS(30) ; z = ∞ de s10 fixé par un ordre 4, pas une involution ; « injective mod ±1 » réfuté |
+| GE-12 | la règle graduée | bornitude globale | **fait** — c = 2 (s10, s18), c = 1 (s7) ; e(n) ≤ n−1 pour tout n |
 | GE-13 | le billard d'Artin | métrique indépendante de n | fait (E) ; lecture (C) |
-| GE-14 | deux aimants | fourche piège / |D| minimal | énoncée (C) ; à transmettre |
-| GE-15 | le budget | sources + décision T0 | en cours ; rien d'exécuté |
+| GE-14 | deux aimants | fourche piège / \|D\| minimal | énoncée (C) ; à nuancer par GE-10 : la « gare-mur » z = −1 n'est pas un simple nœud sur le modèle examiné |
+| GE-15 | le budget | sources + décision T0 | **lu, dégonflé** — ce qui borne est tadpole + positivité, pas \|D\| ; recommandation : classer |
 
-*Generated-by: Claude (Fable 5.1), Stream 2 | Verified-by: GE-7…GE-9 lus dans les certificats émis
-au commit f091e43 ; GE-11…GE-13 calculs à la main de cette session (sympy / Fraction), non encore
-revérifiés indépendamment | Reviewed-by: N*
+## Ce que les calculs ont appris aux images
+
+1. **Trois de mes estimations à la main ont été réfutées** (z = ∞ « pas un point singulier » ;
+   « un nœud apparaît à z = −1 » ; « injective modulo ±1 ») et une idée entière (GE-15) a été
+   corrigée par la lecture des sources. Aucune n'a été cachée ; chacune a appris quelque chose.
+2. **La divisibilité du vecteur compte autant que sa norme.** Div 1 : un nœud naît. Div 2 : des
+   nœuds fusionnent ou naissent par paires. C'est le fil à tirer ensuite (hypothèse, zéro test).
+3. **s10 a une gare d'ordre 4** que ni Fricke ni aucune involution d'Atkin–Lehner ne voit : deux
+   calculs indépendants (GE-9, GE-11) tombent dessus.
+4. **Un accord ne vaut que si les routes diffèrent** : GE-9 est forcé ; GE-10 est la seule route
+   vraiment indépendante — et c'est justement elle qui a contredit une prédiction.
+
+*Generated-by: Claude (Fable 5.1), Stream 2 | Verified-by: GE-7…GE-8 certificats au commit
+f091e43 ; GE-8(ii)…GE-12 certificats émis au commit b636f08, chacun construit par un agent et
+re-dérivé par un vérificateur indépendant (producteur ≠ vérificateur) ; GE-13 calcul symbolique de
+cette session, non revérifié indépendamment ; GE-15 cinq sources lues et épinglées
+(`docs/literature/MANIFEST.md`, addendum du 2026-09-21) | Reviewed-by: N*

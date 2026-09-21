@@ -1,0 +1,88 @@
+{
+ "controls_for": "checkers/check_partner_global_boundedness.py",
+ "results": [
+  {
+   "control": "R1",
+   "behaved": true,
+   "detail": "exp(z): NO_C_FOUND / prime_above_C_MAX_in_denominator; first primes above C_MAX [67, 71, 73]"
+  },
+  {
+   "control": "R2",
+   "behaved": true,
+   "detail": "log(1+z)/z: NO_C_FOUND / prime_above_C_MAX_in_denominator"
+  },
+  {
+   "control": "R3",
+   "behaved": true,
+   "detail": "exp(z) to order 60: NO_C_FOUND / no_c_in_box; largest prime 59; unbounded formula c has 22 digits"
+  },
+  {
+   "control": "R4",
+   "behaved": true,
+   "detail": "sqrt(exp z) equals exp(z/2) exactly to order 160; NO_C_FOUND / prime_above_C_MAX_in_denominator"
+  },
+  {
+   "control": "R5",
+   "behaved": true,
+   "detail": "sqrt(1+4z), sqrt(1+2z), sqrt(1+z) -> c = [1, 2, 4]; central binomials c = 1; formal_sqrt(1+4z) equals the binomial series: True"
+  },
+  {
+   "control": "R6",
+   "behaved": true,
+   "detail": "c = 1 first fails at n = 2 (a_2 = 17/2); least c = 2"
+  },
+  {
+   "control": "S1",
+   "behaved": true,
+   "detail": "refused: recurrence_does_not_regenerate_stored_terms"
+  },
+  {
+   "control": "S2",
+   "behaved": true,
+   "detail": "least c 6, primes [2, 3]"
+  },
+  {
+   "control": "S3",
+   "behaved": true,
+   "detail": "'e(n) = n - 1' refuted first at n = 3 (e = 1); 152 mismatches to order 160"
+  },
+  {
+   "control": "S4",
+   "behaved": true,
+   "detail": "refused: constant_term_not_one"
+  },
+  {
+   "control": "S5",
+   "behaved": true,
+   "detail": "NO_C_FOUND / no_c_in_box; primes [2]"
+  },
+  {
+   "control": "S6",
+   "behaved": true,
+   "detail": "checks_ok requires `is True`"
+  },
+  {
+   "control": "S7",
+   "behaved": true,
+   "detail": "refused: two_paths_disagree"
+  },
+  {
+   "control": "R7",
+   "behaved": true,
+   "detail": "first mention of the name at line 16 (a comment); bare-name citation: PHANTOM; declaration-keyed citation: VERIFIED at line 168"
+  },
+  {
+   "control": "S8",
+   "behaved": true,
+   "detail": "comment-only mention: PHANTOM"
+  },
+  {
+   "control": "S9",
+   "behaved": true,
+   "detail": "clauses fired: ['s10.order2_recurrence_is_template']"
+  }
+ ],
+ "behaved": 16,
+ "total": 16,
+ "provenance": "Generated-by: Claude (Fable 5.1), Stream 2 | Verified-by: self (controls) | Reviewed-by: N"
+}

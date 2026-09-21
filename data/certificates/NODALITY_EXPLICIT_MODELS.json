@@ -1,0 +1,2367 @@
+{
+ "advisory_families": [
+  "cooper_s10"
+ ],
+ "certificate": "NODALITY_EXPLICIT_MODELS",
+ "checker": "checkers/check_nodality_explicit_models.py",
+ "checker_version": "v0.3.7-c1-mirror-integrality-14-gb636f08",
+ "controls_file": {
+  "number_of_controls": 20,
+  "path": "checkers/test_nodality_explicit_models_controls.py"
+ },
+ "date": "2026-09-21",
+ "flags": {
+  "cooper_s10": [
+   "LATTICE_CERT_DRAFT"
+  ],
+  "cooper_s7": []
+ },
+ "gates": {
+  "all_models_pass_ct": true,
+  "closure_probes_agree": true,
+  "complete_special_set_equals_scan_or_second_CAS_absent": true,
+  "known_bad_models_refused": true,
+  "no_torus_critical_value_outside_certified_loci": true,
+  "refs_crosscheck": true,
+  "torus_lists_complete_zero_dimensional": true,
+  "two_CAS_agree_on_point_counts_or_second_CAS_absent": true
+ },
+ "hand_estimate_scored": [
+  {
+   "advisory": false,
+   "basis": "extra=[] missing=['-1']",
+   "clause": "s7_a: set of torus critical values (as z) equals the certified finite loci ['-1', '1/27']",
+   "outcome": "REFUTED"
+  },
+  {
+   "advisory": false,
+   "basis": "extra=[] missing=['-1']",
+   "clause": "s7_b: set of torus critical values (as z) equals the certified finite loci ['-1', '1/27']",
+   "outcome": "REFUTED"
+  },
+  {
+   "advisory": false,
+   "basis": "torus critical points over z: 0, Morse: []",
+   "clause": "s7_a: z = -1 comes from a (-2)-vector (div 2), so exactly one A1 point appears on the model",
+   "outcome": "NOT OBSERVED on the torus (boundary of this model not examined)"
+  },
+  {
+   "advisory": false,
+   "basis": "torus critical points over z: 0, Morse: []; closure signature [5, [1, 2, 3, 3, 3]] vs generic [7, [2, 3, 3, 3, 3, 3, 3]], kinds ['boundary_points_merge']; total Tjurina number generic 10, this member 11 (change +1)",
+   "clause": "s7_b: z = -1 comes from a (-2)-vector (div 2), so exactly one A1 point appears on the model",
+   "outcome": "literal clause FAILS ON THIS MODEL (no single new A1 point); NOT a refutation of the lattice side: total Tjurina number 10 -> 11 (change +1); M_n-polarized model open"
+  },
+  {
+   "advisory": false,
+   "basis": "torus critical points over z: 1, Morse: [True]",
+   "clause": "s7_a: z = 1/27 comes from a (-2)-vector (div 1), so exactly one A1 point appears on the model",
+   "outcome": "confirmed on the torus (boundary of this model not examined)"
+  },
+  {
+   "advisory": false,
+   "basis": "torus critical points over z: 1, Morse: [True]; closure signature [8, [2, 3, 3, 3, 3, 3, 3, 3]] vs generic [7, [2, 3, 3, 3, 3, 3, 3]], kinds ['new_torus_singular_point']; total Tjurina number generic 10, this member 11 (change +1)",
+   "clause": "s7_b: z = 1/27 comes from a (-2)-vector (div 1), so exactly one A1 point appears on the model",
+   "outcome": "confirmed ON THIS MODEL (torus and (2,2,2) closure); model-level, nothing about the M_n-polarized model"
+  },
+  {
+   "advisory": false,
+   "basis": "value-0 critical locus positive-dimensional in every model: {'s7_a': True, 's7_b': True}",
+   "clause": "cooper_s7: behaviour at z = infinity",
+   "outcome": "NOT EXAMINED"
+  },
+  {
+   "advisory": true,
+   "basis": "extra=[] missing=[]",
+   "clause": "s10_a: set of torus critical values (as z) equals the certified finite loci ['-1/4', '1/16']",
+   "outcome": "confirmed"
+  },
+  {
+   "advisory": true,
+   "basis": "torus critical points over z: 2, Morse: [True, True]; closure signature [8, [3, 3, 3, 3, 3, 3, 3, 3]] vs generic [6, [3, 3, 3, 3, 3, 3]], kinds ['new_torus_singular_points']",
+   "clause": "s10_a: z = -1/4 (-v^2 = 4, div 2): no prediction was made",
+   "outcome": "observed"
+  },
+  {
+   "advisory": true,
+   "basis": "torus critical points over z: 1, Morse: [True]; closure signature [7, [3, 3, 3, 3, 3, 3, 3]] vs generic [6, [3, 3, 3, 3, 3, 3]], kinds ['new_torus_singular_point']; total Tjurina number generic 6, this member 7 (change +1)",
+   "clause": "s10_a: z = 1/16 comes from a (-2)-vector (div 1), so exactly one A1 point appears on the model",
+   "outcome": "confirmed ON THIS MODEL (torus and (2,2,2) closure); model-level, nothing about the M_n-polarized model"
+  },
+  {
+   "advisory": true,
+   "basis": "value-0 critical locus positive-dimensional in every model: {'s10_a': True}",
+   "clause": "cooper_s10: behaviour at z = infinity",
+   "outcome": "NOT EXAMINED"
+  }
+ ],
+ "inputs": {
+  "sha256": {
+   "checkers/check_nodality_explicit_models.py": "7b8e01c502e3ef4ecfed310c873071326e47316e8f8ea20ec0d56fd56a571f0a",
+   "data/certificates/C1_L3_cooper_s10.json": "503cfe63b7d20d78c53344ee091e4b39517bd2966181c1ff38a45e21f44721e8",
+   "data/certificates/C1_L3_cooper_s7.json": "c9d82f76bef8eee279ce91540a2b7cfddd98d79965162e8598b29aee458edbfc",
+   "data/certificates/CM_POINTS_RHO20.json": "328add3fb9864bc09ab20d050c73d36c7fb71d514eab138a8a8fc1feff4e625d",
+   "refs/recurrences_v1.json": "f6c7ee9e34ba2c9b8d8132c6aa9109db951ab696de09f23aab3ef03ce8679a76"
+  }
+ },
+ "known_bad_models": {
+  "franel_polynomial_for_s10": {
+   "clause": "ct_mismatch",
+   "constant_terms": [
+    1,
+    2,
+    10,
+    56,
+    346,
+    2252
+   ],
+   "first_mismatch_index": 2,
+   "provenance": "exponent confusion: ((1+x)(1+y)(1+1/(xy)))^n has constant term sum C(n,k)^3, not sum C(n,k)^4; the two sequences share n = 0 and n = 1, so a CT check of order 1 would ACCEPT this P",
+   "sequence": [
+    1,
+    2,
+    18,
+    164,
+    1810,
+    21252
+   ],
+   "verdict": "REFUSED"
+  },
+  "s10_polynomial_for_s7": {
+   "clause": "ct_mismatch",
+   "constant_terms": [
+    1,
+    2,
+    18,
+    164,
+    1810,
+    21252
+   ],
+   "first_mismatch_index": 1,
+   "provenance": "cross-family: the s10 polynomial offered for the s7 sequence",
+   "sequence": [
+    1,
+    4,
+    48,
+    760,
+    13840,
+    273504
+   ],
+   "verdict": "REFUSED"
+  },
+  "s7_a_misremembered": {
+   "clause": "ct_mismatch",
+   "constant_terms": [
+    1,
+    3,
+    31,
+    399,
+    5871,
+    93753
+   ],
+   "first_mismatch_index": 1,
+   "provenance": "s7_a with the square on (z+1) dropped: the kind of slip a formula written from recollection invites; this is why s7_a is admitted on leg CT alone",
+   "sequence": [
+    1,
+    4,
+    48,
+    760,
+    13840,
+    273504
+   ],
+   "verdict": "REFUSED"
+  },
+  "s7_missing_square": {
+   "clause": "ct_mismatch",
+   "constant_terms": [
+    1,
+    2,
+    6,
+    20,
+    70,
+    252
+   ],
+   "first_mismatch_index": 1,
+   "provenance": "the s7_b derivation with the square on (1+z) forgotten: gives sum C(n,j)^2 C(n+j,n) C(j,n), a different sequence",
+   "sequence": [
+    1,
+    4,
+    48,
+    760,
+    13840,
+    273504
+   ],
+   "verdict": "REFUSED"
+  }
+ },
+ "lattice_side_read_from": {
+  "file": "data/certificates/CM_POINTS_RHO20.json",
+  "rational_z": {
+   "cooper_s10": {
+    "-1/2": {
+     "D": -16,
+     "div_v": 5,
+     "minus_v2": 20,
+     "reflective": false,
+     "v": [
+      5,
+      -10,
+      -2
+     ]
+    },
+    "-1/20": {
+     "D": -100,
+     "div_v": 2,
+     "minus_v2": 20,
+     "reflective": false,
+     "v": [
+      2,
+      -10,
+      1
+     ]
+    },
+    "-1/4": {
+     "D": -20,
+     "div_v": 2,
+     "minus_v2": 4,
+     "reflective": true,
+     "v": [
+      2,
+      -6,
+      1
+     ]
+    },
+    "-1/64": {
+     "D": -180,
+     "div_v": 2,
+     "minus_v2": 36,
+     "reflective": false,
+     "v": [
+      2,
+      -14,
+      1
+     ]
+    },
+    "-1/9": {
+     "D": -60,
+     "div_v": 2,
+     "minus_v2": 12,
+     "reflective": false,
+     "v": [
+      2,
+      -8,
+      1
+     ]
+    },
+    "1": {
+     "D": -15,
+     "div_v": 4,
+     "minus_v2": 12,
+     "reflective": false,
+     "v": [
+      4,
+      -4,
+      -1
+     ]
+    },
+    "1/1296": {
+     "D": -520,
+     "div_v": 1,
+     "minus_v2": 26,
+     "reflective": false,
+     "v": [
+      1,
+      -13,
+      0
+     ]
+    },
+    "1/16": {
+     "D": -40,
+     "div_v": 1,
+     "minus_v2": 2,
+     "reflective": true,
+     "v": [
+      1,
+      -1,
+      0
+     ]
+    },
+    "1/196": {
+     "D": -280,
+     "div_v": 1,
+     "minus_v2": 14,
+     "reflective": false,
+     "v": [
+      1,
+      -7,
+      0
+     ]
+    },
+    "1/36": {
+     "D": -120,
+     "div_v": 1,
+     "minus_v2": 6,
+     "reflective": false,
+     "v": [
+      1,
+      -3,
+      0
+     ]
+    },
+    "1/4": {
+     "D": -24,
+     "div_v": 5,
+     "minus_v2": 30,
+     "reflective": false,
+     "v": [
+      5,
+      -5,
+      -1
+     ]
+    },
+    "1/5776": {
+     "D": -760,
+     "div_v": 1,
+     "minus_v2": 38,
+     "reflective": false,
+     "v": [
+      1,
+      -19,
+      0
+     ]
+    },
+    "infinity": {
+     "D": -4,
+     "div_v": 10,
+     "minus_v2": 20,
+     "reflective": true,
+     "v": [
+      10,
+      -10,
+      -3
+     ]
+    }
+   },
+   "cooper_s7": {
+    "-1": {
+     "D": -7,
+     "div_v": 2,
+     "minus_v2": 2,
+     "reflective": true,
+     "v": [
+      2,
+      -4,
+      1
+     ]
+    },
+    "-1/64": {
+     "D": -91,
+     "div_v": 2,
+     "minus_v2": 26,
+     "reflective": false,
+     "v": [
+      2,
+      -10,
+      1
+     ]
+    },
+    "-1/8": {
+     "D": -35,
+     "div_v": 2,
+     "minus_v2": 10,
+     "reflective": false,
+     "v": [
+      2,
+      -6,
+      1
+     ]
+    },
+    "1/125": {
+     "D": -112,
+     "div_v": 1,
+     "minus_v2": 8,
+     "reflective": false,
+     "v": [
+      1,
+      -4,
+      0
+     ]
+    },
+    "1/2": {
+     "D": -12,
+     "div_v": 7,
+     "minus_v2": 42,
+     "reflective": false,
+     "v": [
+      7,
+      -7,
+      -2
+     ]
+    },
+    "1/27": {
+     "D": -28,
+     "div_v": 1,
+     "minus_v2": 2,
+     "reflective": true,
+     "v": [
+      1,
+      -1,
+      0
+     ]
+    },
+    "infinity": {
+     "D": -3,
+     "div_v": 14,
+     "minus_v2": 42,
+     "reflective": false,
+     "v": [
+      14,
+      -14,
+      -5
+     ]
+    }
+   }
+  }
+ },
+ "models": {
+  "s10_a": {
+   "D": "x*y*z",
+   "N": "x**2*y**2*z**2 + x**2*y**2*z + x**2*y*z**2 + x**2*y*z + x*y**2*z**2 + x*y**2*z + x*y*z**2 + 2*x*y*z + x*y + x*z + x + y*z + y + z + 1",
+   "clause": null,
+   "closure": {
+    "clause": null,
+    "generic_member_points_at_probe": [
+     {
+      "chart": 1,
+      "hessian_rank": 3,
+      "on_torus": false,
+      "point_in_chart": [
+       "0",
+       "-1",
+       "0"
+      ],
+      "rational": true
+     },
+     {
+      "chart": 1,
+      "hessian_rank": 3,
+      "on_torus": false,
+      "point_in_chart": [
+       "0",
+       "0",
+       "-1"
+      ],
+      "rational": true
+     },
+     {
+      "chart": 2,
+      "hessian_rank": 3,
+      "on_torus": false,
+      "point_in_chart": [
+       "-1",
+       "0",
+       "0"
+      ],
+      "rational": true
+     },
+     {
+      "chart": 2,
+      "hessian_rank": 3,
+      "on_torus": false,
+      "point_in_chart": [
+       "0",
+       "0",
+       "-1"
+      ],
+      "rational": true
+     },
+     {
+      "chart": 4,
+      "hessian_rank": 3,
+      "on_torus": false,
+      "point_in_chart": [
+       "-1",
+       "0",
+       "0"
+      ],
+      "rational": true
+     },
+     {
+      "chart": 4,
+      "hessian_rank": 3,
+      "on_torus": false,
+      "point_in_chart": [
+       "0",
+       "-1",
+       "0"
+      ],
+      "rational": true
+     }
+    ],
+    "generic_signature": [
+     6,
+     [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+     ]
+    ],
+    "lambdas_scanned": [
+     "-64",
+     "-20",
+     "-12",
+     "-11",
+     "-10",
+     "-9",
+     "-8",
+     "-7",
+     "-6",
+     "-5",
+     "-4",
+     "-3",
+     "-2",
+     "-1",
+     "1",
+     "2",
+     "3",
+     "4",
+     "5",
+     "6",
+     "7",
+     "8",
+     "9",
+     "10",
+     "11",
+     "12",
+     "13",
+     "14",
+     "15",
+     "16",
+     "17",
+     "18",
+     "19",
+     "20",
+     "21",
+     "22",
+     "23",
+     "24",
+     "25",
+     "26",
+     "27",
+     "28",
+     "29",
+     "30",
+     "31",
+     "32",
+     "33",
+     "34",
+     "35",
+     "36",
+     "37",
+     "38",
+     "39",
+     "40",
+     "196",
+     "1296",
+     "5776"
+    ],
+    "probe_signatures": {
+     "-7": [
+      6,
+      [
+       3,
+       3,
+       3,
+       3,
+       3,
+       3
+      ]
+     ],
+     "11": [
+      6,
+      [
+       3,
+       3,
+       3,
+       3,
+       3,
+       3
+      ]
+     ],
+     "3": [
+      6,
+      [
+       3,
+       3,
+       3,
+       3,
+       3,
+       3
+      ]
+     ],
+     "5": [
+      6,
+      [
+       3,
+       3,
+       3,
+       3,
+       3,
+       3
+      ]
+     ]
+    },
+    "refused_lambdas": {},
+    "special": {
+     "-4": {
+      "clause": null,
+      "kinds": [
+       "new_torus_singular_points"
+      ],
+      "points": [
+       {
+        "chart": 0,
+        "hessian_rank": 3,
+        "on_torus": true,
+        "point_in_chart": [
+         "-I",
+         "-I",
+         "-I"
+        ],
+        "rational": false
+       },
+       {
+        "chart": 0,
+        "hessian_rank": 3,
+        "on_torus": true,
+        "point_in_chart": [
+         "I",
+         "I",
+         "I"
+        ],
+        "rational": false
+       },
+       {
+        "chart": 1,
+        "hessian_rank": 3,
+        "on_torus": false,
+        "point_in_chart": [
+         "0",
+         "-1",
+         "0"
+        ],
+        "rational": true
+       },
+       {
+        "chart": 1,
+        "hessian_rank": 3,
+        "on_torus": false,
+        "point_in_chart": [
+         "0",
+         "0",
+         "-1"
+        ],
+        "rational": true
+       },
+       {
+        "chart": 2,
+        "hessian_rank": 3,
+        "on_torus": false,
+        "point_in_chart": [
+         "-1",
+         "0",
+         "0"
+        ],
+        "rational": true
+       },
+       {
+        "chart": 2,
+        "hessian_rank": 3,
+        "on_torus": false,
+        "point_in_chart": [
+         "0",
+         "0",
+         "-1"
+        ],
+        "rational": true
+       },
+       {
+        "chart": 4,
+        "hessian_rank": 3,
+        "on_torus": false,
+        "point_in_chart": [
+         "-1",
+         "0",
+         "0"
+        ],
+        "rational": true
+       },
+       {
+        "chart": 4,
+        "hessian_rank": 3,
+        "on_torus": false,
+        "point_in_chart": [
+         "0",
+         "-1",
+         "0"
+        ],
+        "rational": true
+       }
+      ],
+      "signature": [
+       8,
+       [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+       ]
+      ],
+      "z": "-1/4",
+      "z_is_certified_locus": true
+     },
+     "16": {
+      "clause": null,
+      "kinds": [
+       "new_torus_singular_point"
+      ],
+      "points": [
+       {
+        "chart": 0,
+        "hessian_rank": 3,
+        "on_torus": true,
+        "point_in_chart": [
+         "1",
+         "1",
+         "1"
+        ],
+        "rational": true
+       },
+       {
+        "chart": 1,
+        "hessian_rank": 3,
+        "on_torus": false,
+        "point_in_chart": [
+         "0",
+         "-1",
+         "0"
+        ],
+        "rational": true
+       },
+       {
+        "chart": 1,
+        "hessian_rank": 3,
+        "on_torus": false,
+        "point_in_chart": [
+         "0",
+         "0",
+         "-1"
+        ],
+        "rational": true
+       },
+       {
+        "chart": 2,
+        "hessian_rank": 3,
+        "on_torus": false,
+        "point_in_chart": [
+         "-1",
+         "0",
+         "0"
+        ],
+        "rational": true
+       },
+       {
+        "chart": 2,
+        "hessian_rank": 3,
+        "on_torus": false,
+        "point_in_chart": [
+         "0",
+         "0",
+         "-1"
+        ],
+        "rational": true
+       },
+       {
+        "chart": 4,
+        "hessian_rank": 3,
+        "on_torus": false,
+        "point_in_chart": [
+         "-1",
+         "0",
+         "0"
+        ],
+        "rational": true
+       },
+       {
+        "chart": 4,
+        "hessian_rank": 3,
+        "on_torus": false,
+        "point_in_chart": [
+         "0",
+         "-1",
+         "0"
+        ],
+        "rational": true
+       }
+      ],
+      "signature": [
+       7,
+       [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+       ]
+      ],
+      "z": "1/16",
+      "z_is_certified_locus": true
+     }
+    },
+    "verdict": "OK"
+   },
+   "compare": {
+    "clauses": [],
+    "critical_points_per_z": {
+     "-1/4": 2,
+     "1/16": 1
+    },
+    "extra": [],
+    "missing": []
+   },
+   "completeness_leg": {
+    "clause": null,
+    "generic_over_Q_of_lambda": {
+     "singular_points": 6,
+     "total_tjurina": 6
+    },
+    "lambda_where_total_tjurina_differs_from_generic": [
+     "-4",
+     "16"
+    ],
+    "lambda_with_non_isolated_singular_points": [
+     "0"
+    ],
+    "shift": "0",
+    "statement": "exactly these members (lambda outside the non-isolated list) have a total Tjurina number different from the generic one on this closure",
+    "verdict": "OK"
+   },
+   "completeness_vs_scan": {
+    "agree": true,
+    "clause": null,
+    "generic_counts_agree": true,
+    "in_complete_set_not_in_scan_special": [],
+    "in_scan_special_not_in_complete_set": []
+   },
+   "ct": {
+    "clause": null,
+    "constant_terms": [
+     1,
+     2,
+     18,
+     164,
+     1810,
+     21252,
+     263844,
+     3395016,
+     44916498,
+     607041380,
+     8345319268
+    ],
+    "order_checked": 10,
+    "sequence": [
+     1,
+     2,
+     18,
+     164,
+     1810,
+     21252,
+     263844,
+     3395016,
+     44916498,
+     607041380,
+     8345319268
+    ],
+    "verdict": "PASS(10)"
+   },
+   "family": "cooper_s10",
+   "loci": [
+    "-1/4",
+    "1/16"
+   ],
+   "provenance": "derived here: C(n,k)^4 = [x^k y^k z^k (xyz)^-k] of ((1+x)(1+y)(1+z)(1+1/(xyz)))^n",
+   "singular_leg": {
+    "clause": null,
+    "generic_total_tjurina": 6,
+    "local": [
+     {
+      "chart": 1,
+      "hessian_corank_sympy": 0,
+      "label": "A1",
+      "lam": "-4",
+      "milnor": 1,
+      "point_in_chart": [
+       "0",
+       "-1",
+       "0"
+      ],
+      "tjurina": 1
+     },
+     {
+      "chart": 1,
+      "hessian_corank_sympy": 0,
+      "label": "A1",
+      "lam": "-4",
+      "milnor": 1,
+      "point_in_chart": [
+       "0",
+       "0",
+       "-1"
+      ],
+      "tjurina": 1
+     },
+     {
+      "chart": 2,
+      "hessian_corank_sympy": 0,
+      "label": "A1",
+      "lam": "-4",
+      "milnor": 1,
+      "point_in_chart": [
+       "-1",
+       "0",
+       "0"
+      ],
+      "tjurina": 1
+     },
+     {
+      "chart": 2,
+      "hessian_corank_sympy": 0,
+      "label": "A1",
+      "lam": "-4",
+      "milnor": 1,
+      "point_in_chart": [
+       "0",
+       "0",
+       "-1"
+      ],
+      "tjurina": 1
+     },
+     {
+      "chart": 4,
+      "hessian_corank_sympy": 0,
+      "label": "A1",
+      "lam": "-4",
+      "milnor": 1,
+      "point_in_chart": [
+       "-1",
+       "0",
+       "0"
+      ],
+      "tjurina": 1
+     },
+     {
+      "chart": 4,
+      "hessian_corank_sympy": 0,
+      "label": "A1",
+      "lam": "-4",
+      "milnor": 1,
+      "point_in_chart": [
+       "0",
+       "-1",
+       "0"
+      ],
+      "tjurina": 1
+     },
+     {
+      "chart": 0,
+      "hessian_corank_sympy": 0,
+      "label": "A1",
+      "lam": "16",
+      "milnor": 1,
+      "point_in_chart": [
+       "1",
+       "1",
+       "1"
+      ],
+      "tjurina": 1
+     },
+     {
+      "chart": 1,
+      "hessian_corank_sympy": 0,
+      "label": "A1",
+      "lam": "16",
+      "milnor": 1,
+      "point_in_chart": [
+       "0",
+       "-1",
+       "0"
+      ],
+      "tjurina": 1
+     },
+     {
+      "chart": 1,
+      "hessian_corank_sympy": 0,
+      "label": "A1",
+      "lam": "16",
+      "milnor": 1,
+      "point_in_chart": [
+       "0",
+       "0",
+       "-1"
+      ],
+      "tjurina": 1
+     },
+     {
+      "chart": 2,
+      "hessian_corank_sympy": 0,
+      "label": "A1",
+      "lam": "16",
+      "milnor": 1,
+      "point_in_chart": [
+       "-1",
+       "0",
+       "0"
+      ],
+      "tjurina": 1
+     },
+     {
+      "chart": 2,
+      "hessian_corank_sympy": 0,
+      "label": "A1",
+      "lam": "16",
+      "milnor": 1,
+      "point_in_chart": [
+       "0",
+       "0",
+       "-1"
+      ],
+      "tjurina": 1
+     },
+     {
+      "chart": 4,
+      "hessian_corank_sympy": 0,
+      "label": "A1",
+      "lam": "16",
+      "milnor": 1,
+      "point_in_chart": [
+       "-1",
+       "0",
+       "0"
+      ],
+      "tjurina": 1
+     },
+     {
+      "chart": 4,
+      "hessian_corank_sympy": 0,
+      "label": "A1",
+      "lam": "16",
+      "milnor": 1,
+      "point_in_chart": [
+       "0",
+       "-1",
+       "0"
+      ],
+      "tjurina": 1
+     },
+     {
+      "chart": 1,
+      "hessian_corank_sympy": 0,
+      "label": "A1",
+      "lam": "3",
+      "milnor": 1,
+      "point_in_chart": [
+       "0",
+       "-1",
+       "0"
+      ],
+      "tjurina": 1
+     },
+     {
+      "chart": 1,
+      "hessian_corank_sympy": 0,
+      "label": "A1",
+      "lam": "3",
+      "milnor": 1,
+      "point_in_chart": [
+       "0",
+       "0",
+       "-1"
+      ],
+      "tjurina": 1
+     },
+     {
+      "chart": 2,
+      "hessian_corank_sympy": 0,
+      "label": "A1",
+      "lam": "3",
+      "milnor": 1,
+      "point_in_chart": [
+       "-1",
+       "0",
+       "0"
+      ],
+      "tjurina": 1
+     },
+     {
+      "chart": 2,
+      "hessian_corank_sympy": 0,
+      "label": "A1",
+      "lam": "3",
+      "milnor": 1,
+      "point_in_chart": [
+       "0",
+       "0",
+       "-1"
+      ],
+      "tjurina": 1
+     },
+     {
+      "chart": 4,
+      "hessian_corank_sympy": 0,
+      "label": "A1",
+      "lam": "3",
+      "milnor": 1,
+      "point_in_chart": [
+       "-1",
+       "0",
+       "0"
+      ],
+      "tjurina": 1
+     },
+     {
+      "chart": 4,
+      "hessian_corank_sympy": 0,
+      "label": "A1",
+      "lam": "3",
+      "milnor": 1,
+      "point_in_chart": [
+       "0",
+       "-1",
+       "0"
+      ],
+      "tjurina": 1
+     }
+    ],
+    "members_with_other_total_tjurina": {
+     "-4": 8,
+     "16": 7
+    },
+    "point_count_disagreements_with_sympy": [],
+    "singular_version": "Singular for x86_64-Linux version 4.2.1 (4212, 64 bit) Dec 17 2021 20:20:53",
+    "verdict": "OK"
+   },
+   "torus": {
+    "clause": null,
+    "points": [
+     {
+      "clause": null,
+      "critical_value": "-4",
+      "hessian_det": "32",
+      "hessian_rank": 3,
+      "morse": true,
+      "point": [
+       "-I",
+       "-I",
+       "-I"
+      ],
+      "rational": false,
+      "z": "-1/4"
+     },
+     {
+      "clause": null,
+      "critical_value": "-4",
+      "hessian_det": "32",
+      "hessian_rank": 3,
+      "morse": true,
+      "point": [
+       "I",
+       "I",
+       "I"
+      ],
+      "rational": false,
+      "z": "-1/4"
+     },
+     {
+      "clause": null,
+      "critical_value": "16",
+      "hessian_det": "256",
+      "hessian_rank": 3,
+      "morse": true,
+      "point": [
+       "1",
+       "1",
+       "1"
+      ],
+      "rational": true,
+      "z": "1/16"
+     }
+    ],
+    "verdict": "OK"
+   },
+   "value_zero": {
+    "empty": false,
+    "positive_dimensional": true
+   },
+   "verdict": "OK"
+  },
+  "s7_a": {
+   "D": "x*y*z",
+   "N": "x**2*y*z + 2*x*y**2*z + 3*x*y*z**2 + 4*x*y*z + x*y + x*z**3 + 3*x*z**2 + 3*x*z + x + y**3*z + 3*y**2*z**2 + 4*y**2*z + y**2 + 3*y*z**3 + 8*y*z**2 + 7*y*z + 2*y + z**4 + 4*z**3 + 6*z**2 + 4*z + 1",
+   "clause": null,
+   "closure": {
+    "clause": "not_a_222_surface",
+    "verdict": "NOT_RUN"
+   },
+   "compare": {
+    "clauses": [
+     "certified_locus_without_torus_critical_point"
+    ],
+    "critical_points_per_z": {
+     "1/27": 1
+    },
+    "extra": [],
+    "missing": [
+     "-1"
+    ]
+   },
+   "ct": {
+    "clause": null,
+    "constant_terms": [
+     1,
+     4,
+     48,
+     760,
+     13840,
+     273504,
+     5703096,
+     123519792,
+     2751843600,
+     62659854400,
+     1451780950048
+    ],
+    "order_checked": 10,
+    "sequence": [
+     1,
+     4,
+     48,
+     760,
+     13840,
+     273504,
+     5703096,
+     123519792,
+     2751843600,
+     62659854400,
+     1451780950048
+    ],
+    "verdict": "PASS(10)"
+   },
+   "family": "cooper_s7",
+   "loci": [
+    "-1",
+    "1/27"
+   ],
+   "provenance": "written from recollection of the literature on Landau-Ginzburg models of the Fano threefold of degree 14 (NOT fetched, NOT pinned in docs/literature/MANIFEST.md); admitted ONLY because leg CT passes",
+   "torus": {
+    "clause": null,
+    "points": [
+     {
+      "clause": null,
+      "critical_value": "27",
+      "hessian_det": "72",
+      "hessian_rank": 3,
+      "morse": true,
+      "point": [
+       "6",
+       "3/2",
+       "1/2"
+      ],
+      "rational": true,
+      "z": "1/27"
+     }
+    ],
+    "verdict": "OK"
+   },
+   "value_zero": {
+    "empty": false,
+    "positive_dimensional": true
+   },
+   "verdict": "OK"
+  },
+  "s7_b": {
+   "D": "x*y*z",
+   "N": "x**2*y**2*z**2 + 2*x**2*y**2*z + x**2*y**2 + 2*x**2*y*z**2 + 4*x**2*y*z + 2*x**2*y + x**2*z**2 + 2*x**2*z + x**2 + x*y**2*z**2 + 2*x*y**2*z + x*y**2 + 2*x*y*z**2 + 4*x*y*z + 3*x*y + x*z**2 + 2*x*z + 2*x + y + 1",
+   "clause": null,
+   "closure": {
+    "clause": null,
+    "generic_member_points_at_probe": [
+     {
+      "chart": 0,
+      "hessian_rank": 3,
+      "on_torus": false,
+      "point_in_chart": [
+       "-1",
+       "0",
+       "0"
+      ],
+      "rational": true
+     },
+     {
+      "chart": 1,
+      "hessian_rank": 3,
+      "on_torus": false,
+      "point_in_chart": [
+       "0",
+       "-1",
+       "0"
+      ],
+      "rational": true
+     },
+     {
+      "chart": 1,
+      "hessian_rank": 3,
+      "on_torus": false,
+      "point_in_chart": [
+       "0",
+       "-1/4",
+       "-1"
+      ],
+      "rational": true
+     },
+     {
+      "chart": 2,
+      "hessian_rank": 3,
+      "on_torus": false,
+      "point_in_chart": [
+       "-1/4",
+       "0",
+       "-1"
+      ],
+      "rational": true
+     },
+     {
+      "chart": 3,
+      "hessian_rank": 3,
+      "on_torus": false,
+      "point_in_chart": [
+       "0",
+       "0",
+       "-1"
+      ],
+      "rational": true
+     },
+     {
+      "chart": 4,
+      "hessian_rank": 2,
+      "on_torus": false,
+      "point_in_chart": [
+       "0",
+       "-1",
+       "0"
+      ],
+      "rational": true
+     },
+     {
+      "chart": 5,
+      "hessian_rank": 3,
+      "on_torus": false,
+      "point_in_chart": [
+       "0",
+       "-1",
+       "0"
+      ],
+      "rational": true
+     }
+    ],
+    "generic_signature": [
+     7,
+     [
+      2,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+     ]
+    ],
+    "lambdas_scanned": [
+     "-64",
+     "-12",
+     "-11",
+     "-10",
+     "-9",
+     "-8",
+     "-7",
+     "-6",
+     "-5",
+     "-4",
+     "-3",
+     "-2",
+     "-1",
+     "1",
+     "2",
+     "3",
+     "4",
+     "5",
+     "6",
+     "7",
+     "8",
+     "9",
+     "10",
+     "11",
+     "12",
+     "13",
+     "14",
+     "15",
+     "16",
+     "17",
+     "18",
+     "19",
+     "20",
+     "21",
+     "22",
+     "23",
+     "24",
+     "25",
+     "26",
+     "27",
+     "28",
+     "29",
+     "30",
+     "31",
+     "32",
+     "33",
+     "34",
+     "35",
+     "36",
+     "37",
+     "38",
+     "39",
+     "40",
+     "125"
+    ],
+    "probe_signatures": {
+     "-7": [
+      7,
+      [
+       2,
+       3,
+       3,
+       3,
+       3,
+       3,
+       3
+      ]
+     ],
+     "11": [
+      7,
+      [
+       2,
+       3,
+       3,
+       3,
+       3,
+       3,
+       3
+      ]
+     ],
+     "3": [
+      7,
+      [
+       2,
+       3,
+       3,
+       3,
+       3,
+       3,
+       3
+      ]
+     ],
+     "5": [
+      7,
+      [
+       2,
+       3,
+       3,
+       3,
+       3,
+       3,
+       3
+      ]
+     ]
+    },
+    "refused_lambdas": {},
+    "special": {
+     "-1": {
+      "clause": null,
+      "kinds": [
+       "boundary_points_merge"
+      ],
+      "points": [
+       {
+        "chart": 0,
+        "hessian_rank": 3,
+        "on_torus": false,
+        "point_in_chart": [
+         "-1",
+         "0",
+         "0"
+        ],
+        "rational": true
+       },
+       {
+        "chart": 1,
+        "hessian_rank": 3,
+        "on_torus": false,
+        "point_in_chart": [
+         "0",
+         "-1",
+         "0"
+        ],
+        "rational": true
+       },
+       {
+        "chart": 3,
+        "hessian_rank": 1,
+        "on_torus": false,
+        "point_in_chart": [
+         "0",
+         "0",
+         "-1"
+        ],
+        "rational": true
+       },
+       {
+        "chart": 4,
+        "hessian_rank": 2,
+        "on_torus": false,
+        "point_in_chart": [
+         "0",
+         "-1",
+         "0"
+        ],
+        "rational": true
+       },
+       {
+        "chart": 5,
+        "hessian_rank": 3,
+        "on_torus": false,
+        "point_in_chart": [
+         "0",
+         "-1",
+         "0"
+        ],
+        "rational": true
+       }
+      ],
+      "signature": [
+       5,
+       [
+        1,
+        2,
+        3,
+        3,
+        3
+       ]
+      ],
+      "z": "-1",
+      "z_is_certified_locus": true
+     },
+     "2": {
+      "clause": "model_special_but_operator_regular",
+      "kinds": [
+       "boundary_point_hessian_rank_drops"
+      ],
+      "points": [
+       {
+        "chart": 0,
+        "hessian_rank": 2,
+        "on_torus": false,
+        "point_in_chart": [
+         "-1",
+         "0",
+         "0"
+        ],
+        "rational": true
+       },
+       {
+        "chart": 1,
+        "hessian_rank": 3,
+        "on_torus": false,
+        "point_in_chart": [
+         "0",
+         "-1",
+         "0"
+        ],
+        "rational": true
+       },
+       {
+        "chart": 1,
+        "hessian_rank": 3,
+        "on_torus": false,
+        "point_in_chart": [
+         "0",
+         "-1/3",
+         "-1"
+        ],
+        "rational": true
+       },
+       {
+        "chart": 2,
+        "hessian_rank": 3,
+        "on_torus": false,
+        "point_in_chart": [
+         "-1/3",
+         "0",
+         "-1"
+        ],
+        "rational": true
+       },
+       {
+        "chart": 3,
+        "hessian_rank": 3,
+        "on_torus": false,
+        "point_in_chart": [
+         "0",
+         "0",
+         "-1"
+        ],
+        "rational": true
+       },
+       {
+        "chart": 4,
+        "hessian_rank": 2,
+        "on_torus": false,
+        "point_in_chart": [
+         "0",
+         "-1",
+         "0"
+        ],
+        "rational": true
+       },
+       {
+        "chart": 5,
+        "hessian_rank": 3,
+        "on_torus": false,
+        "point_in_chart": [
+         "0",
+         "-1",
+         "0"
+        ],
+        "rational": true
+       }
+      ],
+      "signature": [
+       7,
+       [
+        2,
+        2,
+        3,
+        3,
+        3,
+        3,
+        3
+       ]
+      ],
+      "z": "1/2",
+      "z_is_certified_locus": false
+     },
+     "27": {
+      "clause": null,
+      "kinds": [
+       "new_torus_singular_point"
+      ],
+      "points": [
+       {
+        "chart": 0,
+        "hessian_rank": 3,
+        "on_torus": false,
+        "point_in_chart": [
+         "-1",
+         "0",
+         "0"
+        ],
+        "rational": true
+       },
+       {
+        "chart": 0,
+        "hessian_rank": 3,
+        "on_torus": true,
+        "point_in_chart": [
+         "1/4",
+         "5/4",
+         "5/3"
+        ],
+        "rational": true
+       },
+       {
+        "chart": 1,
+        "hessian_rank": 3,
+        "on_torus": false,
+        "point_in_chart": [
+         "0",
+         "-1",
+         "0"
+        ],
+        "rational": true
+       },
+       {
+        "chart": 1,
+        "hessian_rank": 3,
+        "on_torus": false,
+        "point_in_chart": [
+         "0",
+         "-1/28",
+         "-1"
+        ],
+        "rational": true
+       },
+       {
+        "chart": 2,
+        "hessian_rank": 3,
+        "on_torus": false,
+        "point_in_chart": [
+         "-1/28",
+         "0",
+         "-1"
+        ],
+        "rational": true
+       },
+       {
+        "chart": 3,
+        "hessian_rank": 3,
+        "on_torus": false,
+        "point_in_chart": [
+         "0",
+         "0",
+         "-1"
+        ],
+        "rational": true
+       },
+       {
+        "chart": 4,
+        "hessian_rank": 2,
+        "on_torus": false,
+        "point_in_chart": [
+         "0",
+         "-1",
+         "0"
+        ],
+        "rational": true
+       },
+       {
+        "chart": 5,
+        "hessian_rank": 3,
+        "on_torus": false,
+        "point_in_chart": [
+         "0",
+         "-1",
+         "0"
+        ],
+        "rational": true
+       }
+      ],
+      "signature": [
+       8,
+       [
+        2,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+       ]
+      ],
+      "z": "1/27",
+      "z_is_certified_locus": true
+     }
+    },
+    "verdict": "OK"
+   },
+   "compare": {
+    "clauses": [
+     "certified_locus_without_torus_critical_point"
+    ],
+    "critical_points_per_z": {
+     "1/27": 1
+    },
+    "extra": [],
+    "missing": [
+     "-1"
+    ]
+   },
+   "completeness_leg": {
+    "clause": null,
+    "generic_over_Q_of_lambda": {
+     "singular_points": 7,
+     "total_tjurina": 10
+    },
+    "lambda_where_total_tjurina_differs_from_generic": [
+     "-1",
+     "2",
+     "27"
+    ],
+    "lambda_with_non_isolated_singular_points": [
+     "0"
+    ],
+    "shift": "0",
+    "statement": "exactly these members (lambda outside the non-isolated list) have a total Tjurina number different from the generic one on this closure",
+    "verdict": "OK"
+   },
+   "completeness_vs_scan": {
+    "agree": true,
+    "clause": null,
+    "generic_counts_agree": true,
+    "in_complete_set_not_in_scan_special": [],
+    "in_scan_special_not_in_complete_set": []
+   },
+   "ct": {
+    "clause": null,
+    "constant_terms": [
+     1,
+     4,
+     48,
+     760,
+     13840,
+     273504,
+     5703096,
+     123519792,
+     2751843600,
+     62659854400,
+     1451780950048
+    ],
+    "order_checked": 10,
+    "sequence": [
+     1,
+     4,
+     48,
+     760,
+     13840,
+     273504,
+     5703096,
+     123519792,
+     2751843600,
+     62659854400,
+     1451780950048
+    ],
+    "verdict": "PASS(10)"
+   },
+   "family": "cooper_s7",
+   "loci": [
+    "-1",
+    "1/27"
+   ],
+   "provenance": "derived here from the closed form: C(n,j)^2 from (1 + x(1+y)(1+z)^2)^n (1+1/x)^n at x^j x^-j, then [y^n](1+y)^(n+j) = C(n+j,n), [z^n](1+z)^(2j) = C(2j,n)",
+   "singular_leg": {
+    "clause": null,
+    "generic_total_tjurina": 10,
+    "local": [
+     {
+      "chart": 0,
+      "hessian_corank_sympy": 0,
+      "label": "A1",
+      "lam": "-1",
+      "milnor": 1,
+      "point_in_chart": [
+       "-1",
+       "0",
+       "0"
+      ],
+      "tjurina": 1
+     },
+     {
+      "chart": 1,
+      "hessian_corank_sympy": 0,
+      "label": "A1",
+      "lam": "-1",
+      "milnor": 1,
+      "point_in_chart": [
+       "0",
+       "-1",
+       "0"
+      ],
+      "tjurina": 1
+     },
+     {
+      "chart": 3,
+      "hessian_corank_sympy": 2,
+      "label": "D4",
+      "lam": "-1",
+      "milnor": 4,
+      "point_in_chart": [
+       "0",
+       "0",
+       "-1"
+      ],
+      "tjurina": 4
+     },
+     {
+      "chart": 4,
+      "hessian_corank_sympy": 1,
+      "label": "A4",
+      "lam": "-1",
+      "milnor": 4,
+      "point_in_chart": [
+       "0",
+       "-1",
+       "0"
+      ],
+      "tjurina": 4
+     },
+     {
+      "chart": 5,
+      "hessian_corank_sympy": 0,
+      "label": "A1",
+      "lam": "-1",
+      "milnor": 1,
+      "point_in_chart": [
+       "0",
+       "-1",
+       "0"
+      ],
+      "tjurina": 1
+     },
+     {
+      "chart": 0,
+      "hessian_corank_sympy": 1,
+      "label": "A2",
+      "lam": "2",
+      "milnor": 2,
+      "point_in_chart": [
+       "-1",
+       "0",
+       "0"
+      ],
+      "tjurina": 2
+     },
+     {
+      "chart": 1,
+      "hessian_corank_sympy": 0,
+      "label": "A1",
+      "lam": "2",
+      "milnor": 1,
+      "point_in_chart": [
+       "0",
+       "-1",
+       "0"
+      ],
+      "tjurina": 1
+     },
+     {
+      "chart": 1,
+      "hessian_corank_sympy": 0,
+      "label": "A1",
+      "lam": "2",
+      "milnor": 1,
+      "point_in_chart": [
+       "0",
+       "-1/3",
+       "-1"
+      ],
+      "tjurina": 1
+     },
+     {
+      "chart": 2,
+      "hessian_corank_sympy": 0,
+      "label": "A1",
+      "lam": "2",
+      "milnor": 1,
+      "point_in_chart": [
+       "-1/3",
+       "0",
+       "-1"
+      ],
+      "tjurina": 1
+     },
+     {
+      "chart": 3,
+      "hessian_corank_sympy": 0,
+      "label": "A1",
+      "lam": "2",
+      "milnor": 1,
+      "point_in_chart": [
+       "0",
+       "0",
+       "-1"
+      ],
+      "tjurina": 1
+     },
+     {
+      "chart": 4,
+      "hessian_corank_sympy": 1,
+      "label": "A4",
+      "lam": "2",
+      "milnor": 4,
+      "point_in_chart": [
+       "0",
+       "-1",
+       "0"
+      ],
+      "tjurina": 4
+     },
+     {
+      "chart": 5,
+      "hessian_corank_sympy": 0,
+      "label": "A1",
+      "lam": "2",
+      "milnor": 1,
+      "point_in_chart": [
+       "0",
+       "-1",
+       "0"
+      ],
+      "tjurina": 1
+     },
+     {
+      "chart": 0,
+      "hessian_corank_sympy": 0,
+      "label": "A1",
+      "lam": "27",
+      "milnor": 1,
+      "point_in_chart": [
+       "-1",
+       "0",
+       "0"
+      ],
+      "tjurina": 1
+     },
+     {
+      "chart": 0,
+      "hessian_corank_sympy": 0,
+      "label": "A1",
+      "lam": "27",
+      "milnor": 1,
+      "point_in_chart": [
+       "1/4",
+       "5/4",
+       "5/3"
+      ],
+      "tjurina": 1
+     },
+     {
+      "chart": 1,
+      "hessian_corank_sympy": 0,
+      "label": "A1",
+      "lam": "27",
+      "milnor": 1,
+      "point_in_chart": [
+       "0",
+       "-1",
+       "0"
+      ],
+      "tjurina": 1
+     },
+     {
+      "chart": 1,
+      "hessian_corank_sympy": 0,
+      "label": "A1",
+      "lam": "27",
+      "milnor": 1,
+      "point_in_chart": [
+       "0",
+       "-1/28",
+       "-1"
+      ],
+      "tjurina": 1
+     },
+     {
+      "chart": 2,
+      "hessian_corank_sympy": 0,
+      "label": "A1",
+      "lam": "27",
+      "milnor": 1,
+      "point_in_chart": [
+       "-1/28",
+       "0",
+       "-1"
+      ],
+      "tjurina": 1
+     },
+     {
+      "chart": 3,
+      "hessian_corank_sympy": 0,
+      "label": "A1",
+      "lam": "27",
+      "milnor": 1,
+      "point_in_chart": [
+       "0",
+       "0",
+       "-1"
+      ],
+      "tjurina": 1
+     },
+     {
+      "chart": 4,
+      "hessian_corank_sympy": 1,
+      "label": "A4",
+      "lam": "27",
+      "milnor": 4,
+      "point_in_chart": [
+       "0",
+       "-1",
+       "0"
+      ],
+      "tjurina": 4
+     },
+     {
+      "chart": 5,
+      "hessian_corank_sympy": 0,
+      "label": "A1",
+      "lam": "27",
+      "milnor": 1,
+      "point_in_chart": [
+       "0",
+       "-1",
+       "0"
+      ],
+      "tjurina": 1
+     },
+     {
+      "chart": 0,
+      "hessian_corank_sympy": 0,
+      "label": "A1",
+      "lam": "3",
+      "milnor": 1,
+      "point_in_chart": [
+       "-1",
+       "0",
+       "0"
+      ],
+      "tjurina": 1
+     },
+     {
+      "chart": 1,
+      "hessian_corank_sympy": 0,
+      "label": "A1",
+      "lam": "3",
+      "milnor": 1,
+      "point_in_chart": [
+       "0",
+       "-1",
+       "0"
+      ],
+      "tjurina": 1
+     },
+     {
+      "chart": 1,
+      "hessian_corank_sympy": 0,
+      "label": "A1",
+      "lam": "3",
+      "milnor": 1,
+      "point_in_chart": [
+       "0",
+       "-1/4",
+       "-1"
+      ],
+      "tjurina": 1
+     },
+     {
+      "chart": 2,
+      "hessian_corank_sympy": 0,
+      "label": "A1",
+      "lam": "3",
+      "milnor": 1,
+      "point_in_chart": [
+       "-1/4",
+       "0",
+       "-1"
+      ],
+      "tjurina": 1
+     },
+     {
+      "chart": 3,
+      "hessian_corank_sympy": 0,
+      "label": "A1",
+      "lam": "3",
+      "milnor": 1,
+      "point_in_chart": [
+       "0",
+       "0",
+       "-1"
+      ],
+      "tjurina": 1
+     },
+     {
+      "chart": 4,
+      "hessian_corank_sympy": 1,
+      "label": "A4",
+      "lam": "3",
+      "milnor": 4,
+      "point_in_chart": [
+       "0",
+       "-1",
+       "0"
+      ],
+      "tjurina": 4
+     },
+     {
+      "chart": 5,
+      "hessian_corank_sympy": 0,
+      "label": "A1",
+      "lam": "3",
+      "milnor": 1,
+      "point_in_chart": [
+       "0",
+       "-1",
+       "0"
+      ],
+      "tjurina": 1
+     }
+    ],
+    "members_with_other_total_tjurina": {
+     "-1": 11,
+     "2": 11,
+     "27": 11
+    },
+    "point_count_disagreements_with_sympy": [],
+    "singular_version": "Singular for x86_64-Linux version 4.2.1 (4212, 64 bit) Dec 17 2021 20:20:53",
+    "verdict": "OK"
+   },
+   "torus": {
+    "clause": null,
+    "points": [
+     {
+      "clause": null,
+      "critical_value": "27",
+      "hessian_det": "3359232/625",
+      "hessian_rank": 3,
+      "morse": true,
+      "point": [
+       "1/4",
+       "5/4",
+       "5/3"
+      ],
+      "rational": true,
+      "z": "1/27"
+     }
+    ],
+    "verdict": "OK"
+   },
+   "value_zero": {
+    "empty": false,
+    "positive_dimensional": true
+   },
+   "verdict": "OK"
+  }
+ },
+ "not_claimed": [
+  "anything about the minimal resolution of any member: an A1 point is observed on a birational model; nothing is proved about the smooth K3 surface",
+  "that either model is the M_n-polarized model of Dolgachev 1996: the (2,2,2) closure carries one polarization class, and its singular points are not the (-2)-walls of M_n",
+  "anything at the toric boundary of models that are not (2,2,2) (s7_a): not examined",
+  "anything at z = infinity: the member P = 0 has non-isolated singular points in every model here; the order-3 statement of the lattice side is neither supported nor contradicted",
+  "that a change of signature detects a singular point of the operator: s7_b at lambda = 2 is a real counterexample (control R4)",
+  "completeness of leg K by itself: leg K examines a logged finite list of members.  Leg C (second CAS only) states which members have a total Tjurina number different from the generic one, by an argument that is standard but not machine-checked; a change of signature at constant total Tjurina number is not excluded by leg C",
+  "the names A_k, D_4 beyond (Hessian corank, Milnor number) matched against Arnold's list (standard, cited not proved); Milnor and Tjurina numbers come from the optional Singular leg",
+  "the reading of the s7 z = -1 and s10 z = -1/4 observations through root systems (brief section 5): the integer arithmetic is exact, the identification of those roots with classes on the surface is a hypothesis and is not checked here",
+  "anything certified about cooper_s10: its lattice certificate is DRAFT; all s10 output is ADVISORY",
+  "any Kodaira reading at any locus (CLAUDE.md ledger item 3): only singular points of surfaces are discussed",
+  "that rho = 20 or T3 is a criterion of the program: neither is adopted; nothing is scored or ranked",
+  "any physical reading whatsoever (VISION sec 1.3; Tier C blocked, F5b)"
+ ],
+ "order_checked": 10,
+ "provenance": "Generated-by: Claude (Fable 5.1), Stream 2 | Verified-by: checkers/test_nodality_explicit_models_controls.py; optional second CAS (Singular) | Reviewed-by: N",
+ "quick_mode": false,
+ "refs_crosscheck": {
+  "cooper_s10": {
+   "agree": true,
+   "clause": null,
+   "covers_n_up_to": 9,
+   "first_mismatch_index": null,
+   "refs_terms": 10
+  },
+  "cooper_s7": {
+   "agree": true,
+   "clause": null,
+   "covers_n_up_to": 9,
+   "first_mismatch_index": null,
+   "refs_terms": 10
+  }
+ },
+ "root_system_arithmetic_for_remark": {
+  "A2_number_of_roots": 6,
+  "D4_number_of_roots": 24,
+  "e_i_gram": [
+   [
+    -2,
+    0,
+    0
+   ],
+   [
+    0,
+    -2,
+    0
+   ],
+   [
+    0,
+    0,
+    -2
+   ]
+  ],
+  "index_of_A1^3_plus_that_root_in_D4": 2,
+  "roots_of_A2_orthogonal_to_a_root": [],
+  "roots_of_D4_orthogonal_to_all_e_i": [
+   [
+    -1,
+    -1,
+    -1,
+    -1
+   ],
+   [
+    1,
+    1,
+    1,
+    1
+   ]
+  ],
+  "sum_of_two_orthogonal_roots_has_norm": -4,
+  "their_pairing": 0,
+  "three_orthogonal_roots_e_i": [
+   [
+    1,
+    1,
+    0,
+    0
+   ],
+   [
+    1,
+    0,
+    1,
+    0
+   ],
+   [
+    1,
+    0,
+    0,
+    1
+   ]
+  ],
+  "two_orthogonal_roots_used": [
+   [
+    1,
+    1,
+    0,
+    0
+   ],
+   [
+    1,
+    0,
+    1,
+    0
+   ]
+  ]
+ },
+ "status": "RECORD_NOT_A_GATE",
+ "tier": "B",
+ "verdict": "PASS(10)",
+ "verdict_scope": "integrity gates only; the hand estimate is scored separately and is NOT part of the verdict"
+}
