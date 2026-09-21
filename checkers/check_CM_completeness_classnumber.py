@@ -4,7 +4,7 @@ check_CM_completeness_classnumber.py (A6) -- a completeness CONTROL for the P2 t
 (data/certificates/CM_POINTS_RHO20.json), by exact enumeration of Heegner forms.
 
 STATUS: RECORD, NOT A GATE.  Lattice / modular arithmetic, Tier B at best, no physical
-reading.  The rho = 20 cut is not adopted; T3 is not adopted; nothing is scored.
+reading.  The rho = 20 cut is adopted (T0 D7', 2026-09-21), read narrowly; T3 is not adopted; nothing is scored.
 cooper_s10 output is ADVISORY (lattice certificate DRAFT).  P2 claims no completeness;
 an INCOMPLETE row below is a finding about P2's window, not a failure of this checker
 and not a defect of P2.
@@ -460,7 +460,7 @@ def run(p2_path=P2, with_x2=True):
         "certificate": "CM_COMPLETENESS", "checker": "checkers/check_CM_completeness_classnumber.py",
         "date": "2026-09-21", "tier": "B", "checker_version": checker_version(),
         "status": "RECORD, NOT A GATE. A completeness CONTROL on the P2 table. P2 claims no completeness; "
-                  "INCOMPLETE rows are a finding about P2's window, not a failure. The rho = 20 cut is not adopted; "
+                  "INCOMPLETE rows are a finding about P2's window, not a failure. The rho = 20 cut was ADOPTED by T0 on 2026-09-21 (D7', briefs/T0_DECISIONS_2026_09_21_STREAM2.md), read narrowly: no ranking of candidates, no minimum-|D| rule, no physical reading; "
                   "nothing is scored. cooper_s10 is ADVISORY (lattice certificate DRAFT).",
         "normalisation": "F_v = [n x, -2 n z, -y]/div(v); disc F_v = 2 n v^2/div(v)^2 = D of the table; Heegner "
                          "condition n | A, gcd(A/n, B, C) = 1; asserted on every vector used",

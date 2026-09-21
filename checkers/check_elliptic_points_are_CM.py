@@ -4,7 +4,7 @@ check_elliptic_points_are_CM.py (A1) -- the singular loci of the s7 / s10 operat
 elliptic points of the modular curve, and an elliptic point is FORCED to be a CM point.
 
 STATUS: RECORD, NOT A GATE.  Lattice / modular arithmetic, Tier B at best, no physical
-reading.  The rho = 20 cut is not adopted; nothing is scored.  cooper_s10 output is
+reading.  The rho = 20 cut is adopted (T0 D7', 2026-09-21), read narrowly; nothing is scored.  cooper_s10 output is
 ADVISORY (its lattice certificate is DRAFT).
 
 THE ARGUMENT (elementary; the checker exhibits each ingredient exactly)
@@ -333,7 +333,7 @@ def run(p2_path=P2):
     return {
         "certificate": "ELLIPTIC_POINTS_ARE_CM", "checker": "checkers/check_elliptic_points_are_CM.py",
         "date": "2026-09-21", "tier": "B", "checker_version": checker_version(),
-        "status": "RECORD, NOT A GATE. The rho = 20 cut is not adopted (open T0 decision); T3 is not adopted; "
+        "status": "RECORD, NOT A GATE. The rho = 20 cut was ADOPTED by T0 on 2026-09-21 (D7', briefs/T0_DECISIONS_2026_09_21_STREAM2.md), read narrowly: no ranking of candidates, no minimum-|D| rule, no physical reading; T3 is not adopted; "
                   "nothing is scored. cooper_s10 is ADVISORY (lattice certificate DRAFT).",
         "forced_not_corroboration": FORCED,
         "input_consistency_checks_near_tautological": [

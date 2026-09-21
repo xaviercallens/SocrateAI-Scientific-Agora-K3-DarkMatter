@@ -4,8 +4,8 @@ check_nodality_explicit_models.py -- singular members of explicit Laurent-polyno
 of the cooper_s7 / cooper_s10 pencils, computed WITHOUT the lattice and WITHOUT the monodromy,
 and compared with the lattice-side statement of data/certificates/CM_POINTS_RHO20.json.
 
-STATUS: record, not a gate.  Tier B.  No physical reading of any kind.  The rho = 20 cut and
-T3 are NOT adopted.  cooper_s10 output is ADVISORY (its lattice certificate is DRAFT).
+STATUS: record, not a gate.  Tier B.  No physical reading of any kind.  T3 is NOT adopted; the
+rho = 20 cut is adopted (T0 D7', 2026-09-21), read narrowly.  cooper_s10 output is ADVISORY (its lattice certificate is DRAFT).
 No Kodaira reading is made anywhere (CLAUDE.md ledger item 3): the objects examined are
 SURFACES -- the members {P = lambda} of a pencil, z = 1/lambda -- and the word "node" below
 always means an isolated A1 singular point of such a surface (nondegenerate Hessian).
@@ -950,7 +950,7 @@ def brief_text(c):
       "pencils, against the lattice side (2026-09-21)")
     a("")
     a("**Status: RECORD, NOT A GATE.** Tier **B**. Nothing is scored or ranked; `K3_CRITERIA.md` is "
-      "unchanged; the rho = 20 cut and T3 are not adopted. All cooper_s10 output is **ADVISORY** "
+      "unchanged; T3 is not adopted; the rho = 20 cut is adopted (T0 D7', 2026-09-21) and read narrowly - no ranking, no minimum-|D| rule. All cooper_s10 output is **ADVISORY** "
       f"(flags {c['flags']['cooper_s10']}: its lattice certificate is DRAFT). This is algebraic geometry of "
       "explicit surfaces; it carries no physical reading. No Kodaira reading is made (ledger item 3): "
       "the singular objects below are points of **surfaces** (members of a pencil), named each time.")

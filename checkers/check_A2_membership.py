@@ -131,9 +131,10 @@ EXTERNAL_CITATIONS = {
 }
 
 NOT_CLAIMED = [
-    "that rho = 20 is a selection criterion of the program: the rho = 20 cut is NOT adopted; "
-    "adopting it is an open T0 decision, and nothing here scores, ranks or prefers a candidate "
-    "or a member of a family",
+    "that this certificate scores, ranks or prefers a candidate or a member of a family: the rho = 20 "
+    "cut was ADOPTED by T0 on 2026-09-21 (D7', briefs/T0_DECISIONS_2026_09_21_STREAM2.md) and is "
+    "read narrowly - the adoption carries no ranking of s7 over s10 and no minimum-|D| rule, so "
+    "'A2 is in the s7 family and not in the s10 family' stays a lattice fact, not a preference",
     "that agreement between the binary-form route and the modular route corroborates anything: "
     "LeanMaster docs/STREAM8_WHICH_K3.md sec G10 (read as source) states that the binary-form "
     "enumeration and the modular side are the same computation in two languages (Shioda-Inose), "
@@ -776,8 +777,8 @@ def main():
         "checker_version": commit_state()["label"],
         "checker_commit_state": commit_state(),
         "date": "2026-09-21",
-        "status": ("RECORD, NOT A GATE. The rho = 20 cut is not adopted by the program (open T0 "
-                   "decision). K3_CRITERIA.md unchanged. No scoring. cooper_s10 advisory "
+        "status": ("RECORD, NOT A GATE. The rho = 20 cut was ADOPTED by T0 on 2026-09-21 (D7', briefs/T0_DECISIONS_2026_09_21_STREAM2.md), read narrowly: no ranking of candidates, no minimum-|D| rule, no physical reading. "
+                   "K3_CRITERIA.md unchanged. No scoring. cooper_s10 advisory "
                    "(lattice certificate DRAFT)."),
         "claim": ("Tier B: T_7 = U+<14> contains a primitive v with v^perp isometric to A2, so -- "
                   "within the cited framework -- the M_7-polarized family (Dolgachev moduli "
@@ -902,8 +903,8 @@ def render_brief(c):
     w("# Stream 2 brief: A2 membership in the cooper_s7 / cooper_s10 M_n-polarized families "
       f"({c['date']})")
     w("")
-    w("**Status: RECORD, NOT A GATE.** The rho = 20 cut is not adopted by the program; adopting "
-      "it is an open T0 decision. `K3_CRITERIA.md` is unchanged, nothing is scored, no candidate "
+    w("**Status: RECORD, NOT A GATE.** The rho = 20 cut was ADOPTED by T0 on 2026-09-21 (D7', briefs/T0_DECISIONS_2026_09_21_STREAM2.md), read narrowly: no ranking of candidates, no minimum-|D| rule, no physical reading. "
+      "`K3_CRITERIA.md` is unchanged, nothing is scored, no candidate "
       "or family member is ranked or preferred. This is lattice / modular arithmetic, Tier B at "
       "best, with no physical reading.")
     w("")

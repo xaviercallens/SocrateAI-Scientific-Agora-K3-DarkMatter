@@ -799,7 +799,7 @@ NOT_CLAIMED = [
     "O(M_n) -> O(q), which is model-knowledge (Nikulin 1979, Thm 1.14.2), unfetched, not pinned",
     "that the moduli space of the cooper_s10 family IS X_0(10)*: the Deep Think question stays open",
     "any Kodaira fibre type at any locus (CLAUDE.md ledger item 3)",
-    "any statement about the rho = 20 cut (not adopted) or any ranking of candidates",
+    "any statement about the rho = 20 cut (adopted by T0 on 2026-09-21, D7', read narrowly) or any ranking of candidates",
     "any physical reading whatsoever (VISION sec 1.3; Tier C blocked, F5b)",
 ]
 
@@ -954,7 +954,7 @@ def render_brief(controls_line="(controls not run in this invocation)"):
     add("# Stream 2 brief: Atkin-Lehner group versus the discriminant form of T_n = U + <2n> (2026-09-21)")
     add("")
     add("**Status: RECORD, proposal stage.** Gate T3 is not adopted; `check_T3_level_consistency.py` is not "
-        "edited; the rho = 20 cut is not adopted; nothing is scored or ranked. Every cooper_s10 statement is "
+        "edited; the rho = 20 cut is adopted (T0 D7', 2026-09-21) and read narrowly; nothing is scored or ranked. Every cooper_s10 statement is "
         "**ADVISORY** (flag `LATTICE_CERT_DRAFT`: `C2_cooper_s10_v4_DRAFT.json` is DRAFT by T0 ruling). "
         "This is lattice and modular arithmetic, Tier B at best, with no physical reading of any kind.")
     add("")

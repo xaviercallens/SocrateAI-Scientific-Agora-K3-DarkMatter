@@ -27,7 +27,7 @@ def hand(cert):
 
 w("# Stream 2 brief: A1 / A4 / A6 -- three small checkers on the CM-point table and the order-2 partners (2026-09-21)")
 w("")
-w("**Status: RECORD, NOT A GATE.** The rho = 20 cut is not adopted, T3 is not adopted, `K3_CRITERIA.md` is unchanged, "
+w("**Status: RECORD, NOT A GATE.** The rho = 20 cut is adopted (T0 D7', 2026-09-21; read narrowly: no ranking, no minimum-|D| rule), T3 is not adopted, `K3_CRITERIA.md` is unchanged, "
   "nothing is scored or ranked. Lattice, modular and power-series arithmetic only; Tier B at best; no physical reading. "
   "Every cooper_s10 statement is **ADVISORY** (lattice certificate `C2_cooper_s10_v4_DRAFT.json` is DRAFT by T0 ruling).")
 w("")
