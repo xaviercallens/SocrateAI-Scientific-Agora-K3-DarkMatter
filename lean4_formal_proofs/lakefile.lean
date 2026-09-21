@@ -2,7 +2,9 @@ import Lake
 open Lake DSL
 
 package "socrate-ai" {
-  -- add package configuration options here
+  -- LEAN_TOOLCHAIN_ALIGNMENT (2026-09-21, T0): lean v4.34.0 / mathlib v4.34.0.
+  -- Packages are shared with the root project on the second disk (no second 8 GB Mathlib).
+  packagesDir := "/mnt/disks/disk-socrateai-local-1/stream2-lean/leanmaster-v4.34.0-trial/.lake/packages"
 }
 
 lean_lib Structures {
@@ -19,7 +21,7 @@ lean_lib neuro_symbolic {
 }
 
 require mathlib from git
-  "https://github.com/leanprover-community/mathlib4.git"
+  "https://github.com/leanprover-community/mathlib4.git" @ "v4.34.0"
 
 -- `quantumInfo`/`slt` deliberately NOT required here (reverted 2026-07-11):
 -- they were added uncommitted for an unrelated, unfinished, `sorry`-containing
