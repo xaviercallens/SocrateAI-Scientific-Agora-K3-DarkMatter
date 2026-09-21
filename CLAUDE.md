@@ -74,6 +74,19 @@ contradicts it, the document carries (or needs) a dated correction note.
    Do not conflate any of the three. Resumed work on (b)/DarkMatterK3@Home stays on its own
    branch(es), not `main`, labeled `sandbox/`, until a future T0 ruling reconciles or retires it.
 
+8. **The ρ = 20 cut is ADOPTED — and read narrowly (T0 decision D7′, 2026-09-21,**
+   `briefs/T0_DECISIONS_2026_09_21_STREAM2.md`; Stream 3 ruling R1 of the same day). The program
+   adopts ρ = 20 as a selection criterion: inside a register family, the candidates are the members
+   whose transcendental lattice is rank 2 and positive definite — the CM points of the modular
+   curve (`CM_POINTS_RHO20.json`, `A2_MEMBERSHIP.json`, Tier B). **The ruling adopts nothing else.**
+   No ranking of cooper_s7 over cooper_s10 and **no minimum-|D| rule** ("A₂ ∈ s7 family, A₂ ∉ s10
+   family" is a lattice fact, not a preference); cooper_s10 stays ADVISORY (D6′ untouched); the
+   agreement between the binary-form side and the modular side is **forced** (elliptic ⇒ CM,
+   Shioda–Inose) and is never to be presented as corroboration; CM points are dense on the curve,
+   so the cut gives a finite list only per discriminant; no CM point maps to any observable (rule 4
+   stands); `K3_CRITERIA.md` is not edited by this ruling (§6 amendment protocol), and gate T3 is
+   still not adopted. Widening any of these needs its own T0 text.
+
 ## Escalation
 Anything touching a pinned document, a frozen criterion, or this ledger is T0-owned
 (Xavier): write a brief in `briefs/` and flag it instead of improvising.

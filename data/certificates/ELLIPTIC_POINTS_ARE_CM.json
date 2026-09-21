@@ -4,10 +4,10 @@
  "date": "2026-09-21",
  "tier": "B",
  "checker_version": {
-  "git_describe_HEAD": "v0.3.8-cm-points-rho20-2-gb636f08",
-  "checker_sha256": "f845764a3c229420240ad70b2fad93ee1e875efadcf6673080a6fdc58bf62a7b"
+  "git_describe_HEAD": "v0.3.9-thought-experiments-tested-1-gb344c73",
+  "checker_sha256": "186dab5adc55ccdd106722dc6cdb684dbafa8534bab2764a02b78299bd8b4c9d"
  },
- "status": "RECORD, NOT A GATE. The rho = 20 cut is not adopted (open T0 decision); T3 is not adopted; nothing is scored. cooper_s10 is ADVISORY (lattice certificate DRAFT).",
+ "status": "RECORD, NOT A GATE. The rho = 20 cut was ADOPTED by T0 on 2026-09-21 (D7', briefs/T0_DECISIONS_2026_09_21_STREAM2.md), read narrowly: no ranking of candidates, no minimum-|D| rule, no physical reading; T3 is not adopted; nothing is scored. cooper_s10 is ADVISORY (lattice certificate DRAFT).",
  "forced_not_corroboration": "The agreement between 'singular locus of L3' and 'rho = 20 (CM) point' is FORCED, not corroboration: a point fixed by a non-scalar integer matrix satisfies an integer quadratic, so every elliptic point of X_0(n)+ / X_0(n)* is a CM point. It adds no independent support to either statement.",
  "input_consistency_checks_near_tautological": [
   "the stabilizer's fixed-point quadratic is proportional to the lattice vector's quadratic: the stabilizer is built from the tau of the P2 record and that tau is computed from v, so this can fire only on an internally inconsistent P2 record (tau field versus v field); it guards the input and is no evidence"
@@ -23,7 +23,7 @@
  ],
  "inputs": {
   "sha256": {
-   "data/certificates/CM_POINTS_RHO20.json": "328add3fb9864bc09ab20d050c73d36c7fb71d514eab138a8a8fc1feff4e625d",
+   "data/certificates/CM_POINTS_RHO20.json": "1ef6d622af22a6488316fad01503ed4381c1d742861f178b3d3ea9d76c220755",
    "data/certificates/L3_RIEMANN_SCHEME.json": "b15dc064214b55685c892ac6de7fd751b72945b97defad9f151cf8c8007bf151"
   }
  },

@@ -4,7 +4,7 @@
  "date": "2026-09-21",
  "tier": "B",
  "checker_version": {
-  "git_describe_HEAD": "v0.3.8-cm-points-rho20-2-gb636f08",
+  "git_describe_HEAD": "v0.3.9-thought-experiments-tested-1-gb344c73",
   "checker_sha256": "5be1cb6a09516dc2c2029de569776e0d8899fcdc9091488d08c13216b4198d4e"
  },
  "status": "RECORD OF AN ATTRIBUTE, NOT A GATE. Whether criterion C3 requires integrality of the order-2 partner is an open T0 question; it is not answered here. Nothing is scored.",

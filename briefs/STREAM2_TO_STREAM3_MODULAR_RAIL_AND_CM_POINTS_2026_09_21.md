@@ -1,5 +1,7 @@
 # Stream 2 → Stream 3 — the "modular rail" text (transmitted with review), and what is now computed on that curve
 
+> **Correction note, 2026-09-21 (T0 decision D7′, `briefs/T0_DECISIONS_2026_09_21_STREAM2.md`).** This brief was written before the ruling and says the ρ = 20 cut is "NOT adopted". **It is now adopted, read narrowly**: no ranking of candidates, no minimum-|D| rule, s10 still ADVISORY, no physical reading. The text below is kept as written; the certificate it describes was re-emitted with the new status wording and **no computed value changed**.
+
 **Date:** 2026-09-21 · **From:** Stream 2 · **To:** Stream 3, T0 · **At T0's request** (Xavier
 asked that Stream 3 be informed of the text in §1).
 **Status:** information + review. No gate moved, no pinned document touched, nothing scored.

@@ -1,8 +1,8 @@
 # Stream 2 brief: singular members of explicit models of the cooper_s7 / cooper_s10 pencils, against the lattice side (2026-09-21)
 
-**Status: RECORD, NOT A GATE.** Tier **B**. Nothing is scored or ranked; `K3_CRITERIA.md` is unchanged; the rho = 20 cut and T3 are not adopted. All cooper_s10 output is **ADVISORY** (flags ['LATTICE_CERT_DRAFT']: its lattice certificate is DRAFT). This is algebraic geometry of explicit surfaces; it carries no physical reading. No Kodaira reading is made (ledger item 3): the singular objects below are points of **surfaces** (members of a pencil), named each time.
+**Status: RECORD, NOT A GATE.** Tier **B**. Nothing is scored or ranked; `K3_CRITERIA.md` is unchanged; T3 is not adopted; the rho = 20 cut is adopted (T0 D7', 2026-09-21) and read narrowly - no ranking, no minimum-|D| rule. All cooper_s10 output is **ADVISORY** (flags ['LATTICE_CERT_DRAFT']: its lattice certificate is DRAFT). This is algebraic geometry of explicit surfaces; it carries no physical reading. No Kodaira reading is made (ledger item 3): the singular objects below are points of **surfaces** (members of a pencil), named each time.
 
-Rendered from `data/certificates/NODALITY_EXPLICIT_MODELS.json` by `python3 checkers/check_nodality_explicit_models.py --brief`; code identity `v0.3.7-c1-mirror-integrality-14-gb636f08`; certificate verdict **PASS(10)** (integrity gates only: 8/8 hold). The hand estimate is scored in section 6 and is not part of that verdict.
+Rendered from `data/certificates/NODALITY_EXPLICIT_MODELS.json` by `python3 checkers/check_nodality_explicit_models.py --brief`; code identity `v0.3.7-c1-mirror-integrality-19-g40456e6-dirty`; certificate verdict **PASS(10)** (integrity gates only: 8/8 hold). The hand estimate is scored in section 6 and is not part of that verdict.
 
 ## 1. Question
 
@@ -128,7 +128,7 @@ Clauses with no control, stated: `solution_does_not_satisfy_equations` and `sing
 - the reading of the s7 z = -1 and s10 z = -1/4 observations through root systems (brief section 5): the integer arithmetic is exact, the identification of those roots with classes on the surface is a hypothesis and is not checked here
 - anything certified about cooper_s10: its lattice certificate is DRAFT; all s10 output is ADVISORY
 - any Kodaira reading at any locus (CLAUDE.md ledger item 3): only singular points of surfaces are discussed
-- that rho = 20 or T3 is a criterion of the program: neither is adopted; nothing is scored or ranked
+- that this certificate scores or ranks anything: T3 is not adopted; the rho = 20 cut was ADOPTED by T0 on 2026-09-21 (D7', briefs/T0_DECISIONS_2026_09_21_STREAM2.md) and is read narrowly - no ranking of candidates, no minimum-|D| rule
 - any physical reading whatsoever (VISION sec 1.3; Tier C blocked, F5b)
 
 Tier statement: leg CT, leg T, leg Z, leg K are exact (integers, sympy over Q and Q(i); zero tests are structural or by minimal polynomial, no numeric recognition anywhere); they are Tier B because CT is a finite order, leg K is a finite list (leg C's completeness rests on an argument that is not machine-checked), and the link from a model's singular points to the lattice side is the cited framework, not a computation. Singular-point names rest on the optional second CAS plus Arnold's list (standard, cited not proved).
