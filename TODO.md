@@ -131,14 +131,15 @@
       UNVERIFIED` mathematics). Proposal's "independent computations" corrected to "two
       disjoint computations on the same operator". Record + asks:
       `briefs/STREAM2_T3_LEVEL_CONSISTENCY_2026_09_21.md`. T3 still NOT adopted.
-- [ ] **T0: the ρ = 20 fork** (raised by Stream 3's route audit 2026-09-21 §4.2; NOT adopted).
-      Content of the cut now computed (2026-09-21, Tier B, producer ≠ verifier):
-      `CM_POINTS_RHO20.json`, `A2_MEMBERSHIP.json`. All three singular points of the s7
-      operator are ρ = 20 points (D = −28, −7, −3); A₂ is in the s7 family (z = ∞) and not in
-      s10 (all-vector congruence; s10 advisory). Records: `briefs/STREAM2_CM_POINTS_RHO20_…`,
-      `…_A2_MEMBERSHIP_…`, `briefs/STREAM2_TO_STREAM3_MODULAR_RAIL_AND_CM_POINTS_2026_09_21.md`
-      (also transmits + reviews Deep Think's "rail modulaire" text: "evolves along the curve"
-      is Tier C, not adopted). No ranking follows; a minimum-|D| rule has no warrant.
+- [x] **T0: the ρ = 20 fork — RULED 2026-09-21 (D7′): ADOPTED, read narrowly.** Record:
+      `briefs/T0_DECISIONS_2026_09_21_STREAM2.md`; ledger item 8 in `CLAUDE.md`. Adopted: ρ = 20 as a
+      selection criterion. NOT adopted (each needs its own T0 text): ranking s7 over s10, any
+      minimum-|D| rule, promotion of s10 (still ADVISORY), any physical reading, any edit of
+      `K3_CRITERIA.md`, gate T3. Certificates re-emitted with the new status wording; no computed
+      value changed. Content of the cut: `CM_POINTS_RHO20.json`, `A2_MEMBERSHIP.json`.
+- [ ] **T0: how does the adopted cut enter `K3_CRITERIA.md`?** (§6 amendment protocol.) Bears on the
+      same freeze as Stream 3's open D-2 (C3: integral in which coordinate?) and D-3 (register).
+      Note: this repo has NO root `K3_CRITERIA.md`; Stream 1's and Stream 3's copies differ in 6 hunks.
 - [ ] **T0: flux bound on D — decision request** `briefs/T0_DECISION_REQUEST_FLUX_BOUND_ON_D_2026_09_21.md`
       (5 sources fetched, pinned, read; NOTHING executed; S3-00b stays BLOCKED). Brief's own
       recommendation: Q1 "is K3×P¹ a specified B₃?" **no**; Q2 **option A (park)**.

@@ -1,5 +1,7 @@
 # Expériences de pensée — « quel K3 ? » vu depuis la courbe modulaire : registre et évaluation (2026-09-21)
 
+> **Correction note, 2026-09-21 (T0 decision D7′, `briefs/T0_DECISIONS_2026_09_21_STREAM2.md`).** This brief was written before the ruling and says the ρ = 20 cut is "NOT adopted". **It is now adopted, read narrowly**: no ranking of candidates, no minimum-|D| rule, s10 still ADVISORY, no physical reading. The text below is kept as written; the certificate it describes was re-emitted with the new status wording and **no computed value changed**.
+
 **Origine.** Demande T0 (Xavier) : consigner les expériences de pensée « à la manière d'Einstein » —
 une image simple, poussée jusqu'au bout, qui permet de dialoguer, de raisonner par analogie, et
 surtout de savoir **quoi calculer ensuite**. Même format que le registre de Stream 1

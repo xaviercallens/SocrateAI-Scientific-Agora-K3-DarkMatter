@@ -137,8 +137,9 @@ EXTERNAL_CITATIONS = {
 }
 
 NOT_CLAIMED = [
-    "that rho = 20 is a selection criterion of the program: the rho = 20 cut is NOT adopted; "
-    "adopting it is an open T0 decision, and nothing here scores or ranks a candidate",
+    "that this table scores or ranks a candidate: the rho = 20 cut was ADOPTED by T0 on 2026-09-21 "
+    "(D7', briefs/T0_DECISIONS_2026_09_21_STREAM2.md) and is read narrowly - no ranking of "
+    "candidates, no minimum-|D| rule",
     "that any member of either family is singled out or preferred: this is a table of "
     "lattice/modular arithmetic",
     "that the table is complete at any discriminant: the enumeration window is logged and "
@@ -827,8 +828,8 @@ def main():
         "checker": "checkers/check_CM_points_rho20.py",
         "checker_version": git_head(),
         "date": "2026-09-21",
-        "status": ("RECORD, NOT A GATE. The rho = 20 cut is not adopted by the program (open T0 "
-                   "decision). K3_CRITERIA.md unchanged. No scoring. cooper_s10 rows advisory."),
+        "status": ("RECORD, NOT A GATE. The rho = 20 cut was ADOPTED by T0 on 2026-09-21 (D7', briefs/T0_DECISIONS_2026_09_21_STREAM2.md), read narrowly: no ranking of candidates, no minimum-|D| rule, no physical reading. "
+                   "K3_CRITERIA.md unchanged. No scoring. cooper_s10 rows advisory."),
         "claim": ("For each primitive v of negative norm in a logged window of T_n = U+<2n>: the "
                   "exact tau with B(v, omega(tau)) = 0, the exact rank-2 lattice v^perp with its "
                   "reduced form and discriminant, and a numeric recognition of z(tau)."),

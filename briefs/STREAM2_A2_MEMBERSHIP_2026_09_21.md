@@ -1,8 +1,8 @@
 # Stream 2 brief: A2 membership in the cooper_s7 / cooper_s10 M_n-polarized families (2026-09-21)
 
-**Status: RECORD, NOT A GATE.** The rho = 20 cut is not adopted by the program; adopting it is an open T0 decision. `K3_CRITERIA.md` is unchanged, nothing is scored, no candidate or family member is ranked or preferred. This is lattice / modular arithmetic, Tier B at best, with no physical reading.
+**Status: RECORD, NOT A GATE.** The rho = 20 cut was ADOPTED by T0 on 2026-09-21 (D7', briefs/T0_DECISIONS_2026_09_21_STREAM2.md), read narrowly: no ranking of candidates, no minimum-|D| rule, no physical reading. `K3_CRITERIA.md` is unchanged, nothing is scored, no candidate or family member is ranked or preferred. This is lattice / modular arithmetic, Tier B at best, with no physical reading.
 
-This file is rendered from `data/certificates/A2_MEMBERSHIP.json` by `python3 checkers/check_A2_membership.py --brief` (function `render_brief`); numbers are looked up in the certificate, not typed. Code identity: f091e43. The checker imports `checkers/check_CM_points_rho20.py` and does not duplicate it; the sha256 of every code and data file used is in the certificate under `inputs.sha256` (16 files).
+This file is rendered from `data/certificates/A2_MEMBERSHIP.json` by `python3 checkers/check_A2_membership.py --brief` (function `render_brief`); numbers are looked up in the certificate, not typed. Code identity: b344c73. The checker imports `checkers/check_CM_points_rho20.py` and does not duplicate it; the sha256 of every code and data file used is in the certificate under `inputs.sha256` (16 files).
 
 ## Question
 
@@ -109,7 +109,7 @@ R1 real known-negative A2 at n = 10 (`D_not_square_mod_4n`); R2 (1,0,1) at n = 7
 
 ## Not claimed
 
-- that rho = 20 is a selection criterion of the program: the rho = 20 cut is NOT adopted; adopting it is an open T0 decision, and nothing here scores, ranks or prefers a candidate or a member of a family
+- that this certificate scores, ranks or prefers a candidate or a member of a family: the rho = 20 cut was ADOPTED by T0 on 2026-09-21 (D7', briefs/T0_DECISIONS_2026_09_21_STREAM2.md) and is read narrowly - the adoption carries no ranking of s7 over s10 and no minimum-|D| rule, so 'A2 is in the s7 family and not in the s10 family' stays a lattice fact, not a preference
 - that agreement between the binary-form route and the modular route corroborates anything: LeanMaster docs/STREAM8_WHICH_K3.md sec G10 (read as source) states that the binary-form enumeration and the modular side are the same computation in two languages (Shioda-Inose), so their agreement is forced, not corroboration. The Heegner congruence and the lattice enumeration of this checker agree for the same reason
 - that the step from 'v in T_n, v.omega = 0' to 'a member of the family has rho = 20 and T_X = v^perp' is proved here: it is the cited framework (Dolgachev 1996 sec 7, read and pinned; Lefschetz (1,1), standard, not among the pinned statements). Tier B. The checker computes the lattice side only
 - that the explicit Almkvist-van Straten geometric family has a smooth fibre at the point found: for n = 7 the A2 point is z = infinity, which is a regular singular point of L3 (exponent denominators 3 in L3_RIEMANN_SCHEME.json) and an order-3 elliptic point of Gamma_0(7) (one of two, tau = (+-5 + i sqrt 3)/14, which the Fricke involution swaps, so THE order-3 point of X_0(7)+). What is established is a point of the period domain, not a fibre of a specific projective model

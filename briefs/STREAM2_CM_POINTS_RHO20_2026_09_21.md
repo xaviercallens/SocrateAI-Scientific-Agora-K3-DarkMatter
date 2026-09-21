@@ -1,5 +1,7 @@
 # Stream 2 — CM points (ρ = 20 locus) of the cooper_s7 and cooper_s10 families
 
+> **Correction note, 2026-09-21 (T0 decision D7′, `briefs/T0_DECISIONS_2026_09_21_STREAM2.md`).** This brief was written before the ruling and says the ρ = 20 cut is "NOT adopted". **It is now adopted, read narrowly**: no ranking of candidates, no minimum-|D| rule, s10 still ADVISORY, no physical reading. The text below is kept as written; the certificate it describes was re-emitted with the new status wording and **no computed value changed**.
+
 Date: 2026-09-21 · Branch: `stream2/cm-points-rho20-2026-09-21` · Tier: **B at best** · Status: record, not a gate.
 
 Every number below is copied by script from `data/certificates/CM_POINTS_RHO20.json`

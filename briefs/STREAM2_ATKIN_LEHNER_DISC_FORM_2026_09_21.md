@@ -1,8 +1,8 @@
 # Stream 2 brief: Atkin-Lehner group versus the discriminant form of T_n = U + <2n> (2026-09-21)
 
-**Status: RECORD, proposal stage.** Gate T3 is not adopted; `check_T3_level_consistency.py` is not edited; the rho = 20 cut is not adopted; nothing is scored or ranked. Every cooper_s10 statement is **ADVISORY** (flag `LATTICE_CERT_DRAFT`: `C2_cooper_s10_v4_DRAFT.json` is DRAFT by T0 ruling). This is lattice and modular arithmetic, Tier B at best, with no physical reading of any kind.
+**Status: RECORD, proposal stage.** Gate T3 is not adopted; `check_T3_level_consistency.py` is not edited; the rho = 20 cut is adopted (T0 D7', 2026-09-21) and read narrowly; nothing is scored or ranked. Every cooper_s10 statement is **ADVISORY** (flag `LATTICE_CERT_DRAFT`: `C2_cooper_s10_v4_DRAFT.json` is DRAFT by T0 ruling). This is lattice and modular arithmetic, Tier B at best, with no physical reading of any kind.
 
-Rendered from `data/certificates/ATKIN_LEHNER_DISC_FORM.json` by `python3 checkers/check_atkin_lehner_vs_disc_form.py --emit --brief`; numbers are looked up in the certificate, not typed. Code identity: da84a90 (HEAD at emit; this checker is uncommitted and is identified by its self-hash in `inputs.sha256`). Verdict: `AL_ACTION_ON_DISC_FORM_EXPLICIT - PASS(30) over n for legs O and W; PASS(40) inherited for every z-locus identification`.
+Rendered from `data/certificates/ATKIN_LEHNER_DISC_FORM.json` by `python3 checkers/check_atkin_lehner_vs_disc_form.py --emit --brief`; numbers are looked up in the certificate, not typed. Code identity: 40456e6 (HEAD at emit; this checker is uncommitted and is identified by its self-hash in `inputs.sha256`). Verdict: `AL_ACTION_ON_DISC_FORM_EXPLICIT - PASS(30) over n for legs O and W; PASS(40) inherited for every z-locus identification`.
 
 **Orders of the finite checks.** Legs O and W: PASS(30) - finite sweep over n = 1..30; the rule m = -1 mod 2Q, +1 mod 2n/Q itself is symbolic in n (stage 0). Leg F: PASS(40) inherited - z is identified through the relation 1/z = alpha t + beta + gamma/t, fitted upstream to q-order 40 (check_CM_points_rho20); t and 1/z are Tier B numeric at 60 and 120 digits.
 
@@ -131,7 +131,7 @@ NARROW the flag ATKIN_LEHNER_ACTION_UNVERIFIED: the lattice-level action is now 
 - that the isometries phi_g extend to the K3 lattice with a prescribed action on the Neron-Severi side: for multipliers other than +-1 that needs surjectivity of O(M_n) -> O(q), which is model-knowledge (Nikulin 1979, Thm 1.14.2), unfetched, not pinned
 - that the moduli space of the cooper_s10 family IS X_0(10)*: the Deep Think question stays open
 - any Kodaira fibre type at any locus (CLAUDE.md ledger item 3)
-- any statement about the rho = 20 cut (not adopted) or any ranking of candidates
+- any statement about the rho = 20 cut (adopted by T0 on 2026-09-21, D7', read narrowly) or any ranking of candidates
 - any physical reading whatsoever (VISION sec 1.3; Tier C blocked, F5b)
 
 ## 9. Thought experiment (an analogy for discussion; it carries no claim)
