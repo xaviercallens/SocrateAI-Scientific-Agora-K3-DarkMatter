@@ -760,7 +760,9 @@ NOT_CLAIMED = [
     "anything certified about cooper_s10: its lattice certificate is DRAFT; all s10 output is ADVISORY",
     "any Kodaira reading at any locus (CLAUDE.md ledger item 3): only singular points of "
     "surfaces are discussed",
-    "that rho = 20 or T3 is a criterion of the program: neither is adopted; nothing is scored or ranked",
+    "that this certificate scores or ranks anything: T3 is not adopted; the rho = 20 cut was ADOPTED by T0 on "
+    "2026-09-21 (D7', briefs/T0_DECISIONS_2026_09_21_STREAM2.md) and is read narrowly - no ranking of "
+    "candidates, no minimum-|D| rule",
     "any physical reading whatsoever (VISION sec 1.3; Tier C blocked, F5b)",
 ]
 
