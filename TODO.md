@@ -1,6 +1,6 @@
 # ✅ TODO — restart here
 
-**Last updated:** 2026-09-16 (s10 lattice cert kept DRAFT by T0; orientation block below dates from 2026-07-26) · **Release:** `v0.3.7-c1-mirror-integrality` · **Previous TODO:** commit history
+**Last updated:** 2026-09-21 (s10 lattice cert kept DRAFT by T0; orientation block below dates from 2026-07-26) · **Release:** `v0.3.7-c1-mirror-integrality` · **Previous TODO:** commit history
 
 > ## 30-second orientation
 >
@@ -131,6 +131,20 @@
       UNVERIFIED` mathematics). Proposal's "independent computations" corrected to "two
       disjoint computations on the same operator". Record + asks:
       `briefs/STREAM2_T3_LEVEL_CONSISTENCY_2026_09_21.md`. T3 still NOT adopted.
+- [ ] **T0: the ρ = 20 fork** (raised by Stream 3's route audit 2026-09-21 §4.2; NOT adopted).
+      Content of the cut now computed (2026-09-21, Tier B, producer ≠ verifier):
+      `CM_POINTS_RHO20.json`, `A2_MEMBERSHIP.json`. All three singular points of the s7
+      operator are ρ = 20 points (D = −28, −7, −3); A₂ is in the s7 family (z = ∞) and not in
+      s10 (all-vector congruence; s10 advisory). Records: `briefs/STREAM2_CM_POINTS_RHO20_…`,
+      `…_A2_MEMBERSHIP_…`, `briefs/STREAM2_TO_STREAM3_MODULAR_RAIL_AND_CM_POINTS_2026_09_21.md`
+      (also transmits + reviews Deep Think's "rail modulaire" text: "evolves along the curve"
+      is Tier C, not adopted). No ranking follows; a minimum-|D| rule has no warrant.
+- [ ] **T0: does C3 require an INTEGRAL partner?** s10's is dyadic. Branch (i) holds for both
+      primaries: `briefs/STREAM2_TO_STREAM3_C3_BRANCH_REPLY_2026_09_21.md`.
+- [ ] **Defect, mechanical:** `check_C3b_symsqrt.py` `mum2` tests C(n) == −(n+1)² literally, so
+      its Apéry-ζ(3) golden control fires on a normalisation artifact (C = −4(n+1)²), not on a
+      real non-MUM operator. s7/s10 verdicts unaffected. Normalise before the test; fix the
+      golden test's docstring.
 - [ ] **T0: candidate register** — S1 `K3_CRITERIA.md` still lists t103 as dropped, although
       E-014 found no veto (S1 `briefs/T0_FLAG_K3_CRITERIA_T103_STALE_2026_08_01.md`, unanswered).
 
@@ -186,6 +200,10 @@ python3 checkers/check_C1_mirror_integrality.py --order 30 # all order-3 refs en
 python3 checkers/check_s10_hauptmodul_gamma010star.py   # s10 z(q) Hauptmodul for Gamma_0(10)*; controls N1-N4
 python3 checkers/check_T3_level_consistency.py          # T3 two-leg agreement on n; s7 AGREE(7), s10 AGREE(10)+flags
 python3 checkers/test_T3_level_consistency_controls.py  # 25 controls (4 REAL order-3 known-bads; Mobius-clause R4; conflation S1a/S1b)
+python3 checkers/test_CM_points_rho20_controls.py        # 46 controls: CM/rho=20 point map (s7 loci = CM points D -28,-7,-3)
+python3 checkers/check_A2_membership.py                  # A2 in s7 family (z=inf), NOT in s10 (all-v congruence); ~30 s
+python3 checkers/test_A2_membership_controls.py          # 35 controls
+# slow (~2.5 min), run before release: python3 checkers/check_CM_points_rho20.py
 ```
 
 ## The Tier A result, for the record
