@@ -4,7 +4,7 @@
  "date": "2026-09-21",
  "tier": "B",
  "checker_version": {
-  "git_describe_HEAD": "v0.3.9-thought-experiments-tested-1-gb344c73",
+  "git_describe_HEAD": "v0.3.9-thought-experiments-tested-17-gbfe4907",
   "checker_sha256": "4dba92014ae8d95a6a25560642abc4a27486a04765829061fe12435eda2ae9fc"
  },
  "status": "RECORD, NOT A GATE. A completeness CONTROL on the P2 table. P2 claims no completeness; INCOMPLETE rows are a finding about P2's window, not a failure. The rho = 20 cut was ADOPTED by T0 on 2026-09-21 (D7', briefs/T0_DECISIONS_2026_09_21_STREAM2.md), read narrowly: no ranking of candidates, no minimum-|D| rule, no physical reading; nothing is scored. cooper_s10 is ADVISORY (lattice certificate DRAFT).",
