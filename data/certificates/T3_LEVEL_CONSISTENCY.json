@@ -1,0 +1,204 @@
+{
+  "certificate": "T3_LEVEL_CONSISTENCY",
+  "checker": "check_T3_level_consistency.py",
+  "checker_version": "1.0.0",
+  "date": "2026-09-21",
+  "status": "PROPOSAL STAGE -- T3 is not an adopted gate. Adoption is T0 decision 2 of briefs/STREAM2_K3xT2_SELECTION_CRITERIA_PROPOSAL_2026_09_16.md sec 6, open. K3_CRITERIA.md unchanged. No scoring.",
+  "claim": "For each candidate below, the n re-derived from its C2 lattice certificate (Gram determinant and the serialized U-splitting witness, both recomputed) equals the level at which its inverse mirror map is verified to uniformize by an exact q-series fit against the level-n eta-quotient coordinate.",
+  "not_claimed": [
+    "that the two legs are INDEPENDENT measurements -- they are two disjoint computational routes from the same operator/recurrence (see checker docstring)",
+    "that T(cooper_s10) is certified: C2_cooper_s10_v4_DRAFT.json is DRAFT (T0 D6', 2026-09-16), so the s10 row is advisory",
+    "that the Atkin-Lehner action of Gamma_0(10)* agrees with the isometries of the discriminant form of U+<20>: only the COUNTS match (4 = 4, spike_disc_form_vs_atkin_lehner.py). Referred to Deep Think, unanswered",
+    "that the family's moduli space IS X_0(n)* / X_0(n)+",
+    "any physical reading: no vacuum selection, no flux, no dark-sector claim (VISION sec 1.3; Tier C blocked, F5b)"
+  ],
+  "discriminating_power": {
+    "real_known_bads_that_fail_leg_M": "apery_zeta3, domb, almkvist_zagier_second, avs_sporadic3_s18 (all real refs order-3 entries with integral mirror maps) each fail the deg-2 fit at level 7 AND at level 10; cooper_s7 fails at level 10 and cooper_s10 at level 7. See test_T3_level_consistency_controls.py.",
+    "mobius_clause_control": "the Mobius clause (which separates a Hauptmodul for Gamma_0(n)+/* from one for Gamma_0(n)) has its own real known-bad: the level-7 coordinate fed to itself is a Gamma_0(7) Hauptmodul and fails leg M on exactly that clause, not on deg-2 solvability (control R4).",
+    "untested": "no real candidate exists that has BOTH legs and disagrees -- only cooper_s7 and cooper_s10 have a lattice certificate at all, and both agree. The gate's power against a real disagreeing candidate is UNESTABLISHED; synthetic tamper controls only for leg L. The teeth are also DIRECTIONAL: leg M is only ever run at n_L, so nothing tests a correct lattice paired with some other modular level."
+  },
+  "imported_tier_A_external": {
+    "repo": "SocrateAI-DualScaleTopologicalUniverseModel-LeanProposal",
+    "commit": "e801d6e",
+    "files": [
+      "Agora/Geometry/MnLattice.lean",
+      "Agora/Geometry/SymSquareForms.lean"
+    ],
+    "theorems_used": [
+      "TN_det",
+      "TN_diagonalises",
+      "no_isometry_G0N_TN"
+    ],
+    "caveat": "read as source text; no Lean build was run from this repo",
+    "derived_here_not_by_stream_1": "U+<14> and U+<20> are not isometric (TN_det plus invariance of the Gram determinant; -14 != -20)"
+  },
+  "tier": "B",
+  "results": {
+    "cooper_s7": {
+      "candidate": "cooper_s7",
+      "leg_L_lattice": {
+        "gram": [
+          [
+            0,
+            0,
+            -1
+          ],
+          [
+            0,
+            14,
+            0
+          ],
+          [
+            -1,
+            0,
+            0
+          ]
+        ],
+        "det_recomputed": -14,
+        "u_splitting_d_recomputed": 14,
+        "witness_det": 1,
+        "sylvester_diagonal": [
+          2,
+          14,
+          -2
+        ],
+        "signature": [
+          2,
+          1
+        ],
+        "n_lattice": 7
+      },
+      "leg_M_modular": {
+        "level_tested": 7,
+        "eta_exponents": {
+          "1": -4,
+          "7": 4
+        },
+        "newman_conditions": {
+          "sum_r_zero": true,
+          "sum_d_r_mod24": true,
+          "sum_Nd_r_mod24": true,
+          "prod_d_r_is_square": true
+        },
+        "mobius_fit_passes": false,
+        "deg2_fit_solves": true,
+        "deg2_fit_verifies_heldout": true,
+        "heldout_orders": [
+          13,
+          40
+        ],
+        "clauses": {
+          "newman_conditions_hold": true,
+          "deg2_fit_solves": true,
+          "deg2_fit_verifies_heldout": true,
+          "mobius_fit_fails": true
+        },
+        "failing_clauses": [],
+        "uniformizes_at_level": true,
+        "relation": {
+          "alpha": "49",
+          "beta": "13",
+          "gamma": "1"
+        }
+      },
+      "t1_certificate": {
+        "file": "HAUPTMODUL_S7_GAMMA07PLUS.json",
+        "verdict": "GAMMA07PLUS_HAUPTMODUL",
+        "group": "Gamma_0(7)+",
+        "corroborates": true
+      },
+      "n_lattice": 7,
+      "n_modular": 7,
+      "agree": true,
+      "verdict": "T3_AGREE(n=7)",
+      "open_flags": [],
+      "status": "CONSISTENT"
+    },
+    "cooper_s10": {
+      "candidate": "cooper_s10",
+      "leg_L_lattice": {
+        "gram": [
+          [
+            0,
+            0,
+            -1
+          ],
+          [
+            0,
+            20,
+            0
+          ],
+          [
+            -1,
+            0,
+            0
+          ]
+        ],
+        "det_recomputed": -20,
+        "u_splitting_d_recomputed": 20,
+        "witness_det": 1,
+        "sylvester_diagonal": [
+          2,
+          20,
+          -2
+        ],
+        "signature": [
+          2,
+          1
+        ],
+        "n_lattice": 10
+      },
+      "leg_M_modular": {
+        "level_tested": 10,
+        "eta_exponents": {
+          "1": -4,
+          "2": 4,
+          "5": -4,
+          "10": 4
+        },
+        "newman_conditions": {
+          "sum_r_zero": true,
+          "sum_d_r_mod24": true,
+          "sum_Nd_r_mod24": true,
+          "prod_d_r_is_square": true
+        },
+        "mobius_fit_passes": false,
+        "deg2_fit_solves": true,
+        "deg2_fit_verifies_heldout": true,
+        "heldout_orders": [
+          13,
+          40
+        ],
+        "clauses": {
+          "newman_conditions_hold": true,
+          "deg2_fit_solves": true,
+          "deg2_fit_verifies_heldout": true,
+          "mobius_fit_fails": true
+        },
+        "failing_clauses": [],
+        "uniformizes_at_level": true,
+        "relation": {
+          "alpha": "16",
+          "beta": "8",
+          "gamma": "1"
+        }
+      },
+      "t1_certificate": {
+        "file": "HAUPTMODUL_S10_GAMMA010STAR.json",
+        "verdict": "GAMMA010STAR_HAUPTMODUL",
+        "group": "Gamma_0(10)*",
+        "corroborates": true
+      },
+      "n_lattice": 10,
+      "n_modular": 10,
+      "agree": true,
+      "verdict": "T3_AGREE(n=10)",
+      "open_flags": [
+        "LATTICE_CERT_DRAFT",
+        "ATKIN_LEHNER_ACTION_UNVERIFIED"
+      ],
+      "status": "CONSISTENT_WITH_OPEN_ITEMS"
+    }
+  },
+  "all_candidates_consistent": true
+}
