@@ -323,7 +323,7 @@ def render_table(criteria_text, certs_dir, refs_file, checkers_dir):
         keys[r["id"]] = derive_refs_key(r["params"], refs)
 
     def table(cols):
-        out = ["| Register row (refs entry) | Tier flag | " + " | ".join(cols) + " |",
+        out = ["| Register row (refs entry) | §1 pool flag | " + " | ".join(cols) + " |",
                "|---|---|" + "---|" * len(cols)]
         for r in live:
             tier = ", ".join(f"`{f}`" for f in r["flags"] if f.startswith("TIER_")) or "—"
@@ -331,8 +331,10 @@ def render_table(criteria_text, certs_dir, refs_file, checkers_dir):
             out.append(f"| {r['id']} (`{keys[r['id']]}`) | {tier} | " + " | ".join(cells) + " |")
         return out
 
-    lines = ["**Scored criteria** (hard: C1, C2, C3 · soft: C4, C5 · C3b gates S3-00 input; §4). "
-             "`no certificate` is neither a pass nor a failure.", ""]
+    lines = ["**Scored criteria** (proposed hard set per §4, TBD-AT-FREEZE: C1, C2, C3 · soft: C4, C5, "
+             "weights TBD-AT-FREEZE · C3b gates S3-00 input). `no certificate` is neither a pass nor a "
+             "failure. The §1 pool flag is the register's pool assignment in the narrow sense §1 states, "
+             "not an epistemic tier.", ""]
     lines += table(SCORED_COLUMNS)
     lines += ["", "**Unscored — record and consistency gates** (C6, T1, T3; never scored, §4). "
               "C6 is rendered without counts: CM points are dense and a certificate lists a window, "

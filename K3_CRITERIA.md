@@ -242,16 +242,17 @@ Template per criterion: **Definition** (mathematically exact) · **Checking proc
 > **removed, not edited**; original preserved in the seed commit `f62f2c8`. 2026-09-27: the
 > renderer `scripts/render_status_table.py` was written and committed, with controls in
 > `checkers/test_render_status_table_controls.py`, and the table below is its output. It reads
-> only the §1 register, `refs/recurrences_v1.json` and `data/certificates/`. A certificate that is
-> missing, carries a retraction, names another candidate or lacks an expected field makes it
-> **refuse**, not print a placeholder. `--check` fails on any hand edit between the markers, and a
+> only the §1 register, `refs/recurrences_v1.json` and `data/certificates/`. A certificate that its
+> source map names is required: if it is missing, carries a retraction, names another candidate or
+> lacks an expected field, the renderer **refuses** rather than printing a placeholder. A slot with
+> no certificate designated in the source map renders `no certificate`. `--check` fails on any hand edit between the markers, and a
 > hand edit remains a reportable integrity incident. Cell text is copied from certificate fields.
 > Tiers and caveats are those stated in §2 and in the certificates themselves.
 
 <!-- BEGIN GENERATED STATUS TABLE: scripts/render_status_table.py -- do not edit by hand -->
-**Scored criteria** (hard: C1, C2, C3 · soft: C4, C5 · C3b gates S3-00 input; §4). `no certificate` is neither a pass nor a failure.
+**Scored criteria** (proposed hard set per §4, TBD-AT-FREEZE: C1, C2, C3 · soft: C4, C5, weights TBD-AT-FREEZE · C3b gates S3-00 input). `no certificate` is neither a pass nor a failure. The §1 pool flag is the register's pool assignment in the narrow sense §1 states, not an epistemic tier.
 
-| Register row (refs entry) | Tier flag | C1 | C2 | C3 | C3b | C4 | C5 |
+| Register row (refs entry) | §1 pool flag | C1 | C2 | C3 | C3b | C4 | C5 |
 |---|---|---|---|---|---|---|---|
 | K-s7 (`cooper_s7`) | `TIER_A_POOL` | `PASS(60)` | LIVE: T ≅ U⊕⟨14⟩ (`C2_cooper_s7_v5.json`; T0 acceptance `briefs/T0_DECISIONS_2026_07_27_STREAM2.md#d5`) | `SYM2_OPERATOR_IDENTITY_PROVEN(all-n symbolic; partner revalidated to n=58, mirror q^14)` | no certificate | TBD-AT-FREEZE (no checker) | TBD-AT-FREEZE (no checker) |
 | K-s10 (`cooper_s10`) | `TIER_A_POOL` | `PASS(60)` | DRAFT (ADVISORY): U⊕⟨20⟩ not certified; neither pass nor failure (`C2_cooper_s10_v4_DRAFT.json`) | `SYM2_OPERATOR_IDENTITY_PROVEN(all-n symbolic; partner revalidated to n=58, mirror q^14)` | no certificate | TBD-AT-FREEZE (no checker) | TBD-AT-FREEZE (no checker) |
@@ -259,7 +260,7 @@ Template per criterion: **Definition** (mathematically exact) · **Checking proc
 
 **Unscored — record and consistency gates** (C6, T1, T3; never scored, §4). C6 is rendered without counts: CM points are dense and a certificate lists a window, not a complete or ordered set.
 
-| Register row (refs entry) | Tier flag | C6 | T1 | T3 |
+| Register row (refs entry) | §1 pool flag | C6 | T1 | T3 |
 |---|---|---|---|---|
 | K-s7 (`cooper_s7`) | `TIER_A_POOL` | record in `CM_POINTS_RHO20.json` (lattice source LIVE) | `GAMMA07PLUS_HAUPTMODUL` (held-out to q^29) | `T3_AGREE(n=7)`, CONSISTENT |
 | K-s10 (`cooper_s10`) | `TIER_A_POOL` | record in `CM_POINTS_RHO20.json` (lattice source DRAFT); flags `LATTICE_CERT_DRAFT` (ADVISORY) | `GAMMA010STAR_HAUPTMODUL` (held-out to q^40) | `T3_AGREE(n=10)`, CONSISTENT_WITH_OPEN_ITEMS; open flags `LATTICE_CERT_DRAFT` |
