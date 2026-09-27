@@ -30,3 +30,13 @@ Fetched from arxiv.org/pdf/<id> by curl on 2026-09-21. Read for `briefs/T0_DECIS
 | moore_hep-th_9807087.pdf | 174138260dcc3e89bd2ad6265bde7529c66f3580902512090460783ec17f6481 | arXiv:hep-th/9807087v3 (Moore, *Arithmetic and Attractors*) | 2026-09-21 | READ IN PART (§4.2 incl. eq. (4.8) and footnote 14, Thm 4.3.2; grep finds no occurrence of "tadpole"; rest NOT read) |
 
 Generated-by: Stream 2 (Claude Fable 5.1), 2026-09-21 | Verified-by: sha256sum this session (hashes written by script, not typed) | Reviewed-by: N
+
+## Addendum 2026-09-27 — external review recorded (rows above untouched)
+
+Not a fetched primary source: a verbatim record of an external review (Fable 5.1, dated 2026-09-21) of a K3-selection *specification that is not this repository's material*. Recorded so that its Stream-2-relevant clauses can be scored against certificates (`checkers/check_external_review_fable_2026_09_21.py` → `data/certificates/EXTERNAL_REVIEW_FABLE_2026_09_21_AUDIT.json`). It is not evidence for any certificate; only the audit certificate may be cited. Its literature identifiers are, by its own statement, from memory and unpinned.
+
+| file | sha256 | source | recorded | read status |
+|---|---|---|---|---|
+| external_reviews/FABLE51_K3_SELECTION_REVIEW_2026_09_21.md | 6ab674536a5bb1e50bdc9df3b6f3445e7ba0e34e3d78df141503ce18030233a9 | Claude Docs `https://claude.ai/artifact/SFDSuPbfKD8SB4mVQhAErg` (id cc708cbe-058d-4c7e-9903-02b9af1e1d5d, rev 21), block XML flattened to Markdown | 2026-09-27 | READ IN FULL (all sections; 12 Stream-2 clauses scored, all CONFIRMED; 3 findings in band) |
+
+Generated-by: Stream 2 (Claude Fable 5.1), 2026-09-27 | Verified-by: sha256 written by script (`record_review.py`, job tmp), re-read by the audit checker | Reviewed-by: N

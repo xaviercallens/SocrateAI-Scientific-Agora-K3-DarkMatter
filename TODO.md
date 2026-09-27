@@ -181,6 +181,15 @@
       function-level known-bads. s7/s10 verdicts unchanged; both certs re-emitted at (n_fit 30,
       deg 5) — the earlier (26, 2) vs (30, 5) parameter drift between them is gone.
       Limitation kept in the test docstring: no end-to-end real non-MUM Sym² bulk in the suite.
+- [ ] **T0: external review "K3 Selection Review" (Fable 5.1, 2026-09-21) — recorded + audited
+      2026-09-27**, `briefs/EXTERNAL_REVIEW_FABLE51_AUDIT_AND_DIRECTIONS_2026_09_27.md`. Verbatim record
+      `docs/literature/external_reviews/…` (manifest row); 12/12 Stream-2 clauses CONFIRMED
+      (`EXTERNAL_REVIEW_FABLE_2026_09_21_AUDIT.json`; its W₇ "prediction" was already in
+      `CM_POINTS_RHO20.json`). Convergence [B, narrow]: Paper 12's A₂ surface = s7 at z=∞; the ⟨2⟩⊕⟨2⟩
+      surface = s10 at z=∞ — no preference (D7′). The spec it reviews (`~/K3spec.md`) was REJECTED
+      2026-09-16. **Open for T0:** AM-6 selector clause (exact diff in the brief); `python-flint` install
+      for WP-S2-CERT (certified monodromy by ball arithmetic); whether the lab programme goes to Stream 3
+      under the pin protocol. Delivery notes placed untracked in the S1 and S3 repos.
 - [ ] **T0: candidate register** — S1 `K3_CRITERIA.md` still lists t103 as dropped, although
       E-014 found no veto (S1 `briefs/T0_FLAG_K3_CRITERIA_T103_STALE_2026_08_01.md`, unanswered).
 
@@ -250,6 +259,8 @@ python3 checkers/check_CM_completeness_classnumber.py        # P2 table complete
 python3 checkers/test_CM_completeness_classnumber_controls.py # 16 controls
 python3 checkers/test_render_status_table_controls.py        # 20 controls (retracted/missing/wrong-candidate sources refuse)
 python3 scripts/render_status_table.py --check               # K3_CRITERIA sec. 5 matches the certificates
+python3 checkers/check_external_review_fable_2026_09_21.py   # external review audit: 12 clauses vs certificates, exact class numbers / Gauss-Bonnet
+python3 checkers/test_external_review_fable_controls.py      # 22 controls (each clause can go NOT_CONFIRMED; exact helpers reject wrong values)
 # slow (~70 s): python3 checkers/check_nodality_explicit_models.py   (Singular optional second CAS)
 # slow (~2.5 min), run before release: python3 checkers/check_CM_points_rho20.py
 ```
