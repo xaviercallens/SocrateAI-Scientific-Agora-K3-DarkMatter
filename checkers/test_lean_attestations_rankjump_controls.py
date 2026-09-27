@@ -3,23 +3,26 @@
 test_lean_attestations_rankjump_controls.py -- controls for checkers/check_lean_attestations_rankjump.py
 
 Standing rule 1: a test that cannot fail is not a test. Every clause that grants Tier A
-must be shown to withhold it on a tampered attestation (temp copies only).
+must be shown to withhold it on a tampered input (deep copies only).
 
-  P0  real attestations: both rows Tier A; --verify-source-files agrees when the
-      producer's worktree is present (skipped, not failed, if absent)
-  N1  attested Gram tampered ([[2,1],[1,4]] -> [[2,1],[1,5]])  -> A4 false, tier B
-  N2  attested basis vector not orthogonal to v                -> A3 false, tier B
-  N3  attested vector is not a certificate row                 -> A1 false, tier B
-  N4  gate record: print_axioms lists an extra axiom           -> A6 false, tier B
-  N5  gate record: producer_neq_verifier false                 -> A6 false, tier B
-  N6  frame determinant tampered                               -> A5 false, tier B
-  N7  file sha256 tampered with --verify-source-files          -> A7 false, tier B
-      (only when the producer's worktree is present)
+  P0  real attestations: all six rows Tier A; the two s7 (-2)-rows have 2 independent files;
+      --verify-source-files agrees where the producer worktrees are present (skipped, said so, if absent)
+  N1  attested Gram tampered                       -> A4 false, that attestation fails
+  N2  attested basis vector not orthogonal to v     -> A3 false
+  N3  attested vector is not a certificate row      -> A1 false
+  N4  gate record: print_axioms lists an extra axiom -> A6 false
+  N5  gate record: producer_neq_verifier false      -> A6 false
+  N6  attested frame determinant tampered           -> A5 false; an attestation WITHOUT frame_det still
+      passes A5 through the determinant identity
+  N7  file sha256 tampered with --verify-source-files -> A7 false (when the worktree is present)
+  N8  a row whose only attestation fails            -> lattice_tier B (single-source rows are not
+      rescued by the other file)
+  N9  Q1: certificate kernel basis tampered to a non-unimodular relative -> tier B with the Q1 reason
+  N10 Q2: certificate det_T_X tampered              -> tier B with the Q2 reason
 """
 import copy
 import json
 import sys
-import tempfile
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
@@ -38,47 +41,71 @@ def check(name, cond, detail=""):
 
 atts = json.loads((REPO_ROOT / "refs" / "lean_attestations_rankjump_2026_09_27.json").read_text())
 cm = json.loads((REPO_ROOT / "data" / "certificates" / "CM_POINTS_RHO20.json").read_text())
+GR = atts["gate_records"]
 
 
-def run(att, verify=False):
-    return la.check_attestation(att, cm, verify)
+def one(att, gr=GR, cmx=cm, verify=False):
+    return la.check_attestation(att, gr, cmx, verify)
 
 
-base = [run(a) for a in atts["attestations"]]
-check("P0 both rows Tier A", all(r["lattice_tier"] == "A" for r in base) and len(base) == 2)
-root = la.SOURCE_ROOTS[atts["attestations"][0]["source"]["repo"]]
-present = (root / atts["attestations"][0]["source"]["file"]).exists()
-if present:
-    v = [run(a, True) for a in atts["attestations"]]
-    check("P0 source sha256 verified", all(r["clauses"].get("A7_source_sha256") is True for r in v))
+rows = la.build_rows(atts, cm, False)
+check("P0 six rows, all Tier A", len(rows) == 6 and all(r["lattice_tier"] == "A" for r in rows))
+two = [r for r in rows if r["candidate"] == "cooper_s7" and r["v"] in ([1, -1, 0], [2, -4, 1])]
+check("P0 the two s7 (-2)-rows have 2 independent files", all(r["independent_files_passing"] == 2 for r in two))
+check("P0 s10 rows flagged ADVISORY", all(r["advisory_family"] for r in rows if r["candidate"] == "cooper_s10"))
+present = {k: (la.SOURCE_ROOTS[g["repo"]] / g["file"]).exists() for k, g in GR.items()}
+if all(present.values()):
+    rv = la.build_rows(atts, cm, True)
+    check("P0 source sha256 verified for every attestation", all(a["clauses"].get("A7_source_sha256") is True for r in rv for a in r["attestations"]))
 else:
-    check("P0 source file absent -> A7 skipped, not failed", all(run(a, True)["lattice_tier"] == "A" for a in atts["attestations"]))
+    check(f"P0 some producer worktree absent ({present}) -> A7 skipped, not failed", all(r["lattice_tier"] == "A" for r in la.build_rows(atts, cm, True)))
 
-second = atts["attestations"][1]
+lm_s7 = next(a for a in atts["attestations"] if a["id"] == "LM-s7-z-1")
+s1_s7 = next(a for a in atts["attestations"] if a["id"] == "S1-s7-z-1")
+lm_inf = next(a for a in atts["attestations"] if a["id"] == "LM-s7-zinf")
 
-t = copy.deepcopy(second); t["claims"]["gram"] = [[2, 1], [1, 5]]
-r = run(t); check("N1 tampered Gram -> B", r["lattice_tier"] == "B" and r["clauses"]["A4_gram_matches_attested"] is False)
-
-t = copy.deepcopy(second); t["claims"]["perp_basis"] = [[2, -3, 1], [1, 3, 0]]
-r = run(t); check("N2 non-orthogonal basis -> B", r["lattice_tier"] == "B" and r["clauses"]["A3_basis_orthogonal"] is False)
-
-t = copy.deepcopy(second); t["v"] = [3, -4, 1]
-r = run(t); check("N3 vector not a row -> B", r["lattice_tier"] == "B" and r["clauses"]["A1_row_exists"] is False)
-
-t = copy.deepcopy(second); t["verified_by_stream2"]["print_axioms"]["axioms"] = ["propext", "Classical.choice", "Quot.sound", "sorryAx"]
-r = run(t); check("N4 extra axiom -> B", r["lattice_tier"] == "B" and r["clauses"]["A6_gates"] is False)
-
-t = copy.deepcopy(second); t["verified_by_stream2"]["producer_neq_verifier"] = False
-r = run(t); check("N5 producer = verifier -> B", r["lattice_tier"] == "B" and r["clauses"]["A6_gates"] is False)
-
-t = copy.deepcopy(second); t["claims"]["frame_det"] = 1
-r = run(t); check("N6 tampered frame det -> B", r["lattice_tier"] == "B" and r["clauses"]["A5_frame_det"] is False)
-
-if present:
-    t = copy.deepcopy(second); t["source"]["file_sha256"] = "0" * 64
-    r = run(t, True); check("N7 tampered file sha -> B", r["lattice_tier"] == "B" and r["clauses"]["A7_source_sha256"] is False)
+t = copy.deepcopy(lm_s7); t["claims"]["gram"] = [[2, 1], [1, 5]]
+check("N1 tampered Gram fails A4", one(t)["clauses"]["A4_gram_matches_attested"] is False and not one(t)["ok"])
+t = copy.deepcopy(lm_s7); t["claims"]["perp_basis"] = [[2, -3, 1], [1, 3, 0]]
+check("N2 non-orthogonal basis fails A3", one(t)["clauses"]["A3_basis_orthogonal"] is False)
+t = copy.deepcopy(lm_s7); t["v"] = [3, -4, 1]
+check("N3 vector not a row fails A1", one(t)["clauses"]["A1_row_exists"] is False)
+g = copy.deepcopy(GR); g["LM-RankJump-73f6fb1"]["verified_by_stream2"]["print_axioms"]["axioms"].append("sorryAx")
+check("N4 extra axiom fails A6", one(lm_s7, g)["clauses"]["A6_gates"] is False)
+g = copy.deepcopy(GR); g["LM-RankJump-73f6fb1"]["verified_by_stream2"]["producer_neq_verifier"] = False
+check("N5 producer = verifier fails A6", one(lm_s7, g)["clauses"]["A6_gates"] is False)
+t = copy.deepcopy(s1_s7); t["claims"]["frame_det"] = 1
+check("N6 tampered frame det fails A5; no frame_det still passes via identity",
+      one(t)["clauses"]["A5_frame_det"] is False and one(lm_s7)["clauses"]["A5_frame_det"] is True)
+if present.get("LM-RankJump-73f6fb1"):
+    g = copy.deepcopy(GR); g["LM-RankJump-73f6fb1"]["file_sha256"] = "0" * 64
+    check("N7 tampered file sha fails A7", one(lm_s7, g, cm, True)["clauses"]["A7_source_sha256"] is False)
 else:
-    check("N7 skipped (producer worktree absent)", True)
+    check("N7 skipped (LeanMaster worktree absent)", True)
+
+# N8: break the only attestation of the single-source A2 row -> that row B, others unaffected
+a2 = copy.deepcopy(atts)
+for a in a2["attestations"]:
+    if a["id"] == "LM-s7-zinf":
+        a["claims"]["gram"] = [[2, 1], [1, 3]]
+rows8 = la.build_rows(a2, cm, False)
+r_inf = next(r for r in rows8 if r["v"] == [14, -14, -5])
+check("N8 single-source row goes B when its attestation fails; others stay A",
+      r_inf["lattice_tier"] == "B" and sum(r["lattice_tier"] == "A" for r in rows8) == 5)
+
+# N9: tamper the certificate's kernel basis to a non-unimodular relative (scale one vector by 2)
+cm9 = copy.deepcopy(cm)
+row9 = next(r for r in cm9["families"]["cooper_s7"]["rows"] if r["v"] == [2, -4, 1])
+row9["T_X_kernel_basis"] = [[2, 4, 0], [0, -7, 1]]
+r9 = next(r for r in la.build_rows(atts, cm9, False) if r["v"] == [2, -4, 1])
+check("N9 non-unimodular kernel basis -> B with Q1 reason", r9["lattice_tier"] == "B" and "Q1" in r9.get("reason", ""))
+
+# N10: tamper the certificate's det_T_X
+cm10 = copy.deepcopy(cm)
+row10 = next(r for r in cm10["families"]["cooper_s7"]["rows"] if r["v"] == [2, -4, 1])
+row10["det_T_X"] = 8
+r10 = next(r for r in la.build_rows(atts, cm10, False) if r["v"] == [2, -4, 1])
+check("N10 disagreeing det_T_X -> B with Q2 reason", r10["lattice_tier"] == "B" and "Q2" in r10.get("reason", ""))
 
 print()
 if failures:
