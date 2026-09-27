@@ -229,10 +229,18 @@
       (D −28) and z=−1 (D −7) → `lattice_tier: A`; `CM_POINTS_RHO20.json` itself unchanged. Attestation
       data: `refs/lean_attestations_rankjump_2026_09_27.json` (manifested). 9 controls. Still Tier B:
       z-recognition; Tier L: v^⊥ = T_X.
-- [ ] **LeanMaster's six rows (`DualScaleDyons/RankJump.lean`, worktree `rank-jump-lemma`):** statements
-      read here and cross-checked by LeanMaster against Stream 1's (agree on every shared item); waiting
-      for their G1/G3 exit codes, then Stream 2 re-runs the gates there and appends the attestations
-      (z=∞ row of s7; the three s10 rows stay ADVISORY even at Tier A lattice arithmetic).
+- [x] **All six locus rows at Tier A (lattice half) — DONE 2026-09-27.** LeanMaster's
+      `DualScaleDyons/RankJump.lean` (`73f6fb1`, file sha `d9c3e5f3…`) re-gated by Stream 2 in their
+      worktree with `LEAN_PROJECT_ROOT` set: G1 0 (8805 jobs), G2 0, **G3 0 = 184 audited / 0 failing, 18
+      of them RankJump**, G4 0, `#print axioms` standard on all eleven declarations. (A first run without
+      `LEAN_PROJECT_ROOT` audited the main checkout — 166 theorems, no RankJump — and was discarded; the
+      trap the `lean-proof-gate` skill names.) Overlay `CM_POINTS_RHO20_LATTICE_TIER.json` v1.1.0: the two
+      s7 (−2)-rows carry **two independent files** (Stream 1 + LeanMaster); s7 z=∞ (A₂) and the three s10
+      rows carry LeanMaster alone (s10 ADVISORY, D6′ untouched). LeanMaster's two audit questions answered
+      in the overlay per row: Q1 the unimodular change from the certificate's kernel basis to the attested
+      reduced basis is computed and recorded; Q2 `det_T_X` is now certified from the kernel-checked Gram
+      (4ac − b²) and compared with the certificate's formula value. 14 controls. Still not proved in either
+      file: the general index step; v^⊥ = T_X stays Tier L; z stays Tier B.
 - [x] **Stream 1's K3-directions receipt (2026-09-27) — received, hashes agree; one correction taken:**
       my "(0,0) [X₄]" label was wrong (X₄ = (α,β) = (1,0); (0,0) = E_ω × E_i, ρ = 18) — corrected in
       their note; their (1,0) row closes to 20 once the two order-2 places at t = ±1 are read as such.
