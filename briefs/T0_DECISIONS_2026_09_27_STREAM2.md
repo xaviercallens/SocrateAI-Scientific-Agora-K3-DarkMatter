@@ -61,6 +61,27 @@ decided here.
 *Recorded by Claude (Fable 5.1), Stream 2, 2026-09-27. Reviewed-by: T0 — delegation Y, individual
 decisions N (taken on T0's behalf; T0 may strike any row).*
 
+## D12′ — same day, later: T0 reverses D11′-3 — Stream 3 takes the laboratory approach
+
+**Form of the ruling, verbatim:** "inform the live 2 claude sessons for next actions on their side to
+unblock consider strream 3 a lab approach"
+
+| # | Ruling | Applied |
+|---|---|---|
+| D12′-1 | **Stream 3 = laboratory approach.** The Fable review's laboratory programme (E1–E4) is no longer parked: Stream 3 pursues it. D11′-3 is **struck** | Stream 3 notice amended; message sent to the live sessions |
+| D12′-2 | Inform the two live Claude sessions of their next actions | sent via cross-session message, 2026-09-27 |
+
+**Reading applied (the rules do not change with the ruling):** the laboratory programme enters only
+through the pin protocol (ledger item 5) — a pre-registered `PREDICTION.md` v2 amendment with
+statement, inputs, decision rule, disclosed prior knowledge (the 2016 SIT reflection and 2022 dual
+Shapiro results are known), Arm V / Arm P / Arm 0 and a kill rule, all under a git tag **before** any
+data; outputs labeled exclusion/FIT, never TEST, until pinned. The K3 surface is the shadow, not the
+target: no sentence may present a laboratory result as evidence for cooper_s7/s10 or for any Tier A/B
+certificate (VISION §1.3; ledger item 4). The calibration arm (Aubry–André self-duality, exactly
+solvable) is built first, with negative controls, because it can fail on its own terms.
+
+*Recorded by Claude (Fable 5.1), Stream 2, 2026-09-27. Reviewed-by: T0 Y (ruling), record N.*
+
 **What this ruling does not do.** It adopts no selector (AM-6 requires one to be *named* by its own T0
 text before any member is preferred); it changes no certificate value; it does not promote `cooper_s10`
 (still ADVISORY, D6′); it does not freeze the criteria (§7 still open, and now one item longer); it does

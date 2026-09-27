@@ -197,7 +197,9 @@
       denominator ≤ 10⁴ in its enclosure — s7 and s10 both (s10 stays ADVISORY; lattice cert DRAFT).**
       **Step 2 also landed:** the certified matrices run through the exact stage 3 reproduce the lattice
       certificate 9/9 fields (s7 LIVE v5; s10 DRAFT v4) — chain closed; tampered matrix refused (N8).
-      Still open: whether the lab programme goes to Stream 3 (no recommendation made). Delivery notes
+      **T0 D12′ (same day): Stream 3 takes the laboratory approach** — the Fable review's E1–E4 enter
+      via the pin protocol (PREDICTION v2 amendment, Arm V/P/0, kill rule, tag before data; calibration
+      arm E1 first); D11′-3 "parked" is struck. Nothing in it is evidence for any K3 claim. Delivery notes
       placed untracked in the S1 and S3 repos; mirrors re-pin to the post-merge `K3_CRITERIA.md` hash
       (the §5 C2 cells now carry the certified-monodromy note).
 - [x] **`C2_cooper_s7_v6` — ACCEPTED by T0 2026-09-27 (D10′), LIVE.** v5 content, provenance only:
