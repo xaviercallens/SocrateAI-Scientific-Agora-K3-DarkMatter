@@ -196,7 +196,12 @@
       **Step 2 also landed:** the certified matrices run through the exact stage 3 reproduce the lattice
       certificate 9/9 fields (s7 LIVE v5; s10 DRAFT v4) — chain closed; tampered matrix refused (N8).
       Still open: whether the lab programme goes to Stream 3 (no recommendation made). Delivery notes
-      placed untracked in the S1 and S3 repos; mirrors re-pin to `e7d420af…`.
+      placed untracked in the S1 and S3 repos; mirrors re-pin to the post-merge `K3_CRITERIA.md` hash
+      (the §5 C2 cells now carry the certified-monodromy note).
+- [ ] **T0: `C2_cooper_s7_v6_DRAFT.json` — accept or decline.** v5 content, provenance only: stage-2
+      matrices CERTIFIED (`CERTIFIED_MONODROMY_L2_cooper_s7.json`) instead of recognised at 1e−35;
+      `derived_identical_to_v5: true`. v5 stays LIVE until ruled (v4→v5 precedent, D5′). Emit command:
+      `python3 checkers/check_certified_monodromy_L2.py --family cooper_s7 --emit-c2-draft`.
 - [ ] **T0: candidate register** — S1 `K3_CRITERIA.md` still lists t103 as dropped, although
       E-014 found no veto (S1 `briefs/T0_FLAG_K3_CRITERIA_T103_STALE_2026_08_01.md`, unanswered).
 

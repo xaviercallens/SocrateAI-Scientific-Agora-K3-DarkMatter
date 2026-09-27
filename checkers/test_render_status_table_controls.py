@@ -215,6 +215,24 @@ sb.edit("C1_mirror_integrality_cooper_s7.json", lambda d: d.update(checker="chec
 ok, e = refuses(sb, "produced by")
 check("N15 wrong producing checker refuses", ok, e)
 
+# N16 -- the optional certified-monodromy note: present and closed -> rendered;
+# chain open -> rendered LOUDLY; reference mismatch -> refuse; absent -> no note.
+CM7 = "CERTIFIED_MONODROMY_L2_cooper_s7.json"
+if (REPO_ROOT / "data" / "certificates" / CM7).exists():
+    sb = fresh()
+    shutil.copy(REPO_ROOT / "data" / "certificates" / CM7, sb.certs / CM7)
+    line = [l for l in sb.render().splitlines() if l.startswith("| K-s7") and "C2_cooper_s7" in l][0]
+    check("N16 certified note rendered when chain closed", "monodromy CERTIFIED" in line)
+    sb.edit(CM7, lambda d: d["result"].update(chain_closed=False))
+    line = [l for l in sb.render().splitlines() if l.startswith("| K-s7") and "C2_cooper_s7" in l][0]
+    check("N16 open chain rendered loudly", "certification OPEN" in line and "monodromy CERTIFIED" not in line)
+    sb.edit(CM7, lambda d: d["result"]["stage3_from_certified_matrices"].update(reference_certificate="C2_cooper_s7_v3.json"))
+    ok, e = refuses(sb, "stage-3 reference")
+    check("N16 reference mismatch refuses", ok, e)
+    check("N16 absent certificate -> no note", "monodromy" not in base)
+else:
+    check("N16 skipped: certified-monodromy certificate absent", True)
+
 print()
 if failures:
     print(f"FAILED: {len(failures)} control(s): {failures}")

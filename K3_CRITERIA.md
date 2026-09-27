@@ -262,8 +262,8 @@ Template per criterion: **Definition** (mathematically exact) · **Checking proc
 
 | Register row (refs entry) | §1 pool flag | C1 | C2 | C3 | C3b | C4 | C5 |
 |---|---|---|---|---|---|---|---|
-| K-s7 (`cooper_s7`) | `TIER_A_POOL` | `PASS(60)` | LIVE: T ≅ U⊕⟨14⟩ (`C2_cooper_s7_v5.json`; T0 acceptance `briefs/T0_DECISIONS_2026_07_27_STREAM2.md#d5`) | `SYM2_OPERATOR_IDENTITY_PROVEN(all-n symbolic; partner revalidated to n=58, mirror q^14)` | no certificate | TBD-AT-FREEZE (no checker) | TBD-AT-FREEZE (no checker) |
-| K-s10 (`cooper_s10`) | `TIER_A_POOL` | `PASS(60)` | DRAFT (ADVISORY): U⊕⟨20⟩ not certified; neither pass nor failure (`C2_cooper_s10_v4_DRAFT.json`) | `SYM2_OPERATOR_IDENTITY_PROVEN(all-n symbolic; partner revalidated to n=58, mirror q^14)` | no certificate | TBD-AT-FREEZE (no checker) | TBD-AT-FREEZE (no checker) |
+| K-s7 (`cooper_s7`) | `TIER_A_POOL` | `PASS(60)` | LIVE: T ≅ U⊕⟨14⟩ (`C2_cooper_s7_v5.json`; T0 acceptance `briefs/T0_DECISIONS_2026_07_27_STREAM2.md#d5`); stage-2 monodromy CERTIFIED, chain to this lattice closed (`CERTIFIED_MONODROMY_L2_cooper_s7.json`) | `SYM2_OPERATOR_IDENTITY_PROVEN(all-n symbolic; partner revalidated to n=58, mirror q^14)` | no certificate | TBD-AT-FREEZE (no checker) | TBD-AT-FREEZE (no checker) |
+| K-s10 (`cooper_s10`) | `TIER_A_POOL` | `PASS(60)` | DRAFT (ADVISORY): U⊕⟨20⟩ not certified; neither pass nor failure (`C2_cooper_s10_v4_DRAFT.json`); stage-2 monodromy CERTIFIED, chain to this lattice closed (`CERTIFIED_MONODROMY_L2_cooper_s10.json`) | `SYM2_OPERATOR_IDENTITY_PROVEN(all-n symbolic; partner revalidated to n=58, mirror q^14)` | no certificate | TBD-AT-FREEZE (no checker) | TBD-AT-FREEZE (no checker) |
 | K-s18 (`avs_sporadic3_s18`) | `TIER_B_QUARANTINE` | `PASS(60)` | no certificate | no certificate | no certificate | TBD-AT-FREEZE (no checker) | TBD-AT-FREEZE (no checker) |
 
 **Unscored — record and consistency gates** (C6, T1, T3; never scored, §4). C6 is rendered without counts: CM points are dense and a certificate lists a window, not a complete or ordered set.

@@ -545,6 +545,10 @@ def main(argv=None):
     ap = argparse.ArgumentParser()
     ap.add_argument("--family", default="cooper_s7", choices=sorted(u1.FAMILIES))
     ap.add_argument("--emit", action="store_true")
+    ap.add_argument("--emit-c2-draft", action="store_true",
+                    help="cooper_s7 only: write C2_cooper_s7_v6_DRAFT.json = v5 content with the stage-2 "
+                         "input provenance changed from 1e-35 recognition to this certification. DRAFT: "
+                         "v5 stays LIVE until T0 rules; every derived value is asserted equal to v5.")
     a = ap.parse_args(argv)
     ctx.prec = PREC_BITS
     try:
@@ -584,6 +588,43 @@ def main(argv=None):
         out = REPO / "data" / "certificates" / f"CERTIFIED_MONODROMY_L2_{a.family}.json"
         out.write_text(json.dumps(cert, indent=2) + "\n")
         print("wrote", out)
+    if a.emit_c2_draft:
+        if a.family != "cooper_s7" or not (res["certified"] and res["chain_closed"]):
+            print("REFUSED: --emit-c2-draft needs cooper_s7 certified with the stage-3 chain closed")
+            return 2
+        v5 = json.loads((REPO / "data" / "certificates" / "C2_cooper_s7_v5.json").read_text())
+        v6 = dict(v5)
+        v6["certificate"] = "C2_cooper_s7_v6_DRAFT"
+        v6["status"] = ("DRAFT - pending T0 (Xavier) review; does NOT supersede C2_cooper_s7_v5.json (LIVE, "
+                        "D5'). Content = v5 with ONE change of provenance: the stage-2 monodromy matrices are "
+                        "CERTIFIED (checkers/check_certified_monodromy_L2.py, Arb ball arithmetic with rigorous "
+                        "truncation bounds; each Sym^2 entry the unique rational of denominator <= 10^4 in its "
+                        "enclosure; exact stage 3 on them reproduces v5 field by field) instead of recognised "
+                        "through a 1e-35 tolerance. Every derived value is asserted identical to v5 below.")
+        v6["date"] = AUDIT_DATE
+        v6["tier"] = "B"
+        v6["tier_reason"] = ("the numerical link is closed (certified enclosures replace the 1e-35 recognition "
+                             "gate); the residual Tier B is the identification of the joint monodromy-invariant "
+                             "lattice with T via the read framework sources (Dolgachev 1996 sec. 7, Doran 1998 "
+                             "Thm 5.13) and the Frobenius-basis normalisation conventions of stage 2")
+        how = dict(v5.get("how", {}))
+        how["stage2"] = ("CERTIFIED: Arb ball arithmetic (python-flint), Frobenius tails and Taylor-step tails "
+                         "bounded by majorant induction, exact rational path points; see "
+                         "data/certificates/CERTIFIED_MONODROMY_L2_cooper_s7.json (result.clauses)")
+        v6["how"] = how
+        v6["inputs_added_in_v6"] = {"sha256": {
+            "data/certificates/CERTIFIED_MONODROMY_L2_cooper_s7.json":
+                sha(REPO / "data" / "certificates" / "CERTIFIED_MONODROMY_L2_cooper_s7.json"),
+            "data/certificates/C2_cooper_s7_v5.json": sha(REPO / "data" / "certificates" / "C2_cooper_s7_v5.json")}}
+        v6["derived_identical_to_v5"] = v6["derived"] == v5["derived"]
+        v6["supersedes_if_accepted"] = "C2_cooper_s7_v5.json (no value changes; provenance only)"
+        v6["provenance"] = ("Generated-by: Claude (Fable 5.1), Stream 2 | Verified-by: "
+                            "checkers/check_certified_monodromy_L2.py (certified + chain closed) and "
+                            "checkers/test_certified_monodromy_L2_controls.py | Reviewed-by: N (DRAFT)")
+        assert v6["derived_identical_to_v5"] is True
+        outp = REPO / "data" / "certificates" / "C2_cooper_s7_v6_DRAFT.json"
+        outp.write_text(json.dumps(v6, indent=2) + "\n")
+        print("wrote", outp, "(DRAFT; v5 stays LIVE)")
     return 0 if (res["certified"] and res["chain_closed"]) else 1
 
 

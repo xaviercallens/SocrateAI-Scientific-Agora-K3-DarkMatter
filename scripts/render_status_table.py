@@ -237,17 +237,37 @@ def cell_c1(d, key, src):
     return f"`{verdict}`"
 
 
-def cell_c2(d, key, src):
+def certified_monodromy_note(key, src, certs_dir):
+    """Optional suffix for the C2 cell: WP-S2-CERT certificate, if present. It must
+    name the same lattice certificate as its stage-3 reference; a present-but-open
+    chain is rendered loudly, never hidden."""
+    name = f"CERTIFIED_MONODROMY_L2_{key}.json"
+    f = certs_dir / name
+    if not f.exists():
+        return ""
+    d = load_cert(certs_dir, name)
+    _require_candidate(d, "result.family", key, name)
+    ref = _field(d, "result.stage3_from_certified_matrices.reference_certificate", name)
+    if ref != src:
+        raise RenderError(f"{name}: stage-3 reference is {ref!r}, but the C2 source is {src!r}")
+    closed = _field(d, "result.chain_closed", name)
+    if closed is not True:
+        return f"; stage-2 monodromy certification OPEN (`{name}`)"
+    return f"; stage-2 monodromy CERTIFIED, chain to this lattice closed (`{name}`)"
+
+
+def cell_c2(d, key, src, certs_dir=None):
     _require_candidate(d, "operator", key, src)
     status = _field(d, "status", src)
     dval = _field(d, "derived.u_splitting.d", src)
     lattice = f"U⊕⟨{dval}⟩"
     head = status.split(" - ")[0].split(" ")[0].upper()
+    note = certified_monodromy_note(key, src, certs_dir) if certs_dir is not None else ""
     if head == "LIVE":
         rec = _field(d, "t0_acceptance.record", src)
-        return f"LIVE: T ≅ {lattice} (`{src}`; T0 acceptance `{rec}`)"
+        return f"LIVE: T ≅ {lattice} (`{src}`; T0 acceptance `{rec}`){note}"
     if head == "DRAFT":
-        return f"DRAFT (ADVISORY): {lattice} not certified; neither pass nor failure (`{src}`)"
+        return f"DRAFT (ADVISORY): {lattice} not certified; neither pass nor failure (`{src}`){note}"
     raise RenderError(f"{src}: status head {head!r} is neither LIVE nor DRAFT")
 
 
@@ -306,6 +326,8 @@ def render_cell(col, key, certs_dir, checkers_dir):
     cert_checker = d.get("checker")
     if cert_checker is not None and Path(cert_checker).name != checker:
         raise RenderError(f"{name}: produced by {cert_checker}, source map expects {checker}")
+    if kind == "c2":
+        return cell_c2(d, key, name, certs_dir)
     return CELL[kind](d, key, name)
 
 

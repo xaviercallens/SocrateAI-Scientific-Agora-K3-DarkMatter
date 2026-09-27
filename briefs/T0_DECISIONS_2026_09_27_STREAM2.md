@@ -18,14 +18,23 @@ The recommendations on the table at that moment, and what was done with each:
 | — | The review's laboratory programme for Stream 3 (asks item 4) | **No recommendation was made, so nothing is ruled.** It stays *offered* in the Stream 3 delivery note, entering only under the pin protocol | — |
 | — | The review's spec-edit list (asks item 3) | Moot: the spec was REJECTED 2026-09-16 | — |
 
+**Follow-ups offered to T0 after D9′ (not ruled, same day).** (i) `C2_cooper_s7_v6_DRAFT.json` — v5
+content with one change of provenance (stage-2 matrices certified instead of recognised at 1e−35;
+`derived_identical_to_v5: true` asserted at emission). v5 stays LIVE until T0 accepts v6, as with
+v4→v5 (D5′). (ii) The §5 status table now carries, in the C2 cell, "stage-2 monodromy CERTIFIED, chain to
+this lattice closed" for both families, read from the `CERTIFIED_MONODROMY_L2_*` certificates (renderer
+control N16: an open chain renders loudly; a reference mismatch refuses). Neither item promotes s10.
+
 **What this ruling does not do.** It adopts no selector (AM-6 requires one to be *named* by its own T0
 text before any member is preferred); it changes no certificate value; it does not promote `cooper_s10`
 (still ADVISORY, D6′); it does not freeze the criteria (§7 still open, and now one item longer); it does
 not adopt any physical reading.
 
-**Impact statement (§6):** no ranking run exists, so none is invalidated. `K3_CRITERIA.md` sha256 after
-this ruling: `e7d420af01f07cd14d03468ee704e6eec3acc9f85d9fe2249688a0f74f9c2151` — Stream 1 and Stream 3
-mirrors re-pin to this value (supersedes the `993350cf…` value quoted earlier in PR #55).
+**Impact statement (§6):** no ranking run exists, so none is invalidated. `K3_CRITERIA.md` sha256
+right after this ruling was `e7d420af…`; after the same-day §5 re-render with the certified-monodromy
+note it is `8e6c5d17e84360bb70ae4f298f33df25a1106efe51dd0052e6865e904b337531`. Stream 1 and Stream 3
+mirrors re-pin to the value **at merge** (`git show main:K3_CRITERIA.md | sha256sum`); the §5 table is
+generated and moves with certificate changes, so no quoted value here is authoritative past merge.
 
 **Reading rule applied:** "follow your recommendation" was read as covering exactly the items on which
 a recommendation had been stated and nothing wider (cf. `feedback_menu_choice_is_not_a_ruling`).
