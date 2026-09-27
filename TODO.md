@@ -116,10 +116,11 @@
       (23/23 + 10/10) remains on record as a recommendation only. Record:
       `briefs/T0_DECISIONS_2026_09_16_STREAM2.md`. (A promotion commit made earlier the same
       day on a menu selection was reverted.)
-- [ ] **Deep Think referrals — no reply on record in any of the three repos (checked
-      2026-09-16):** TW2A Reading 1/2 (`briefs/DEEPTHINK_ALIGNMENT_BRIEF_TW2A_Q1_2026_07_31.md`)
-      and s10 composite level (`briefs/DEEPTHINK_ALIGNMENT_BRIEF_S10_COMPOSITE_LEVEL_2026_08_01.md`).
-      T0 transmits; audit the reply before anything cites it.
+- [x] **Deep Think referrals — RETIRED as unanswered (D11′, 2026-09-27, on T0's behalf):** TW2A
+      Reading 1/2 (`briefs/DEEPTHINK_ALIGNMENT_BRIEF_TW2A_Q1_2026_07_31.md`) and s10 composite level
+      (`briefs/DEEPTHINK_ALIGNMENT_BRIEF_S10_COMPOSITE_LEVEL_2026_08_01.md`): no reply on record in any
+      repo after ~2 months. Closed, not resolved — the questions stay open in the ledger; a reply,
+      audited before citation, reopens either.
 - [ ] **T0: review the K3×T² criteria proposal** —
       `briefs/STREAM2_K3xT2_SELECTION_CRITERIA_PROPOSAL_2026_09_16.md` (Reading S vs P, new
       two-lineage gate T3, replace Kodaira C2 with the lattice gate, no scoring yet). Not a
@@ -156,23 +157,24 @@
       not fixed, in `briefs/STREAM2_STATUS_TABLE_RENDERER_2026_09_27.md`: §2 C3 names a checker
       that does not exist here, and `T3_LEVEL_CONSISTENCY.json` still self-reports "not an
       adopted gate". K3_CRITERIA.md's hash changed, so the S1/S3 mirrors need re-pinning (same brief).
-- [ ] **T0: the `K-t103` row of §1** — §1 is FROZEN and was copied untouched, but Stream 1's
-      `T0_FLAG_K3_CRITERIA_T103_STALE_2026_08_01.md` (E-014: never vetoed) is still unanswered.
+- [x] **The `K-t103` row of §1 — ANSWERED on T0's behalf (D11′, 2026-09-27):** row stays DROPPED;
+      the "order-4 CY3" ground is withdrawn (E-014), the standing ground is §1's own rule (no citable
+      defining recurrence at freeze). Reinstatement = §6 amendment carrying a fetched, pinned primary
+      source. Stream 1 informed (`STREAM2_TO_STREAM1_NOTICE_PR55_MERGED_2026_09_27.md`, their repo).
 - [ ] **T0: C4 and C5 still carry `TBD-AT-FREEZE`** — implementing their checkers is blocked until
       the freeze resolves them (`criteria-checkers` contract).
 
-- [ ] **T0: flux bound on D — decision request** `briefs/T0_DECISION_REQUEST_FLUX_BOUND_ON_D_2026_09_21.md`
-      (5 sources fetched, pinned, read; NOTHING executed; S3-00b stays BLOCKED). Brief's own
-      recommendation: Q1 "is K3×P¹ a specified B₃?" **no**; Q2 **option A (park)**.
-- [ ] **T0: narrow (not close) `ATKIN_LEHNER_ACTION_UNVERIFIED`** — W(n) → O(q_A) is now an explicit
-      isomorphism PASS(30) (`ATKIN_LEHNER_DISC_FORM.json`); s10 still advisory (lattice cert DRAFT).
+- [x] **Flux bound on D — PARKED on T0's behalf (D11′, 2026-09-27)** per the brief's own
+      recommendation (`briefs/T0_DECISION_REQUEST_FLUX_BOUND_ON_D_2026_09_21.md`: Q1 no, Q2 option A).
+      S3-00b stays BLOCKED (F5b). Reopens with a specified B₃.
+- [x] **`ATKIN_LEHNER_ACTION_UNVERIFIED` — already retired by D8′/AM-4** (PASS(30),
+      `ATKIN_LEHNER_DISC_FORM.json`); item closed as superseded (D11′-6). s10 still advisory.
 - [ ] **Open thread (hypothesis, zero independent tests):** at div-2 loci (s7 z=−1, s10 z=−1/4) the
       explicit model shows A₁ points merging / appearing in pairs, not one new node. Next real test:
       an actual M_n-polarized model. Register: `briefs/THOUGHT_EXPERIMENTS_K3_SELECTION_2026_09_21.md`.
-- [ ] **T0: does C3 require an INTEGRAL partner?** s10's is dyadic. Branch (i) holds for both
-      primaries: `briefs/STREAM2_TO_STREAM3_C3_BRANCH_REPLY_2026_09_21.md`. New input 09-21:
-      integrality is coordinate-dependent — s10 and s18 partners are integral in 2z
-      (`PARTNER_GLOBAL_BOUNDEDNESS.json`, e(n) ≤ n−1 for all n modulo two Stream 1 theorems).
+- [x] **Does C3 require an INTEGRAL partner? — RULED by D8′/AM-2 (literal reading: no; the constant
+      is reported, never gated).** Item closed as superseded (D11′-7). Record of the question:
+      `briefs/STREAM2_TO_STREAM3_C3_BRANCH_REPLY_2026_09_21.md`; `PARTNER_GLOBAL_BOUNDEDNESS.json`.
 - [x] **Defect FIXED 2026-09-21:** `check_C3b_symsqrt.py` tested C(n) == −(n+1)² literally, so a
       genuine MUM partner whose fit clears denominators (Apéry ζ(3): C = −4(n+1)²) was reported
       non-MUM / `FAIL_PARTNER_VALIDATION`. Now `mum_normalise` tests proportionality with a positive
