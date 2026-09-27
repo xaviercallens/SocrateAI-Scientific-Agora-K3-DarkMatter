@@ -33,9 +33,14 @@ Certification statement, per family:
   C-c  det M(loc) encloses -1 for both finite loci
   C-d  the enclosure of M(loc) does NOT contain the identity (negative control:
        the loop is not trivial, rigorously)
-What is NOT claimed: anything beyond stage 2 (the lattice identification stays
-Tier B via Dolgachev/Doran); that MAX_DEN is the right denominator bound (it is
-the U1 checker's, 10^4); anything physical.
+Step 2 (same checker): the certified exact matrices are fed into the U1 checker's
+exact stage 3 and the derived lattice (Gram, det, signature, discriminant group,
+2n, U-splitting witness, overlattice count) is compared field by field with the
+lattice certificate on main (C2_cooper_s7_v5.json LIVE; C2_cooper_s10_v4_DRAFT.json,
+ADVISORY). Exit 0 needs both the certification and this chain to close.
+What is NOT claimed: that the monodromy-invariant lattice IS T (Dolgachev/Doran,
+Tier B, unchanged); that MAX_DEN is the right denominator bound (it is the U1
+checker's, 10^4); any promotion of cooper_s10; anything physical.
 
 Controls: checkers/test_certified_monodromy_L2_controls.py.
 Exit 0 iff every certification clause holds for the family.
@@ -491,6 +496,44 @@ def certify_family(family, verbose=True, scramble=None):
             print(f"  [z={loc}] max rho|h| {x:.3f}; det encloses -1: {cc}; not identity: {cd}; "
                   f"Sym^2 entries enclosed: {cb_contains}; max diameter {dia:.2e} < 1/MAX_DEN^2: {cb_unique}")
     out["certified"] = all_ok
+
+    # ---- step 2: the certified exact matrices into the exact stage 3 -------------
+    # The certification above says the recognised rationals ARE the monodromy entries
+    # (unique in their enclosures). Feeding exactly those into stage 3 and comparing
+    # with the lattice certificate on main closes the chain
+    #   certified numerics -> exact lattice arithmetic -> recorded lattice.
+    Ns_cert = {k: v.copy() for k, v in Ns_ref.items()}
+    if scramble == "stage3_entry":
+        k0 = sorted(Ns_cert)[0]
+        Ns_cert[k0][0, 2] += 1        # control: must be refused by stage 3's exact gates
+    lat = u1.stage3_lattice(family, L2_ref, ref_loci, Ns_cert, verbose=False)
+    ref_name = {"cooper_s7": "C2_cooper_s7_v5.json", "cooper_s10": "C2_cooper_s10_v4_DRAFT.json"}[family]
+    ref = json.loads((REPO / "data" / "certificates" / ref_name).read_text())["derived"]
+    compare = {
+        "gram_primitive_even": (lat["gram_primitive_even"], ref["gram_primitive_even"]),
+        "det": (lat["det"], ref["det"]),
+        "signature": (lat["signature"], ref["signature"]),
+        "disc_group_elementary_divisors": (lat["disc_group_elementary_divisors"], ref["disc_group_elementary_divisors"]),
+        "derived_2n": (lat["derived_2n"], ref["derived_2n_from_cusp_unipotent"]),
+        "u_splitting.d": (lat["u_splitting"]["d"], ref["u_splitting"]["d"]),
+        "u_splitting.gram_after": (lat["u_splitting"]["gram_after"], ref["u_splitting"]["gram_after"]),
+        "u_splitting.basis_change_matrix": (lat["u_splitting"]["basis_change_matrix"],
+                                            ref["u_splitting"]["basis_change_matrix"]),
+        "proper_even_invariant_overlattices": (lat["proper_even_invariant_overlattices"],
+                                               ref["proper_even_invariant_overlattices"]),
+    }
+    equal = {k: a == b for k, (a, b) in compare.items()}
+    out["stage3_from_certified_matrices"] = {
+        "reference_certificate": ref_name,
+        "reference_status": "LIVE" if "DRAFT" not in ref_name else "DRAFT (ADVISORY)",
+        "derived_here": {k: a for k, (a, b) in compare.items()},
+        "field_equal": equal,
+        "all_equal": all(equal.values()),
+    }
+    out["chain_closed"] = all_ok and all(equal.values())
+    if verbose:
+        print(f"  [stage3] from certified matrices: {sum(equal.values())}/{len(equal)} fields equal to "
+              f"{ref_name} -> chain closed: {out['chain_closed']}")
     return out
 
 
@@ -509,17 +552,20 @@ def main(argv=None):
     except CertFailure as e:
         print("CERTIFICATION REFUSED:", e)
         return 2
-    print("certified:", res["certified"])
+    print("certified:", res["certified"], "| stage-3 chain closed:", res["chain_closed"])
     if a.emit:
         cert = {
             "certificate": f"CERTIFIED_MONODROMY_L2_{a.family}",
             "checker": "checkers/check_certified_monodromy_L2.py", "checker_version": "1.0.0",
             "date": AUDIT_DATE, "tier": "B",
-            "status": "WP-S2-CERT step 1 (T0 D9', 2026-09-27). Replaces the 1e-35 recognition gate of "
-                      "check_U1_lattice.py stage 2 by rigorous enclosures: each recognised Sym^2 entry is the "
+            "status": "WP-S2-CERT steps 1+2 (T0 D9', 2026-09-27). Step 1 replaces the 1e-35 recognition gate "
+                      "of check_U1_lattice.py stage 2 by rigorous enclosures: each recognised Sym^2 entry is the "
                       "unique rational of denominator <= MAX_DEN in a ball-arithmetic enclosure with certified "
-                      "truncation bounds. Stage 3 (lattice) and the Dolgachev/Doran identification are "
-                      "unchanged and stay Tier B. cooper_s10 remains ADVISORY (lattice certificate DRAFT).",
+                      "truncation bounds. Step 2 feeds exactly those matrices into the exact stage 3 and compares "
+                      "the derived lattice field by field with the lattice certificate on main "
+                      "(result.stage3_from_certified_matrices). The Dolgachev/Doran identification of the "
+                      "invariant lattice with T is unchanged and stays Tier B. cooper_s10 remains ADVISORY "
+                      "(lattice certificate DRAFT, T0 D6'); certifying its numerics does not promote it.",
             "tier_reason": "the monodromy matrices in the Frobenius flag basis are now certified (Arb balls, "
                            "majorant tail bounds, exact rational centres); Tier B remains for the identification "
                            "of the monodromy-invariant lattice with T (framework sources, read).",
@@ -538,7 +584,7 @@ def main(argv=None):
         out = REPO / "data" / "certificates" / f"CERTIFIED_MONODROMY_L2_{a.family}.json"
         out.write_text(json.dumps(cert, indent=2) + "\n")
         print("wrote", out)
-    return 0 if res["certified"] else 1
+    return 0 if (res["certified"] and res["chain_closed"]) else 1
 
 
 if __name__ == "__main__":

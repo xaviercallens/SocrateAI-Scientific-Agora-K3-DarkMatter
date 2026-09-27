@@ -193,9 +193,10 @@
       step 1 LANDED**: `checkers/check_certified_monodromy_L2.py` certifies (Arb balls, majorant tails) that
       every Sym² monodromy entry recognised by `check_U1_lattice.py` stage 2 is the unique rational of
       denominator ≤ 10⁴ in its enclosure — s7 and s10 both (s10 stays ADVISORY; lattice cert DRAFT).**
-      Still open: whether the lab programme goes to Stream 3 (no recommendation made); WP-S2-CERT step 2
-      (carry the certified matrices into stage 3 in place of the heuristic ones — a wiring change, no new
-      mathematics). Delivery notes placed untracked in the S1 and S3 repos; mirrors re-pin to `e7d420af…`.
+      **Step 2 also landed:** the certified matrices run through the exact stage 3 reproduce the lattice
+      certificate 9/9 fields (s7 LIVE v5; s10 DRAFT v4) — chain closed; tampered matrix refused (N8).
+      Still open: whether the lab programme goes to Stream 3 (no recommendation made). Delivery notes
+      placed untracked in the S1 and S3 repos; mirrors re-pin to `e7d420af…`.
 - [ ] **T0: candidate register** — S1 `K3_CRITERIA.md` still lists t103 as dropped, although
       E-014 found no veto (S1 `briefs/T0_FLAG_K3_CRITERIA_T103_STALE_2026_08_01.md`, unanswered).
 

@@ -23,6 +23,9 @@ rigorous helper is a genuine bound on cases where the truth is known exactly.
   N6  uniqueness logic: a ball of diameter >= 1/MAX_DEN^2 must NOT be declared unique
       (two rationals of denominator <= MAX_DEN fit inside)
   N7  contains_exact rejects a rational outside the ball and accepts one inside
+  N8  step 2: the exact stage 3 run on the certified matrices reproduces every
+      field of the LIVE lattice certificate (s7), and a tampered certified matrix
+      is refused by stage 3's exact gates
 """
 import sys
 from fractions import Fraction as Fr
@@ -120,6 +123,16 @@ check("N6 narrow ball cannot hold both", not (cm.contains_exact(narrow, q1) and 
 # N7
 b = acb(arb(1, 1e-30), arb(0, 1e-30))
 check("N7 contains_exact", cm.contains_exact(b, Fr(1)) and not cm.contains_exact(b, Fr(1, 1) + Fr(1, 10 ** 20)))
+
+# N8 -- step 2: the chain closes on the real family, and a tampered certified
+# matrix is refused by stage 3's exact gates (involution / invariant form).
+check("N8 stage-3 chain closed on cooper_s7", res["chain_closed"]
+      and res["stage3_from_certified_matrices"]["all_equal"])
+try:
+    cm.certify_family("cooper_s7", verbose=False, scramble="stage3_entry")
+    check("N8 tampered certified matrix refused by stage 3", False, "stage 3 accepted a tampered matrix")
+except u1.ControlFailure as e:
+    check("N8 tampered certified matrix refused by stage 3", True)
 
 print()
 if failures:

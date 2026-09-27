@@ -4,7 +4,7 @@
   "checker_version": "1.0.0",
   "date": "2026-09-27",
   "tier": "B",
-  "status": "WP-S2-CERT step 1 (T0 D9', 2026-09-27). Replaces the 1e-35 recognition gate of check_U1_lattice.py stage 2 by rigorous enclosures: each recognised Sym^2 entry is the unique rational of denominator <= MAX_DEN in a ball-arithmetic enclosure with certified truncation bounds. Stage 3 (lattice) and the Dolgachev/Doran identification are unchanged and stay Tier B. cooper_s10 remains ADVISORY (lattice certificate DRAFT).",
+  "status": "WP-S2-CERT steps 1+2 (T0 D9', 2026-09-27). Step 1 replaces the 1e-35 recognition gate of check_U1_lattice.py stage 2 by rigorous enclosures: each recognised Sym^2 entry is the unique rational of denominator <= MAX_DEN in a ball-arithmetic enclosure with certified truncation bounds. Step 2 feeds exactly those matrices into the exact stage 3 and compares the derived lattice field by field with the lattice certificate on main (result.stage3_from_certified_matrices). The Dolgachev/Doran identification of the invariant lattice with T is unchanged and stays Tier B. cooper_s10 remains ADVISORY (lattice certificate DRAFT, T0 D6'); certifying its numerics does not promote it.",
   "tier_reason": "the monodromy matrices in the Frobenius flag basis are now certified (Arb balls, majorant tail bounds, exact rational centres); Tier B remains for the identification of the monodromy-invariant lattice with T (framework sources, read).",
   "parameters": {
     "PREC_BITS": 420,
@@ -96,7 +96,88 @@
         "holds": true
       }
     },
-    "certified": true
+    "certified": true,
+    "stage3_from_certified_matrices": {
+      "reference_certificate": "C2_cooper_s10_v4_DRAFT.json",
+      "reference_status": "DRAFT (ADVISORY)",
+      "derived_here": {
+        "gram_primitive_even": [
+          [
+            0,
+            0,
+            -1
+          ],
+          [
+            0,
+            20,
+            0
+          ],
+          [
+            -1,
+            0,
+            0
+          ]
+        ],
+        "det": -20,
+        "signature": [
+          2,
+          1
+        ],
+        "disc_group_elementary_divisors": [
+          20
+        ],
+        "derived_2n": 20,
+        "u_splitting.d": 20,
+        "u_splitting.gram_after": [
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            20
+          ]
+        ],
+        "u_splitting.basis_change_matrix": [
+          [
+            1,
+            -360,
+            120
+          ],
+          [
+            0,
+            -6,
+            1
+          ],
+          [
+            0,
+            -1,
+            0
+          ]
+        ],
+        "proper_even_invariant_overlattices": 0
+      },
+      "field_equal": {
+        "gram_primitive_even": true,
+        "det": true,
+        "signature": true,
+        "disc_group_elementary_divisors": true,
+        "derived_2n": true,
+        "u_splitting.d": true,
+        "u_splitting.gram_after": true,
+        "u_splitting.basis_change_matrix": true,
+        "proper_even_invariant_overlattices": true
+      },
+      "all_equal": true
+    },
+    "chain_closed": true
   },
   "inputs": {
     "sha256": {

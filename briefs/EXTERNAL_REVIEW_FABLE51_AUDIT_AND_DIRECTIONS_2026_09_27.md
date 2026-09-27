@@ -121,7 +121,12 @@ denominator ≤ 10⁴** inside its enclosure (s7 diameters 1.5e−96 and 1.0e−
 1e−116. Two engineering facts are recorded in the checker: Horner evaluation from the top passes through
 wide balls and loses ~20 digits of radius accounting (forward summation is used), and the ball radii
 inside the recurrence grow ~1.7× faster than the majorant ρ, so the step fraction is kept at 0.35 (a
-looser step can only fail closed). What this does **not** do: the identification of the
+looser step can only fail closed). **Step 2 (same session):** the certified matrices are fed into the
+U1 checker's exact stage 3 and the derived lattice (Gram, det, signature, discriminant group, 2n,
+U-splitting witness, overlattice count) equals the lattice certificate field by field — 9/9 against
+`C2_cooper_s7_v5.json` (LIVE) and 9/9 against `C2_cooper_s10_v4_DRAFT.json` (ADVISORY) — so the chain
+*certified numerics → exact lattice arithmetic → recorded lattice* is closed; a tampered certified
+matrix is refused by stage 3. What this does **not** do: the identification of the
 monodromy-invariant lattice with T stays Tier B (framework sources), and s10 stays ADVISORY (lattice
 certificate DRAFT, D6′). Certificates `CERTIFIED_MONODROMY_L2_cooper_s7.json` / `_s10.json`; controls
 `checkers/test_certified_monodromy_L2_controls.py`. **Declined:** running Arm V/P/0 (no observable), any
