@@ -219,14 +219,20 @@
       1e−35; derived block identical to v5 (asserted at promotion). v5 retained for audit and as the
       pinned input of earlier certificates; v3 still the rank source. PR #55 merged on the same ruling;
       S1/S3 informed. Record: `briefs/T0_DECISIONS_2026_09_27_STREAM2.md` D10′.
-- [ ] **Lift two CM rows to Tier A (lattice half) — pending our own read (producer ≠ verifier).**
-      Stream 1 (`MnLattice.lean` §3b, gates green, `b77f2dc`) and LeanMaster (`DualScaleDyons/
-      RankJump.lean`, in progress) each kernel-check, independently: (e−f)² = −2 with complement
-      ⟨2⟩⊕⟨2N⟩ for all N; at N = 7, v = (2,−4,1) with complement [[2,1],[1,4]], index 1. Receipt on
-      main: `briefs/STREAM1_TO_STREAM2_K3_DIRECTIONS_RECEIPT_2026_09_27.md`. **To do here:** read the
-      Lean statements (not the docstrings) in both repos, compare them, then re-emit
-      `CM_POINTS_RHO20.json` with `lattice_tier: A (<theorem>, <commit>)` on exactly those rows; the
-      z-recognition stays Tier B and `v^⊥ = T_X` stays Tier L.
+- [x] **Two CM rows lifted to Tier A (lattice half) — DONE 2026-09-27, producer ≠ verifier honoured.**
+      Stream 2 re-ran the gates itself in Stream 1's worktree (`fd76a49`, file sha `95c023ef…`): G1 exit
+      0 (3723 jobs), G2 exit 0, G3 exit 1 = 395 audited / 3 failing, all three the registered-axiom
+      theorems and none in §3b, G4 exit 0, `#print axioms` on the nine §3b declarations = standard
+      axioms only. Then `checkers/check_lean_attestations_rankjump.py` recomputed from the certificate
+      rows that each attested statement is about that row (vector, orthogonality, Gram, reduced form,
+      frame det, det identity) and emitted the OVERLAY `CM_POINTS_RHO20_LATTICE_TIER.json`: s7 z=1/27
+      (D −28) and z=−1 (D −7) → `lattice_tier: A`; `CM_POINTS_RHO20.json` itself unchanged. Attestation
+      data: `refs/lean_attestations_rankjump_2026_09_27.json` (manifested). 9 controls. Still Tier B:
+      z-recognition; Tier L: v^⊥ = T_X.
+- [ ] **LeanMaster's six rows (`DualScaleDyons/RankJump.lean`, worktree `rank-jump-lemma`):** statements
+      read here and cross-checked by LeanMaster against Stream 1's (agree on every shared item); waiting
+      for their G1/G3 exit codes, then Stream 2 re-runs the gates there and appends the attestations
+      (z=∞ row of s7; the three s10 rows stay ADVISORY even at Tier A lattice arithmetic).
 - [x] **Stream 1's K3-directions receipt (2026-09-27) — received, hashes agree; one correction taken:**
       my "(0,0) [X₄]" label was wrong (X₄ = (α,β) = (1,0); (0,0) = E_ω × E_i, ρ = 18) — corrected in
       their note; their (1,0) row closes to 20 once the two order-2 places at t = ±1 are read as such.
@@ -310,6 +316,8 @@ python3 checkers/check_inose_model_M7.py                      # ~15 s: explicit 
 python3 checkers/test_inose_model_M7_controls.py              # 7 controls (scrambled z refused; level 5 does not fit; wrong pole order fails)
 python3 checkers/check_inose_fibration_multiplicities.py      # ~10 s: KS J9 equation (transcription verified) -> Inose K3; orders {10,10,2,1,1} at both loci
 python3 checkers/test_inose_fibration_multiplicities_controls.py # 7 controls (transcription errors refused; exceptional set discriminating)
+python3 checkers/check_lean_attestations_rankjump.py --verify-source-files # overlay lattice_tier from kernel statements; A7 skipped if the producer worktree is absent
+python3 checkers/test_lean_attestations_rankjump_controls.py # 9 controls (tampered Gram/basis/vector/axioms/det/sha -> tier B)
 # slow (~70 s): python3 checkers/check_nodality_explicit_models.py   (Singular optional second CAS)
 # slow (~2.5 min), run before release: python3 checkers/check_CM_points_rho20.py
 ```

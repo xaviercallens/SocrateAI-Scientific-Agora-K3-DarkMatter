@@ -25,3 +25,4 @@ were cross-checked to reproduce their textbook forms exactly.**
 - s18 clean re-transcription from arXiv:2102.11839 (replaces BLOCKED entry; F6-track)
 
 Generated-by: Stream 2 (Fable 5) | Verified-by: sha256sum | Reviewed-by: T0 pending
+| lean_attestations_rankjump_2026_09_27.json | 168eee637acfb82148a4fb8b42425bd025aadba56902dd2d8cc653ff3087229c | Kernel-checked lattice statements about CM_POINTS_RHO20 rows (Stream 1 `Agora/Geometry/MnLattice.lean` §3b at `fd76a49`, file sha 95c023ef…), with Stream 2's OWN gate readings (G1 0 / G2 0 / G3 395 audited, 3 failing = registered axioms, none in §3b / G4 0 / #print axioms standard) — consumed by `checkers/check_lean_attestations_rankjump.py`; LeanMaster's six rows pending its G1/G3 | 2026-09-27 |
