@@ -75,15 +75,50 @@ X₀(7)+. That curve has **one** cusp (z = 0), so π and σ are Laurent polynomi
    about the geometry of the surface at the two simple zeros. The model now exists to test it; the
    test needs the next step.
 
-## 4. Next step (not executed — needs one T0 reading, §5)
+## 4a. Step 2, executed the same day up to the Kodaira boundary (`checkers/check_inose_fibration_multiplicities.py` → `INOSE_FIBRATION_MULTIPLICITIES.json`)
 
-Reduce X(a(z), b(z)) to its Inose elliptic fibration (Weierstrass form, source to fetch: Inose 1978
-or Shioda 2006 "Kummer sandwich", not from memory) and compute, as exact functions of z, the orders
-of vanishing of (a₄, a₆, Δ) at the roots of Δ(t). At the two simple zeros the extra algebraic class
-should appear as a coincidence of discriminant roots; whether the div-1 point (z = 1/27) and the
-div-2 point (z = −1) differ **in the fibre configuration** or only in the value of J is exactly
-GE-10's question, and it is decidable by this computation. The external review's own tables for
-X₃/X₄ (II*, II*, IV; II*, II*, I₂, I₂) are the z = ∞ cases of the s7 and s10 families, respectively.
+**Source, not memory.** The Weierstrass equation was taken from Kuwata–Shioda (arXiv:math/0609473,
+located through the arXiv API by author — a remembered id was wrong and discarded unread), §5.3:
+the type-J₉ pencil on Km(E₁×E₂) with Legendre parameters λ₁, λ₂, discriminant u⁶(u−1)¹⁰d(u),
+deg d = 2, and their printed disc(d). The transcription is **verified** against that printed
+discriminant (up to the recorded convention factor 16² between Silverman's Δ and theirs); a
+sign flip or an exponent error is refused (controls N1, N2). KS state (Example 1.3) that the
+degree-2 base change of this pencil is the elliptic K3 with two II* fibres, i.e. the Inose
+surface; the base change u = s² and the minimalising twist are done here and give a K3
+Weierstrass model (degrees 4, 8, 12) with Δ_X = (s²−1)¹⁰ d(s²) of degree 24.
+
+**Result, exact, orders of vanishing only (no Kodaira label attached, §5):**
+
+| situation | orders of the roots of Δ_X |
+|---|---|
+| generic (E₁, E₂ independent) | {10, 10, 1, 1, 1, 1} |
+| **J(E₁) = J(E₂)**, J ∉ {0, 1} — in particular **both loci z = −1 (D = −7) and z = 1/27 (D = −28)** | **{10, 10, 2, 1, 1}** |
+| J = 0 (z = ∞, E_ω × E_ω) | {10, 10, 4} |
+| J = 1 (E_i × E_i) | {10, 10, 2, 2} (one at s = ∞) |
+
+The mechanism was not expected beforehand and is the finding: with λ₁ = λ₂, **d(0) vanishes
+identically**, so d(u) = u·e(u) and after the base change the two simple roots at ±√(·) collapse
+onto the branch point s = 0 — exactly **one order-2 fibre** appears, for every isomorphic pair
+outside the explicit exceptional set {λ ∈ {0, 1, −1, 2, ½}, λ² − λ + 1 = 0} = {J ∈ {1, 0}} and the
+degenerate curves. The degree-6 λ-polynomials of the two loci' J-values (J = −125/64 and
+614125/64, read from the model; they are j = −3375 and 255³, the class-number-one values for
+D = −7 and −28 — computed, not typed) share no root with that set.
+
+**GE-10, answered at the fibre level for this fibration:** the div-2 point z = −1 and the div-1
+point z = 1/27 are **indistinguishable** — each shows one new order-2 fibre, no "merging of A₁'s".
+The second extra class of the rank-20 surface (rank 19 → 20 at these loci) is therefore **not a
+fibre**; it must be a Mordell–Weil section. (Read with the D7′ lattice data this would put the
+section's height at disc(NS)/2, i.e. 7/2 at z = −1 and 14 at z = 1/27 — an implication, not
+computed, Tier B.) The two special rows reproduce, from the sourced equation, the orders that
+the external review's X₃ and X₄ tables carry under their Kodaira labels (II*, II*, IV and
+II*, II*, I₂, I₂) — which lets those two review rows be scored CONFIRMED at the level of orders.
+
+## 4. Next step (the part that still needs the T0 reading, §5)
+
+Done in §4a up to the point where a Kodaira **label** would be attached to an order. What remains
+gated: (i) naming the order-2 fibre (I₂ vs II is decided by ord a₄ at s = 0 — computable, but the
+label is the reading T0 owns); (ii) the Mordell–Weil section at the loci (its explicit form; only
+its existence is forced by the rank count). Neither changes the fibre-level conclusion.
 
 ## 5. Ask (T0)
 
