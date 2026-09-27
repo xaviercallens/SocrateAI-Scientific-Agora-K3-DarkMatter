@@ -146,9 +146,16 @@
       §4 now says a DRAFT certificate is neither a pass nor a failure. Record:
       `briefs/T0_DECISIONS_2026_09_21_STREAM2.md` (questions + selected options verbatim).
       **Not a freeze** — thresholds stay SKELETON, §7 still blocks v1.0.
-- [ ] **Write `scripts/render_status_table.py`** (certificates only, never hand input), then restore
-      a generated §5 table. The old table was removed, not edited: it cited a renderer that has
-      never existed here and its body contradicted every certificate on `main`.
+- [x] **`scripts/render_status_table.py` — WRITTEN 2026-09-27; §5 table restored, generated.**
+      Reads only the §1 register, `refs/recurrences_v1.json` and the certificates named in its
+      `SOURCES` map. Each row's refs entry is **derived**: its Cooper params must reproduce exactly
+      one refs recurrence, which confirms K-s18 = `avs_sporadic3_s18`. The renderer refuses a
+      missing, retracted, wrong-candidate or field-missing source. DRAFT renders as DRAFT
+      (ADVISORY). The output is byte-stable because no stamps are rendered. 20 controls in
+      `checkers/test_render_status_table_controls.py`. It also surfaced two findings, flagged and
+      not fixed, in `briefs/STREAM2_STATUS_TABLE_RENDERER_2026_09_27.md`: §2 C3 names a checker
+      that does not exist here, and `T3_LEVEL_CONSISTENCY.json` still self-reports "not an
+      adopted gate". K3_CRITERIA.md's hash changed, so the S1/S3 mirrors need re-pinning (same brief).
 - [ ] **T0: the `K-t103` row of §1** — §1 is FROZEN and was copied untouched, but Stream 1's
       `T0_FLAG_K3_CRITERIA_T103_STALE_2026_08_01.md` (E-014: never vetoed) is still unanswered.
 - [ ] **T0: C4 and C5 still carry `TBD-AT-FREEZE`** — implementing their checkers is blocked until
@@ -241,6 +248,8 @@ python3 checkers/check_partner_global_boundedness.py         # s10/s18 partner c
 python3 checkers/test_partner_global_boundedness_controls.py # 16 controls
 python3 checkers/check_CM_completeness_classnumber.py        # P2 table complete where it speaks (30/30 D)
 python3 checkers/test_CM_completeness_classnumber_controls.py # 16 controls
+python3 checkers/test_render_status_table_controls.py        # 20 controls (retracted/missing/wrong-candidate sources refuse)
+python3 scripts/render_status_table.py --check               # K3_CRITERIA sec. 5 matches the certificates
 # slow (~70 s): python3 checkers/check_nodality_explicit_models.py   (Singular optional second CAS)
 # slow (~2.5 min), run before release: python3 checkers/check_CM_points_rho20.py
 ```
