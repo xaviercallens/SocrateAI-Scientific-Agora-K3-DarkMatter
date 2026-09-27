@@ -344,8 +344,8 @@ def render_table(criteria_text, certs_dir, refs_file, checkers_dir):
     if dropped:
         lines += ["", "Rows struck in the frozen §1 register (rendered as §1 states them, not adjudicated "
                   "here): " + ", ".join(f"`{x}`" for x in dropped) + "."]
-    lines += ["", "Sources: **C3** is read from the `check_C3b_symsqrt.py` certificates, which AM-2 cites as "
-              "C3's evidence; the §2-named `checkers/check_C3_sym2.py` is not present in this repository. "
+    lines += ["", "Sources: **C3** is read from the `check_C3b_symsqrt.py` certificates, the checker §2 names "
+              "since AM-7 (2026-09-27; AM-2 already cited them as C3's evidence). "
               "**C3b** has no certificate designated for any register row; the `*__apery_zeta2` "
               "certificates are a ruled-out partner test and are never read as a row's C3b status."]
     lines += ["", "Identity: each row's refs entry is the unique `refs/recurrences_v1.json` entry whose "

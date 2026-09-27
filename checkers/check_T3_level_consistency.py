@@ -304,8 +304,8 @@ def main():
     keys = args.only or list(CANDIDATES)
 
     print("=" * 78)
-    print("T3 -- two-leg agreement on n (lattice leg vs modular leg).  PROPOSAL STAGE:")
-    print("adopting T3 as a gate is T0 decision 2; K3_CRITERIA.md is untouched.")
+    print("T3 -- two-leg agreement on n (lattice leg vs modular leg).  Adopted as an")
+    print("UNSCORED consistency gate (K3_CRITERIA.md T3, AM-4, T0 D8' 2026-09-21). No scoring.")
     print("=" * 78)
     results, ok = {}, True
     for key in keys:
@@ -343,9 +343,11 @@ def main():
         "checker": Path(__file__).name,
         "checker_version": "1.0.0",
         "date": "2026-09-21",
-        "status": "PROPOSAL STAGE -- T3 is not an adopted gate. Adoption is T0 decision 2 of "
-                  "briefs/STREAM2_K3xT2_SELECTION_CRITERIA_PROPOSAL_2026_09_16.md sec 6, open. "
-                  "K3_CRITERIA.md unchanged. No scoring.",
+        "status": "ADOPTED as an UNSCORED consistency gate -- K3_CRITERIA.md T3 (AM-4, T0 D8' "
+                  "2026-09-21, briefs/T0_DECISIONS_2026_09_21_STREAM2.md). Never scored; disagreement "
+                  "is a finding to escalate, not a removal. Wording re-emitted 2026-09-27 (T0 D9'); "
+                  "no computed value changed. The former text 'PROPOSAL STAGE -- not an adopted gate' "
+                  "was stale from 2026-09-21.",
         "claim": "For each candidate below, the n re-derived from its C2 lattice certificate "
                  "(Gram determinant and the serialized U-splitting witness, both recomputed) "
                  "equals the level at which its inverse mirror map is verified to uniformize "

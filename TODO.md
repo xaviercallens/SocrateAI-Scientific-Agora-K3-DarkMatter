@@ -187,9 +187,15 @@
       (`EXTERNAL_REVIEW_FABLE_2026_09_21_AUDIT.json`; its W₇ "prediction" was already in
       `CM_POINTS_RHO20.json`). Convergence [B, narrow]: Paper 12's A₂ surface = s7 at z=∞; the ⟨2⟩⊕⟨2⟩
       surface = s10 at z=∞ — no preference (D7′). The spec it reviews (`~/K3spec.md`) was REJECTED
-      2026-09-16. **Open for T0:** AM-6 selector clause (exact diff in the brief); `python-flint` install
-      for WP-S2-CERT (certified monodromy by ball arithmetic); whether the lab programme goes to Stream 3
-      under the pin protocol. Delivery notes placed untracked in the S1 and S3 repos.
+      2026-09-16. **T0 D9′ (same day, "ok follow your recommendation",
+      `briefs/T0_DECISIONS_2026_09_27_STREAM2.md`): AM-6 selector clause ADOPTED; AM-7 C3 checker path
+      corrected; T3 cert wording re-emitted (values unchanged); `python-flint` 0.9.0 installed; **WP-S2-CERT
+      step 1 LANDED**: `checkers/check_certified_monodromy_L2.py` certifies (Arb balls, majorant tails) that
+      every Sym² monodromy entry recognised by `check_U1_lattice.py` stage 2 is the unique rational of
+      denominator ≤ 10⁴ in its enclosure — s7 and s10 both (s10 stays ADVISORY; lattice cert DRAFT).**
+      Still open: whether the lab programme goes to Stream 3 (no recommendation made); WP-S2-CERT step 2
+      (carry the certified matrices into stage 3 in place of the heuristic ones — a wiring change, no new
+      mathematics). Delivery notes placed untracked in the S1 and S3 repos; mirrors re-pin to `e7d420af…`.
 - [ ] **T0: candidate register** — S1 `K3_CRITERIA.md` still lists t103 as dropped, although
       E-014 found no veto (S1 `briefs/T0_FLAG_K3_CRITERIA_T103_STALE_2026_08_01.md`, unanswered).
 
@@ -261,6 +267,9 @@ python3 checkers/test_render_status_table_controls.py        # 20 controls (retr
 python3 scripts/render_status_table.py --check               # K3_CRITERIA sec. 5 matches the certificates
 python3 checkers/check_external_review_fable_2026_09_21.py   # external review audit: 12 clauses vs certificates, exact class numbers / Gauss-Bonnet
 python3 checkers/test_external_review_fable_controls.py      # 22 controls (each clause can go NOT_CONFIRMED; exact helpers reject wrong values)
+python3 checkers/check_certified_monodromy_L2.py --family cooper_s7   # ~50 s: CERTIFIED stage-2 monodromy (Arb balls); needs python-flint
+python3 checkers/check_certified_monodromy_L2.py --family cooper_s10  # ~30 s: same, s10 (ADVISORY family; this certifies the numerics only)
+python3 checkers/test_certified_monodromy_L2_controls.py     # ~70 s: scrambled operator refused; every rigorous helper is a real bound
 # slow (~70 s): python3 checkers/check_nodality_explicit_models.py   (Singular optional second CAS)
 # slow (~2.5 min), run before release: python3 checkers/check_CM_points_rho20.py
 ```

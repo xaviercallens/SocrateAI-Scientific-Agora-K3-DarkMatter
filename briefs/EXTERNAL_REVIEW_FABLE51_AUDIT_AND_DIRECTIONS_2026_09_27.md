@@ -89,7 +89,7 @@ LeanMaster index, not re-proved.
    mathematics we already cite; its QHE / SIT / Aubry–André material is Tier C in its own words and outside
    this repo.
 
-## 4. Proposed amendment AM-6 (§6 protocol; NOT applied — T0 text needed)
+## 4. Proposed amendment AM-6 (§6 protocol) — **ADOPTED later the same day, T0 D9′** (`briefs/T0_DECISIONS_2026_09_27_STREAM2.md`; text below applied verbatim)
 
 *Motivation.* The review's N3; D7′'s "widening needs its own T0 text"; three known selectors disagree.
 *Exact diff* — add to **C6** after "**What C6 is NOT**":
@@ -108,13 +108,24 @@ Stream 1 / Stream 3 mirrors re-pin (they must anyway, PR #55).
 ## 5. Directions per stream
 
 **Stream 2 (this repo) — executed:** record + manifest row; audit checker + controls; regression block
-lines in `TODO.md`. **Proposed, not executed:** AM-6 (§4); **WP-S2-CERT** — certified monodromy of L₃
-along generators of π₁(P¹ − {0, 1/27, −1, ∞}) by ball arithmetic (Arb via `python-flint`, which is **not
-installed**; `mpmath 1.3.0` is, and gives no enclosures). Deliverable: integer monodromy matrices with
-rigorous error radii below ½, replacing the 1e−35 recognition gate in `check_U1_lattice.py` stage 2;
-gate: negative control on a scrambled operator must fail to close. Needs a package install (T0 to allow)
-before any code. **Declined:** running Arm V/P/0 (no observable), any ranking, any edit of a frozen
-criterion, any Kodaira label on the register loci.
+lines in `TODO.md`. **Proposed at first, then executed under T0 D9′ the same day**
+(`briefs/T0_DECISIONS_2026_09_27_STREAM2.md`): AM-6 (§4) adopted; **WP-S2-CERT step 1 landed** —
+`checkers/check_certified_monodromy_L2.py` redoes `check_U1_lattice.py` stage 2 (the order-2 operator
+L₂, Frobenius basis at the MUM point, Sym²) in Arb ball arithmetic (`python-flint 0.9.0`, installed
+under D9′-4) with rigorous truncation bounds: majorant induction on the θ-form recurrence for the
+Frobenius tails, majorant induction on the local Taylor recurrence for each continuation step (step ≤
+0.35 × the majorant radius, which is proved ≤ the distance to the nearest singular point), exact rational
+centres. Result, both families: every Sym² entry the heuristic recognised is the **unique rational of
+denominator ≤ 10⁴** inside its enclosure (s7 diameters 1.5e−96 and 1.0e−115; s10 4.2e−102 and
+2.2e−115); det M = −1 enclosed; loops rigorously non-trivial; cusp loop encloses [[1,1],[0,1]] to
+1e−116. Two engineering facts are recorded in the checker: Horner evaluation from the top passes through
+wide balls and loses ~20 digits of radius accounting (forward summation is used), and the ball radii
+inside the recurrence grow ~1.7× faster than the majorant ρ, so the step fraction is kept at 0.35 (a
+looser step can only fail closed). What this does **not** do: the identification of the
+monodromy-invariant lattice with T stays Tier B (framework sources), and s10 stays ADVISORY (lattice
+certificate DRAFT, D6′). Certificates `CERTIFIED_MONODROMY_L2_cooper_s7.json` / `_s10.json`; controls
+`checkers/test_certified_monodromy_L2_controls.py`. **Declined:** running Arm V/P/0 (no observable), any
+ranking, any Kodaira label on the register loci.
 
 **Stream 1 (LeanProposal) — delivery note `briefs/STREAM2_TO_STREAM1_FABLE_REVIEW_DIRECTIONS_2026_09_27.md`
 in their repo:** (a) pin Doran 1998 Thm 5.13 as Tier L in their docs — our fetched copy is hash-pinned
