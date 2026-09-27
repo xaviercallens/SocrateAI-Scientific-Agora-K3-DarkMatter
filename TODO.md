@@ -146,9 +146,16 @@
       §4 now says a DRAFT certificate is neither a pass nor a failure. Record:
       `briefs/T0_DECISIONS_2026_09_21_STREAM2.md` (questions + selected options verbatim).
       **Not a freeze** — thresholds stay SKELETON, §7 still blocks v1.0.
-- [ ] **Write `scripts/render_status_table.py`** (certificates only, never hand input), then restore
-      a generated §5 table. The old table was removed, not edited: it cited a renderer that has
-      never existed here and its body contradicted every certificate on `main`.
+- [x] **`scripts/render_status_table.py` — WRITTEN 2026-09-27; §5 table restored, generated.**
+      Reads only the §1 register, `refs/recurrences_v1.json` and the certificates named in its
+      `SOURCES` map. Each row's refs entry is **derived**: its Cooper params must reproduce exactly
+      one refs recurrence, which confirms K-s18 = `avs_sporadic3_s18`. The renderer refuses a
+      missing, retracted, wrong-candidate or field-missing source. DRAFT renders as DRAFT
+      (ADVISORY). The output is byte-stable because no stamps are rendered. 20 controls in
+      `checkers/test_render_status_table_controls.py`. It also surfaced two findings, flagged and
+      not fixed, in `briefs/STREAM2_STATUS_TABLE_RENDERER_2026_09_27.md`: §2 C3 names a checker
+      that does not exist here, and `T3_LEVEL_CONSISTENCY.json` still self-reports "not an
+      adopted gate". K3_CRITERIA.md's hash changed, so the S1/S3 mirrors need re-pinning (same brief).
 - [ ] **T0: the `K-t103` row of §1** — §1 is FROZEN and was copied untouched, but Stream 1's
       `T0_FLAG_K3_CRITERIA_T103_STALE_2026_08_01.md` (E-014: never vetoed) is still unanswered.
 - [ ] **T0: C4 and C5 still carry `TBD-AT-FREEZE`** — implementing their checkers is blocked until
@@ -174,6 +181,28 @@
       function-level known-bads. s7/s10 verdicts unchanged; both certs re-emitted at (n_fit 30,
       deg 5) — the earlier (26, 2) vs (30, 5) parameter drift between them is gone.
       Limitation kept in the test docstring: no end-to-end real non-MUM Sym² bulk in the suite.
+- [ ] **T0: external review "K3 Selection Review" (Fable 5.1, 2026-09-21) — recorded + audited
+      2026-09-27**, `briefs/EXTERNAL_REVIEW_FABLE51_AUDIT_AND_DIRECTIONS_2026_09_27.md`. Verbatim record
+      `docs/literature/external_reviews/…` (manifest row); 12/12 Stream-2 clauses CONFIRMED
+      (`EXTERNAL_REVIEW_FABLE_2026_09_21_AUDIT.json`; its W₇ "prediction" was already in
+      `CM_POINTS_RHO20.json`). Convergence [B, narrow]: Paper 12's A₂ surface = s7 at z=∞; the ⟨2⟩⊕⟨2⟩
+      surface = s10 at z=∞ — no preference (D7′). The spec it reviews (`~/K3spec.md`) was REJECTED
+      2026-09-16. **T0 D9′ (same day, "ok follow your recommendation",
+      `briefs/T0_DECISIONS_2026_09_27_STREAM2.md`): AM-6 selector clause ADOPTED; AM-7 C3 checker path
+      corrected; T3 cert wording re-emitted (values unchanged); `python-flint` 0.9.0 installed; **WP-S2-CERT
+      step 1 LANDED**: `checkers/check_certified_monodromy_L2.py` certifies (Arb balls, majorant tails) that
+      every Sym² monodromy entry recognised by `check_U1_lattice.py` stage 2 is the unique rational of
+      denominator ≤ 10⁴ in its enclosure — s7 and s10 both (s10 stays ADVISORY; lattice cert DRAFT).**
+      **Step 2 also landed:** the certified matrices run through the exact stage 3 reproduce the lattice
+      certificate 9/9 fields (s7 LIVE v5; s10 DRAFT v4) — chain closed; tampered matrix refused (N8).
+      Still open: whether the lab programme goes to Stream 3 (no recommendation made). Delivery notes
+      placed untracked in the S1 and S3 repos; mirrors re-pin to the post-merge `K3_CRITERIA.md` hash
+      (the §5 C2 cells now carry the certified-monodromy note).
+- [x] **`C2_cooper_s7_v6` — ACCEPTED by T0 2026-09-27 (D10′), LIVE.** v5 content, provenance only:
+      stage-2 matrices CERTIFIED (`CERTIFIED_MONODROMY_L2_cooper_s7.json`) instead of recognised at
+      1e−35; derived block identical to v5 (asserted at promotion). v5 retained for audit and as the
+      pinned input of earlier certificates; v3 still the rank source. PR #55 merged on the same ruling;
+      S1/S3 informed. Record: `briefs/T0_DECISIONS_2026_09_27_STREAM2.md` D10′.
 - [ ] **T0: candidate register** — S1 `K3_CRITERIA.md` still lists t103 as dropped, although
       E-014 found no veto (S1 `briefs/T0_FLAG_K3_CRITERIA_T103_STALE_2026_08_01.md`, unanswered).
 
@@ -241,6 +270,13 @@ python3 checkers/check_partner_global_boundedness.py         # s10/s18 partner c
 python3 checkers/test_partner_global_boundedness_controls.py # 16 controls
 python3 checkers/check_CM_completeness_classnumber.py        # P2 table complete where it speaks (30/30 D)
 python3 checkers/test_CM_completeness_classnumber_controls.py # 16 controls
+python3 checkers/test_render_status_table_controls.py        # 20 controls (retracted/missing/wrong-candidate sources refuse)
+python3 scripts/render_status_table.py --check               # K3_CRITERIA sec. 5 matches the certificates
+python3 checkers/check_external_review_fable_2026_09_21.py   # external review audit: 12 clauses vs certificates, exact class numbers / Gauss-Bonnet
+python3 checkers/test_external_review_fable_controls.py      # 22 controls (each clause can go NOT_CONFIRMED; exact helpers reject wrong values)
+python3 checkers/check_certified_monodromy_L2.py --family cooper_s7   # ~50 s: CERTIFIED stage-2 monodromy (Arb balls); needs python-flint
+python3 checkers/check_certified_monodromy_L2.py --family cooper_s10  # ~30 s: same, s10 (ADVISORY family; this certifies the numerics only)
+python3 checkers/test_certified_monodromy_L2_controls.py     # ~70 s: scrambled operator refused; every rigorous helper is a real bound
 # slow (~70 s): python3 checkers/check_nodality_explicit_models.py   (Singular optional second CAS)
 # slow (~2.5 min), run before release: python3 checkers/check_CM_points_rho20.py
 ```

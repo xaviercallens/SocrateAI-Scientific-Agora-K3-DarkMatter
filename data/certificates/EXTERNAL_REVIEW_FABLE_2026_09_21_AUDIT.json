@@ -1,0 +1,389 @@
+{
+  "certificate": "EXTERNAL_REVIEW_FABLE_2026_09_21_AUDIT",
+  "checker": "checkers/check_external_review_fable_2026_09_21.py",
+  "checker_version": "1.0.0",
+  "date": "2026-09-27",
+  "status": "RECORD -- audit of an EXTERNAL review; nothing is adopted, scored or ranked by this certificate. CONFIRMED means: the clause agrees with a certificate on main or with an exact recomputation here. The rho = 20 cut stays read narrowly (T0 D7'): no selector between CM points is adopted; cooper_s10 is ADVISORY (lattice certificate DRAFT).",
+  "review": {
+    "file": "docs/literature/external_reviews/FABLE51_K3_SELECTION_REVIEW_2026_09_21.md",
+    "sha256": "6ab674536a5bb1e50bdc9df3b6f3445e7ba0e34e3d78df141503ce18030233a9",
+    "source": "https://claude.ai/artifact/SFDSuPbfKD8SB4mVQhAErg (Claude Docs id cc708cbe-058d-4c7e-9903-02b9af1e1d5d, rev 21)",
+    "author": "Fable 5.1",
+    "dated": "2026-09-21"
+  },
+  "tier": "B",
+  "tier_reason": "F1, F2, F4, F6, F10 exact here; F3, F5, F7, F8, F9, F11, F12 rest on Tier B certificates (numeric recognition of z, Dolgachev/Doran framework identification).",
+  "clauses": [
+    {
+      "id": "F1",
+      "review_claim": "cooper_s7 singular loci are ['0', '-1', '1/27', 'oo']",
+      "verdict": "CONFIRMED",
+      "evidence": {
+        "cooper_params": [
+          13,
+          4,
+          -27,
+          3
+        ],
+        "leading_symbol": "-(z + 1)*(27*z - 1)",
+        "loci": [
+          "0",
+          "-1",
+          "1/27",
+          "oo"
+        ]
+      },
+      "source": "register params (K3_CRITERIA sec. 1, matched to refs) -> exact sympy"
+    },
+    {
+      "id": "F2",
+      "review_claim": "cooper_s10 singular loci are ['0', '-1/4', '1/16', 'oo']",
+      "verdict": "CONFIRMED",
+      "evidence": {
+        "cooper_params": [
+          6,
+          2,
+          -64,
+          4
+        ],
+        "leading_symbol": "-(4*z + 1)*(16*z - 1)",
+        "loci": [
+          "0",
+          "-1/4",
+          "1/16",
+          "oo"
+        ]
+      },
+      "source": "register params (K3_CRITERIA sec. 1, matched to refs) -> exact sympy"
+    },
+    {
+      "id": "F3",
+      "review_claim": "L3 Riemann schemes as tabulated (MUM at 0; {0,1/2,1} interior; oo as stated)",
+      "verdict": "CONFIRMED",
+      "evidence": {
+        "cooper_s7": {
+          "0": [
+            "0",
+            "0",
+            "0"
+          ],
+          "-1": [
+            "0",
+            "1/2",
+            "1"
+          ],
+          "1/27": [
+            "0",
+            "1/2",
+            "1"
+          ],
+          "oo": [
+            "2/3",
+            "1",
+            "4/3"
+          ]
+        },
+        "cooper_s10": {
+          "0": [
+            "0",
+            "0",
+            "0"
+          ],
+          "-1/4": [
+            "0",
+            "1/2",
+            "1"
+          ],
+          "1/16": [
+            "0",
+            "1/2",
+            "1"
+          ],
+          "oo": [
+            "3/4",
+            "1",
+            "5/4"
+          ]
+        }
+      },
+      "source": "L3_RIEMANN_SCHEME.json"
+    },
+    {
+      "id": "F4",
+      "review_claim": "L2 exponents at oo are {1/3,2/3} (s7) and {3/8,5/8} (s10), read through {2a, a+b, 2b}",
+      "verdict": "CONFIRMED",
+      "evidence": {
+        "cooper_s7": {
+          "L3_oo": [
+            "2/3",
+            "1",
+            "4/3"
+          ],
+          "alpha": "1/3",
+          "beta": "2/3",
+          "middle_equals_alpha_plus_beta": true,
+          "difference": "1/3"
+        },
+        "cooper_s10": {
+          "L3_oo": [
+            "3/4",
+            "1",
+            "5/4"
+          ],
+          "alpha": "3/8",
+          "beta": "5/8",
+          "middle_equals_alpha_plus_beta": true,
+          "difference": "1/4"
+        }
+      },
+      "source": "F3 + exact arithmetic"
+    },
+    {
+      "id": "F5",
+      "review_claim": "stabiliser orders [2,2,3] (s7) and [2,2,4] (s10)",
+      "verdict": "CONFIRMED",
+      "evidence": {
+        "cooper_s7": [
+          2,
+          2,
+          3
+        ],
+        "cooper_s10": [
+          2,
+          2,
+          4
+        ]
+      },
+      "source": "ELLIPTIC_POINTS_ARE_CM.json"
+    },
+    {
+      "id": "F6",
+      "review_claim": "Gauss-Bonnet: (2,2,3) <-> Gamma_0(7)+ (index 8, halved); (2,2,4) <-> Gamma_0(10)* (index 18, quartered), and NOT Gamma_0(10)+10 (halved)",
+      "verdict": "CONFIRMED",
+      "evidence": {
+        "Gamma_0(7)+": {
+          "area_over_2pi": "2/3",
+          "orbifold_euler_rhs": "2/3",
+          "cusps_after_quotient": "1"
+        },
+        "Gamma_0(10)*": {
+          "area_over_2pi": "3/4",
+          "orbifold_euler_rhs": "3/4",
+          "cusps_after_quotient": "1"
+        },
+        "Gamma_0(10)+10_must_fail": {
+          "area_over_2pi": "3/2",
+          "orbifold_euler_rhs": "7/4",
+          "cusps_after_quotient": "2"
+        },
+        "index_7": "8",
+        "index_10": "18",
+        "cusps_7": 2,
+        "cusps_10": 4
+      },
+      "source": "exact Fractions; orders from F5"
+    },
+    {
+      "id": "F7",
+      "review_claim": "W_7 fixed points: tau=i/sqrt7 -> v=(1,-1,0), v^2=-2, T=<2>+<14>, D=-28, h=1; the other -> v=+-(-2,4,1), v^2=-2, T=[[2,1],[1,4]], D=-7, h=1",
+      "verdict": "CONFIRMED",
+      "evidence": {
+        "z=1/27": {
+          "v": [
+            1,
+            -1,
+            0
+          ],
+          "minus_v2": 2,
+          "T_X_reduced_form_abc": [
+            1,
+            0,
+            7
+          ],
+          "D": -28,
+          "tau": {
+            "re": "0",
+            "im_squared": "1/7"
+          }
+        },
+        "z=-1": {
+          "v": [
+            2,
+            -4,
+            1
+          ],
+          "minus_v2": 2,
+          "T_X_reduced_form_abc": [
+            1,
+            1,
+            2
+          ],
+          "D": -7,
+          "tau": {
+            "re": "1/2",
+            "im_squared": "1/28"
+          }
+        },
+        "h(-28)": 1,
+        "h(-7)": 1
+      },
+      "source": "CM_POINTS_RHO20.json locus_hits + exact class numbers"
+    },
+    {
+      "id": "F8",
+      "review_claim": "number of W_7 fixed points = h(-28) + h(-7) = 2 = the order-2 loci of s7, with D in {-28, -7}",
+      "verdict": "CONFIRMED",
+      "evidence": {
+        "h(-28)+h(-7)": 2,
+        "order2_loci": 2,
+        "their_D0": [
+          -28,
+          -7
+        ]
+      },
+      "source": "ELLIPTIC_POINTS_ARE_CM.json + exact class numbers"
+    },
+    {
+      "id": "F9",
+      "review_claim": "W_10 Fricke point tau=i/sqrt10 -> v=(1,-1,0), T=<2>+<20>, D=-40, h=2",
+      "verdict": "CONFIRMED",
+      "evidence": {
+        "z=1/16": {
+          "v": [
+            1,
+            -1,
+            0
+          ],
+          "minus_v2": 2,
+          "T_X_reduced_form_abc": [
+            1,
+            0,
+            10
+          ],
+          "D": -40,
+          "tau": {
+            "re": "0",
+            "im_squared": "1/10"
+          }
+        },
+        "h(-40)": 2,
+        "advisory": true
+      },
+      "source": "CM_POINTS_RHO20.json (s10 ADVISORY: lattice cert DRAFT) + exact class number"
+    },
+    {
+      "id": "F10",
+      "review_claim": "class numbers h(-3)=h(-4)=h(-7)=h(-8)=h(-28)=1, h(-40)=2, h(-23)=3; the -23 forms are (1,1,6), (2,1,3), (2,-1,3)",
+      "verdict": "CONFIRMED",
+      "evidence": {
+        "h": {
+          "-3": 1,
+          "-4": 1,
+          "-7": 1,
+          "-8": 1,
+          "-28": 1,
+          "-40": 2,
+          "-23": 3
+        },
+        "forms_-23": [
+          [
+            1,
+            1,
+            6
+          ],
+          [
+            2,
+            -1,
+            3
+          ],
+          [
+            2,
+            1,
+            3
+          ]
+        ]
+      },
+      "source": "exact reduced-form enumeration (this checker)"
+    },
+    {
+      "id": "F11",
+      "review_claim": "the review's X3 lattice A2 (D=-3) is a member of the s7 family (z=oo) and its X4 lattice <2>+<2> (D=-4) a member of the s10 family (z=oo) -- lattice statement only",
+      "verdict": "CONFIRMED",
+      "evidence": {
+        "s7_z=oo": {
+          "D": -3,
+          "T_X_reduced_form_abc": [
+            1,
+            1,
+            1
+          ],
+          "v": [
+            14,
+            -14,
+            -5
+          ]
+        },
+        "s10_z=oo": {
+          "D": -4,
+          "T_X_reduced_form_abc": [
+            1,
+            0,
+            1
+          ],
+          "v": [
+            10,
+            -10,
+            -3
+          ]
+        },
+        "identification_with_named_surfaces": "Shioda-Inose (singular K3 <-> T), Tier L, cited by the review, NOT pinned in this repo"
+      },
+      "source": "CM_POINTS_RHO20.json locus_hits"
+    },
+    {
+      "id": "F12",
+      "review_claim": "L3 = Sym^2(L2) for an exhibited L2, s7 and s10, with no condition on (a,b,c,d)",
+      "verdict": "CONFIRMED",
+      "evidence": {
+        "cooper_s7": "SYM2_OPERATOR_IDENTITY_PROVEN(all-n symbolic; partner revalidated to n=58, mirror q^14)",
+        "cooper_s10": "SYM2_OPERATOR_IDENTITY_PROVEN(all-n symbolic; partner revalidated to n=58, mirror q^14)"
+      },
+      "source": "C3b_symsqrt_cooper_s7/s10.json"
+    }
+  ],
+  "all_scored_clauses_confirmed": true,
+  "findings_in_band": {
+    "N1": "The review keeps the reviewed spec's labels '1/27 (conifold), -1 (Fricke)'. Per CM_POINTS_RHO20.json the W_7 fixed point tau = i/sqrt7 is at z = 1/27 and the D = -7 point at z = -1; and 'conifold' is a Kodaira-type reading that ledger item 3 forbids for this family (both are order-2 elliptic points, E-008/E-009).",
+    "N2": "The 'h(-4N)+h(-N) fixed points' rule is scored at N = 7 only (F8). For s10 the review itself names Gamma_0(10)* where W_10 is one of three involutions.",
+    "N3": "The review's 'name the selector' point is the content of D7' read narrowly: C6 lists members; no quantity to extremise among them has been adopted. A selection principle (discriminant, height, Fricke point) needs its own T0 text."
+  },
+  "out_of_scope_not_scored": [
+    "Lambda / dark-energy arithmetic (A-DE renunciation; ledger item 4)",
+    "M24 branching, Mukai, GHV/GTVW symmetry-group statements",
+    "Kummer node count, quartic homogeneity, spec's r / n_s / delta_CP / 21-cm / TDA rows",
+    "conflicts with Papers 10-12 (LeanMaster theorems exist by name: smallest_black_hole, tau_minimal, discriminant_gap, smallest_black_hole_index, immortal_m1, literal_lock_fails_at_2A -- their statements were read via the LeanMaster index, not re-proved here)",
+    "X3 / X4 Inose-Weierstrass fibre tables and NS lattices (no model in this repo; a Kodaira reading of an explicit Weierstrass model is not the E-007 category error, but nothing here checks it -> Stream 1 Lean target)",
+    "Hurwitz-order / D4 torus observation",
+    "laboratory experiments E1-E4",
+    "TDA proposals",
+    "'neither s7 nor s10 is Sym^2 of a Zagier-sporadic operator' (consistent with briefs/STREAM2_TO_STREAM3_C3_BRANCH_REPLY_2026_09_21.md; not recomputed here)"
+  ],
+  "inputs": {
+    "sha256": {
+      "refs/recurrences_v1.json": "f6c7ee9e34ba2c9b8d8132c6aa9109db951ab696de09f23aab3ef03ce8679a76",
+      "data/certificates/CM_POINTS_RHO20.json": "1ef6d622af22a6488316fad01503ed4381c1d742861f178b3d3ea9d76c220755",
+      "data/certificates/ELLIPTIC_POINTS_ARE_CM.json": "37e3b735765ce4a7a13acf25c590b2e4265fc8a158dd5b8b33d4ac29344b0ab3",
+      "data/certificates/L3_RIEMANN_SCHEME.json": "b15dc064214b55685c892ac6de7fd751b72945b97defad9f151cf8c8007bf151",
+      "data/certificates/C3b_symsqrt_cooper_s7.json": "9e7a5458aacb32400d19aa9653b2e702f64c58a0fc32aa0da9a08c9bde40c241",
+      "data/certificates/C3b_symsqrt_cooper_s10.json": "28af8553b05d999931fc9dcd198ed926dc1f2ccc4d82ff488334aae2aeb4677b"
+    }
+  },
+  "not_claimed": [
+    "that any CM point, surface or family is preferred (D7' narrow reading)",
+    "that X3 or X4 as named surfaces are certified here: only their transcendental lattices are matched",
+    "any physical reading of any clause (VISION sec. 1.3; ledger item 4)",
+    "that the unscored sections of the review are true or false"
+  ],
+  "controls": "checkers/test_external_review_fable_controls.py",
+  "provenance": "Generated-by: Claude (Fable 5.1), Stream 2 | Verified-by: checkers/test_external_review_fable_controls.py | Reviewed-by: N"
+}

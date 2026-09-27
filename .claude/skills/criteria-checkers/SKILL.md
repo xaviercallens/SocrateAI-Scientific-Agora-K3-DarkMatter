@@ -46,11 +46,13 @@ the checker.
 3. Run on candidates; commit certificates.
 4. Update the status table **from the certificates**, never by hand — a hand edit is an
    integrity incident per K3_CRITERIA §5.
-   ⚠️ There is **no** `scripts/render_status_table.py`. This step used to name one; the
-   script has never existed in this repo (absence verified by repo search 2026-07-26,
-   `briefs/STREAM1_S1_10_11_12_STATUS_AND_UNBLOCK_2026_07_26.md`). Citing it violated the
-   D3 standing rule against phantom artifacts. If a regeneration step is wanted, write the
-   script first and reference it only once it is committed.
+   Run `python3 scripts/render_status_table.py` (committed 2026-09-27; controls
+   `checkers/test_render_status_table_controls.py`). It rewrites K3_CRITERIA §5 between its
+   markers from the §1 register, `refs/` and the certificates named in its `SOURCES` map;
+   `--check` fails on a stale or hand-edited table. A new criterion certificate reaches the
+   table only by adding it to `SOURCES`, citing the record that makes it the source of record.
+   (History: before 2026-09-27 this step named the script while it did not exist, which was a
+   phantom-artifact incident under standing rule 4.)
 
 ## Failure semantics
 
