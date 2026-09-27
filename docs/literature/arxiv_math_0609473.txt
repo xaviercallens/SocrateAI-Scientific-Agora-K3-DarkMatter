@@ -1,0 +1,1749 @@
+arXiv:math/0609473v3 [math.AG] 9 Nov 2008
+
+
+
+
+                                                  Elliptic parameters and defining equations
+                                                  for elliptic fibrations on a Kummer surface
+                                                                 Masato Kuwata and Tetsuji Shioda
+
+                                                   Abstract. We pose the problem to determine explicit defining equa-
+                                                   tions of various elliptic fibrations on a given K3 surface, and study the
+                                                   case of the Kummer surfaces of the product of two elliptic curves.
+
+
+
+
+                                                                            1. Introduction
+                                                1.1. Problem setting. Let X be a K3 surface defined over a base field
+                                            k, and let k(X) denote its function field. Suppose f : X → P1 is an elliptic
+                                            fibration on X with a section O. Then it defines a non-constant function
+                                            u = f (x) (x ∈ X), and hence an element u ∈ k(X). We call u the elliptic
+                                            parameter for the elliptic fibration f . (Actually u is unique only up to the
+                                            linear fractional transformations, but to fix the idea, we always choose one
+                                            u. Note that the subfield k(u) of k(X) is uniquely defined by f ).
+                                                Now let E denote the generic fiber of f . Then E is an elliptic curve
+                                            defined over k(u) such that the function field k(u)(E) is isomorphic to k(X)
+                                            as the extensions of k.
+
+                                            Problem 1. Given a K3 surface X/k and an elliptic fibration f , determine
+                                            (i) the elliptic parameter u for f , (ii) the defining equation of the elliptic
+                                            curve E/k(u), and (iii) the Mordell-Weil lattice (MWL) E(k(u)).
+
+                                            Problem 2. Given a K3 surface X/k, determine all the (essentially dis-
+                                            tinct) elliptic parameters.
+
+                                               Problem 2 is a combination of Problem 1 and the following standard
+                                            problem:
+
+                                            Problem 3. Given a K3 surface X/k, classify the elliptic fibrations f :
+                                            X → P1 up to isomorphisms.
+
+                                               2000 Mathematics Subject Classification. 14J27, 14J28 .
+                                                                                      1
+2                          M. KUWATA AND T. SHIODA
+
+    1.2. Main results. In this paper, we focus on the case of Kummer
+surfaces X = Km(A), where A = C1 × C2 is a product of two elliptic curves,
+and assume k is an algebraically closed field of characteristic different from 2.
+    In this case, Problem 3 has been solved by Oguiso [8] under the assump-
+tion
+    (#) C1 , C2 are not isogenous to each other and k = C (the field of
+        complex numbers).
+Namely he classifies the configuration of singular fibers on such a Kummer
+surface X into eleven types J1 , . . . , J11 , and determines the number of the
+isomorphism classes for each type.
+    Our main results can be stated as follows: we solve Problem 1 for each
+type of Oguiso’s list (without assuming (#)), and thus solve Problem 2
+under the assumption (#). More details will be given in §1.5 and 1.7 after
+we fix the notation and review some known cases.
+
+     1.3. Notation. By a (−2)-curve we mean a smooth rational curve on X
+whose self-intersection number is −2. (It is called a “nodal curve” in Oguiso
+[8].) It is known (cf. [4]) that all irreducible components of a reducible fiber
+in an elliptic fibration are (−2)-curves.
+     We have a configuration of twenty-four (−2)-curves on X, called the
+double Kummer pencil (see Fig. 1, cf. [10]). It consists of the 16 exceptional
+curves Aij arising from the minimal resolution X → A/ιA , plus the 8 curves
+Fi , Gj obtained as the image of vi × C2 or C1 × vj′ under the rational map
+A → S. Here {vi } (or {vi′ }) denote the 2-torsion points of C1 (resp. C2 )
+(i, j ∈ I = {0, 1, 2, 3}), and ιA denotes the inversion automorphism of A.
+These curves will be referred to as the basic curves below.
+     Suppose that the elliptic curve Ci is defined by the Legendre form
+
+                  Ci : yi2 = xi (xi − 1)(xi − λi )        λi 6= 0, 1.
+
+We order the 2-torsion points by v1 = (0, 0), v2 = (1, 0), v3 = (λ1 , 0), with
+v0 denoting the origin of C1 ; similarly for vj′ and C2 .
+    The function field k(X) is equal to the subfield of the function field
+k(A) = k(x1 , y1 , x2 , y2 ) consisting of the elements invariant under the inver-
+sion (x1 , y1 , x2 , y2 ) 7→ (x1 , −y1 , x2 , −y2 ), namely we have
+                                                          y2
+                         k(X) = k(x1 , x2 , t),      t=      ,
+                                                          y1
+where x1 , x2 and t are naturally regarded as functions on X, satisfying the
+relation
+
+(1.1)           x1 (x1 − 1)(x1 − λ1 )t2 = x2 (x2 − 1)(x2 − λ2 ).
+                           ELLIPTIC PARAMETERS                                   3
+
+
+                               F0            F1         F2         F3
+
+
+
+                   v'3                                                      G3
+
+                         A03           A13        A23           A 33
+
+                   v'2                                                      G2
+
+                         A02           A12        A22           A 32
+
+                   v'1                                                      G1
+
+                         A01           A11        A21           A 31
+
+                   v'0                                                      G0
+
+                         A00           A10        A20           A 30
+
+
+                               v0            v1         v2             v3
+
+
+                    Figure 1. double Kummer pencil
+
+   1.4. Examples. We start from the most classical and elementary ex-
+ample:
+
+
+
+
+                    T3
+
+
+
+                    T2
+
+
+
+                    T1
+
+
+
+                    O
+
+
+
+                               2             2          2              2
+                                    type I *0 at u = ∞, 0, 1, λ1
+
+
+
+                  Figure 2. Kummer pencil (type J4 )
+
+
+Example 1.1 (Kummer pencils). The projection of A to the first factor
+induces an elliptic fibration π1 : X → P1 with four singular fibers of type
+I∗0 :
+                                         X
+                              Φi = 2Fi +   Aij
+                                                            j
+4                           M. KUWATA AND T. SHIODA
+
+(see Fig. 2). This π1 and the similar π2 (obtained from the second projection)
+are respectively called the first or second Kummer pencil on X. The elliptic
+parameter for π1 (or π2 ) is obviously given by the function x1 (resp. x2 )
+in k(X). (This belongs to type J4 in [8], and π1 and π2 are the two
+representatives of isomorphism classes, if C1 , C2 are not isogenous.)
+    The defining equation of the generic fiber over k(x1 ) is easily obtained
+(see §2.3), which is isomorphic to the constant curve C2 over the quadratic
+extension k(x1 , y1 ) = k(C1 ) of k(x1 ). The Mordell-Weil lattice is isomorphic
+to the lattice Hom(C1 , C2 ) with norm ϕ 7→ deg(ϕ) up to torsion (see [14,
+Prop.3.1]).
+   The next is the motivating example for studying the elliptic parameters
+and the problems posed in §1.1 in general.
+Example 1.2 (Inose’s pencils). Using the twenty-four basic curves, we can
+find two disjoint divisors of Kodaira type IV∗ . Namely, take the following
+divisors shown in Fig. 3:
+            
+              Ψ1 = G1 + G2 + G3 + 2(A01 + A02 + A03 ) + 3F0 ,
+              Ψ2 = F1 + F2 + F3 + 2(A10 + A20 + A30 ) + 3G0 ,
+There is an elliptic fibration, called Inose’s pencil, having these divisors as
+
+
+
+
+                            2       P2      P5       P8
+                type IV*
+                 at u = 0
+                            2       P1      P4       P7
+
+
+
+                            2       O       P3       P6
+
+                        3
+
+                                    2        2        2
+
+
+                                3
+                                         type IV* at u = ∞
+
+
+
+                      Figure 3. Inose’s pencil (type J3 )
+
+the singular fibers over u = 0 and u = ∞, as first shown by Inose [3]. The
+elliptic parameter for this is given by the function u = t(= y2 /y1 ) ∈ k(X),
+and the generic fiber E/k(t) is isomorphic to the cubic curve defined by
+the equation (1.1) in the projective plane with inhomogeneous coordinates
+x1 , x2 . (This belongs to type J3 in [8].)
+                             ELLIPTIC PARAMETERS                                5
+
+    It should be remarked that Kuwata [6] has succeeded in constructing, by
+the use of Inose’s pencil, some elliptic K3 surfaces with high Mordell-Weil
+rank which have an explicit defining equation. For example, the base change
+t = s3 gives rise to the elliptic curve E/k(s) which has the highest possible
+rank r = 18 (for k = C) provided that C1 and C2 are mutually isogenous
+but non-isomorphic elliptic curves with complex multiplications. We refer
+to Kuwata [6] and Shioda [12], [14] for more details including the defining
+equation of E in the Weiertrass form as well as the structure of MWL; see
+also §2.2.
+Example 1.3. Besides the Kummer pencils (Example 1.1), the elliptic pen-
+cil on the Kummer surface X = Km(C1 × C2 ) which has been studied first
+is perhaps the one introduced in Shioda-Inose [10]. It has II∗ , I∗0 , I∗0 as re-
+ducible singular fibers (for general values of λ1 and λ2 ). This has type J9 in
+[8] (see Fig. 16). Via the base change of degree 2, it gives rise to an elliptic
+K3 surface with two II∗ fibers, which plays an important role in the theory
+of singular K3 surfaces [10] and which has been reconsidered by Morrison
+[7] in a more general situation. It turns out that the elliptic parameter and
+the defining equation for this type J9 is the hardest case treated in this
+paper (see §5.3).
+
+     1.5. Results. In the following Table 1, we give a summary of the el-
+liptic parameters and the structure of the MWL for each type Jn , to be
+constructed in the subsequent sections.
+     The first column shows the type Jn of elliptic fibration following Ogu-
+iso’s notation (cf. [8]). The second column shows the configuration of singu-
+lar fibers in the generic case, which means that λ1 and λ2 are algebraically
+independent elements of k over Q0 , where Q0 is the prime field in k. The
+third column shows the structure of MWL of the generic fiber E over k(u),
+again in the generic case. The last column gives the elliptic parameter which
+can be used for any λ1 , λ2 (6= 0, 1).
+     The explicit form of defining equations should be found in the text,
+since it is not suitable to tabulate here. We note that each of these defining
+equations has coefficients in Q0 (λ1 , λ2 )(u), where u is the elliptic parameter.
+     We see from the table that the elliptic parameters for Jn for n = 1, 2, 3
+are of the form u = tϕ(x1 , x2 ) with ϕ(x1 , x2 ) ∈ k(x1 , x2 ), while those for
+Jn for n > 3 are contained in k(x1 , x2 ).
+
+     1.6. Basic strategy of construction. Theoretically, constructing an
+elliptic fibration on a K3 surface is to find a divisor that has the same type
+as a singular fiber in the Kodaira’s list (cf. [4] [9]). In practice, however, we
+need to find two divisors, one for the fiber at u = 0, and the other for the
+                          Type     Singular fibers          MWL                                   Elliptic parameter u
+
+                                                                                                            tx1
+                          J1             2I8 + 8I1        Z2 ⊕ Z/2Z
+                                                                                                            x2
+                                                                                                    t(x1 − λ1 )(x1 − x2 )
+                          J2        I4 + I12 + 8I1       A∗2 [2] ⊕ Z/2Z
+                                                                                                         x2 (x2 − 1)
+
+                          J3            2IV∗ + 8I1         (A∗2 [2])2                                         t
+M. KUWATA AND T. SHIODA
+
+
+
+
+                          J4                4I∗0           (Z/2Z)2                                         xi
+                                                                                                   `                           ´
+                                                                                         (x1 − x2 ) λ2 (x1 − λ1 ) + (λ1 − 1)x2
+                          J5             I∗6 + 6I2         (Z/2Z)2                                     `                     ´
+                                                                                          (λ2 x1 − x2 ) x1 − λ1 + (λ1 − 1)x2
+                                                                                                             x1
+                          J6            2 I∗2 + 4I2        (Z/2Z)2
+                                                                                                             x2
+                                                                                                     (x2 − λ2 )(x1 − x2 )
+                          J7       I∗4 + 2I∗0 + 2I1          Z/2Z
+                                                                                                    (x2 − 1)(λ2 x1 − x2 )
+                                                                                                     (x2 − λ2 )(x1 − x2 )
+                          J8     III∗ + I∗2 + 3I2 + I1       Z/2Z                               −
+                                                                                                    λ2 (λ2 − 1)x1 (x1 − 1)
+                                                                                               `                                               ´
+                                                                           (x2 − λ2 )(x1 − x2 ) λ2 x1 (x1 − 1) + (λ1 − 1)(x2 − 1)(λ2 x1 − x2 )
+                          J9       II∗
+                                         + 2I∗0 + 2I1         {0}                                `                                             ´
+                                                                           (x2 − 1)(λ2 x1 − x2 ) λ2 x1 (x1 − 1) + (λ1 − 1)(x2 − λ2 )(x1 − x2 )
+                                                                                               `                                               ´
+                                                                           (x2 − λ2 )(x1 − x2 ) (λ1 − 1)(x2 − 1)(λ2 x1 − x2 ) + λ2 x1 (x1 − 1)
+                          J10       I∗8 + I∗0 + 4I1           {0}
+                                                                                            x2 (x2 − 1)(x1 − 1)(λ2 x1 − x2 )
+                                                                                                 x2 (x2 − λ2 )(x1 − x2 )
+                          J11            2I∗4 + 4I1           {0}
+                                                                                                 x1 (x2 − 1)(λ2 x1 − x2 )
+
+                                                                          Table 1. Results
+6
+                            ELLIPTIC PARAMETERS                                 7
+
+fiber at u = ∞, to write down an actual elliptic parameter. This is where
+the difficulty is.
+    Once an elliptic parameter is found, we want to find a change of variables
+that converts the defining equation to a Weierstrass form. In most cases we
+encounter an equation of the form y 2 = (quartic polynomial). We then use
+a standard algorithm to transform it to a Weierstrass form (see for example
+Cassels [1], or Connell [2]).
+    Some elliptic fibrations have nontrivial Mordell-Weil group. To deter-
+mine the structure of Mordell-Weil lattice, we can use the method in [11]
+since we understand very well the intersection between the section and the
+components of singular fibers. Alternatively, we can compute the height
+pairing using the algorithm in [5] once we establish the conversion to the
+Weierstrass form. Note that [11] and [5] use different normalization of the
+height pairing, and they differ by a multiple of 2. In this article we adopt
+the normalization used in [11].
+
+
+    1.7. Remark. Fix a type Jn (n = 1, . . . , 11). As noted in §1.5, each of
+the defining equation of E/k(u) constructed in this paper has the coefficients
+in Q0 (λ1 , λ2 )(u), where u is the elliptic parameter, and λ1 (resp. λ2 ) is the
+Legendre parameter for C1 (resp. C2 ). Given Ci , there are in general six
+choices of λi (i.e., six different level 2-structures on Ci ). We have verified
+that, by different choices of λ1 or λ2 , we obtain as many nonisomorphic E’s
+belonging to the same type Jn , as predicted by Oguiso’s result ([8, Table B,
+p. 652]), and thus solved Problem 2 when C1 and C2 are not isogenous. The
+proof for this will be omitted in this paper, but we write down the results
+in a single special case where we take C1 : y12 = x31 − 1 and C2 : y22 = x32 − x2
+(see §6).
+    This paper is organized as follows.
+
+
+
+                                  Contents
+  1. Introduction                                                              1
+  2. Elliptic parameters for J1 , J3 , J4 , and J6                             8
+  3. More (−2)-curves                                                         13
+  4. Elliptic parameters for J2 , J7 , J8 and J11                             16
+  5. (2, 2)-curves and J5 , J9 and J10                                        22
+  6. Full list of the defining equations in a special case                    29
+  7. Closing remark                                                           33
+  References                                                                  34
+8                           M. KUWATA AND T. SHIODA
+
+            2. Elliptic parameters for J1 , J3 , J4 , and J6
+    In this section we construct elliptic fibrations that have two singular
+fibers consisting only of the twenty-four basic curves. We use combinations
+of the following divisors of typical functions (cf. Examples in §1.4):
+    (x1 ) = 2F1 + A10 + A11 + A12 + A13 − (2F0 + A00 + A01 + A02 + A03 ),
+    (x2 ) = 2G1 + A01 + A11 + A21 + A31 − (2G0 + A00 + A10 + A20 + A30 ),
+    (t) = G1 + G2 + G3 + 2(A01 + A02 + A04 ) + 3F0
+                             − (F1 + F2 + F3 + 2(A10 + A20 + A30 ) + 3G0 ).
+     2.1. J1 . An elliptic parameter for the type J1 fibration is given by
+                                         tx1
+                                    u=       .
+                                         x2
+It is easy to verify that the divisor of u is given by
+
+    (u) = F0 + F1 + G2 + G3 + A02 + A03 + A12 + A13
+                            − (G0 + G1 + F2 + F3 + A20 + A21 + A30 + A31 ),
+which is indicated in Fig. 4. Choosing A00 as the 0-section of the group
+
+
+
+
+                 type I 8
+                                            P2     P4
+                 at u = 0
+
+                                            P1     P3
+
+
+                                                                type I 8
+                            P5      T
+                                                               at u = ∞
+
+                            O       P6
+
+
+
+
+                                  Figure 4. J1
+
+structure, we obtain the Weierstrass equation of the elliptic fibration
+Y 2 = X 3 + (λ1 − 1)2 u4 − 2(λ1 + 1)(λ2 + 1)u2 + (λ2 − 1)2 X 2 + 16λ1 λ2 u4 X,
+                                                          
+
+where the change of variables is given by
+                                4t2 x31 t2 x1 (x21 − λ1 ) + x2 (x22 − λ2 )
+                                                                          
+              4t2 x31
+           X=         ,     Y =                                             .
+               x2                                    x32
+                           ELLIPTIC PARAMETERS                                 9
+
+Its discriminant is given by
+                       ∆(u) = 212 λ21 λ22 u8 d(u)d(−u),
+where d(u) is a polynomial of degree 4 in u:
+
+  d(u) = (λ1 − 1)2 u4 + 4(λ1 − 1) u3
+                     − 2(λ1 λ2 + λ1 + λ2 − 3) u2 + 4(λ2 − 1) u + (λ2 − 1)2 .
+[The discriminant of d(u) vanishes if and only if λ1 = λ2 . If λ1 = λ2 , the
+elliptic fibration has two I2 fibers for general λ1 .]
+     The curve A11 corresponds to the 2-torsion section T = (0, 0). The
+correspondence between the curves and the sections are as follows:
+
+            A22 ↔ P1 = 4u2 , −4u2 ((λ1 − 1)u2 + λ2 − 1)
+                                                           
+
+            A23 ↔ P2 = 4λ2 u2 , −4λ2 u2 ((λ1 − 1)u2 − λ2 + 1)
+                                                               
+
+            A32 ↔ P3 = 4λ1 u2 , 4λ1 u2 ((λ1 − 1)u2 − λ2 + 1)
+                                                             
+
+            A33 ↔ P4 = 4λ1 λ2 u2 , 4λ1 λ2 u2 ((λ1 − 1)u2 + λ2 − 1)
+                                                                  
+
+            A01 ↔ P5 = 4λ2 , 4λ2 ((λ1 + 1)u2 − λ2 − 1)
+                                                         
+
+            A10 ↔ P6 = 4λ1 u4 , −4λ1 u4 ((λ1 + 1)u2 − λ2 − 1)
+                                                               
+
+These sections satisfy the following relations.
+                       P3 = P2 + T,       P4 = P1 + T,
+                      P5 = P1 + P2 ,      P6 = P5 + T.
+The Mordell-Weil group is generated by T , P1 and P2 in the general case
+where C1 and C2 are not isogenous. The height matrix with respect to
+{P1 , P2 } is shown to be
+                                    
+                                 1 0
+                                       .
+                                 0 1
+
+   2.2. J3 . As we have seen in Example 1.2 (§1.4),
+                                    u=t
+gives an elliptic parameter of type J3 . We regard (1.1) as a cubic curve in
+x1 and x2 with coefficients in k(u) = k(t). We choose (x1 , x2 ) = (0, 0) as
+the origin of the group structure. The Weierstrass form is given by
+    Y 2 = X 3 + 4(λ1 + 1)(λ2 + 1)u2 X 2
+          + 16u4 (λ1 λ2 + 1)(λ1 + λ2 + 1) − 1 X
+                                             
+
+            + 16u4 (λ1 (λ1 − 1)u2 + λ2 (λ2 − 1))2 + 4λ1 λ2 (λ1 + λ2 )u2 .
+                                                                       
+10                         M. KUWATA AND T. SHIODA
+
+(This is relatively simple, but the intermediate calculations are rather com-
+plicated.) The change of variables between two forms of equations is given
+by
+
+
+           4 λ2 (x1 − 1)(x1 − λ1 ) + λ1 (x2 − 1)(x2 − λ2 ) − λ1 λ2 t2
+                                                                  
+       X=                                                             ,
+                                      x1 x2
+           8(x2 − 1)(x2 − λ2 ) λ2 (λ1 + 1)x1 + λ1 (λ2 + 1)x2 − λ1 λ2 t2
+                                                                      
+       Y =
+                                       x2 x2
+                                       14
+                                              4λ2 (λ2 + 1)x2 − 2λ2 t2
+                                                                    
+                4λ1 (λ1 + 1)x1 − 2λ1 t
+             +                              +                           .
+                           x1                            x2
+
+
+The discriminant is of the form u8 d(u), where d(u) is an irreducible poly-
+nomial of degree 8. Besides two IV∗ fibers, the elliptic fibration has eight
+I1 fibers in the generic case. These eight I1 fibers can degenerate in four
+different ways; 2 I2 + 4 I1 , 4 I2 , 4 II or 2 IV. For more detail, see Prop. 5.1
+in [14].
+     There are eight other Aij ’s which define sections; the correspondence
+between these curves and the sections is as follows:
+
+
+     A12 ↔ P1 = 4u2 (λ21 u2 − λ2 (λ1 + 1)),
+                      −4u2 (2λ31 u4 − λ1 (λ1 + 1)(2λ2 − 1)u2 + λ2 (λ2 − 1))
+                                                                           
+
+                    4u2 (λ21 u2 − λ22 (λ1 + 1))
+                  
+     A13 ↔ P2 =                                 ,
+                                 λ22
+                      4u2 (2λ31 u4 + λ1 λ22 (λ1 + 1)(λ2 − 2)u2 − λ42 (λ2 − 1))
+                                                                               
+                    −
+                                                  λ32
+     A21 ↔ P3 = −4(λ1 (λ2 + 1)u2 − λ22 ),
+                  −4(λ1 (λ1 − 1)u4 − λ2 (λ2 + 1)(2λ1 − 1)u2 + 2λ32 )
+                                                                        
+
+     A22 ↔ P4 = −4λ1 λ2 u2 , −4u2 (λ1 (λ1 − 1)u2 + λ2 (λ2 − 1))
+                                                               
+
+     A23 ↔ P5 = −4λ1 u2 , −4u2 (λ1 (λ1 − 1)u2 − λ2 (λ2 − 1))
+                                                             
+
+                  4(λ21 (λ2 + 1)u2 − λ22 )
+               
+     A31 ↔ P6 = −                          ,
+                              λ21
+                  4(λ41 (λ1 − 1)u4 − λ21 λ2 (λ1 − 2)(λ2 + 1)u2 − 2λ32 )
+                                                                        
+
+                                             λ31
+     A32 ↔ P7 = −4λ2 u2 , 4u2 (λ1 (λ1 − 1)u2 − λ2 (λ2 − 1))
+                                                           
+
+     A33 ↔ P8 = −4u2 , 4u2 (λ1 (λ1 − 1)u2 + λ2 (λ2 − 1))
+                                                        
+                            ELLIPTIC PARAMETERS                                11
+
+These sections satisfy the following relations:
+                       P1 = P5 + P8 ,      P2 = P4 + P7 ,
+                       P3 = P7 + P8 ,      P6 = P4 + P5 .
+We can show that P4 , P8 , P5 , and P7 generate the Mordell-Weil group in the
+generic case. The height matrix with respect to the basis {P4 , P8 , P5 , P7 } is
+                                             
+                                 4   2
+                                         0 0
+                               3 3           
+                               2 4
+                                3 3 0 0
+                                              
+                                             .
+                                0 0 43 32 
+                                             
+                                             
+                                         2  4
+                                 0 0 3 3
+This is the direct sum of two copies of A∗2 [2], the dual lattice of A2 scaled
+by 2.
+
+    2.3. J4 . The elliptic parameter for the fibration π1 in Example 1.1 is
+given by
+                                 u = x1 ,
+while the elliptic parameter for π2 is given by u = x2 . For π1 , the change of
+variables
+                          X = u(u − 1)(u − λ1 )x2 ,
+                          Y = u2 (u − 1)2 (u − λ1 )2 t,
+converts the equation (1.1) to
+         Y 2 = X X − u(u − 1)(u − λ1 ) X − λ2 u(u − 1)(u − λ1 ) .
+                                                              
+
+The curve G0 is the 0-section. Other sections are:
+
+                   G1 ↔ T1 = (0, 0),
+                   G2 ↔ T2 = (u(u − 1)(u − λ1 ), 0),
+                   G3 ↔ T3 = (λ2 u(u − 1)(u − λ1 ), 0).
+Similar results hold for π2 .
+
+   2.4. J6 . The divisor of the function x1 /x2 is given by
+  x 
+    1
+       = 2(F1 + A10 + G0 ) + A12 + A13 + A20 + A30
+   x2
+                                                                  
+                       − 2(F0 + A01 + G1 ) + A02 + A03 + A21 + A31 .
+This is the difference of two disjoint divisors of type I∗2 , and thus
+                                         x1
+                                    u=
+                                         x2
+12                                  M. KUWATA AND T. SHIODA
+
+is an elliptic parameter of type J6 .
+
+
+
+                                                                          B33
+                               T3
+                                                             B23                type I 2
+                                                                                at u = 1
+                               T2
+                                                             B22    B32
+
+                   type I *2    2
+                   at u = ∞         2
+
+
+                                2
+
+                                             2
+
+
+                                        2        2       O         T1
+                                            type I *2 at u = 0
+
+
+
+                                            Figure 5. J6
+
+    In order to write down a Weierstrass equation using the curve F2 as the
+0-section, we put
+                         x1 (x1 − λ1 )(x1 − x2 )(λ2 x1 − x2 )
+                 X=                                           ,
+                                     (x1 − 1)x32
+                         (λ1 − 1) t x31 (x1 − λ1 )(x1 − x2 )(λ2 x1 − x2 )
+                 Y =                                                      .
+                                            (x1 − 1)x52
+Then we obtain the Weierstrass equation
+      Y 2 = X X − u(u − 1)(λ2 u − λ1 ) X − u(u − λ1 )(λ2 u − 1) .
+                                                              
+
+Its discriminant is given by
+     ∆(u) = 16u8 (λ1 − 1)2 (λ2 − 1)2 (u − 1)2 (u − λ1 )2 (λ2 u − 1)2 (λ2 u − λ1 )2 .
+Besides two I∗2 fibers at u = 0 and ∞, there are four I2 fibers at u =
+1, λ1 , 1/λ2 and λ1 /λ2 . This elliptic surface has the following three 2-torsion
+sections:
+                     F3 ↔ T1 = (0, 0),
+                                                             
+                     G2 ↔ T2 = u(u − λ1 )(λ2 u − 1), 0 ,
+                                                             
+                     G3 ↔ T3 = u(u − 1)(λ2 u − λ1 ), 0 ,
+    Note that A22 , A23 , A32 , and A33 are components of four I2 fibers. The
+other components of these four I2 fibers are new (−2)-curves not among the
+basic curves, which will be clarified in §3.2.
+                              ELLIPTIC PARAMETERS                               13
+
+                             3. More (−2)-curves
+     In order to describe elliptic parameters for other types, we need more
+(−2)-curves than the basic curves. When we constructed elliptic parameters
+of type J6 just above, we obtained some new (−2)-curves as components of
+I2 fibers. In this section we give a systematic way to obtain such (−2)-curves.
+     For our purpose, it is convenient to regard X = Km(C1 ×C2 ) as a double
+cover of the product of projective lines: P1 × P1 = {(x1 : z1 ), (x2 : z2 )}. Let
+pi : Ci → P1 (i = 1, 2) be the projection given by
+
+                pi :        Ci        −→               P1
+                                             
+                                             (xi : zi ) if zi 6= 0
+                       (xi : yi : zi ) 7−→
+                                             (1 : 0)     if zi = 0
+
+Then the map p1 × p2 : A = C1 × C2 → P1 × P1 factors through π̄ : A/ιA →
+P1 × P1 . Let π be the morphism of degree two from X to P1 × P1 that
+makes the following diagram commutative:
+                                     X
+                                             π
+                                     ↓       ց
+                         A −→ A/ιA −→ P1 × P1
+                                             π̄
+
+We denote by Rij   the point in P1 × P1 that is the image of the exceptional
+curve Aij by π. To obtain more (−2)-curves, we look for curves in P1 × P1
+which lift to a (−2)-curve via the map π.
+
+   3.1. (1, 1)-curves. Let L be a curve in P1 × P1 defined by a bihomo-
+geneous equation of bidegree (1, 1):
+
+                       ax1 x2 + bx1 z2 + cz1 x2 + dz1 z2 = 0.
+
+We call such a curve (1, 1)-curve for short. By an abuse of notation, we
+denote the image of Fi and Gi under π : S → P1 × P1 by the same letters Fi
+and Gi , respectively. For example, F1 is the curve with the equation x1 = 0,
+and G3 with x2 − λ2 z2 = 0, etc.
+    Let L be a (1, 1)-curve in P1 × P1 . Its pullback π −1 (L) ramifies at the
+intersection of L and Fi or Gj , except when the intersection point falls on
+Rij = Fi ∩ Gj .
+Lemma 4. Let L be a (1, 1)-curve. Then,
+     (1) If L passes three of sixteen Rij ’s, then π −1 (L) is a curve of genus 0.
+     (2) If L passes two out of sixteen Rij ’s, then π −1 (L) is a curve of
+         genus 1.
+14                             M. KUWATA AND T. SHIODA
+                                                              P             P
+    Proof. In general a (1, 1)-curve L intersects with           Fi (resp.     Gj )
+at four points. If L passes three of sixteen Rij ’s, then it intersects with Fi
+one more time and Gj one more time outside Rij . This implies that π −1 (L)
+ramifies at two points. By Hurwitz’s theorem π −1 (L) is a curve of genus 0.
+Similarly, if L passes two out of sixteen Rij ’s, π −1 (L) ramifies at four points,
+and it is a curve of genus 1.                                                    
+
+      A (1, 1)-curve is uniquely determined by a set of three points in a general
+position. If we choose Ri0 j0 , Ri1 j1 , Ri2 j2 so that no two of them are on
+the same Fi or Gj , then they are in general position. Let i3 and j3 be the
+missing indices. In other words, we choose i3 and j3 such that {i0 , i1 , i2 , i3 } =
+{j0 , j1 , j2 , j3 } = {0, 1, 2, 3}. Under the condition that the two elliptic curves
+C1 and C2 are not isomorphic, the (1, 1)-curve passing through Ri0 j0 , Ri1 j1 ,
+and Ri2 j2 does not pass Ri3 j3 . Thus, choosing Ri0 j0 , Ri1 j1 , Ri2 j2 we obtain
+a (1, 1)-curve whose pullback by π is an irreducible (−2)-curve in X. We
+denote such a (1, 1)-curve by Li0 j0 ,i1 j1 ,i2 j2 , and its pullback by L̃i0 j0 ,i1 j1 ,i2 j2 .
+There are ninety-six such (−2)-curves. Also note that L̃i0 j0 ,i1 j1 ,i2 j2 intersects
+twice with each of Ai0 j0 , Ai1 j1 , and Ai2 j2 .
+      The (1, 1)-curve L00,11,22 passes through R00 , R11 , R22 . It is given by
+the bihomogeneous equation x2 z1 − x1 z2 = 0. In the sequel we write it in
+the affine form x2 − x1 = 0 for simplicity. L̃00,11,22 is denoted by A44 in
+Oguiso [8], which appears in the J2 fibration. We denote it by B33 to make
+it consistent with our notation, indicating that it intersects with F3 and
+G3 outside A33 . Note, however, that there are six (−2)-curves of the form
+L̃i0 j0 ,i1 j1 ,i2 j2 that intersect with F3 and G3 .
+      Fig. 6 shows the curve B33 in the affine space Ax1 × Ax2 × At . As a
+matter of fact, if we substitute x2 by x1 in (1.1), the equation factorizes into
+
+                       x1 (x1 − 1)(x1 t2 − x1 − t2 λ1 + λ2 ) = 0,
+
+which implies that the intersection between x2 − x1 = 0 and the affine
+Kummer surface (1.1) has three irreducible components, namely A11 , A22 ,
+and B33 . We also see that a parametrization of B33 is given by
+
+                                     λ1 s2 − 1 λ1 s2 − 1
+                                                          
+                   (x1 , x2 , t) =            , 2        ,s .
+                                      s2 − 1    s −1
+
+   The zero divisor of the function x2 − x1 ∈ k(x1 , x2 , t) is A11 + A22 + B33 ,
+while the polar divisor is of the form D1 + D2 + rA00 , where
+
+                         D1 = 2F0 + A00 + A01 + A02 + A03 ,
+                        D2 = 2G0 + A00 + A10 + A20 + A30 .
+                                   ELLIPTIC PARAMETERS                                                  15
+
+
+
+
+                    y
+
+
+                          A11                A22
+                                                                 B33
+
+                                                  x2                                      x1 − x2 = 0
+
+
+
+
+                                                                                     λ2
+                          0            1                                         1
+                                                                 λ1
+                                                                            x1
+
+
+
+                              x2
+
+
+                                                   x1 − x2 = 0
+                     λ2
+                                                                      R33
+
+
+                     1
+                                                 R22
+                     0
+                                       R11                                   x1
+
+                                   0         1                        λ1
+
+
+                              Figure 6. (−2)-curve B33
+
+Since A00 intersects twice with the divisor A11 + A22 + B33 , the intersection
+number A00 · (D1 + D2 + rA00 ) must be 2, which implies r = −1. This shows
+
+  (x2 − x1 ) = A11 + A22 + B33
+             − (2F0 + 2G0 + A00 + A01 + A02 + A03 + A10 + A20 + A30 ).
+This and similar calculations of divisors are used to find the elliptic param-
+eter with a prescribed divisor in §4 and §5.
+
+    3.2. I2 fibers of type J6 fibration. The elliptic parameter u =
+x1 /x2 , which is of type J6 , defines a pencil of (1, 1)-curves x1 − ux2 = 0.
+16                               M. KUWATA AND T. SHIODA
+
+The general fiber of this elliptic fibration is the pullback of a (1, 1)-curve
+passing through R00 and R11 . If x1 − ux2 = 0 passes through a third Rij ,
+then its pullback is a singular fiber (see Fig. 7). Four fibers of type I2 , which
+
+
+                            x2    u=0         B32 at u = 1/λ2     B33 at u = 1
+
+
+                                                                       B22 at u = λ1/λ2
+
+                                        R23
+                            λ2
+                                                            R33            x1 − u x2 = 0
+
+                                                                       B23 at u = λ1
+                                        R22
+                            1
+                                                            R32
+
+                            0                                          u=∞
+                                   R11
+
+                                   0      1                λ1     x1
+
+
+
+                           Figure 7. pencil of (1, 1)-curves
+
+are mentioned in §2.4 arise as follows:
+        L̃00,11,23 + A23     at u = 1/λ2 ,             B33 + A22                 at u = 1,
+        L̃00,11,33 + A33     at u = λ1 /λ2 ,           L̃00,11,32 + A32          at u = λ1 .
+    3.3. Notation. Even though the notation “B33 ” is ambiguous as we
+mentioned earlier, it is quite convenient. We thus use the following notation
+in the sequel:
+(3.1)
+    B32 = L̃00,11,23 : λ2 x1 − x2 = 0,    B33 = L̃00,11,22 : x1 − x2 = 0,
+    B22 = L̃00,11,33 : λ2 x1 − λ1 x2 = 0, B23 = L̃00,11,32 : x1 − λ1 x2 = 0, .
+Later in §4.3 and §5.2, we introduce more (−2)-curves of this type, B31 , B12
+and B13 .
+
+            4. Elliptic parameters for J2 , J7 , J8 and J11
+    4.1. J2 . Using B33 , we can construct an elliptic parameter of type J2 .
+In fact, the divisor
+                      Ψ2,0 = F3 + A33 + G3 + B33
+is a divisor of type I4 , and it does not intersect with the divisor of type I12
+given by
+
+     Ψ2,∞ = F0 + A02 + G2 + A12 + F1 + A10
+                                                 + G0 + A20 + F2 + A21 + G1 + A01
+                              ELLIPTIC PARAMETERS                                      17
+
+(see Fig. 8 below). It turns out that the divisor of the function
+
+                                  t(x1 − λ1 )(x1 − x2 )
+                          u=
+                                       x2 (x2 − 1)
+
+is Ψ2,0 − Ψ2,∞ , and it is an elliptic parameter of type J2 . Choosing A30 as
+
+
+
+
+                                                             B33 type I
+                                                                          4
+                                                                 at u = 0
+                          T        P3       P4
+
+
+
+                                                     P2
+
+
+
+                                                     P1
+
+
+
+                                                     O
+
+
+                               type I 12 at u = ∞
+
+
+
+                                 Figure 8. J2
+
+
+the 0-section, we obtain the Weierstrass equation
+
+  Y 2 = X 3 + u4 + 2 (2λ1 λ2 − λ1 − λ2 + 2) u2 + (λ2 − λ1 )2 X 2
+                                                            
+
+                                                    − 16λ1 λ2 (λ1 − 1)(λ2 − 1) u2 X,
+
+where the change of variables is given by
+
+           4λ1 (λ1 − 1)(x1 − x2 )(x2 − λ2 )
+      X=−                                       ,
+                      x1 (x1 − 1)
+           4λ1 (λ1 − 1)(x1 − x2 )(x2 − λ2 )(2x1 − 2x2 − λ1 + λ2 )
+      Y =−
+                                  x1 (x1 − 1)
+                 4λ1 (λ1 − 1)(x1 − x2 )2 (x2 − λ2 )3 (2x1 x2 − x1 − x2 )
+             +                                                           .
+                                      t2 x31 (x1 − 1)3
+
+The discriminant of the fibration is of the form u4 d(u), where d(u) is a
+polynomial of degree 8. The discriminant of d(u) vanishes if and only if
+
+                                              1         λ1
+                       λ2 = λ1 , 1 − λ1 ,        , or        .
+                                              λ1      λ1 − 1
+18                        M. KUWATA AND T. SHIODA
+
+    The curve A03 corresponds to the 2-torsion section T = (0, 0). The
+correspondence between the curves and the sections is as follows:
+
+        A31 ↔ P1 = 4λ1 λ2 , 4λ1 λ2 (u2 + λ1 + λ2 ))
+                                                   
+
+        A32 ↔ P2 = 4(λ1 − 1)(λ2 − 1),
+                              −4(λ1 − 1)(λ2 − 1)(u2 − λ1 − λ2 + 2))
+                                                                   
+
+        A13 ↔ P3 = −4u2 (λ1 − 1)(λ2 − 1),
+                         4(λ1 − 1)(λ2 − 1)u2 (u2 + λ1 + λ2 ))
+                                                                
+
+              ↔ P4 = −4λ1 λ2 u2 , −4λ1 λ2 u2 (u2 − λ1 − λ2 + 2))
+                                                                
+        A23
+
+These sections satisfy the following relations.
+
+                       P3 = P1 + T,          P4 = P2 + T.
+
+The Mordell-Weil group is generated by T , P1 and P2 in the general case
+where C1 and C2 are not isogenous. The height matrix with respect to
+{P1 , P2 } is shown to be
+                                    
+                                     4   2
+                                   3    3
+                                              .
+                                     2   4
+                                     3   3
+
+Thus the Mordell-Weil lattice is isomorphic to A∗2 [2].
+
+   4.2. J7 . Using the curves B33 and B32 introduced in §3.3, we can form
+two disjoint divisors of type I∗0 :
+
+                   Ψ7,0 = 2G3 + A03 + A13 + A33 + B33 ,
+                   Ψ7,∞ = 2G2 + A02 + A12 + A32 + B32 .
+
+Looking for the function whose divisor is Ψ7,0 − Ψ7,∞ , we obtain the elliptic
+parameter
+                                 (x2 − λ2 )(x1 − x2 )
+(4.1)                     u=                          .
+                                (x2 − 1)(λ2 x1 − x2 )
+The divisor of the function
+                                   (λ2 − 1) x2 (x1 − 1)
+                       u−1=−
+                                   (x2 − 1)(λ2 x1 − x2 )
+is given by the following divisor consisting only of the basic curves:
+
+        A01 + A31 + 2G1 + 2A21 + 2F2 + 2A20 + 2G0 + A10 + A30 .
+
+This is a singular fiber of type I∗4 (see Fig. 9). Thus, the elliptic parameter
+given by (4.1) is of type J7 .
+                              ELLIPTIC PARAMETERS                            19
+
+
+
+
+                                                              B33
+                type I *0 2
+                at u = 0
+
+                                                              B32
+                type I *0 2
+                au u = ∞
+
+                          2
+
+                                          2
+
+
+                          2
+
+                                          2
+
+
+                              O      T        2
+                                         type I *4 au u = 1
+
+
+
+                                   Figure 9. J7
+
+   The change of variables
+                 λ2 u(u − 1)2 x1
+             X=
+                        x2
+                 λ2 (λ2 − 1)2 x1 (x1 − 1)2 x2 (x2 − λ2 )(x1 − x2 )
+               =                                                     ,
+                              (x2 − 1)3 (λ2 x1 − x2 )3
+                 λ2 (λ2 − 1)u2 (u − 1)2
+             Y =
+                            t
+                 λ2 (λ2 − 1)3 (x1 − 1)2 x22 (x2 − λ2 )2 (x1 − x2 )2
+               =                                                    ,
+                            t(x2 − 1)4 (λ2 x1 − x2 )4
+converts (1.1) to the Weierstrass equation
+    Y 2 = X 3 − u(u − 1) (λ1 λ2 + 1)u − λ1 − λ2 X 2 + λ1 λ2 u2 (u − 1)4 X.
+                                               
+
+Its discriminant is of the form u6 (u − 1)10 d(u), where d(u) is a polynomial
+of degree 2.
+    Generically, it has only one section other than 0-section:
+                              F2    ↔    T = (0, 0).
+
+     4.3. J8 . To find an elliptic parameter of type J8 , we need to construct
+a I∗2 fiber. For this, we can make use of B33 once again. The divisor
+             Ψ8,0 = A01 + A02 + 2F0 + 2A03 + 2G3 + A33 + B33
+is of type I∗2 and it does not intersect with the divisor
+       Ψ8,∞ = A12 + 2F1 + 3A10 + 4E0 + 3A20 + 2F2 + A21 + 2A30 ,
+20                                 M. KUWATA AND T. SHIODA
+
+which is of type III∗ . We look for a function whose divisor is Ψ8,0 − Ψ8,∞ ,
+and we obtain the elliptic parameter of type J8
+                                            (x2 − λ2 )(x1 − x2 )
+                                  u=−                             .
+                                           λ2 (λ2 − 1)x1 (x1 − 1)
+
+
+
+
+                                                                            B33
+                  type I *2 2
+                  at u = 0
+                                   2
+                                                                            B32
+                          T
+                                                                                  type I 2
+                                                                                  at u = 1
+                          O
+                                                                      B31
+
+                              4
+
+                                            3           3         2
+
+
+                                       2         2          2
+                                                type III * at u = ∞
+
+
+
+                                           Figure 10. J8
+
+    Let B31 be the (−2)-curve L̃00,13,22 : (λ2 − 1)x1 + x2 − λ2 = 0. Then
+B32 and B31 form a fiber of type I2 at u = 1. Also A32 and the pullback of
+a certain (2, 2)-curve form another fiber of type I2 at u = 1/(λ1 λ2 ), while
+A31 together with the pullback of a certain (2, 2)-curve form the third fiber
+of type I2 at u = (λ1 − 1)−1 (λ2 − 1)−1 . The change of variables
+                                          (x2 − 1)(λ2 x1 − x2 )
+          X = u (λ1 − 1)(λ2 − 1)u − 1                              ,
+                                            (λ2 − 1)x2 (x1 − 1)
+                                              λ2 (x2 − 1)(λ2 x1 − x2 )
+          Y = −u3 (λ1 − 1)(λ2 − 1)u − 1                                 ,
+                                                     t x2 (x1 − 1)
+converts (1.1) to the Weierstrass equation
+
+     Y 2 = X 3 − u (2λ1 λ2 − λ1 − λ2 + 2)u − 2 X 2
+                                              
+
+                                  − u2 (u − 1)(λ1 λ2 u − 1) (λ1 − 1)(λ2 − 1)u − 1 X.
+                                                                                 
+
+Its discriminant is
+                                                              2
+     ∆(u) = 16u8 (u − 1)2 (λ1 λ2 u − 1)2 (λ1 − 1)(λ2 − 1)u − 1
+                                             × 4λ1 λ2 (λ1 − 1)(λ2 − 1)u + (λ1 − λ2 )2 .
+                                                                                     
+                                  ELLIPTIC PARAMETERS                            21
+
+[If λ2 = −λ1 , 2 − λ2 , or λ1 /(2λ1 − 1), this elliptic fibration has fiber of type
+III for general λ1 .]
+     Generically, it has only one section other than 0-section:
+
+
+                                  G2         ↔       T = (0, 0).
+
+
+
+   4.4. J11 . Modifying the divisors appearing in the type J7 fibration
+we constructed in §4.2, we form two divisors
+
+
+    Ψ11,0 = A31 + A21 + 2G1 + 2A01 + 2F0 + 2A03 + 2G3 + A33 + B33 ,
+    Ψ11,∞ = A30 + A20 + 2G0 + 2A10 + 2F1 + 2A12 + 2G2 + A32 + B32 .
+
+
+They are of type I∗4 and they do not intersect with each other.
+
+
+
+
+                                                                   B33
+                type I *4 2
+                at u = 0
+                              2
+                                                                   B32
+                          2
+
+                              2          2
+
+
+                          2
+
+                              2
+
+
+                          2
+
+                                         2
+
+
+                                  2            2        O
+                                             type I *4 at u = ∞
+
+
+
+                                      Figure 11. J11
+
+
+
+     We look for a function whose divisor is Ψ11,0 − Ψ11,∞ , and we obtain the
+elliptic parameter of type J11 :
+
+                                      x2 (x2 − λ2 )(x1 − x2 )
+                              u=                               .
+                                      x1 (x2 − 1)(λ2 x1 − x2 )
+22                               M. KUWATA AND T. SHIODA
+
+The change of variables
+                                (λ1 − 1)(x2 − λ2 )(x1 − x2 )
+                        X=u
+                                        x1 (x1 − 1)
+                               (λ1 − 1) x2 (x2 − λ2 )2 (x1 − x2 )2
+                           =                                       ,
+                                x21 (x1 − 1)(x2 − 1)(λ2 x1 − x2 )
+                                  (λ1 − 1)(x2 − λ2 )2 (x1 − x2 )2
+                        Y = u2
+                                          t x21 (x1 − 1)2
+                                 (λ1 − 1) x22 (x2 − λ2 )4 (x1 − x2 )4
+                           =
+                               t x41 (x1 − 1)2 (x2 − 1)2 (λ2 x1 − x2 )2
+converts (1.1) to the Weierstrass equation
+
+     Y 2 = X 3 + λ1 u2 − (2λ1 λ2 − λ1 − λ2 + 2)u + λ2 u X 2
+                                                     
+
+      + (λ1 − 1)(λ2 − 1) (λ1 λ2 + 1)u − 2λ2 u3 X + λ2 (λ1 − 1)2 (λ2 − 1)2 u5 .
+                                           
+
+Its discriminant is of the form u10 d(u), where d(u) is a polynomial of de-
+gree 4. The discriminant of d(u) is too complicated to write down here.
+However, a simple search reveals that there are cases where four I1 fibers
+degenerate even when C1 and C2 are not isogenous.
+Remark. Suppose that the characteristic√      of the base field is 0.
+    (1) If λ1 = −1 and λ2 = 9 ± 4 5, then the fibration has one I2 fiber
+and one type II fiber. In this case j-invariant of C1 is 1728 and that of C2
+is 78608 = 24 173 . They are not isogenous,
+                                    √         and they can be defined over Q.
+    (2) If λ1 = −1 and λ2 = ± −1, then the fibration has two type II
+fibers. In this case j-invariant of C1 is 1728 and that of C2 is 128. They are
+not isogenous, and they can be defined over Q.
+
+                       5. (2, 2)-curves and J5 , J9 and J10
+    5.1. (2, 2)-curves. Now the pullbacks of (1, 1)-curves are not enough
+to construct all the elliptic fibrations in Oguiso’s list. A pullback of a (2, 2)-
+curve is a candidate for missing (−2)-curves. A nonsingular (2, 2)-curve in
+P1 × P1 is a curve of genus 1, and thus, we first look for (2, 2)-curves with
+a node. Then we try to impose conditions such that their pullbacks are
+(−2)-curves. Here, we do not try to make a systematic search as before.
+    Actually, we can construct an elliptic fibration of type J5 using only
+pullbacks of (1, 1)-curves and the basic curves. As a by-product, however,
+we obtain some new (−2)-curves which are pullbacks of (2, 2)-curves. Such
+curves have a node at R11 . They are given by an equation of the form
+         a x21 z22 + b x2 x1 z2 z1 + c x22 z12 + d x1 z22 z1 + e x2 z2 z12 + f z22 z12 = 0.
+The fact that it has a node at R11 corresponds to the fact that the equation
+does not have the terms x21 x22 , x21 x2 z2 , and x1 z1 x22 . In order to obtain such
+                                        ELLIPTIC PARAMETERS                                                   23
+
+a (2, 2)-curve, we need to specify six points among Rij (1 ≤ i, j ≤ 4) such
+that no three among them are on the same Fi or Gj . We use such curves to
+construct an elliptic fibration of type J9 and J10 .
+    5.2. J5 . An elliptic fibration of type J5 has six I2 fibers together with
+one I∗6 fiber. In order to write down an elliptic parameter for J5 , we need
+to identify these six I2 fibers.
+    Let B33 and B32 be the (−2)-curves introduced in §3.3. Consider two
+more (−2)-curves of this type:
+                  B12 := L̃00,23,31 : λ2 (x1 − λ1 ) + (λ1 − 1)x2 = 0,
+                  B13 := L̃00,22,31 : x1 − λ1 + (λ1 − 1)x2 = 0.
+     Looking at Fig. 12, we see that B33 and B12 intersect each other only
+at two points above the intersection of lines x1 − x2 = 0 and λ2 (x1 − λ1 ) +
+(λ1 − 1)x2 = 0. Thus, the divisor B33 + B12 is a singular fiber of type
+I2 . Similarly, B32 + B13 is another singular fiber of type I2 . Furthermore,
+B33 + B12 and B32 + B13 do not intersect each other since the image of these
+curves in Ax1 × Ax2 intersect only at Rij (see Fig. 12 below).
+
+
+                                        x2           B32 : λ2 x1 − x2 = 0
+                                                                             B33 : x1 − x2 = 0
+
+
+
+                                                   R23
+                                λ2
+       B13 : x1 − λ1 + (λ1− 1) x2 = 0
+                                                                        B12 : λ2 (x1 − λ1) + (λ1− 1) x2 = 0
+
+                                 1
+                                               R22
+
+                                 0                                             x1
+                                         R11                    R31
+
+                                         0     1                   λ1
+
+
+
+                                     Figure 12. (1, 1)-curves
+                                                                 
+   Computing the divisors (x1 − x2 ), λ2 (x1 − λ1 ) + (λ1 − 1)x2 , (λ2 x1 − x2 )
+and x1 − λ1 + (λ1 − 1)x2 , we see that
+                                                            
+                    (x1 − x2 ) λ2 (x1 − λ1 ) + (λ1 − 1)x2
+               u=                                          
+                     (λ2 x1 − x2 ) x1 − λ1 + (λ1 − 1)x2
+is an elliptic parameter of type J5 . We have
+                                           −λ1 (λ2 − 1) x2 (x1 − 1)
+                     u−1=                                               ,
+                                     (λ2 x1 − x2 ) x1 − λ1 + (λ1 − 1)x2
+24                              M. KUWATA AND T. SHIODA
+
+which shows that the fiber at u = 1 is a singular fiber of type I∗6 . Each of
+
+                                                             type I 2 at u = ∞
+
+
+                                                                          B33
+                        T3
+                                                                                type I 2
+                                               B13
+                                                                                at u = 0
+                        T2
+                                               B12                  B32
+
+                            2
+                type I *6       2                    2
+                at u = 1
+                            2
+
+                                                     2
+
+
+                                    2      O             2     T1
+
+
+
+
+                                        Figure 13. J5
+
+the divisors A12 , A13 , A32 and A33 is a component of a singular fiber of type
+I2 . The other (−2)-curves are pullbacks of (2, 2)-curves. For example, the
+singular fiber at u = λ1 λ2 − λ1 + 1 consists of A12 and the pullback of the
+(2, 2)-curve given by
+               λ2 x1 (x1 − 1) + (λ1 − 1)(x2 − 1)(λ2 x1 − x2 ) = 0.
+    In order to obtain a Weierstrass equation using the curve G0 as the
+0-section, we first put
+                         (x1 − x2 )(x1 − λ1 )
+              X0 =                              ,
+                     x1 (x1 − λ1 ) + (λ1 − 1)x2
+                       λ1 (λ1 − 1) t x2 (x1 − 1)(x1 − λ1 )(x2 − x1 )
+               Y0 =                                              2 ,
+                        x1 (λ2 x1 − x2 ) (x1 − λ1 ) + (λ1 − 1)x2
+and then put
+                                                                       
+ X = λ1 (λ2 − 1)(u − 1)(u − λ1 λ2 + λ1 − 1) (λ1 λ2 − λ1 − λ2 )u + λ2 X0 ,
+ Y = λ21 (λ2 − 1)2 (u − 1)2 (u − λ1 λ2 + λ1 − 1) (λ1 λ2 − λ1 − λ2 )u + λ2 Y0 .
+                                                                         
+
+Then (X, Y ) satisfy the Weierstrass equation
+                                Y 2 = X(X − α)(X − β),
+where
+                                                                       
+ α = −λ1 (λ2 − 1)(u − 1) (λ1 λ2 − 1)u − λ1 + 1 (λ1 λ2 − λ1 − λ2 )u + λ2 ,
+                                                                     
+ β = λ1 (λ2 − 1)u(u − 1)(u − λ1 λ2 + λ1 − 1) (λ1 λ2 − λ2 )u − λ1 + λ2 .
+                             ELLIPTIC PARAMETERS                                             25
+
+The discriminant of this fibration is given by
+
+  ∆(u) = 16λ61 λ22 (λ1 − 1)2 u2 (u − 1)12
+                                                            2
+               × (u − λ1 λ2 + λ1 − 1)2 (λ1 λ2 − 1)u − λ1 + 1
+                                              2                     2
+                  × (λ1 λ2 − λ2 )u − λ1 + λ2 (λ1 λ2 − λ1 − λ2 )u + λ2 .
+    The Mordell-Weil group of this elliptic surface has the following three
+sections:
+                              F3   ↔ T1 = (0, 0),
+                             G2 ↔ T2 = (α, 0),
+                             G3 ↔ T3 = (β, 0).
+
+     5.3. J9 . In order to construct an elliptic fibration of type J9 , we need
+to find a divisor of type I∗0 different from the ones appearing in J4 or J7 .
+To do so we look for a (−2)-curve P33 such that 2G3 + A03 + A33 + B33 + P33
+is of type I∗0 . We can show that P33 cannot be a pullback of a (1, 1)-curve; if
+that were the case, B33 and P33 would have to intersect each other. Thus,
+we look for a (2, 2)-curve whose double cover serves as P33 .
+
+
+                                   P33 : λ2 x1 (x1 − 1) + (λ1 − 1)(x2 − 1)(λ2 x1 − x2) = 0
+                            x2
+
+                                                                 B33 : x1 − x2 = 0
+
+
+                  A03                              A33
+
+
+
+
+                                                                 x1
+
+
+
+
+                          Figure 14. fiber at u = 0
+
+    It turns out that the pullback of the (2, 2)-curve
+(5.1)          λ2 x1 (x1 − 1) + (λ1 − 1)(x2 − 1)(λ2 x1 − x2 ) = 0
+can be used as P33 . This curve is a component of a I2 fiber of the elliptic
+fibration of type J5 which we constructed in the previous subsection. The
+(2, 2)-curve (5.1) has a node at R00 , and passes through R11 , R12 , R22 , R23 ,
+and R31 . Fig. 14 shows the projection of the (−2)-curves contained in the
+26                         M. KUWATA AND T. SHIODA
+
+divisor Ψ9,0 = 2G3 + A03 + A33 + B33 + P33 . (The projection of A03 is R03 ,
+which is a point at infinity.)
+    Similarly, let P32 be the pullback of the (2, 2)-curve
+               λ2 x1 (x1 − 1) + (λ1 − 1)(x2 − λ2 )(x1 − x2 ) = 0.
+Then, the divisor Ψ9,∞ = 2G2 + A02 + A32 + B32 + P32 is again of type I∗0 ,
+which does not intersect with Ψ9,0 . Fig. 15 shows the curves contained in
+the divisor Ψ9,∞ . Looking for the function having the divisor Ψ9,0 − Ψ9,∞ ,
+
+
+                                           B32 : x2 − λ2 x1 = 0
+                            x2
+
+
+
+
+                                     P32 : λ2 x1 (x1 − 1) + (λ1 − 1)(x2 − λ2)(x1 − x2) = 0
+
+
+                  A02                                 A32
+
+                                                                  x1
+
+
+
+
+                          Figure 15. fiber at u = ∞
+
+we find the elliptic parameter u given by
+(5.2)                                                                      
+        (x2 − λ2 )(x1 − x2 ) λ2 x1 (x1 − 1) + (λ1 − 1)(x2 − 1)(λ2 x1 − x2 )
+   u=                                                                      .
+        (x2 − 1)(λ2 x1 − x2 ) λ2 x1 (x1 − 1) + (λ1 − 1)(x2 − λ2 )(x1 − x2 )
+We have
+
+     u−1=
+                              −λ2 (λ2 − 1)x1 x2 (x1 − 1)2
+                                                                             .
+          (x2 − 1)(λ2 x1 − x2 ) λ2 x1 (x1 − 1) + (λ1 − 1)(x2 − λ2 )(x1 − x2 )
+The zero divisor of this function u − 1 is given by the following divisor
+consisting only of the basic curves:
+       A01 + 2G1 + 3A21 + 4F2 + 5A20 + 6G0 + 3A30 + 4A10 + 2F1 .
+This is a singular fiber of type II∗ (see Fig. 16). Thus, the elliptic parameter
+given by (5.2) is of type J9 .
+    Our next task is to write down a Weierstrass equation. If we regard (5.2)
+as the defining equation of a curve in P1 × P1 defined over k(u), then we can
+                               ELLIPTIC PARAMETERS                                          27
+
+
+
+
+                                                                      B33
+               type I *0 2
+               at u = 0                                               P33
+                                                                      B32
+                type I *0 2
+               at u = ∞                                               P32
+
+
+                         2
+
+                                               3
+
+
+                         6
+
+                                     4         5           3
+
+
+                                O        2         4
+
+                                      type II * at u = 1
+
+
+
+                                    Figure 16. J9
+
+
+show that this curve is a curve of genus 0, and thus it can be parametrized.
+In fact, we can parametrize x1 and x2 satisfying (5.2) using the parameter
+
+                                    (x2 − 1)(λ2 x1 − x2 )
+                              ξ=−                         .
+                                          λ2 x1 x2
+
+Actual parametrizations of x1 and x2 are complicated and we omit here.
+Substituting x1 and x2 in the equation (1.1) by these parametrizations, we
+obtain an equation of a curve of genus 1 with variables in (ξ, t) defined over
+k(u). This equation turns out to be a quadratic equation in t, and it is
+easily converted to a Weierstrass equation. Combining all these, we obtain
+the change of variables
+
+                          λ2 (λ2 − 1)x1 (x1 − 1)                      λ2 (λ2 − 1)
+             X0 = −                              ,             Y0 =
+                          (x2 − 1)(λ2 x1 − x2 )                            t
+
+that converts (1.1) to a twisted form of Weierstrass equation
+
+  u(u − 1)Y02 = X03 + (λ1 λ2 − 2λ1 − 2λ2 + 1)(u − 1)X02
+                 − (λ1 + λ2 − 1)(λ1 λ2 − λ1 − λ2 )(u − 1)2 X0
+                                                       − λ1 λ2 (λ1 − 1)(λ2 − 1)(u − 1)2 .
+
+By letting
+                     X = u(u − 1)X0 ,           Y = u2 (u − 1)2 Y0 ,
+28                            M. KUWATA AND T. SHIODA
+
+we obtain the following Weierstrass equation:
+
+     Y 2 = X 3 + (λ1 λ2 − 2λ1 − 2λ2 + 1) u (u − 1)2 X 2
+                  − (λ1 + λ2 − 1)(λ1 λ2 − λ1 − λ2 ) u2 (u − 1)4 X
+                                             − λ1 λ2 (λ1 − 1)(λ2 − 1) u3 (u − 1)5 .
+Its discriminant is of the form u6 (u − 1)10 d(u), where d(u) is a polynomial
+of degree 2. The discriminant of d(u) is given by
+             16λ21 λ22 (λ1 − 1)2 (λ2 − 1)2 (λ21 − λ1 + 1)3 (λ22 − λ2 + 1)3 .
+If either λ1 or λ2 is a sixth root of unity, then two I1 fibers of the fibration
+degenerate to form a type II fiber.
+
+   5.4. J10 . In order to construct an elliptic fibration of type J10 , we
+must find yet another divisor of type I∗0 . The divisor Ψ9,0 = 2G3 + A03 +
+A33 + B33 + P33 is a divisor of type I∗0 appearing in the elliptic fibration
+constructed in the previous subsection. Since neither B33 nor P33 intersects
+with A13 , we see that
+                      Ψ10,0 = 2G3 + A13 + A33 + B33 + P33
+is also a divisor of type I∗0 . We then find a divisor of type I∗6 that does not
+intersect with Ψ10,0 :
+
+     Ψ10,∞ = B32 + A32 + 2G2 + 2A02 + 2F0 + 2A01
+                               + 2G1 + 2A21 + 2F2 + 2A20 + 2G0 + A10 + A30
+(see Fig.17). Looking for the function having the divisor Ψ10,0 − Ψ10,∞ , we
+find the elliptic parameter of type J10 given by
+(5.3)                                                                      
+        (x2 − λ2 )(x1 − x2 ) (λ1 − 1)(x2 − 1)(λ2 x1 − x2 ) + λ2 x1 (x1 − 1)
+   u=                                                                        .
+                         x2 (x2 − 1)(x1 − 1)(λ2 x1 − x2 )
+ The curve in P1 × P1 over k(u) defined by (5.3) is a curve of genus 0. As
+in the case of J9 , the parameter
+                                   (x1 − x2 )(x2 − λ2 )
+                              ξ=                        ,
+                                       (x1 − 1)x2
+can be used to parametrize this curve. We can proceed in a similar manner
+to the case of J9 and we obtain the change of variables
+                             λ1 (λ1 − 1)(x2 − 1)(λ2 x1 − x2 )
+                      X0 =                                    ,
+                                       x1 (x1 − 1)
+                             λ1 (λ1 − 1)(x2 − 1)2 (λ2 x1 − x2 )2
+                      Y0 =                                       ,
+                                       tx21 (x1 − 1)2
+                                  ELLIPTIC PARAMETERS                                           29
+
+
+
+
+                                                                    B33
+                type I *0 2
+                at u = 0                                           P 33
+                                                                    B32
+                          2
+
+                              2
+
+
+                          2
+
+                              2                2
+
+
+                          2
+
+                                               2
+
+
+                                  2      O          2
+                                              type I *6 at u = ∞
+
+
+
+                                      Figure 17. J10
+
+which converts (1.1) to
+
+  uY02 = X03 − (u + λ1 + λ2 − 1)(u − λ1 λ2 + λ1 + λ2 )X02
+           + λ1 λ2 (λ1 − 1)(λ2 − 1)(2u − λ1 λ2 + 2λ1 + 2λ2 − 1)X0
+                                                              + λ21 λ22 (λ1 − 1)2 (λ1 − 1)2 .
+Putting
+                                  X = uX0 ,        Y = u2 Y0 ,
+we obtain the Weierstrass equation
+
+  Y 2 = X 3 + u(u − λ1 − λ2 + 1)(u + λ1 λ2 − λ1 − λ2 )X 2
+          + λ1 λ2 (λ1 − 1)(λ2 − 1)u2 (2u + λ1 λ2 − 2λ1 − 2λ2 + 1)X
+                                                          + λ21 λ22 (λ1 − 1)2 (λ1 − 1)2 u3 .
+Its discriminant is of the form u6 d(u), where d(u) is a polynomial of degree 2.
+We can show that d(u) can have a multiple root without C1 and C2 being
+isogenous.
+
+        6. Full list of the defining equations in a special case
+    In this section, we take as C1 and C2 the most familiar elliptic curves
+(6.1)                 C1 : y12 = x31 − x1 ,        C2 : y22 = x32 − 1,
+and write down the full list of the defining equations of mutually noniso-
+morphic elliptic fibrations on the Kummer surface S = Km(C1 × C2 ) in
+characteristic 0. Although they are very special among elliptic curves (e.g.
+30                          M. KUWATA AND T. SHIODA
+
+automorphisms or complex multiplications), corrseponding Kummer surface
+S serves as a more or less “typical” case, since C1 , C2 are not isogenous to
+each other.
+    In this case, the number N (n) of nonisomorphic elliptic fibrations on S
+of type Jn has been determined by Oguiso as follows:
+                        N (n) = 1    for n = 2, 3, 5, 8, 9, 10,
+and
+                         N (n) = 2    for n = 1, 4, 6, 7, 11.
+(See Oguiso [8, p. 652]. We note that this number N is not typical among
+all non-isogenous curves, as shown there.)
+    Now observe that the values of Legendre parameter λi for the present
+Ci are as follows:
+                    λ1 = −1, −2 or 1/2,      λ2 = −ω or − ω 2 ,
+where ω is a cubic root of unity. In the following, we write down the N =
+N (n) defining equations for each type Jn . When N = 1, we give essentially
+the same equation as the one constructed in the previous sections, except
+that we make some coordinate change when it makes the equation look
+simpler. When N > 1, we make the same construction as before using a
+suitable equivalent value of λi . We briefly indicate how to verify that the
+resulting defining equations are not isomorphic to each other.
+
+      6.1. J1 .
+                         y 2 = x x2 + (u4 + 1)x + 4u4 ,
+                                                     
+(6.2)
+
+                                 1 (u8 − 10u4 + 1)3
+                           J=                          .
+                                108 u8 (u8 − 14u4 + 1)
+
+                  y 2 = x x2 + (u4 + 6(2ω + 1)u2 + 1)x − 32u4 ,
+                                                             
+(6.3)
+                                                             3
+              1   u8 + 12(2ω + 1)u6 − 10u4 + 12(2ω + 1)u2 + 1
+         J=                                                    .
+            6912 u8 u8 + 12(2ω + 1)u6 + 22u4 + 12(2ω + 1)u2 + 1
+Both the equations (6.2) and (6.3) have two I8 fibers at u = 0 and ∞ and
+eight I1 fibers. Suppose they define isomorphic elliptic curves over k(u).
+Then there must be a linear transformation of u fixing 0 and ∞ which sends
+one J into the other, J denoting the classical absolute invariant of the generic
+fibre (normalized so that J = 1 for y 2 = x3 − x). But this is impossible,
+as the positions of the eight I1 fibers are determined by the simple poles of
+J and they cannot be transformed by such a linear transformation. This
+proves that the two elliptic fibrations are not isomorphic to each other.
+                            ELLIPTIC PARAMETERS                            31
+
+    6.2. J2 .
+
+                   y 2 = x x2 − (3u4 + 6u2 − 1)x + 32u6 ,
+                                                       
+(6.4)
+
+                       1 (9u8 − 60u6 + 30u4 − 12u2 + 1)3
+                J=                                           .
+                     6912 u12 (u4 − 10u2 + 1)(9u4 − 2u2 + 1)
+
+    6.3. J3 .
+
+(6.5)                  y 2 = x3 + u4 (u4 + 1),    J = 0.
+
+    6.4. J4 .
+
+(6.6)            y 2 = x3 − (u3 − 1)2 x, (u = x1 ),     J = 1.
+
+
+(6.7)             y 2 = x3 − (v 3 − v)3 , (v = x2 ),    J = 0.
+
+These are the two obvious elliptic fibrations on S induced by the projections
+C1 × C2 → C1 or C2 .
+
+    6.5. J5 .
+
+                     y 2 = x(x − 4) x + 2u(u2 + 3u + 3) .
+                                                       
+(6.8)
+
+                  1 (u6 + 6u5 + 15u4 + 20u3 + 15u2 + 6u + 4)3
+            J=                                                .
+                 27 u2 (u + 2)2 (u2 + u + 1)2 (u2 + 3u + 3)2
+
+    6.6. J6 .
+
+                     y 2 = x(x + 2u2 ) x − u(u2 − u + 1) ,
+                                                        
+(6.9)
+
+                                1 (u4 + 5u2 + 1)3
+                          J=                        .
+                               27 u2 (u4 + u2 + 1)2
+
+                 y 2 = x(x − ωu2 ) x + u(2u − 1)(u + ω 2 ) ,
+                                                          
+(6.10)
+                                      3                          3
+             4 ω 2u2 − (ω + 2)u − ω 2 2u2 − 2(ω + 2)u − ω 2
+         J=                                                          .
+            27     u2 (u − 1)2 (2u − 1)2 (u + ω 2 )2 (2u + ω 2 )2
+The Legendre parameters we employed for the first equation (6.9) are λ1 =
+−ω, λ2 = −1, while those for the second one (6.10) are λ1 = −ω, λ2 =
+2. That the two equations define nonisomorphic elliptic fibrations can be
+checked in the same way as the case for J1 above.
+32                          M. KUWATA AND T. SHIODA
+
+     6.7. J7 .
+                   y 2 = x x2 − u(u + 1)(u + 2)x + u2 (u + 2)2 ,
+                                                              
+(6.11)
+                                   4 (u2 + 2u − 2)3
+                              J=                     .
+                                   27 (u − 1)(u + 3)
+
+              y 2 = x x2 + ωu(u − 1)(u − 3ω − 2)x + 2ω 2 u2 (u − 1)2 .
+                                                                    
+(6.12)
+                          1 (u2 − 2(3ω + 2)u + 3ω − 11)3
+                      J=                                  .
+                         27 (u2 − 2(3ω + 2)u + 3ω − 13)
+In this case, we can check that there is a linear transformation of u sending
+the first J into the second one. However it does not preserve the position of
+singular fibres which can be seen from the discriminants (but not from the
+absolute invariants). Hence (6.11) and (6.12) are not isomorphic.
+     6.8. J8 .
+             y 2 = x x2 + u(3u + 2)x + u2 (1 + 3u + 3u2 + 2u3 ) ,
+                                                               
+(6.13)
+                          4          (6u3 − 3u − 1)3
+                    J=                                          .
+                         27 u2 (2u + 1)2 (u2 + u + 1)2 (8u + 3)
+     6.9. J9 .
+(6.14)                    y 2 = x3 + u(u2 − 4)3 ,   J = 0.
+     6.10. J10 .
+(6.15)       y 2 = x3 + u2 (u + 3)x2 + u2 (−2u2 − 2u + 3)x + u4 (u − 1).
+We omit J.
+     6.11. J11 .
+
+(6.16) y 2 = x3 − 27u2 (u4 + 6u3 + 5u2 − 6u + 1)x
+                                   − 54u3 (u2 + 1)(u4 + 9u3 + 20u2 − 9u + 1).
+
+(6.17) y 2 = x3 − 27u2 (4u4 − 12u3 + 10(ω + 1)u2 − 6ωu + ω)x
+                       + 27u3 16u6 − 72u5 + 6(19 + 10ω)u4
+                                − 63(1 + 2ω)u3 + 3(−9 + 10ω)u2 + 18u − 2 .
+                                                                        
+
+We omit J, but it can be checked that the two elliptic fibrations are not
+isomorphic to each other by a similar argument as before.
+    Thus we have listed the defining equations of elliptic fibrations (with a
+section) on the Kummer surface S = Km(C1 × C2 ) with Ci given by (6.1)
+over an algebraically closed field k of characteristic 0. Needless to say that
+the function field k(x, y, u) defined by each of the equations (6.2) through
+                            ELLIPTIC PARAMETERS                                33
+
+(6.17) is isomorphic to one and the same function field k(S), which is the
+extension k(x1 , x2 , t) with t = y1 /y2 determined by (6.1).
+
+                             7. Closing remark
+     In closing this paper, it should be remarked that the problems posed
+in the Introduction (§1.1) should be interesting and worth considering for
+more general K3 surfaces.
+     Even in the case of Kummer surfaces, we could ask such questions as
+follows:
+Problem 5. Study Problems 1 and 2 for the Kummer surface X = Km(A),
+when A is the Jacobian variety of a genus two curve.
+
+    For this, the so-called 166 -configuration of thirty-two (−2)-curves on X
+should play an important role in place of the twenty-four basic curves used
+in this paper. A special case has been treated in Shioda [13].
+    According to Weil [15], a principally polarized abelian surface is either
+the Jacobian variety of a genus two curve or a product of two elliptic curves.
+Beyond the case of principally polarized abelian surfaces, we ask:
+Problem 6. Find at least one elliptic parameter for the Kummer surface
+X = Km(A) when A is a generic member in a family of polarized abelian
+surfaces.
+
+   The coefficients in the defining equation (especially the discriminant) for
+such should be related to some modular forms or theta-functions of interest.
+
+     Acknowledgements We would like to thank Professor Fumio Sakai
+of Saitama University who arranged a Seminar by the second author about
+“Elliptic parameters” in September 2005, which resulted in this fruitful joint
+work with the first author who attended the Seminar. We thank Matthias
+Schütt for careful reading of the manuscript. We are most grateful to the
+referee for making very sharp and constructive comments on the manuscript,
+who has requested the three things: (i) to make the paper free from mistakes
+(since many standard calculations are nicely omitted), (ii) to add a few words
+about the case of quasi-elliptic fibrations, and (iii) to include “a full account
+in one non-trivial case” after saying that Remark 1.7 is very impressive.
+     In answering these requests, (i) we have tried our best to minimize the
+possible errors (but still some errors might have crept in during correction).
+(ii) In char k = 3, it is possibe that some of the defining equations becomes
+a quasi-elliptic fibration. We should leave this question to the interested
+reader, but let us say this: if for example we let λ1 = λ2 = −1 in char k = 3,
+then J3 -fibration gives the same equation as the J3 -fibration in §6 (for
+34                             M. KUWATA AND T. SHIODA
+
+char k 6= 3), which is indeed quasi-elliptic in char k = 3. (iii) We have added
+a new section §6 in the revised version to respond to this request.
+    The second-named author ackowledges the support from Grant-in-Aid
+for Scientific Research No.17540044.
+
+                                        References
+ [1] J. W. S. Cassels, Lectures on elliptic curves, London Mathematical Society Student
+     Texts, 24, Cambridge University Press, Cambridge, 1991.
+ [2] I. Connell, Addendum to a paper of K. Harada and M.-L. Lang: “Some elliptic curves
+     arising from the Leech lattice” [J. Algebra 125 (1989), no. 2, 298–310], J. Algebra
+     145 (1992), 463–467.
+ [3] H. Inose, Defining equations of singular K3 surfaces and a notion of isogeny, Proc.
+     Intl. Symp. on Algebraic Geometry, Kyoto 1977, Kinokuniya, 1978, 495–502.
+ [4] K. Kodaira, On compact analytic surfaces. II, III, Ann. of Math. (2) 77 (1963),
+     563–626; ibid. 78 (1963), 1–40.
+ [5] M. Kuwata, The canonical height and elliptic surfaces, J. Number Theory 36 (1990),
+     201–211.
+ [6]         , Elliptic K3 surfaces with given Mordell-Weil rank, Comment. Math. Univ.
+     St. Paul. 49 (2000), 91–100.
+ [7] D. R. Morrison, On K3 surfaces with large Picard number, Invent. Math. 75 (1984),
+     105–121.
+ [8] K. Oguiso, On Jacobian fibrations on the Kummer surfaces of the product of non-
+     isogenous elliptic curves, J. Math. Soc. Japan 41 (1989), 651–680.
+ [9] I. I. Pjateckiı̆-Šapiro and I. R. Šafarevič, Torelli’s theorem for algebraic surfaces of
+     type K3, Izv. Akad. Nauk SSSR Ser. Mat. 35 (1971), 530–572, English tansl.: Math.
+     USSR, Izv. 5 (1971) 547–588.
+[10] T. Shioda and H. Inose, On singular K3 surfaces, Complex Analysis and Algebraic
+     Geometry, Iwanami Shoten, Tokyo, 1977, 119–136.
+[11] T. Shioda, On the Mordell-Weil lattices, Comment. Math. Univ. St. Paul. 39 (1990),
+     no. 2, 211–240.
+[12]         , A note on K3 surfaces and sphere packings, Proc. Japan Acad. Ser. A Math.
+     Sci. 76 (2000), 68–72.
+[13]         , Classical Kummer surfaces and Mordell-Weil lattices, Algebraic geometry,
+     Contemp. Math., vol. 422, Amer. Math. Soc., Providence, RI, 2007, pp. 213–221.
+[14]         , Correspondence of elliptic curves and Mordell-Weil lattices of certain elliptic
+     K3’s, Algebraic Cycles and Motives, vol. 2, London Math. Soc. Lecture Note Ser.,
+     vol. 344, Cambridge Univ. Press, Cambridge, 2007, pp. 319–339.
+[15] A. Weil, Zum Beweis des Torellischen Satzes, Nachr. Akad. Wiss. Göttingen. Math.-
+     Phys. Kl. IIa. (1957), 33–53.
+
+   (M. Kuwata) Faculty of Economics Chuo University, 742-1 Higashi-Nakano,
+Hachioji-shi, Tokyo 192-0393, Japan
+   E-mail address: kuwata@tamacc.chuo-u.ac.jp
+
+    (T. Shioda) Department of Mathematics Rikkyo University, 3-34-1 Nishi-
+Ikebukuro, Toshima-ku, Tokyo 171-8501, Japan
+    E-mail address: shioda@rkmath.rikkyo.ac.jp
+

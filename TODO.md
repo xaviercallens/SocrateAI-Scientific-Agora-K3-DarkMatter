@@ -175,9 +175,15 @@
       with σ, π exact Laurent polynomials in z (PASS(128)); σ² − 4π has simple zeros exactly at z = −1,
       1/27 (D −7, −28) and double zeros at the other self-7-isogenous CM points (D −12, −19, −27, −24,
       each h(D) times; three of them outside the CM table's window, explained). Brief:
-      `briefs/WP_GE10_INOSE_MODEL_M7_2026_09_27.md`. **Next step needs one T0 reading** (Kodaira
-      types of an explicit Weierstrass model over the t-line vs ledger item 3) before the Weierstrass
-      reduction is fetched and run. Register: `briefs/THOUGHT_EXPERIMENTS_K3_SELECTION_2026_09_21.md`.
+      `briefs/WP_GE10_INOSE_MODEL_M7_2026_09_27.md`. **Step 2 done up to the Kodaira boundary
+      (same day):** from Kuwata–Shioda's sourced J₉ equation (transcription verified against their
+      printed discriminant), the Inose fibration's discriminant orders are {10,10,1,1,1,1} generically
+      and **{10,10,2,1,1} at every J₁ = J₂ ∉ {0,1} — both loci z = −1 and z = 1/27 alike** (d(0) ≡ 0
+      when the curves are isomorphic: one order-2 fibre at the branch point). **GE-10 answered at the
+      fibre level: no div-2/div-1 difference, no A₁ merging; the second extra class is a Mordell–Weil
+      section, not a fibre.** J = 0 → {10,10,4}; J = 1 → {10,10,2,2} (the review's X₃/X₄ rows, at the
+      level of orders). `INOSE_FIBRATION_MULTIPLICITIES.json`. Still gated on T0 (ledger item 3
+      reading): attaching Kodaira *labels* to these orders.
 - [x] **Does C3 require an INTEGRAL partner? — RULED by D8′/AM-2 (literal reading: no; the constant
       is reported, never gated).** Item closed as superseded (D11′-7). Record of the question:
       `briefs/STREAM2_TO_STREAM3_C3_BRANCH_REPLY_2026_09_21.md`; `PARTNER_GLOBAL_BOUNDEDNESS.json`.
@@ -289,6 +295,8 @@ python3 checkers/check_certified_monodromy_L2.py --family cooper_s10  # ~30 s: s
 python3 checkers/test_certified_monodromy_L2_controls.py     # ~70 s: scrambled operator refused; every rigorous helper is a real bound
 python3 checkers/check_inose_model_M7.py                      # ~15 s: explicit M_7 Inose/CDLW model over z; sigma^2-4pi zeros = W_7 fixed points + CM points
 python3 checkers/test_inose_model_M7_controls.py              # 7 controls (scrambled z refused; level 5 does not fit; wrong pole order fails)
+python3 checkers/check_inose_fibration_multiplicities.py      # ~10 s: KS J9 equation (transcription verified) -> Inose K3; orders {10,10,2,1,1} at both loci
+python3 checkers/test_inose_fibration_multiplicities_controls.py # 7 controls (transcription errors refused; exceptional set discriminating)
 # slow (~70 s): python3 checkers/check_nodality_explicit_models.py   (Singular optional second CAS)
 # slow (~2.5 min), run before release: python3 checkers/check_CM_points_rho20.py
 ```
