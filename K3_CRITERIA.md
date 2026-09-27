@@ -93,7 +93,9 @@ Template per criterion: **Definition** (mathematically exact) · **Checking proc
   `P` is re-applied by the verifier, and `Pᵀ G P = U ⊕ ⟨d⟩`, `d = |det| = 2n` are recomputed.
 - **Checkers:** `checkers/check_U1_lattice.py`, `checkers/check_U1_witness_serialization.py`,
   `checkers/independent_rederivation_C2_s10_v4.py` (+ their control files).
-- **Status:** `cooper_s7` LIVE (`C2_cooper_s7_v5.json`, T0 D5′); `cooper_s10` **DRAFT**
+- **Status:** `cooper_s7` LIVE (`C2_cooper_s7_v6.json`, T0 D10′ 2026-09-27 — v5 content, stage-2
+  monodromy matrices certified by `checkers/check_certified_monodromy_L2.py`; v5 accepted under D5′ is
+  retained, identical values); `cooper_s10` **DRAFT**
   (`C2_cooper_s10_v4_DRAFT.json`, kept DRAFT by T0 D6′) ⇒ every s10 statement resting on it is
   ADVISORY.
 - **Threshold:** exact; the identification of the monodromy-invariant lattice with `T` is Tier B via
@@ -262,7 +264,7 @@ Template per criterion: **Definition** (mathematically exact) · **Checking proc
 
 | Register row (refs entry) | §1 pool flag | C1 | C2 | C3 | C3b | C4 | C5 |
 |---|---|---|---|---|---|---|---|
-| K-s7 (`cooper_s7`) | `TIER_A_POOL` | `PASS(60)` | LIVE: T ≅ U⊕⟨14⟩ (`C2_cooper_s7_v5.json`; T0 acceptance `briefs/T0_DECISIONS_2026_07_27_STREAM2.md#d5`); stage-2 monodromy CERTIFIED, chain to this lattice closed (`CERTIFIED_MONODROMY_L2_cooper_s7.json`) | `SYM2_OPERATOR_IDENTITY_PROVEN(all-n symbolic; partner revalidated to n=58, mirror q^14)` | no certificate | TBD-AT-FREEZE (no checker) | TBD-AT-FREEZE (no checker) |
+| K-s7 (`cooper_s7`) | `TIER_A_POOL` | `PASS(60)` | LIVE: T ≅ U⊕⟨14⟩ (`C2_cooper_s7_v6.json`; T0 acceptance `briefs/T0_DECISIONS_2026_09_27_STREAM2.md#d10`); stage-2 monodromy CERTIFIED, chain to this lattice closed (`CERTIFIED_MONODROMY_L2_cooper_s7.json`) | `SYM2_OPERATOR_IDENTITY_PROVEN(all-n symbolic; partner revalidated to n=58, mirror q^14)` | no certificate | TBD-AT-FREEZE (no checker) | TBD-AT-FREEZE (no checker) |
 | K-s10 (`cooper_s10`) | `TIER_A_POOL` | `PASS(60)` | DRAFT (ADVISORY): U⊕⟨20⟩ not certified; neither pass nor failure (`C2_cooper_s10_v4_DRAFT.json`); stage-2 monodromy CERTIFIED, chain to this lattice closed (`CERTIFIED_MONODROMY_L2_cooper_s10.json`) | `SYM2_OPERATOR_IDENTITY_PROVEN(all-n symbolic; partner revalidated to n=58, mirror q^14)` | no certificate | TBD-AT-FREEZE (no checker) | TBD-AT-FREEZE (no checker) |
 | K-s18 (`avs_sporadic3_s18`) | `TIER_B_QUARANTINE` | `PASS(60)` | no certificate | no certificate | no certificate | TBD-AT-FREEZE (no checker) | TBD-AT-FREEZE (no checker) |
 

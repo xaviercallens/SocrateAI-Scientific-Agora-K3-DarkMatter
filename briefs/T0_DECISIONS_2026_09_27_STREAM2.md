@@ -25,6 +25,20 @@ v4→v5 (D5′). (ii) The §5 status table now carries, in the C2 cell, "stage-2
 this lattice closed" for both families, read from the `CERTIFIED_MONODROMY_L2_*` certificates (renderer
 control N16: an open chain renders loudly; a reference mismatch refuses). Neither item promotes s10.
 
+## D10′ — same day, later: v6 accepted, PR merged, streams informed
+
+**Form of the ruling, verbatim:**
+
+> accept v6 draft and merge the PR and inform Stream 1 and stream 3
+
+| # | Ruling | Applied |
+|---|---|---|
+| D10′-1 | **`C2_cooper_s7_v6_DRAFT.json` ACCEPTED** → promoted to `C2_cooper_s7_v6.json`, LIVE, lattice authority for cooper_s7 | derived block asserted identical to v5 at promotion; `t0_acceptance` block carries the verbatim words; v5/v5_DRAFT/v4/v4_DRAFT/v3 retained unchanged; certificates whose inputs pin v5's hash stay valid (identical values); v3 remains the rank source. `K3_CRITERIA.md` C2 status line, renderer source map, certified checker's stage-3 reference and the witness checker's `--all` list updated to v6; s7 certified-monodromy certificate re-emitted against v6 |
+| D10′-2 | **Merge PR #55** | merged by Stream 2 on this instruction (merge commit, branch `stream2/status-table-renderer-2026-09-27`) |
+| D10′-3 | **Inform Stream 1 and Stream 3** | notices placed untracked in their repos with the post-merge `K3_CRITERIA.md` sha256 |
+
+Not ruled by D10′: cooper_s10 (still ADVISORY, D6′); the lab programme for Stream 3; any selector (AM-6).
+
 **What this ruling does not do.** It adopts no selector (AM-6 requires one to be *named* by its own T0
 text before any member is preferred); it changes no certificate value; it does not promote `cooper_s10`
 (still ADVISORY, D6′); it does not freeze the criteria (§7 still open, and now one item longer); it does

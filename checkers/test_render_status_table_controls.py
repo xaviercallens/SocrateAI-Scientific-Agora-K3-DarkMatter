@@ -118,7 +118,7 @@ check("N1 flipped verdict changes the cell", out != base and "FAIL_AT(17)" in ou
 
 # N2
 sb = fresh()
-(sb.certs / "C2_cooper_s7_v5.json").unlink()
+(sb.certs / "C2_cooper_s7_v6.json").unlink()
 ok, e = refuses(sb, "missing")
 check("N2 deleted source refuses", ok, e)
 
@@ -143,7 +143,7 @@ s10_line = [l for l in base.splitlines() if l.startswith("| K-s10") and "C2_coop
 check("N5 s10 lattice renders DRAFT (ADVISORY), not LIVE", len(s10_line) == 1
       and "DRAFT (ADVISORY)" in s10_line[0] and "LIVE:" not in s10_line[0])
 sb = fresh()
-sb.edit("C2_cooper_s7_v5.json", lambda d: d.update(status="DRAFT - control"))
+sb.edit("C2_cooper_s7_v6.json", lambda d: d.update(status="DRAFT - control"))
 s7_line = [l for l in sb.render().splitlines() if l.startswith("| K-s7") and "C2_cooper_s7" in l]
 check("N5 s7 flipped to DRAFT renders DRAFT", len(s7_line) == 1 and "DRAFT (ADVISORY)" in s7_line[0]
       and "LIVE:" not in s7_line[0])
@@ -183,7 +183,7 @@ check("N10 absent checker refuses", ok, e)
 
 # N11
 sb = fresh()
-sb.edit("C2_cooper_s7_v5.json", lambda d: d.update(status="SUPERSEDED v5"))
+sb.edit("C2_cooper_s7_v6.json", lambda d: d.update(status="SUPERSEDED v5"))
 ok, e = refuses(sb, "neither LIVE nor DRAFT")
 check("N11 unknown C2 status refuses", ok, e)
 

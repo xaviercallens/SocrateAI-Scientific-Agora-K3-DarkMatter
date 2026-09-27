@@ -36,8 +36,8 @@ Certification statement, per family:
 Step 2 (same checker): the certified exact matrices are fed into the U1 checker's
 exact stage 3 and the derived lattice (Gram, det, signature, discriminant group,
 2n, U-splitting witness, overlattice count) is compared field by field with the
-lattice certificate on main (C2_cooper_s7_v5.json LIVE; C2_cooper_s10_v4_DRAFT.json,
-ADVISORY). Exit 0 needs both the certification and this chain to close.
+lattice certificate on main (C2_cooper_s7_v6.json LIVE since T0 D10' 2026-09-27, values
+identical to v5; C2_cooper_s10_v4_DRAFT.json, ADVISORY). Exit 0 needs both the certification and this chain to close.
 What is NOT claimed: that the monodromy-invariant lattice IS T (Dolgachev/Doran,
 Tier B, unchanged); that MAX_DEN is the right denominator bound (it is the U1
 checker's, 10^4); any promotion of cooper_s10; anything physical.
@@ -507,7 +507,8 @@ def certify_family(family, verbose=True, scramble=None):
         k0 = sorted(Ns_cert)[0]
         Ns_cert[k0][0, 2] += 1        # control: must be refused by stage 3's exact gates
     lat = u1.stage3_lattice(family, L2_ref, ref_loci, Ns_cert, verbose=False)
-    ref_name = {"cooper_s7": "C2_cooper_s7_v5.json", "cooper_s10": "C2_cooper_s10_v4_DRAFT.json"}[family]
+    # s7 reference: v6 (LIVE, T0 D10' 2026-09-27) -- identical derived block to v5, provenance only
+    ref_name = {"cooper_s7": "C2_cooper_s7_v6.json", "cooper_s10": "C2_cooper_s10_v4_DRAFT.json"}[family]
     ref = json.loads((REPO / "data" / "certificates" / ref_name).read_text())["derived"]
     compare = {
         "gram_primitive_even": (lat["gram_primitive_even"], ref["gram_primitive_even"]),

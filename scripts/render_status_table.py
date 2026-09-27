@@ -81,12 +81,13 @@ SOURCES = {
         },
     },
     # C2 (AM-3): sec. 2 names the live/draft files explicitly. C2_cooper_s7_v4.json
-    # still self-reports "LIVE v4" but was superseded by v5 (T0 D5'), hence v5 here.
+    # still self-reports "LIVE v4" but was superseded by v5 (T0 D5'), and v5 by v6
+    # (T0 D10', 2026-09-27; provenance only, identical values), hence v6 here.
     "C2": {
         "kind": "c2",
         "checker": "check_U1_lattice.py",
         "certs": {
-            "cooper_s7": "C2_cooper_s7_v5.json",
+            "cooper_s7": "C2_cooper_s7_v6.json",
             "cooper_s10": "C2_cooper_s10_v4_DRAFT.json",
         },
     },
