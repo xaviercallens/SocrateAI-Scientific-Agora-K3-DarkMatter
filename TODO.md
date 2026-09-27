@@ -169,9 +169,15 @@
       S3-00b stays BLOCKED (F5b). Reopens with a specified B₃.
 - [x] **`ATKIN_LEHNER_ACTION_UNVERIFIED` — already retired by D8′/AM-4** (PASS(30),
       `ATKIN_LEHNER_DISC_FORM.json`); item closed as superseded (D11′-6). s10 still advisory.
-- [ ] **Open thread (hypothesis, zero independent tests):** at div-2 loci (s7 z=−1, s10 z=−1/4) the
-      explicit model shows A₁ points merging / appearing in pairs, not one new node. Next real test:
-      an actual M_n-polarized model. Register: `briefs/THOUGHT_EXPERIMENTS_K3_SELECTION_2026_09_21.md`.
+- [ ] **Open thread GE-10 (hypothesis, still zero tests — but the model now EXISTS, 2026-09-27):**
+      `checkers/check_inose_model_M7.py` → `INOSE_MODEL_M7.json`: the explicit M₇-polarized model of
+      the s7 family in the Clingher–Doran–Lewis–Whitcher normal form, W₁ = π(z), W₂ = π(z) − σ(z) + 1
+      with σ, π exact Laurent polynomials in z (PASS(128)); σ² − 4π has simple zeros exactly at z = −1,
+      1/27 (D −7, −28) and double zeros at the other self-7-isogenous CM points (D −12, −19, −27, −24,
+      each h(D) times; three of them outside the CM table's window, explained). Brief:
+      `briefs/WP_GE10_INOSE_MODEL_M7_2026_09_27.md`. **Next step needs one T0 reading** (Kodaira
+      types of an explicit Weierstrass model over the t-line vs ledger item 3) before the Weierstrass
+      reduction is fetched and run. Register: `briefs/THOUGHT_EXPERIMENTS_K3_SELECTION_2026_09_21.md`.
 - [x] **Does C3 require an INTEGRAL partner? — RULED by D8′/AM-2 (literal reading: no; the constant
       is reported, never gated).** Item closed as superseded (D11′-7). Record of the question:
       `briefs/STREAM2_TO_STREAM3_C3_BRANCH_REPLY_2026_09_21.md`; `PARTNER_GLOBAL_BOUNDEDNESS.json`.
@@ -281,6 +287,8 @@ python3 checkers/test_external_review_fable_controls.py      # 22 controls (each
 python3 checkers/check_certified_monodromy_L2.py --family cooper_s7   # ~50 s: CERTIFIED stage-2 monodromy (Arb balls); needs python-flint
 python3 checkers/check_certified_monodromy_L2.py --family cooper_s10  # ~30 s: same, s10 (ADVISORY family; this certifies the numerics only)
 python3 checkers/test_certified_monodromy_L2_controls.py     # ~70 s: scrambled operator refused; every rigorous helper is a real bound
+python3 checkers/check_inose_model_M7.py                      # ~15 s: explicit M_7 Inose/CDLW model over z; sigma^2-4pi zeros = W_7 fixed points + CM points
+python3 checkers/test_inose_model_M7_controls.py              # 7 controls (scrambled z refused; level 5 does not fit; wrong pole order fails)
 # slow (~70 s): python3 checkers/check_nodality_explicit_models.py   (Singular optional second CAS)
 # slow (~2.5 min), run before release: python3 checkers/check_CM_points_rho20.py
 ```

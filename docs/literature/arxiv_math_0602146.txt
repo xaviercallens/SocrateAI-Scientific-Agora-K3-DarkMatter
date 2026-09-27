@@ -1,0 +1,1598 @@
+                                                    Modular Invariants for Lattice Polarized K3 Surfaces
+                                                                             Adrian Clingher ∗                     Charles F. Doran†
+arXiv:math/0602146v1 [math.AG] 7 Feb 2006
+
+
+
+
+                                                                                                October 29, 2018
+
+
+                                                                                                     Abstract
+                                                  We study the class of complex algebraic K3 surfaces admitting an embedding of H ⊕ E8 ⊕ E8 inside the
+                                                  Néron-Severi lattice. These special K3 surfaces are classified by a pair of modular invariants, in the same
+                                                  manner that elliptic curves over C are classified by the J-invariant. Via the canonical Shioda-Inose structure
+                                                  we construct a geometric correspondence relating K3 surfaces of the above type with abelian surfaces
+                                                  realized as cartesian products of two elliptic curves. We then use this correspondence to determine explicit
+                                                  formulas for the modular invariants.
+
+
+                                            1 Introduction
+                                            Let X be an algebraic K3 surface over the field of complex numbers. The Z-module obtained as the image
+                                            of the first Chern class map:
+                                                                                   c1 : H1 (X, OX
+                                                                                                ∗
+                                                                                                  ) → H2 (X, Z),
+                                            when endowed with the bilinear pairing induced by the intersection form on H2 (X, Z), forms an even
+                                            lattice. By Lefschetz’ Theorem on (1, 1) classes, this is precisely the Néron-Severi lattice NS(X) of the surface
+                                            X, namely the group of isomorphism classes of divisors modulo homological equivalence. Furthermore,
+                                            according to the Hodge Index Theorem, NS(X) is an indefinite lattice of rank 1 ≤ pX ≤ 20 and signature of
+                                            type (1, pX − 1).
+                                                In [11], Dolgachev formulated the notion of a lattice polarization of a K3 surface. If M is an even lattice
+                                            of signature (1, r) with r ≥ 0, then an M-polarization on X is, by definition, a primitive lattice embedding:
+
+                                                                                                  i : M ֒→ NS(X)                                                   (1)
+
+                                            such that the image i(M) contains a pseudo-ample class. A coarse moduli space MM can be defined for
+                                            equivalence classes of pairs (X, i) of M-polarized K3 surfaces and an appropriate version of the Global
+                                            Torelli Theorem holds.
+                                                The focus of this paper is on K3 surfaces which admit a polarization by the unique even unimodular
+                                            lattice of signature (1, 17). This particular lattice can be realized effectively as the orthogonal direct sum
+
+                                                                                                 M = H ⊕ E8 ⊕ E8
+
+                                            where H is the standard rank-two hyperbolic lattice and E8 is the unique even, negative-definite and uni-
+                                            modular lattice of rank eight. Note that not all algebraic K3 surfaces admit such an M-polarization. In fact,
+                                            the presence of such a structure imposes severe constraints on the geometry of X. In particular, the Picard
+                                            rank pX has to be 18, 19 or 20.
+                                               A standard observation on the Hodge theory of this special class of K3 surfaces is that the polarized
+                                            Hodge structure of an M-polarized K3 surface (X, i) is identical with the polarized Hodge structure of an
+                                              ∗ Department of Mathematics, Stanford University, Stanford, CA 94305. e-mail: clingher@math.stanford.edu
+                                              † Department of Mathematics, University of Washington, Seattle, WA 98195. e-mail: doran@math.washington.edu
+
+
+
+
+                                                                                                            1
+abelian surface A = E1 × E2 realized as a cartesian product of two elliptic curves. Since both types of
+surfaces involved admit appropriate versions of the Torelli theorem, Hodge theory implies a well-defined
+correspondence:
+                                           (X, i) ↔ E1 × E2                                           (2)
+giving rise to a canonical analytic isomorphism between the corresponding moduli spaces on the two sides.
+By employing a modern point of view from the frontier of algebraic geometry with string theory, one can
+regard (2) as a Hodge-theoretic duality map, a correspondence that relates two seemingly different types
+of surfaces sharing similar Hodge-theoretic information1 . Our point in this work is that the resemblance of
+the two Hodge structures involved in the duality correspondence (2) is not fortuitous, but rather is merely
+a consequence of a quite interesting geometric relationship.
+Theorem 1.1. Let (X, i) be an M-polarized K3 surface.
+ (a) The surface X possesses a canonical involution β defining a Shioda-Inose structure.
+ (b) The minimal resolution of X/β is a new K3 surface Y endowed with a canonical Kummer structure. This struc-
+     ture realizes Y as the Kummer surface Km(E1 × E2 ) associated to an abelian surface A canonically represented
+     as a cartesian product of two elliptic curves. The elliptic curves E1 and E2 are unique, up to permutation.
+ (c) The construction induces a canonical Hodge isomorphism between the M-polarized Hodge structure of X and
+     the natural H-polarized Hodge structure of the abelian surface A = E1 × E2 .
+Section 3 of the paper is devoted entirely to proving the above theorem.
+    In the second part of the paper we describe an application of the geometric transform outlined above.
+One important feature of the special class of M-polarized K3 surfaces is that such polarized pairs (X, i) turn
+out to be completely classified by two modular invariants π, σ ∈ C, much in the same as way elliptic curves
+over the field of complex numbers are classified by the J-invariant. However, the two modular invariants
+π and σ are not geometric in origin. They are defined Hodge-theoretically, and the result leading to the
+classification is a consequence of the appropriate version of the Global Torelli Theorem for lattice polarized
+K3 surfaces. However, in the context of the duality map (2), the two invariants can be seen as the standard
+symmetric functions on the J-invariants of the dual elliptic curves:
+
+                                           σ = J(E1 ) + J(E2 ), π = J(E1 ) · J(E2 ).                                                    (3)
+
+This interpretation suggests that the modular invariants of an M-polarized K3 surface can be computed by
+determining the two elliptic curves that appear on the right-side of (2).
+    Explicit M-polarized K3 surfaces can be constructed by various geometrical procedures. One such
+method, introduced in 1977 by Inose [17], constructs a two-parameter family X(a, b) of M-polarized K3
+surfaces2 by taking minimal resolutions of the projective quartics in P3 associated with the special equa-
+tions:
+                                                1 2 2         
+                      y 2 zw − 4x3 z + 3axzw2 −    z w + w4 + bzw3 = 0, a, b ∈ C.                          (4)
+                                                 2
+In fact, as we will see shortly, this family covers all possibilities. Every M-polarized K3 surface can be
+realized as X(a, b) for some a, b ∈ C. One can regard the Inose quartic (4) as a normal form of an M-
+polarized K3 surface.
+    In the second part of the paper, we use the geometric transform of Theorem 1.1 to explicitly describe the
+J-invariants of the two elliptic curves E1 and E2 associated to the Inose surface X(a, b).
+   1 In fact, the use of this terminology for (2) is quite natural. The identification of Hodge structures given by (2) is a particular case
+
+of a more general Hodge-theoretic phenomenon which, surprisingly, was predicted by physics. In string theory this relationship is
+known as the F-Theory/Heterotic String Duality in eight dimensions. We refer the reader to Section 5 for a brief discussion of this
+aspect.
+   2 An equivalent two-parameter family is known in the physics literature as the Morrison-Vafa family [25].
+
+
+
+
+                                                                     2
+Theorem 1.2. The J-invariants J(E1 ) and J(E2 ) of the two elliptic curves associated to X(a, b) by the transform of
+Theorem 1.1 are the two solutions of the quadratic equation:
+                                                             
+                                          x2 − a3 − b2 + 1 x + a3 = 0.
+
+As pointed out earlier, as a consequence of the above theorem, one obtains explicit formulas for the two
+modular invariants of the Inose surface X(a, b).
+Corollary 1.3. The modular invariants of the Inose surface X(a, b) are given by:
+
+                                                 π = a3 ,     σ = a3 − b2 + 1.                                   (5)
+
+The power of the geometric transformation underlying the duality map (2) is fully revealed by the proof of
+Theorem 1.2. In the absence of such a geometric argument, in order to prove that statement one would be
+forced to undertake long and very complex computations of the periods of the quartic (4)3 .
+    It seems that the geometric transformation described by Theorem 1.1 is a particular case of a more
+general phenomenon. Evidence for this is provided by an analysis of the slightly more general case of K3
+surfaces polarized by the rank 17 lattice H ⊕ E8 ⊕ E7 . Surfaces in this class still admit a canonical Shioda-
+Inose structure. This leads to a correspondence between these special K3 surfaces and jacobians of smooth
+genus-two curves. These results will be described in a forthcoming paper.
+    A very interesting alternative arithmetic approach to the above questions, by Elkies and Kumar, has
+been communicated to the authors [22].
+
+
+2 Hodge Structures for M-polarized K3 Surfaces
+Let (X, i) be an M-polarized K3 surface. Denote by ω ∈ H2 (X, C) the class of a non-zero holomorphic two-
+form on X. This class is unique, up to multiplication by a non-zero scalar. The Hodge structure of X is then
+essentially given by the decomposition:
+
+                                        H2 (X, C) = H2,0 (X) ⊕ H1,1 (X) ⊕ H0,2 (X)
+
+where H2,0 (X) = C · ω, H0,2 (X) = C · ω̄ and H1,1 (X) = {ω, ω̄}⊥ . Since the lattice i(M) is generated by classes
+associated to algebraic cycles, it follows that one has an embedding:
+
+                                                i(M) ⊂ H1,1 (X) ∩ H2 (X, Z).
+
+By standard lattice theory (see, for example, the exposition in [27]), the orthogonal complement N of i(M)
+in H2 (X, Z) is an even, unimodular sublattice of signature (2, 2). Hence the lattice N is isometric to the
+orthogonal direct sum H ⊕ H of two rank-two hyperbolic lattices. One can therefore choose a basis
+
+                                                      B = {x1 , x2 , y1 , y2 }
+
+of N with intersection matrix:                                             
+                                                        0     0       1   0
+                                                       0     0       0   1 
+                                                                           .
+                                                       1     0       0   0 
+                                                        0     1       0   0
+It follows that ω belongs to N ⊗ C. Moreover, since the elements of the basis B are isotropic, the class ω
+has non-zero intersection with any one of them. The class ω is therefore uniquely defined as soon as one
+imposes the normalization condition (ω, y2 ) = 1.
+  3 Such an approach via period computations have been taken in the physics literature [3, 6].
+
+
+
+
+                                                                  3
+   Let us also note that the basis B can be chosen such that the isomorphism of real vector spaces:
+                                                  (ω, ·) : hx1 , x2 i ⊗ R → C                                  (6)
+is orientation reversing. Then, as discussed in [9], the Hodge-Riemann bilinear relations imply that the
+normalized period class can be written:
+                                              ω = τ x1 + x2 + uy1 + (−τ u)y2                                   (7)
+where τ, u are uniquely defined (but depending on the choice of basis B) elements of the complex upper
+half-plane H.
+Definition 2.1. The modular invariants of the M-polarized K3 surface (X, i) are, by definition:
+                                                   σ(X, i) := J(τ ) + J(u),                                    (8)
+                                                    π(X, i) := J(τ ) · J(u)
+where J is the classical elliptic modular function4 .
+Let us make two observations justifying the importance of the numbers defined above. Firstly, the numbers
+σ(X, i) and π(X, i) do not depend on the choice of basis B. That is because any new choice of basis B ′ can
+be related to B by an integral isometry ϕ of the lattice N that preserves the spinor norm. That is B ′ = ϕ(B).
+But then, as shown for example in Section 2 of [15], the group O+ (N) of such integral isometries is naturally
+isomorphic to the semi-direct product:
+                                             (PSL(2, Z) × PSL(2, Z)) ⋊ Z/2Z
+with the generator of Z/2Z acting on PSL(2, Z)×PSL(2, Z) by exchanging the two sides. This clearly proves
+that such a modification does not affect σ(X, i) and π(X, i).
+    Secondly, thanks to a lattice polarized version of the Global Torelli Theorem for K3 surfaces [11], the
+numbers σ(X, i) and π(X, i) fully classify the polarized pairs (X, i) up to isomorphism. Simply put, this
+result says that there exists a two-dimensional complex analytic space MM realizing a coarse moduli space
+for M-polarized K3 surfaces and that the period map to the classifying space of polarized Hodge structures
+is an isomorphism of analytic spaces.
+                               MM −→ (PSL(2, Z) × PSL(2, Z)) ⋊ Z/2Z \ (H × H) .                                (9)
+From this point of view, the modular invariants σ and π can be regarded as natural coordinates on the
+moduli space MM .
+    Note then that the right-hand side space in (9) also classifies unordered pairs (E1 , E2 ) of curves of genus
+one. The two geometric structures, M-polarized K3 surfaces and unordered pairs of elliptic curves, have
+the same classifying moduli space. Moreover, there is an obvious Hodge-theoretic bijective correspondence
+relating these structures:
+                                            (X, i) ←→ (E1 , E2 )                                              (10)
+such that σ(X, i) = J(E1 ) + J(E2 ) and π(X, i) = J(E1 ) · J(E2 ).
+
+
+3 A Geometric Transformation Underlying the Duality Map
+As mentioned in the introduction, our goal is to place the the Hodge theoretic correspondence (10) into a
+geometric setting. In what follows, we provide the details needed for both the statement of Theorem 1.3 as
+well as its proof. Setting-up the geometric transformation requires a few technical ingredients concerning
+Shioda-Inose structures, Kummer surfaces and elliptic fibrations on a K3 surface. We shall therefore begin
+our exposition by presenting some basic facts.
+                                                           2πi
+  4 The function J is normalized such that J(i) = 1 and J(e 3    ) = 0.
+
+
+                                                                   4
+3.1 Shioda-Inose Structures
+The notion of a Shioda-Inose structure originates in the works [18] of Shioda and Inose and [27] of Nikulin.
+Their ideas were later refined and generalized by Morrison [24]. The above three papers are the main
+references for the assertions we review here.
+Definition 3.1. Let X be a K3 surface. An involution ϕ ∈ Aut(X) is called a Nikulin involution if ϕ∗ ω = ω for
+any holomorphic two-form ω.
+If a Nikulin involution ϕ exists on X, then ϕ has exactly eight fixed points. In such a case, the quotient space
+                                                     X/{idX , ϕ}
+is a surface with eight rational double point singularities of type A1 . The minimal resolution of this singular
+space is a new K3 surface which we denote by Y. The two K3 surfaces X and Y are related by a (generically)
+two-to-one rational map π : X −→ Y.
+    Denote by H2Y the orthogonal complement in H2 (Y, Z) of the eight exceptional curves. One has then a
+natural push-forward map (see § 3 of [24] or § 3 of [18]):
+                                               π∗ : H2 (X, Z) → H2Y
+which restricts to a morphism of Z-modules:
+                                                   π∗ : TX → TY                                             (11)
+between the transcendental lattices of the two K3 surfaces.
+Remark 3.2. The complexification of the morphism (11) is a morphism of Hodge structures, but, in general, (11)
+does not preserve the lattice pairings. In fact, one can check that:
+                              h π∗ (t1 ), π∗ (t2 ) iY = h t1 , t2 iX + h t1 , ϕ∗ (t2 ) iX .
+Definition 3.3. A Nikulin involution ϕ defines a Shioda-Inose structure on X if Y is a Kummer surface and the
+morphism (11) is a Hodge isometry TX (2) ≃ TY .
+The notation TX (2) means that the bilinear pairing on the transcendental lattice TX is multiplied by 2.
+We refer the reader to section 3.4 for an explanation of the significance of the last condition in the above
+definition, as well as for a short overview of the basics of Kummer surfaces.
+    Not every K3 surface admits a Nikulin involution, much less a Shioda-Inose structure. A very effective
+lattice-theoretic criterion which provides a necessary and sufficient condition for the existence of a Shioda-
+Inose structure on a K3 surface X has been given by Morrison.
+Theorem 3.4. (Morrison [24], Theorem 5.7) Let X be an algebraic K3 surface. There exists a Shioda-Inose structure
+on X if and only if the lattice E8 ⊕ E8 can be primitively embedded into the Néron-Severi lattice NS(X).
+The proof of the above statement is based on a result of Nikulin ([27], Theorem 4.3). A primitive embedding
+E8 ⊕ E8 ֒→ NS(X) allows one to define a special lattice isometry of H2 (X, Z) which interchanges the two
+copies of E8 given by the embedding and acts trivially on their orthogonal complement. In this context,
+Nikulin’s theorem asserts that, possibly after conjugation by a reflection in an algebraic class of square −2,
+this lattice isometry can be associated to an involution of the K3 surface X. Morrison shows then that this
+involution defines in fact a Shioda-Inose structure on X.
+    Closer to the purpose of this paper, note that Theorem 3.4 implies that an M-polarized K3 surface (X, i)
+admits a Shioda-Inose structure. In fact, there exists a well-defined Shioda-Inose structure β on X canoni-
+cally associated with the M-polarization.
+    This canonical Shioda-Inose structure associated to an M-polarized K3 surface plays a central role in our
+construction. However, in this paper we shall take a different point of view towards defining the Nikulin
+involution β underlying the Shioda-Inose structure. Instead of using Theorem 3.4, we shall introduce this
+involution in a more explicit and geometric manner. The canonical involution β appears naturally in the
+context of a special jacobian fibration on X.
+
+                                                           5
+3.2 Jacobian Fibrations on K3 Surfaces
+During the course of this section we shall assume that X is an algebraic K3 surface.
+Definition 3.5. A jacobian fibration (or elliptic fibration with section) on X is a pair (ϕ, S) consisting of a proper
+map of analytic spaces ϕ : X → P1 whose generic fiber is a smooth curve of genus one, and a section S in the elliptic
+fibration ϕ.
+If S ′ is another section of the jacobian fibration (ϕ, S), then there exists5 an automorphism of X preserving
+ϕ and mapping S to S ′ . One can therefore realize an identification between the set of sections of ϕ and
+the group of automorphisms of X preserving ϕ. This is the Mordell-Weil group MW(ϕ, S) of the jacobian
+fibration.
+    Note also that a jacobian fibration (ϕ, S) on X induces a sublattice:
+
+                                                            H(ϕ,S) ⊂ NS(X)
+
+constructed as the span of the two cohomology classes associated with the elliptic fiber and the section,
+respectively. The lattice H(ϕ,S) is isomorphic to the standard rank-two hyperbolic lattice H.
+    The sublattice H(ϕ,S) determines uniquely the jacobian fibration (ϕ, S). In other words, there cannot be
+two distinct jacobian fibrations on X determining the same hyperbolic sublattice in NS(X). However, it is
+not true that any lattice embedding of H into NS(X) corresponds to a jacobian fibration. Nevertheless, the
+following assertions hold:
+Lemma 3.6. A lattice embedding H ֒→ NS(X) can be associated with a jacobian fibration (ϕ, S) if and only if its
+image in NS(X) contains a pseudo-ample class.
+Lemma 3.7. Let ΓX be the group of isometries of H2 (X, Z) preserving the Hodge decomposition. For any lattice
+embedding
+                                             e : H ֒→ NS(X),
+there exists α ∈ ΓX such that Im(α ◦ e) contains a pseudo-ample class.
+Lemma 3.8. One has the following bijective correspondence:
+                             (                                 )               (                     )
+                                  isomorphism classes of           o       /       lattice embeddings / ΓX .     (12)
+                                 jacobian fibrations on X                             H ֒→ NS(X)
+
+These are standard well-known results. For proofs, we refer the reader to [30], [21] and [9].
+   Next, let us consider
+                                           W(ϕ,S) ⊂ NS(X)
+to be the orthogonal complement of H(ϕ,S) in the Néron-Severi lattice of X. It follows that W(ϕ,S) itself is
+a negative-definite lattice of rank pX − 2. Moreover, the Néron-Severi lattice decomposes as an orthogonal
+direct sum:
+                                         NS(X) = H(ϕ,S) ⊕ W(ϕ,S) .
+Let Σ ⊂ P1 be the set of points on the base of the elliptic fibration ϕ which correspond to singular fibers.
+For each v ∈ Σ, denote by Tv the sublattice of W(ϕ,S) spanned by the classes of the irreducible components
+of the singular fiber over v which are disjoint from S. One has then the following result.
+Lemma 3.9.
+ (a) For each v ∈ Σ, Tv is a negative-definite lattice of ADE type.
+  5 See, for instance, Chapter 1 of [12] for a proof of this result.
+
+
+
+
+                                                                       6
+          root
+ (b) Let W(ϕ,S) be the lattice spanned by the roots6 of W(ϕ,S) . Then:
+                                                                         M
+                                                            root
+                                                           W(ϕ,S) =            Tv .                                  (13)
+                                                                         v∈Σ
+
+     The decomposition (13) is unique, up to a permutation of the factors.
+ (c) There exists a canonical group isomorphism:
+                                                              root       ≃
+                                                     W(ϕ,S) /W(ϕ,S) −→ MW(ϕ).                                        (14)
+
+The first two statements of the above lemma are standard facts from Kodaira’s classification of singular
+fibers of elliptic fibrations (see, for example, [20]). The last statement is due to Shioda [33].
+    Let us briefly indicate the construction of the correspondence in (14). Given γ ∈ W(ϕ,S) , denote by L the
+unique holomorphic line bundle over X such that c1 (L) = γ. Let x ∈ X be a point belonging to a smooth
+fiber Eϕ(x) . Then, the restriction of L to Eϕ(x) is a holomorphic line bundle of degree zero and, therefore,
+there exists a unique y ∈ Eϕ(x) such that:
+
+                                                    L|Eϕ(x) ≃ OEϕ(x) (x − y).
+
+The assignment x 7→ y extends by continuity to an automorphism of the K3 surface and hence to an element
+in MW(ϕ).
+
+3.3 A Canonical Involution
+We shall apply now the general theory presented in the previous section in the context of an M-polarized
+K3 surface (X, i).
+   By standard lattice theory (see, for example, [27]), there are exactly two distinct ways (up to an overall
+isometry) in which one can embed the standard rank-two hyperbolic lattice H isometrically into M. The two
+possibilities are distinguished by the isomorphism type of the orthogonal complement of the image of the
+embedding. The orthogonal complement has rank 16 and it is also unimodular, even, and negative-definite.
+As is well-known, up to isomorphism there exist only two such lattices. One is E8 ⊕ E8 and the other is the
+Barnes-Wall lattice D+ 16 .
+   In the presence of an M-polarization on X, the two distinct isometric embeddings of the rank-two hy-
+perbolic lattice H into M determine two distinct classes of embeddings of H into the Néron-Severi lattice
+NS(X). According to Lemma 3.8, one obtains therefore two special jacobian fibrations (Θ1 , S1 ) and (Θ2 , S2 )
+on X.
+                                             Θ 1 , Θ 2 : X → P1 .
+We shall use the term standard fibration for Θ1 (associated to the rank-sixteen lattice E8 ⊕ E8 ) and alternate
+fibration for Θ2 (associated to the rank-sixteen lattice D+
+                                                          16 ).
+
+Proposition 3.10. Let (X, i) be an M-polarized K3 surface.
+ (a) The standard fibration (Θ1 , S1 ) has two singular fibers of Kodaira type II∗ . The section S1 is the unique section
+     of Θ1 whose cohomology class belongs to i(M).
+ (b) The alternate fibration (Θ2 , S2 ) has a singular fiber of type I∗12 . There are precisely two sections S2 and S2′ of
+     Θ2 with cohomology classes represented in i(M). S2 and S2′ are disjoint. Moreover, the Mordell-Weil group
+     MW(Θ2 ) contains a canonical involution β ∈ Aut(X) which exchanges S2 and S2′ .
+  6 A root of NS(X) is an algebraic class of self-intersection −2.
+
+
+
+
+                                                                     7
+Proof. The above assertions are consequences of the general principles reviewed in Section 3.2. In the case
+of the standard fibration (Θ1 , S1 ), one has an orthogonal decomposition:
+                                                root
+                                               W(Θ 1 ,S1 )
+                                                           = E8 ⊕ E8 ⊕ U root
+
+where U is the orthogonal complement of i(M) in NS(X) and U root is the root lattice of U. The above
+decomposition, combined with assertion (b) of Lemma 3.9, proves the existence of two singular fibers of
+Kodaira type II∗ in the elliptic fibration Θ1 . It also follows immediately that S1 is the unique section of Θ1
+with associated cohomology class in i(M). One can represent the rational curves obtained as irreducible
+components of the two II∗ fibers of Θ1 as well as the section S1 in the following dual diagram.
+
+      C1
+      •
+            C2
+             •
+                                                                                                           D2
+                                                                                                           •
+                                                                                                                D1
+                                                                                                                •    (15)
+                 >>
+                   >
+                       C3     C5   C6    C7    C8      C9    S1       D9   D8    D7   D6   D5   D3
+                       •      •     •     •     •      •     •        •    •     •    •    •    •    >>
+                                                                                                       >
+            C4                                                                                             D4
+             •                                                                                             •
+
+
+   The case of the alternate fibration (Θ2 , S2 ) can be handled similarly. In this situation, one obtains an
+orthogonal decomposition:
+                                            W(Θ2 ,S2 ) = D+16 ⊕ U.
+
+Since any given root of the above lattice has to lie in one of the two factors, one obtains:
+                                                     root
+                                                    W(Θ 2 ,S)
+                                                              = D16 ⊕ U root .
+
+Once more, the assertion (b) of Lemma 3.9 tells one that Θ2 has a singular fiber of type I∗12 . Next, note that,
+by assertion (c) of Lemma 3.9, one has an isomorphism of groups:
+
+                                              MW(Θ2 ) ≃ Z/2Z ⊕ V/V root .                                            (16)
+
+The image β ∈ MW(Θ2 ) of the generator of the Z/2Z factor above determines naturally a non-trivial canon-
+ical involution of the K3 surface X. In particular, the jacobian fibration (Θ2 , S2 ) has an extra section S2′ , the
+image of S2 through β. One can easily see from (16) that S2 and S2′ are the only sections of the elliptic
+fibration Θ2 with cohomology classes represented in the polarizing lattice i(M).
+    In fact, one can clearly see the special I∗12 singular fiber together with two sections in the dual diagram
+(15). This special singular fiber of Θ2 is given by the divisor:
+
+                            C2 + C4 + 2 (C3 + C4 + · · · C9 + S + D9 + D8 + · · · D3 ) + D4 + D2 .
+
+whereas the two sections S2 and S2′ are represented by the two extremal curves C1 and D1 .
+
+Remark 3.11. The effect of the involution β on the diagram (15) amounts to a right-left flip which sends the C-curves
+to the corresponding symmetric D-curves and vice-versa. In particular, the restriction of β to the middle rational curve
+S is a non-trivial involution of S with two distinct fixed points.
+Remark 3.12. The induced morphism β ∗ : H2 (X, Z) → H2 (X, Z) restricts to the identity on the orthogonal comple-
+ment of i(M). In particular, β ∗ acts trivially on the transcendental lattice TX .
+One may guess now that it is the canonical involution β of Proposition 3.10 that gives rise to the canonical
+Shioda-Inose structure on X we mentioned at the end of Section 3.1.
+
+
+
+
+                                                                  8
+    We are now in position to formulate the main result of the paper:
+Theorem 3.13. Let (X, i) be an M-polarized K3 surface.
+ (a) The involution β introduced above defines a Shioda-Inose structure on X.
+ (b) The minimal resolution Y of the quotient X/β is a K3 surface with a canonical Kummer structure. This structure
+     realizes Y as the Kummer surface of an abelian surface A = E1 × E2 canonically represented as a cartesian
+     product of two elliptic curves. The two elliptic curves are unique, up to permutation.
+ (d) The above geometric transformation induces a canonical Hodge isomorphism between the M-polarized Hodge
+     structure of X and the natural H-polarized Hodge structure of A.
+Before embarking on the proof of the above theorem, let us comment briefly on the two special jacobian
+fibrations Θ1 and Θ2 which we have uncovered in this section. These two jacobian fibrations7 are canoni-
+cally associated to an M-polarization on a K3 surface X. However, so far, it is the standard fibration Θ1 that
+has received the lion’s share of attention in the literature8 . An analysis of Θ1 appears in the original work
+of Inose [17] and, over the last ten years, Θ1 has been extensively studied in the string theory literature due
+to its connection with the E8 ⊕ E8 heterotic string theory in eight dimensions. The alternate fibration Θ2 ,
+however, has been largely overlooked. Nevertheless, it is Θ2 , with its non-trivial Mordell-Weil group, that
+gives rise to a canonical Shioda-Inose structure on the M-polarized K3 surface X and leads one to a geomet-
+ric explanation for the Hodge-theoretic duality map (10). The alternate fibration Θ2 will play a central role
+in the remainder of this paper.
+
+3.4 Kummer Surfaces
+In order to give a proof of Theorem 3.13, we shall need a few classical results concerning the geometry of
+Kummer surfaces. For detailed proofs of the facts mentioned in this brief review we refer the reader to [26],
+[30] and [24].
+    Let A be a two-dimensional complex torus. Such a surface is naturally endowed with an abelian group
+structure. One can consider therefore on A the special involution given by −id. The fixed locus of −id
+consists of sixteen distinct points. Therefore the quotient:
+                                                              A/{±id}                                                              (17)
+is a singular surface with sixteen rational double point singularities of type A1 . It is well-known that the
+minimal resolution of (17) is a special K3 surface Km(A) called the Kummer surface of A.
+    As a first important feature of Kummer surfaces, we note that the Hodge structures of A and Km(A)
+are closely related. Indeed, denote by p : A → Km(A) the rational map induced by the quotienting and
+resolution procedure described above. Then, as explained for example in [24], one has a natural morphism
+                                                     p∗ : H2 (A, Z) → H2Km(A)
+
+where H2Km(A) is the sublattice of H2 (Km(A), Z) of classes orthogonal to all the sixteen exceptional curves.
+The complexification of p∗ sends the class of a holomorphic two-form on A to a class representing a holo-
+morphic two-form on Km(A) and, as an immediate consequence of Proposition 3.2 in [24], one obtains:
+Proposition 3.14. The map p∗ is an isomorphism and it induces a canonical Hodge isometry
+                                                                       p∗
+                                                    H2 (A, Z)(2) ≃ H2Km(A) .                                                       (18)
+Moreover, p∗ (TA ) = TKm(A) and the above identification leads to a Hodge isometry at the level of transcendental
+lattices:                                            p∗
+                                            TA (2) ≃ TKm(A) .                                                (19)
+   7 There is also an interesting toric reinterpretation of Θ and Θ . They are induced from toric fibrations on a particular toric Fano
+                                                             1      2
+three-fold by restriction to the anti-canonical hypersurface. These two toric fibrations are beautifully illustrated in Figure 1 of [5].
+   8 This is also the reason why we decided to use the terms standard for Θ and alternate for Θ .
+                                                                            1                    2
+
+
+
+                                                                   9
+Kummer surfaces represent a large class of K3 surfaces. In fact, it is known (see for example [30]) that they
+form a dense subset in the moduli space of K3 surfaces. One would therefore like to have a criterion
+for determining whether a given K3 surface is Kummer. A very effective lattice-theoretic criterion for
+answering this question has been introduced by Nikulin in [26].
+Definition 3.15. Let
+                                                           16
+                                                           M
+                                                    R =           Zxi                                           (20)
+                                                            i=1
+
+be the rank-sixteen even lattice with bilinear form defined by (xi , xj ) = −2δij . By definition, the Kummer lattice
+K is the lattice in R ⊗ Q spanned (over Z) by:
+                                                                              16
+                                                                           1X
+                                      x1 , x2 , x3 , · · · , x16 and d =         xi ,
+                                                                           2 i=1
+
+The Kummer lattice K has rank sixteen, is even and negative-definite, and has the same discriminant group
+and discriminant form as the orthogonal sum:
+
+                                                 H(2) ⊕ H(2) ⊕ H(2)
+
+where H is the standard rank-two hyperbolic lattice.
+  For any Kummer surface Km(A), one has a natural primitive lattice embedding:
+
+                                                 K ֒→ NS (Km(A))
+
+whose image is the minimal primitive sublattice of NS (Km(A)) containing the classes of the sixteen excep-
+tional curves. Nikulin’s criterion asserts that the converse of the above statement is also true.
+Theorem 3.16. (Nikulin [26])
+ (a) A K3 surface Y is a Kummer surface if and only if there exists a primitive lattice embedding K ֒→ NS(Y).
+ (b) For every primitive lattice embedding e : K ֒→ NS(Y), there exists an unique and canonically defined two-
+     dimensional complex torus A and a Hodge isometry α of H2 (Y, Z) such that Y = Km(A) and Im(α ◦ e) is the
+     minimal primitive sublattice of NS(Y) containing the sixteen exceptional curves arising during the Kummer
+     construction process.
+It is possible for a K3 surface Y to have multiple non-equivalent Kummer structures, i.e. there exist non-
+isomorphic complex tori A and A′ such that
+
+                                              Km(A) ≃ Y ≃ Km(A′ ).
+
+However, as the last part of Theorem 3.16 illustrates, once a primitive lattice embedding of the Kummer
+lattice K into NS(Y) is fixed, there exists a unique complex torus A compatible with the embedding of K.
+For a detailed treatment of the classification problem for Kummer structures on a K3 surface we refer the
+reader to the paper [16] of Hosono, Lian, Oguiso and Yau.
+    For the remainder of this section we shall restrict our attention to Kummer surfaces Km(A) associated
+to abelian surfaces A = E1 × E2 realized as a cartesian product of two elliptic curves.
+    Let us first introduce the basic criterion for an abelian surface A to have the above property. According
+to the Hodge index theorem, the Néron-Severi lattice of A, denoted by NS(A), is an even lattice of signature
+(1, r) with 0 ≤ r ≤ 3. If A splits as a cartesian product E1 × E2 of two elliptic curves, then the cohomology
+classes of the two curves E1 and E2 span a rank-two hyperbolic sublattice of NS(A). The converse of this
+statement also holds.
+
+
+
+                                                           10
+Proposition 3.17. Let A be an abelian surface.
+ (a) The surface A can be realized as a product of two elliptic curves if and only if there exists a primitive lattice
+     embedding H ֒→ NS(A).
+ (b) For every primitive lattice embedding e : H ֒→ NS(A), there exist two elliptic curves E1 and E2 (unique, up to
+     permutation) and an analytic isomorphism A ≃ E1 × E2 such that Im(e) is spanned by the cohomology classes
+     of E1 and E2 .
+Proof. This is a lattice-theoretic version of Ruppert’s criterion for an abelian surface to be isomorphic to a
+cartesian product of two elliptic curves. See [31] or Chapter 10 § 6 of [4] for proofs.
+
+Note that it is possible for an abelian surface A to be represented as a cartesian product of two elliptic curves
+in two or more non-equivalent ways. One can see that this phenomenon happens only when the Picard rank
+of A is maximal (pA = 4). In such a case, the number of non-equivalent representations A = E1 × E2 has an
+interesting interpretation in the context of the class group theory of imaginary quadratic fields [15].
+    Let us assume now that a splitting A = E1 × E2 has been fixed. In this context, the cartesian product
+structure of A gives rise to a special configuration of twenty-four curves on the Kummer surface Km(A). In
+order to introduce this curve configuration, let {x0 , x1 , x2 , x3 } and {y0 , y1 , y2 , y3 } be the two sets of points
+of order two on E1 and E2 . Denote by Hi , Gj (0 ≤ i, j ≤ 3) the rational curves on Km(A) obtained as
+proper transforms of E1 × {yi } and {xj } × E2 , respectively. Let also Eij be the exceptional curve on Km(A)
+associated to the double point (xi , yj ) of A. One has then the following intersection numbers:
+                                                        Hi · Gj = 0
+
+                                           Hk · Eij = δki , Gk · Eij = δkj .
+Definition 3.18. The configuration of twenty-four rational curves
+                                             {Hi , Gj , Eij | 0 ≤ i, j ≤ 3}                                        (21)
+is called the double Kummer pencil of Km(A). The minimal primitive sublattice NS (Km(A)) containing the
+classes of the curves in (21) is called the double Kummer lattice of Km(A). We denote the isomorphism class of
+this lattice by DK.
+Remark 3.19. By standard lattice theory, up to an overall isometry, the double Kummer lattice DK has a unique
+primitive embedding into the K3 lattice. The orthogonal complement of any such embedding is isomorphic to
+                                                    H(2) ⊕ H(2).
+Let us also note that the double Kummer lattice DK contains a natural finite-index sublattice isomorphic to
+                                                        K ⊕ H(2).
+The left-hand side term above is, of course, the minimal primitive sublattice of NS (Km(A)) containing the
+sixteen exceptional curves Eij whereas the factor on the right-hand side is spanned by the two classes:
+                                                  3
+                                                  X                   3
+                                                                      X
+                                          2Hi +         Eij , 2Gj +         Eij .                                  (22)
+                                                  j=0                 i=0
+
+The two classes described above do not depend on the indices i and j, respectively. Moreover, one can
+verify that the two classes of (22) are precisely the images of the cohomology classes in H2 (A, Z) associated
+to E1 and E2 under the morphism π∗ of Proposition 3.14.
+    To summarize, we have seen that every Kummer surface Z = Km(E1 × E2 ) associated to an abelian
+surface that can be realized as a cartesian product of two genus-one curves comes equipped with a natural
+primitive lattice embedding DK ֒→ NS(Z). In fact, one can see that the existence of such an embedding is a
+sufficient criterion for a K3 surface Z to be a Kummer surface associated to a product abelian surface.
+
+                                                            11
+Proposition 3.20. Let Z be a K3 surface. Assume that a primitive lattice embedding e : DK ֒→ NS(Z) has been
+given. Then there exist two elliptic curves E1 and E2 and a Hodge isometry α of H2 (Z, Z) such that
+
+                                                  Z = Km(E1 × E2 )
+
+and Im(α ◦ e) is the double Kummer lattice associated to the Kummer construction. The two elliptic curves E1 and
+E2 are unique (up to permutation) and canonically defined.
+Proof. The above assertion is a consequence of the results presented earlier in this section. Let
+
+                                                   e : DK ֒→ NS(Z)
+
+be a primitive lattice embedding. By standard lattice theory, there exists a primitive embedding of the
+Kummer lattice K in e(DK). Moreover, this embedding is unique, up to an overall Hodge isometry of
+H2 (Z, Z). Therefore, by Nikulin’s criterion, one has a canonical Kummer structure on Z. In other words
+Z = Km(A) with A uniquely defined. Then, according to Proposition 3.14, one has a Hodge isometry
+                                                                   p∗
+                                                 H2 (A, Z)(2) ≃ H2Z .                                                (23)
+
+But H2Z contains a canonical primitive sublattice of type H(2), the orthogonal complement of the Kummer
+lattice in e(DK). The preimage of this lattice in H2 (A, Z) is primitively embedded in NS(A) and is iso-
+morphic to H. Then, by Proposition 3.17, the abelian surface splits canonically as a product of two elliptic
+curves.
+
+
+3.5 Proof of Theorem 3.13
+We are now in position to give detailed proofs for the statements of Theorem 3.13.
+   Let us begin by observing that β is a Nikulin involution. If ω is a given holomorphic two-form on X,
+then either β ∗ ω = ω or β ∗ ω = −ω. But, the latter possibility implies (see, for example, [36]) that either β has
+no fixed locus (case that is ruled out by Remark 3.11) or that the fixed locus of β is a union of curves (case
+that is ruled out by the fact that β acts without fixed points on the smooth fibers of Θ2 ). Therefore the only
+possibility that can occur is β ∗ ω = ω which, by definition, means that β is a Nikulin involution.
+Remark 3.21. As is well-known (for a proof of this fact see §5 of [28]), the fixed locus of a Nikulin involution always
+consists of eight distinct points. The eight fixed points associated to β appear nicely in the context of the alternate
+fibration Θ2 . As noted in Remark 3.11, two of them lie on the smooth rational curve S (the middle curve of the dual
+diagram (15), also the section of the standard fibration Θ1 ). The additional six fixed points lie on the singular fibers
+of Θ2 . For instance, in the generic case, the alternate elliptic fibration Θ2 has, in addition to the I∗12 fiber, another
+six singular fibers of Kodaira type I1 (each consisting of a reduced rational curve with one node). The extra six fixed
+points of β are precisely the nodes of those fibers.
+Let then Y be the K3 surface obtained as the minimal resolution of the quotient of X through β. We show
+now that Y is a Kummer surface. In order to carry out our argument, we denote by F1 , F2 · · · F8 the eight
+exceptional curves arising after resolving the eight rational singularities. Assume that F1 and F2 are asso-
+ciated to the two fixed points of β that lie on the I∗12 fiber of Θ2 .
+    Recall that the alternate elliptic fibration Θ2 is left invariant by the involution β. Therefore, Θ2 induces
+a new elliptic fibration on Y. We denote this fibration by Ψ2 .
+
+                                                   _ _ _ _π _ _ _/ Y
+                                                  X@                                                                 (24)
+                                                     @@                 ~
+                                                       @@            ~~~
+                                                    Θ2 @@           ~
+                                                                 ~~~ Ψ2
+                                                            P1
+
+
+
+                                                            12
+It is then not hard to see that the I∗12 fiber of Θ2 becomes a singular fiber of Kodaira type I∗6 in the fibration
+Ψ2 . We represent its irreducible components in the dual diagram below.
+
+                          R2
+                          •
+                                                                                                                      F1
+                                                                                                                      •           (25)
+                               ==                                                                                 
+                                 ==                                                                             
+                                   =                                                                          
+                                       R3          R5         R6        R7          R8        R9        e
+                                                                                                        S 1
+                                       •           •           •         •          •         •         •     ==
+                                                                                                               ==
+                                                                                                               =
+                               
+                          R4                                                                                          F2
+                          •                                                                                           •
+
+
+The curves Ri , 1 ≤ i ≤ 9 are the images of the curves Ci (and also Di ) of X (recall diagram (15)). The curve
+Se1 above is the quotient of the rational curve S1 of diagram (15) by the involution β. Note also that R1
+is a section in Ψ2 while the unaccounted for exceptional curves F3 , F4 · · · F8 are disjoint from R1 and form
+irreducible components in the additional singular fibers of Ψ2 .
+
+                     R1
+                      •
+                                R2
+                                •
+                                                                                                                             F1
+                                                                                                                             •    (26)
+                                     ==                                                                                  
+                                       ==                                                                              
+                                         =                                                                           
+                                             R3          R5        R6          R7        R8        R9          e
+                                                                                                               S 1
+                                             •            •         •          •          •         •          •     ==
+                                                                                                                      ==
+                                                                                                                      =
+                                     
+                                R4                                                                                           F2
+                                •                                                                                            •
+
+
+                                             F3
+                                             •
+                                                         F4
+                                                          •
+                                                                   F5
+                                                                    •
+                                                                               F6
+                                                                               •
+                                                                                         F7
+                                                                                         •
+                                                                                                   F8
+                                                                                                   •                              (27)
+
+Lemma 3.22. Let L(Y) be the minimal primitive sublattice of NS(Y) containing the classes associated to the eighteen
+curves Ri (1 ≤ i ≤ 9), Fj (1 ≤ j ≤ 8) and Se1 . The lattice L(Y) is isomorphic to the double Kummer lattice DK.
+Proof. Let us denote by N the minimal primitive sublattice of NS(Y) containing the eight exceptional curves
+Fi , 1 ≤ i ≤ 8. The lattice N can also be regarded as the span of the nine classes
+                                                                                    8
+                                                                               1 X
+                                                        F1 , F2 , · · · F8 ,         Fi .
+                                                                               2 i=1
+
+This is the so-called Nikulin lattice (see §5 of [24]). It has rank eight and has the same discriminant group
+and discriminant form as H(2) ⊕ H(2) ⊕ H(2).
+   Denote by H2Y the orthogonal complement of N in H2 (Y, Z). Then, as we described in Section 3.1, the
+Shioda-Inose construction induces a natural push-forward morphism:
+
+                                                  π∗ : H2 (X, Z) → H2Y ֒→ H2 (Y, Z).
+
+Adopting the notation of diagram (15), one has that π∗ (S1 ) = 2Se1 + F1 + F2 and π∗ (Cj ) = π∗ (Dj ) = Rj for
+1 ≤ j ≤ 9. In particular, the image under π∗ of the class of the elliptic fiber of the standard fibration Θ1 on
+X is:
+                          2R1 + 4R2 + 6R3 + 3R4 + 5R5 + 4R6 + 3R7 + 2R8 + R9 .                             (28)
+We consider then the following sublattices of H2Y :
+ (a) E is the span of the curves Rj , 1 ≤ j ≤ 8.
+ (b) H is the span of π∗ (S1 ) and (28).
+                    
+ (c) Q = π∗ i(M)⊥ .
+
+
+                                                                        13
+Using Remarks 3.2 and 3.12, we deduce that the three lattices above are orthogonal to each other. Moreover,
+E is isomorphic to E8 (hence unimodular), H is isomorphic to H(2) and Q is isomorphic to H(2) ⊕ H(2).
+Hence, the discriminant of E ⊕ H ⊕ Q is 26 . But the lattice H2Y has the same discriminant as its orthogonal
+complement N which, in turn, has discriminant 26 . Since clearly E ⊕H⊕Q is a sublattice of H2Y , the equality
+of the two discriminants allows us to conclude that
+
+                                              H2Y = E ⊕ H ⊕ Q.                                            (29)
+
+In particular, Q must be primitively embedded in H2 (Y, Z).
+    Now, by standard lattice theory ([27], Theorem 1.14.4), up to an overall isometry there exists a unique
+primitive lattice embedding of H(2) ⊕ H(2) into the K3 lattice. By Remark 3.19, the orthogonal comple-
+ment of such an embedding is isomorphic to the double Kummer lattice DK. We see therefore that Q⊥ is
+isomorphic to DK.
+    At this point, let us also note the primitive embedding L(Y) ⊂ Q⊥ . In order to show that L(Y) = Q⊥
+all we need to do is verify that the two lattices involved have the same rank. The rank of Q⊥ is 18, as it is
+isomorphic to DK. By definition, rank(L(Y)) ≤ 18. But
+
+                                              N ⊕ E ⊕ H ⊂ L(Y)
+
+and therefore rank(L(Y)) ≥ 18. Hence, we have that L(Y) = Q⊥ and therefore L(Y) is isomorphic with the
+double Kummer lattice DK.
+
+The above result shows that, by construction, Y comes endowed with a canonical primitive lattice embed-
+ding DK ֒→ H2 (Y, Z). This fact, in connection with Proposition 3.20, implies that there exist two canonically
+defined elliptic curves E1 , E2 (unique, up to permutation) such that
+
+                                              Y = Km(E1 × E2 ).                                           (30)
+
+Moreover, Proposition 3.20 together with weak form of the Global Torelli Theorem (Theorem 11.1 of [2]
+§ V III), implies that L(Y) is precisely the double Kummer lattice associated to the Kummer construction
+(30).
+    In order to check the last assumption of Theorem 3.13, let us consider the diagram of rational maps:
+                                                π      p
+                                          X −→ Y ←− E1 × E2                                               (31)
+
+where π is the map induced by the Shioda-Inose construction and p is the map associated with the Kummer
+construction. The K3 surface X carries the lattice polarization i(M) ⊂ H2 (X, Z), whereas the abelian surface
+E1 × E2 is H-polarized by the sublattice P ⊂ H2 (E1 × E2 , Z) spanned by the classes of E1 and E2 . In
+both cases, the orthogonal complement of the polarizing lattice is isomorphic to H ⊕ H. One has then the
+push-forward morphisms:
+                                          π                 p∗
+                               H2 (X, Z) −→
+                                          ∗
+                                            H2 (Y, Z) ←− H2 (E1 × E2 , Z).                                (32)
+
+From the proof of Lemma 3.22, we have that π∗ (i(M)⊥ ) = Q = L(Y)⊥ . By Proposition 3.14, p∗ (P⊥ ) =
+L(Y)⊥ . Moreover, both the restriction of the π∗ on i(M)⊥ and the restriction of p∗ on P⊥ induce isomor-
+phisms of Hodge structures:
+                                           π∗                p∗
+                                i(M)⊥ (2) ≃ L(Y)⊥ , P⊥ (2) ≃ L(Y)⊥ .
+By taking (p∗ )−1 ◦ π∗ , one obtains therefore a canonical isomorphism of polarized Hodge structures
+                                                       π∗
+                                                i(M)⊥ ≃ P⊥
+
+between the surfaces X and E1 × E2 .
+
+
+                                                     14
+4 An Explicit Computation
+In the first half of this paper, we have described a geometric correspondence:
+
+                                              (X, i) 7→ A(X) = E1 × E2
+
+which associates to any given M-polarized K3 surface X an abelian surface A(X) realized as a cartesian
+product of two elliptic curves. In this second part of the paper we shall make this correspondence explicit.
+In other words we shall compute the J-invariants of the two elliptic curves E1 and E2 .
+    Note that, by the Hodge theoretic equivalence underlying the correspondence, the modular invariants
+of an M-polarized K3 surface (X, i) can be written as:
+
+                                 σ(X, i) = J(E1 ) + J(E2 ), π(X, i) = J(E1 ) · J(E2 ).
+
+Therefore, as an immediate application of the calculation of the two J-invariants of E1 and E2 , we shall
+obtain formulas for the modular invariants associated to an explicitly defined M-polarized K3 surface.
+
+4.1 The Inose Form
+In his 1977 paper [17], Inose introduced an explicit two-parameter family of K3 surfaces which carry canon-
+ical M-polarizations. The surfaces in this family are defined as follows.
+    Let a, b ∈ C. Denote by Q(a, b) the surface in P3 defined by the quartic equation:
+
+                                                             1 2 2     
+                           y 2 zw − 4x3 z + 3axzw2 −           z w + w4 + bzw3 = 0 .                            (33)
+                                                             2
+We shall refer to the polynomial on the left side of the above equation as the Inose form. The surface
+Q(a, b) has only rational double point singularities and its minimal resolution, denoted X(a, b), is a K3
+surface. Moreover, by construction, the surface X(a, b) has a canonical M-polarization. In order to see this,
+let us note that the intersection of Q(a, b) with the hyperplane {w = 0} is a union of two lines L1 ∪ L2 with:
+
+                                     L1 := {z = w = 0},           L2 := {x = w = 0}.
+
+Moreover, by standard singularity theory, the points [0, 1, 0, 0] and [0, 0, 1, 0] are rational double point sin-
+gularities on Q(a, b) of types A11 and E6 , respectively. As a result, one obtains on the minimal resolution
+X(a, b) the following configuration of rational curves:
+
+a1     a2     a3     a4     a5       a6     a7       a8      a9      a10      a11      L2   e1   e2   e3   e5    e6
+ •     •      •      •      •        •       •       •       •        •        •       •    •    •    •    •      •
+
+
+              L1                                                                                      e4
+              •                                                                                       •
+                                                                                                                (34)
+Note already the similarity with the previously encountered diagram (15). The lattices spanned by:
+
+                                          { a1 , a2 , L 1 , a3 , a4 , a5 , a6 , a7 }
+
+                                          { a11 , L2 , e1 , e2 , e3 , e4 , e5 , e6 }
+                           { a9 , 2a1 + 4a2 + 3L1 + 6a3 + 5a4 + 4a5 + 3a6 + 2a7 }
+are mutually orthogonal and they are also isomorphic to E8 , E8 and H, respectively. As a consequence, their
+direct sum provides a canonical primitive lattice embedding M ֒→ NS(X(a, b)).
+
+
+
+
+                                                             15
+4.2 The Main Formula
+In the remaining part of the paper, we prove:
+Theorem 4.1. Let E1 and E2 be the two elliptic curves associated to the M-polarized K3 surface X(a, b) by the
+correspondence of Theorem 3.13. Then J(E1 ) and J(E2 ) are the two solutions of the quadratic equation:
+                                                           
+                                       x2 − a3 − b2 + 1 x + a3 = 0.                                      (35)
+
+As mentioned earlier, as a consequence of the above theorem, one obtains:
+Corollary 4.2. The modular invariants of the M-polarized K3 surface X(a, b) are given by:
+
+                                                  π = a3 , σ = a3 − b2 + 1.                                (36)
+
+Corollary 4.3. Every M-polarized K3 surface is isomorphic9 to X(a, b) for some a, b ∈ C.
+Our strategy for proving Theorem 4.1 relies on a detailed analysis of the two basic algebraic invariants as-
+sociated with the elliptic fibration Ψ2 on the Kummer surface Y: the functional and homological invariants.
+
+4.3 Invariants Associated to an Elliptic Surface
+Let X be a smooth compact complex analytic surface and let ϕ : X → C be a proper analytic map to a smooth
+curve such that the generic fiber of ϕ is a smooth elliptic curve. Assume also that ϕ does not have multiple
+fibers. There are two classical invariants that one associates to such a structure [12, 20].
+ (a) The functional invariant is an analytic function Jϕ : C → P1 . It can be defined in the following man-
+     ner. Let U be the complement in C of the critical values of ϕ. Then Jϕ is the meromorphic continuation
+     of the composite map:
+                                                              e                J
+                                                   U −→ H/PSL(2, Z) −→ C
+     which takes a smooth elliptic fiber to its associated point in the moduli space of elliptic curves and
+     then evaluates the classical elliptic modular function10 at that respective point.
+ (b) The homological invariant is, by definition, the sheaf Gϕ = R1 ϕ∗ ZX . The restriction of Gϕ on U is
+     locally constant and oriented and its stalk at every point is isomorphic with Z ⊕ Z. Moreover, since ϕ
+     has no multiple fibers, one has Gϕ = i∗ (Gϕ |U ) where i : U ֒→ C and therefore Gϕ is determined by its
+     restriction on U. The latter sheaf is however fully determined by the conjugacy class of its monodromy
+     map:                                                                   
+                                        ρϕ : π1 (U, t) −→ SO H1 (ϕ−1 (t), Z)                             (37)
+     One can regard, therefore, the homological invariant of ϕ as an element in Hom (π1 (U), SL(2, Z)), mod-
+     ulo conjugation.
+The two invariants are not unrelated. Let us assume, for simplicity, that Jϕ is not constant, as the cases of
+interest to us will definitely satisfy this condition. Set then U0 ⊂ U as the open subset for which Jϕ ∈
+                                                                                                       / {0, 1}
+and denote by H0 the set of elements of the upper half-plane H for which the associated elliptic modular
+function is neither 0 or 1. Pick t ∈ U0 . The composition
+                                                          i        e
+                                                 U0 ֒→ U → H/PSL(2, Z)
+
+induces a morphism of fundamental groups:
+                                                 (e◦i)#
+                                   π1 (U0 , t)    →           π1 (H0 /PSL(2, Z)) ≃ PSL(2, Z)               (38)
+  9 Here by the term isomorphism we mean an isomorphism of M-polarized K3 surfaces.
+ 10 Recall that J is normalized such that the two orbifold points of H/PSL(2, Z) are mapped to 0 and 1.
+
+
+
+
+                                                                       16
+The compatibility between the two invariants asserts that the above morphism agrees, modulo conjugation
+with:
+                                        i#          ρϕ
+                            π1 (U0 , t) → π1 (U, t) → SL(2, Z) → PSL(2, Z).                        (39)
+   The above compatibility condition can be introduced independent of the actual elliptic fibration over
+C. Given a (non-constant) meromorphic function J : C → C with no poles on U and a morphism of Z-
+modules ρ : π1 (U) → SL(2, Z), the pair (J , ρ) is said to be compatible if the associated maps (38) and (39)
+agree modulo conjugation. One has then the following classical theorem of Kodaira.
+Theorem 4.4. (Kodaira [20]) For a compatible pair (J , ρ) as above, there is, up to an isomorphism of elliptic surfaces,
+exactly one elliptic fibration ϕ : X → C, admitting a section, with functional and homological invariants given by J
+and ρ.
+The above theorem provides one with a very powerful tool for comparing jacobian fibrations. Its effective-
+ness is further enhanced by the fact that, given a jacobian fibration as above, the monodromy ρ(γ) of a small
+loop γ circling a critical value of ϕ in a manner agreeing with the orientation of C is determined modulo
+conjugation by the Kodaira type of the associated singular fiber [19]. We can state therefore the following
+very particular consequence of the above discussion.
+Corollary 4.5. Let ϕ and ψ be two jacobian fibrations on two K3 surfaces X and X′ .
+
+                                                 X@                             X′                                 (40)
+                                                    @@                     }}
+                                                      @@                 }}
+                                                        @
+                                                     ϕ @@              }}
+                                                                  }~ } ψ
+                                                              P1
+
+The two jacobian fibrations are isomorphic if and only if there exists a a projective automorphism q of P1 such that q
+maps bijectively the singular locus of ϕ to the singular locus of ψ, Jϕ = Jψ ◦ q and, for any t in the singular locus of
+ϕ, the Kodaira type of a singular fiber ϕ−1 (t) is the same as the Kodaira type of the singular fiber ψ −1 (q(t)).
+Our strategy for proving Theorem 4.1 is structured as follows. We first compute the functional invariants
+and Kodaira types of singular fibers of both the alternate fibration Θ2 on X(a, b), and the induced jacobian
+fibration Ψ2 on the K3 surface Y(a, b). Then, switching our attention to the other side of the correspondence,
+we show that, for any two elliptic curves E1 and E2 , the Kummer surface Km(E1 ×E2 ) possesses a canonical
+jacobian fibration Υ2 with the same types of singular fibers as Ψ2 . Finally, using Corollary 4.5, we prove
+that the two elliptic fibrations Ψ2 and Υ2 are equivalent if and only if J(E1 ) and J(E2 ) are solutions to the
+quadratic equation (35).
+
+4.4 The Alternate Fibration Θ2
+It is quite easy to observe the fibration Θ2 on the surface X(a, b). The alternate fibration is induced by the
+projection to [x, w] from the quartic Q(a, b). Indeed, one can easily verify the following facts.
+ (a) The generic fiber of the projection to [x, w] from Q(a, b) is an elliptic curve. In fact, the fiber over [1, λ]
+     can be seen as the cubic curve in P2 (y, z, w) given by:
+                                                                          
+                    Θλ2 := Θ2−1 ([λ, 1]) = { 2y 2 z − 8λ3 − 6azw2 − 2b zw2 − z 2 w − w3 = 0}.                  (41)
+
+     This is a smooth cubic as long as 4λ3 − 3aλ − b 6= ±1.
+ (b) After resolving the singularities of Q(a, b), the projection to [x, w] induces an elliptic fibration on the
+     K3 surface X(A, B).
+                                −1
+ (c) The singular fiber Θ∞                                     ∗                                         ∞
+                          2 := Θ2 ([1, 0]) is of Kodaira type I12 . In the context of the diagram (34), Θ2
+     appears as the divisor:
+
+                           a2 + L1 + 2 (a3 + a4 + · · · + a11 + L2 + e1 + e2 + e3 ) + e4 + e5 .
+
+
+                                                              17
+ (d) The curves a1 and e6 are sections of Θ2 .
+Let us then compute the functional invariant of the elliptic fibration Θ2 . In order to simplify further calcu-
+lations, we shall introduce the following polynomial:
+
+                                               P(X) = 4X 3 − 3AX − B.
+
+With this in place, one can rewrite the cubic equation in (41) in a standard Weierstrass form as:
+                         √     2          3                 
+                                        2                   2
+                           2 yz    = z + P(λ)   + g2 (λ) z + P(λ) + g3 (λ)                                            (42)
+                                        3                   3
+
+where the terms g2 (λ) and g2 (λ) are given by:
+
+                                               4 2               16 3      2
+                                g2 (λ) = 1 −     P (λ), g3 (λ) =    P (λ) − P(λ).
+                                               3                 27        3
+The discriminant of Weierstrass form (42) is then:
+                                                                               
+                                  ∆Θ2 (λ) = 4g23 (λ) + 27g32 (λ) = 4 1 − P2 (λ) .
+
+In the same manner, the functional invariant of Θ2 can be computed as:
+                                                                               2
+                                                 4g23 (λ)          3 − 4 P2 (λ)
+                                       JΘ2 (λ) =          =                       .
+                                                 ∆Θ2 (λ)           9(1 − P2 (λ))
+
+The explicit formulas for g2 (λ), g3 (λ) and ∆Θ2 (λ) allow one to determine not only the location but also the
+Kodaira type of the singular fibers of Θ2 . Using Tate’s algorithm [34], one obtains:
+Proposition 4.6. The singular fibers of Θ2 are located at [1, 0] (the I∗12 fiber) and at the points [λ, 1] with λ belonging
+to the subset:
+                                             Σ := { λ | P(λ)2 = 1 }.                                                   (43)
+The following five cases can occur:
+   • a3 6= (b ± 1)2 . In this case, both polynomials P(X) − 1 and P(X) + 1 have three distinct roots. The subset Σ
+     consists of six distinct points, each of which corresponds to a singular fiber of type I1 in Θ2 .
+   • a3 = (b + 1)2 , b 6= 0, a 6= 0. In this case, P(X) + 1 has three distinct roots. However, the polynomial P(X) − 1
+     has a root of order two at −(b + 1)/2a and a simple root at (b + 1)/a. The subset Σ consists of 5 distinct points.
+                                                               
+                                                −(b + 1) b + 1
+                                      Σ =               ,          ∪ { λ | P(λ) = −1 }
+                                                   2a       a
+
+     The first value in the above list corresponds to a singular fiber of type I2 in Θ2 . The remaining four points
+     correspond to fibers of type I1 .
+   • a3 = (b − 1)2 , b 6= 0, a 6= 0. In this case, the polynomial P(X) − 1 has three distinct roots. However, P(X) + 1
+     has a root of order two at −(b − 1)/2a and a simple root at (b − 1)/a. As in the previous case, the subset Σ
+     consists of 5 distinct values.
+                                                                 
+                                                 −(b − 1) b − 1
+                                       Σ =                 ,        ∪ { λ | P(λ) = 1 }
+                                                     2a       a
+
+     The first value in the above list corresponds to a singular fiber of type I2 in Θ2 . The remaining four points
+     correspond to fibers of type I1 .
+
+
+
+                                                            18
+   • a = 0, b = ±1. Then                                                            
+                                                                   1
+                                              Σ = {0} ∪           √
+                                                                  3
+                                                                      θ | θ3 = b         .
+                                                                    2
+     The value λ = 0 corresponds to a singular fiber of type I3 in Θ2 . The remaining three values of Σ correspond to
+     fibers of type I1 .
+   • a3 = 1, b = 0. In this case one has:
+
+                          P(X) − 1 = (2X − a2 )2 (X + a2 ), P(X) + 1 = (2X + a2 )2 (X − a2 ).
+
+     Accordingly,
+                                                         a2    a2
+                                                 Σ = {      , − , −a2 , a2 }.
+                                                         2      2
+     The first two values in the above list correspond to singular fibers of type I2 while the last two values correspond
+     to fibers of type I1 .
+Next, we describe explicitly the involution β on X(a, b). Note that, in each of the smooth cubics Θλ2 of (41),
+the point [1, 0, 0] is an inflection point. If one chooses this point as the origin of the cubic group law on
+Θλ2 , the point [0, 1, 0] is a point of order two with respect to this law. Moreover, when regarding Θλ2 as an
+elliptic fiber in X(a, b), one has that [1, 0, 0] and [0, 1, 0] are the intersections with the two sections a1 and e6 .
+Therefore, the effect of β on Θλ2 can be seen, in the coordinates of (41), as the analytic continuation of:
+
+                                 Θλ2 \ {[1, 0, 0], [0, 1, 0]} → Θλ2 \ {[1, 0, 0], [0, 1, 0]}                        (44)
+
+                                              [y, z, w] 7→ [−yz, w2 , zw].
+Finally, the full β is induced from the analytic involution:
+
+                                  β1 : Q(a, b) \ (L1 ∪ L2 ) → Q(a, b) \ (L1 ∪ L2 )                                  (45)
+
+                                        β1 ([x, y, z, w]) 7→ [xz, −yz, w2 , zw].
+
+4.5 The Elliptic Fibration Ψ2
+Let Y(a, b) be the Kummer surface obtained from X(a, b) through the Shioda-Inose construction. Recall
+from section 3.5 that the alternate fibration Θ2 survives on Y(a, b) in the form of a new elliptic fibration Ψ2 .
+   As we already know, the fiber Ψ∞                          ∗
+                                        2 has Kodaira type I6 . In this section, we describe the location and
+Kodaira type of the other singular fibers and write an explicit formula for the functional invariant JΨ2 .
+   Note that the smooth fibers Ψλ2 are quotients of the cubics Θλ2 of (41) by the involution (44). By then
+taking affine coordinates [y, z, 1] on Θλ2 and defining
+                                                                       
+                                             2             1          1
+                                       u = y − P(λ), v = y z −            ,
+                                                           2          z
+
+one obtains an affine description of Ψλ2 as:
+
+                                            v 2 = (u + P(λ))(u − 1)(u + 1).                                         (46)
+
+This can then be easily transformed to a Weierstrass form:
+                                  3                    
+                     2        1          1       1 2            2 3      2
+                 v       = u + P(λ) − u + P(λ)     P (λ) + 1 +    P (λ) − P(λ)                                      (47)
+                              3          3       3             27        3
+which has as discriminant:                                                  2
+                                             ∆Ψ2 (λ) = −4 P2 (λ) − 1             .
+
+                                                             19
+It follows then that the functional invariant of the elliptic fibration Ψ2 is:
+                                                                            2
+                                                              P 2 (λ) + 3
+                                              JΨ2 (λ) =                      2.                                         (48)
+                                                            9 (P 2 (λ) − 1)
+
+As in the previous section, the above information allows us to also describe the location and Kodaira type
+of the singular fibers of Ψ2 .
+Proposition 4.7. The singular fibers of the elliptic fibration Ψ2 on Y(a, b) are located at [1, 0] (the I∗6 fiber) and at the
+points [λ, 1] with λ belonging to the subset:
+
+                                                Σ := { λ | P (λ)2 = 1 }.                                                (49)
+
+The following cases occur:
+   • a3 6= (b ± 1)2 . In this case, both polynomials P(X) − 1 and P(X) + 1 have three distinct roots. The subset Σ
+     consists of six distinct points, each of which corresponds to a singular fiber of type I2 in Θ2 .
+   • a3 = (b + 1)2 , b 6= 0, a 6= 0. In this case, P(X) + 1 has three distinct roots. However, the polynomial P(X) − 1
+     has a root of order two at −(b + 1)/2a and a simple root at (b + 1)/a. The subset Σ consists of 5 distinct points.
+                                                               
+                                                −(b + 1) b + 1
+                                      Σ =               ,          ∪ { λ | P(λ) = −1 }
+                                                   2a       a
+
+     The first value in the above list corresponds to a singular fiber of type I4 in Θ2 . The remaining four points
+     correspond to fibers of type I2 .
+   • a3 = (b − 1)2 , b 6= 0, a 6= 0. In this case, the polynomial P(X) − 1 has three distinct roots. However, P(X) + 1
+     has a root of order two at −(b − 1)/2a and a simple root at (b − 1)/a. As in the previous case, the subset Σ
+     consists of 5 distinct values.
+                                                                 
+                                                 −(b − 1) b − 1
+                                       Σ =                 ,        ∪ { λ | P(λ) = 1 }
+                                                     2a       a
+
+     The first value in the above list corresponds to a singular fiber of type I4 in Θ2 . The remaining four points
+     correspond to fibers of type I2 .
+   • a = 0, b = ±1. Then                                                          
+                                                                   1
+                                              Σ = {0} ∪           √
+                                                                  3
+                                                                      θ | θ3 = b       .
+                                                                    2
+     The value λ = 0 corresponds to a singular fiber of type I6 in Θ2 . The remaining three values of Σ correspond to
+     fibers of type I2 .
+   • a3 = 1, b = 0. In this case one has:
+
+                        P(X) − 1 = (2X − a2 )2 (X + a2 ), P(X) + 1 = (2X + a2 )2 (X − a2 ).
+
+     Accordingly,
+                                                         a2    a2
+                                                 Σ = {      , − , −a2 , a2 }.
+                                                         2      2
+     The first two values in the above list correspond to singular fibers of type I4 while the last two values correspond
+     to fibers of type I2 .
+
+
+
+
+                                                             20
+4.6 A Special Elliptic Fibration on Km(E1 × E2 )
+As we already know from Theorem 3.13, the surface Y(a, b) can be realized in a canonical way as the
+Kummer surface Km(E1 × E2 ) associated to the product of two elliptic curves. Moreover, in this context,
+the elliptic fibration Ψ2 on Y(a, b) can be derived directly from the Kummer construction.
+   Recall from Section 3.4 that the surface Km(E1 × E2 ) has a canonical twenty-four curve configuration
+{Hi , Gj , Eij | 0 ≤ i, j ≤ 3} called the double Kummer pencil.
+Lemma 4.8. Consider the divisor D on Km(E1 × E2 ) defined as:
+
+                   D = E21 + E31 + 2 (G1 + E01 + H0 + E00 + G0 + E10 + H1 ) + E12 + E13 .                            (50)
+
+Then D2 = 0 and |D| is a pencil inducing an elliptic fibration Υ2 : Km(E1 × E2 ) → P1 . The divisor D is a singular
+fiber for Υ2 and has Kodaira type I∗6 . The four smooth rational curves H2 , H3 , G2 and G3 form four disjoint sections
+of Υ2 .
+
+                   H2     E21                                                                    E12   G2
+                   •        •   @@                                                                •    •
+                                  @@                                                         ~
+                                    @                                                      ~~
+                                                                                         ~~
+                                        G1   E01      H0    E00    G0       E10     H1
+                                        •     •        •     •      •        •      •    @@
+                                    ~                                                      @@
+                                  ~~                                                         @
+                                ~~
+                   H3     E32                                                                    E13   G3
+                   •        •                                                                     •    •
+
+Proof. The above assertion is a consequence of a classical theorem due to I.I. Pjateckiĭ-Šapiro and I.R.
+Šafarevič ([30], Chapter 3, Theorem 1).
+
+Remark 4.9. A different selection of the double Kummer pencil curves defining the divisor (50) alters the elliptic
+fibration Υ2 by an analytic automorphism of Km(E1 × E2 ). The equivalence class of Υ2 is therefore well-defined.
+Remark 4.10. In [29], K. Oguiso classified all jacobian fibrations on a Kummer surface associated to a product of two
+non-isogenous elliptic curves. The elliptic fibration Υ2 defined above appears as J5 in Oguiso’s classification. It is the
+only jacobian fibration on such a surface that admits a singular fiber of Kodaira type I∗6 .
+By virtue of the geometric correspondence
+
+                                                    X(a, b) −→ E1 × E2
+
+described in the first part of the paper, one has, as an intermediate step, an isomorphism
+
+                                                   Y(a, b) ≃ Km(E1 × E2 )
+
+that maps the jacobian fibration Ψ2 on Y(a, b) to the jacobian fibration Υ2 on Km(E1 × E2 ).
+    This fact allows one to realize an explicit relation between the Inose parameters a, b of the M-polarized
+K3 surface X(a, b) and the J-invariants of the two resulting elliptic curves E1 and E2 . In light of Corollary
+4.5, the two jacobian fibrations Ψ2 on Y(a, b) and Υ2 on Km(E2 × E2 ) are equivalent if and only if their
+functional invariant and singular locus differ by a projective transformation and the Kodaira types of their
+singular fibers match.
+    We have already described in detail the functional invariant and the location and type of the singular
+fibers of Ψ2 . In what follows we shall perform a similar analysis for Υ2 . The comparison between these two
+pieces of data will then allow us to prove the main statement of Theorem 4.1.
+Claim 4.11. The two elliptic fibrations Ψ2 and Υ2 have equivalent functional and homological invariants if and only
+if
+                              J(E1 ) + J(E2 ) = a3 − b2 + 1, J(E1 ) · J(E2 ) = a3 .
+
+
+                                                            21
+4.7 Description of the Elliptic Fibration Υ2 on Km(E1 × E2 )
+It is a standard fact that any given elliptic curve can be realized as a projective Legendre cubic
+
+                                     { y 2 w = x(x − w)(x − λw) } ⊂ P2
+
+for some λ ∈ C \ {0, 1}. We shall assume therefore that α, β ∈ C are chosen such that E1 and E2 are
+isomorphic with the above cubics for λ = α and λ = β, respectively. The J-invariants of the two curves can
+then be computed as:
+                                    4(α2 − α + 1)3             4(β 2 − β + 1)3
+                         J(E1 ) =                  , J(E 2 ) =                 .
+                                     27α2 (α − 1)2              27β 2 (β − 1)2
+In this context, an explicit model for the Kummer surface Km(E1 × E2 ) can be constructed (see [7, 17]) by
+taking the minimal resolution of the quartic surface:
+
+                            { z 2 xy = (x − w)(x − αw)(y − w)(y − βw) } ⊂ P3 .                               (51)
+
+Note that, generically, the quartic surface (51) has seven rational double point singularities located at:
+
+                                        [1, 0, 0, 0], [0, 0, 1, 0], [0, 0, 1, 0]
+
+                                [1, 1, 0, 1], [α, 1, 0, 1], [1, β, 0, 1], [α, β, 0, 1].
+The first three are rational double points of type A3 . The last four are singularities of type A1 . One can
+therefore reconstruct the double Kummer pencil on the minimal resolution of (51) by taking:
+
+                        H0 + E00 + G0 = A3 configuration associated to [0, 0, 1, 0]
+
+                        E21 + G1 + E31 = A3 configuration associated to [1, 0, 0, 0]
+                        E12 + H1 + E13 = A3 configuration associated to [0, 1, 0, 0]
+                                  E22 = A1 curve associated to [1, 1, 0, 1]
+                                  E32 = A1 curve associated to [α, 1, 0, 1]
+                                  E23 = A1 curve associated to [1, β, 0, 1]
+                                  E33 = A1 curve associated to [α, β, 0, 1]
+                                 H2 = proper transform of {x = w, z = 0}
+                                H3 = proper transform of {x = αw, z = 0}
+                                 G2 = proper transform of {y = w, z = 0}
+                                G3 = proper transform of {y = βw, z = 0}
+                                  E01 = proper transform of {x = w = 0}
+                                  E10 = proper transform of {y = w = 0}
+                               E11 = proper transform of {w = 0, z 2 = xy}
+                                E02 = proper transform of {x = 0, y = w}
+                                E03 = proper transform of {x = 0, y = βw}
+                                E20 = proper transform of {y = 0, x = w}
+                               E30 = proper transform of {y = 0, x = αw}
+A simple analysis of the curves Hi , Gj and locations of the intersections with Eij allows one to conclude
+that the minimal resolution of (51) is canonically isomorphic to Km(E1 × E2 ).
+
+                                                          22
+Remark 4.12. The birational morphism Km(E1 × E2 ) → P3 whose image is the quartic surface (51) can also be
+defined directly from the double Kummer pencil by taking the projective morphism associated to the base-point free
+linear system |V| given by:
+               V = E12 + 2H1 + E13 + E10 + G0 + E00 + H0 + E01 + 2G1 + E21 + E31 + 2E11 .
+                          E21                                                                       E12
+                           •    @@                                                                   •
+                                  @@                                                            ~
+                                    @                                                         ~~
+                                                                                            ~~
+                                        G1
+                                        •    UUUUE•01    H0
+                                                          •
+                                                                E00
+                                                                 •
+                                                                      G0
+                                                                       •
+                                                                              E10    H1
+                                                                               • iiii • @
+                                    ~            UUUU                        ii i        @@
+                                  ~~                  UUUU
+                                                                        iiii
+                                                                            i              @@
+                                ~~                        UUUU
+                                                              U E iiiii
+                          E32                                     11                          E      13
+                           •                                      •                                  •
+
+The advantage of the realization of Km(E1 × E2 ) as the quartic surface (51), follows from the fact that, in
+this context, one can explicitly construct the jacobian fibration Υ2 of Lemma 4.8. This elliptic fibration is
+induced by the rational map:
+                                        [x, y, z, w] 7→ [R(x, y, w), xy]
+where R(x, y, w) is the quadratic polynomial:
+                                                                  
+                                   1    2     1    2    α+1          β+1
+                 R(x, y, w) = −        x + −      y +         xw +         yw − w2 .
+                                   α          β          α            β
+The I∗6 fiber of Υ2 appears over the point [1, 0]. Away from this location, the generic smooth elliptic fiber
+                                                         Υλ2 := Υ−1
+                                                                 2 ([µ, 1])
+
+can be regarded as the double cover of the projective conic in P2 (x, y, w):
+                                                         R(x, y, w) = µxy                                      (52)
+branched at the four points:
+                                             [1, (1 − µ)β + 1, 1], [α, (1 − µα)β + 1, 1],                      (53)
+                                             [(1 − µ)α + 1, 1, 1], [(1 − µβ)α + 1, β, 1].
+One encounters singular fibers if the conic (52) is singular, or if at least two of the above four branch points
+coincide. This argument allows one to conclude that the points on the base of the fibration Υ2 associated to
+singular fibers (away from the I∗6 fiber) are of type [µ, 1] with µ belonging to the set:
+                                                                             
+                                                1 1 1 αβ + 1 α + β
+                                 ΣΥ2 := 1, , ,             ,         ,          .
+                                                α β αβ          αβ       αβ
+Remark 4.13. For generic choices of α and β, the above set contains six distinct points, each of which determines an
+I2 fiber in Υ2 . However, it may happen that two, or more, of the above six values coincide. This happens precisely
+when:                                                                         
+                                            1            1        α     α−1
+                                 β ∈ α, , 1 − α,              ,       ,           ,                             (54)
+                                            α          1−α α−1            α
+a condition that is also equivalent to J(E1 ) = J(E2 ).
+Lemma 4.14. The functional invariant of the jacobian fibration Υ2 has the form:
+                                                                                3
+                                           4 α4 β 4 D(µ) + (α − 1)2 (β − 1)2
+                              JΥ2 (µ) =                                                                        (55)
+                                              27 α8 β 8 (α − 1)4 (β − 1)4 D2 (µ)
+where:                                                           
+                                    1      1       1      αβ + 1      α+β
+                D(µ) := (µ − 1) µ −     µ−     µ−      µ−          µ−       .
+                                    α      β      αβ       αβ          αβ
+
+
+                                                                 23
+Proof. We accomplish the computation of JΥ2 (µ) through the following sequence of steps.
+  1. Construct an explicit isomorphism iµ between the conic (52) and P1 .
+  2. Perform a projective automorphism of P1 such that the images through iµ of the four branch points
+     (53) are sent to [0, 1], [1, 1], [r, 1] and [1, 0].
+  3. Evaluate JΥ2 (µ) as:
+                                                    4(r2 − r + 1)3
+                                                                   .                              (56)
+                                                     27r2 (r − 1)2
+In order to complete the first step, let us note that:
+
+                                              R(x, y, w) − µxy =
+                           2        2             2                         
+            α+1          β+1          α−1      2      β−1       2    (α + 1)(β + 1)
+     − w−          x−           y +           x +             y +                   − µ xy =
+             2α           2β           2α              2β                 2αβ
+                              2                                          2
+               α+1          β+1           α−1           (α + 1)(β + 1)          α
+       − w−           x−          y +            x+                    −µ            y +
+                2α           2β            2α                2αβ              α−1
+                       "       2                     2       2 #
+                          β−1        (α + 1)(β + 1)            α
+                     +            −                 −µ                 y2 =
+                            2β            2αβ                α−1
+                               2                                         2
+                α+1         β+1             α−1           (α + 1)(β + 1)          α
+         − w−          x−           y +            x+                    −µ          y +
+                 2α           2β             2α                2αβ              α−1
+                    "                2                     2 #       2
+                       (α − 1)(β − 1)      (α + 1)(β + 1)             α
+                  +                     −                  −µ                y2 =
+                            2αβ                 2αβ                  α−1
+                            2                                        2
+                α+1        β+1           α−1           (α + 1)(β + 1)        α
+         − w−         x−         y +             x+                   −µ         y +
+                 2α         2β            2α                2αβ             α−1
+                                                       2
+                                α+β          αβ + 1       α
+                       −    µ−          µ−                       y2 =
+                                 αβ           αβ         α−1
+                                                                    
+                  1         β+1       α                          β+1      α
+            = w− x− µ−                     y    −w + x − µ −                   y −
+                  α          αβ     α−1                           β      α−1
+                                                         2
+                                 α+β          αβ + 1        α
+                         −    µ−         µ−                        y2
+                                  αβ            αβ        α−1
+The change in projective coordinates:
+                                                                 
+                                          β+1     α                α
+                       x1 = −w + x − µ −                y, y1 =         y
+                                           β     α−1              α−1
+                                                           
+                                        1         β+1      α
+                              w1 = w − x − µ −                  y
+                                        α          αβ     α−1
+allows one to rewrite the conic (52) as:
+                                                   x1 w1 = ∆y12
+where:                                                     
+                                             α+β       αβ + 1
+                                      ∆ = µ−        µ−          .
+                                              αβ        αβ
+
+
+
+                                                         24
+This yields the parametrization of (52) via the embedding:
+
+                                            P1 ֒→ P2 , [u, v] 7→ [u2 , uv, ∆v 2 ]
+
+with the inverse map iµ given by the analytic continuation of [x1 , y1 , w1 ] 7→ [x1 , y1 ]. This procedure results
+in an identification between the conic (52) and P1 which sends the four branch points (53) to
+
+                                      [β + 1 − βµ, β], [αβ∆, β + 1 − µαβ],
+
+                                       [αβ + 1 − µαβ, β], [α + β − µαβ, β].
+In accordance with the plan presented earlier, we take:
+
+                            ((αβ + 1 − µαβ) − (β + 1 − βµ)) ((αβ∆) − (α + β − µαβ))
+                     r =                                                            =
+                            ((αβ + 1 − µαβ) − (α + β − µαβ)) ((αβ∆) − (β + 1 − βµ))
+                                             (µ − 1)(µαβ − 1)(µαβ − α − β)
+                                        =                                  .
+                                                     (α − 1)(β − 1)
+Then the functional invariant is computed as:
+                                                                                     3
+                                 4(r2 − r + 1)3   4 α4 β 4 D(µ) + (α − 1)2 (β − 1)2
+                       JΥ2 (µ) =                =                                       .
+                                  27r2 (r − 1)2    27 α8 β 8 (α − 1)4 (β − 1)4 D2 (µ)
+
+
+
+The above discussion also provides the homological invariant data of the fibration Υ2 .
+Corollary 4.15. In addition to the I∗6 singular fiber which appears over the point [1, 0], the elliptic fibrations Υ2 has
+singular fibers at the points [µ, 1] with µ belonging to the set:
+
+                                                ΣΥ2 = {µ | D(µ) = 0 }.
+
+The following cases can occur:
+ (a) J(E1 ) 6= J(E2 ). In this case ΣΥ2 has six distinct points and each of them corresponds to an I2 singular fiber.
+ (b) J(E1 ) = J(E2 ) ∈
+                     / {0, 1}. In this case the polynomial D(µ) has five distinct roots, one of which is of order two.
+     The order-two root corresponds to a singular fiber of type I4 . The remaining four roots correspond to I2 fibers.
+ (c) J(E1 ) = J(E2 ) = 1. In this case the polynomial D(µ) has four distinct roots, two of which have order two. The
+     two roots of order two correspond to singular fibers of type I4 . The remaining two roots correspond to fibers of
+     type I2 .
+ (d) J(E1 ) = J(E2 ) = 0. In this case the polynomial D(µ) has four distinct roots, one of which is of order three. The
+     order-three root corresponds to singular fiber of type I3 . The remaining three roots correspond to fibers of type
+     I2 .
+
+4.8 Proof of Claim 4.11
+Recall the analysis of Sections 4.5 and 4.7. Both fibrations Ψ2 and Υ2 have the I∗6 singular fiber located over
+the point [1, 0] and their respective functional invariants, as described in (48) and (55), are :
+                                                            2
+                                               P2 (λ) + 3
+                                 JΨ2 (λ) =                   2,   P(λ) = 4λ3 − 3aλ − b.                             (57)
+                                             9 (P2 (λ) − 1)
+                                                                               3
+                                            4 α4 β 4 D(µ) + (α − 1)2 (β − 1)2
+                                  JΥ2 (µ) =                                       .                                 (58)
+                                             27 α8 β 8 (α − 1)4 (β − 1)4 D2 (µ)
+
+                                                             25
+The main polynomial in the denominator of JΨ2 (λ) is P2 (λ) − 1. Its (generic) six roots are naturally divided
+into two sets of three roots, each three-set having the sum of its elements equal to zero. A similar feature
+can be observed in the denominator of JΥ2 (µ). The main polynomial present there is D(µ) whose (generic)
+six roots can be partitioned into two sets of three with identical sum.
+                                                                                           
+                   1 1 1 αβ + 1 α + β                       1 α+β               1 1 αβ + 1
+                1, , ,        ,        ,           =    1,    ,          ∪        , ,                      (59)
+                   α β αβ         αβ      αβ               αβ     αβ            α β       αβ
+The two fibrations Ψ2 and Υ2 have equivalent functional invariant and homological invariant data if and
+only if there exists an invertible affine transformation Ξ(λ) = qλ + p with p, q ∈ C (q 6= 0) such that
+                                              JΨ2 (λ) = JΥ2 (Ξ(λ))                                         (60)
+and Ξ sends the roots of P(λ) ± 1 to the two subsets in (59) while preserving the homological type.
+   As a first observation, we note that it follows that p = (α + 1)(β + 1)/3αβ. Let then:
+                                                                        
+                                                           1         α+β
+                                D1 (µ) = (µ − 1) µ −             µ−
+                                                          αβ          αβ
+                                                                       
+                                                 1         1         αβ + 1
+                               D2 (µ) = µ −           µ−        µ−            .
+                                                 α         β          αβ
+Two possibilities can occur:
+ (a) q 3 (P(λ) − 1) = 4D1 (qλ + p) and q 3 (P(λ) + 1) = 4D2 (qλ + p)
+ (b) q 3 (P(λ) − 1) = 4D2 (qλ + p) and q 3 (P(λ) + 1) = 4D1 (qλ + p).
+Making the constant terms coincide implies, in the two cases:
+                                     (α − 2)(α + 1)(2α − 1)(β − 2)(β + 1)(2β − 1)
+                            b = ±
+                                                 27α(α − 1)β(β − 1)
+and
+                                                      2(α − 1)(β − 1)
+                                            q3 = −                    .                                    (61)
+                                                           α2 β 2
+The first equality, in turn, requires the a priori condition.
+                  (α − 2)2 (α + 1)2 (2α − 1)2 (β − 2)2 (β + 1)2 (2β − 1)2
+           b2 =                                                           = (J(E1 ) − 1) (J(E2 ) − 1) .    (62)
+                                729α2 (α − 1)2 β 2 (β − 1)2
+Continuing the argument, we note that when imposing the equality of the linear terms in the above cases,
+one is led to:
+                                            4(α2 − α + 1)(β 2 − β + 1)
+                                      a =                              .                            (63)
+                                                      9α2 β 2 q 2
+This constraint, in connection with (61), requires a second a priori condition:
+                                    16(α2 − α + 1)3 (β 2 − β + 1)3
+                            a3 =                                   = J(E1 ) · J(E2 ).                      (64)
+                                      729α2 (α − 1)2 β 2 (β − 1)2
+Then, depending on the case in question, one can eventually solve for q, yielding:
+                                                   −9(α − 1)(β − 1)
+                                       q = ±                              .
+                                               2(α2 − α + 1)(β 2 − β + 1)
+The equivalence (60) of functional invariants is immediately verified. To finish the proof of Claim 4.11, we
+note that conditions (62) and (64) are equivalent to:
+                               J(E1 ) + J(E2 ) = a3 − b2 + 1, J(E1 ) · J(E2 ) = a3 .
+
+
+                                                        26
+5 A String Duality Point of View
+Following the works of Vafa [35] and Sen [32] in 1996, it was noted that the geometry underlying elliptic
+K3 surfaces with section is related to the geometry of elliptic curves endowed with certain flat principal G-
+bundles and an additional parameter called the B-field. This non-trivial connection appears in string theory
+as the eight-dimensional manifestation of the phenomenon called F-theory/heterotic string duality. Over
+the past ten years the correspondence has been analyzed extensively ([6, 10]) from a purely mathematical
+point of view. As it turns out, it leads to a beautiful geometric picture which links together moduli spaces
+for these two seemingly distinct types of geometrical objects: elliptic K3 surfaces with section and flat
+bundles over elliptic curves.
+    In brief, what happens is the following. On the F-theory side, one has the moduli space MK3 of elliptic
+K3 surfaces with section. This is a quasi-projective analytic variety of complex dimension eighteen. How-
+ever, MK3 is not compact. Nevertheless, there exists a nice smooth partial compactification MK3 ⊂ MK3 ,
+consisting of an enlargement of the original space by adding two Type II Mumford boundary divisors D1
+and D2 . Geometrically, the points of the two compactifying divisors correspond to Type II stable elliptic K3
+surfaces. These are special degenerations of K3 surfaces realized as a union V1 ∪ V2 of two rational surfaces
+meeting over a common elliptic curve E which is anti-canonical on both V1 and V2 .
+    On the heterotic side, one has to consider two moduli spaces MG       het of triples (E, P, B) consisting of
+elliptic curves, flat G-bundles, and B-fields. There are two choices of Lie groups G:
+
+                                       (E8 × E8 ) ⋊ Z2      Spin(32)/Z2 .                                   (65)
+
+The moduli space ME,G associated to the first two components (E, P) of the above triples is (as described in
+[14]) a quasi-projective analytic space of complex dimension seventeen. The actual heterotic moduli space
+MG                                                            ∗
+   het (described in [8]) fibers naturally as a holomorphic C fibration over ME,G .
+    In this context, the mathematical facts underlying the string duality can be summarized as follows. Each
+of the two moduli spaces ME,G associated to the two choices of possible Lie groups on the heterotic side
+is naturally isomorphic to one of the corresponding Type II Mumford boundary divisors D1 and D2 from
+the F-theory side. Moreover, there exists a holomorphic identification between an open subset of MG          het
+neighboring the cusps of the C∗ -fibration over ME,G and a special subset (of large complex structures) of
+MK3 which makes an open neighborhood of the corresponding boundary divisor. We refer the reader to
+[9, 10] for further details and proofs.
+    The above holomorphic identification between the appropriate regions of MK3 and MG          het is however
+defined Hodge-theoretically and therefore is not fully satisfactory from a geometer’s point of view. As
+with any string duality, one would like to have a purely geometrical pattern that connects the spaces and
+structures appearing on the two sides of the duality correspondence.
+    Such a geometric connection, in the context of the above duality, has been known for some time, but
+only in the stable limit, i.e. on the boundary of the moduli spaces [1, 13]. As mentioned earlier, on the
+F-theory side this limit corresponds to stable K3 surfaces, whereas on the heterotic side it corresponds to
+B = 0. Given a Type II stable K3 surface V1 ∪ V2 , one can obtain the heterotic elliptic curve E by just taking
+the common curve V1 ∩ V2 and the heterotic G-bundle can also be derived explicitly from the geometry of
+the rational surfaces V1 and V2 .
+    It is natural to ask whether there exists a geometrical transformation underlying the Hodge theoretic
+duality away from the stable boundary, i.e. in the bulk of the two moduli spaces involved MK3 and MG        het ,
+or at least in the large complex structure region [9]. The simplest case to consider is the restriction on the
+heterotic side to the P = 0 locus. From the Hodge-theoretic correspondence, one knows that this restriction
+corresponds on the F-theory side to K3 surfaces with a special lattice polarization of type M = H ⊕ E8 ⊕ E8 .
+These are precisely the M-polarized K3 surfaces that form the main focus of this paper. Moreover, on the
+heterotic side, under the vanishing of the flat bundle, the B-field has the same properties as a second elliptic
+curve. Therefore this special case of the duality can be regarded as relating Hodge-theoretically M-polarized
+K3 surfaces to pairs of elliptic curves:
+                                                 X ←→ (E, B) .
+
+                                                       27
+This is the precisely the Hodge-theoretic identification from equation (10).
+   From this point of view, the transformation we described in Section 3, and for which we have computed
+explicit formulas in Section 4, provides the proper geometrical description of the F-theory/heterotic string
+duality for M-polarized K3 surfaces.
+
+
+References
+ [1] P. Aspinwall and D. Morrison, Point-like Instantons in K3 Orbifolds. Nuclear Phys. B, 503(3), 1997.
+ [2] W. Barth, C. Peters and A. Van de Ven, Compact Complex Surfaces. Ergebnisse der Mathematik und ihrer
+     Grenzgebiete., vol. 4, Second Edition, Springer-Verlag, Berlin 2004.
+ [3] M. Billo, F. Denef, P. Fre, I. Pesando, W. Troost, A. Van Proeyen and D. Zanon, The Rigid Limit in
+     Special Kahler Geometry. Classical Quantum Gravity, 15(8), 1998.
+ [4] C. Birkenhake and H. Lange, Complex Abelian Varieties. Grundlehren der Mathematischen Wis-
+     senschaften, vol. 302, Second Edition, Springer-Verlag, Berlin 2004.
+ [5] P. Candelas and H. Skarke, F-theory, SO(32) and Toric Geometry. Phys. Lett. B, 413(1-2), 1997.
+ [6] G. L. Cardoso, G. Curio, D. Lust and T. Mohaupt, On the Duality Between the Heterotic String and
+     F -Theory in 8 Dimensions. Phys. Lett. B, 389(3), 1996.
+ [7] J.W. Cassels and E.W. Flynn, Prolegomena to a Middlebrow Arithmetic of Curves of Genus 2. London
+     Mathematical Society Lecture Note Series, 230, Cambridge University Press, 1996.
+ [8] A. Clingher, Heterotic String Data and Theta Functions. Adv. Theor. Math. Phys. 9(2), 2005.
+ [9] A. Clingher and C. Doran, On K3 Surfaces with Large Complex Structure. math.AG/0508249
+[10] A. Clingher and J.W. Morgan, Mathematics Underlying the F-Theory/Heterotic Duality in Eight Di-
+     mensions. Comm. Math. Phys. 254(3), 2005.
+[11] I.V. Dolgachev, Mirror Symmetry for Lattice Polarized K3 Surfaces. J. Math. Sci. 81(3), 1996.
+[12] R. Friedman and J.W. Morgan, Smooth Four-Manifolds and Complex Surfaces. Springer Verlag, 1984.
+[13] R. Friedman, J.W. Morgan and E. Witten, Vector Bundles and F-Theory. Comm. Math. Phys, 187, 1997.
+[14] R. Friedman, J.W. Morgan and E. Witten, Principal G-Bundles over Elliptic Curves. Math. Res. Lett.
+     5(1-2), 1998.
+[15] S. Hosono, B.H. Lian, K. Oguiso and S-T. Yau, c=2 Rational Toroidal Conformal Field Theories via the
+     Gauss Product. Comm. Math. Phys., 241(2-3), 2003.
+[16] S. Hosono, B. Lian, K. Oguiso and S-T. Yau, Kummer Structures on a K3 Surface: An Old Question of
+     T. Shioda. Duke Math. J., 120(3), 2003.
+[17] H. Inose, Defining Equations of Singular K3 Surfaces and a Notion of Isogeny. Proceedings of the
+     International Symposium on Algebraic Geometry, Kyoto, 1977.
+[18] H. Inose and T. Shioda, On Singular K3 Surfaces. Complex Analysis and Algebraic Geometry: Papers
+     Dedicated to K. Kodaira. Iwanami Shoten and Cambridge University Press 1977.
+[19] K. Kodaira, On Compact Analytic Surfaces. Analytic Functions, Princeton University Press, 1960.
+[20] K. Kodaira, On Compact Analytic Surfaces. (II) Annals of Math. 77, 1963.
+[21] S. Kondo, Automorphisms of Algebraic K3 Surfaces Which Act Trivially on Picard Groups. J. Math.
+     Soc. Japan, 44(1), 1992.
+[22] A. Kumar, Personal communication, Feb. 2006.
+[23] A. Mayer, Families of K3 Surfaces. Nagoya Math. J., 48, 1972.
+[24] D. Morrison, On K3 Surfaces with Large Picard Number. Invent. Math. 75, 1984.
+
+                                                     28
+[25] D. Morrison and C. Vafa, Compactifications of F-Theory on Calabi-Yau Threefolds. II. Nuclear Phys. B,
+     476(3), 1996.
+[26] V. Nikulin, On Kummer Surfaces. Math. USSR Izvestija, 9, 1975.
+[27] V. Nikulin, Integral Symmetric Bilinear Forms and Some of Their Applications. Math. USSR Izv. 14,
+     1980.
+[28] V. Nikulin, Finite Automorphism Groups of Kähler K3 Surfaces. Trans. Moscow Math. Soc. 2, 1980.
+[29] K. Oguiso, On Jacobian Fibrations on the Kummer Surfaces of the Product of Nonisogenous Elliptic
+     Curves. J. Math. Soc. Japan, 41(4), 1989.
+[30] I.I. Pjateckiĭ-Šapiro and I.R. Šafarevič, A Torelli Theorem for Algebraic Surfaces of Type K3. Math.
+     USSR Izv. 35, 1971.
+[31] W. Ruppert, When is an Abelian Surface Isomorphic or Isogenous to a Product of Elliptic Curves?.
+     Math. Z., 203(2), 1990.
+[32] A. Sen, F-Theory and Orientifolds. Nuclear Phys. B, 475(3), 1996.
+[33] T. Shioda, On the Mordell-Weil Lattices. Comment. Math. Univ. St. Paul, 39, 1990.
+[34] J. Tate, Algorithm for Determining the Type of a Singular Fiber in an Elliptic Pencil. in Modular functions
+     of one variable, IV, Lecture Notes in Math., Vol. 476, Springer Verlag, 1975.
+[35] C. Vafa, Evidence for F-Theory. Nuclear Phys. B, 469(3), 1996.
+[36] D.Q. Zhang, Quotients of K3 Surfaces Modulo Involutions. Japan. J. Math., 24(2), 1998.
+
+
+
+
+                                                      29
+
