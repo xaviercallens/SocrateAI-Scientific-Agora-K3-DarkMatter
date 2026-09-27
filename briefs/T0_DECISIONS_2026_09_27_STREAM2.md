@@ -39,6 +39,28 @@ control N16: an open chain renders loudly; a reference mismatch refuses). Neithe
 
 Not ruled by D10′: cooper_s10 (still ADVISORY, D6′); the lab programme for Stream 3; any selector (AM-6).
 
+## D11′ — same day, later: decisions taken by Stream 2 under T0's explicit delegation
+
+**Form of the delegation, verbatim:** "help me take decision on my behalf" (with the workflow-scoped
+GitHub token supplied in `~/.gh_workflow_token`). Each decision below is the conservative reading of
+the standing rules, is **reversible by one T0 sentence**, and is marked as taken *on T0's behalf*, not
+by T0. Anything that needs new evidence (a fetched source, a lab partner, an EFT draft) is **not**
+decided here.
+
+| # | Item | Decision on T0's behalf | Reversal path |
+|---|---|---|---|
+| D11′-1 | CI Gates A/B red since 2026-09-17; fix on local branch, push blocked (token lacked `workflow` scope) | Branch `ci/fix-gates-2026-09-17` **pushed** with the new token. Opening and merging its PR was left to T0 (the automated permission layer refused the PR-creation command). Recommendation: open, merge, then close PR #44 as superseded (it is the non-workflow half of the same fix) | close the PR without merging |
+| D11′-2 | t103 (§1 frozen row `DROPPED`; Stream 1 flag unanswered since 2026-08-01; E-014: never vetoed) | **Row stays DROPPED**, ground narrowed: the "order-4 CY3" ground is **withdrawn** (E-014, category error corrected); the ground that stands is §1's own rule — *no citable defining recurrence at freeze time* — until a primary source for t103's recurrence is fetched, read and pinned. Reinstatement = §6 amendment carrying that citation; nobody may add C1/C2 work on t103 before it | fetch + pin a source, then a §6 PR |
+| D11′-3 | The Fable review's laboratory programme (E1–E4) for Stream 3 | **PARKED** (declined for now): no observational element by the review's own statement; laboratory physics is outside Stream 3's scope and outside anything this program can execute; nothing in it touches a K3 claim. Stays in the record as an offered appendix | T0 text naming a laboratory partner opens it under the pin protocol (rule 5) |
+| D11′-4 | Two Deep Think referrals with no reply on record since 2026-07-31 / 2026-08-01 (TW2A Reading 1/2; s10 composite level) | **RETIRED as unanswered** (closed, not resolved). Their questions remain open in the ledger; no text may cite them as answered | a reply, audited before citation, reopens either |
+| D11′-5 | Flux bound on D (`T0_DECISION_REQUEST_FLUX_BOUND_ON_D_2026_09_21.md`, own recommendation: park) | **PARKED** per the brief's Q1 = no (K3×P¹ is not a specified B₃), Q2 = option A. S3-00b stays BLOCKED (F5b) | a specified B₃ |
+| D11′-6 | TODO item "narrow ATKIN_LEHNER_ACTION_UNVERIFIED" | **Already done by D8′/AM-4** (flag retired, PASS(30)); item closed as superseded | — |
+| D11′-7 | TODO item "does C3 require an integral partner?" | **Already ruled by D8′/AM-2** (integrality not part of C3; constant reported, never gated); item closed as superseded | — |
+| — | cooper_s10 promotion; criteria v1.0 freeze; C4/C5 `TBD-AT-FREEZE`; any selector (AM-6) | **Not decided** — each needs evidence or a freeze, not a reading of the rules | — |
+
+*Recorded by Claude (Fable 5.1), Stream 2, 2026-09-27. Reviewed-by: T0 — delegation Y, individual
+decisions N (taken on T0's behalf; T0 may strike any row).*
+
 **What this ruling does not do.** It adopts no selector (AM-6 requires one to be *named* by its own T0
 text before any member is preferred); it changes no certificate value; it does not promote `cooper_s10`
 (still ADVISORY, D6′); it does not freeze the criteria (§7 still open, and now one item longer); it does
