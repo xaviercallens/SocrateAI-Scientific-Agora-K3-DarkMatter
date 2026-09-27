@@ -1,0 +1,2106 @@
+                                              FAMILIES OF LATTICE POLARIZED K3 SURFACES WITH
+                                                                MONODROMY
+arXiv:1312.6434v1 [math.AG] 22 Dec 2013
+
+
+
+
+                                                  CHARLES F. DORAN, ANDREW HARDER, ANDREY Y. NOVOSELTSEV,
+                                                                     AND ALAN THOMPSON
+
+
+                                                   Abstract. We extend the notion of lattice polarization for K3 surfaces to
+                                                   families over a (not necessarily simply connected) base, in a way that gives
+                                                   control over the action of monodromy on the algebraic cycles, and discuss
+                                                   the uses of this new theory in the study of families of K3 surfaces admitting
+                                                   ﬁbrewise symplectic automorphisms. We then give an application of these ideas
+                                                   to the study of Calabi-Yau threefolds admitting ﬁbrations by lattice polarized
+                                                   K3 surfaces.
+
+
+
+
+                                                                                   Contents
+                                             1. Introduction                                                                         2
+                                             1.1. Acknowledgements                                                                   4
+                                             2. Families of K3 surfaces                                                              5
+                                             2.1. Families of lattice polarized K3 surfaces                                          5
+                                             2.2. Monodromy of algebraic cycles on K3 surfaces                                       6
+                                             2.3. Monodromy and symplectic automorphisms                                             7
+                                             2.4. A non-polarizable example                                                          9
+                                             2.5. Moduli spaces and period maps                                                     10
+                                             3. Symplectic automorphisms in families                                                12
+                                             3.1. Symplectic automorphisms and Nikulin involutions                                  12
+                                             3.2. Symplectic quotients and Hodge bundles                                            13
+                                             3.3. Nikulin involutions in families                                                   14
+                                             4. Undoing the Kummer construction.                                                    16
+                                             4.1. The general case.                                                                 16
+                                             4.2. M -polarized K3 surfaces.                                                         17
+                                             4.3. Undoing the Kummer construction for M -polarized families                         18
+                                             4.4. The generically M -polarized case.                                                22
+                                             5. Threefolds fibred by Mn -polarized K3 surfaces.                                     23
+                                             5.1. The groups G.                                                                     23
+                                             5.2. Some special families                                                             24
+
+                                             Date: September 24, 2018.
+                                             C. F. Doran and A. Y. Novoseltsev were supported by the Natural Sciences and Engineering
+                                          Resource Council of Canada (NSERC), the Paciﬁc Institute for the Mathematical Sciences, and
+                                          the McCalla Professorship at the University of Alberta.
+                                             A. Harder was supported by an NSERC PGS D scholarship and a University of Alberta Doc-
+                                          toral Recruitment Scholarship.
+                                             A. Thompson was supported in part by NSERC and in part by a Fields Institute Ontario
+                                          Postdoctoral Fellowship with funding provided by NSERC and the Ontario Ministry of Training,
+                                          Colleges and Universities.
+                                                                                         1
+2          C. F. DORAN, A. HARDER, A.Y. NOVOSELTSEV, AND A. THOMPSON
+
+
+    5.3. Covers for small n                                                        27
+    5.4. Application to the 14 cases.                                              29
+    5.5. The case n = 1                                                            34
+    6. Application to the arithmetic/thin dichotomy                                38
+    References                                                                     39
+
+
+
+
+                                 1. Introduction
+   The concept of lattice polarization for K3 surfaces was first introduced by Nikulin
+[Nik80a] and further developed by Dolgachev [Dol96]. Our aim is to extend this
+theory to families of K3 surfaces over a (not necessarily simply connected) base, in
+a way that allows control over the action of monodromy on algebraic cycles.
+   Our interest in this problem arises from the study of Calabi-Yau threefolds with
+small Hodge numbers. In their paper [DM06], Doran and Morgan explicitly classify
+the possible integral variations of Hodge structure that can underlie a family of
+Calabi-Yau threefolds over the thrice-punctured sphere P1 −{0, 1, ∞} with h2,1 = 1.
+Explicit examples, coming from toric geometry, of families realising all but one of
+these variations of Hodge structure were known at the time of publication of [DM06],
+and a family realising the fourteenth and final case was recently constructed in
+[CDL+ 13].
+   One of the main tools used to study the Calabi-Yau threefolds constructed in
+[CDL+ 13] was the existence of a torically induced fibration (i.e. a fibration of the
+threefold induced by a fibration of the toric ambient space by toric subvarieties) of
+these threefolds by K3 surfaces polarized by the rank 18 lattice
+                                M := H ⊕ E8 ⊕ E8 .
+   K3 surfaces polarized by this lattice have been studied by Clingher, Doran, Lewis
+and Whitcher [CD07][CDLW09] and have a rich geometric structure. In particular,
+the canonical embedding of the lattice E8 ⊕E8 into M defines a natural Shioda-Inose
+structure on them, which in turn defines a canonical Nikulin involution [Mor84].
+The resolved quotient by this involution is a new K3 surface, which may be seen to
+be a Kummer surface associated to a product of two elliptic curves; its geometry is
+closely related to that of the original K3 surface.
+   In [CDL+ 13], toric geometry was used to show that this Nikulin involution is
+induced on the M -polarized K3 fibres by a global involution of the Calabi-Yau
+threefold. The resolved quotient by this involution is another Calabi-Yau threefold,
+which is fibred by Kummer surfaces and has geometric properties closely related
+to the first. Examination of this second Calabi-Yau threefold was instrumental
+in proving that the construction in [CDL+ 13] realised the “missing” fourteenth
+variation of Hodge structure from the Doran-Morgan list.
+   Motivated by the discovery of this K3 fibration and the rich geometry that
+could be derived from it, we decided to search for similar K3 fibrations on the
+other threefolds from the Doran-Morgan classification. In a large number of cases
+(summarized by Theorem 5.10), we found fibrations by K3 surfaces polarized by
+the rank 19 lattices
+                           Mn := H ⊕ E8 ⊕ E8 ⊕ h−2ni,
+        FAMILIES OF LATTICE POLARIZED K3 SURFACES WITH MONODROMY                    3
+
+
+which contain the lattice M as a sublattice. Many, but not all, of these fibrations
+are torically induced.
+    This raises two natural questions: Do the canonical Nikulin involutions on the
+fibres of these K3 fibrations extend to global symplectic involutions on the Calabi-
+Yau threefolds? And if they do, what can be said about the geometry of the new
+Calabi-Yau threefolds obtained as resolved quotients by these involutions?
+    Both of these questions may be addressed by studying the behaviour of the
+Néron-Severi lattice of a K3 surface as it varies within a family. Furthermore, in
+order for this theory to be useful in the study of K3 fibred Calabi-Yau threefolds
+it should be able to cope with the possibility of monodromy around singular fibres,
+meaning that we must allow for the case where the base of the family is not simply
+connected.
+    To initiate this study, we introduce a new definition of lattice polarization for
+families of K3 surfaces and develop the basic theory surrounding it. We note that
+a related notion of lattice polarizability for families of K3 surfaces was introduced
+by Hosono, Lian, Oguiso and Yau [HLOY04], who also proved statements about
+period maps and moduli for such families. However, our definition is more subtle
+than theirs, given that our goal is to derive precise data about the monodromy of
+algebraic cycles. The relationship between the definitions is discussed in greater
+detail in Remark 2.6.
+
+   The structure of this paper is as follows. In Section 2 we begin with the central
+definitions of N -polarized (Definition 2.1) and (N, G)-polarized (Definition 2.4)
+families of K3 surfaces, where N is a lattice and G is a finite group. The first is
+a direct extension of the definition of N -polarization for K3 surfaces to families
+and does not allow for any action of monodromy on the lattice N . The second is
+more subtle: it allows for a nontrivial action of monodromy, but this monodromy
+is controlled by the group G.
+   The remainder of Section 2 proves some basic results about N - and (N, G)-
+polarized families of K3 surfaces and their moduli. Of particular importance are
+Proposition 2.11 and Corollary 2.12, which use this theory to give conditions under
+which symplectic automorphisms can be extended from individual K3 fibres to
+entire families of K3 surfaces.
+   Section 3 expands upon these results, focussing mainly on the case where the
+symplectic automorphism is a Nikulin involution. The main result of this section
+is Theorem 3.3, which shows that the resolved quotient of an N -polarized family
+of K3 surfaces, where N is the Néron-Severi lattice of a general fibre, by a Nikulin
+involution is an (N ′ , G)-polarized family of K3 surfaces, where N ′ is the Néron-
+Severi lattice of a general fibre of the resolved quotient family and G is a finite
+group.
+   In Section 4 we specialize all of these results to families of M -polarized K3
+surfaces with their canonical Nikulin involution, which extends globally over the
+family by Corollary 2.12. The resolved quotient family is an (N ′ , G)-polarized
+family of K3 surfaces whose general fibre is a Kummer surface. The first major
+result of this section, Proposition 4.2, places bounds on the size of the group G.
+   To improve upon this result, in Section 4.3 we show that, after proceeding to
+a finite cover of the base, we may realise these families of Kummer surfaces by
+applying the Kummer construction fibrewise to a family of Abelian surfaces, a
+process which we call undoing the Kummer construction. As a result of this process
+4          C. F. DORAN, A. HARDER, A.Y. NOVOSELTSEV, AND A. THOMPSON
+
+
+we obtain Theorem 4.11 and Corollary 4.13, which enable explicit calculation of the
+group G.
+    In Section 5 we further specialize this analysis to families of Mn -polarized K3
+surfaces, then apply the resulting theory to the study of the Calabi-Yau threefolds
+from the Doran-Morgan list. The main results here are Theorems 5.10 and 5.20,
+which show that twelve of the fourteen cases from that list admit fibrations by Mn -
+polarized K3 surfaces. In fact, we prove an even stronger result: for n ≥ 2 these
+fibrations are in fact pull-backs of special Mn -polarized families on the moduli space
+of Mn -polarized K3 surfaces, under the generalized functional invariant map, and
+for n = 1 they are pull-backs of a special 2-parameter M1 -polarized family by a
+closely related map.
+    We compute the generalized functional invariant maps for all of these fibrations
+in Sections 5.4 and 5.5. We find that they all have a standard form, defining
+multiple covers of the moduli spaces of Mn -polarized K3 surfaces with ramification
+behaviour determined by a pair of integers (i, j).
+    Finally, in Section 6 we use these results to make an interesting observation
+concerning an open problem related to the Doran-Morgan classification. Recall
+that each of the threefolds from this classification moves in a one parameter family
+over the thrice-punctured sphere. Recently there has been a great deal of interest
+in studying the action of monodromy around the punctures on the third integral
+cohomology group of the threefolds. This monodromy action defines a Zariski
+dense subgroup of Sp(4, R), which may be either arithmetic or non-arithmetic (more
+commonly called thin). Singh and Venkataramana [SV12][Sin13] have proved that
+the monodromy is arithmetic in seven of the fourteen cases from the Doran-Morgan
+list, and Brav and Thomas [BT12] have proved that it is thin in the remaining seven.
+It is an open problem to find geometric criteria that distinguish between these two
+cases.
+    In Theorem 6.1 we provide a potential solution to this problem: the cases may be
+distinguished by the values of the pair of integers (i, j) arising from the generalized
+functional invariants of torically induced K3 fibrations on them. Specifically, we
+find that a case has thin monodromy if and only if neither i nor j is equal to two.
+This suggests that it may be possible to express the integral monodromy matrices
+for the families of Calabi-Yau threefolds from the Doran-Morgan list in terms of
+the families of transcendental cycles for their internal K3-fibrations, and that doing
+so explicitly may be a good route towards an understanding of the geometric origin
+of the arithmetic/thin dichotomy.
+    A different criterion to distinguish the arithmetic and thin cases was recently
+given by Hofmann and van Straten [HvS13, Section 6], using an observation about
+the integers m and a from [DM06, Table 1] (which are called d and k in [HvS13]).
+Furthermore, the discovery of a yet another criterion has been announced in lectures
+by M. Kontsevich, using a technique involving Lyapunov exponents. Whilst our
+result does not appear to bear any immediate relation to either of these other
+results, it is our intention to investigate the links between them in future work.
+
+
+1.1. Acknowledgements. A part of this work was completed while A. Thompson
+was in residence at the Fields Institute Thematic Program on Calabi-Yau Varieties:
+Arithmetic, Geometry and Physics; he would like to thank the Fields Institute for
+their support and hospitality.
+        FAMILIES OF LATTICE POLARIZED K3 SURFACES WITH MONODROMY                      5
+
+
+                           2. Families of K3 surfaces
+   Begin by assuming that X is a K3 surface. The Néron-Severi group of divi-
+sors modulo homological equivalence on X forms a non-degenerate lattice inside of
+H 2 (X, Z), denoted NS(X), which is even with signature (1, ρ − 1). The lattice of
+cycles orthogonal to NS(X) is called the lattice of transcendental cycles on X and
+is denoted T(X).
+   The aim of this section is to develop theoretical tools that will enable us to
+embark upon a study of the action of monodromy on the Néron-Severi group of a
+fibre in a family of K3 surfaces.
+2.1. Families of lattice polarized K3 surfaces. We begin with some generalities
+on families of K3 surfaces. A family of K3 surfaces will be a variety X and a flat
+surjective morphism π : X → U onto some smooth, irreducible, quasiprojective
+variety U such that for each p ∈ U the fibre Xp above p is a smooth K3 surface.
+For simplicity the reader may assume that U has dimension 1 but our results are
+valid in arbitrary dimension. We further assume that there is a line bundle L whose
+restriction to each fibre of π is ample and primitive in Pic(Xp ) for each p ∈ U .
+   In the analytic topology, there is an integral local system on U given by R2 π∗ Z
+whose fibre above u is isomorphic to H 2 (Xp , Z). The Gauss-Manin connection ∇GM
+is a flat connection on R2 π∗ Z ⊗ OU .
+   The cup-product pairing on H 2 (Xp , Z) extends to a bilinear pairing of sheaves
+(2.1)                 h·, ·iX = R2 π∗ Z × R2 π∗ Z → R4 π∗ Z ∼
+                                                            = ZU
+where ZU is the constant sheaf on U with Z coefficients. This form extends naturally
+to arbitrary sub-rings of C.
+                                                                    2,0
+   There is a Hodge filtration on R2 π∗ Z ⊗ OU . In particular HX       = F 2 (R2 π∗ Z ⊗
+                                                                         2,0
+OU ), and there is a local subsystem of R2 π∗ C which gives rise to HX       . Choosing
+                          2,0
+a flat local section of HX    , which we will call ωX , we take the local subsystem of
+R2 π∗ Z which is orthogonal to ωX . Since the pairing h·, ·iX is Z linear and ωX is
+flat, ωX
+       ⊥
+          is defined globally on U . We will call this local subsystem N S(X ). Note
+that N S(X ) is the Picard sheaf of the flat morphism π.
+   We let T (X ) be the integral orthogonal complement of N S(X ). We have an
+orthogonal direct sum decomposition over Q
+                        R2 π∗ Q = (T (X ) ⊕ N S(X )) ⊗ZU QU
+   Our aim is to use this to study the action of monodromy on the Néron-Severi
+lattice of a general fibre of X . In order to gain control of this monodromy, we begin
+by extending the definition of lattice polarization for K3 surfaces to families.
+   To do this, let N be a local subsystem of N S(X ) such that for any p ∈ U , the
+restriction of h·, ·iX to the fibre Np over p exhibits Np as a non-degenerate integral
+lattice of signature (1, n − 1), which is (non-canonically) isomorphic to a lattice N
+and embedded into H 2 (Xp , Z) as a primitive sublattice containing the Chern class
+of the ample line bundle Lp . This allows us to define a naïve extension of lattice
+polarization to families.
+Definition 2.1. The family X is N -polarized if the local system N is a trivial local
+system.
+  Note that any family of K3 surfaces is polarized by the rank one lattice generated
+by the Chern class of the line bundle L restricted to each fibre.
+6          C. F. DORAN, A. HARDER, A.Y. NOVOSELTSEV, AND A. THOMPSON
+
+
+   Unfortunately, this definition is too rigid for our needs: it is easy to see that
+for an N -polarized family of K3 surfaces, a choice of isomorphism N ∼     = Np for
+any point p determines uniquely an isomorphism N ∼    = Nq for any other point q by
+parallel transport, so this definition does not allow for any action of monodromy
+on Nq . We will improve upon this definition in Section 2.3, but in order to do so
+we first need to develop some general theory.
+
+2.2. Monodromy of algebraic cycles on K3 surfaces. In this section we will
+begin discusing the action of monodromy on the Néron-Severi group of a general
+fibre of X . Let p be a point in U such that the fibre above p has NS(Xp ) ∼
+                                                                           = N S(X )p .
+Parallel transport along paths in U starting at the base point p gives a monodromy
+representation of π1 (U, p)
+                           ρX : π1 (U, p) → O(H 2 (Xp , Z))
+since we have the pairing in Equation (2.1). Furthermore, ρX restricts to mon-
+odromy representations of both N S(X ) and T (X ), written as
+                            ρN S : π1 (U, p) → O(NS(Xp ))
+and
+                             ρT : π1 (U, p) → O(T(Xp )).
+Similarly for any local subsystem N of R2 π∗ Z, we will denote the associated mon-
+odromy representation ρN . Note here that if X is N -polarized, then the image of
+ρN is the trivial subgroup Id.
+   Now we prove an elementary but useful result concerning the image of ρN S .
+Here we let X be a K3 surface. Recall that the lattice NS(X) is an even lattice of
+signature (1, rank NS(X) − 1). For such a lattice NS(X), there is a set of roots
+                        ∆X = {w ∈ NS(X) : hw, wi = −2}.
+The Weyl group WX is the group generated by Picard-Lefschetz reflections across
+roots in ∆X . It admits an embedding into the orthogonal group O(NS(X)). Denote
+the set of roots in ∆X which are dual to the fundamental classes of rational curves
+by ∆+X . Then a fundamental domain for the action of WX on NS(X) is given by
+the closure of the connected polyhedral cone
+        K(X) = {w ∈ NS(X) ⊗ R : hw, wi > 0, hw, δi > 0 for all δ ∈ ∆+
+                                                                    X }.
+
+K(X) is the Kähler cone of X [BHPvdV04, Corollary VIII.3.9].
+   If we let O+ (NS(X)) be the subgroup of O(NS(X)) which fixes the positive cone
+in NS(X) and let DX be the subgroup of O+ (NS(X)) which maps K(X) to itself,
+then we obtain a semidirect product decomposition
+                             O+ (NS(X)) = DX ⋉ WX .
+   Now let L be an ample line bundle on X. Then the Chern class of L is contained
+in K(X). Define DX L
+                     to be the stabilizer of this Chern class in DX .
+Proposition 2.2. Let X be a family of K3 surfaces and let Xp be a generic fibre
+                                                                              L
+of X . Let Lp be the restriction of the bundle L on X to Xp . Then the group DXpp
+is finite and contains the image of ρN S .
+        FAMILIES OF LATTICE POLARIZED K3 SURFACES WITH MONODROMY                     7
+
+                              L                                     L
+Proof. First we show that DXpp is a finite group. Let γ be in DXpp . Then γ fixes
+Lp by definition. Therefore γ acts naturally on [Lp ]⊥ and fixes [Lp ]⊥ if and only
+if it fixes all of NS(Xp ). Since Lp is ample, the orthogonal complement of [Lp ] in
+NS(Xp ) is negative definite by the Hodge index theorem.
+    We then recall the fact that O(N ) is finite for any definite lattice N , so DX
+                                                                                  L
+                                                                                    is
+contained in a finite group and thus is itself finite.
+                                                  L
+    To see that ρN S has image contained in DXpp , we recall that ρN S fixes Lp ∈
+K(Xp ) and hence, since the closure of K(Xp ) is a fundamental domain for WXp
+and the action of WXp is continuous, ρN S must have image in DXp .                  
+
+2.3. Monodromy and symplectic automorphisms. We are now almost ready
+to make a central definition which extends Definition 2.1 to cope with the possible
+action of monodromy on N .
+   Denote by N ∗ the dual lattice of N . We may embed N ∗ ⊆ N ⊗Z Q as the
+sublattice of elements u of N ⊗Z Q such that hu, vi ∈ Z for all v ∈ N .
+Definition 2.3. The discriminant lattice of N , which we call AN , is the finite
+group N ∗ /N equipped with the bilinear form
+                            bN : AN × AN → Q mod Z.
+induced by the bilinear form on N ⊗Z Q.
+   For each lattice N we may define a map αN : O(N ) → Aut(AN ) where Aut(AN )
+is the group of automorphisms of the finite abelian group AN which preserve the
+bilinear form bN . Denote the kernel of αN by O(N )∗ . Then we make the central
+definition:
+Definition 2.4. Fix an even lattice N with signature (1, n − 1) and a subgroup G
+of Aut(AN ). Let X be a family of K3 surfaces and let Xp be a generic fibre of X .
+Assume that there is local sub-system N ⊆ N S(X ) which has fibres Np that are
+isometric to N and are embedded into H 2 (Xp , Z) as primitive sublattices containing
+the Chern class of the ample line bundle Lp . Then X is called an (N, G)-polarized
+family of K3 surfaces if the restriction of the map αN to the image of ρN is injective
+and has image inside of G.
+   One sees that if Id is the trivial subgroup of Aut(AN ), then the definition of
+an N -polarized family of K3 surfaces is identical to the definition of a family of
+(N, Id)-polarized K3 surfaces. We also note that, if G ⊂ G′ , then any (N, G)-
+polarized family of K3 surfaces will also be (N, G′ )-polarized. With this in mind,
+we identify a special class of (N, G)-polarized families where the group G is as small
+as possible.
+Definition 2.5. An (N, G)-polarized family of K3 surfaces X is called minimally
+(N, G)-polarized if the composition αN · ρN is surjective onto G.
+Remark 2.6. We note that in [HLOY04], the authors introduce a similar notion
+of N -polarizability for a family of K3 surfaces. A K3 surface X is N -polarizable in
+the sense of [HLOY04] if there is a sublattice inside of NS(X) isomorphic to N , but
+the primitive embedding of N into NS(X) is only fixed up to automorphism of the
+K3 lattice ΛK3 . A family of K3 surfaces is then called N -polarizable if each fibre
+is N -polarizable. There is a well-defined period space of N polarizable K3 surfaces
+8          C. F. DORAN, A. HARDER, A.Y. NOVOSELTSEV, AND A. THOMPSON
+
+
+M◦N , so that to any family of N -polarizable K3 surfaces there is a well-defined
+period map.
+   Our definition is more subtle than this, since our goal is to derive precise data
+about the monodromy of algebraic cycles. Any (N, G)-polarized family of K3 sur-
+faces is N -polarizable, but the converse does not hold. In fact, both of the families
+constructed in Section 2.4 are families of N -polarizable K3 surfaces, but only one
+of them is (N, G)-polarized.
+  There is a close relationship between (N, G)-polarizations and symplectic auto-
+morphisms. Recall the following definition:
+Definition 2.7. Let X be a smooth K3 surface and let τ : X → X be an automor-
+phism of X. The automorphism τ is called a symplectic automorphism if for some
+(hence any) non-vanishing holomorphic 2-form ω on X, τ ∗ ω = ω. If τ has order 2,
+it is called a symplectic involution of X or a Nikulin involution.
+   Symplectic automorphisms of finite order on K3 surfaces exhibit behaviour simi-
+lar to translation by a torsion section on an elliptic curve. The quotient of an elliptic
+curve by some subgroup of Pic(E)tors is an isogenous elliptic curve, i.e. an elliptic
+curve E ′ such that there is a Hodge isometry H 1 (E, Q) ∼   = H 1 (E ′ , Q). Analogously
+there is a sense in which the resolved quotient of a K3 surface X by a finite group of
+symplectic automorphisms is isogenous to X: there is a real quadratic extension of
+Q under which the Hodge structures on their transcendental lattices are isometric.
+This will be explained in detail by Proposition 3.1.
+   The following is a consequence of the famous Global Torelli Theorem for K3
+surfaces [PŠŠ71][Nik80a]. More precisely, it may be seen as a corollary of [Dol83,
+Theorem 4.2.3].
+                                                 L
+Theorem 2.8. The kernel of the map αNS(Xp ) : DX   → Aut(ANS(Xp ) ) is isomorphic
+to the finite group of symplectic automorphisms of Xp which fix [Lp ].
+    From this, using Proposition 2.2, we obtain:
+Corollary 2.9. Let X be a family of K3 surfaces with generic Néron-Severi lattice
+N . The family X is (N, G)-polarized for some G in Aut(AN ) if and only if there
+is no γ ∈ π1 (U, p) such that ρN S (γ) = σ|NS(Xp ) for some symplectic automorphism
+σ of Xp .
+   Therefore, a measure of how far a family of K3 surfaces with generic Néron-Severi
+lattice N can be from being (N, G)-polarized is given by the size of the group of
+symplectic automorphisms of a generic N -polarized K3 surface. The number of
+possible finite groups of symplectic automorphisms of a K3 surface is relatively
+small. Mukai [Muk88, Theorem 0.3] has shown that such groups are all contained
+as special subgroups of the Mathieu group M23 , and in particular Nikulin [Nik80a,
+Proposition 7.1] has shown that an algebraic K3 surface with symplectic automor-
+phism must have Néron-Severi rank at least 9. This gives:
+Corollary 2.10. Any family of K3 surfaces with generic Néron-Severi group N
+having rank(N ) < 9 is (N, G)-polarized for some G ⊂ Aut(AN ).
+  We end this subsection with a proposition which determines when a symplectic
+automorphism on a single K3 surface extends to an automorphism on an entire
+family of K3 surfaces. This will be useful in Section 3, when we will further discuss
+symplectic automorphisms in families.
+        FAMILIES OF LATTICE POLARIZED K3 SURFACES WITH MONODROMY                       9
+
+
+Proposition 2.11. Let Xp be a fibre in X which satisfies N S(X )p ∼
+                                                                  = NS(Xp ), and
+let τ be a symplectic automorphism of Xp . Then τ extends to an automorphism of
+X if and only if its action on NS(Xp ) commutes with the image of ρX .
+Proof. Since X is a proper family of smooth manifolds, Ehresmann’s theorem (see,
+for example, [Voi07, Section 9.1.1]) implies that there is a local analytic open subset,
+called U0 , about p ∈ U , so that there is a marking on the family of K3 surfaces XU0
+on U0 . Therefore [Nik80a, Lemma 4.2] and the Global Torelli Theorem [Nik80a,
+Theorem 2.7’] shows that τ extends uniquely to an automorphism on XU0 .
+   Let γ ∈ π1 (U, p), let γ ∗ τ be the analytic continuation of τ along γ, and let
+w ∈ H 2 (X0 , Z). Then it is easy to see that
+                         γ ∗ τ (w) = ρX (γ) · τ · (ρX (γ))−1 (w).
+Therefore, the action of τ on NS(Xp ) commutes with the image of ρX if and only
+if the action of γ ∗ τ on NS(Xp ) agrees with the action of τ . By the Global Torelli
+Theorem, this happens if and only if the automorphisms τ and γ ∗ τ are the same. 
+Corollary 2.12. Let X → U be an N -polarized family of K3 surfaces and suppose
+N ∼= NS(Xp ) for some fibre Xp . If Xp admits a symplectic automorphism τ , then
+τ extends to an automorphism of X .
+2.4. A non-polarizable example. As we have seen, algebraic monodromy of
+families of K3 surfaces is intimately related to the existence of symplectic auto-
+morphisms. In this section, we will give a simple example which will show how
+the existence of symplectic automorphisms produces non-polarized families of K3
+surfaces.
+   Let us take the pencil of K3 surfaces mirror (in the sense of [Dol96]) to the
+Fermat pencil of quartics in P3 . We may write these surfaces as a family X of ADE
+singular hypersurfaces in P3 :
+                           (x + y + z + w)4 + t2 xyzw = 0.
+As a non-compact threefold, we may express these as a singular subvariety of
+                             [x : y : z : w] × t ∈ P3 × C× .
+This is an (E82 ⊕ H ⊕ h−4i, Id)-polarized family of K3 surfaces. Each fibre admits
+A4 as a group of symplectic automorphisms acting via even permutations on the
+coordinates x, y, z, w. In particular we have a symplectic involution on each fibre
+induced by
+                          σ : [x : y : z : w] 7→ [y : x : w : z],
+which extends to X by Corollary 2.12. We also have an involution on the base,
+acting via
+                                 η : t 7→ −t.
+Therefore, the fibrewise resolutions of the quotient families Y1 = X /(Id^  ×η) and
+        ^
+Y2 = X /(σ × η) are fibrewise biregular, but are not biregular as total spaces. More
+importantly both families have the same holomorphic periods, but the monodromy
+of N S(Y1 ) is trivial and the monodromy of N S(Y2 ) is non-trivial around 0.
+   Thus we see that the family Y1 is N -polarized. However, by Corollary 2.9, the
+family Y2 is not (N, G)-polarized for any G since, by construction, monodromy
+around 0 acts as a Nikulin involution on N S(Y2 ).
+10        C. F. DORAN, A. HARDER, A.Y. NOVOSELTSEV, AND A. THOMPSON
+
+
+Remark 2.13. Of course this examples and examples like it reflect directly the
+general principle that there does not exist a fine moduli scheme of objects which
+admit automorphisms, and in particular this example itself proves that the period
+space of K3 surfaces is not a fine moduli space. If one considers instead the moduli
+stack of polarized K3 surfaces (see [Riz06]), then such families are distinguished.
+2.5. Moduli spaces and period maps. In the last subsection of this section, we
+will study the moduli of (N, G)-polarized families. We begin by establishing some
+definitions regarding the period spaces of K3 surfaces; much of this material may
+be found in greater detail in [Dol96].
+   Define the K3 lattice to be the lattice ΛK3 = E82 ⊕ H 3 . The space of marked
+pseudo-ample K3 surfaces is the type IV symmetric domain
+                  PK3 = {z ∈ P(ΛK3 ⊗ C) : hz, zi = 0, hz, zi > 0}.
+There is a natural action on PK3 by the group O(ΛK3 ). Using terminology of
+[Dol96], the orbifold quotient
+                               MK3 := O(ΛK3 ) \ PK3
+is called the period space of Kähler K3 surfaces.
+   For any even lattice N of rank n and signature (1, n−1) equipped with a primitive
+embedding N ֒→ ΛK3 , one may construct a period space of pseudo-ample marked
+K3 surfaces with N -polarization. Let
+                  PN = {z ∈ P(N ⊥ ⊗ C) : hz, zi = 0, hz, zi > 0}.
+There is a natural embedding
+                                  ϕN : PN ֒→ PK3
+where we suppress the dependence upon choice of embedding of N into ΛK3 . Let
+                    O(N ⊥ ) = {γ|N ⊥ : γ ∈ O(ΛK3 ), γ(N ) ⊆ N }.
+The map ϕN descends to an embedding
+                        ϕN : O(N ⊥ ) \ PN ֒→ O(ΛK3 ) \ PK3 .
+  For each group GN ⊥ in Aut(AN ⊥ ), we may construct a finite index subgroup of
+O(N ⊥ ),
+             O(N ⊥ , GN ⊥ ) = {γ|N ⊥ ∈ O(N ⊥ ) : αN ⊥ (γ|N ⊥ ) ∈ GN ⊥ }.
+This subgroup is related to (N, GN )-polarized K3 surfaces in the following way.
+Recall the following standard lattice theoretic fact from [Nik80b].
+Proposition 2.14. [Nik80b, Proposition 1.6.1] Let N be a primitive sublattice of
+an even unimodular lattice K, and let N ⊥ be the orthogonal complement of N in
+K. Then
+(1 ) There is a canonical isomorphism φN between the underlying groups AN and
+     AN ⊥ which satisfies
+                         bN (a, b) = −bN ⊥ (φN (a), φN (b)).
+(2 ) If g is an automorphism of N and g ′ is an automorphism of N ⊥ , then g ⊕ g ′ is
+     an automorphism of N ⊕ N ⊥ which extends to an automorphism of K if and
+     only if the induced actions of g on AN and of g ′ on AN ⊥ are the same under
+     the identification φN .
+        FAMILIES OF LATTICE POLARIZED K3 SURFACES WITH MONODROMY                    11
+
+
+   Therefore, if a family of K3 surfaces X is (N, GN )-polarized, then Proposition
+2.14 shows that the transcendental monodromy of X is in O(N ⊥ , GN ⊥ ) where GN ⊥
+is the subgroup of AN ⊥ identified with GN by φN .
+   As a particular example, if Id is the trivial subgroup of GN then the family X
+is N -polarized and the group O(N ⊥ , Id) corresponds to the group O(N ⊥ )∗ . By
+[Dol96, Proposition 3.3], we have
+      O(N ⊥ , Id) = O(N ⊥ )∗ ∼
+                             = {γ|N ⊥ : γ ∈ O(ΛK3 ), γ(w) = w for all w ∈ N }.
+In the case where our family is N -polarized we will use the notation and language
+of [Dol96], but adopt the notation introduced above when the group GN becomes
+relevant.
+   In [Dol96], the space
+                                  MN = O(N ⊥ )∗ \ PN
+is called the period space of pseudo-ample N -polarized K3 surfaces. Dolgachev
+[Dol96, Remark 3.4] shows that for any N -polarized family of K3 surfaces π : X →
+U , there is a period morphism
+                                     ΦX : U → M N .
+  In light of this, define
+                             M(N,GN ) := O(N ⊥ , GN ⊥ ) \ PN .
+
+Note that for GN ⊆ G′N , there is a natural inclusion O(N ⊥ , GN ⊥ ) ⊆ O(N ⊥ , G′N ⊥ )
+and therefore there are natural surjective morphisms
+                                  M(N,GN ) → M(N,G′N )
+
+of degree [GN : G′N ].
+   We now take some time to prove the existence of period morphisms associated
+to the spaces M(N,GN ) .
+Theorem 2.15. Let X → U be a family of K3 surfaces. If there is some local
+subsystem N ⊆ N S(X ), where N is fibrewise isomorphic to a lattice N of signature
+(1, n − 1) and αN · ρN S is contained inside of a subgroup GN of Aut(AN ), then
+there a period morphism
+                                Φ(N,GN ) : U → M(N,GN ) .
+           e be the simply connected universal covering space of U and g : U
+Proof. Let U                                                               e →U
+be the canonically associated covering map. Then, since g X is marked, pseudo-
+                                                          ∗
+
+ample and N -polarized, we have the following diagram
+
+                                       e
+                                       U       / PN
+
+                                      g
+                                        
+                                       U
+   Now we apply Proposition 2.14. Since the image of αN · ρN is in GN , the image
+of αN ⊥ · ρN ⊥ is contained in GN ⊥ under the identification induced by φN . Thus
+ρN ⊥ is contained in O(N ⊥ , GN ⊥ ).
+12           C. F. DORAN, A. HARDER, A.Y. NOVOSELTSEV, AND A. THOMPSON
+
+
+  This allows us to canonically complete the diagram above to a commutative
+square
+                             Ue           / PN
+
+                                 g
+                                    Φ(N,GN )      
+                                  U           / M(N,G )
+                                                     N
+
+as required.                                                                            
+   We note that the assumptions in this proposition are weaker than the assumption
+that X → U is (N, GN )-polarized, as we do not assume here that the map αN is
+injective on the image of ρN S . What distinguishes (N, GN )-polarized families of
+K3 surfaces from the rest is the following observation.
+Remark 2.16. Let X → D∗ be an (N, GN )-polarized family of K3 surfaces over
+the punctured disc D∗ , and let γ be a generator of π1 (D∗ , p) and u ∈ N ⊆ NS(Xp )
+with u its image in AN . Then under the identification φN defined in the proof of
+Theorem 2.15,
+                     αN ⊥ (ρN ⊥ (γ))(φN (u)) = φN (αN (ρN (γ))(u)).
+Since αN is an injection and φN is an isomorphism, we see that, for an (N, GN )-
+polarized family, all data about algebraic monodromy of N is captured by the
+monodromy of N ⊥ .
+     This remark will be essential for the calculations that we will do in Section 4.
+
+                    3. Symplectic automorphisms in families
+   In this section, we expand upon Proposition 2.11 in the case where τ is a Nikulin
+involution. The main result is Theorem 3.3, which will be used in Section 4 to
+study lattice polarized families of K3 surfaces with Shioda-Inose structure, in an
+attempt to understand the relationship between such families and their associated
+families of abelian surfaces.
+3.1. Symplectic automorphisms and Nikulin involutions. We begin with
+some background on symplectic automorphisms of K3 surfaces. Let X be a K3
+surface and let ω be a non-vanishing holomorphic 2-form on X. For any group Σ
+of symplectic automorphisms of X, there are two lattices in H 2 (X, Z) which may
+be canonically associated to Σ. The first is the fixed lattice H 2 (X, Z)Σ . To derive
+the second, note that, by assumption, Σ fixes ω and hence, since Σ acts as Hodge
+isometries on H 2 (X, Z), we see that Σ must preserve the transcendental Hodge
+structure on X. This implies that T(X) ⊆ H 2 (X, Z)Σ . So we may define a second
+lattice
+                              SΣ,X := (H 2 (X, Z)Σ )⊥ .
+   When the K3 surface X is understood, we will abbreviate this notation to simply
+SΣ . This is appropriate because Nikulin [Nik80a, Theorem 4.7] proves that, as an
+abstract lattice, SΣ depends only upon Σ. It follows from the fact that T(X) is
+fixed by Σ that SΣ is contained in NS(X). In [Nik80a, Lemma 4.2] it is also shown
+that SΣ is a negative definite lattice and contains no elements of square (−2).
+   In [Nik80a, Proposition 7.1], Nikulin determines the lattice SΣ for any abelian
+group of symplectic automorphisms Σ. Therefore, since any group contains at least
+        FAMILIES OF LATTICE POLARIZED K3 SURFACES WITH MONODROMY                   13
+
+
+one abelian subgroup, if X admits any nontrivial group Σ of symplectic automor-
+phisms, then SΣ contains one of the lattices in [Nik80a, Proposition 7.1]. The
+smallest lattice listed therein is SZ/2Z , which has rank 8.
+   In general, symplectic automorphisms have fixed point sets of dimension 0. The
+local behaviour of Σ about the fixed points determines a quotient singularity in
+X/Σ. It is easy to see from the classification of minimal surfaces that the minimal
+                 ] of X/Σ is again a K3 surface: σ ∗ ω = ω implies that ω descends
+resolution Y := X/Σ
+to a non-vanishing holomorphic 2-form on the quotient surface and the resulting
+quotient singularities are crepant.
+   There is a diagram of surfaces
+
+                                          X̃ ❉
+                                        ③③     ❉❉
+                                    c ③③         ❉❉q
+                                    ③              ❉❉
+                                 ③③③                 ❉❉
+                               }③                      !
+                              X❉                         Y
+                                 ❉❉                  ④④
+                                   ❉❉              ④④
+                                     ❉❉          ④④
+                                       ❉!     }④④
+                                        X/Σ
+
+where X̃ is the minimal blow up of X on which Σ acts equivariantly with the map
+                       e
+c and whose quotient X/Σ   is Y .
+   In NS(Y ) there is a lattice K spanned by exceptional classes. The minimal
+primitive sublattice of NS(Y ) containing K will be called K0 . Nikulin [Nik80a,
+Propositions 7.1 and 10.1] shows that K0 and SΣ have the same rank but are, of
+course, not isomorphic. The map
+                           θ := q ∗ c∗ : K0⊥ → H 2 (X, Z)Σ
+is an isomorphism over Q and satisfies
+                              hθ(u), θ(v)i = |Σ|hu, vi
+                                                                               p
+for any u, v ∈  K0⊥ .  Therefore there is a linear transformation g over Q( |Σ|)
+which relates the lattices H 2 (X, Z)Σ and K0⊥ ; a more precise description of this
+relationship is given in [Whi11, Theorem 2.1].
+   Since the group Σ acts symplectically, for a class ω spanning H 2,0 (Y ) we have
+that θ(ω) is in H 2,0 (X), so we see that hθ(u), θ(ω)i = 0 if and only if hu, ωi = 0.
+Thus θ(NS(Y ) ∩ K0⊥ ) = NS(X) ∩ H 2 (X, Z)Σ . In other words, θ(T(Y )) = T(X).
+3.2. Symplectic quotients and Hodge bundles. If X is a family of K3 surfaces
+for which a group of symplectic automorphisms on the fibres extends to a group
+of automorphisms on the total space, then base-change allows us to relativize the
+constructions in Section 3.1.
+   We obtain sheaves of local systems (R2 π∗ Z)Σ and SΣ which agree fibrewise with
+H (Xp , Z)Σ , and SΣ,Xp . The Hodge filtration on R2 π∗ Z ⊗ OU restricted to these
+  2
+
+sub-sheaves produces integral weight 2 variations of Hodge structure on U .
+   We wish to compare the variation of Hodge structure on (R2 π∗X Z)Σ and the
+variation of Hodge structure on the subsystem of R2 π∗Y Z orthogonal to the lattice
+spanned by exceptional curves in each fibre. Since we deal only with smooth fibra-
+tions, the following statements are equivalent to their counterparts for individual
+K3 surfaces.
+14         C. F. DORAN, A. HARDER, A.Y. NOVOSELTSEV, AND A. THOMPSON
+
+
+Proposition 3.1. Let X → U be a family of K3 surfaces on which a group Σ of
+symplectic automorphisms acts fibrewise and extends to automorphisms of π X : X →
+U . Let π Y : Y → U be the resolved quotient threefold. Then
+(1 ) The Hodge bundles F 2 (R2 π∗X Z ⊗ OU ) and F 2 (R2 π∗Y Z ⊗ OU ) are isomorphic
+     as complex line bundles on pU .
+(2 ) If we extend scalars to Q( |Σ|), the induced VHS on (R2 π∗X Z)Σ is isomorphic
+     to a sub-VHS of R2 π∗Y Z.
+(3 ) The transcendental p integral variations of Hodge structure T (X ) and T (Y) are
+     isomorphic over Q( |Σ|).
+Proof. These are relative versions of the discussion in Section 3.1. We use the fact
+that statements about the local systems R2 π∗X Z and R2 π∗Y Z reduce to statements
+on each fibre. The same is true for statements about the Hodge filtrations on
+R2 π∗X Z⊗OU and R2 π∗Y Z⊗OU . Therefore Proposition 3.1 reduces to the statements
+in Section 3.1.                                                                   
+   In particular, we can recover from Proposition 3.1(3) a result of Smith [Smi06,
+Theorem 2.12], that the holomorphic Picard-Fuchs equation of X agrees with the
+Picard-Fuchs equation of Y, since Picard-Fuchs equations depend only upon the
+underlying complex VHS.
+   A corollary to this is that the transcendental monodromy of Y can be calculated
+                                                                            p
+quite easily from the transcendental monodromy of X . If we let g be the Q( |Σ|)-
+linear map relating the lattices H 2 (Xp , Z)Σ and K0⊥
+                                g : H 2 (Xp , Z)Σ → K0⊥
+for a given fibre Xp , then
+(3.1)                     ρH 2 (Xp ,Z)Σ (w) = g −1 ρK0⊥ (g · w).
+In particular, we have:
+Corollary 3.2. Let X be an N -polarized family of K3 surfaces and suppose N ∼      =
+NS(Xp ) for some fibre Xp . Assume that X admits a group of fibrewise symplectic
+automorphisms Σ and let Y be the fibrewise resolution of the quotient X /Σ. If K0⊥
+is the sublattice generated by classes orthogonal to exceptional curves on Yp , then
+the monodromy representation fixes K0⊥ ∩ NS(Yp ).
+Proof. By construction, we have that NS(Xp )Σ is fixed under monodromy. There- p
+fore, the relation in Equation (3.1) implies that its image in K0⊥ under the Q( |Σ|)
+isometry g is also fixed. Since g sends the transcendental lattice of Xp to the
+transcendental lattice Yp , the image of NS(Xp )Σ under g is K0⊥ ∩ NS(Yp ). Thus
+K0⊥ ∩ NS(Yp ) is fixed by monodromy of the family Y.                              
+3.3. Nikulin involutions in families. We will now tie our results together. We
+begin with a family X of K3 surfaces which admits a fibrewise Nikulin involution
+and is lattice polarized by a lattice N which is isomorphic to the generic Néron-
+Severi lattice of the fibres of X . Our goal is to understand how lattice polarization
+behaves under Nikulin involutions in families. We begin with some generalities on
+Nikulin involutions.
+   A Nikulin involution fixes precisely 8 points on X. The resulting quotient X/β
+has 8 ordinary double points which are then resolved by blowing up to give a new
+K3 surface Y . We can also resolve these singularities indirectly by blowing up X
+        FAMILIES OF LATTICE POLARIZED K3 SURFACES WITH MONODROMY                   15
+
+
+at the 8 fixed points of β, calling the resulting exceptional divisors {Ei }8i=1 . We
+see that the blown up K3 surface X̃ also admits an involution β̃ whose fixed locus
+is the exceptional divisor
+                                         X 8
+                                    D=       Ei .
+                                         i=1
+
+Let Fi = q∗ Ei , where q : X̃ → X̃/β̃ ∼
+                                      = Y is the quotient map. The branch divisor
+                               P8
+in Y is then the sum f∗ D = i=1 Fi . Since there is a double cover ramified over
+f∗ D, there must be some divisor
+                                         1
+                                    B=     f∗ D.
+                                         2
+We call the lattice generated by B and {Fi }8i=1 the Nikulin lattice, which we denote
+KNik .
+   According to [Nik80a, Section 6], KNik is a primitive sublattice of NS(X̃/β̃) and,
+in the case where Σ is a group of order 2, the lattice K0 discussed in Section 3.1 is
+equal to KNik . The following theorem is a technical tool, useful for calculations in
+Section 4.
+Theorem 3.3. Let X → U be an N -polarized family of K3 surfaces and suppose
+N ∼= NS(Xp ) for some fibre Xp . Suppose further that Xp admits a Nikulin involu-
+tion β; by Corollary 2.12 this extends to an involution on X . Let Y → U be the
+resolved quotient family of K3 surfaces and let N ′ be the Néron-Severi lattice of
+a generic fibre of Y. Then there is a subgroup G of Aut(AN ′ ) for which Y is an
+(N ′ , G)-polarized family of K3 surfaces.
+Proof. To see that the resulting family Y is (N ′ , G)-polarized for some G, it is
+enough to see that monodromy of Y cannot act trivially on Aut(AN ′ ).
+    First we note that monodromy of Y must fix KNik   ⊥
+                                                        ∩ NS(Yp ) by Corollary 3.2,
+where KNik denotes the Nikulin lattice. Thus the only non-trivial action of mon-
+odromy can be upon KNik .
+    Suppose for a contradiction that the image of ρN S(Y) contains a non-identity
+element g that lies in the kernel of αN ′ . Recall from Theorem 2.8 that such a g
+must act on NS(Yp ) in the same way as a non-trivial symplectic automorphism
+τ . Thus the orthogonal complement of the fixed lattice NS(Yp )g must have rank
+at least 8. Since KNik has rank 8 and KNik  ⊥
+                                              ∩ NS(Yp ) is fixed under monodromy,
+the orthogonal complement of NS(Yp ) must be contained in KNik . For reasons of
+                                      g
+
+rank this containment cannot be strict, so we must have equality. However, KNik
+is generated by elements of square (−2), thus, by [Nik80a, Lemma 4.2], it cannot
+be the lattice Sτ of any automorphism τ of X. This is a contradiction.           
+
+   Note that the proof given above does not extend to quotients by arbitrary sym-
+plectic automorphisms.
+   As a result of this theorem, Remark 2.16 and Equation (3.1) we may calculate
+G.
+Corollary 3.4. If g is the linear transformation which relates T(Xp ) to T(Yp ) for
+some p ∈ U and ΓX (resp. ΓY ) is the image of the monodromy group of T (X ) in
+O(T(Xp )) (resp. T (Y) in O(T(Yp ))), then ΓY = g −1 ΓX g and the image αT(Y) (ΓY )
+is the group G such that Y is minimally (N ′ , G)-polarized.
+16         C. F. DORAN, A. HARDER, A.Y. NOVOSELTSEV, AND A. THOMPSON
+
+
+   This allows us to control the algebraic monodromy of the family Y of K3 surfaces.
+In the following section, we concern ourselves with a geometric situation where it
+will be important to know exactly what our algebraic monodromy looks like.
+
+                   4. Undoing the Kummer construction.
+   One of the major motivations for this work is the idea of undoing the Kummer
+construction globally in families. As we shall see, this has applications to the study
+of Calabi-Yau threefolds.
+
+4.1. The general case. Begin by assuming that X is a family of K3 surfaces
+which admit Shioda-Inose structure. Concretely, a Shioda-Inose structure on a
+K3 surface X is an embedding of the lattice E8 ⊕ E8 into NS(X). By [Mor84,
+Section 6], a Shioda-Inose structure defines a canonical Nikulin involution β and
+the minimal resolution of the quotient X/β is a Kummer surface. Furthermore,
+if X has transcendental lattice T(X), then the resolved quotient Y = X/β    g has
+                             ∼
+transcendental lattice T(Y ) = T(X)(2).
+   Assume that X is a lattice polarized family of Shioda-Inose K3 surfaces. Then
+by Corollary 2.12, the Nikulin involution extends to the entire family of K3 surfaces
+to produce a resolved quotient family Y of Kummer surfaces.
+   We would like to find conditions under which one may undo the Kummer con-
+struction in families starting from the polarized family X of K3 surfaces with
+Shioda-Inose structure. In other words, we would like to find conditions under
+which a family of abelian surfaces A exists, such that application of the Kummer
+construction fibrewise to A yields the family Y of Kummer surfaces associated to
+X.
+   The following proposition provides an easy sufficient condition for undoing the
+Kummer construction on a family of Kummer surfaces.
+Proposition 4.1. Beginning with a family of lattice polarized Shioda-Inose K3 sur-
+faces X over U , the Kummer construction can be undone on the family of resolved
+quotient K3 surfaces Y, if Y itself is lattice polarized.
+   In general, however, the family Y will not be lattice polarized; instead, by
+Theorem 3.3, it will be (N ′ , G)-polarized, for some lattice N ′ and subgroup G
+of Aut(AN ′ ). To rectify this, we will have to proceed to a cover f : U ′ → U to
+remove the action of the group G, so that the Kummer construction can be undone
+on the pulled-back family f ∗ Y.
+   We begin by finding such a group G. We note, however, that in general Y will
+not be minimally (N ′ , G)-polarized for this choice of G.
+Proposition 4.2. Let X → U be a family of N -polarized K3 surfaces with Shioda-
+Inose structure, where N is isometric to the Néron-Severi lattice of a generic K3
+fibre Xp . Then the associated family of Kummer surfaces Y is an (N ′ , G)-polarized
+family of K3 surfaces, where N ′ is the generic Néron-Severi lattice of fibres of Y
+and G is the group
+                                O(N ⊥ )∗ /O(N ⊥ (2))∗ .
+Furthermore, if X has transcendental monodromy group ΓX = O(N ⊥ )∗ , then Y is
+minimally (N ′ , G)-polarized.
+        FAMILIES OF LATTICE POLARIZED K3 SURFACES WITH MONODROMY                    17
+
+
+Proof. By the results of Section 3.2 there is a map
+                                 g : ρT (X ) → ρT (Y) .
+Let Xp be a general fibre of X and let Yp be the associated fibre of Y. As Xp has
+Shioda-Inose structure and Yp is the associated Kummer surface, the transformation
+g induces the identity map on the level of orthogonal groups,
+                             Id : O(T(Xp )) → O(T(Yp ))
+since the lattice T(Yp ) is just T(Xp ) scaled by 2.
+   Let ΓX (resp. ΓY ) denote the transcendental monodromy group of X (resp. Y).
+Then, by Corollary 3.4, ΓY = g −1 ΓX g ∼  = ΓX and Y is minimally (N ′ , αT(Y) (ΓY ))-
+                                    ∗ ∼
+polarized. But ΓX ⊂ O(T(Xp )) = O(N ⊥ )∗ (by [Dol96, Proposition 3.3]) and
+αT(Y) has kernel O(T(Xp )(2))∗ ∼  = O(N ⊥ (2))∗ , so αT(Y) (ΓY ) ⊂ G, where G is as in
+the statement of the proposition, with equality if ΓX = O(N ⊥ )∗ .                  
+
+  The group G from this proposition will prove to be very useful in later sections.
+
+4.2. M -polarized K3 surfaces. We will be particularly interested in the case in
+which our family X is M -polarized, where M denotes the lattice
+                                M := H ⊕ E8 ⊕ E8 .
+Such families admit canonically defined Shioda-Inose structures, so the discussion
+from Section 4.1 holds.
+   Our interest in such familes stems from the paper [DM06], in which Doran and
+Morgan explicitly classify the possible integral variations of Hodge structure that
+can underlie a family of Calabi-Yau threefolds over P1 − {0, 1, ∞} with h2,1 = 1.
+Their classification is given in [DM06, Table 1], which divides the possibilities into
+fourteen cases. Explicit examples, arising from toric geometry, of families of Calabi-
+Yau threefolds realising thirteen of these cases were known at the time of publication
+of [DM06] and are given in the rightmost column of [DM06, Table 1]. A family of
+Calabi-Yau threefolds that realised the missing case (hereafter known as the 14th
+case) was constructed in [CDL+ 13].
+   It turns out that many of these threefolds admit fibrations by M -polarized K3
+surfaces. The ability to undo the Kummer construction globally on such threefolds
+therefore provides a new perspective on the geometry of the families in [DM06,
+Table 1], which will be explored further in the remainder of this paper.
+   We begin this discussion with a brief digression into the geometry of M -polarized
+K3 surfaces, that we will need in the subsequent sections. In this section we will
+denote an M -polarized K3 surface by (X, i), where X is a K3 surface and i is an
+embedding i : M ֒→ NS(X).
+   Clingher, Doran, Lewis and Whitcher [CDLW09] have shown that M -polarized
+K3 surfaces have a coarse moduli space given by the locus d 6= 0 in the weighted
+projective space WP(2, 3, 6) with weighted coordinates (a, b, d). Thus, by normal-
+izing d = 1, we may associate a pair of complex numbers (a, b) to an M -polarized
+K3 surface (X, i).
+   Let β denote the Nikulin involution defined by the canonical Shioda-Inose struc-
+ture on (X, i). Then Clingher and Doran [CD07, Theorem 3.13] have shown that
+the resolved quotient Y = X/β  g is isomorphic to the Kummer surface Kum(A),
+         ∼
+where A = E1 × E2 is an Abelian surface that splits as a product of elliptic curves.
+18         C. F. DORAN, A. HARDER, A.Y. NOVOSELTSEV, AND A. THOMPSON
+
+
+By [CD07, Corollary 4.2] the j-invariants of these elliptic curves are given by the
+roots of the equation
+                                   j 2 − σj + π = 0,
+where σ and π are given in terms of the (a, b) values associated to (X, i) by σ =
+a3 − b2 + 1 and π = a3 .
+   There is one final piece of structure on (X, i) that we will need in our discussion.
+By [CD07, Proposition 3.10], the K3 surface X admits two uniquely defined elliptic
+fibrations Θ1,2 : X → P1 , the standard and alternate fibrations. We will be mainly
+concerned with the alternate fibration Θ2 . This fibration has two sections, one
+singular fibre of type I12
+                        ∗
+                           and, if a3 6= (b ± 1)2 , six singular fibres of type I1 [CD07,
+Proposition 4.6]. Moreover, Θ2 is preserved by the Nikulin involution β, so induces
+a fibration Ψ : Y → P1 on X. The two sections of Θ2 are identified to give a section
+of Ψ, and Ψ has one singular fibre of type I6∗ and, if a3 6= (b ± 1)2 , six I2 ’s [CD07,
+Proposition 4.7].
+
+4.3. Undoing the Kummer construction for M -polarized families. We will
+use this background to outline a method by which we can undo the Kummer con-
+struction for a family obtained as a resolved quotient of an M -polarized family
+of K3 surfaces. An illustration of the use of this method to undo the Kummer
+construction in an explicit example may be found in [CDL+ 13, Section 7.1].
+    Let N be a lattice that contains a sublattice isomorpic to M . Assume that X
+is an N -polarized family of K3 surfaces over U with generic Néron-Severi lattice
+N ∼ = N S(Xp ), where Xp is the fibre over a general point p ∈ U . Choose an
+embedding M ֒→ NS(Xp ); this extends uniquely to all other fibres of X by parallel
+transport and thus exhibits X as an M -polarized family of K3’s.
+    This M -polarization induces a Shioda-Inose structure on the fibres of X , which
+defines a canonical Nikulin involution on these fibres that extends globally by Corol-
+lary 2.12. Define Y to be the variety obtained from X by quotienting by this
+fibrewise Nikulin involution and resolving the resulting singularities. Then Y is
+fibred over U by Kummer surfaces associated to products of elliptic curves. Let
+Yp ∼= Kum(E1 × E2 ) denote the fibre of Y over the point p ∈ U , where E1 and E2
+are elliptic curves.
+    The aim of this section is to find a cover Y ′ of Y upon which we can undo
+the Kummer construction. The results of Section 4.1 give a way to do this. Let
+N′ ∼ = NS(Yp ) denote the generic Néron-Severi lattice of Y. Then Theorem 3.3
+shows that there is a subgroup G of Aut(AN ′ ) for which Y is an (N ′ , G)-polarized
+family of K3 surfaces. We will find a way to compute the action of monodromy
+around loops in U on N ′ , which will allow us to find the group G such that Y is
+a minimally (N ′ , G)-polarized family, along with a cover Y ′ of Y that is an N ′ -
+polarized family of K3 surfaces. Then Proposition 4.1 shows that we can undo the
+Kummer construction on Y ′ .
+    To simplify this problem we note that, by Corollary 3.2, the only non-trivial
+action of monodromy on N ′ can be on the Nikulin lattice KNik contained within
+it. This lattice is generated by the eight exceptional curves Fi obtained by blowing
+up the fixed points of the Nikulin involution. Moreover, as β extends to a global
+involution on X , the set {F1 , . . . , F8 } is preserved under monodromy (although
+the curves themselves may be permuted). Thus, we can compute the action of
+monodromy on N ′ by studying its action on the curves Fi .
+         FAMILIES OF LATTICE POLARIZED K3 SURFACES WITH MONODROMY                           19
+
+
+   To find these curves, we begin by studying the configuration of divisors on a
+general fibre Yp . Recall that Yp is isomorphic to Kum(E1 × E2 ), where E1 and E2
+are elliptic curves. There is a special configuration of twenty-four (−2)-curves on
+Kum(E1 × E2 ) arising from the Kummer construction, that we shall now describe
+(here we note that we use the same notation as [CD07, Definition 3.18], but with
+the roles of Gi and Hj reversed).
+   Let {x0 , x1 , x2 , x3 } and {y0 , y1 , y2 , y3 } denote the two sets of points of order two
+on E1 and E2 respectively. Denote by Gi and Hj (0 ≤ i, j ≤ 3) the (−2)-curves
+on Kum(E1 × E2 ) obtained as the proper transforms of E1 × {yi } and {xj } × E2
+respectively. Let Eij be the exceptional (−2)-curve on Kum(E1 × E2 ) associated
+to the point (xj , yi ) of E1 × E2 . This gives 24 curves, which have the following
+intersection numbers:
+
+                                           Gi .Hj = 0,
+                                          Gk .Eij = δik ,
+                                          Hk .Eij = δjk .
+Definition 4.3. The configuration of twenty-four (−2)-curves
+                                   {Gi , Hj , Eij | 0 ≤ i, j ≤ 3}
+is called a double Kummer pencil on Kum(E1 × E2 ).
+Remark 4.4. Note that there may be many distinct double Kummer pencils on
+Kum(E1 × E2 ). However, if E1 and E2 are non-isogenous, Oguiso [Ogu89, Lemma
+1] shows that any two double Kummer pencils are related by a symplectic auto-
+morphism on Kum(E1 × E2 ).
+   Clingher and Doran [CD07, Section 3.4] identify such a pencil on the resolved
+quotient of an M -polarised K3 surface. We will study this pencil on a fibre of Y
+and, by studying the action of monodromy on it, derive the action of monodromy
+on the curves Fi .
+   By the discussion in Section 4.2, the M -polarization structure on Xp defines
+an elliptic fibration Θ2 on it, which is compatible with the Nikulin involution.
+Furthermore, as X is an M -polarized family, this elliptic fibration extends to all
+fibres of X and is compatible with the fibrewise Nikulin involution. Therefore Θ2
+induces an elliptic fibration Ψ on Yp which extends uniquely to all fibres of Y, so
+Ψ must be preserved under the action of monodromy around loops in U .
+   Using the same notation as in [CD07, Diagram (26)], we may label some of the
+(−2)-curves in the fibration Ψ as follows:
+        R1       R2                                                                 F1
+         •       • ❃                                                                    •
+                      ❃❃                                                           ✁✁
+                        ❃❃                                                       ✁✁
+                          ❃                                                    ✁✁
+                              R3    R5      R6       R7      R8     R9     S̃1
+                              •      •       •       •        •     •       • ❂
+                                                                               ❂❂
+                                                                                 ❂❂
+                                                                                   ❂
+                 R4                                                                 F2
+                 •                                                                      •
+
+Here R1 is the section of Ψ given uniquely as the image of the two sections of
+Θ2 and the remaining curves form the I6∗ fibre. Note that the Ri and S̃1 are
+uniquely determined by the structure of Ψ, so must be invariant under the action
+20         C. F. DORAN, A. HARDER, A.Y. NOVOSELTSEV, AND A. THOMPSON
+
+
+of monodromy around loops in U . By the discussion in [CD07, Section 3.5] the
+curves F1 and F2 are two of the eight exceptional curves that we seek, but are
+determined only up to permutation.
+   By the discussion in [CD07, Section 4.6], we may identify these curves with
+(−2)-curves in a double Kummer pencil as follows: R1 = G2 , R2 = E20 , R3 = H0 ,
+R4 = E30 , R5 = E10 , R6 = G1 , R7 = E11 , R8 = H1 , R9 = E01 , S̃1 = G0 , F1 = E02
+and F2 = E03 . This gives:
+Lemma 4.5. In the double Kummer pencil on Yp defined above, the action of
+monodromy around loops in U must fix the 10 curves G0 , G1 , G2 , H0 , H1 , E01 ,
+E10 , E11 , E20 , E30 .
+   We can improve on this result, but in order to do so we will need to make an
+assumption:
+Assumption 4.6. The fibration Ψ on Yp has six singular fibres of type I2 .
+Remark 4.7. Recall from the discussion in Section 4.2 that this assumption is
+equivalent to the assumption that the (a, b)-parameters of the M -polarized fibre
+Xp satisfy a3 6= (b ± 1)2 .
+   Using this, we may now identify all eight of the curves Fi . From the discussion
+above, we already know F1 = E02 and F2 = E03 . [CD07, Section 3.5] shows that,
+under Assumption 4.6, the remaining six Fi are the components of the six I2 fibres
+in Ψ that are disjoint from the section R1 = G2 .
+   Kuwata and Shioda [KS08, Section 5.2] explicitly identify these six I2 fibres in
+the double Kummer pencil on Yp . We see that:
+     • the section G3 of Ψ is the unique section that intersects all six of F3 , . . . , F8 ,
+     • the section H2 of Ψ intersects F1 and precisely three of F3 , . . . , F8 (say F3 ,
+        F4 , F5 ), and
+     • the section H3 of Ψ intersects F2 and the other three F3 , . . . , F8 (say F6 ,
+        F7 , F8 ).
+   Combining this with Lemma 4.5 and the fact that the structure of Ψ is preserved
+under monodromy, we obtain
+Proposition 4.8. In addition to fixing the ten curves from Lemma 4.5, the action
+of monodromy around a loop in U must also fix G3 and either
+(1 ) fix both F1 = E02 and F2 = E03 , in which case H2 and H3 are also fixed and
+     the sets {F3 , F4 , F5 } and {F6 , F7 , F8 } are both preserved, or
+(2 ) interchange F1 = E02 and F2 = E03 , in which case H2 and H3 are also swapped
+     and the sets {F3 , F4 , F5 } and {F6 , F7 , F8 } are interchanged.
+     Whether the action of monodromy around a given loop fixes or exchanges F1 =
+E02 and F2 = E03 may be calculated explicitly. Recall that the curves {F3 , . . . , F8 }
+appear as components of the I2 fibres in the alternate fibration on Yp . Let x be an
+affine parameter on the base P1x of the alternate fibration on Yp , chosen so that the
+I6∗ -fibre occurs at x = ∞. Then the locations of the I2 fibres is given explicitly by
+[CD07, Proposition 4.7]: they lie at the roots of the polynomials (P (x) ± 1), where
+(4.1)                            P (x) := 4x3 − 3ax − b,
+for a and b the (a, b)-parameters associated to the M -polarized K3 surface Xp .
+        FAMILIES OF LATTICE POLARIZED K3 SURFACES WITH MONODROMY                       21
+
+
+   Without loss of generality, we may say that {F3 , F4 , F5 } appear in the I2 fibres
+occurring at roots of (P (x) − 1) and {F6 , F7 , F8 } appear in the I2 fibres occurring
+at roots of (P (x) + 1). We thus have:
+Corollary 4.9. Case (1 ) (resp. (2 )) of Proposition 4.8 holds for monodromy
+around a given loop if and only if that monodromy preserves the set of roots of
+(P (x) + 1) (resp. switches the sets of roots of the polynomials (P (x) + 1) and
+(P (x) − 1)).
+   If case (2) of Proposition 4.8 holds for some loop in U , we note that the Nikulin
+lattice is not fixed under monodromy around that loop. This presents an obstruc-
+tion to Y admitting an N ′ -polarization. To resolve this we may pull-back Y to a
+double cover of U , after which case (1) of the lemma will hold around all loops and
+the curves F1 = E02 , F2 = E03 , H2 and H3 will all be fixed under monodromy.
+   Given this, we may safely assume that case (1) holds around all loops in U , so F1
+and F2 are fixed under monodromy and the sets {F3 , F4 , F5 } and {F6 , F7 , F8 } are
+both preserved. All that remains is to find whether monodromy acts to permute
+F3 , . . . , F8 within these sets.
+Proposition 4.10. Assume that the action of monodromy around all loops in U
+fixes both F1 and F2 (i.e. case (1 ) of Proposition 4.8 holds around all loops in U ).
+Then the action of monodromy around a loop in U permutes {F3 , F4 , F5 } (resp.
+{F6 , F7 , F8 }) if and only if it permutes the roots of (P (x) − 1) (resp. (P (x) + 1)).
+Proof. As {F3 , F4 , F5 } appear in the I2 fibres occurring at roots of (P (x) − 1)
+and {F6 , F7 , F8 } appear in the I2 fibres occurring at roots of (P (x) + 1), they are
+permuted if and only if the corresponding roots of (P (x) − 1) and (P (x) + 1) are
+permuted.                                                                            
+
+   Monodromy around a loop thus acts on {F3 , F4 , F5 } and {F6 , F7 , F8 } as a permu-
+tation in S3 × S3 . Taken together, the permutations corresponding to monodromy
+around all loops generate a subgroup H of S3 × S3 .
+   Therefore, in order to obtain a N ′ -polarization on Y, we need to pull everything
+back to a |H|-fold cover f : V → U . This cover is constructed as follows: the |H|
+preimages of the point p ∈ U are labelled by permutations in H and, if γ is a
+loop in U , monodromy around f −1 (γ) acts on these labels as composition with the
+corresponding permutation. This action extends to an action of H on the whole of
+V . In fact, we have:
+Theorem 4.11. Let f : V → U be the cover constructed above and let Y ′ → V
+denote the pull-back of Y → U . Then Y ′ is a N ′ -polarized family, where N ′ is the
+generic Néron-Severi lattice of Y, so we can undo the Kummer construction on Y ′ .
+Furthermore, the deck transformation group of f is a subgroup G of S6 given by:
+      • If case (1 ) of Proposition 4.8 holds around all loops in U , then G = H.
+      • If case (2 ) of Proposition 4.8 holds around some loop in U , then there is
+        an exact sequence 1 → H → G → C2 → 1.
+Remark 4.12. We note that in the second case there does not seem to be any
+reason to believe that G ∼
+                         = H ⋊ C2 in general. Whilst we do not know of any
+explicit examples where this fails, it does not seem to be inconsistent with the
+theory as presented.
+22         C. F. DORAN, A. HARDER, A.Y. NOVOSELTSEV, AND A. THOMPSON
+
+
+Proof. Let Yp′ denote one of the preimages of Yp under the pull-back. Then the
+argument above shows that each of the eight curves Fi extends uniquely to all
+smooth fibres of Y ′ . Thus the Nikulin lattice KNik is preserved under monodromy
+and so, by Corollary 3.2, N ′ is also. Therefore Y ′ is a N ′ -polarized family and, by
+Proposition 4.1, we may undo the Kummer construction on Y ′ .
+   It just remains to verify the statements about the group G. Note that G can be
+seen as a subgroup of S6 , given by permutations of the divisors {F3 , . . . , F8 }, and
+that H is the subgroup of G given by those permutations that preserve the sets
+{F3 , F4 , F5 } and {F6 , F7 , F8 }. If case (1) of Proposition 4.8 holds around all loops
+in U , then all permutations in G preserve the sets {F3 , F4 , F5 } and {F6 , F7 , F8 }, so
+G = H. If case (2) of Proposition 4.8 holds around some loop in U then H has
+index 2 in G, so it must be a normal subgroup with quotient G/H ∼          = C2 .        
+
+Corollary 4.13. Y is a minimally (N ′ , G)-polarized family of K3 surfaces, where
+G is the group from Theorem 4.11.
+Proof. We just need to show that G is minimal. Note that G was constructed
+explicitly as the permutation group of the divisors {F1 , . . . , F8 } under monodromy.
+Furthermore, it is clear from the construction that any permutation in G is induced
+by monodromy around some loop in U . So αN ′ is surjective and G is minimal. 
+
+Remark 4.14. As the group G from Theorem 4.11 is minimal, it will be a subgroup
+of the group O(N ⊥ )∗ /O(N ⊥ (2))∗ from Proposition 4.2.
+4.4. The generically M -polarized case. Suppose now that we are in the case
+where a general fibre Xp of X has NS(Xp ) ∼
+                                          = M . In this case we have the following
+version of Proposition 4.2.
+Proposition 4.15. Suppose that X is an M -polarized family of K3 surfaces with
+general fibre Xp satisfying NS(Xp ) ∼= M . Then the resolved quotient Y ∼  = Xg   /β
+of X by the fibrewise Nikulin involution is a (not necessarily minimally) (N ′ , G)-
+polarized family of K3 surfaces, where G ∼
+                                         = (S3 × S3 ) ⋊ C2 .
+Proof. Recall that M ⊥ is isomorphic to H 2 . The proposition will follow from
+Proposition 4.2 if we can show that
+                        O(H 2 )∗ /O(H 2 (2))∗ ∼
+                                              = (S3 × S3 ) ⋊ C2 .
+   This quotient is just Aut(AH 2 (2) ). To see this, note that O(H 2 )∗ is isomorphic
+to O(H 2 ), since AH 2 is the trivial group, and O(H 2 ) is isomorphic to O(H 2 (2)),
+hence
+                   O(H 2 (2))/O(H 2 (2))∗ ∼= O(H 2 )∗ /O(H 2 (2))∗ .
+By a standard lattice theoretic fact (see, for example, [Nik80b, Theorem 3.6.3]),
+O(H 2 (2)) maps surjectively onto Aut(AH 2 (2) ). So the group O(H 2 )∗ /O(H 2 (2))∗ is
+isomorphic to Aut(AH 2 (2) ). According to [KK01, Lemma 3.5] this group is isomor-
+phic to (S3 × S3 ) ⋊ C2 .                                                            
+
+Remark 4.16. The results of Section 4.3 give an immediate interpretation for
+this group: the two S3 factors correspond to permutations of the two sets of divi-
+sors {F3 , F4 , F5 } and {F6 , F7 , F8 }, whilst the C2 corresponds to the action which
+interchanges these two sets (and also swaps F1 and F2 ).
+        FAMILIES OF LATTICE POLARIZED K3 SURFACES WITH MONODROMY                      23
+
+
+Example 4.17. In [CDL+ 13], the family of threefolds Y1 that realise the 14th case
+variation of Hodge structure admit torically induced fibrations by M -polarized K3
+surfaces with general fibre Xp satisfying NS(Xp ) ∼ = M . In [CDL+ 13, Section 7.1]
+we apply the results of the previous section to undo the Kummer construction for
+the resolved quotient W ∼= Y]1 /β of Y1 by the fibrewise Nikulin involution. It is an
+easy consequence of those calculations that W is minimally (N ′ , G)-polarized, for
+G∼= (S3 × S3 ) ⋊ C2 .
+   It turns out, however, that the 14th case is the only case from [DM06, Table 1]
+that admits a torically induced M -polarized fibration with general fibre Xp satisfy-
+ing NS(Xp ) ∼= M . In most other cases (see Theorem 5.10) the Néron-Severi lattice
+of the general fibre is a lattice enhancement of M to a lattice
+                                 Mn := M ⊕ h−2ni,
+with 1 ≤ n ≤ 4. In particular, note that Mn -polarized K3 surfaces are also M -
+polarized, so the analysis of this section still holds. We will examine this case in
+the next section.
+
+           5. Threefolds fibred by Mn -polarized K3 surfaces.
+   In this section we will specialize the analysis of Section 4 to the case where we
+have a family X of Mn -polarized K3 surfaces. We will then apply this theory to
+study Mn -polarized families of K3 surfaces arising from threefolds in the Doran-
+Morgan classification [DM06, Table 1].
+5.1. The groups G. We begin with the analogue of Proposition 4.2 in the Mn -
+polarized case.
+Proposition 5.1. Suppose that X is an Mn -polarized family of K3 surfaces with
+general fibre Xp satisfying NS(Xp ) ∼
+                                    = Mn . Then the resolved quotient Y ∼  = Xg  /β
+of X by the fibrewise Nikulin involution is a (not necessarily minimal ) (N ′ , G)-
+polarized family of K3 surfaces, where N ′ is the generic Néron-Severi latice of Y
+and
+      • if n = 1 then G = S3 × C2 ,
+      • if n = 2 then G = D8 , the dihedral group of order 8,
+      • if n = 3 then G = D12 , and
+      • if n = 4 then G = D8 .
+Proof. This will follow from Proposition 4.2 if we can show that
+                                                  ∼ G,
+                            O(M ⊥ )∗ /O(M ⊥ (2))∗ =
+                                  n          n
+
+where G is as in each of the four cases in the statement of the proposition. We
+proceed by obtaining generators for O(Mn⊥ )∗ ∼
+                                             = O(H ⊕h2ni)∗ and then determining
+their actions on AH(2)⊕h4ni to compute the group G.
+   In the case n = 1, the generators of O(H ⊕ h2i)∗ are
+                                                                      
+               0 −1 0                   1 0 0               −1     0    0
+    g1 =  −1      0 0  , g2 =  1 1 2  , g3 =  0 −1                 0 
+               0   0 1                  1 0 1                 0    0 −1
+whose induced actions on AH(2)⊕h4i have orders 2, 3 and 2 respectively. One may
+check that g1 g2 g1 = g22 , and hence g1 and g2 generate a copy of S3 . It is clear that
+24         C. F. DORAN, A. HARDER, A.Y. NOVOSELTSEV, AND A. THOMPSON
+
+
+g3 commutes with g1 and g2 , so the subgroup of Aut(AH(2)⊕h4i ) generated by g1 , g2
+and g3 is isomorphic to S3 × C2 .
+   In the case n = 2, the group O(H ⊕ h4i)∗ has a non-minimal set of generators
+                                                                     
+              1 0 0                    1   2     4               0 1 0
+     g1 =  2 1 4  , g2 =  2             1     4  , g3 =  1 0 0  .
+              1 0 1                  −1 −1 −3                    0 0 1
+Let the automorphism induced on AH(2)⊕h8i by gi be denoted hi . Then h21 = h22 =
+h23 = Id. We check h1 h3 has order 4 and it is easy to see that
+                           h1 (h1 h3 )h1 = h3 h1 = (h1 h3 )−1 .
+Therefore, h1 and h1 h3 generate a copy of D8 . Finally, one checks that (h1 h3 )h1 =
+h2 , so the group of automorphisms hh1 , h2 , h3 i is isomorphic to D8 .
+    In the case when n = 3, we may calculate generators of O(H ⊕ h6i)∗ to find
+                                                                       
+               1 0 0                  1       3      6               0 1 0
+      g1 =  3 1 6  , g2 =  3               4 12  , g3 =  1 0 0  .
+               1 0 1                 −1 −2 −5                        0 0 1
+As before, let the corresponding automorphisms of H(2) ⊕ h12i be called h1 , h2 and
+h3 . We calculate that
+                           h21 = h32 = h23 = (h1 h3 )6 = Id .
+Furthermore, (h1 h3 )2 = h2 and
+                           h1 (h1 h3 )h1 = h3 h1 = (h1 h3 )−1 .
+Therefore, the group hh1 , h2 , h3 i is isomorphic to D12 .
+  In the case when n = 4, we may calculate generators of O(H ⊕ h8i)∗ to obtain
+                                                                   
+             1 0 0                         9   4 24               0 1 0
+    g1 =  4 1 8  , g2 =  4                  1     8  , g3 =  1 0 0  .
+             1 0 1                        −3 −1 −7                0 0 1
+Once again, let the corresponding automorphisms of H(2) ⊕ h16i be called h1 , h2
+and h3 . We calculate that
+                               h21 = h22 = h23 = Id
+We check that h1 h2 = h2 h1 and h3 h2 = h2 h3 . Once again, we also have (h1 h3 )2 =
+h2 and
+                         h1 (h1 h3 )h1 = h3 h1 = (h1 h3 )−1 .
+Therefore the group hh1 , h2 , h3 i is isomorphic to D8 .                          
+
+5.2. Some special families. There are some special families of Mn -polarized K3
+surfaces that we can use to vastly reduce the amount of work that we have to do to
+undo the Kummer construction for the Mn -polarized cases from [DM06, Table 1].
+   We begin by noting that the moduli space MMn of Mn -polarized K3 surfaces
+is a 1-dimensional modular curve [Dol96, Theorem 7.1]. Denote by UMn the open
+subset of MMn obtained by removing the orbifold points.
+Definition 5.2. Xn → UMn will denote an Mn -polarized family of K3 surfaces over
+UMn , with period map UMn → MMn given by the inclusion and transcendental
+monodromy group ΓXn = O(Mn⊥ )∗ .
+        FAMILIES OF LATTICE POLARIZED K3 SURFACES WITH MONODROMY                   25
+
+
+Remark 5.3. Examples of such families for any n are given by the restriction of
+the special M -polarized family from [CDLW09, Theorem 3.1] to the Mn -polarized
+loci calculated in [CDLW09, Section 3.2]. For n ≤ 4, we will explicitly construct
+examples of such families in Sections 5.4 and 5.5.
+   Let Yn → UMn be the family of Kummer surfaces associated to Xn → UMn
+and let Kn be the Néron-Severi lattice of the Kummer surface associated to a K3
+surface with Shioda-Inose structure and Néron-Severi lattice Mn .
+   Suppose now that we can undo the Kummer construction for Yn , by pulling
+back to a cover CMn → MMn . Then if we know that an Mn -polarised family
+of K3 surfaces X → U is the pull-back of a family Xn → UMn by the period
+map U → MMn (which, in the Mn -polarized case, is more commonly known as
+the generalized functional invariant, see [Dor00]), then we can undo the Kummer
+construction for the associated family of Kummer surfaces Y → U by pulling back
+to the fibre product U ×MMn CMn .
+   Thus the aim of this section is to find covers CMn → MMn such that the pull-
+backs of Yn to CMn are Kn -polarized (and so, by Proposition 4.1, the Kummer
+construction can be undone on these pull-backs).
+Lemma 5.4. The families Yn are minimally (Kn , G)-polarized, where G is the
+group G = O(Mn⊥ )∗ /O(Mn⊥ (2))∗
+Proof. This follows from Proposition 4.2 and the fact that the families Xn have
+transcendental monodromy groups O(Mn⊥ )∗ .                                   
+   As MMn = O(Mn⊥ )∗ \ PMn , this lemma suggests that, in order to undo the
+action of G, we should define CMn to be the curve CMn := O(Mn⊥ (2))∗ \ PMn . This
+curve may be constructed as a modular curve in the following way.
+   Recall that                                           
+                                                ∗ ∗
+                   Γ0 (n) := γ ∈ SL2 (Z) : γ ≡        mod n
+                                                0 ∗
+and                                                     
+                                               1 0
+                   Γ(n) := γ ∈ SL2 (Z) : γ ≡         mod n .
+                                               0 1
+By convention, Γ0 (1) and Γ(1) are just the full modular group Γ = SL2 (Z). We
+also have
+                      Γ0 (n)+ := Γ0 (n) ∪ τn Γ0 (n) ⊆ SL2 (R)
+where                                          √ 
+                                       √0    −1/ n
+                               τn =
+                                         n     0
+is the Fricke involution. With this notation, we have MMn ∼    = Γ0 (n)+ \ H [Dol96,
+Theorem 7.1].
+   For any lattice N , let PO(N ) be defined as the cokernel of the obvious injection
+± Id ֒→ O(N ). Then we have the exact sequence
+                       1 → {± Id} → O(N ) → PO(N ) → 1.
+If N is a lattice of signature (1, n − 1) with a fixed primitive embedding into ΛK3
+and Γ and Γ′ are two subgroups of O(N ⊥ ), the quotients Γ \ PN and Γ′ \ PN are
+the same if and only if Γ and Γ′ have the same images in PO(N ⊥ ), in which case Γ
+and Γ′ are said to be projectively equivalent.
+26          C. F. DORAN, A. HARDER, A.Y. NOVOSELTSEV, AND A. THOMPSON
+
+
+   By [Dol96, Theorem 7.1], there is a map Rn , defined in the following proposi-
+tion, under which Γ0 (n)+ is mapped to a subgroup of SO(Mn⊥ ) that is projectively
+equivalent to O(Mn⊥ )∗ .
+Lemma 5.5. The group O(Mn⊥ (2))∗ is projectively equivalent to the image of Γ(2)∩
+Γ0 (2n) under the map
+                          Rn : SL2 (R) → SOR (2, 1)
+which is defined as
+                                                        
+                                  a2 c2 n        2acn
+                       a b
+                             7→  b2 n    d2       2bdn 
+                      cn d
+                                    ab    cd bcn + ad
+(see the related map in [HLOY04, Equation 5.6]).
+Proof. We know that the pre-image of O(Mn⊥ )∗ under Rn is the subgroup Γ0 (n)+
+and that O(Mn⊥ (2))∗ ⊆ O(Mn⊥ )∗ is the subgroup which fixes the group AMn⊥ (2) .
+Since Rn maps the Fricke involution to the automorphism
+                                           
+                                   0 1 0
+                                 1 0 0  ,
+                                   0 0 −1
+which is never trivial or − Id on AMn⊥ (2) , we may automatically restrict to the image
+of Γ0 (n). Automorphisms which fix AMn⊥ (2) are matrices of the form
+                                                   
+                                    a11 a12 a13
+                                  a21 a22 a23 
+                                    a31 a32 a33
+with a12 , a21 , a31 , a32 ≡ 0 mod 2, a13 , a23 , ≡ 0 mod 2n, a11 , a22 ≡ 1 mod 2 and
+a33 ≡ 1 mod 2n. Thus a2 ≡ d2 ≡ 1 mod 2 and hence a, d ≡ 1 mod 2. Using
+this and the fact that ab ≡ cd ≡ 0 mod 2, we find that b ≡ c ≡ 0 mod 2. Therefore
+the matrices which map to O(Mn⊥ (2))∗ are precisely those which satisfy
+                                                
+                                 a b         ∗ ∗
+                                       ≡             mod 2n
+                                cn d         0 ∗
+and                                        
+                              a b        1 0
+                                    ≡           mod 2.
+                             cn d        0 1
+In other words elements of the group Γ0 (2n) ∩ Γ(2).                                 
+     We therefore have
+                       CMn ∼= (Γ0 (2n) ∩ Γ(2)) \ H.
+Let f : CMn → MMn be the natural map coming from the modular description of
+each curve.
+Proposition 5.6. If n 6= 1, the pullback f ∗ Yn of Yn to CMn is Kn -polarized.
+Proof. The transcendental monodromy of the pullback f ∗ Xn is a group Γ contained
+in O(Mn⊥ )∗ with quotient space Γ \ PMn ∼  = (Γ0 (2n) ∩ Γ(2)) \ H. By Lemma 5.5, the
+group O((Mn⊥ )(2))∗ has this property.
+   Suppose that there is another subgroup Γ′ of O(Mn⊥ )∗ with this property. Let
+γ ∈ Γ be any element and let g ∈ PO(Mn⊥ ) be its image. Since Γ and Γ′ are
+projectively equivalent, there is some γ ′ ∈ Γ′ which maps to g.
+        FAMILIES OF LATTICE POLARIZED K3 SURFACES WITH MONODROMY                    27
+
+
+   If Γ and Γ′ are not the same group, we can find some g ∈ PO(Mn⊥ ) such that
+there are γ ∈ Γ and γ ′ ∈ Γ which map to g yet have γ 6= γ ′ . Thus γ −1 γ ′ 6= Id but
+γ −1 γ ′ maps to the identity in PO(Mn⊥ ). However, for n 6= 1, [HLOY04, Lemma
+1.15] shows that the kernel of O(Mn⊥ )∗ → PO(Mn ) is trivial. This is a contradiction,
+hence Γ = Γ′ .
+   Therefore, the monodromy group of the family f ∗ Xn is O(Mn⊥ (2))∗ ⊆ O(Mn⊥ )∗ .
+By Corollary 3.4, the associated family of Kummer surfaces then has transcendental
+monodromy O(Mn⊥ (2))∗ as well. Since this group is contained in the kernel of
+αT(Yn ) , we conclude that Yn is Kn -polarized.                                     
+Remark 5.7. This discussion may be rephrased in the following way. The quotient-
+                                                                   ∼
+resolution procedure taking Xn to Yn defines an isomorphism MMn −→ M(Kn ,G) ,
+where G is the group from Lemma 5.4. The cover CMn → MMn is then precisely
+the cover MKn → M(Kn ,G) .
+   In the case where n = 1 this proof fails, as the kernel of the map O(Mn⊥ )∗ →
+PO(Mn ) is nontrivial. It will therefore be necessary for us to do a little more work
+in order to find a cover of MM1 on which the pullback of Y1 is lattice polarized.
+   The family X1 is a family of smooth K3 surfaces over P1 \ {0, 1, ∞}. Let g1 and
+g2 in O(H ⊕ h2i)∗ be as in the n = 1 case of the proof of Proposition 5.1: then
+g1 describes monodromy around 1 and g2 describes monodromy around ∞, and
+monodromy around 0 is, as usual, given by g1 g2−1 . Around the point 1, the order of
+monodromy is 2, around 0, the order of monodromy is 6, and around ∞, the order
+of monodromy is infinite.
+   The group Γ0 (2) ∩ Γ(2) is just Γ(2), since Γ(2) ⊆ Γ0 (2), and the map from
+CM1 = Γ(2) \ H to MM1 = Γ0 (1)+ \ H ∼      = Γ0 (1) \ H is just the j-function of the
+Legendre family of elliptic curves. This map may be written as a rational function,
+                                         (t2 − t + 1)3
+                                j(t) =                 .
+                                         27t2 (t − 1)2
+The function j(t) has three ramification points of order 2 over 1, three ramifica-
+tion points of order 2 over ∞ and two ramification points points of order 3 over 0.
+Looking back at the proof of Proposition 5.1, we see that the monodromy around
+the preimages of 1 and ∞ must act as h21 = Id and h22 = Id on AH(2)⊕h4i . However,
+monodromy around the preimages of 0 acts on AH(2)⊕h4i as (h1 h2 )2 = − Id. There-
+fore, in order for monodromy to act trivially on AH(2)⊕h4i , we must take a further
+double cover of CM1 = Γ(2) \ H = P1t ramified along the roots of t2 − t + 1 = 0. We
+thus have:
+                                                    ′
+Proposition 5.8. If n = 1, there is a double cover CM 1
+                                                        of CM1 on which the
+pull-back of the family Yn is K1 -polarized.
+  The maps f : CMn → MMn will be calculated in the next section.
+5.3. Covers for small n. In this section, we will explicitly compute the maps
+f : CMn → MMn for n ≤ 4. To do this, we decompose the map f = f1 ◦ f2 ◦ f3 ,
+where
+                  f1 : Γ0 (n) \ H −→ Γ0 (n)+ \ H,
+                  f2 : Γ0 (2n) \ H −→ Γ0 (n) \ H,
+                  f3 : CM ∼
+                         n   = (Γ0 (2n) ∩ Γ(2)) \ H −→ Γ0 (2n) \ H.
+28         C. F. DORAN, A. HARDER, A.Y. NOVOSELTSEV, AND A. THOMPSON
+
+
+5.3.1. The case n = 1. The rational modular curves Γ0 (1)+ \ H and Γ0 (1) \ H are
+isomorphic and have two elliptic points of orders 2 and 3 along with a single cusp.
+The map f2 is a triple cover ramified with index 3 over the elliptic point of order
+2 and indices (2, 1) over the elliptic point of order 2 and the cusp. Γ0 (2) \ H is a
+rational modular curve with an elliptic point of order 2 and two cusps. Finally, f3 is
+a double cover ramified over the elliptic point and the cusp that is not a ramification
+point of f2 and CM1 is a rational modular curve with three cusps.
+    We thus see that f : CM1 → Γ0 (1)+ \ H is a 6-fold cover ramified with indices 2
+and 3 at all points over the elliptic points of order 2 and 3 respectively and index
+2 at all points over the cusp. It is easy to see that the deck transformation group
+of f is S3 .
+    However, from Proposition 5.8, we need to take a further double cover of CM1
+before we can undo the Kummer construction. This double cover is ramified over
+the two preimages under f of the elliptic point of order 3. The composition CM    ′
+                                                                                    1
+                                                                                      →
+Γ0 (1) \ H is a 12-fold cover ramified with indices 2 and 6 at all points over the
+       +
+
+elliptic points of order 2 and 3 respectively and index 2 at all points over the cusp.
+It is easy to see that the deck transformation group of this composition is S3 × C2 ,
+as expected from Proposition 5.1.
+5.3.2. The case n = 2. The rational modular curve Γ0 (2)+ \ H has two elliptic
+points of orders 2 and 4 and a single cusp. The map f1 is a double cover ramified
+over the two elliptic points and Γ0 (2) \ H is a rational modular curve with a single
+elliptic point of order 2 and two cusps. The map f2 is then a double cover ramified
+over the elliptic point and one of the cusps, and Γ0 (4) \ H is a rational modular
+curve with three cusps. Finally, f3 is a double cover ramified over the two cusps
+that are not ramification points of f2 and CM2 is a rational modular curve with
+four cusps.
+    We thus see that f : CM2 → Γ0 (2)+ \ H is an 8-fold cover ramified with indices 2
+and 4 at all points over the elliptic points of order 2 and 4 respectively and index
+2 at all points over the cusp. It is easy to see that the deck transformation group
+of f is D8 , as expected from Proposition 5.1.
+5.3.3. The case n = 3. The rational modular curve Γ0 (3)+ \ H has two elliptic
+points of orders 2 and 6 and a single cusp. The map f1 is a double cover ramified
+over the two elliptic points and Γ0 (3) \ H is a rational modular curve with one
+elliptic point of order 3 and two cusps. The map f2 is then a triple cover ramified
+with index 3 over the elliptic point and indices (2, 1) over each of the cusps, and
+Γ0 (6) \ H is a rational modular curve with four cusps. Finally, f3 is a double cover
+ramified over the two cusps that are not ramification points of f2 and CM3 is a
+rational modular curve with six cusps.
+    We thus see that the map f : CM3 → Γ0 (3)+ \ H is an 12-fold cover ramified
+with indices 2 and 6 at all points lying over the elliptic points of orders 2 and 6
+respectively and index 2 at all points over the cusp. It is easy to see that the deck
+transformation group of f is D12 , as expected from Proposition 5.1.
+5.3.4. The case n = 4. The rational modular curve Γ0 (4)+ \ H has an elliptic point
+of order 2 and two cusps. The two cusps are distinguished by their widths, which
+are 1 and 2. The map f1 is a double cover ramified over the elliptic point and the
+cusp of width 2. The rational modular curve Γ0 (4) \ H has three cusps of widths
+(4, 1, 1). The map f2 is then a double cover ramified with index 2 over the cusp
+        FAMILIES OF LATTICE POLARIZED K3 SURFACES WITH MONODROMY                      29
+
+
+of width 4 and one of the cusps of width 1. The rational modular curve Γ0 (8) \ H
+has four cusps of widths (8, 2, 1, 1). Finally, f3 is a double cover ramified over the
+two cusps of width 1. The curve CM4 is a rational modular curve with six cusps of
+widths (8, 8, 2, 2, 2, 2).
+   We thus see that f : CM4 → Γ0 (4)+ \ H is an 8-fold cover ramified with index 2
+at all points lying over the elliptic point and indices 2 and 4 at all points over the
+cusps of widths 1 and 2 respectively. It is easy to see that the deck transformation
+group of f is D8 , as expected from Proposition 5.1.
+Remark 5.9. Note that if n 6= 1 we may also find a cover of Yn → UMn that is
+Kn -polarized using the method of Section 4.3 (if n = 1 then this method cannot be
+used, as Assumption 4.6 fails; see Section 5.5). In the three cases with n ≥ 2 above
+it may be seen that this cover agrees with CMn .
+5.4. Application to the 14 cases. We now apply this theory to undo the Kum-
+mer construction for families of Kummer surfaces arising from M -polarized fibra-
+tions on the fourteen cases in [DM06, Table 1].
+    Examining these cases, we find Mn -polarized K3 fibrations with 2 ≤ n ≤ 4 on
+nine of them, listed in the appropriate sections of Table 5.1. In this table, the
+first column gives the polarization lattice M or Mn , the second gives the mirrors
+of the threefolds that have M - or Mn -polarized K3 fibrations, and the third states
+whether or not these fibrations are torically induced (the meanings of the fourth
+and fifth columns will be discussed later). More precisely, we have:
+Theorem 5.10. There exist K3 fibrations with Mn -polarized generic fibre, for 2 ≤
+n ≤ 4, on nine of the threefolds in [DM06, Table 1], given by the mirrors of those
+listed in the appropriate sections of Table 5.1. Furthermore, if X → P1 denotes
+one of these fibrations and U ⊂ P1 is the open set over which the fibres of X are
+nonsingular, then the restriction X |U → U agrees with the pull-back of a family Xn
+(see Definition 5.2) by the generalized functional invariant map U → MMn . The
+family X |U → U is thus an Mn -polarized family of K3 surfaces.
+
+Remark 5.11. The M1 -polarized cases in the first section of Table 5.1 will re-
+quire some extra work, so they will be discussed separately in Section 5.5. The
+14th case of [CDL+ 13] has already been discussed in Example 4.17, where we re-
+called that the family of threefolds Y1 realising the 14th case variation of Hodge
+structure admit torically induced M -polarized K3 fibrations. By [CDL+ 13, Sec-
+tion 8.2], these threefolds Y1 can be thought of as mirror to complete intersections
+WP(1, 1, 1, 1, 4, 6)[2, 12]. This case is included in the final row of Table 5.1.
+Remark 5.12. To check which of the fibrations listed in Table 5.1 are torically
+induced, one may use the computer software Sage to find all fibrations of the
+toric ambient spaces by toric subvarieties that induce fibrations of the Calabi-Yau
+threefold by M -polarized K3 surfaces. The resulting list may be compared to the
+list of fibrations in Table 5.1, giving the third column of this table. This also proves
+that Table 5.1 contains all torically induced fibrations of the Calabi-Yau threefolds
+from [DM06, Table 1] by M -polarized K3 surfaces.
+  We will prove Theorem 5.10 by explicit calculation: we find families Xn satisfying
+Definition 5.2 and show that they pull back to give the families X |U under the
+generalized functional invariant maps.
+30         C. F. DORAN, A. HARDER, A.Y. NOVOSELTSEV, AND A. THOMPSON
+
+
+        Lattice    Mirror threefold         Toric? (i, j) Arithmetic/thin
+                  WP(1, 1, 1, 1, 2)[6]       Yes   (1, 2)   Arithmetic
+                  WP(1, 1, 1, 1, 4)[8]       Yes   (1, 3)      Thin
+         M1      WP(1, 1, 1, 2, 5)[10]       Yes   (2, 3)   Arithmetic
+                WP(1, 1, 1, 1, 1, 3)[2, 6]∗  Yes   (1, 1)      Thin
+                WP(1, 1, 1, 2, 2, 3)[4, 6]∗  Yes   (2, 2)   Arithmetic
+                          P4 [5]             Yes   (1, 4)      Thin
+                  WP(1, 1, 1, 1, 2)[6]       Yes   (2, 4)   Arithmetic
+         M2       WP(1, 1, 1, 1, 4)[8]       Yes   (4, 4)      Thin
+                         P5 [2, 4]           Yes   (1, 1)      Thin
+                WP(1, 1, 1, 1, 2, 2)[4, 4]   Yes   (2, 2)   Arithmetic
+                          P4 [5]             No    (2, 3)      Thin
+                         P5 [2, 4]           No    (1, 3)      Thin
+         M3              P5 [3, 3]           Yes   (1, 2)   Arithmetic
+                WP(1, 1, 1, 1, 1, 2)[3, 4]∗  Yes   (2, 2)   Arithmetic
+                      P6 [2, 2, 3]           Yes   (1, 1)      Thin
+                         P5 [2, 4]           No    (2, 2)      Thin
+         M4           P6 [2, 2, 3]           No    (1, 2)      Thin
+                     P7 [2, 2, 2, 2]         Yes   (1, 1)      Thin
+          M     WP(1, 1, 1, 1, 4, 6)[2, 12]  Yes   (1, 1)      Thin
+        Table 5.1. Lattice polarized K3 fibrations on the threefolds from
+        [DM06, Table 1].
+
+
+
+   In each case, we will see that the generalized functional invariant map is com-
+pletely determined by the pair of integers (i, j) from the fourth column of Table 5.1.
+In fact, we find that it is an (i + j)-fold cover of MMn ∼
+                                                         = Γ0 (n)+ \ H having exactly
+four ramification points: one of order (i + j) over the cusp (or, in the M4 -polarized
+case, the cusp of width 1), two of orders i and j over the elliptic point of order 6= 2
+(or, in the M4 -polarized case, the cusp of width 2), and one of order 2 which varies
+with the value of the Calabi-Yau deformation parameter.
+   We thus have everything we need to undo the Kummer construction in the
+families arising as the resolved quotients of the families X |U from Theorem 5.10.
+By the discussion in Section 5.2, in order to undo the Kummer construction we
+just need to pull back to the cover CMn ×MMn U , where the map CMn → MMn is
+as calculated in Section 5.3 and U → MMn is the generalized functional invariant
+map, described above.
+
+5.4.1. M2 -polarized families. We begin the proof of Theorem 5.10 with the M2 case.
+Note first that an M2 -polarized K3 surface is mirror (in the sense of [Dol96]) to a
+h4i-polarized K3 surface, which is generically a hypersurface of degree 4 in P3 .
+   By the Batyrev-Borisov mirror construction [BB96], the mirror of a degree 4
+hypersurface in P3 is a hypersurface in the toric variety polar dual to P3 . The
+intersection of this hypersurface with the maximal torus is isomorphic to the locus
+in (C× )3 defined by the rational polynomial
+                                                λ
+(5.1)                       x1 + x2 + x3 +            = 1,
+                                             x1 x2 x3
+        FAMILIES OF LATTICE POLARIZED K3 SURFACES WITH MONODROMY                      31
+
+
+where λ ∈ C is a constant. This is easily compactified to a singular hypersurface of
+degree 4 in P3 , given by the equation
+                           λw4 + xyz(x + y + z − w) = 0,
+where (w, x, y, z) are coordinates on P3 .
+   Consider the family of surfaces over C obtained by varying λ. By resolving the
+singularities of the generic fibre and removing any singular fibres that remain, we
+obtain a family of K3 surfaces X2 → U2 ⊂ C. Dolgachev [Dol96, Example (8.2)]
+exhibited elliptic fibrations on the K3 fibres of X2 and used them to give a set of
+divisors generating the lattice M2 . It can be seen from the structure of these elliptic
+fibrations that these divisors are invariant under monodromy, so there can be no
+action of monodromy on M2 . We thus see that X2 is an M2 -polarized family of K3
+surfaces.
+   The action of transcendental monodromy on X2 was calculated by Narumiya and
+Shiga [NS01] (note that our parameter λ is different from theirs: our λ is equal to
+µ4 or 256u
+           from their paper). In [NS01, Section 4] they find that the fibre Xλ of X2
+is smooth away from λ ∈ {0, 256  1
+                                   } and the monodromy action has order 2 around
+λ = 256 , order 4 around λ = ∞, and infinite order around λ = 0. Furthermore,
+       1
+
+they show [NS01, Remark 6.1] that the monodromy of X2 generates the (2, 4, ∞)
+triangle group (which is isomorphic to Γ0 (2)+ ∼  = O(M2⊥ )∗ ), so the period map of
+X2 → U2 must be injective. Thus the family X2 → U2 satisfies Definition 5.2.
+   We can use the local form (5.1) of the family X2 to find M2 -polarized families of
+K3 surfaces on the threefolds from [DM06, Table 1]. For example:
+Example 5.13. The first M2 -polarized case from Table 5.1 is the mirror to the
+quintic threefold. By the Batyrev-Borisov construction, on the maximal torus we
+may write this mirror as the locus in (C× )4 defined by the rational polynomial
+                                                       A
+                        x1 + x2 + x3 + x4 +                   = 1,
+                                                 x1 x2 x3 x4
+where A ∈ C is the Calabi-Yau deformation parameter. Consider the fibration
+induced by projection onto the x4 coordinate; for clarity, we make the substitution
+x4 = t. If we further substitute xi 7→ xi (1 − t) for 1 ≤ i ≤ 3 and rearrange, we
+obtain
+                                                  A
+                       x1 + x2 + x3 +                         = 1.
+                                          x1 x2 x3 t(1 − t)4
+But, from the local form (5.1), it is clear that this describes an M2 -polarized family
+of K3 surfaces with
+                                              A
+                                     λ=              .
+                                          t(1 − t)4
+This is the generalized functional invariant map of the fibration. Note that it is
+ramified to orders 1 and 4 over the order 4 elliptic point λ = ∞, order 5 over the
+                                                            5
+cusp λ = 0, and order 2 over the variable point λ = 528A , giving (i, j) = (1, 4).
+  Similar calculations may be performed in the other M2 -polarized cases from
+Table 5.1. We find that the generalized functional invariants are given by
+                                          Aui+j
+                                    λ=                 ,
+                                         ti (u − t)j
+where (t, u) are homogeneous coordinates on the base U ⊂ P1 of the K3 fibration,
+(i, j) are as in Table 5.1, and A is the Calabi-Yau deformation parameter.
+32         C. F. DORAN, A. HARDER, A.Y. NOVOSELTSEV, AND A. THOMPSON
+
+
+5.4.2. M3 -polarized families. Here we follow a similar method to the M2 -polarized
+case. An M3 -polarized K3 surface is mirror to a h6i-polarized K3 surface, which
+may be realised as a complete intersection of type (2, 3) in P4 .
+   By the Batyrev-Borisov construction, on the maximal torus we may express the
+mirror of a (2, 3) complete intersection in P4 as the locus in (C× )3 defined by the
+rational polynomial
+                                              λ
+(5.2)                       x1 +                          = 1,
+                                  x1 x2 x3 (1 − x2 − x3 )
+where λ ∈ C is a constant. This is easily compactified to a singular hypersurface of
+bidegree (2, 3) in P1 × P2 , given by the equation
+                         λs2 z 3 + r(r − s)xy(z − x − y) = 0,
+where (r, s) are coordinates on P1 and (x, y, z) are coordinates on P2 .
+   Consider the family of surfaces over C obtained by varying λ. By resolving
+the singularities of the generic fibre and removing any singular fibres that remain,
+we obtain a family of K3 surfaces X3 → U3 ⊂ C. We now show that X3 is an
+M3 -polarized family that satisfies Definition 5.2.
+   There is a natural elliptic fibration on the fibres of X3 , obtained by projecting
+onto the P1 factor. This elliptic fibration has two singular fibers of Kodaira type
+IV ∗ at r = 0 and r = s, a fibre of type I6 at s = 0, two fibres of type I1 and a
+section. In fact, one sees easily that the hypersurface obtained by intersecting with
+z = 0 splits into three lines, which project with degree 1 onto P1 and hence are
+all sections. If we choose one of these sections as a zero section, the other two are
+3-torsion sections and generate a subgroup of the Mordell-Weil group of order 3.
+   One can check that the lattice spanned by components of reducible fibers and
+these torsion sections is a copy of the lattice M3 inside of NS(Xλ ), for each fiber Xλ
+of X3 → U3 . Since the 3-torsion sections are individually fixed under monodromy,
+there can be no monodromy action on this copy of M3 in NS(Xλ ). We thus see
+that X3 is an M3 -polarized family of K3 surfaces.
+   Next we calculate the transcendental monodromy of this family to show that it
+satisfies Definition 5.2.
+                                                                        1
+Lemma 5.14. U3 is the open subset given by removing the points λ ∈ {0, 108 } from
+                                                                               1
+C. Transcendental monodromy of the family X3 → U3 has order 2 around λ = 108     ,
+order dividing 6 around λ = ∞ and infinite order around λ = 0.
+Proof. The discriminant of the elliptic fibration on a fibre Xλ of X3 vanishes for
+         1
+λ ∈ {0, 108 , ∞}, giving the locations of the singular K3 surfaces that are removed
+from the family X3 . At λ = 108  1
+                                    the two singular fibres of type I1 collide so that
+the K3 surface Xλ= 1081  has a single node. Thus there is a vanishing class of square
+(−2) associated to the fibre Xλ= 108
+                                   1  and monodromy around this fibre is a reflection
+across this class. Therefore monodromy around λ = 108   1
+                                                           has order 2.
+   We will use this to indirectly calculate the monodromies around other points.
+After base change λ = µ3 and a change in variables, one finds that the λ = ∞ fiber
+can be replaced with an elliptically fibered K3 surface with three singular fibers of
+type IV ∗ . Since a generic member of the family X3 has Néron-Severi rank 19, this
+fiber can only have a single node, so again the monodromy transformation around
+it must be of order at most 2. Hence monodromy around λ = ∞ has order dividing
+6.
+        FAMILIES OF LATTICE POLARIZED K3 SURFACES WITH MONODROMY                      33
+
+
+   To determine monodromy around the final point, it is enough to note that the
+moduli space of Mn -polarized K3 surfaces has a cusp, and the preimage of this cusp
+under the period map must also have monodromy of infinite order. Since the points
+       1
+λ ∈ { 108 , ∞} are of finite order and every other fiber is smooth, λ = 0 must map
+to the cusp under the period map and therefore has infinite order monodromy. 
+  As a result we find:
+Proposition 5.15. The period map of X3 → U3 is injective and the subgroup of
+O(M3⊥ )∗ generated by monodromy transformations is O(M3⊥ )∗ itself. The family
+X3 thus satisfies Definition 5.2.
+Proof. Notice first that, by Lemma 5.14, the monodromy group of X3 is isomorphic
+to a triangle group of type (2, d, ∞) for d = 2, 3 or 6 and contained in O(M3⊥ )∗ .
+It is well known that O(M3⊥ )∗ ∼   = Γ0 (3)+ is a (2, 6, ∞) triangle group, and since
+the period map is of finite degree, the monodromy group of X3 is of finite index in
+Γ0 (3)+ . Thus we need to show that the only finite index embedding of a (2, d, ∞)
+triangle group into the (2, 6, ∞) triangle group is the identity map from the (2, 6, ∞)
+triangle group to itself. But this is calculated in [Tak77].                          
+  As before, we can use the local form (5.2) of the family X3 to find M3 -polarized
+families of K3 surfaces on the threefolds from [DM06, Table 1]. We find that the
+generalized functional invariants are given by
+                                               Aui+j
+                                      λ=                ,
+                                            ti (u − t)j
+where (t, u) are homogeneous coordinates on the base U ⊂ P1 of the K3 fibration,
+(i, j) are as in Table 5.1, and A is the Calabi-Yau deformation parameter.
+
+5.4.3. M4 -polarized families. We conclude the proof of Theorem 5.10 with the M4 -
+polarized case. An M4 -polarized K3 surface is mirror to an h8i-polarized K3 surface,
+given generically as a complete intersection of type (2, 2, 2) in P5 .
+   By the Batyrev-Borisov construction, on the maximal torus we may express the
+mirror of a complete intersection of type (2, 2, 2) in P5 as the locus in (C× )3 defined
+by the rational polynomial
+                                             λ
+(5.3)                     x1 +                              = 1.
+                                 x2 (1 − x2 )x3 (1 − x3 )x1
+This may be easily compactified to a singular hypersurface of multidegree (2, 2, 2)
+in (P1 )3 given by
+                  λs21 s22 s23 − r1 (s1 − r1 )r2 (s2 − r2 )r3 (s3 − r3 ) = 0,
+where (ri , si ) are coordinates on the ith copy of P1 .
+   As above, we consider the family of surfaces over C obtained by varying λ. By
+resolving the singularities of the generic fibre and removing any singular fibres that
+remain, we obtain a family of K3 surfaces X4 → U4 ⊂ C. We now show that X4 is
+an M4 -polarized family that satisfies Definition 5.2.
+   Begin by noting that there is an S3 symmetry on X4 obtained by permuting
+copies of P1 . Furthermore, projection of (P1 )3 onto any one of the three copies of
+P1 produces an elliptic fibration on the K3 hypersurfaces. This elliptic fibration
+has a description very similar to that of the elliptic fibration on X3 . Generically it
+34         C. F. DORAN, A. HARDER, A.Y. NOVOSELTSEV, AND A. THOMPSON
+
+
+has two fibres of type I1∗ at ri = 0 and ri = si , a fibre of type I8 at si = 0, and two
+fibres of type I1 .
+   This elliptic fibration has a 4-torsion section. Using standard facts relating the
+Néron-Severi group of an elliptic fibration to its singular fiber types and Mordell-
+Weil group (see [Mir89, Lecture VII]), we see that each fiber of X4 is polarized by
+a rank 19 lattice with discriminant 8. A little lattice theory shows that this must
+be the lattice M4 . The embedding of M4 into the Néron-Severi group must be
+primitive, otherwise we would find full 2-torsion structure, which is not the case.
+As in the case of X3 , this embedding of M4 is monodromy invariant, so X4 is an
+M4 -polarized family of K3 surfaces.
+                                                                               1
+Proposition 5.16. U4 is the open subset given by removing the points λ = {0, 64   }
+from C. Transcendental monodromy of the family X4 → U4 has order 2 around
+      1
+λ = 64   and infinite order around λ ∈ {0, ∞}.
+   Furthermore, the period map of X4 → U4 is injective and the subgroup of O(M4⊥ )∗
+generated by monodromy transformations is O(M4⊥ )∗ itself. The family X4 thus
+satisfies Definition 5.2.
+Proof. As in the proof of Lemma 5.14, to see that fibers of X4 degenerate only
+when λ ∈ {0, 64  1
+                   , ∞}, it is enough to do a simple discriminant computation. The
+elliptic fibration described above is well-defined away from λ ∈ {0, ∞} and the two
+I1 singular fibers collide when λ = 64 1
+                                         . As before, this shows that monodromy has
+order 2 around λ = 64 .1
+
+    To see that monodromies around λ ∈ {0, ∞} have infinite order, we argue as
+follows. We have a period map from P1λ to MM4 , the Baily-Borel compactification
+of the period space of M4 -polarized K3 surfaces. The monodromy of X4 is a (2, k, l)
+triangle group for some choice of k, l, and lies inside of O(M4⊥ )∗ ∼= Γ0 (4)+ (which
+is a (2, ∞, ∞) triangle group) as a finite index subgroup, since the period map is
+dominant. However, by [Tak77], the only (2, k, l) triangle group of finite index inside
+of the (2, ∞, ∞) triangle group is the (2, ∞, ∞) triangle group itself (equipped with
+the identity embedding). Therefore the period map is the identity and monodromy
+around λ ∈ {0, ∞} is of infinite order.                                              
+
+   As in the previous cases, we can use the local form (5.3) of the family X4 to find
+M4 -polarized families of K3 surfaces on the threefolds from [DM06, Table 1]. We
+find that the generalized functional invariants are given by
+                                          Aui+j
+                                    λ=                 ,
+                                         ti (u − t)j
+where (t, u) are homogeneous coordinates on the base U ⊂ P1 of the K3 fibration,
+(i, j) are as in Table 5.1, and A is the Calabi-Yau deformation parameter. This
+completes the proof of Theorem 5.10.
+
+5.5. The case n = 1. It remains to address the case of threefolds from [DM06,
+Table 1] that are fibred by M1 -polarized K3 surfaces. Unfortunately many of the
+results that we have proved so far do not apply in this case: Assumption 4.6 does
+not hold (this follows easily from Remark 4.7 and the expressions for the (a, b, d)-
+parameters of M1 -polarized K3 surfaces, below), so the methods of Section 4.3 do
+not apply, and the torically induced fibrations of these threefolds by M1 -polarized
+        FAMILIES OF LATTICE POLARIZED K3 SURFACES WITH MONODROMY                       35
+
+
+K3 surfaces (computed with Sage) cannot all be seen as pull-backs of special M1 -
+polarized families X1 from the moduli space MM1 , so we cannot directly use the
+results of Section 5.2 either.
+   Instead, we will construct a special 2-parameter M1 -polarized family of K3 sur-
+faces X12 → U12 , which is very closely related to a family X1 satisfying Definition
+5.2 (this relationship will be made precise in Proposition 5.18 and Remark 5.19),
+and show that the M1 -polarized fibrations X → U on our threefolds are pull-backs
+of this family by maps U → U12 .
+   Now let Y12 → U12 denote the family of Kummer surfaces associated to X12 → U12
+and suppose that we can construct a cover V → U12 that undoes the Kummer
+construction for Y12 . Then, as before, we may undo the Kummer construction for
+the family of Kummer surfaces associated to X → U by pulling back to the fibre
+product U ×U12 V .
+   To construct the 2-parameter family X12 → U12 , we begin by noting that an M1 -
+polarized K3 surface is mirror to a h2i-polarized K3 surface, which can generically
+be expressed as a hypersurface of degree 6 in WP(1, 1, 1, 3). By the Batyrev-Borisov
+construction, an M1 -polarized K3 surface can be realised torically as an anticanon-
+ical hypersurface in the polar dual of WP(1, 1, 1, 3). The defining polynomial of a
+generic such anticanonical hypersurface is
+(5.4)          a0 x60 + a1 x61 + a2 x62 + a3 x23 + a4 x0 x1 x2 x3 + a5 x20 x21 x22 ,
+where x0 , x1 , x2 are variables of weight 1 and x3 is a variable of weight 3.
+  On the maximal torus, the family defined by this equation is isomorphic to the
+vanishing locus in (C× )3 of the rational polynomial
+                                         α             β
+(5.5)                        y+z+             + x + 1 + = 0,
+                                        x3 yz          x
+             a a a a3
+where α = 0 a1 6 2 3 and β = aa3 a2 5 . Consider the family of K3 surfaces over C2
+                4                  4
+obtained by varying α and β. By resolving the singularities of the generic fibre and
+removing any singular fibres that remain, we obtain the 2-parameter family of K3
+surfaces X12 → U12 ⊂ C2 .
+   We can express the (a, b, d)-parameters (see Section 4.2) of a fibre of X12 in terms
+of α and β as
+                                                       6 3         2
+                                 26 33 α                  2 3 α
+              a = 1,      b=             + 1,     d =                  ,
+                               (4β − 1)3                (4β − 1)3
+where this parameter matching was computed using the elliptic fibrations on M -
+polarized K3 surfaces in Weierstrass normal form.
+  Introducing a new parameter
+                                                26 33 α
+                                       γ :=             ,
+                                              (4β − 1)3
+we see from the expressions for (a, b, d) above that γ parametrizes the moduli space
+MM1 , so the generalized functional invariant of the family X12 is given by γ. Then
+we find:
+Lemma 5.17. U12 is the open set U12 := {(α, β) ∈ C2 | γ ∈  / {0, −1, ∞}}. Further-
+more, X12 → U12 is an M1 -polarized family of K3 surfaces.
+36         C. F. DORAN, A. HARDER, A.Y. NOVOSELTSEV, AND A. THOMPSON
+
+
+Proof. Using the computer software Sage, it is possible to explicitly compute a
+toric resolution of a generic K3 surface defined in the polar dual of WP(1, 1, 1, 3)
+by Equation (5.4). From this, we find that the singular fibres of this family occur
+precisely over γ ∈ {0, −1, ∞}.
+   To see that X12 → U12 is an M1 -polarized family, we note that X12 is a family
+of hypersurfaces in the polar dual to WP(1, 1, 1, 3). By [Roh04], there is a toric
+resolution Y of the ambient space such that the fibres X of X12 become smooth K3
+surfaces in Y and the restriction map
+                               res : NS(Y ) → NS(X)
+is surjective. Furthermore the image of res is the lattice M1 . This defines a lattice
+polarization on each fiber and, since this polarization is induced from the ambient
+threefold, it is unaffected by monodromy. Thus X12 is a family of M1 -polarized K3
+surfaces.                                                                           
+
+   Changing variables in (5.5) and completing the square in x, the family X12 may
+be written on (C× )3 as the vanishing locus of
+                             x2         γ
+                                  +y+z+    + 1 = 0.
+                           4β − 1       yz
+Furthermore, we note that points (α, β) ∈ U12 correspond bijectively with points
+(β, γ) in {(β, γ) ∈ C2 | β 6= 41 , γ ∈/ {0, −1}}. Using this we can reparametrize U12
+by β and γ, and thus think of X1 → U12 as the 2-parameter family parametrized
+                                     2
+
+by β and γ given on the maximal torus by the expression above.
+   After performing this reparametrization, the generalized functional invariant
+map of the family X12 is given simply by projection onto γ. The fibres of this
+map are 1-parameter families of K3 surfaces with the same period, parametrized
+by β ∈ C − { 41 }, which are therefore isotrivial. It is tempting to expect that these
+isotrivial families are in fact trivial, but this is not the case. Instead, we find:
+Proposition 5.18. Monodromy around the line β = 14 fixes the Néron-Severi lattice
+of a generic fibre of X12 and acts on the transcendental lattice as multiplication by
+−Id.
+   Furthermore, the family Xˆ12 obtained by pulling back X12 to the double cover of
+U1 ramified over the line β = 14 is isomorphic to a direct product X1 × C× , where
+  2
+
+X1 is an M1 -polarized family of K3 surfaces satisfying Definition 5.2.
+Proof. The double cover of U12 ramified over the line β = 14 is given by the map
+C× × (C − {0, −1}) → U12 taking (µ, γ) → (β, γ) = (µ2 + 14 , γ). After a change of
+variables x 7→ xµ, the family X̂12 may be written on the maximal torus (C× )3 as
+the vanishing locus of the rational polynomial
+                                           γ
+(5.6)                       x2 + y + z + 3 + 1 = 0.
+                                         3 yz
+   This family does not depend upon µ, so X̂12 is isomorphic to a direct product
+X1 ×C× , for some family X1 → (C−{0, −1}) parametrized by γ, and its monodromy
+around µ = 0 is trivial. Furthermore, for two K3 surfaces X1 and X2 in Xˆ12 lying
+above a fiber X in X12 there are natural isomorphisms
+                          φ1 : X1 → X,       φ2 : X2 → X.
+        FAMILIES OF LATTICE POLARIZED K3 SURFACES WITH MONODROMY                     37
+
+
+The automorphism φ−1   1 · φ2 is the non-symplectic involution given on the maximal
+torus by (x, y, z) 7→ (−x, y, z), which fixes the lattice M1 = NS(X).
+    Therefore monodromy around β = 1/4 has order 2 and acts on TX in the same
+way as a non-symplectic involution ι with fixed lattice M1 = NS(X). Thus, TX =
+(NS(X)ι )⊥ and so ι acts irreducibly on TX with order 2. It must therefore act as
+− Id.
+    It remains to prove that the 1-parameter family X1 → (C − {0, −1}) given on the
+maximal torus by varying γ in (5.6) satisfies Definition 5.2. We have already noted
+that the generalized functional invariant map (C − {0, −1}) → MM1 defined by γ
+is injective. Furthermore, using the expressions for a, b and d calculated earlier we
+see that γ = −1 at the elliptic point of order 2, γ = ∞ at the elliptic point of order
+3, and γ = 0 at the cusp. All that remains is to check that the monodromy of the
+family X1 → (C − {0, −1}) has the appropriate orders around each of these points.
+    This family X1 has been studied by Smith [Smi06, Example 2.15], where it
+appears as family D in Table 2.2 (and we note that Smith’s parameter µ is equal
+to − γ1 in our notation). Its monodromy around the points γ ∈ {0, −1, ∞} is given
+by the symmetric squares of the matrices calculated in [Smi06, Example 3.9]; in
+particular we find that this monodromy has the required orders.                     
+Remark 5.19. We note that the complicating factor in the M1 -polarized case
+is the fact that a generic M1 -polarized K3 surface X admits a non-symplectic
+involution which fixes M1 ⊆ NS(X). It is this which prevents some of the torically
+induced fibrations of the threefolds in [DM06, Table 1] by M1 -polarized K3 surfaces
+from being expressible as pull-backs of an M1 -polarized family X1 from the moduli
+space MM1 . However, from Proposition 5.18, we find that we can express these
+fibrations as pull-backs of X1 if we proceed to a double cover of the base which kills
+this involution.
+   Given this result, it is easy to undo the Kummer construction for the family
+Y12 → U12 of Kummer surfaces associated to the family X12 . First, pull back Y12
+to the double cover (C − {0, −1}) × C× ∼   = UM1 × C× of U12 ramified over the
+line β = 4 (where UM1 is defined as in Section 5.2). The result is the family of
+          1
+
+Kummer surfaces associated to the family Xˆ12 ∼
+                                              = X1 ×C× . This is exactly the family
+Y1 × C , where Y1 → UM1 is the family of Kummer surfaces associated to X1 . The
+       ×
+
+Kummer construction can then be undone for this family by pulling back to the
+cover V = CM1 × C× of UM1 × C× , where the cover CM1 → UM1 is as calculated
+in Section 5.3.
+   Thus, given a family X → U of M1 -polarized K3 surfaces that can be expressed
+as the pull-back of the family X12 by a map U → U12 , we may undo the Kummer
+construction for the associated family of Kummer surfaces Y → U by pulling back
+to the cover V ×U12 U .
+   We conclude by applying this to the cases from [DM06, Table 1]. We find:
+Theorem 5.20. There exist K3 fibrations with M1 -polarized generic fibre on five
+of the threefolds in [DM06, Table 1], given by the mirrors of those listed in Table
+5.2.
+   Furthermore, if X → P1t,u denotes one of these fibrations and U ⊂ P1t,u is the
+open set over which the fibres of X are nonsingular, then the restriction X |U → U
+agrees with the pull-back of the family X12 by the map U → U12 defined by α and β in
+Table 5.2 (in this table (t, u) are coordinates on the base U ⊂ P1t,u of the fibration,
+38         C. F. DORAN, A. HARDER, A.Y. NOVOSELTSEV, AND A. THOMPSON
+
+
+              Mirror Threefold             α     β           γ
+                                      A(t + u)3       26 33 A(t + u)3
+             WP(1, 1, 1, 1, 2)[6]                0  −
+                                          tu2                tu2
+                                          Au     t       26 33 Au4
+             WP(1, 1, 1, 1, 4)[8]
+                                            t    u      t(4t − u)3
+                                         Au2     t       26 33 Au5
+            WP(1, 1, 1, 2, 5)[10]
+                                           t2    u     t2 (4t − u)3
+                                               2
+                                           Au             26 33 Au2
+          WP(1, 1, 1, 1, 1, 3)[2, 6]∗ −          k −
+                                        t(t + u)     (4k − 1)3 t(t + u)
+                                              4
+                                         Au              26 33 Au4
+          WP(1, 1, 1, 2, 2, 3)[4, 6]∗ 2          k
+                                      t (t + u)2   (4k − 1)3 t2 (t + u)2
+        Table 5.2. Values of α and β for threefolds admitting M1 -
+        polarized fibrations.
+
+
+
+A is the Calabi-Yau deformation parameter and k ∈ C − {0, 14 } is a constant ). The
+family X |U → U is thus an M1 -polarized family of K3 surfaces.
+
+Proof. This is proved in the same way as Theorem 5.10, by comparing the forms
+of the maximal tori in the threefolds from [DM06, Table 1] to the local form of the
+family X12 given by Equation (5.5).                                              
+   Finally, we note that the generalized functional invariants in these cases are given
+by γ in Table 5.2. We see that, as in Section 5.4, they are all (i + j)-fold covers of
+MM1 ∼ = Γ0 (1) \ H (where (i, j) are as in Table 5.1) having exactly four ramification
+points: one of order (i + j) over the cusp, two of orders i and j over the elliptic
+point of order 3, and one of order 2 which varies with the value of the Calabi-Yau
+deformation parameter A.
+Remark 5.21. There is precisely one case from [DM06, Table 1] that has not been
+discussed: the mirror of the complete intersection WP(1, 1, 2, 2, 3, 3)[6, 6]. However,
+it can be seen that this threefold does not admit any torically induced M -polarized
+K3 fibrations, and our methods have not yielded any that are not torically induced
+either.
+
+            6. Application to the arithmetic/thin dichotomy
+   Recall that each of the threefolds X from [DM06, Table 1] moves in a one pa-
+rameter family over the thrice-punctured sphere P1 − {0, 1, ∞}. Recently there has
+been a great deal of interest in studying the action of monodromy around the punc-
+tures on the third cohomology H 3 (X, Z). This monodromy action defines a Zariski
+dense subgroup of Sp(4, R), which may be either arithmetic or non-arithmetic (more
+commonly called thin). Singh and Venkataramana [SV12][Sin13] have proved that
+the monodromy is arithmetic in seven of the fourteen cases from [DM06, Table 1],
+and Brav and Thomas [BT12] have proved that it is thin in the remaining seven.
+The arithmetic/thin status of each of the threefolds from Theorems 5.10 and 5.20
+is given in the fifth column of Table 5.1.
+   It is an open problem to explain this behaviour geometrically. To this end, we are
+able to make an interesting observation concerning the arithmetic/thin dichotomy
+for the Mn -polarized families with Theorems 5.10 and 5.20. Specifically, from Table
+         FAMILIES OF LATTICE POLARIZED K3 SURFACES WITH MONODROMY                          39
+
+
+5.1 we observe that a threefold admitting a torically induced fibration by Mn -
+polarized K3 surfaces has thin monodromy if and only if neither of the values (i, j)
+associated to this fibration are equal to 2.
+   This observation may also be extended to the 14th case [CDL+ 13]. In this case,
+recall that the threefold Y1 , which moves in a one-parameter family realising the
+14th case variation of Hodge structure, admits a torically induced fibration by M -
+polarized K3’s rather than Mn -polarized K3’s. Thus the generalized functional
+invariant map from Y1 has image in the 2-dimensional moduli space of M -polarized
+K3 surfaces, rather than one of the modular curves MMn . However, from [CDL+ 13,
+Section 5.1 and Equation (4.5)], we see that the image of the generalized functional
+invariant map from Y1 is contained in the special curve in the M -polarized moduli
+space defined by the equation σ = 1 (where σ and π are the rational functions from
+Section 4.2).
+   By the results of [CDLW09, Section 3.1], the moduli space of M -polarized K3
+surfaces may be identified with the Hilbert modular surface
+                      (PSL(2, Z) × PSL(2, Z)) ⋊ Z/2Z \ H × H,
+with natural coordinates given by σ and π. The σ = 1 locus is thus parametrized
+by π and has an orbifold structure induced from the Hilbert modular surface. This
+orbifold structure has an elliptic point of order six at π = 0, an elliptic point of
+order two at π = 41 , and a cusp at π = ∞.
+   The generalized functional invariant map for the K3 fibration on Y1 is given by
+the rational function π, which is calculated explicitly in [CDL+ 13, Equation (4.4)].
+It is a double cover of the σ = 1 locus ramified over the cusp and a second point
+that varies with the value of the Calabi-Yau deformation parameter. This agrees
+perfectly with the description of the generalized functional invariants for the Mn -
+polarized cases from Section 5.4, with (i, j) = (1, 1), thereby giving the final row of
+Table 5.1. From this table, we observe:
+Theorem 6.1. Suppose that X is a family of Calabi-Yau threefolds from [DM06,
+Table 1] that admit a torically induced fibration by Mn -polarized K3 surfaces (resp.
+M -polarized K3 surfaces with σ = 1). By our previous discussion, the generalized
+functional invariant of this fibration is a (i + j)-fold cover of the modular curve
+MMn ∼  = Γ0 (n)+ \ H (resp. the orbifold curve given by the σ = 1 locus in the moduli
+space of M -polarized K3 surfaces), where i and j are given by Table 5.1, which is
+totally ramified over the cusp and ramified to orders i and j over the remaining
+orbifold point of order 6= 2. Then X has thin monodromy if and only if neither i
+nor j is equal to 2.
+
+                                       References
+[BB96]     V. V. Batyrev and L. A. Borisov, On Calabi-Yau complete intersections in toric
+           varieties, Higher-Dimensional Complex Varieties (Trento, 1994), de Gruyter, Berlin,
+           1996, pp. 39–65.
+[BHPvdV04] W. P. Barth, K. Hulek, C. A. M. Peters, and A. van de Ven, Compact complex
+           surfaces, second ed., Ergebnisse der Mathematik und ihrer Grenzgebiete, 3. Fogle,
+           A Series of Modern Surveys in Mathematics, vol. 4, Springer-Verlag, 2004.
+[BT12]     C. Brav and H. Thomas, Thin monodromy in Sp(4), Preprint, October 2012,
+           arXiv:1210.0523.
+[CD07]     A. Clingher and C. F. Doran, Modular invariants for lattice polarized K3 surfaces,
+           Michigan Math. J. 55 (2007), no. 2, 355–393.
+40          C. F. DORAN, A. HARDER, A.Y. NOVOSELTSEV, AND A. THOMPSON
+
+
+[CDL+ 13]    A. Clingher, C. F. Doran, J. Lewis, A. Y. Novoseltsev, and A. Thompson, The 14th
+             case VHS via K3 fibrations, Manuscript, to appear, December 2013.
+[CDLW09]     A. Clingher, C. F. Doran, J. Lewis, and U. Whitcher, Normal forms, K3 surface
+             moduli and modular parametrizations, Groups and Symmetries, CRM Proc. Lecture
+             Notes, vol. 47, Amer. Math. Soc., 2009, pp. 81–98.
+[DM06]       C. F. Doran and J. W. Morgan, Mirror symmetry and integral variations of Hodge
+             structure underlying one-parameter families of Calabi-Yau threefolds, Mirror Sym-
+             metry. V, AMS/IP Stud. Adv. Math., vol. 38, Amer. Math. Soc., Providence, RI,
+             2006, pp. 517–537.
+[Dol83]      I. V. Dolgachev, Integral quadratic forms: Applications to algebraic geometry (af-
+             ter V. Nikulin), Bourbaki Seminar, Vol. 1982/83, Astérisque, vol. 105, Soc. Math.
+             France, 1983, pp. 251–278.
+[Dol96]               , Mirror symmetry for lattice polarised K3 surfaces, J. Math. Sci. 81 (1996),
+             no. 3, 2599–2630.
+[Dor00]      C. F. Doran, Picard-Fuchs uniformization: Modularity of the mirror map and
+             mirror-moonshine, The Arithmetic and Geometry of Algebraic Cycles (Banﬀ, AB,
+             1998), CRM Proc. Lecture Notes, vol. 24, Amer. Math. Soc., Providence, RI, 2000,
+             pp. 257–281.
+[HLOY04]     S. Hosono, B. H. Lian, K. Oguiso, and S.-T. Yau, Autoequivalences of derived cat-
+             egory of a K3 surface and monodromy transformations, J. Algebraic Geom. 13
+             (2004), no. 3, 513–545.
+[HvS13]      J. Hofmann and D. van Straten, Some monodromy groups of finite index in Sp4 (Z),
+             Preprint, December 2013, arXiv:1312.3063.
+[KK01]       J. Keum and S. Kōndo, The automorphism groups of Kummer surfaces associated
+             with the product of two elliptic curves, Trans. Amer. Math. Soc. 353 (2001), no. 4,
+             1469–1487.
+[KS08]       M. Kuwata and T. Shioda, Elliptic parameters and defining equations for elliptic
+             fibrations on a Kummer surface, Algebraic Geometry in East Asia–Hanoi 2005, Adv.
+             Stud. Pure Math., vol. 50, Math. Soc. Japan, Tokyo, 2008, pp. 177–215.
+[Mir89]      R. Miranda, The basic theory of elliptic surfaces, Dottorato di Ricerca in Matem-
+             atica [Doctorate in Mathematical Research], ETS Editrice, Pisa, 1989.
+[Mor84]      D. Morrison, On K3 surfaces with large Picard number, Invent. Math. 75 (1984),
+             no. 1, 105–121.
+[Muk88]      S. Mukai, Finite groups of automorphisms of K3 surfaces and the Mathieu group,
+             Invent. Math. 94 (1988), no. 1, 183–221.
+[Nik80a]     V. V. Nikulin, Finite automorphism groups of Kähler K3 surfaces, Trans. Moscow
+             Math. Soc. 38 (1980), no. 2, 71–135.
+[Nik80b]              , Integral symmetric bilinear forms and some of their applications, Math.
+             USSR Izv. 14 (1980), no. 1, 103–167.
+[NS01]       N. Narumiya and H. Shiga, The mirror map for a family of K3 surfaces induced
+             from the simplest 3-dimensional reflexive polytope, Proceedings on Moonshine and
+             related topics (Montréal, QC, 1999), CRM Proc. Lecture Notes, vol. 30, Amer.
+             Math. Soc., 2001, pp. 139–161.
+[Ogu89]      K. Oguiso, On Jacobian fibrations on the Kummer surfaces of the product of non-
+             isogenous elliptic curves, J. Math. Soc. Japan 41 (1989), no. 4, 651–680.
+[PŠŠ71]      I. I. Pjateckiı̆-Šapiro and I. R. Šafarevič, A Torelli theorem for algebraic surfaces of
+             type K3, Math. USSR Izv. 5 (1971), no. 3, 547–588.
+[Riz06]      J. Rizov, Moduli stacks of polarized K3 surfaces in mixed characteristic, Serdica
+             Math. J. 32 (2006), no. 2-3, 131–178.
+[Roh04]      F. Rohsiepe, Lattice polarized toric K3 surfaces, Preprint, September 2004,
+             arXiv:hep-th/0409290.
+[Sin13]      S. Singh, Arithmeticity of the 4 monodromy groups associated to the Calabi-Yau
+             threefolds, Preprint, August 2013, arXiv:1308.4039.
+[Smi06]      J. Smith, Picard-Fuchs differential equations for families of K3 surfaces, Ph.D.
+             thesis, University of Warwick, July 2006.
+[SV12]       S. Singh and T. N. Venkataramana, Arithmeticity of certain symplectic hypergeo-
+             metric groups, Preprint, August 2012, arXiv:1208.6460.
+          FAMILIES OF LATTICE POLARIZED K3 SURFACES WITH MONODROMY                        41
+
+
+[Tak77]     K. Takeuchi, Commensurability classes of arithmetic triangle groups, J. Fac. Sci.
+            Univ. Tokyo Sect. IA Math. 24 (1977), no. 1, 201–212.
+[Voi07]     C. Voisin, Hodge theory and complex algebraic geometry. I, Cambridge Studies in
+            Advanced Mathematics, vol. 76, Cambridge University Press, 2007.
+[Whi11]     U. Whitcher, Symplectic automorphisms and the Picard group of a K3 surface,
+            Comm. Algebra 39 (2011), no. 4, 1427–1440.
+
+  Department of Mathematical and Statistical Sciences, 632 CAB, University of
+Alberta, Edmonton, Alberta T6G 2G1, Canada
+  E-mail address: charles.doran@ualberta.ca
+
+  Department of Mathematical and Statistical Sciences, 632 CAB, University of
+Alberta, Edmonton, Alberta T6G 2G1, Canada
+  E-mail address: aharder@ualberta.ca
+
+  Department of Mathematical and Statistical Sciences, 632 CAB, University of
+Alberta, Edmonton, Alberta T6G 2G1, Canada
+  E-mail address: novoselt@ualberta.ca
+
+   Fields Institute, 222 College Street, Toronto, Ontario M5T 3J1, Canada
+   E-mail address: amthomps@ualberta.ca
+

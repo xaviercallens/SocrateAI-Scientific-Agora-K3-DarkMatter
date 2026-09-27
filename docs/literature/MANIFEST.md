@@ -40,3 +40,15 @@ Not a fetched primary source: a verbatim record of an external review (Fable 5.1
 | external_reviews/FABLE51_K3_SELECTION_REVIEW_2026_09_21.md | 6ab674536a5bb1e50bdc9df3b6f3445e7ba0e34e3d78df141503ce18030233a9 | Claude Docs `https://claude.ai/artifact/SFDSuPbfKD8SB4mVQhAErg` (id cc708cbe-058d-4c7e-9903-02b9af1e1d5d, rev 21), block XML flattened to Markdown | 2026-09-27 | READ IN FULL (all sections; 12 Stream-2 clauses scored, all CONFIRMED; 3 findings in band) |
 
 Generated-by: Stream 2 (Claude Fable 5.1), 2026-09-27 | Verified-by: sha256 written by script (`record_review.py`, job tmp), re-read by the audit checker | Reviewed-by: N
+
+## Addendum 2026-09-27 — explicit M_n-polarized models (GE-10 route; rows above untouched)
+
+Fetched from arxiv.org/pdf/<id> by curl on 2026-09-27 for the open GE-10 thread ("an actual M₇-polarized model is needed before any test"). Read for `briefs/WP_GE10_INOSE_MODEL_M7_2026_09_27.md`. Mathematics only; nothing here is physics.
+
+| file | sha256 | source | fetched | read status |
+|---|---|---|---|---|
+| arxiv_math_0602146.pdf | 879d98d91a9cf3f643dd1c1d9c9ef7e557527d23b838db8fa24d284ce05da7ea | arXiv:math/0602146 (Clingher–Doran, *Modular invariants for lattice polarized K3 surfaces*, Michigan Math. J. 2007) | 2026-09-27 | READ IN PART (§1: Thm 1.1 — canonical Shioda–Inose structure, Y = Km(E₁×E₂); eq. (4) Inose quartic X(a,b); Thm 1.2 — J(E₁), J(E₂) are the roots of x² − (a³ − b² + 1)x + a³ = 0; Cor 1.3 — π = a³, σ = a³ − b² + 1; §3 Thm 3.13 seen; rest NOT read) |
+| arxiv_0712.1880.pdf | 8c2a299ae241760122f67beb29b60d173f9772dee2354b39f783d22840837e19 | arXiv:0712.1880 (Clingher–Doran–Lewis–Whitcher, *Normal forms, K3 surface moduli, and modular parametrizations*) | 2026-09-27 | READ IN PART (§3.1 Thm 3.1 normal form Q(a,b,d), Thm 3.2 weights (2,3,6), Thm 3.3 inverse period map W₁ = π, W₂ = π − σ + 1; §3.2 — M_n-polarized ⇔ n-isogenous pair, M_n locus = Y₀(n)+n ≅ X₀(n)+n, Hauptmodul parametrization when genus 0; §3.3 eqs. (3.5)–(3.6), Thm 3.4 and Cor 3.5 — third-order Picard–Fuchs ⇔ M_n-polarized; §2, §3.2.1 examples n = 2,3,6 and §4 NOT read) |
+| arxiv_1312.6434.pdf | 8b5c336307261765e0ea09b7d7773958ed5284d6a384afad7e079dc53b4033b2 | arXiv:1312.6434 (Doran–Harder–Novoseltsev–Thompson, *Families of lattice polarized K3 surfaces with monodromy*, IMRN 2015) | 2026-09-27 | READ IN PART (§5.2: Def. 5.2 family X_n over U_{M_n}, Remark 5.3 — X_n for ANY n by restricting the CDLW normal form to the M_n locus, explicit only for n ≤ 4; Lemma 5.5 map R_n : SL₂(R) → SO(2,1); §5.3 Thm 5.10 (M_n fibrations, 2 ≤ n ≤ 4) and Table 5.1 header; rest NOT read) |
+
+Generated-by: Stream 2 (Claude Fable 5.1), 2026-09-27 | Verified-by: sha256sum written by script (`fetch_papers.sh`, job tmp) | Reviewed-by: N

@@ -1,0 +1,1057 @@
+                                          Centre de Recherches Mathématiques
+                                          CRM Proceedings and Lecture Notes
+arXiv:0712.1880v1 [math.AG] 12 Dec 2007
+
+
+
+
+                                                    Normal Forms, K3 Surface Moduli, and Modular
+                                                                  Parametrizations
+
+                                                         A. Clingher, C. F. Doran, J. Lewis, and U. Whitcher
+
+                                                                                 For John McKay
+
+
+
+
+                                                                                1. Introduction
+                                              The geometric objects of study in this paper are K3 surfaces which admit a
+                                          polarization by the unique even unimodular lattice of signature (1,17). This lattice
+                                          can be realized as the orthogonal direct sum
+                                                                                M = H ⊕ E8 ⊕ E8 ,
+                                          where H is the standard rank-two hyperbolic lattice and E8 is the unique even,
+                                          negative-definite and unimodular lattice of rank eight. A lattice-polarization by
+                                          the lattice M imposes severe constraints on the geometry of a K3 surface X. In
+                                          particular, the Picard rank of X has to be 18, 19, or 20 (see [25]).
+                                               A standard Hodge-theoretic observation about this special class of K3 surfaces
+                                          is that the polarized Hodge structure of an M-polarized K3 surface is identical
+                                          with the polarized Hodge structure of an abelian surface A = E1 × E2 realized as
+                                          a cartesian product of two elliptic curves. Since both types of surfaces involved
+                                          admit appropriate versions of the Torelli theorem, Hodge theory implies a well-
+                                          defined correspondence, giving rise to a canonical analytic isomorphism between
+                                          the moduli spaces on the two sides. By employing a modern point of view from the
+                                          frontier of algebraic geometry with string theory, one can regard this correspondence
+                                          as a Hodge-theoretic duality map, a correspondence that relates two seemingly
+                                          different types of surfaces sharing similar Hodge-theoretic information.
+                                               In [4], the first two authors showed that that the resemblance of the two Hodge
+                                          structures involved in the duality correspondence is not fortuitous, but rather is
+                                          merely a consequence of a quite interesting geometric relationship. We show in
+                                          [4, Theorem 1.1] that: the surface X possesses a canonical involution defining a
+                                          Shioda-Inose structure; the minimal resolution of X quotiented by this involution
+                                                A.C. acknowledges support from a University of Missouri Research Board Grant. He would
+                                          also like to thank the Department of Mathematics of the University of Washington for its hospi-
+                                          tality and financial support during the 2007 summer school on K3 Surfaces and String Duality.
+                                                C.F.D. was supported in part by the University of Washington Royalty Research Fund.
+                                                J.L. was supported in part by a VIGRE Graduate Fellowship.
+                                                U.W. was supported in part by a McKibben and Merner Fellowship.
+
+                                                                                                                   c 0000 (copyright holder)
+                                                                                        1
+2              A. CLINGHER, C. F. DORAN, J. LEWIS, AND U. WHITCHER
+
+
+is a new K3 surface Y endowed with a canonical Kummer structure; this structure
+realizes Y as the Kummer surface of an abelian surface A which is canonically
+represented as a Cartesian product of two elliptic curves (i.e., A = E1 × E2 ); and
+the construction induces a canonical Hodge isomorphism between the M-polarized
+Hodge structure of X and the natural H-polarized Hodge structure of the abelian
+surface A.
+     One important feature of the special class of M-polarized K3 surfaces is that
+they turn out to be completely classified by two modular invariants σ and π in
+C, much in the same way as elliptic curves over the field of complex numbers are
+classified by the j-invariant. However, the two modular invariants σ and π are not
+geometric in origin. They are defined Hodge-theoretically, and the result leading to
+the classification is a consequence of the appropriate version of the Global Torelli
+Theorem for lattice polarized K3 surfaces. In the context of the duality map, the two
+invariants can be seen as the standard symmetric functions on the j-invariants of
+the dual elliptic curves, σ being their sum and π their product. This interpretation
+suggests that the modular invariants of an M-polarized K3 surface can be computed
+by determining the two elliptic curves.
+     Explicit M-polarized K3 surfaces can be constructed by various geometrical
+procedures. One such method, introduced in 1977 by Inose [19], constructs a two-
+parameter family X(a, b) of M-polarized K3 surfaces by taking minimal resolutions
+of the projective quartics in P3 associated with the special equations:
+                                         1
+(1.1)           y 2 zw − 4x3 z + 3axzw2 − (z 2 w2 + w4 ) + bzw3 = 0
+                                         2
+for a, b in C. In Section 3 below, this construction is generalized so as to compact-
+ify the affine (a, b)-parametric family to a weighted projective space with covering
+coordinates [a, b, d]. The coarse moduli space for M-polarized K3 surfaces is then
+given by the locus where d 6= 0 in this weighted projective space. One can thus
+regard the Inose quartic as a normal form for M-polarized K3 surfaces. In
+the second part of [4], we use the geometric correspondence to explicitly describe
+the j-invariants of the two elliptic curves E1 and E2 associated to the Inose sur-
+face X(a, b). The result is reproduced below (Theorem 3.3) in the context of the
+X(a, b, d) family. As a consequence, the coarse moduli space for M-polarized K3
+surfaces is explicitly identified with the classical Hilbert modular surface H1 for the
+elliptic modular group.
+     In this paper, we use explicit computations of Picard-Fuchs differential equa-
+tions to explore (and exploit) the “universal” property of the moduli space of M-
+polarized K3 surfaces with respect to enhancement to non-generic Picard lattices.
+The conditions on the hypersurfaces for enhancement to Picard lattices of rank 19
+are of particular interest, as these conditions determine one-parameter subfamilies
+of the coarse moduli space. As we work throughout in parallel with the case of
+the Weierstrass normal form for elliptic curves, this case is reviewed in Section
+2. The approach is a natural extension of the second author’s work on Picard-
+Fuchs uniformization for families of elliptic curves and lattice-polarized K3 surfaces
+[11, 12].
+     The Inose family normal form is realized as projective hypersurfaces with just
+ADE type singularities. This provides a crucial advantage to using this normal
+form, as now the Griffiths-Dwork technique (see Section 2.2.1 for a general discus-
+sion) can be applied to compute the differential equations satisfied by periods of the
+     NORMAL FORMS, K3 SURFACE MODULI, AND MODULAR PARAMETRIZATIONS                                 3
+
+
+holomorphic 2-forms directly. We do this first in Section 3 with independent vari-
+ables taken to be the free coefficients in the normal form hypersurface equations;
+this is the analog of taking partial derivatives of the Weierstrass elliptic periods
+with respect to the parameters g2 and g3 . It proves convenient to work in the affine
+chart [1, b, d] for these computations. Upon substitution of the modular invariants
+from [4], this partial differential system completely decouples, reducing to a pair of
+ODEs. Each of these is the Picard-Fuchs ODE of a corresponding “factor” family
+of elliptic curves, reflecting the geometric fact that our normal form K3 surfaces
+are Shioda-Inose surfaces of products of pairs of elliptic curves.
+     Next we apply the Griffiths-Dwork method with independent variable t; this
+is the analog of treating g2 (t) and g3 (t) as rational functions of a single complex
+variable t. In the case of Weierstrass normal form elliptic curves, this modifica-
+tion simply allows one to compute the Picard-Fuchs ODE for arbitrary one pa-
+rameter families of elliptic curves, as the moduli space of elliptic curves is itself
+one-dimensional. In our case, this modification allows one to “probe” the two-
+dimensional moduli space of H ⊕ E8 ⊕ E8 lattice polarized K3 surfaces with rational
+curves, computing the Picard-Fuchs ODE for the restricted period functions.1 The
+modular invariants of [4] can once again be substituted in, yielding a fourth order
+ODE whose coefficients are differential rational functions of j1 (t) and j2 (t).
+     Here is where the universal property for the moduli space with respect to lattice
+enhancement makes its impact felt. Enhancement of polarization from M to
+                                 Mn = H ⊕ E8 ⊕ E8 ⊕ h−2ni
+is equivalent to the condition that this fourth order ODE reduces to a third order
+ODE (a condition on ODEs studied by Gino Fano over a century ago). Under the
+hypothesis that j1 (t) and j2 (t) are nonconstant, this reduction occurs precisely when
+these two functions satisfy a particular nonlinear ODE. This nonlinear ODE is the
+master equation for modular parametrizations in that any parametrization
+of the modular curve X0 (n) by rational functions j1 (t) and j2 (t) solves this ODE.
+What’s more, for any solutions j1 (t) and j2 (t) not themselves rational functions
+of t, but such that their sum and product are still rational functions, the pair
+parametrizes the modular curve X0 (n) + n.
+     The master equation can even be rewritten in a form which makes manifest
+its relationship with pairs of n-isogenous elliptic curves. First, all of the terms
+involving j1 (t) can be moved to one side of the equation and all those involving
+j2 (t) to the other. Of course, up to exchanging j1 (t) with j2 (t), the expressions
+on each side are then the same. Moreover, they are recognizable as the coefficients
+of projective normalized Picard-Fuchs ODEs for a pair of elliptic curves. As such,
+they are each the sum of one term involving the rational function characterizing
+the uniformizing differential equation for the elliptic modular parameter j, and
+another term consisting of the Schwarzian derivative of j with respect to t (when
+set equal to zero, this expression is also known as the “Schwarzian differential
+equation” for j). Once the master equation for modular parametrizations has been
+expressed in this form, it is natural to ask whether an analogous equation, based on
+     1Computation of Picard-Fuchs equations for particular one-parameter families of K3 surfaces
+of Picard rank 19 dates back at least to [26]. The approach taken in the present paper, however,
+results in a universal expression for the Picard-Fuchs equations for all one-parameter families of K3
+surfaces admitting (at least) an M -polarization. The families are explicitly realized as subfamilies
+of the single two-parameter family of Equation 1.1.
+4              A. CLINGHER, C. F. DORAN, J. LEWIS, AND U. WHITCHER
+
+
+hauptmoduls other than the elliptic modular parameter j, will similarly characterize
+parametrizations of genus zero quotients of the upper half plane by the moonshine
+groups. We address this question in Section 3.3.1, and illustrate there explicit
+parametrizations of some modular equations studied by Cohn-McKay.
+    Currently under investigation are an extension of the method to handle modular
+curves of genus greater than zero (by modifying the Griffiths-Dwork technique) and
+a generalization to parametrizing Humbert surfaces and Shimura curves based now
+on universal properties of the moduli space of H ⊕ E8 ⊕ E7 lattice polarized K3
+surfaces studied by Clingher and Doran in [5, 6].
+
+
+                                 2. Elliptic Curves
+     2.1. Normal Form and Moduli Space. As is well-known, the classification
+of elliptic curves over the field of complex numbers is based on the following classical
+features. First, every elliptic curve E can be realized through an explicit normal
+form given, for instance, by the projective version of the Weierstrass cubic:
+
+                            y 2 z − 4x3 + g2 xz 2 + g3 z 3 = 0
+
+for some pair (g2 , g3 ) ∈ C2 with g23 − 27g32 6= 0. The Weierstrass form is not unique.
+Nevertheless, the weighted projective point [g2 , g3 ] ∈ WP(2, 3) classifies E up to
+isomorphism. This leads to a nice (coarse) moduli space for complex elliptic
+curves, taken as the one-dimensional open variety:
+                            
+                    M =       [g2 , g3 ] ∈ WP(2, 3) g23 − 27g32 6= 0 .
+
+In this context, the j-invariant:
+
+                                                g23
+                                 j(E) =
+                                            g2 − 27g32
+                                             3
+
+
+realizes an identification between M and C.
+     From a Hodge theoretic point of view, an elliptic curve can be seen as an
+element (period) in the complex upper half-plane H. The classifying space for such
+periods is the modular quotient
+
+                                     F1 = Γ1 \H
+
+where Γ1 = PSL(2, Z) with the standard action on H.
+   The link between the two points of view is realized by the period map:
+
+(2.1)                               per : M → F1
+
+which makes an isomorphism of analytic spaces. The inverse of (2.1) can be de-
+scribed in terms of Γ1 -modular forms as:
+
+                            per−1 = [ 60 · E4 , 140 · E6 ]
+
+where E4 , E6 : H → C are the classical Eisenstein series of weights four and six,
+respectively. Using the inverse period map, one may view the j-invariant as a map
+j : H → C.
+        NORMAL FORMS, K3 SURFACE MODULI, AND MODULAR PARAMETRIZATIONS                                    5
+
+
+     2.2. Picard–Fuchs Differential Equation. When considering the periods
+of varieties in families, it is often easier to compute the regular singular differential
+equation satisfied by all the period functions on the base of the family – the Picard-
+Fuchs differential equation – than to explicitly describe the period functions
+themselves. We first review in Section 2.2.1 the method, due to Griffiths and Dwork,
+for computing the Picard-Fuchs differential equation for families of hypersurfaces in
+projective space via residues. In Section 2.2.2 this technique is applied to families
+of elliptic curves in P2 in Weierstrass normal form.
+     2.2.1. The Griffiths–Dwork Technique. Let X be a hypersurface in Pn given
+by a homogeneous polynomial Q in coordinates [x0 , . . . , xn ], and let ι : X → Pn
+be the inclusion map. Let H(X) be the de Rham cohomology of rational n-forms
+on Pn − X. We may write any representative of H(X) as P Ω0 /Qk , where Ω0 =
+Pn          i i   0      di            n                                     n
+   i=0 (−1) x dx ∧ . . . dx . . . ∧ dx is the usual holomorphic form on P and P is
+a homogeneous polynomial of degree deg P = k deg Q − (n + 1).
+     Let the Jacobian ideal J(Q) be the ideal generated by the partial derivatives
+ ∂Q                                                    K
+                                                                          P      ∂Q
+∂xi . If we have an element of H(X) of the form Qk+1 Ω0 where K =           i Ai ∂xi is a
+member of the Jacobian ideal, then we may reduce the order of the pole:
+
+                         Ω0 X ∂Q         1 Ω0 X ∂Ai
+(2.2)                     k+1
+                                Ai     =            + exact terms
+                        Q     i
+                                   ∂xi   k Qk i ∂xi
+
+    Let γ be a cycle in X, and let T (γ) be a small tubular neighborhood of γ in
+Pn − X. Then we may define the residue map Res : H(X) → H n−1 (X, C) by
+                             Z             Z
+                          1        P Ω0           P Ω0
+(2.3)                                    =    Res( k )
+                         2πi T (γ) Qk       γ      Q
+
+Let H be the hyperplane class in H n−1 (Pn , C). We refer to the perpendicular com-
+plement of ι∗ (H) in H n−1 (X, C) as the primitive cohomology of X, and denote
+it by P H(X). The residue map is an isomorphism onto the primitive cohomology.
+[15]
+     Now, consider a family of hypersurfaces Xt1 ···tj given by polynomials Qt1 ···tj ,
+where t1 , . . . , tj are independent parameters. We may define a corresponding family
+of cycles γ(t1 , · · · , tj ). For (t1 , . . . , tj ) in a sufficiently small neighborhood of a fixed
+parameter value (t′1 , . . . , t′j ), T (γ(t1 , . . . , tj )) is homologous to T (γ(t′1 , . . . , t′j )) in
+Hn (Pn − X, C). Thus, we may differentiate as follows:
+
+                        Z                                  Z
+                   ∂                        P Ω0     ∂                                P Ω0
+(2.4)                                           k
+                                                  =
+                  ∂ti    T (γ(t1 ,...,tj )) Q(t)    ∂t i       T (γ(t′1 ,...,t′j ))   Q(t)k
+                                                           Z
+                                                                                 P Ω0 ∂Q
+                                                = −k                                k+1 ∂t
+                                                           T (γ(t′1 ,...,t′j )) Q(t)       i
+
+    If r = dimC (Hn−1 (X)) = dimC (H n−1 (X, C)), only r − 1 derivatives can be lin-
+early independent. Therefore the periods must satisfy a linear differential equation
+with coefficients in Q(t1 , . . . , tj ) of order at most r — this is a Picard–Fuchs dif-
+ferential equation. One
+                      R may compute            the Picard–Fuchs equation by systematically
+                                          P Ω0
+taking derivatives of T (γ(t1 ,...,tj )) Q(t) k with respect to the various parameters and
+
+using 2.2 to rewrite the results in terms of a standard basis for H n−1 (X, C). This
+6                 A. CLINGHER, C. F. DORAN, J. LEWIS, AND U. WHITCHER
+
+
+method is known as the Griffiths–Dwork technique. (See [9] or [13] for a more
+detailed discussion.)
+    2.2.2. Griffiths–Dwork for the Weierstrass Form. Consider the hypersurface
+                                   Q = y 2 z − 4x3 + g2 xz 2 + g3 z 3 ,
+the Weierstrass form for a family of elliptic curves. We illustrate here the Griffiths–
+Dwork technique, first treating g2 and g3 as independent parameters. Equation 2.4
+tells us that we may differentiate under the integral sign:
+                                              Z         Z
+                                           ∂      Ω0      xz 2 Ω0
+(2.5)                                                =−
+                                          ∂g2     Q         Q2
+                                              Z         Z 3
+                                           ∂      Ω0      z Ω0
+                                                     =−
+                                          ∂g3     Q        Q2
+    A Groebner basis computation shows that xz 2 and z 3 are equivalent modulo
+the Jacobian ideal J(Q). Using Equation 2.2 to reduce the pole order, we find that
+                                      Z                  Z                  Z
+                                 ∂         Ω0    ∂           Ω0   −1            Ω0
+(2.6)                                         −                 =
+                                ∂g2        Q    ∂g3          Q    4g2           Q
+    Now, suppose g2 and g3 are both functions of a single parameter t. We compute:
+                            Z                     Z                   Z
+                       d        Ω0     ∂           Ω0 ∂g2         ∂     Ω0 ∂g3
+(2.7)                              =(                )      +(              )
+                       dt       Q     ∂g2          Q ∂t        ∂g3      Q ∂t
+                                                 Z                    Z
+                                                    xz 2 Ω0             z 3 Ω0
+                                      = −g2′ (t)            − g ′
+                                                                3 (t)
+                                                     Q2                  Q2
+                  Z                       Z                                                      Z
+            d2        Ω0                  xz 2 (g2′ (t)xz 2 + g3′ (t)z 3 )                            xz 2
+(2.8)                    = 2g2′ (t)                                            Ω 0 −   g ′′
+                                                                                         2  (t)            Ω
+            dt2       Q                                  Q  3                                         Q2
+                                       Z 3 ′                                                  Z 3
+                                          z (g2 (t)xz 2 + g3′ (t)z 3 )                              z
+                            + 2g3′ (t)                    3
+                                                                            Ω  0 −  g ′′
+                                                                                      3  (t)           Ω
+                                                       Q                                           Q2
+                                          Z                                       Z
+                                             (xz 2 )2                                 (xz 2 )(z 3 )
+(2.9)                       = 2(g2′ (t))2              Ω  0  +   4g  ′
+                                                                     2 (t)g ′
+                                                                            3 (t)                      Ω0
+                                                Q3                                           Q3
+                                          Z                             Z                           Z
+                                             (z 3 )2                       xz 2                         z3
+                            + 2(g3′ (t))2             Ω 0 −   g ′′
+                                                                2  (t)           Ω 0  −   g  ′′
+                                                                                             3  (t)         Ω0
+                                               Q3                           Q2                          Q2
+    We may use Equation 2.2 together with a Groebner basis computation to
+        d2
+            R Ω0                                           2
+rewrite dt2   Q as a sum of integrals of expressions with Q in the denominator:
+
+
+(2.10)
+        Z                  Z                                          Z
+    d2    Ω0       ′     2   α1 xz 2 + β1 z 3            ′      ′         α2 xz 2 + β2 z 3
+             = 2(g 2 (t))                     Ω 0 + 4g   2 (t)g 3 (t)                      Ω0
+    dt2   Q                         Q2                                           Q2
+                           Z                                 Z                         Z
+                             α3 xz 2 + β3 z 3                     xz 2                   z3
+             + 2(g3′ (t))2                    Ω 0 − g ′′
+                                                      2  (t)           Ω 0 −  g ′′
+                                                                                3  (t)      Ω0
+                                   Q2                             Q2                     Q2
+    Here the αj and βj are rational functions in g2 and g3 . Note that we have ex-
+         d2
+            R Ω0                     R xz2        ∂
+                                                     R Ω0     R z3         ∂
+                                                                              R Ω0
+pressed dt2   Q entirely in terms of   Q2 Ω0 = − ∂g2   Q and    Q2 Ω0 = − ∂g3   Q .
+       d
+         R Ω0                              R xz2        R z3
+Since dt Q is also written in terms of Q2 Ω0 and Q2 Ω0 , we might hope to
+     NORMAL FORMS, K3 SURFACE MODULI, AND MODULAR PARAMETRIZATIONS                                      7
+
+       d
+            R Ω0     d2
+                         R Ω0
+relate dt     Qand dt 2       . If such a relationship is to exist for an arbitrary choice
+                     R xz2 Q         R z3
+of g2 (t) and g3 (t), Q2 Ω0 and Q       2 Ω0 cannot be independent. In fact, they are
+         2 ∼ −3g3 3
+not: xz = 2g2 z mod J(Q), so applying Equation 2.2 we find that
+                        Z                   Z 3               Z
+                           xz 2       −3g3      z          1     Ω0
+(2.11)                       2
+                                Ω 0 =             2
+                                                    Ω 0 +           .
+                           Q           2g2      Q         4g2    Q
+    Combining Equations 2.7, 2.10, and 2.11, and setting ∆ = g23 − 27g32, we obtain
+the Picard-Fuchs differential equation for a one-parameter family of elliptic curves
+in Weierstrass form:
+                                    Z                 Z                 Z
+                              d2         Ω0      d         Ω0                Ω0
+(2.12)                   A2                 + A1              + A0              =0
+                              dt2        Q       dt        Q                 Q
+    where
+
+(2.13)
+ A2 =16∆(3g2′ g3 − 2g2 g3′ )
+A1 =16(9g22g3 (g2′ )2 − (7g23 + 135g32 )g2′ g3′ + 108g2 g3 (g3′ )2 + ∆(−3g3 g2′′ + 2g2 g3′′ ))
+A0 =21g2g3 (g2′ )3 − 18g22 (g2′ )2 g3′ + 8g3′ (15g2 (g3′ )2 − ∆g2′′ ) − 4g2′ (27g3 (g3′ )2 − 2∆g3′′ )
+    If we make the substitution j = g23 /∆, then Equation 2.12 reduces to the
+standard Picard-Fuchs equation for a one-parameter family of elliptic curves in
+Weierstrass form, described for example in [27]:
+                                 Z                   Z              Z
+                           d2           dx      d         dx                dx
+(2.14)                                     + B1              + B0              =0
+                           dt2           y      dt         y                 y
+    where
+
+                            g3′    g′   j′ j ′′
+(2.15)                 B1 =     − 2+ − ′
+                            g3     g2   j  j
+                                                              
+                                (j ′ )2    ∆′        ∆′′  13∆′
+                       B0 =              +       B1 + ′ −
+                            144j(j − 1) 12∆          ∆    12∆
+    2.3. Relationship to Toric Geometry. Another model for the Weierstrass
+family of elliptic curves comes from toric geometry. This one-parameter family can
+be realized as the family of anticanonical hypersurfaces in the toric variety
+X = WP(1, 2, 3). This family K has defining equation
+             f(λ0 ,λ1 ,λ2 ,λ3 ) (x0 , x1 , x2 ) = λ0 x0 x1 x2 + λ1 x31 + λ2 x60 + λ3 x22 = 0
+in the global homogeneous coordinate ring C[x0 , x1 , x2 ] of X (where x0 , x1 , x2 have
+weights 1, 2, 3 respectively).
+     The four parameters (λ0 , . . . , λ3 ) are redundant. In [9], the authors define a
+“simplified polynomial moduli space” Msimp for K with the property that Msimp
+is a finite-to-one cover (generically) of the actual moduli space M for K (which
+in the present case is just WP(2, 3) ≃ P1 ). Moreover, following [9], we have that
+                                                      λ2 λ λ
+Msimp is a one-dimensional toric variety, and t = 1 λ42 3 is a coordinate on the torus
+                                                          0
+C∗ ⊂ Msimp . We can use the fact that the defining equation is defined only up to a
+8              A. CLINGHER, C. F. DORAN, J. LEWIS, AND U. WHITCHER
+
+
+nonzero constant to set λ0 = 1. Then we can use the natural action of T ≃ (C∗ )2 to
+set λ1 = 4, λ3 = −1. Then our simplified polynomial modulus becomes t = −16λ2 .
+    Let φ be the rational map X → P2 defined by
+                                                             
+                                      x1     1 x2     x1
+                 (x0 , x1 , x2 ) 7→       +   ,    −      , 1   = (x, y, z)
+                                      x20   48 x30   2x20
+The image of K under φ has defining equation
+                                                     
+                                 1                1
+                  y 2 z = 4x3 −     xz 2 + λ2 +         z3
+                                192             13824
+Using the j-invariant of an elliptic curve as an affine coordinate on M ≃ WP(2, 3),
+we have a map Msimp → M given in affine coordinates by
+                                           1
+                               t 7→                 =j
+                                    1728t(t − 432)
+    The Picard-Fuchs differential equation for K is derived by factoring a Gel’fand-
+Kapranov-Zelevinsky hypergeometric equation in [22, Section 5.1]. The ODE pro-
+duced there is
+                                                  
+(2.16)         0 = θ2 − 12t (6θ + 5) (6θ + 1) f (t)
+                  =   t (t (432t − 1) f ′′ (t) + (864t − 1) f ′ (t) + 60f (t))
+            d
+where θ = t dt . Plugging in g2 (t) = 1/192, g3 (t) = 864t−1
+                                                       13824 into Equation 2.12 gives
+                     1
+(2.17)         0=         (t (432t − 1) f ′′ (t) + (864t − 1) f ′ (t) + 60f (t)) .
+                  393216
+So the methods of GKZ and Griffiths-Dwork yield the same equation in this case
+(up to an inconsequential overall factor).
+
+                    3. K3 Surfaces Polarized by H ⊕ E8 ⊕ E8
+     3.1. Normal Form and Moduli Space. In [4], the authors presented the
+full classification of K3 surfaces (X, i) polarized by the unimodular even lattice
+of rank eighteen M = H ⊕ E8 ⊕ E8 . The contents of this section are adapted
+from [4], where proofs of the results may be found. The crucial ingredient in this
+classification is the existence of a normal form. That is:
+Theorem 3.1 ([4]). Let (X, i) be an M-polarized K3 surface. Then, there exists
+a triple (a, b, d) ∈ C3 , with d 6= 0 such that (X, i) is isomorphic to the minimal
+resolution of the quartic surface:
+                                                          1
+(3.1)      Q(a, b, d) : y 2 zw − 4x3 z + 3axzw2 + bzw3 − (dz 2 w2 + w4 ) = 0.
+                                                          2
+The equation in Theorem 3.1 can be regarded as the analog, for M-polarized K3
+surfaces, of the Weierstrass form in the classical theory of elliptic curves. It is a
+compactification of Inose’s (a, b) family from Equation 1.1.
+    Two distinct quartics as in (3.1) may correspond to isomorphic polarized K3
+surfaces.
+Theorem 3.2 ([4]). Two quartics Q(a1 , b1 , d1 ) and Q(a2 , b2 , d2 ) determine iso-
+morphic M-polarized K3 surfaces as their minimal resolutions if and only if:
+                        (a2 , b2 , d2 ) = (λ2 a1 , λ3 b1 , λ6 d1 )
+for some parameter λ ∈ C∗ .
+        NORMAL FORMS, K3 SURFACE MODULI, AND MODULAR PARAMETRIZATIONS                 9
+
+
+One obtains therefore a coarse moduli space for M-polarized K3 surfaces in the
+form of the open variety:
+
+(3.2)                 MM = { [a, b, d] ∈ WP(2, 3, 6) | d 6= 0 }
+
+as well as a pair of fundamental W-invariants (W1 , W2 ):
+                                         a3        b2
+                                W1 =        , W2 =    .
+                                         d         d
+    We turn to Hodge theory. Denote by T the rank-four even indefinite lattice
+H ⊕ H. Then, following the general framework of [10], one notes that the Hodge
+structure of an M-polarized K3 surface (X, i) can be seen as a point in the classifying
+space:
+
+(3.3)                                       Γ\Ω
+
+where
+                  Ω = { ω ∈ P(T ⊗ C) | (ω, ω) = 0, (ω, ω) > 0 }
+and Γ is the group of integral isometries of the lattice T, with its standard action
+on Ω. Upon further inspection, the quotient (3.3) turns out to be identical to the
+classical Hilbert modular surface:
+
+(3.4)             H1 = (PSL(2, Z) × PSL(2, Z)) ⋊ Z/2Z \ H × H
+
+where H denotes a copy of the complex upper-half plane. This reinterpretation re-
+flects, at a Hodge theoretic level, the geometric one-to-one correspondence existing
+between M-polarized K3 surfaces and abelian surfaces that split as a product of
+two elliptic curves.
+     The Global Torelli Theorem (see [10]) asserts then that the period map:
+
+                                     per : MM → H1
+
+is an analytic isomorphism. This isomorphism can be made completely explicit.
+Let j : H → C be the classical elliptic modular function. There are two important
+modular functions on the Hilbert surface H1 , given, on the cover H × H, by the two
+symmetric functions:
+
+                σ(τ1 , τ2 ) = j(τ1 ) + j(τ2 ), π(τ1 , τ2 ) = j(τ1 ) · j(τ2 ).
+
+They can be seen naturally as coordinates on the surface H1 realizing an identifi-
+cation:
+                                                  ≃
+                                   (σ, π) : H1 −→ C2 .
+
+Theorem 3.3 ([4]). The inverse period map per −1 : H1 → MM is given by:
+                              h                       i
+                    per−1 = π 1/3 , (π − σ + 1)1/2 , 1 .
+
+In other words, the W-invariants of an M-polarized K3 surface (X, i) are linked to
+the periods of X by the formulas:
+
+                              W1 = π, W2 = π − σ + 1.
+10               A. CLINGHER, C. F. DORAN, J. LEWIS, AND U. WHITCHER
+
+
+     3.2. Loci Supporting Lattice Enhancements. Since the rank 18 lattice M
+is unimodular, the only possible enhancements to M′ -polarized lattices with M ⊂ M′
+and M′ of rank 19 are those for which M′ = Mn = M⊕h−2ni = H⊕E8 ⊕E8 ⊕h−2ni
+for some n ∈ N. The Mn polarized K3 surfaces for n > 1 correspond, via the Shioda-
+Inose construction, to products of elliptic curves with an n-isogeny between them.
+The extra algebraic cycle on the K3 corresponds to the graph of the n-isogeny on
+the product of the two elliptic curves. Determining the subloci of WP(2, 3, 6) on
+which these enhancements occur thus reduces to the problem of finding relations
+between the j-invariants of pairs of elliptic curves. This, of course, is a classical
+problem with a rich history.
+     Consider the map φn : H → P2 given by τ 7→ [j(τ ), j(nτ ), 1] = [x, y, z], and
+denote by X0 (n) the closure of the image of φn . φn (τ ) = φn (τ ′ ) if and only if
+                                        aτ + b          αnτ + β
+                                 τ′ =          , nτ ′ =
+                                        cτ + d          γnτ + δ
+for some                                 
+                          a b          α β
+                                  ,           ∈ SL2 (Z)
+                          c d          γ δ
+Examining these equations, we see that
+                                                 
+                           na nb             nα β
+                                       =±
+                            c    d           nγ δ
+                                       aτ +b
+which is possible if and only if τ ′ = cτ +d , for
+                                          
+                                     a b
+                                               ∈ Γ0 (n) .
+                                     c d
+Thus X0 (n) is a compactification of Γ0 (n)\H, and parametrizes (ordered) pairs of
+n-isogenous elliptic curves.
+     The genus of X0 (n) for many small n can be found in [7]. The equation
+Φn (x, y) = 0 for X0 (n) on the affine patch z = 1 is the classical modular equation
+for Γ0 (n)2. Because it is symmetric in x and y, it can be written as a polynomial
+in terms of the elementary symmetric functions π = xy, σ = x + y. Let Φ+n   n (π, σ)
+be the corresponding polynomial such that Φ+n  n (xy, x + y) = Φn (x, y). Note that
+
+                (j(τ )j(nτ ), j(τ ) + j(nτ )) = (j(τ ′ )j(nτ ′ ), j(τ ′ ) + j(nτ ′ ))
+if and only if (j(τ ), j(nτ )) = (j(τ ′ ), j(nτ ′ ) or (j(nτ ′ ), j(τ ′ )), which will occur if and
+only if τ ′ = aτ +b
+              cτ +d for some
+                                            
+                                    a b
+                                                ∈ Γ0 (n) + n .
+                                    c d
+We may thus view Φ+n  n (π, σ) = 0 as the modular relation for Γ0 (n) + n. Then,
+using the relationships π = a3 , σ = a3 − b2 + 1 from [4], we can rewrite Φn (x, y)
+as a polynomial Ψ+n    3 2                +n 3 2
+                   n (a , b ), and view Ψn (a , b ) = 0 as the equation for a curve
+Y0 (n) + n ⊂ WP(2, 3, 6) on the affine patch d = 1 of the weighted projective plane
+with homogeneous coordinates [a, b, d] of weights 2, 3, and 6 respectively. Note
+X0 (n) + n ≃ Y0 (n) + n. Y0 (n) + n is exactly the moduli space of Mn -polarized K3
+surfaces as a submoduli space of the moduli space of M-polarized K3 surfaces.
+    2The j-invariant we use is normalized so that j(i) = 1, not 1728 as in many works on modular
+equations in the literature.
+     NORMAL FORMS, K3 SURFACE MODULI, AND MODULAR PARAMETRIZATIONS                                11
+
+
+      Thus the theory of modular curves and modular equations can be used to
+analyze the moduli of Mn -polarized K3 surfaces. For example, the genus of Y0 (n)+n
+can be found in the literature, and in the case where Y0 (n) + n has genus zero, it
+can be parametrized by the hauptmodul for Γ0 (n) + n.
+      3.2.1. Examples: n = 2, 3, and 6. Since Γ0 (6) is contained in Γ0 (3) and Γ0 (2),
+it is natural to work over X0 (6). Choosing as affine coordinate on X0 (6) ≃ P1
+the hauptmodul t for Γ0 (6), the family of elliptic curves over X0 (6) was shown in
+[2] to form a rational elliptic surface S with four singular fibers, of Kodaira types
+I1 , I2 , I3 , I6 . Beauville gave a model for this surface:
+
+            S = {([x, y, z], t) ∈ P2 × P1 : (x + y)(y + z)(z + x) + txyz = 0}
+
+with the singular fibers of types I1 , I2 , I3 , I6 over the points
+
+                                         t = −8, 1, 0, ∞
+
+respectively. Another model for this surface is given in [16]:
+
+     S ′ = {([x, y, z], [α, β]) ∈ P2 × P1 : y 2 z − 2(α + β)xyz + 2αβ 2 yz 2 + x3 = 0}
+
+An explicit isomorphism between S and S ′ is
+
+                                                 f
+                                           S         / S′
+
+
+                                                g      
+                                           P1        / P1
+
+where f is defined by
+
+     ([x, y, z], t) 7→ ([tyz, t(z 2 + (2 + t)yz + y 2 + x(z + y)), −z(z + x)], [t/2, 1])
+
+and g is defined by
+
+                                           t 7→ [t/2, 1]
+
+     To describe the 2, 3, and 6-isogenies explicitly, it is more convenient to use S ′ .
+                             ′                      ′                         1
+We will denote by S[α,            β] the fiber of S over the point [α, β] ∈ P . From [16], we
+                ′                                 ′                       ′
+have that S[α, β] is 2-isogenous to S[−2β, α] , 3-isogenous to S[−α−4β, −2α+β] , and
+                       ′
+6-isogenous to S[4α−2β,            −α−4β] . The isogenies are not given in [16], but [3] gives
+an explicit 2-isogeny, and [20] gives an explicit 3-isogeny for families of elliptic
+curves. Comparing these families with S ′ and noting that the 6-isogeny S[α,             ′
+                                                                                              β] →
+  ′                                                              ′          ′
+S[4α−2β,−α−4β] is the composition of the 2-isogeny S[α:β] → S[−2β,α] with the 3-
+           ′                    ′
+isogeny S[−2β,α]         → S[4α−2β,−α−4β]       , we can derive explicitly what the isogenies
+φn : S → S are for n = 2, 3, 6. Denote φn (([x, y, z], [α, β]) by ([x′n , yn′ , zn′ ], [α′n , βn′ ]).
+      ′        ′
+
+Then x′n , yn′ , zn′ , α′n , βn′ are given below for n = 2, 3. (In the interest of space, we
+omit the corresponding data for n = 6, but we note that it can easily be deduced,
+12               A. CLINGHER, C. F. DORAN, J. LEWIS, AND U. WHITCHER
+
+
+since φ6 is the composition of φ2 and φ3 .)
+x′2    =   x(β 2 z − x)(2αβz − x)
+y2′    =   (β − 2α)x3 + 2αβ 3 yz 2 − 2β 2 xyz + x2 y
+z2′    =   (β 2 z − x)2 z
+α′2    =   −2β
+β2′    =   α
+
+x′3    =   x((4β 2 z − 3x)x2 + 4αβxz(−3β 2 z + 2x) + 4α2 z(3β 4 z 2 − 3β 2 xz + x2 ))
+y3′    =   −8α3 z(3β 6 z 3 − 3β 2 x2 z + x3 ) + x3 (−8β 3 z + 12βx − 3y) −
+           12α2 βz(2β 2 z − x)(−2x2 + βyz) + 6αx(4β 4 xz 2 − 9β 2 x2 z + 2x3 + 2β 3 yz 2 )
+           −6ζ3 (−4αβ 3 xz 2 + x3 + α2 z(8β 4 z − 4β 2 x))(α(β 2 z − x) − βx + y)
+z3′    =   x3 z
+α′3    =   −α − 4β
+β3′    =   −2α + β
+where ζ3 is a primitive third root of unity.
+     In order to understand Y0 (n)+n for n = 2, 3, 6 as a sublocus of WP[2, 3, 6], there
+are two ways one could proceed. One is to find the defining equation Ψ+n n (a, b, d) =
+0 for Y0 (n) + n, and another — since in these cases Y0 (n) + n is genus zero —
+is to find a parametrization [a(t), b(t), d(t)] for the curve. Of course, these two
+points of view are closely related. Given a parametrization one can eliminate the
+parameter to obtain a defining equation, and conversely given the defining equation
+for a genus zero curve one can employ standard algorithms (for example in [1]) to
+obtain a parametrization.
+     Defining equations for X0 (n) for small n are readily available (for example,
+in MAGMA), and from these we can obtain defining equations Ψ+n         n (a, b, d) = 0
+                                                             +6
+for Y0 (n) + n. We give Ψ+nn (a, b, d) for n = 2, 3 here. Ψ6 (a, b, d) is a degree 72
+polynomial with large coefficients, so we will omit it.
+      Ψ+2
+       2 (a, b, d) =    64a9 − 192b2 a6 − 21360da6 + 192b4a3 + 1792857d2a3
+                        −83424b2da3 − 64b6 − 1771561d3 − 175692b2d2 − 5808b4d
+      Ψ+3
+       3 (a, b, d) =    729a12 − 2916b2a9 − 129551076da9 + 4374b4a6
+                        +5754777529878d2a6 − 1298340252b2da6 − 2916b6a3
+                        +77703185570076d3a3 − 3974452231068b2d2 a3
+                        −733336092b4da3 + 729b8 + 262254607552729d4
+                        −262365230658916b2d3 + 110638660374b4d2 − 15554916b6d
+    Given a parametrization (x(tn ), y(tn )) of X0 (n) on the affine patch z 6= 0,
+using coordinates (b2 , d) on the affine patch a 6= 0 of WP(2, 3, 6), we can construct
+a parametrization of Y0 (n) + n by setting
+                                         (x(tn ) − 1)(y(tn ) − 1)
+                            b2 (tn ) =
+                                                x(tn )y(tn )
+                                              1
+                            d(tn ) =
+                                         x(tn )y(tn )
+        NORMAL FORMS, K3 SURFACE MODULI, AND MODULAR PARAMETRIZATIONS                       13
+
+
+[24] gives such a parametrization (x(tn ), y(tn )) by the hauptmodul tn for Γ0 (n) for
+n ≤ 25 such that X0 (n) is a genus 0 curve. These parametrizations for n = 2, 3, 6
+give
+               (t2 − 512)2 (t2 − 8)2 (t2 + 64)2
+b2 (t2 )   =
+                    (t2 + 16)3 (t2 + 256)3
+                      212 36 t3
+ d(t2 )    =
+               (t + 16)3 (t2 + 256)3
+                                     2 2               2
+                t23 − 486t3 − 19683      t3 + 18t3 − 27
+b2 (t3 )   =                                              3
+                    (t3 + 27)2 (t23 + 246t3 + 729)
+                           212 36 t43
+ d(t3 )    =
+               (t3 + 3) (t3 + 27)2 (t3 + 243)3
+                       3
+
+                                  2                      2
+b2 (t6 )   =    t26 + 12t6 + 24        t26 + 36t6 + 216        ×
+                                                            2            
+                −t46 + 504t36 + 13824t26 + 124416t6 + 373248 ×
+                                                                             2
+                                        t46 + 24t36 + 192t26 + 504t6 − 72
+                                                                                                3
+               ((t6 + 6)(t6 + 12)(t36 + 18t26 + 84t6 + 24)(t36 + 252t26 + 24 35 t6 + 26 35 ))
+                                      2985984t76(t6 + 8)5 (t6 + 9)5
+ d(t6 )    =                                                                                    3
+               ((t6 + 6)(t6 + 12)(t36 + 18t26 + 84t6 + 24)(t36 + 252t26 + 24 35 t6 + 26 35 ))
+    Another interesting parametrization of Y0 (n) + n can be derived from the “two-
+valued” modular equations derived, following Fricke, in [7].
+
+     3.3. Picard-Fuchs Differential Equations. Let us set a = 1 in Equation
+3.1 and consider the resulting polynomial Q = y 2 zw − 4x3 z + 3xzw2 + bzw3 −
+1    2 2    4
+2 (dz w + w ). (We have simply reduced to the affine patch a 6= 0
+                                                                R
+                                                                  of the parameter
+space WP(2, 3, 6).) Applying the Griffiths–Dwork technique to ΩQ0 yields a pair
+of second-order Picard–Fuchs equations:
+
+                                 Z                Z            Z
+                             ∂2     Ω0        ∂2     Ω0     ∂     Ω0
+(3.5)                                  − 4(d            +            )=0
+                             ∂b2    Q        ∂d2     Q     ∂d     Q
+                                Z             Z                 Z
+                            ∂2     Ω0      ∂     Ω0        ∂2      Ω0
+(3.6)          (−1 + b2 + d) 2        + 2b           + 4bd
+                            ∂b     Q       ∂b     Q        ∂bd     Q
+                                                   Z            Z
+                                                ∂     Ω0     5     Ω0
+                                           +2d           +            =0
+                                                ∂d    Q     36     Q
+    We can use the relationship between b, d and the j-invariants of elliptic curves
+from Theorem 3.3 to write b2 = (j1 −1)(j j1 j2
+                                              2 −1)
+                                                    and d = j11j2 . Here j1 and j2 are
+the j-invariants of the two elliptic curves E1 and E2 whose product corresponds to
+X(1, b, d). Let Ei have affine Weierstrass model
+                                                    (i)            (i)
+                                       y 2 = 4x3 − g2 x − g3
+
+for i = 1, 2. Then we can rewrite Equations 3.5 and 3.6 in terms of j1 and j2 . The
+resulting system decouples (no mixed partials appear). The system reduces (after
+14               A. CLINGHER, C. F. DORAN, J. LEWIS, AND U. WHITCHER
+
+
+taking appropriate linear combinations of the resulting equations) to
+                                                                         
+     0 = 72j1 (2j1 − 1)F (1,0) (j1 , j2 ) + 2(j1 − 1)j1 F (2,0) (j1 , j2 ) − 5F (j1 , j2 )
+                                                                         
+     0 = 72j2 (2j2 − 1)F (0,1) (j1 , j2 ) + 2(j2 − 1)j2 F (0,2) (j1 , j2 ) − 5F (j1 , j2 )
+                            i+j
+                            ∂    F
+where F (i,j) (j1 , j2 ) = ∂j i   j.
+                              1 ∂j2
+     To solve this system, one need merely solve each ODE separately, then take
+products of the solutions. Each of these ODEs separately is a Picard-Fuchs dif-
+                                                                       1/4
+                                                                         (i)         dx
+ferential equation satisfied by the periods of the form ω (i) = g2                    y . Thus
+periods satisfying the Picard-Fuchs system arising via Griffiths-Dwork are simply
+products of periods of ω (1) and ω (2) (c.f. [23, Theorem 1.1]).
+     Now, consider a one-parameter family F of M-polarized K3 surfaces obtained
+by treating b and d as functions of a single parameter t. We may use the Griffiths–
+Dwork technique to analyze this family, just as we computed the Picard–Fuchs
+equation for a one-parameter family of elliptic curves in Section 2.2.2. The result
+is generically a fourth-order ODE, which we do not reproduce in full here. The
+Picard–Fuchs equation for F will reduce to a third-order ODE precisely when F is
+an Mn -polarized family.
+     Let j1 (t), j2 (t) be two functions of a complex variable t such that j1 (t) + j2 (t)
+and j1 (t)j2 (t) are rational functions of t. In this case b2 (t) = (j1 (t)−1)(j  2 (t)−1)
+                                                                          j1 (t)j2 (t)     and
+            1
+d(t) = j1 (t)j2 (t)
+                    are  also rational functions of t, and we may write the   Picard–Fuchs
+                                                                             d4
+                                                                                 R Ω0
+equation for F in terms of j1 (t) and j2 (t). The coefficient r4 (t) of dt     4      Q in the
+Picard–Fuchs ODE then becomes
+
+144((j1 (t)−1)(j2 (t)−1))3 (j1 (t)j2 (t))4 (j1 (t)−j2 (t))7 (j1′ (t)j2′ (t))2 ((j2 (t)) − (j1 (t)))
+
+where
+                                        36j(t)2 − 41j(t) + 32 1
+                   (j(t)) = j ′ (t)2                         + {j(t), t}
+                                         144(j(t) − 1)2 j(t)2  2
+and
+                                            2j ′ (t)j ′′′ (t) − 3j ′′ (t)2
+                              {j(t), t} =
+                                                       2j ′ (t)2
+is the Schwarzian derivative.
+     If j1 (t) and j2 (t) are both nonconstant, then r4 (t) will vanish if and only if
+either j1 (t) = j2 (t) (in which case the family of K3 surfaces is M1 -polarized) or
+(j1 (t)) = (j2 (t)). This observation motivates the following theorem.
+
+Theorem 3.4. Let j1 (t), j2 (t) be nonconstant functions of a complex variable t
+such that j1 (t) + j2 (t) and j1 (t)j1 (t) are rational functions of t. Then
+
+(3.7)                                 (j1 (t)) = (j2 (t))
+if and only if (j1 (t), j2 (t)) is a parametrization of X0 (n) for some n ≥ 1.
+
+    Proof. The Picard-Fuchs ODE for F , suitably normalized, is the tensor prod-
+uct of the Picard-Fuchs ODE’s of the two pencils of elliptic curves over P1t with
+functional invariants j1 (t), j2 (t) respectively. If these second-order ODE’s L1 =
+        NORMAL FORMS, K3 SURFACE MODULI, AND MODULAR PARAMETRIZATIONS                       15
+
+
+0, L2 = 0 are in projective normal form
+                                             d2 f
+                                  L1    =         + p2 (t)f
+                                             dt2
+                                             d2 g
+                                  L2    =         + q2 (t)g
+                                             dt2
+then p2 (t) = (j1 (t)) and q2 (t) = (j2 (t)). Their tensor product is
+
+                               q2′ (t) − p′2 (t) ′′′
+           0 =   H (4) (t) +                    H (t) + 2(p2 (t) + q2 (t))H ′′ (t) +
+                               p2 (t) − q2 (t)
+                 p2 (t) (p′2 (t) + 5q2′ (t)) − q2 (t) (5p′2 (t) + q2′ (t)) ′
+(3.8)                                                                     H (t) +
+                                       p2 (t) − q2 (t)
+                                                                                  
+                                                               q ′ (t)2 − p′2 (t)2
+                  (p2 (t) − q2 (t))2 + p′′2 (t) + q2′′ (t) + 2                       H(t)
+                                                                p2 (t) − q2 (t)
+     According to [14], this fourth-order equation factorizes as a third-order equa-
+tion times a first-order equation if and only if p2 (t) = q2 (t), i.e. if and only if
+(j1 (t)) = (j2 (t)). On the other hand, the Picard-Fuchs equation of F has third
+order if and only if F is Mn -polarized, and this occurs if and only if the two pen-
+cils of elliptic curves are fiberwise n-isogenous–or in other words, if and only if
+(j1 (t), j2 (t)) ∈ X0 (n) for all t.                                               
+
+   For this reason, we call Equation 3.7 the master equation for modular
+parametrization of modular equations for the elliptic modular function j(τ ).
+Corollary 3.5. If two pencils of elliptic curves over P1t admit a fiberwise n-isogeny
+for n such that X0 (n) + n is genus 0, then the projective normal forms of their
+Picard-Fuchs differential operators are identical.
+     3.3.1. Modular Relations and Differential Identities for Hauptmoduls. Theorem
+3.4, which relates the existence of a parametrized modular relation between j(τ )
+and j(nτ ) to a differential identity involving a parametrization, can be generalized
+to other hauptmoduls. If h is a hauptmodul for a genus 0 modular group Γ, then
+h will satisfy a Schwarzian differential equation
+
+                                             1
+(3.9)                   h′ (τ )2 QΓ (h(τ )) + {h(τ ), τ )}       =    0
+                                             2
+where QΓ (h) is a rational function we shall call the “Q-value for h.” A list of “Q-
+values” for (suitably normalized) hauptmoduls for all genus 0 modular groups are
+given in [21].
+    As was noted in [18, 17], if the hauptmodul h for Γ can be expressed as a
+function h1 (t) of a hauptmodul t for a genus 0 group Γ′ , then
+                                           1
+(3.10)               h′1 (t)2 QΓ (h1 (t)) + {h1 (t), t}      =    QΓ′ (t)
+                                           2
+This identity follows quite easily from formally writing h1 (t) = h(τ (t)), and apply-
+ing the chain rule to Equation 3.9. If we can also write h(nτ ) as a function h2 (t),
+then we have an analogous result to Equation 3.10 with h1 (t) replaced by h2 (t),
+and hence we have
+16               A. CLINGHER, C. F. DORAN, J. LEWIS, AND U. WHITCHER
+
+
+Theorem 3.6. If h and t are hauptmoduls for genus zero modular groups Γ and Γ′
+respectively, and if h(τ ), h(nτ ) can both be expressed as rational functions of t then
+                                1                                      1
+(3.11)    h′1 (t)2 QΓ (h1 (t)) + {h1 (t), t}   = h′2 (t)2 QΓ (h2 (t)) + {h2 (t), t}
+                                2                                      2
+                                               = QΓ′ (t)
+    Such a situation will occur when h(τ ), h(nτ ) satisfy a modular equation of
+genus zero. Theorem 3.4 covers the special case Γ = P SL(2, Z), Γ′ = Γ0 (n).
+    For example, [8] discusses the hauptmoduls satisfying modular equations of
+levels two and three, and gives formulae for the modular equations. Parametrizing
+the curves defined by these equations, computing the left-hand side of Equation
+3.10, and comparing with list of “Q-values” in [21], we can verify Theorem 3.6 in
+these cases (and identify the group Γ′ if it is not already known). We illustrate this
+for Γ = Γ0 (3) + 3 below.
+                                                             2
+    The hauptmodul h for Γ = Γ0 (3) + 3 has Q-value 4(hh2 −48h+7560
+                                                               −24h−2772)2
+                                                                           and satisfies
+the level two modular equation Φ2 (h(τ ), h(2τ )) = 0 where
+Φ2 (h1 , h2 ) = h31 −h22 h21 +17343h2h1 +h32 +741474(h1 +h2 )+1566(h21 +h22 )+28166076
+The curve defined by Φ2 (h1 , h2 ) = 0 can be parametrized by setting
+                     −512t3 + 804t2 − 12t + 1            244t3 − 30t2 − 6t + 1
+          h1 (t) =                  2
+                                              , h2 (t) =
+                            (1 − 6t) t                         t2 − 6t3
+Evaluating the left-hand side of 3.10, we see that
+                                    2848t4 − 800t3 + 108t2 + 4t + 1
+                        QΓ′ (t) =
+                                      4t2 (120t3 − 68t2 + 2t + 1)2
+and by comparing with [21] we see that t is a hauptmodul for Γ′ = Γ0 (6) + 3.
+
+     3.4. Relationship to Toric Geometry. Another model for the two parame-
+ter family of M-polarized K3 surfaces comes from toric geometry. The 2-parameter
+family can be realized as the family of anticanonical hypersurfaces in the mirror
+(polar) toric variety X to WP(1, 1, 4, 6). The family of anticanonical K3’s K has
+defining equation
+f(λ0 ,λ1 ,...,λ5 ) (x0 , x1 , x2 , x3 ) = λ0 x0 x1 x2 x3 +λ1 x12     12     3      2      6 6
+                                                              0 +λ2 x1 +λ3 x2 +λ4 x3 +λ5 x0 x1 = 0
+
+in the global homogeneous coordinate ring C[x0 , x1 , x2 , x3 ] of X (where x0 , x1 , x2 , x3
+have weights 1, 1, 4, 6 respectively).
+     As in Section 2.3, these six parameters (λ0 , λ1 , . . . , λ5 ) are redundant. Let
+Msimp be the simplified polynomial moduli space for K. Msimp is a two-dimensional
+toric variety and is a finite-to-one cover (generically) of the actual moduli space M
+                                                                            λ2 λ3 λ
+(which in the present case is WP(2, 3, 6)). We will use (z1 , z2 ) = ( 3 λ64 5 , λλ1 λ2 2 )
+                                                                                      0       5
+                                               2
+as affine coordinates on the torus (C∗ ) ⊂ Msimp . We can use the fact that the
+defining equation is only defined up to an overall nonzero constant to set λ4 = 1.
+Then we can use the natural action of T ≃ (C∗ )3 on X to set λ1 = λ2 = −1/2, and
+λ3 = −4. Then our simplified polynomial moduli are (z1 , z2 ) = ( 16λ
+                                                                   λ6
+                                                                      5
+                                                                        , λ645 ).
+                                                                               0
+     Let φ be the rational map X → P3 defined by
+                                                              
+                                   x2      λ20 x3   λ0 x2 x61
+        (x0 , x1 , x2 , x3 ) 7→           − , 3 3 + 2 2 , 6 , 1 = (x, y, z, w)
+                                  x20 x21  48 x0 x1 2x0 x1 x0
+     NORMAL FORMS, K3 SURFACE MODULI, AND MODULAR PARAMETRIZATIONS                             17
+
+
+    The image of K under φ has defining equation
+                                                                
+                  2          3 λ40       1 2 2   4
+                                                       −λ60
+         0   =   y zw − 4x z +     xzw −   z w +w +          + λ5 zw3
+                               192       2             13824
+                                                                
+                  2       3    λ40       1 2 2   4
+                                                       −λ60
+             =   y zw − 4x z +     xzw −   z w +w +          + λ5 zw3
+                               192       2             13824
+Comparing this with the Inose normal form for M-polarized K3 surfaces, we get a
+map Msimp → WP(2, 3, 6) given in affine coordinates by
+                                     1         864z1 − 1
+                  (z1 , z2 ) 7→ (            ,            ) = (a3 , b2 )
+                                  1443 z12 z2 1443 z12 z2
+The Picard-Fuchs equations for this family has been computed from GKZ methods
+(e.g. by Lian-Yau in [23]) as
+(3.12)           0 =      L1 f (z1 , z2 )
+                   =      (θ1 (θ1 − 2θ2 ) − 12z1 (6θ1 + 5)(6θ1 + 1)) f (z1 , z2 )
+(3.13)           0 =      L2 f (z1 , z2 )
+                                                             
+                      =    θ22 − z2 (2θ2 − θ1 + 1)(2θ2 − θ1 ) f (z1 , z2 ) .
+See also [29] for some related discussion of the Lian-Yau example.
+    Changing coordinates into the (b2 , d) affine patch on WP(2, 3, 6) gives
+                                                        
+                     (z1 , z2 ) 7→ 864z1 − 1, 1443z12 z2 = (b2 , d)
+and plugging this into Equations 3.5, 3.6 gives
+                                1
+(3.14)                 0 = − L2 F (z1 , z2 )
+                               z
+                               2               
+                                  1
+(3.15)                 0 =     − L1 + 1728L2 F (z1 , z2 )
+                                  z1
+Therefore, as in Section 2.3, the solution spaces of the Picard-Fuchs equations
+computed via GKZ and Griffiths-Dwork are identical.
+
+                                            References
+ [1] Abhyankar, S.S. and C.L. Bajaj, Automatic Parametrization of Rational Curves and Surfaces
+     III: Algebraic Plane Curves. Computer Aided Geometric Design, 5 (1988), p. 309-321.
+ [2] A. Beauville, Les families stables de courbes elliptiques sur P1 admettant quatre fibres sin-
+     gulières. C. R. Acad. Sc. Paris, vol 294 (1982) 657-660.
+ [3] J.W.S. Cassels, Lectures on Elliptic Curves. London Math. Soc. Student Texts 24, 1991.
+ [4] A. Clingher and C. F. Doran, Modular Invariants for Lattice Polarized K3 Surfaces. Michigan
+     Math. Journal, Vol. 55, Issue 2 (2007), 355-393.
+ [5] A. Clingher and C. F. Doran, Lattice Polarized K3 Surfaces and Siegel Modular Forms.
+     Preprint.
+ [6] A. Clingher and C. F. Doran, On a Geometric Isogeny of K3 Surfaces. Preprint.
+ [7] H. Cohn, Fricke’s Two-Valued Modular Equations. Math. of Computation 51(184), 1988.
+ [8] H. Cohn and J. McKay, Spontaneous Generation of Modular Invariants. Math. of Computa-
+     tion 65(215), 1996.
+ [9] D. Cox and S. Katz, Mirror Symmetry and Algebraic Geometry. A.M.S. Math. Surveys and
+     Monographs 68.
+[10] I.V. Dolgachev, Mirror Symmetry for Lattice Polarized K3 Surfaces. J. Math. Sci., vol. 81(3),
+     1996.
+[11] C. F. Doran, Picard-Fuchs Uniformization: Modularity of the Mirror Map and Mirror-
+     Moonshine. Centre de Recherches Mathématiques: CRM Proceedings and Lecture Notes,
+     24 (2000) 257–281.
+18               A. CLINGHER, C. F. DORAN, J. LEWIS, AND U. WHITCHER
+
+
+[12] C. F. Doran, Picard-Fuchs Uniformization and Modularity of the Mirror Map. Communica-
+     tions in Mathematical Physics, 212 (2000) 625–647.
+[13] C. F. Doran, B. Greene, and S. Judes, Families of Quintic Calabi-Yau 3-Folds with Discrete
+     Symmetries. arXiv:hep-th/0701206v1
+[14] G. Fano, Über lineare homogene Differentialgleichungen. Math. Ann. 53, 493-590 (1900).
+[15] P. A. Griffiths, On the Periods of Certain Rational Integrals. Ann. of Math. (2) 90 (1969)
+     460–495.
+[16] T. Hadano, Elliptic Curves with a Torsion Point. Nagoya Math. J. 66, 1977.
+[17] J. Harnad, Picard-Fuchs Equations, Hauptmoduls and Integrable Systems. Chapter 8 (pgs.
+     137–152) of The Seiberg-Witten and Witham Equations, ed. H.W. Braden and I.M. Krichever,
+     Gordon and Breach, Amsterdam (2000).
+[18] J. Harnad and J. McKay, Modular Solutions to Generalized Halphen Equations. Proc. R.
+     Soc. Lond. 456, 261-294 (2000).
+[19] H. Inose, Defining Equations of Singular K3 Surfaces and a Notion of Isogeny. Proceedings of
+     the International Symposium on Algebraic Geometry, Kyoto, 1977.
+[20] M. Kuwata, Quadratic Twists of an Elliptic Curve and Maps from a Hyperelliptic Curve.
+     Math. J. of Okayama U. 47(1), 2005.
+[21] B. Lian and J. Wiczer, Genus Zero Modular Functions. arXiv:math/0611291v1.
+[22] B. Lian and S.-T. Yau, Arithmetic Properties of Mirror Map and Quantum Coupling. Comm.
+     Math. Phys. Volume 176, Number 1 (1996), 163–191.
+[23] B. Lian and S.-T. Yau, Mirror Maps, Modular Relations, and Hypergeometric Series II.
+     Nucl.Phys.Proc.Suppl. 46 (1996) 248–262.
+[24] R. S. Maier, On Rationally Parametrized Modular Equations. arXiv:math/0611041v3.
+[25] D. R. Morrison, On K3 Surfaces with Large Picard Number. Invent. Math. 75 (1984), no. 1,
+     105–121.
+[26] C. Peters, Monodromy and Picard-Fuchs Equations for Families of K3-Surfaces and Elliptic
+     Curves. Ann. Scient. Éc.Norm.Sup. 4e série. t. 19 (1986) p.583–607.
+[27] U. Schmickler-Hirzebruch, Elliptische Flächen über P1 (C) mit drei Ausnahmefasern und
+     die hypergeometrische Differentialgleichung. Schriftenreihe des Mathematischen Instituts der
+     Universität Münster 2. Serie 33, 1985.
+[28] J. Top and N. Yui, Explicit Equations of Some Elliptic Modular Surfaces. Rocky Mountain
+     J. Math. 37 (2007), no. 2, 663–687.
+[29] Y. Yang and N. Yui, Differential Equations Satisfied by Modular Forms and K3 Surfaces.
+     Illinois J. Math. 51 (2007), no. 2, 667–696.
+
+     Department of Mathematics and Computer Science, University of Missouri – St. Louis,
+St. Louis, MO 63121
+     E-mail address: clingher@arch.umsl.edu
+
+     Department of Mathematics, University of Washington, Seattle, WA 98195
+     E-mail address: doran@math.washington.edu
+
+     Department of Mathematics, University of Washington, Seattle, WA 98195
+     E-mail address: jacobml@math.washington.edu
+
+     Department of Mathematics, University of Washington, Seattle, WA 98195
+     E-mail address: ursula@math.washington.edu
+
