@@ -219,7 +219,20 @@
       1e−35; derived block identical to v5 (asserted at promotion). v5 retained for audit and as the
       pinned input of earlier certificates; v3 still the rank source. PR #55 merged on the same ruling;
       S1/S3 informed. Record: `briefs/T0_DECISIONS_2026_09_27_STREAM2.md` D10′.
-- [ ] **T0: candidate register** — S1 `K3_CRITERIA.md` still lists t103 as dropped, although
+- [ ] **Lift two CM rows to Tier A (lattice half) — pending our own read (producer ≠ verifier).**
+      Stream 1 (`MnLattice.lean` §3b, gates green, `b77f2dc`) and LeanMaster (`DualScaleDyons/
+      RankJump.lean`, in progress) each kernel-check, independently: (e−f)² = −2 with complement
+      ⟨2⟩⊕⟨2N⟩ for all N; at N = 7, v = (2,−4,1) with complement [[2,1],[1,4]], index 1. Receipt on
+      main: `briefs/STREAM1_TO_STREAM2_K3_DIRECTIONS_RECEIPT_2026_09_27.md`. **To do here:** read the
+      Lean statements (not the docstrings) in both repos, compare them, then re-emit
+      `CM_POINTS_RHO20.json` with `lattice_tier: A (<theorem>, <commit>)` on exactly those rows; the
+      z-recognition stays Tier B and `v^⊥ = T_X` stays Tier L.
+- [x] **Stream 1's K3-directions receipt (2026-09-27) — received, hashes agree; one correction taken:**
+      my "(0,0) [X₄]" label was wrong (X₄ = (α,β) = (1,0); (0,0) = E_ω × E_i, ρ = 18) — corrected in
+      their note; their (1,0) row closes to 20 once the two order-2 places at t = ±1 are read as such.
+- [x] **T0: candidate register (t103) — closed by D11′-2 and Stream 1's receipt §5** (row stays
+      DROPPED on the citation ground only; Stream 1 holds no source). Original item: S1
+      `K3_CRITERIA.md` listed t103 as dropped, although
       E-014 found no veto (S1 `briefs/T0_FLAG_K3_CRITERIA_T103_STALE_2026_08_01.md`, unanswered).
 
 ## ⛔ Do NOT do these
