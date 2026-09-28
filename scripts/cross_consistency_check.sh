@@ -1,4 +1,8 @@
 #!/bin/bash
+# NOTE 2026-09-17: no longer a CI gate. It asserts pre-ledger values (S12/S21 stiffness, axion
+# masses, PTA periods) and a root CAVEATS.md that was archived (d4c123e); those claims are
+# retracted or sandboxed (CLAUDE.md ledger, rule 7). Gate B now runs
+# scripts/ci_ledger_regression.sh (T0 decision 2026-09-17). Kept because other scripts call it.
 # cross_consistency_check.sh
 # Task T8.1: Cross-consistency verification of critical parameters across codebase
 # Ensures atomic parameter synchronization per Rule 8 (AGORA_GUIDELINES.md)

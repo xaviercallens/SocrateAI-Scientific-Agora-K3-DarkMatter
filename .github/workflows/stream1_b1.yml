@@ -46,7 +46,8 @@ jobs:
 
       - name: Install Lean 4 (elan) and Lake
         run: |
-          curl -L https://raw.githubusercontent.com/leanprover/lean4/master/scripts/install.sh | bash -s -- -y
+          # 2026-09-17: old lean4/master/scripts/install.sh URL returns 404; use elan-init.
+          curl -sSfL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain none
           echo "$HOME/.elan/bin" >> $GITHUB_PATH
 
       - name: Report toolchain

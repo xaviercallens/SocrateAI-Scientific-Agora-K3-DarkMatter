@@ -27,11 +27,10 @@ jobs:
     - name: Install Lean 4 and Lake
       run: |
         echo "🔧 Installing Lean 4 and Lake..."
-        curl -L https://raw.githubusercontent.com/leanprover/lean4/master/scripts/install.sh | bash
+        # 2026-09-17: old lean4/master/scripts/install.sh URL returns 404; use elan-init.
+        curl -sSfL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain none
         echo "$HOME/.elan/bin" >> $GITHUB_PATH
-        echo "$HOME/.local/bin" >> $GITHUB_PATH
-        lean --version
-        lake --version
+        "$HOME/.elan/bin/elan" --version
 
     - name: Install Mathlib4
       run: |
