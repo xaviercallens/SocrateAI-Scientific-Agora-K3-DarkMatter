@@ -87,6 +87,18 @@ contradicts it, the document carries (or needs) a dated correction note.
    stands); `K3_CRITERIA.md` is not edited by this ruling (§6 amendment protocol), and gate T3 is
    still not adopted. Widening any of these needs its own T0 text.
 
+9. **A C6 selector is ADOPTED, narrowly (AM-8, 2026-09-28; `K3_CRITERIA.md` C6, `briefs/
+   STREAM2_AM8_SELECTOR_COMPARISON_2026_09_28.md`).** T0 chose "SEL-D: minimal `|disc T|`" from two
+   computed alternatives, via `AskUserQuestion`. This narrows item 8's "no minimum-|D| rule": that
+   phrase now reads as barring only a **cross-family** ranking by `|D|` (the sentence right after it —
+   "A₂ ∈ s7, A₂ ∉ s10, is a lattice fact, not a preference" — is unchanged and still governs comparing
+   families). It does not bar a **within-family** discriminant-floor selection, which AM-8 adopts:
+   per family, the candidate of minimal `|disc T|`, verified unique on the modular curve (not by class
+   number alone) — `T = A₂` (`D = −3`) for cooper_s7, `T = ⟨2⟩⊕⟨2⟩` (`D = −4`) for cooper_s10
+   (ADVISORY, D6′ untouched). Nothing else in item 8 changes: no cross-family ranking, no physical
+   reading, no promotion of s10's DRAFT lattice certificate, gate T3 still not adopted. Reversible by
+   one T0 sentence.
+
 ## Escalation
 Anything touching a pinned document, a frozen criterion, or this ledger is T0-owned
 (Xavier): write a brief in `briefs/` and flag it instead of improvising.
