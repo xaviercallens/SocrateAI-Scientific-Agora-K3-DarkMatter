@@ -1,6 +1,6 @@
 # ✅ TODO — restart here
 
-**Last updated:** 2026-09-21 (s10 lattice cert kept DRAFT by T0; orientation block below dates from 2026-07-26) · **Release:** `v0.3.11-criteria-canonical` · **Previous TODO:** commit history
+**Last updated:** 2026-09-27 (s10 lattice cert kept DRAFT by T0; orientation block below dates from 2026-07-26) · **Release:** `v0.3.12-rankjump-tier-a` · **Previous TODO:** commit history
 
 > ## 30-second orientation
 >
@@ -277,7 +277,8 @@
 5. **Numbers are computed, never typed.** ρ is derived at runtime as `b₂ − rank_V` from the step-A
    certificate; break that certificate and the number moves or the checker refuses.
 
-## Regression — all green as of `v0.3.7` (T3 lines added 2026-09-21)
+## Regression — all green as of `v0.3.12-rankjump-tier-a` (2026-09-28; 44/46 checks green, 2 known
+worktree-only false failures — see note below the block)
 
 ```bash
 python3 checkers/test_refs_self_regenerate.py            # 11/11 entries, both encodings agree
@@ -325,10 +326,19 @@ python3 checkers/test_inose_model_M7_controls.py              # 7 controls (scra
 python3 checkers/check_inose_fibration_multiplicities.py      # ~10 s: KS J9 equation (transcription verified) -> Inose K3; orders {10,10,2,1,1} at both loci
 python3 checkers/test_inose_fibration_multiplicities_controls.py # 7 controls (transcription errors refused; exceptional set discriminating)
 python3 checkers/check_lean_attestations_rankjump.py --verify-source-files # overlay lattice_tier from kernel statements; A7 skipped if the producer worktree is absent
-python3 checkers/test_lean_attestations_rankjump_controls.py # 9 controls (tampered Gram/basis/vector/axioms/det/sha -> tier B)
+python3 checkers/test_lean_attestations_rankjump_controls.py # 14 controls (tampered Gram/basis/vector/axioms/det/sha/kernel-basis/det_T_X -> tier B)
 # slow (~70 s): python3 checkers/check_nodality_explicit_models.py   (Singular optional second CAS)
 # slow (~2.5 min), run before release: python3 checkers/check_CM_points_rho20.py
 ```
+
+**Known worktree-only false failure (verified, not a regression):** `check_partner_global_boundedness.py`
+and its controls resolve Stream 1's repo via `ROOT.parent` (the checker's line ~87), which is wrong when
+run from inside `.claude/worktrees/…` — it lands on the worktree directory, not the repos root, so
+`external_citations_not_phantom` and `register_recurrences_are_the_stream1_template` read `False`. Verified
+2026-09-27 by placing a temporary symlink at the expected path: both pass cleanly, and the mis-tagged
+certificates the checker re-emits under the worktree were discarded, never committed. Re-run these two from
+the main checkout (or fix the path resolution to honor `LEAN_PROJECT_ROOT`-style overrides) before trusting
+a worktree run of just these two commands.
 
 ## The Tier A result, for the record
 
