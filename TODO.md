@@ -214,6 +214,18 @@
       arm E1 first); D11′-3 "parked" is struck. Nothing in it is evidence for any K3 claim. Delivery notes
       placed untracked in the S1 and S3 repos; mirrors re-pin to the post-merge `K3_CRITERIA.md` hash
       (the §5 C2 cells now carry the certified-monodromy note).
+- [x] **AM-8 (T0 D13′, 2026-09-28): C6 selector ADOPTED — minimal `|disc T|` per family, chosen by T0
+      via `AskUserQuestion` from two computed alternatives.** Narrows D7′'s "no minimum-|D| rule" to
+      cross-family comparison only (the sentence right after it — "A₂ ∈ s7, A₂ ∉ s10, is a lattice
+      fact, not a preference" — is unchanged). Selected: **cooper_s7 → T = A₂ (D=−3), z=∞**;
+      **cooper_s10 (ADVISORY) → T = ⟨2⟩⊕⟨2⟩ (D=−4), z=∞** — both verified unique on the modular curve
+      (`CM_COMPLETENESS.json` point count, not class number). Rejected alternative (minimal `|v²|`) is
+      not unique for s7 (ties at the −2 floor between D=−7 and D=−28) and stays on record.
+      `checkers/check_C6_selector_comparison.py` (13 controls, comparison) +
+      `checkers/check_C6_selector_adopted.py` (5 controls, verifies the criteria prose against
+      recomputation) → `C6_SELECTOR_COMPARISON.json`, `C6_SELECTED_CANDIDATE.json`. Record:
+      `briefs/T0_DECISIONS_2026_09_28_STREAM2.md`, `briefs/STREAM2_AM8_SELECTOR_COMPARISON_2026_09_28.md`.
+      Does not rank the families, does not promote s10, does not read physically (ledger item 4).
 - [x] **`C2_cooper_s7_v6` — ACCEPTED by T0 2026-09-27 (D10′), LIVE.** v5 content, provenance only:
       stage-2 matrices CERTIFIED (`CERTIFIED_MONODROMY_L2_cooper_s7.json`) instead of recognised at
       1e−35; derived block identical to v5 (asserted at promotion). v5 retained for audit and as the
@@ -327,6 +339,10 @@ python3 checkers/check_inose_fibration_multiplicities.py      # ~10 s: KS J9 equ
 python3 checkers/test_inose_fibration_multiplicities_controls.py # 7 controls (transcription errors refused; exceptional set discriminating)
 python3 checkers/check_lean_attestations_rankjump.py --verify-source-files # overlay lattice_tier from kernel statements; A7 skipped if the producer worktree is absent
 python3 checkers/test_lean_attestations_rankjump_controls.py # 14 controls (tampered Gram/basis/vector/axioms/det/sha/kernel-basis/det_T_X -> tier B)
+python3 checkers/check_C6_selector_comparison.py              # C6 selector comparison record (SEL-D vs SEL-N), not a gate
+python3 checkers/test_C6_selector_comparison_controls.py      # 13 controls
+python3 checkers/check_C6_selector_adopted.py                 # verifies AM-8's K3_CRITERIA.md prose against recomputation
+python3 checkers/test_C6_selector_adopted_controls.py         # 5 controls
 # slow (~70 s): python3 checkers/check_nodality_explicit_models.py   (Singular optional second CAS)
 # slow (~2.5 min), run before release: python3 checkers/check_CM_points_rho20.py
 ```
