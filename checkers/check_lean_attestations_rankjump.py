@@ -62,6 +62,19 @@ def _repos_root():
     return REPO.parent
 
 
+def source_root(gate_record):
+    """Each gate record names its own producer worktree via 'branch' (the worktree directory is
+    that branch name with its 'worktree-' prefix stripped -- the convention every gate record in
+    this file has used). A single repo can have MULTIPLE gate records in DIFFERENT worktrees (a
+    later commit on a new branch); resolving per-repo instead of per-gate-record silently checked
+    a stale worktree's file against a newer commit's hash and always failed A7 -- caught here
+    rather than left as a standing false negative."""
+    branch = gate_record.get("branch", "")
+    wt = branch[len("worktree-"):] if branch.startswith("worktree-") else branch
+    return _repos_root() / gate_record["repo"] / ".claude" / "worktrees" / wt
+
+
+# kept for anything reading the module-level dict directly; source_root(gate_record) is authoritative
 SOURCE_ROOTS = {
     "SocrateAI-DualScaleTopologicalUniverseModel-LeanProposal":
         _repos_root() / "SocrateAI-DualScaleTopologicalUniverseModel-LeanProposal" / ".claude" / "worktrees" / "k3-criteria-stream2-directions-2026-09-27",
@@ -163,7 +176,7 @@ def check_attestation(att, gate_records, cm, verify_files=False):
                      and vb.get("G3", {}).get("none_in_attested_file") is True
                      and vb.get("producer_neq_verifier") is True)
     if verify_files:
-        root = SOURCE_ROOTS.get(gr.get("repo"))
+        root = source_root(gr) if gr.get("repo") and gr.get("branch") else None
         f = root / gr["file"] if (root and gr.get("file")) else None
         c["A7_source_sha256"] = (hashlib.sha256(f.read_bytes()).hexdigest() == gr.get("file_sha256")) if (f and f.exists()) else None
     out["ok"] = all(x is True for k, x in c.items() if k != "A7_source_sha256") and c.get("A7_source_sha256") in (None, True)

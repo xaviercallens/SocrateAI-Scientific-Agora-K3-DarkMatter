@@ -303,10 +303,43 @@
             "s7_z_infinity_index"
           ],
           "failed_clauses": []
+        },
+        {
+          "id": "S1-s7-zinf",
+          "clauses": {
+            "A1_row_exists": true,
+            "A2_norm": true,
+            "A3_basis_orthogonal": true,
+            "A4_gram_matches_attested": true,
+            "A4_reduced_form_is_row_T": true,
+            "A5_frame_det": true,
+            "A6_gates": true,
+            "A7_source_sha256": true
+          },
+          "frame_det_recomputed": 3,
+          "ok": true,
+          "source": {
+            "repo": "SocrateAI-DualScaleTopologicalUniverseModel-LeanProposal",
+            "file": "Agora/Geometry/MnLattice.lean",
+            "namespace": "Agora.Geometry.MnLattice",
+            "commit": "2f665dd",
+            "file_sha256": "b4d0adcbde27a291e7dec90f63b4cd712d70e9f1d5f2543ff4a07b427b81cf49"
+          },
+          "theorems": [
+            "root7Inf_norm",
+            "root7Inf_perp_iff",
+            "root7Inf_perp_gram",
+            "root7Inf_perp_reduced_gram",
+            "root7Inf_div",
+            "root7Inf_pairing_e",
+            "root7InfFrame_det",
+            "T7_splits_at_root7Inf"
+          ],
+          "failed_clauses": []
         }
       ],
       "advisory_family": false,
-      "independent_files_passing": 1,
+      "independent_files_passing": 2,
       "lattice_tier": "A",
       "row_z": "infinity",
       "row_D": -3,
@@ -601,10 +634,43 @@
             "s10_z_infinity"
           ],
           "failed_clauses": []
+        },
+        {
+          "id": "S1-s10-zinf",
+          "clauses": {
+            "A1_row_exists": true,
+            "A2_norm": true,
+            "A3_basis_orthogonal": true,
+            "A4_gram_matches_attested": true,
+            "A4_reduced_form_is_row_T": true,
+            "A5_frame_det": true,
+            "A6_gates": true,
+            "A7_source_sha256": true
+          },
+          "frame_det_recomputed": 2,
+          "ok": true,
+          "source": {
+            "repo": "SocrateAI-DualScaleTopologicalUniverseModel-LeanProposal",
+            "file": "Agora/Geometry/MnLattice.lean",
+            "namespace": "Agora.Geometry.MnLattice",
+            "commit": "2f665dd",
+            "file_sha256": "b4d0adcbde27a291e7dec90f63b4cd712d70e9f1d5f2543ff4a07b427b81cf49"
+          },
+          "theorems": [
+            "root10Inf_norm",
+            "root10Inf_perp_iff",
+            "root10Inf_perp_gram",
+            "root10Inf_perp_reduced_gram",
+            "root10Inf_div",
+            "root10Inf_pairing_e",
+            "root10InfFrame_det",
+            "T10_splits_at_root10Inf"
+          ],
+          "failed_clauses": []
         }
       ],
       "advisory_family": true,
-      "independent_files_passing": 1,
+      "independent_files_passing": 2,
       "lattice_tier": "A",
       "row_z": "infinity",
       "row_D": -4,
@@ -726,6 +792,71 @@
         "producer_neq_verifier": true
       }
     },
+    "S1-MnLattice-2f665dd": {
+      "repo": "SocrateAI-DualScaleTopologicalUniverseModel-LeanProposal",
+      "file": "Agora/Geometry/MnLattice.lean",
+      "namespace": "Agora.Geometry.MnLattice",
+      "branch": "worktree-am8-selected-rows-lattice-2026-09-28",
+      "commit": "2f665dd",
+      "commit_note": "AM-8 follow-up (sec. 3c); branch merged --no-ff into LeanProposal main as 4bab4b6, released v0.24-am8-rows-lattice-half, file bytes identical (hash re-verified by the producer after merge)",
+      "file_sha256": "b4d0adcbde27a291e7dec90f63b4cd712d70e9f1d5f2543ff4a07b427b81cf49",
+      "verified_by_stream2": {
+        "date": "2026-09-28",
+        "where": "the producer's worktree; LEAN_PROJECT_ROOT set to it; LeanMaster tools",
+        "G1": {
+          "target": "lake build Agora",
+          "exit": 0,
+          "jobs": 3723
+        },
+        "G2": {
+          "exit": 0,
+          "summary": "clean: no sorry/admit/native_decide in 1 libraries"
+        },
+        "G3": {
+          "exit": 1,
+          "audited": 421,
+          "failing": 3,
+          "failing_are": [
+            "Agora.Sequences.Partner.s7_partner_integral (registered axiom obrien2016_theorem6_2)",
+            "Agora.Swampland.pipeline_ensures_perturbative (registered axiom pipeline_upper_bound)",
+            "Agora.Swampland.lvs_potential_positivity_and_placeholder (same)"
+          ],
+          "none_in_attested_file": true,
+          "note": "same three registered axioms as the sec. 3b run; sec. 3c adds none"
+        },
+        "G4": {
+          "exit": 0,
+          "summary": "statement lock: OK"
+        },
+        "print_axioms": {
+          "exit": 0,
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ],
+          "on": [
+            "root7Inf_norm",
+            "root7Inf_perp_iff",
+            "root7Inf_perp_gram",
+            "root7Inf_perp_reduced_gram",
+            "root7Inf_div",
+            "root7Inf_pairing_e",
+            "root7InfFrame_det",
+            "T7_splits_at_root7Inf",
+            "root10Inf_norm",
+            "root10Inf_perp_iff",
+            "root10Inf_perp_gram",
+            "root10Inf_perp_reduced_gram",
+            "root10Inf_div",
+            "root10Inf_pairing_e",
+            "root10InfFrame_det",
+            "T10_splits_at_root10Inf"
+          ]
+        },
+        "producer_neq_verifier": true
+      }
+    },
     "LM-RankJump-73f6fb1": {
       "repo": "SocrateAI-Scientific-Agora-LeanMaster",
       "file": "DualScaleDyons/RankJump.lean",
@@ -789,7 +920,7 @@
   ],
   "inputs": {
     "sha256": {
-      "refs/lean_attestations_rankjump_2026_09_27.json": "8bf825ac87c2ef31f88194b1a11c2e3ac28326a2a6fad10850e7c1701778f95f",
+      "refs/lean_attestations_rankjump_2026_09_27.json": "6bf0f7b56f764d5acef672a625e952e49f4c1f4c7ef49e35ca78aefe2e82f0c8",
       "data/certificates/CM_POINTS_RHO20.json": "1ef6d622af22a6488316fad01503ed4381c1d742861f178b3d3ea9d76c220755"
     }
   },

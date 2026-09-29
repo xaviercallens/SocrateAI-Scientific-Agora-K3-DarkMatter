@@ -16,6 +16,21 @@
         "producer_neq_verifier": true
       }
     },
+    "S1-MnLattice-2f665dd": {
+      "repo": "SocrateAI-DualScaleTopologicalUniverseModel-LeanProposal", "file": "Agora/Geometry/MnLattice.lean",
+      "namespace": "Agora.Geometry.MnLattice", "branch": "worktree-am8-selected-rows-lattice-2026-09-28",
+      "commit": "2f665dd", "commit_note": "AM-8 follow-up (sec. 3c); branch merged --no-ff into LeanProposal main as 4bab4b6, released v0.24-am8-rows-lattice-half, file bytes identical (hash re-verified by the producer after merge)",
+      "file_sha256": "b4d0adcbde27a291e7dec90f63b4cd712d70e9f1d5f2543ff4a07b427b81cf49",
+      "verified_by_stream2": {
+        "date": "2026-09-28", "where": "the producer's worktree; LEAN_PROJECT_ROOT set to it; LeanMaster tools",
+        "G1": {"target": "lake build Agora", "exit": 0, "jobs": 3723},
+        "G2": {"exit": 0, "summary": "clean: no sorry/admit/native_decide in 1 libraries"},
+        "G3": {"exit": 1, "audited": 421, "failing": 3, "failing_are": ["Agora.Sequences.Partner.s7_partner_integral (registered axiom obrien2016_theorem6_2)", "Agora.Swampland.pipeline_ensures_perturbative (registered axiom pipeline_upper_bound)", "Agora.Swampland.lvs_potential_positivity_and_placeholder (same)"], "none_in_attested_file": true, "note": "same three registered axioms as the sec. 3b run; sec. 3c adds none"},
+        "G4": {"exit": 0, "summary": "statement lock: OK"},
+        "print_axioms": {"exit": 0, "axioms": ["propext", "Classical.choice", "Quot.sound"], "on": ["root7Inf_norm", "root7Inf_perp_iff", "root7Inf_perp_gram", "root7Inf_perp_reduced_gram", "root7Inf_div", "root7Inf_pairing_e", "root7InfFrame_det", "T7_splits_at_root7Inf", "root10Inf_norm", "root10Inf_perp_iff", "root10Inf_perp_gram", "root10Inf_perp_reduced_gram", "root10Inf_div", "root10Inf_pairing_e", "root10InfFrame_det", "T10_splits_at_root10Inf"]},
+        "producer_neq_verifier": true
+      }
+    },
     "LM-RankJump-73f6fb1": {
       "repo": "SocrateAI-Scientific-Agora-LeanMaster", "file": "DualScaleDyons/RankJump.lean",
       "namespace": "DualScaleDyons.RankJump", "branch": "worktree-rank-jump-lemma",
@@ -64,7 +79,16 @@
     {"id": "LM-s10-zinf", "gate_record": "LM-RankJump-73f6fb1", "candidate": "cooper_s10", "N": 10, "v": [10, -10, -3],
      "claims": {"v_norm": -20, "perp_basis": [[1, 1, 0], [-3, 3, 1]], "gram": [[2, 0], [0, 2]], "reduced_form": [1, 0, 1]},
      "theorems": ["s10_z_infinity"], "advisory_family": true,
-     "statement_note": "qform = -20 /\\ IsOrthBasis ![1,1,0] ![-3,3,1] /\\ gram2 = !![2,0;0,2] /\\ (1,0,1) in reducedForms 4"}
+     "statement_note": "qform = -20 /\\ IsOrthBasis ![1,1,0] ![-3,3,1] /\\ gram2 = !![2,0;0,2] /\\ (1,0,1) in reducedForms 4"},
+    {"id": "S1-s7-zinf", "gate_record": "S1-MnLattice-2f665dd", "candidate": "cooper_s7", "N": 7, "v": [14, -14, -5],
+     "claims": {"v_norm": -42, "perp_basis": [[1, 1, 0], [0, 5, 1]], "gram": [[2, 5], [5, 14]], "reduced_form": [1, 1, 1], "frame_det": 3},
+     "theorems": ["root7Inf_norm", "root7Inf_perp_iff", "root7Inf_perp_gram", "root7Inf_perp_reduced_gram", "root7Inf_div", "root7Inf_pairing_e", "root7InfFrame_det", "T7_splits_at_root7Inf"],
+     "statement_note": "root7Inf_perp_iff: pairing = 0 <-> x = (a, a+5b, b), the certificate's own T_X_kernel_basis [[1,1,0],[0,5,1]] (unreduced; the -perp_reduced_gram theorem gives the Gauss-reduced (1,1,1)=A2 form); root7InfFrame_det = 3, identity 3*(-42) = -14*3^2"},
+    {"id": "S1-s10-zinf", "gate_record": "S1-MnLattice-2f665dd", "candidate": "cooper_s10", "N": 10, "v": [10, -10, -3],
+     "claims": {"v_norm": -20, "perp_basis": [[1, 1, 0], [0, 6, 1]], "gram": [[2, 6], [6, 20]], "reduced_form": [1, 0, 1], "frame_det": 2},
+     "theorems": ["root10Inf_norm", "root10Inf_perp_iff", "root10Inf_perp_gram", "root10Inf_perp_reduced_gram", "root10Inf_div", "root10Inf_pairing_e", "root10InfFrame_det", "T10_splits_at_root10Inf"],
+     "statement_note": "root10Inf_perp_iff: pairing = 0 <-> x = (a, a+6b, b), the certificate's own T_X_kernel_basis [[1,1,0],[0,6,1]] (unreduced; -perp_reduced_gram gives (1,0,1)=<2>+<2>); root10InfFrame_det = 2, identity 4*(-20) = -20*2^2",
+     "advisory_family": true}
   ],
   "not_proved_in_either_file": [
     "the index step |det(w1|w2|v)| = |v^2|/div(v) in general (observed per row only)",
