@@ -1,0 +1,308 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{geometry}
+\geometry{margin=1in}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{microtype}
+\usepackage{tcolorbox}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    citecolor=red,
+    urlcolor=cyan,
+    pdftitle={Certified Lattice Data and a Within-Family Selector for the Cooper s7/s10 K3 Families},
+    pdfauthor={Xavier Callens and the SocrateAI Scientific Agora Collaboration}
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+% Epistemic tier badges, matching Paper 12's convention.
+\newcommand{\tierA}{\colorbox{green!15}{\textsf{\scriptsize Tier A --- Lean kernel}}}
+\newcommand{\tierB}{\colorbox{yellow!20}{\textsf{\scriptsize Tier B --- derived, not measured}}}
+\newcommand{\tierL}{\colorbox{blue!10}{\textsf{\scriptsize Tier L --- literature}}}
+\newcommand{\tierC}{\colorbox{orange!15}{\textsf{\scriptsize Tier C --- conjecture}}}
+\newcommand{\lean}[1]{\texttt{#1}}
+
+\newtcolorbox{headlinebox}{%
+  colback=red!4, colframe=red!45!black, boxrule=0.5pt, arc=1pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  fonttitle=\bfseries\small, title={Headline result}
+}
+\newtcolorbox{scopebox}{%
+  colback=gray!5, colframe=gray!45, boxrule=0.4pt, arc=1pt,
+  left=6pt, right=6pt, top=3pt, bottom=3pt,
+  fonttitle=\bfseries\small, title={What is not claimed}
+}
+\newtcolorbox{correctionbox}{%
+  colback=orange!6, colframe=orange!55!black, boxrule=0.5pt, arc=1pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt,
+  fonttitle=\bfseries\small, title={Corrections recorded in this session}
+}
+
+\title{\Large \textbf{Certified Lattice Data and a Within-Family Selector}\\[0.2em]
+\textbf{for the Cooper $s_7$/$s_{10}$ $K3$ Families}}
+
+\author{\textbf{Xavier Callens} \and \textbf{SocrateAI Scientific Agora Collaboration} \\[0.3em]
+\textit{Stream 2 --- Selection \& Geometry (\texttt{SocrateAI-Scientific-Agora-K3-DarkMatter})}}
+\date{2026-09-29 \quad (preprint; not reviewed)}
+
+\begin{document}
+\maketitle
+
+\begin{scopebox}
+This is a mathematics note about lattice arithmetic on two families of $K3$ surfaces. It makes no
+physical claim of any kind: no dark-matter identification, no dark-energy statement, no observable.
+The programme's flux/tadpole route is blocked pending a specified threefold base (F5b) and a
+selection among the surfaces discussed here maps to no measurement. These renunciations are load-bearing,
+not boilerplate; see \cref{sec:scope}.
+\end{scopebox}
+
+\begin{abstract}
+We report a session's results on the Cooper $s_7$ and $s_{10}$ Picard--Fuchs families, all of it lattice
+mathematics with an explicit epistemic tier on every claim. Six points of the $\rho=20$ locus of each
+family's transcendental lattice are exhibited as exact vectors with saturated orthogonal complements,
+reduced binary forms, and frame indices; the lattice arithmetic of all twelve is kernel-checked in Lean~4,
+three of the six \emph{independently} by two separate developments, which we re-verify ourselves before
+citing either. A within-family selector --- minimal discriminant of the transcendental lattice --- is
+adopted by an explicit ruling among two computed alternatives, chosen because the rejected alternative is
+not unique in one family. An explicit $M_7$-polarized model realizes the $s_7$ family as an Inose surface;
+its elliptic fibration, taken from a sourced literature equation and re-derived here, has the two
+singular loci of the Picard--Fuchs operator indistinguishable at the level of discriminant-root orders,
+which answers a standing question about one of them in the negative. Stage-2 monodromy of the order-two
+operator underlying each family is certified by rigorous ball arithmetic, replacing an earlier numerical-tolerance
+heuristic with enclosures whose diameters are reported exactly. We record, in band, five errors made and
+caught during the same session, because the standing discipline of this programme requires retractions to
+be machine-visible rather than a footnote.
+\end{abstract}
+
+\tableofcontents
+
+\section{Scope and what is not claimed}\label{sec:scope}
+
+\begin{scopebox}
+No claim in this note is physical. The $\rho=20$ locus is a set of lattice points on a modular curve; it
+maps to no observable and licenses no dark-sector identification. The discriminant-floor selector of
+\cref{sec:selector} is a naming convention for which candidate a certificate calls ``distinguished''
+within a family, adopted by an explicit ruling, and it does not rank one Cooper family against the other.
+No Kodaira fibre type is attached to any point of either family's Picard--Fuchs operator: that reading is
+a category error for this class of family (elliptic points of a modular curve are not Kodaira
+degenerations), and the one place an explicit Weierstrass model is computed (\cref{sec:fibration}) we
+report discriminant-root \emph{orders} only, withholding the label pending a separate ruling. The
+$s_{10}$ family's transcendental lattice remains a DRAFT certificate; every $s_{10}$ result here is
+advisory and does not depend on, or promote, that certificate's status.
+\end{scopebox}
+
+\section{The six $\rho=20$ locus rows, kernel-checked}\label{sec:rows}
+
+Each register family ($s_7$ at level $N=7$, $s_{10}$ at level $N=10$) carries a rank-three lattice
+$U\oplus\langle 2N\rangle$ with quadratic form $v^2 = 2xy+2Nz^2$ on coordinates $v=(x,y,z)$. Three points
+per family are singled out by the vanishing locus of the family's order-three Picard--Fuchs operator
+$L_3$: the two finite singular points and the point at infinity. At each such point the transcendental
+lattice, rank $19$ generically, drops to rank $2$ and becomes positive definite --- $\rho$ jumps to $20$.
+\Cref{tab:rows} lists all six, as exact vectors with their norm, the exact orthogonal complement (its Gram
+matrix, reduced to a binary quadratic form of discriminant $D$), and the Lean kernel status.
+
+\begin{table}[h]
+\centering
+\input{tables/rankjump_rows.tex}
+\caption{The six locus rows. \tierA\ for the lattice arithmetic (norm, saturated complement, Gram, reduced
+form, frame determinant) of every row; three rows carry two independent kernel developments. \tierB: the
+numeric recognition of $z$, and the identification of the orthogonal complement with the family's
+transcendental lattice $T_X$ (Dolgachev 1996 \S7, Doran 1998 Thm.~5.13, \tierL). The index step
+$|\det(\text{frame})| = |v^2|/\operatorname{div}(v)$ is checked per row, never proved in general, in
+either kernel development.}\label{tab:rows}
+\end{table}
+
+\begin{headlinebox}
+For the two rows at $z=1/27$ and $z=-1$ (the $s_7$ family) and, independently added this session, both
+families' $z=\infty$ rows, the lattice half is kernel-checked \emph{twice}, by two developments written
+without reading each other's source, then read at the statement level and re-gated by us in each
+producer's own build tree before either is cited.
+\end{headlinebox}
+
+\begin{remark}
+The two independent developments state the norm, the exact orthogonal complement as a set (an
+if-and-only-if, not merely two orthogonal vectors), the complement's Gram matrix, its Gauss-reduced form,
+and the frame determinant, each as a standalone kernel-checked declaration, over the standard axiom set
+$\{\texttt{propext},\ \texttt{Classical.choice},\ \texttt{Quot.sound}\}$ and nothing else. Producer and
+verifier are different in every case reported here: we re-ran the build, the sorry grep, the axiom audit,
+the statement lock, and \texttt{\#print axioms} ourselves, in the producer's own worktree, before writing
+any lattice tier into a certificate.
+\end{remark}
+
+\section{An adopted selector, and the alternative it rejected}\label{sec:selector}
+
+Six candidates are too many to call ``the'' surface of a family without saying which quantity is being
+extremized. Two computed candidates were compared:
+
+\begin{itemize}
+\item \textbf{SEL-D}: minimal $|\operatorname{disc}T|$ within a family, verified unique not merely by
+  class number (which counts reduced forms) but by the count of points \emph{on the modular curve}
+  itself.
+\item \textbf{SEL-N}: minimal $|v^2|$ within a family --- the $-2$ floor achieved by an $N$-uniform Lean
+  theorem in both kernel developments.
+\end{itemize}
+
+\Cref{tab:selector} gives both, exactly, per family.
+
+\begin{table}[h]
+\centering
+\input{tables/selector_comparison.tex}
+\caption{SEL-D and SEL-N disagree in both families. SEL-N is \emph{not unique} for $s_7$: two rows tie at
+the $-2$ floor, corresponding to the two fixed points of the Atkin--Lehner involution $W_7$ on the
+family's Hauptmodul coordinate.}\label{tab:selector}
+\end{table}
+
+\textbf{SEL-D was adopted.} The choice was put, with both alternatives computed and the disagreement
+stated, to the programme's designated decision authority, who selected SEL-D directly. This narrows an
+earlier, separately-ruled clause (``no minimum-discriminant rule'') to cross-family comparisons only; it
+does not rank $s_7$ against $s_{10}$, and it does not promote $s_{10}$'s DRAFT lattice certificate. The
+selected surfaces --- $T=A_2$ ($D=-3$) for $s_7$, $T=\langle2\rangle\oplus\langle2\rangle$ ($D=-4$) for
+$s_{10}$, advisory --- extremize the same quantity that a separate, pre-existing attractor-mechanism
+development in this programme's Lean corpus already names for the smallest admissible black-hole charge
+configuration; both are instances of the same discriminant-gap floor ($4ac-b^2\ge3$), so the coincidence
+is forced by that shared floor and is stated once, here, as an observation and not as corroborating
+evidence for either result.
+
+\section{An explicit $M_7$-polarized model}\label{sec:model}
+
+Restricting the Clingher--Doran--Lewis--Whitcher normal form for $M$-polarized $K3$ surfaces to the
+$M_7$-polarized locus realizes the $s_7$ family as an Inose surface $X(a(z),b(z))$, with $a^3=\pi(z)$,
+$b^2=\pi(z)-\sigma(z)+1$ and
+\[
+\sigma(z) = J(\tau)+J(7\tau), \qquad \pi(z) = J(\tau)\,J(7\tau),
+\]
+where $z$ is the family's own $\Gamma_0(7)^+$ Hauptmodul coordinate and $J$ is Klein's $J$-invariant,
+normalized $J(i)=1$. Because $X_0(7)^+$ has a single cusp, $\sigma$ and $\pi$ are Laurent polynomials in
+$z$; both were solved from their $q$-expansions and verified against every held-out coefficient to order
+$q^{128}$ (\tierA\ for the finite-order verification; \tierB\ for the identification of $z$ with the
+Hauptmodul coordinate). Exactly,
+\[
+\sigma(z)^2-4\pi(z) \;=\; \frac{-(z+1)(27z-1)(2z-1)^2(8z-1)^2(24z-1)^2(8z^2+16z-1)^2}{2985984\,z^{14}}.
+\]
+The \emph{simple} zeros of this expression are exactly the two finite singular loci of $L_3$
+($z=-1$, $D=-7$; $z=1/27$, $D=-28$): the points where the two isogenous elliptic curves become
+isomorphic, which is where $J(\tau)-J(7\tau)$ behaves like a square root, forced by the involution that
+swaps the two curves. The double zeros are the other self-$7$-isogenous CM points in the same window,
+each occurring exactly $h(D)$ times.
+
+\subsection{The fibration}\label{sec:fibration}
+
+A degree-two base change of a sourced elliptic pencil on $\mathrm{Km}(E_1\times E_2)$
+(Kuwata--Shioda, \S5.3, \tierL) gives the Inose fibration explicitly, with the transcription checked
+against the source's own printed discriminant before any further computation. \Cref{tab:fibration} gives
+the discriminant-root orders --- never a Kodaira label, per \cref{sec:scope} --- for the generic case,
+both $s_7$ singular loci, and the two special values $J=0,1$.
+
+\begin{table}[h]
+\centering
+\input{tables/fibration_orders.tex}
+\caption{Discriminant-root orders of the Inose fibration. The mechanism behind the middle two rows: when
+the two elliptic curves become isomorphic, the discriminant's constant term vanishes identically, and
+after the base change the two simple roots collapse onto the branch point, producing exactly one
+order-$2$ root there.}\label{tab:fibration}
+\end{table}
+
+\begin{headlinebox}
+The two singular loci of $s_7$ are \emph{indistinguishable} at the level of discriminant-root orders:
+both give $\{10,10,2,1,1\}$. A standing hypothesis in this programme --- that the two loci differ in
+their fibre configuration --- is answered in the negative by this computation, for this fibration. The
+second algebraic class responsible for the rank jump at either point must therefore be a Mordell--Weil
+section, not a reducible fibre.
+\end{headlinebox}
+
+\section{Certified stage-two monodromy}\label{sec:monodromy}
+
+The order-two Picard--Fuchs operator underlying each family's Sym$^2$ structure has monodromy that was
+previously recognized only by a numeric-tolerance heuristic ($60$-digit precision, a $10^{-35}$ gate).
+This session replaced that heuristic with rigorous ball arithmetic (Arb, via \texttt{python-flint}):
+Frobenius series tails and Taylor-continuation tails are bounded by majorant induction on the operator's
+own recurrence, giving enclosures whose diameters certify that each recognized monodromy entry is the
+\emph{unique} rational of bounded denominator inside its enclosure. \Cref{tab:monodromy} reports the
+diameters achieved; the certified matrices were then fed into the exact lattice pipeline and reproduce
+every field of the corresponding lattice certificate, closing the chain from certified numerics to exact
+lattice arithmetic.
+
+\begin{table}[h]
+\centering
+\input{tables/monodromy_diameters.tex}
+\caption{Enclosure diameters of the certified stage-two monodromy. All are many orders of magnitude below
+the denominator bound required for the recognized rational to be unique.}\label{tab:monodromy}
+\end{table}
+
+\section{Corrections recorded in band}\label{sec:corrections}
+
+\begin{correctionbox}
+Five errors were made and caught within this session, listed because the standing discipline of this
+programme requires a retraction to be machine-visible, not a prose footnote.
+\begin{enumerate}
+\item An initial claim that SEL-N (\cref{sec:selector}) was unique and level-uniform was false: two rows
+  of the $s_7$ family tie at the $-2$ norm floor. Caught before any recommendation was written down.
+\item An initial reading of a standing ``no minimum-discriminant rule'' as scoped to cross-family
+  comparison only was a stretch of the text, not what it said; the question was put to the decision
+  authority rather than resolved by inference.
+\item A transcription of the Inose (0,0)/(1,0) labels for two special points was swapped; corrected after
+  an independent Weierstrass-reduction computation disagreed with it.
+\item Two software defects were found while extending the Lean-attestation machinery of
+  \cref{sec:rows}: a worktree-path resolver that only recorded one build tree per repository, so a
+  second, later commit on a different branch of the same repository silently failed its own file-hash
+  check; and a test control that matched a lattice row by vector coordinates alone, which collide across
+  the two register families.
+\item A version-control error landed a pull request containing only a brief document, omitting the
+  actual code and data changes its own description claimed; caught by comparing a certificate's hash on
+  the merged branch against the local file, and corrected by a follow-up commit before any downstream
+  party was told the (wrong) hash.
+\end{enumerate}
+\end{correctionbox}
+
+\section{Reproducibility}
+
+Every number in \cref{tab:rows,tab:selector,tab:fibration,tab:monodromy} is generated directly from
+certificates in \texttt{data/certificates/} by \texttt{scripts/render\_paper\_tables.py}, which fails
+closed (\texttt{--check}) if any table fragment drifts from the certificates that produced it; nothing in
+this document's tables is a typed literal. The checkers producing the underlying certificates each ship
+negative controls that must fail on a tampered input before the corresponding positive result is trusted.
+A full account of every certificate, checker, and the exact gate output for both independent Lean
+developments of \cref{sec:rows} is in the repository's decision and status records, referenced in
+\cref{sec:refs}.
+
+\section*{Provenance}
+Generated-by: Claude (Sonnet~5), Stream~2 \textbar\ Verified-by: \texttt{scripts/render\_paper\_tables.py
+--check}; every cited checker's own controls \textbar\ Reviewed-by: N (preprint; not reviewed).
+
+\section{References and source records}\label{sec:refs}
+
+\begin{thebibliography}{9}
+\bibitem{Dolgachev1996} I.~Dolgachev, ``Mirror symmetry for lattice polarized $K3$ surfaces,''
+  \textit{arXiv:alg-geom/9502005} (1996).
+\bibitem{Doran1998} C.~F.~Doran, ``Picard--Fuchs uniformization: modularity of the mirror map and
+  mirror-moonshine,'' \textit{arXiv:math/9812162} (1998).
+\bibitem{CD2007} A.~Clingher and C.~F.~Doran, ``Modular invariants for lattice polarized $K3$ surfaces,''
+  \textit{arXiv:math/0602146} (2007).
+\bibitem{CDLW} A.~Clingher, C.~F.~Doran, J.~Lewis, and U.~Whitcher, ``Normal forms, $K3$ surface moduli,
+  and modular parametrizations,'' \textit{arXiv:0712.1880}.
+\bibitem{DHNT} C.~F.~Doran, A.~Harder, A.~Y.~Novoseltsev, and A.~Thompson, ``Families of lattice polarized
+  $K3$ surfaces with monodromy,'' \textit{arXiv:1312.6434}.
+\bibitem{KS} M.~Kuwata and T.~Shioda, ``Elliptic parameters and defining equations for elliptic
+  fibrations on a Kummer surface,'' \textit{arXiv:math/0609473}.
+\bibitem{Moore1998} G.~Moore, ``Arithmetic and Attractors,'' \textit{arXiv:hep-th/9807087} (1998).
+\bibitem{RepoRecords} SocrateAI Scientific Agora Collaboration, \texttt{SocrateAI-Scientific-Agora-K3-DarkMatter},
+  \texttt{K3\_CRITERIA.md} and \texttt{TODO.md} at commit \texttt{d3a2a01} (2026-09-29); decision records
+  \texttt{briefs/T0\_DECISIONS\_2026\_09\_28\_STREAM2.md} (selector ruling),
+  \texttt{briefs/STREAM2\_AM8\_SELECTOR\_COMPARISON\_2026\_09\_28.md} (comparison detail),
+  \texttt{briefs/WP\_GE10\_INOSE\_MODEL\_M7\_2026\_09\_27.md} (fibration derivation).
+\end{thebibliography}
+
+\end{document}
