@@ -83,12 +83,14 @@ SOURCES = {
     # C2 (AM-3): sec. 2 names the live/draft files explicitly. C2_cooper_s7_v4.json
     # still self-reports "LIVE v4" but was superseded by v5 (T0 D5'), and v5 by v6
     # (T0 D10', 2026-09-27; provenance only, identical values), hence v6 here.
+    # cooper_s10: v4_DRAFT promoted to v5 LIVE on T0's behalf (D15', 2026-09-29;
+    # provenance only, identical values).
     "C2": {
         "kind": "c2",
         "checker": "check_U1_lattice.py",
         "certs": {
             "cooper_s7": "C2_cooper_s7_v6.json",
-            "cooper_s10": "C2_cooper_s10_v4_DRAFT.json",
+            "cooper_s10": "C2_cooper_s10_v5.json",
         },
     },
     # C3: sec. 2 names checkers/check_C3_sym2.py, which does not exist in this repo.

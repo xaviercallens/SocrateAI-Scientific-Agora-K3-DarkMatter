@@ -130,7 +130,7 @@ def main():
                   for f in ("C2_cooper_s7_v3.json", "C2_cooper_s7_v4.json",
                              "C2_cooper_s7_v5.json", "C2_cooper_s7_v5_DRAFT.json",
                              "C2_cooper_s7_v6.json", "C2_cooper_s7_v6_DRAFT.json",
-                             "C2_cooper_s10_v4_DRAFT.json")]
+                             "C2_cooper_s10_v4_DRAFT.json", "C2_cooper_s10_v5.json")]
 
     worst = 0
     for path in paths:

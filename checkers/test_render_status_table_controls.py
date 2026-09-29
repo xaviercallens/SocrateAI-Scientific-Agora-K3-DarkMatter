@@ -138,9 +138,14 @@ shutil.copy(sb.certs / "C1_mirror_integrality_cooper_s10.json", sb.certs / "C1_m
 ok, e = refuses(sb, "row is")
 check("N4 candidate mismatch refuses", ok, e)
 
-# N5
+# N5 (s10 v5 LIVE since D15' 2026-09-29: the DRAFT rendering is exercised by flipping it back)
 s10_line = [l for l in base.splitlines() if l.startswith("| K-s10") and "C2_cooper_s10" in l]
-check("N5 s10 lattice renders DRAFT (ADVISORY), not LIVE", len(s10_line) == 1
+check("N5 s10 lattice (v5 LIVE) renders LIVE, not DRAFT", len(s10_line) == 1
+      and "LIVE:" in s10_line[0] and "DRAFT (ADVISORY)" not in s10_line[0])
+sb = fresh()
+sb.edit("C2_cooper_s10_v5.json", lambda d: d.update(status="DRAFT - control"))
+s10_line = [l for l in sb.render().splitlines() if l.startswith("| K-s10") and "C2_cooper_s10" in l]
+check("N5 s10 flipped to DRAFT renders DRAFT (ADVISORY), not LIVE", len(s10_line) == 1
       and "DRAFT (ADVISORY)" in s10_line[0] and "LIVE:" not in s10_line[0])
 sb = fresh()
 sb.edit("C2_cooper_s7_v6.json", lambda d: d.update(status="DRAFT - control"))

@@ -1,6 +1,44 @@
 # 🗺️ ROADMAP: Dual-Scale Topological Universe Model (K3×T² + D-brane Dynamics)
 
-**Last updated:** 2026-07-26 (evening) | **Release:** `v0.3.4`
+**Last updated:** 2026-09-29 | **Release:** `v0.3.13-paper-selection-geometry` (`v0.3.14` pending a green
+CI run, standing rule 6) | Everything below the next section is the 2026-07-26 snapshot, kept for the
+audit trail; where it contradicts `CLAUDE.md`'s ledger, the ledger wins.
+
+## Status 2026-09-29 — where the K3 selection stands, across streams (supersedes the sections below)
+
+**Settled (tier in brackets):**
+- [A] `L₃ = Sym²(L₂)` kernel-proven (Stream 1). Supplies no physical coupling by itself.
+- [A, lattice half] all six ρ = 20 locus rows — cooper_s7: D = −3 (A₂), −7, −28; cooper_s10: D = −4
+  (⟨2⟩⊕⟨2⟩), −20, −40 — kernel-checked; three double-sourced (Stream 1 `MnLattice.lean`, LeanMaster
+  `RankJump.lean`), each re-gated by Stream 2 in the producer's own tree (`CM_POINTS_RHO20_LATTICE_TIER.json`).
+- [B, adopted] ρ = 20 cut (D7′) and the within-family selector minimal |disc T| (AM-8, D13′): s7 → A₂ at
+  z = ∞; s10 → ⟨2⟩⊕⟨2⟩ at z = ∞. Both unique on the curve. No cross-family ranking.
+- [B] cooper_s10 lattice certificate LIVE (`C2_cooper_s10_v5.json`, D15′ 2026-09-29, value-identical to
+  the 2026-08-01 draft; re-derivation 23/23). s7: `C2_cooper_s7_v6.json`.
+- [B] stage-2 monodromy certified by ball arithmetic for both families; chain closed to the exact lattice.
+- [B] explicit M₇-polarized Inose/CDLW model; Kuwata–Shioda fibration orders {10,10,2,1,1} at both s7 loci —
+  GE-10 closed: no fibre-level distinction; the extra class is a Mordell–Weil section. **No Kodaira labels**
+  (ledger items 3 and 10, D14′).
+- Paper: `papers/stream2_selection_geometry_2026_09_29.pdf` (preprint, not reviewed; tables rendered from
+  certificates by `scripts/render_paper_tables.py --check`).
+
+**Not claimed, by rule:** any observable, dark-matter or dark-energy statement (ledger item 4, F5b); any
+ranking of s7 over s10; Gate E criterion 1 (ρ = 19, T = 3 is derived, not measured).
+
+**Streams:**
+| Stream | State | Owns next |
+|---|---|---|
+| 1 (LeanProposal) | closed, `main` @ `8dc0eb6` (v0.24.1) | flag any future level-7/12 exclusion as a *candidate criterion* |
+| 2 (this repo) | closing after `v0.3.14` | the v5 re-emission chain (mechanical); watch CI (D16′) |
+| 3 (Home) | restarted by notice §9 (D17′) | re-pin `K3_CRITERIA.md`; re-mirror; D12′ laboratory approach, E1-first, guardrail §5.4 |
+| LeanMaster | closed for this project (D18′); MCP server stays up for others | — |
+| T0 | — | the direction decision: open twisted-Weierstrass (WP-TW0 ℓ = 2 in-house, then WP-TW1 two-E8 degree feasibility on P³, deg Δ = 48) or hold at the selection result; S3-00b stays BLOCKED without a B₃ |
+
+**Release line:** v0.3.8 CM points → v0.3.9 thought experiments → v0.3.10 ρ = 20 adopted → v0.3.11
+criteria canonical → v0.3.12 rank-jump Tier A → v0.3.13 paper → v0.3.14 delegated rulings + CI green
+(pending the run).
+
+---
 
 > ## ⬛ READ THIS FIRST — current state supersedes everything below
 >

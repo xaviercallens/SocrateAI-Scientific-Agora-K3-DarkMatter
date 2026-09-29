@@ -98,8 +98,8 @@
     },
     "certified": true,
     "stage3_from_certified_matrices": {
-      "reference_certificate": "C2_cooper_s10_v4_DRAFT.json",
-      "reference_status": "DRAFT (ADVISORY)",
+      "reference_certificate": "C2_cooper_s10_v5.json",
+      "reference_status": "LIVE",
       "derived_here": {
         "gram_primitive_even": [
           [
