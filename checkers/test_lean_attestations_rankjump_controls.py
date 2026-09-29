@@ -83,15 +83,29 @@ if present.get("LM-RankJump-73f6fb1"):
 else:
     check("N7 skipped (LeanMaster worktree absent)", True)
 
-# N8: break the only attestation of the single-source A2 row -> that row B, others unaffected
+# N8: break the only attestation of a genuinely single-source row -> that row B, others unaffected.
+# (LM-s7-zinf is NOT single-source once S1-s7-zinf covers the same row too -- verified separately
+# below, since double-sourcing a previously single-source row is itself worth asserting.)
+rows_now = la.build_rows(atts, cm, False)
+single_source_rows = [r for r in rows_now if r["independent_files_passing"] == 1]
+check("N8 setup: at least one genuinely single-source row exists to tamper", len(single_source_rows) >= 1)
+target_cand, target_v = single_source_rows[0]["candidate"], single_source_rows[0]["v"]
+target_id = next(a["id"] for a in atts["attestations"] if a["v"] == target_v and a["candidate"] == target_cand)
 a2 = copy.deepcopy(atts)
 for a in a2["attestations"]:
-    if a["id"] == "LM-s7-zinf":
-        a["claims"]["gram"] = [[2, 1], [1, 3]]
+    if a["id"] == target_id:
+        a["claims"]["gram"] = [[9, 9], [9, 9]]
 rows8 = la.build_rows(a2, cm, False)
-r_inf = next(r for r in rows8 if r["v"] == [14, -14, -5])
-check("N8 single-source row goes B when its attestation fails; others stay A",
-      r_inf["lattice_tier"] == "B" and sum(r["lattice_tier"] == "A" for r in rows8) == 5)
+r_target = next(r for r in rows8 if r["v"] == target_v and r["candidate"] == target_cand)
+check(f"N8 single-source row ({target_id}) goes B when its attestation fails; others stay A",
+      r_target["lattice_tier"] == "B" and sum(r["lattice_tier"] == "A" for r in rows8) == len(rows_now) - 1)
+
+# N8b: LM-s7-zinf alone (the old N8 target) is no longer single-source, now that S1-s7-zinf also
+# covers cooper_s7/(14,-14,-5) -- confirms the double-sourcing this session's work added, and that
+# it is a real property of the DATA, not an artifact of this control.
+zinf_row = next(r for r in rows_now if r["v"] == [14, -14, -5] and r["candidate"] == "cooper_s7")
+check("N8b s7 z=infinity is double-sourced (Stream 1 sec. 3c + LeanMaster)",
+      zinf_row["independent_files_passing"] == 2)
 
 # N9: tamper the certificate's kernel basis to a non-unimodular relative (scale one vector by 2)
 cm9 = copy.deepcopy(cm)

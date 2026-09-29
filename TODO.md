@@ -226,6 +226,27 @@
       recomputation) → `C6_SELECTOR_COMPARISON.json`, `C6_SELECTED_CANDIDATE.json`. Record:
       `briefs/T0_DECISIONS_2026_09_28_STREAM2.md`, `briefs/STREAM2_AM8_SELECTOR_COMPARISON_2026_09_28.md`.
       Does not rank the families, does not promote s10, does not read physically (ledger item 4).
+- [x] **The two AM-8-selected rows (both z=∞) lattice-half kernel-checked, DOUBLE-SOURCED —
+      DONE 2026-09-28.** Stream 1 added `Agora/Geometry/MnLattice.lean` §3c (`2f665dd`, sha
+      `b4d0adcb…`; merged `--no-ff` into their `main` as `4bab4b6`, `v0.24-am8-rows-lattice-half`) for
+      exactly the two rows AM-8 selected — same pattern as §3b, independently derived from
+      LeanMaster's own `s7_z_infinity`/`s10_z_infinity` (statement-level match confirmed both ways).
+      Re-gated by Stream 2 in Stream 1's worktree: G1 exit 0 (3723 jobs), G2 exit 0, G3 exit 1 = 421
+      audited / 3 failing (same three registered axioms as §3b, none new), G4 exit 0, `#print axioms`
+      standard on all sixteen declarations — matches Stream 1's own report exactly. Independently
+      recomputed the lattice arithmetic before trusting either report (norm, orthogonality, Gram,
+      reduction, frame det, determinant identity — all matched).
+      **Bug found and fixed while extending the attestation file:** `check_lean_attestations_rankjump.py`
+      resolved one worktree path per repo, so a second gate record on a *different* worktree for the
+      same repo always failed its file-hash check (A7) silently under `--verify-source-files` — fixed
+      to resolve the worktree from each gate record's own `branch` field (`source_root()`). A second,
+      unrelated bug in `test_lean_attestations_rankjump_controls.py`'s N8 control (matched a row by
+      vector coordinates alone, which collide across candidates — `(1,-1,0)` is a row of *both*
+      families) was also caught and fixed. `refs/lean_attestations_rankjump_2026_09_27.json` now has
+      3 gate records / 10 attestations; overlay `CM_POINTS_RHO20_LATTICE_TIER.json` re-emitted: **3 of
+      the 6 rows are now double-sourced** (both s7 (−2)-walls, and now both z=∞ points too). 16
+      controls (was 14; N8 fixed + N8b added). Not proved by either file: the index step, `v^⊥ = T_X`
+      (Tier L), `z` (Tier B). No promotion of s10; no ranking; no physical reading.
 - [x] **`C2_cooper_s7_v6` — ACCEPTED by T0 2026-09-27 (D10′), LIVE.** v5 content, provenance only:
       stage-2 matrices CERTIFIED (`CERTIFIED_MONODROMY_L2_cooper_s7.json`) instead of recognised at
       1e−35; derived block identical to v5 (asserted at promotion). v5 retained for audit and as the
@@ -338,7 +359,7 @@ python3 checkers/test_inose_model_M7_controls.py              # 7 controls (scra
 python3 checkers/check_inose_fibration_multiplicities.py      # ~10 s: KS J9 equation (transcription verified) -> Inose K3; orders {10,10,2,1,1} at both loci
 python3 checkers/test_inose_fibration_multiplicities_controls.py # 7 controls (transcription errors refused; exceptional set discriminating)
 python3 checkers/check_lean_attestations_rankjump.py --verify-source-files # overlay lattice_tier from kernel statements; A7 skipped if the producer worktree is absent
-python3 checkers/test_lean_attestations_rankjump_controls.py # 14 controls (tampered Gram/basis/vector/axioms/det/sha/kernel-basis/det_T_X -> tier B)
+python3 checkers/test_lean_attestations_rankjump_controls.py # 16 controls (tampered Gram/basis/vector/axioms/det/sha/kernel-basis/det_T_X -> tier B; double-sourcing checked)
 python3 checkers/check_C6_selector_comparison.py              # C6 selector comparison record (SEL-D vs SEL-N), not a gate
 python3 checkers/test_C6_selector_comparison_controls.py      # 13 controls
 python3 checkers/check_C6_selector_adopted.py                 # verifies AM-8's K3_CRITERIA.md prose against recomputation
