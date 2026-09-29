@@ -1,6 +1,6 @@
 # ✅ TODO — restart here
 
-**Last updated:** 2026-09-27 (s10 lattice cert kept DRAFT by T0; orientation block below dates from 2026-07-26) · **Release:** `v0.3.12-rankjump-tier-a` · **Previous TODO:** commit history
+**Last updated:** 2026-09-29 (paper `papers/stream2_selection_geometry_2026_09_29.pdf` added, PR #70; s10 lattice cert kept DRAFT by T0; orientation block below dates from 2026-07-26) · **Release:** `v0.3.13-paper-selection-geometry` · **Previous TODO:** commit history
 
 > ## 30-second orientation
 >
@@ -364,6 +364,9 @@ python3 checkers/check_C6_selector_comparison.py              # C6 selector comp
 python3 checkers/test_C6_selector_comparison_controls.py      # 13 controls
 python3 checkers/check_C6_selector_adopted.py                 # verifies AM-8's K3_CRITERIA.md prose against recomputation
 python3 checkers/test_C6_selector_adopted_controls.py         # 5 controls
+python3 scripts/render_paper_tables.py --check                # papers/tables/*.tex match the certificates (paper 2026-09-29)
+python3 checkers/test_render_paper_tables_controls.py         # 7 controls (tampered certificate changes the table; stale fragment fails --check)
+python3 scripts/check_tier_language.py papers/stream2_selection_geometry_2026_09_29.tex  # paper prose: 0 violations
 # slow (~70 s): python3 checkers/check_nodality_explicit_models.py   (Singular optional second CAS)
 # slow (~2.5 min), run before release: python3 checkers/check_CM_points_rho20.py
 ```
