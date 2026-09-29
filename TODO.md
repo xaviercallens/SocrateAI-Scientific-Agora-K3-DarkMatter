@@ -1,6 +1,6 @@
 # ✅ TODO — restart here
 
-**Last updated:** 2026-09-29 (D14′–D18′ taken on T0's behalf under explicit delegation — `briefs/T0_DECISIONS_2026_09_29_STREAM2_DELEGATED.md`: no Kodaira labels for the explicit model; `C2_cooper_s10_v5.json` LIVE; CI red-run diagnosis + fixes + standing rule 6; Stream 3 restarted by notice §9; LeanMaster closed for this project, MCP server kept. Paper: PR #70. Orientation block below dates from 2026-07-26) · **Release:** `v0.3.13-paper-selection-geometry`; `v0.3.14` waits for a green CI run (rule 6) · **Previous TODO:** commit history
+**Last updated:** 2026-09-29 (D14′–D18′ taken on T0's behalf under explicit delegation — `briefs/T0_DECISIONS_2026_09_29_STREAM2_DELEGATED.md`: no Kodaira labels for the explicit model; `C2_cooper_s10_v5.json` LIVE; CI red-run diagnosis + fixes + standing rule 6; Stream 3 restarted by notice §9; LeanMaster closed for this project, MCP server kept. Paper: PR #70. Orientation block below dates from 2026-07-26) · **Release:** `v0.3.14-delegated-rulings-ci-green` (first green Agora CI Gate runs: PR `36523846615`, main `36524218006`) · **Previous TODO:** commit history
 
 > ## 30-second orientation
 >
@@ -192,10 +192,15 @@
       level of orders). `INOSE_FIBRATION_MULTIPLICITIES.json`. **RULED 2026-09-29 (D14′, on T0's
       behalf): no Kodaira labels for the explicit model either — ledger item 10. GE-10 CLOSED at the
       level of orders.** Record: `briefs/T0_DECISIONS_2026_09_29_STREAM2_DELEGATED.md`.
-- [ ] **🔴 CI Gate — watch the first post-merge run after the D16′ fixes and record its id** in the
-      D16′ brief (addendum). Standing rule 6: no `v0.3.14` tag until Gates A–D are green on `main`.
-      Diagnosis of the red runs (Gate A `packagesDir`; Gate B missing `python-flint`/`pytest`, sympy
-      pure-Python LLL assertion, Stream 1 repo absent) and the fixes: same brief.
+- [x] **CI Gate — GREEN 2026-09-29** after the D16′ fixes: PR run `36523846615`, post-merge run
+      `36524218006` on `main` `2894e78`, Gates A–D + Merge Gate all success (first green runs since #65).
+      Recorded in the D16′ brief addendum. Diagnosis of the red runs (Gate A `packagesDir`; Gate B missing
+      `python-flint`/`pytest`, sympy pure-Python LLL assertion, Stream 1 repo absent) and the fixes: same brief.
+- [ ] **🔴 T0: retire (or repair) three legacy Lean workflows that cannot pass** — `lean4-compile.yml`,
+      `lean4-ci.yml`, `part4-proofs.yml` build nonexistent `Agora.PartIV.*` modules, `grep "error"` matches
+      Lake's own warning text, and every `sorry` string in the tree counts as a defect; not merge gates, but
+      red on every trigger (runs `36523846606`, `36523846604`). Evidence and proposal: D16′ brief addendum.
+      Stream 2 did not remove them (workflow removal reserved to T0).
 - [x] **Does C3 require an INTEGRAL partner? — RULED by D8′/AM-2 (literal reading: no; the constant
       is reported, never gated).** Item closed as superseded (D11′-7). Record of the question:
       `briefs/STREAM2_TO_STREAM3_C3_BRANCH_REPLY_2026_09_21.md`; `PARTNER_GLOBAL_BOUNDEDNESS.json`.
@@ -322,8 +327,9 @@
 5. **Numbers are computed, never typed.** ρ is derived at runtime as `b₂ − rank_V` from the step-A
    certificate; break that certificate and the number moves or the checker refuses.
 
-## Regression — all green as of `v0.3.12-rankjump-tier-a` (2026-09-28; 44/46 checks green, 2 known
-worktree-only false failures — see note below the block)
+## Regression — all green as of `v0.3.14-delegated-rulings-ci-green` (2026-09-29; all 40
+`checkers/test_*.py` suites green locally with `STREAM1_ROOT` set, and Gate B green in CI run `36524218006`;
+the former worktree-only false failures are fixed — see note below the block)
 
 ```bash
 python3 checkers/test_refs_self_regenerate.py            # 11/11 entries, both encodings agree

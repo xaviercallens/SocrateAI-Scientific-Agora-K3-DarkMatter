@@ -1,7 +1,7 @@
 # 🗺️ ROADMAP: Dual-Scale Topological Universe Model (K3×T² + D-brane Dynamics)
 
-**Last updated:** 2026-09-29 | **Release:** `v0.3.13-paper-selection-geometry` (`v0.3.14` pending a green
-CI run, standing rule 6) | Everything below the next section is the 2026-07-26 snapshot, kept for the
+**Last updated:** 2026-09-29 | **Release:** `v0.3.14-delegated-rulings-ci-green` (first green Agora CI Gate
+runs on record, PR `36523846615` / main `36524218006`; standing rule 6 satisfied) | Everything below the next section is the 2026-07-26 snapshot, kept for the
 audit trail; where it contradicts `CLAUDE.md`'s ledger, the ledger wins.
 
 ## Status 2026-09-29 — where the K3 selection stands, across streams (supersedes the sections below)

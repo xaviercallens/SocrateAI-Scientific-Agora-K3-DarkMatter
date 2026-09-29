@@ -159,4 +159,28 @@ by this decision.
 3. Mechanical follow-ups (any agent): the v5 re-emission chain (D15′ list); watching the first CI run
    after this PR and recording its id.
 
-Generated-by: Claude (Fable 5.1), Stream 2 | Verified-by: the checker outputs quoted above, re-run 2026-09-29 | Reviewed-by: N
+---
+
+## Addendum, same day — D16′ outcome (rule 6 applied to this release)
+
+| run | ref | Gate A | Gate B | Gate C | Gate D | Merge Gate |
+|---|---|---|---|---|---|---|
+| `36523846615` (PR #72, head `268dd18`) | pull_request | ✅ | ✅ | ✅ | ✅ | ✅ |
+| `36524218006` (`main` @ `2894e78`, PR #72 merge) | push | ✅ | ✅ | ✅ | ✅ | ✅ |
+
+First green Agora CI Gate runs on record since PR #65. `v0.3.14` is tagged on the merge commit of the
+release-line PR that follows, itself subject to the same rule.
+
+**Open, T0-owned (not a merge gate; found while watching):** three legacy workflows —
+`.github/workflows/lean4-compile.yml`, `lean4-ci.yml` (both path-triggered on `lean4_formal_proofs/**`,
+so they ran today for the first time and failed: runs `36523846606`, `36523846604`) and `part4-proofs.yml`
+(path-triggered on a directory that does not exist) — cannot pass as written: they build
+`Agora.PartIV.Part_IV_Formal_Proofs` / `Agora.PartIV.Test`, modules that do not exist (`Agora/PartIV`
+absent); they fail on `grep -q "error"` matching Lake's own warning text ("This will be an error in a future
+version of Lake"); and they count every `sorry` string in the tree (4 in `Agora/`, 41 overall) as a proof
+defect. Their summary step prints "All Lean 4 proofs have been successfully kernel-verified!" regardless. They
+duplicate Gates A and C with a broken test (standing rule 1's mirror image: a test that cannot pass). Stream 2
+proposes retiring the three files; removal was not executed from this session (workflow removal is treated as
+a CI change reserved to T0). One T0 sentence either way.
+
+Generated-by: Claude (Fable 5.1), Stream 2 | Verified-by: the checker outputs quoted above, re-run 2026-09-29; CI run ids above | Reviewed-by: N
