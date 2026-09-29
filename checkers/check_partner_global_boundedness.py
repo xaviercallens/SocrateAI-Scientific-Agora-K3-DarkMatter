@@ -72,6 +72,7 @@ REPORTED ATTRIBUTE, never a failure of the checker.
 """
 import hashlib
 import json
+import os
 import pathlib
 import subprocess
 import sys
@@ -84,7 +85,10 @@ CERT = ROOT / "data" / "certificates" / "PARTNER_GLOBAL_BOUNDEDNESS.json"
 N_ORDER = 160
 C_MAX = 64
 
-STREAM1 = ROOT.parent / "SocrateAI-DualScaleTopologicalUniverseModel-LeanProposal"
+# STREAM1_ROOT overrides the sibling-directory default: needed in CI (the repo is checked out
+# under the workspace) and in .claude/worktrees/ checkouts (ROOT.parent is not the repos root).
+STREAM1 = pathlib.Path(os.environ.get("STREAM1_ROOT")
+                       or ROOT.parent / "SocrateAI-DualScaleTopologicalUniverseModel-LeanProposal")
 CITATIONS = [
     # (path, text with which a LINE OF THE FILE MUST START -- a declaration, never a mention in a
     #  comment -- , commit at which it is read).  The reported line is the line of the statement.

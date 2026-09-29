@@ -1,6 +1,6 @@
 # ✅ TODO — restart here
 
-**Last updated:** 2026-09-29 (paper `papers/stream2_selection_geometry_2026_09_29.pdf` added, PR #70; s10 lattice cert kept DRAFT by T0; orientation block below dates from 2026-07-26) · **Release:** `v0.3.13-paper-selection-geometry` · **Previous TODO:** commit history
+**Last updated:** 2026-09-29 (D14′–D18′ taken on T0's behalf under explicit delegation — `briefs/T0_DECISIONS_2026_09_29_STREAM2_DELEGATED.md`: no Kodaira labels for the explicit model; `C2_cooper_s10_v5.json` LIVE; CI red-run diagnosis + fixes + standing rule 6; Stream 3 restarted by notice §9; LeanMaster closed for this project, MCP server kept. Paper: PR #70. Orientation block below dates from 2026-07-26) · **Release:** `v0.3.13-paper-selection-geometry`; `v0.3.14` waits for a green CI run (rule 6) · **Previous TODO:** commit history
 
 > ## 30-second orientation
 >
@@ -116,6 +116,13 @@
       (23/23 + 10/10) remains on record as a recommendation only. Record:
       `briefs/T0_DECISIONS_2026_09_16_STREAM2.md`. (A promotion commit made earlier the same
       day on a menu selection was reverted.)
+      **SUPERSEDED 2026-09-29 (D15′, on T0's behalf under explicit delegation):**
+      `C2_cooper_s10_v5.json` is LIVE, value-identical to v4_DRAFT; re-derivation 23/23 and witness
+      check re-run before promotion. Record: `briefs/T0_DECISIONS_2026_09_29_STREAM2_DELEGATED.md`.
+- [ ] **🟡 Re-emit the v5 chain (mechanical, any agent):** certificates emitted while v4_DRAFT was
+      the lattice source still carry `LATTICE_CERT_DRAFT`/"ADVISORY" provenance wording (values
+      unaffected). Order and list in the D15′ brief; also the four checkers that print the wording.
+      Until done, §5's K-s10 C6 cell shows the flag next to a LIVE C2 cell — dated, not hidden.
 - [x] **Deep Think referrals — RETIRED as unanswered (D11′, 2026-09-27, on T0's behalf):** TW2A
       Reading 1/2 (`briefs/DEEPTHINK_ALIGNMENT_BRIEF_TW2A_Q1_2026_07_31.md`) and s10 composite level
       (`briefs/DEEPTHINK_ALIGNMENT_BRIEF_S10_COMPOSITE_LEVEL_2026_08_01.md`): no reply on record in any
@@ -182,8 +189,13 @@
       when the curves are isomorphic: one order-2 fibre at the branch point). **GE-10 answered at the
       fibre level: no div-2/div-1 difference, no A₁ merging; the second extra class is a Mordell–Weil
       section, not a fibre.** J = 0 → {10,10,4}; J = 1 → {10,10,2,2} (the review's X₃/X₄ rows, at the
-      level of orders). `INOSE_FIBRATION_MULTIPLICITIES.json`. Still gated on T0 (ledger item 3
-      reading): attaching Kodaira *labels* to these orders.
+      level of orders). `INOSE_FIBRATION_MULTIPLICITIES.json`. **RULED 2026-09-29 (D14′, on T0's
+      behalf): no Kodaira labels for the explicit model either — ledger item 10. GE-10 CLOSED at the
+      level of orders.** Record: `briefs/T0_DECISIONS_2026_09_29_STREAM2_DELEGATED.md`.
+- [ ] **🔴 CI Gate — watch the first post-merge run after the D16′ fixes and record its id** in the
+      D16′ brief (addendum). Standing rule 6: no `v0.3.14` tag until Gates A–D are green on `main`.
+      Diagnosis of the red runs (Gate A `packagesDir`; Gate B missing `python-flint`/`pytest`, sympy
+      pure-Python LLL assertion, Stream 1 repo absent) and the fixes: same brief.
 - [x] **Does C3 require an INTEGRAL partner? — RULED by D8′/AM-2 (literal reading: no; the constant
       is reported, never gated).** Item closed as superseded (D11′-7). Record of the question:
       `briefs/STREAM2_TO_STREAM3_C3_BRANCH_REPLY_2026_09_21.md`; `PARTNER_GLOBAL_BOUNDEDNESS.json`.
@@ -371,14 +383,11 @@ python3 scripts/check_tier_language.py papers/stream2_selection_geometry_2026_09
 # slow (~2.5 min), run before release: python3 checkers/check_CM_points_rho20.py
 ```
 
-**Known worktree-only false failure (verified, not a regression):** `check_partner_global_boundedness.py`
-and its controls resolve Stream 1's repo via `ROOT.parent` (the checker's line ~87), which is wrong when
-run from inside `.claude/worktrees/…` — it lands on the worktree directory, not the repos root, so
-`external_citations_not_phantom` and `register_recurrences_are_the_stream1_template` read `False`. Verified
-2026-09-27 by placing a temporary symlink at the expected path: both pass cleanly, and the mis-tagged
-certificates the checker re-emits under the worktree were discarded, never committed. Re-run these two from
-the main checkout (or fix the path resolution to honor `LEAN_PROJECT_ROOT`-style overrides) before trusting
-a worktree run of just these two commands.
+**Former worktree-only false failure — FIXED 2026-09-29 (D16′):** `check_partner_global_boundedness.py`
+and its controls now honour `STREAM1_ROOT`; from a `.claude/worktrees/…` checkout run them as
+`STREAM1_ROOT=<repos root>/SocrateAI-DualScaleTopologicalUniverseModel-LeanProposal python3 …`
+(16/16 controls verified that way on 2026-09-29). CI checks the public LeanProposal repo out under
+`stream1_ro/` and sets the same variable. Without the variable the sibling-directory default still applies.
 
 ## The Tier A result, for the record
 

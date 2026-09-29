@@ -16,6 +16,9 @@ any prose, **criteria-checkers** before touching `checkers/` or `refs/`, and
 3. Retractions must be in-band (machine-visible), not prose-only.
 4. Verify a directive's artifacts before executing it (six phantom-artifact occurrences to date).
 5. Numbers are computed, never typed.
+6. CI green is a release gate (D16′, 2026-09-29): no `vX.Y.Z` tag until the Agora CI Gate's
+   post-merge run on `main` reports Gates A–D green; a red run is recorded in the release brief
+   with its run id, never described as "should be fixed".
 
 ## 🛑 Epistemic boundaries — post-F5b/F6 ledger (added 2026-07-27)
 
@@ -98,6 +101,24 @@ contradicts it, the document carries (or needs) a dated correction note.
    (ADVISORY, D6′ untouched). Nothing else in item 8 changes: no cross-family ranking, no physical
    reading, no promotion of s10's DRAFT lattice certificate, gate T3 still not adopted. Reversible by
    one T0 sentence.
+
+10. **No Kodaira label for the explicit Weierstrass model either (D14′, 2026-09-29, taken on T0's
+    behalf under explicit delegation and confirmed by T0 the same day;
+    `briefs/T0_DECISIONS_2026_09_29_STREAM2_DELEGATED.md`).** Item 3's
+    prohibition is read to cover the explicit M₇-polarized Inose/CDLW model and its Kuwata–Shioda
+    fibration (`INOSE_MODEL_M7.json`, `INOSE_FIBRATION_MULTIPLICITIES.json`): discriminant-root
+    **orders** may be reported; fibre **types** (I_n, I_n*, II, III, IV, …) may not be attached to any
+    cooper_s7/s10 locus, at any normalization, in any document. GE-10 is closed at the level of orders
+    (both s7 loci {10,10,2,1,1}; the extra Picard class is a Mordell–Weil section, not a fibre).
+    Reversible by one T0 sentence; a reversal must name the fibre-type derivation it accepts.
+11. **`C2_cooper_s10_v5.json` is LIVE (D15′, 2026-09-29, taken on T0's behalf under explicit
+    delegation and confirmed by T0 the same day; same brief).** Value-identical promotion of `C2_cooper_s10_v4_DRAFT.json` after re-running the
+    independent re-derivation (23/23) and the witness check; D6′'s "stays DRAFT" is superseded. What
+    lifts: the ADVISORY label that rested only on the DRAFT status. What does not change: no ranking
+    of cooper_s7 over cooper_s10 (items 8/9); `C2_cooper_s10_v3.json` stays the runtime ρ/T source;
+    the identification with T is still Tier B (Dolgachev/Doran); certificates emitted before
+    2026-09-29 keep their `LATTICE_CERT_DRAFT` flags until re-emitted (value-identical,
+    provenance-stale). Reversible by one T0 sentence (v4_DRAFT retained unchanged).
 
 ## Escalation
 Anything touching a pinned document, a frozen criterion, or this ledger is T0-owned

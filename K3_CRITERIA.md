@@ -95,9 +95,13 @@ Template per criterion: **Definition** (mathematically exact) · **Checking proc
   `checkers/independent_rederivation_C2_s10_v4.py` (+ their control files).
 - **Status:** `cooper_s7` LIVE (`C2_cooper_s7_v6.json`, T0 D10′ 2026-09-27 — v5 content, stage-2
   monodromy matrices certified by `checkers/check_certified_monodromy_L2.py`; v5 accepted under D5′ is
-  retained, identical values); `cooper_s10` **DRAFT**
-  (`C2_cooper_s10_v4_DRAFT.json`, kept DRAFT by T0 D6′) ⇒ every s10 statement resting on it is
-  ADVISORY.
+  retained, identical values); `cooper_s10` **LIVE** (`C2_cooper_s10_v5.json`, promoted from
+  `C2_cooper_s10_v4_DRAFT.json` on T0's behalf under explicit delegation, D15′ 2026-09-29,
+  `briefs/T0_DECISIONS_2026_09_29_STREAM2_DELEGATED.md` — identical values; independent re-derivation
+  23/23 and the witness check re-run before promotion). The 2026-09-16 D6′ ADVISORY label is lifted
+  on the lattice ground only: no cross-family ranking follows (ledger items 8/9). Certificates emitted
+  before 2026-09-29 still carry the `LATTICE_CERT_DRAFT` flag until re-emitted against v5
+  (value-identical, provenance-stale; listed in the D15′ brief).
 - **Threshold:** exact; the identification of the monodromy-invariant lattice with `T` is Tier B via
   the read framework sources (Dolgachev 1996 §7, Doran 1998 Thm 5.13).
 - **Failure:** F1 removal — **only** on a certificate whose verdict fails, never on DRAFT status.
@@ -201,8 +205,9 @@ Template per criterion: **Definition** (mathematically exact) · **Checking proc
   `checkers/check_C6_selector_adopted.py` against `CM_POINTS_RHO20.json` before any value here is
   trusted.
   - **cooper_s7 → `T = A₂` (reduced form `(1,1,1)`), `D = −3`, at `z = ∞`.**
-  - **cooper_s10 (ADVISORY, D6′ untouched) → `T = ⟨2⟩⊕⟨2⟩` (reduced form `(1,0,1)`), `D = −4`, at
-    `z = ∞`.**
+  - **cooper_s10 → `T = ⟨2⟩⊕⟨2⟩` (reduced form `(1,0,1)`), `D = −4`, at `z = ∞`.** (Written
+    "ADVISORY, D6′ untouched" on 2026-09-28; the lattice certificate went LIVE on 2026-09-29, D15′ —
+    the ADVISORY label is lifted on that ground only, and no cross-family ranking follows.)
   - **Narrows D7′ (ledger item 8):** "no minimum-|D| rule" is read as barring only a *cross-family*
     ranking by `|D|` ("A₂ is in s7, not s10, is a lattice fact, not a preference" — that sentence
     stands, unedited); it does not bar a *within-family* discriminant-floor selector, which AM-8 now
@@ -257,7 +262,8 @@ Template per criterion: **Definition** (mathematically exact) · **Checking proc
 - **A hard criterion is failed only by a certificate whose verdict fails.** A **DRAFT** or absent
   certificate is neither a pass nor a failure and triggers **no** F1 removal; it makes every
   statement resting on it ADVISORY. (Added 2026-09-21 with AM-3: `cooper_s10`'s lattice certificate
-  is DRAFT by T0 D6′ and must not read as failing the amended C2.)
+  is DRAFT by T0 D6′ and must not read as failing the amended C2. Superseded for `cooper_s10` on
+  2026-09-29, D15′: `C2_cooper_s10_v5.json` is LIVE; the rule itself stands.)
 - **C6, T1 and T3 are neither hard nor soft: they are not scored at all.** C6 records which members
   of a family are candidates; T1 and T3 are consistency gates. None contributes a term to any score,
   and AutoEvolve may not read them as one.
@@ -286,7 +292,7 @@ Template per criterion: **Definition** (mathematically exact) · **Checking proc
 | Register row (refs entry) | §1 pool flag | C1 | C2 | C3 | C3b | C4 | C5 |
 |---|---|---|---|---|---|---|---|
 | K-s7 (`cooper_s7`) | `TIER_A_POOL` | `PASS(60)` | LIVE: T ≅ U⊕⟨14⟩ (`C2_cooper_s7_v6.json`; T0 acceptance `briefs/T0_DECISIONS_2026_09_27_STREAM2.md#d10`); stage-2 monodromy CERTIFIED, chain to this lattice closed (`CERTIFIED_MONODROMY_L2_cooper_s7.json`) | `SYM2_OPERATOR_IDENTITY_PROVEN(all-n symbolic; partner revalidated to n=58, mirror q^14)` | no certificate | TBD-AT-FREEZE (no checker) | TBD-AT-FREEZE (no checker) |
-| K-s10 (`cooper_s10`) | `TIER_A_POOL` | `PASS(60)` | DRAFT (ADVISORY): U⊕⟨20⟩ not certified; neither pass nor failure (`C2_cooper_s10_v4_DRAFT.json`); stage-2 monodromy CERTIFIED, chain to this lattice closed (`CERTIFIED_MONODROMY_L2_cooper_s10.json`) | `SYM2_OPERATOR_IDENTITY_PROVEN(all-n symbolic; partner revalidated to n=58, mirror q^14)` | no certificate | TBD-AT-FREEZE (no checker) | TBD-AT-FREEZE (no checker) |
+| K-s10 (`cooper_s10`) | `TIER_A_POOL` | `PASS(60)` | LIVE: T ≅ U⊕⟨20⟩ (`C2_cooper_s10_v5.json`; T0 acceptance `briefs/T0_DECISIONS_2026_09_29_STREAM2_DELEGATED.md#d15`); stage-2 monodromy CERTIFIED, chain to this lattice closed (`CERTIFIED_MONODROMY_L2_cooper_s10.json`) | `SYM2_OPERATOR_IDENTITY_PROVEN(all-n symbolic; partner revalidated to n=58, mirror q^14)` | no certificate | TBD-AT-FREEZE (no checker) | TBD-AT-FREEZE (no checker) |
 | K-s18 (`avs_sporadic3_s18`) | `TIER_B_QUARANTINE` | `PASS(60)` | no certificate | no certificate | no certificate | TBD-AT-FREEZE (no checker) | TBD-AT-FREEZE (no checker) |
 
 **Unscored — record and consistency gates** (C6, T1, T3; never scored, §4). C6 is rendered without counts: CM points are dense and a certificate lists a window, not a complete or ordered set.
