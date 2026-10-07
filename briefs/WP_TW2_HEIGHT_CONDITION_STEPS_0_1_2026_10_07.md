@@ -97,3 +97,26 @@ component of the A₁ fibre. Lattice and discriminant-order language only; no fi
 
 **Step 2b stays deferred:** the explicit section at z = 1/27 (E ≅ E with End of discriminant −28, φ = √−7 of degree 7)
 is the natural target; it needs Kuwata [Kw2, Th. 4.1] or a direct Vélu + Kumar–Kuwata (3.1)–(3.3) computation.
+
+---
+
+## 6. Step 2b-i (D23′, same day) — the degree-7 endomorphism at z = 1/27, exhibited exactly (`checkers/check_TW2_sqrt_m7_endomorphism.py`, `TW2_SQRT_M7_ENDOMORPHISM.json`)
+
+At z = 1/27 the rank-1 generator of step 2a (h = 14, P̄·Ō = 5) is, by Kumar–Kuwata/Shioda, the section attached to
+the degree-7 endomorphism √−7 of E, End(E) = Z[√−7], j = 16581375 (read from the fibration certificate). That
+endomorphism is now written down over Q:
+
+- model (minimal twist of A = 3j(1728−j), B = 2j(1728−j)²): y² = x³ − 1551893875 x + 23529814932750;
+- ψ₇ (degree 24) factors over Q as (cubic)·(degree 21); the cubic — the kernel of √−7 — is
+  x³ − 101745 x² + 3158560475 x − 30989768789875;
+- Vélu (exact symmetric-function form): φ_x of degree 7 with denominator h², codomain (49A, −343B) ≅ E via
+  c² = −1/7 (so √−7 is defined over Q(√−7), its x-map over Q);
+- **proof of φ∘φ = [−7] on x-coordinates:** ψ(ψ(x₀)) = x([7]P)(x₀) exactly at 60 random rational points, for
+  rational functions of degree ≤ 49 — hence identically. Controls: the wrong sign of c² fails everywhere (this was
+  caught live as a slip), the multiplier 5 fails, a random cubic gives a codomain with a different j, a non-CM
+  curve has no rational cubic factor of ψ₇, j ∈ {0, 1728} is refused.
+
+What remains for a complete step 2b (**2b-ii, not done**): push the graph of √−7 through Kumar–Kuwata (3.1)–(3.3)
+to a section of F⁽⁶⁾, descend to F⁽¹⁾, change coordinates to the pinned Kuwata–Shioda J9 model, and read off
+P̄·Ō = 5 and h = 14 with the A₁-fibre contact computed (step 2a predicts contr = 0 at this locus). That is a
+long but now fully specified computation; every input to it is on disk.
