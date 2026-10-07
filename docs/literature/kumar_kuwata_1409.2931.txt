@@ -1,0 +1,2685 @@
+                                           ELLIPTIC K3 SURFACES ASSOCIATED WITH THE PRODUCT OF
+                                           TWO ELLIPTIC CURVES: MORDELL-WEIL LATTICES AND THEIR
+                                                            FIELDS OF DEFINITION
+
+                                                                     ABHINAV KUMAR AND MASATO KUWATA
+
+
+                                                 Abstract. To a pair of elliptic curves, one can naturally attach two K3 surfaces: the
+                                                 Kummer surface of their product and a double cover of it, called the Inose surface.
+                                                 They have prominently featured in many interesting constructions in algebraic geometry
+                                                 and number theory. There are several more associated elliptic K3 surfaces, obtained
+                                                 through base change of the Inose surface; these have been previously studied by Kuwata.
+arXiv:1409.2931v3 [math.AG] 30 Jun 2017
+
+
+
+
+                                                 We give an explicit description of the geometric Mordell-Weil groups of each of these
+                                                 elliptic surfaces in the generic case (when the elliptic curves are non-isogenous). In the
+                                                 non-generic case, we describe a method to calculate explicitly a finite index subgroup of
+                                                 the Mordell-Weil group, which may be saturated to give the full group. Our methods
+                                                 rely on several interesting group actions, the use of rational elliptic surfaces, as well as
+                                                 connections to the geometry of low degree curves on cubic and quartic surfaces. We apply
+                                                 our techniques to compute the full Mordell-Weil group in several examples of arithmetic
+                                                 interest, arising from isogenous elliptic curves with complex multiplication, for which
+                                                 these K3 surfaces are singular.
+
+
+
+
+                                                                                   1. Introduction
+
+                                          Elliptic K3 surfaces play an important role in the study of the geometry, arithmetic and
+                                          moduli of K3 surfaces [P-SS, SI, AS-D, Mo, BT].
+                                          An elliptic surface E fibered over P1 with section, over a field k, may be described by a
+                                          Weierstrass equation of the form
+                                                              y 2 + a1 (t)xy + a3 (t)y = x3 + a2 (t)x2 + a4 (t)x + a6 (t),
+                                          where the ai (t) are rational functions (or even polynomials). Let us assume that the elliptic
+                                          fibration has at least one singular fiber. The following is a fundamental question:
+                                          Question 1.1. Find generators for the (finitely generated) Mordell-Weil group E(P1 ).
+
+                                          Usually, one is interested in the geometric Mordell-Weil group E(k(t)), as well as its field
+                                          of definition and the Galois action of Gal(k/k).
+                                          A theorem of Shioda and Tate connects the Mordell-Weil group with the Picard group
+                                          or the Néron-Severi group of E (note that linear equivalence and algebraic equivalence
+                                          coincide). Namely, there is an intersection pairing on NS(E), making it into a Lorentzian
+                                          lattice. The class of the zero section O and the fiber F contribute a unimodular sublattice
+                                          of signature (1, 1), which is therefore either the hyperbolic plane U or the odd lattice
+                                          I1,1 = h1i ⊕ h−1i, depending on the Euler characteristic χ(OE ). Furthermore, every
+                                          reducible fiber over a point v ∈ P1 (k) contributes the negative of a root lattice Tv to
+                                            Date: June 30, 2017.
+                                            2010 Mathematics Subject Classification. Primary 14J27; Secondary 14J28, 11G05.
+                                            Key words and phrases. Elliptic surfaces, K3 surfaces, fields of definition, complex multiplication.
+                                                                                              1
+2                              ABHINAV KUMAR AND MASATO KUWATA
+                                                             L
+NS(E). Let the trivial lattice T be defined as (ZO + ZF ) ⊕ ( Tv ). The theorem says
+that the Mordell-Weil group E(P1 ) is isomorphic to N S(E)/T . In addition, the natural
+isomorphism induces an isometry of lattices, once we mod out by torsion.
+It guarantees that determination of the Mordell-Weil group is equivalent to finding the
+Picard group or the Néron-Severi lattice of the K3 surface. The theory of Mordell-
+Weil lattices has found numerous applications in recent years, from construction of
+record-breaking dense lattices to finding high rank elliptic curves to the inverse Galois
+problem.
+Recently, algorithms have been outlined for the basic question above (see [PTvL], or for
+the case of elliptic K3 surfaces [Ch]); however, these algorithms require point counting
+over large finite fields, and therefore are not practicable in most cases.
+In this paper, we solve this question for several families of K3 surfaces of arithmetic and
+geometric interest. Namely, let E1 and E2 be two elliptic curves, and form the Kummer
+surface of their product Km(E1 × E2 ). This K3 surface carries a lot of the arithmetic
+information of the product abelian surface. It has several different elliptic fibrations
+[O, KS], but one in particular has been the focus of a lot of attention in arithmetic
+algebraic geometry. This elliptic fibration (to be described below) has two reducible
+fibers of type IV∗ if E1 and E2 are non-isomorphic. By taking a base change along an
+appropriate double cover P1 → P1 (namely t 7→ t2 , where t is the elliptic parameter,
+chosen to place the IV∗ fibers at t = 0 and t = ∞), a natural double cover of the Kummer
+surface can be formed, which is also an elliptic K3 surface; it is called the Inose surface
+and has been useful in several contexts [SI, I2, Km, E, Sh4]. In [Kw2], Kuwata defined
+elliptic K3 surfaces F (1) through F (6) through a base change of the Inose surface, and
+used them to produce elliptic K3 surfaces over Q of every geometric rank between 1 and
+18, except for 15. (The rank 15 case was dealt with several years later by Kloosterman
+[Kl1]. See also [TdZ] for an extension, and the note [KK] which provides a construction
+starting from a Kummer surface.) In particular, F (1) is the Inose surface, and F (2) is the
+Kummer surface.
+The main purpose of this article is to describe completely explicitly the Mordell-Weil
+                                         (n)
+lattices of these elliptic K3 surfaces FE1 ×E2 in the “generic” case1, i.e., when E1 and E2
+are not isogenous. As a result, we also recover by specialization a finite index sublattice of
+the full Mordell-Weil lattice in the non-generic case. We will show that the splitting field
+in the generic case is a subfield of the compositum κn := k(E1 [n], E2 [n]) of the n-torsion
+subfields of the two elliptic curves, where k is the base field, and use natural group actions
+of GL2 (Z/nZ)2 on the universal family of F (n) over pairs of elliptic curves with level n
+structure to give relatively concise descriptions of explicit bases for the Mordell-Weil
+lattices.
+                                                                                                     (n)
+The last part of this paper is arithmetic and describes the Mordell-Weil lattices of FE1 ×E2 ,
+for those pairs of elliptic curves such that the Inose surface F (1) is defined over Q and
+is singular, i.e. has the maximal Picard number 20. In this case, E1 and E2 must be
+non-isomorphic isogenous curves with complex multiplication. In fact, this situation is
+connected to a beautiful theorem of Shioda and Inose [SI], relating singular K3 surfaces over
+C up to isomorphism with classes of positive definite even quadratic forms. They deduced
+this theorem from the work of Piatetski-Shapiro and Shafarevich [P-SS], which connected
+singular Kummer surfaces to doubly even forms, by the use of a double cover which is
+    1This is a slight abuse of notation: in the geometric moduli space A
+                                                                      j1 × Aj2 , pairs of isogenous elliptic
+curves cut out a countable union of curves. So we are really describing a “very general” situation.
+   ELLIPTIC K3 SURFACES ASSOCIATED WITH THE PRODUCT OF TWO ELLIPTIC CURVES                  3
+
+nowadays called a Shioda-Inose structure. The upshot is that the map X → TX which
+just takes the transcendental lattice of a K3 surface, establishes a bijective correspondence
+                           (1)
+between Inose surfaces FE1 ,E2 and even positive definite quadratic forms. Shioda and
+Inose also determined the zeta functions of these singular K3 surfaces. In our work, we
+look at the most arithmetically interesting of these K3 surfaces: namely those which can
+be defined over Q. In addition we impose the condition that the Inose fibration have the
+maximum possible rank 18. This requires that E1 and E2 be isogenous but non-isomorphic.
+A few of the examples arise from E1 and E2 being defined over Q, but most of them arise
+from Q-curves [G]. Our methods can be used to determine the full Mordell-Weil group
+and Néron-Severi lattice in each case; we give several illustrative examples.
+We note some prior work toward computation of the Mordell-Weil groups of the surfaces
+F (n) studied in this paper. In [Kw2], Kuwata used rational quotients and twists to
+decribe a method to compute the Mordell-Weil group of F (3) . This was made somewhat
+more explicit and extended to the other F (n) by Kloosterman in [Kl2], who computed
+polynomials (the most complicated one, for F (5) , having degree 240) whose solution would
+yield generators for the Mordell-Weil groups in the generic case, and lead to a finite
+index subgroup in other cases. Still, it was not clear what the systematic solution of
+these polynomial equations should “look like”. In our work, we make use of two key
+insights to elucidate the structure of the Mordell-Weil groups of these surfaces. The first
+is that the splitting field of the Néron-Severi group, or of the Mordell-Weil group, of
+F (n) associated with curves E1 and E2 should be related to the n-torsion fields of these
+two elliptic curves. This is a natural leap of faith from the situation of the Kummer
+surface, which is relatively well studied. The second is that the action of SLn (Z/nZ) on
+the moduli space X(n) of elliptic curves with full level n structure gives rise to an action
+of SLn (Z/nZ)2 on the universal family of F (n) over X(n) × X(n), and therefore on the
+family of Mordell-Weil groups. This action allows us to propagate a single section to
+essentially obtain a basis of the Mordell-Weil lattice. In addition to these two observations,
+we use the technique of studying associated rational elliptic surfaces, for which we have
+better control of the Mordell-Weil group, to complete the description of the Mordell-Weil
+lattices in the generic case. In the non-generic case, [Sh5], Shioda related the Mordell-Weil
+group of F (1) to isogenies between the two elliptic curves. We make Shioda’s construction
+completely explicit, even carrying out the transformation from isogenies to sections in
+many examples.
+1.1. Outline
+
+In Section 2.1, we define the elliptic K3 surfaces F (1) through F (6) that we shall study
+in this paper, and recall relevant results from the literature. Section 3 describes the
+explicit connection between the Mordell-Weil group of F (1) and isogenies between the two
+elliptic curves. It also describes the Mordell-Weil group of the Kummer surface F (2) in
+the generic case (i.e., when the elliptic curves are not isogenous). Section 4 computes the
+Mordell-Weil group of F (3) in the generic case by introducing two of the key methods in
+this paper: the study of associated rational elliptic surface (for which the determination
+of the Mordell-Weil group is easier), and the use of a large group of symmetries acting
+on the K3 surface. In section 5, we compute the Mordell-Weil group of F (4) in the
+generic case by two methods: first by using the associated rational elliptic surfaces, and
+second by analyzing curves of low degree on a quartic model of this K3 surface. Section 6
+describes the Mordell-Weil group of F (5) in the generic case. In section 7, we compute
+the Mordell-Weil group of F (6) again by two methods: first by analyzing rational elliptic
+surfaces, and second by transference from F (3) and its twist, a cubic surface. In Section
+4                          ABHINAV KUMAR AND MASATO KUWATA
+
+8, we recall the correspondence between even binary quadratic forms and singular K3
+surfaces, and describe several Inose surfaces which can be defined over Q. Finally, in
+section 9, we apply our methods to give an explicit description of the Mordell-Weil groups
+of F (6) obtained from some of these singular Inose surfaces.
+1.2. Computer files
+Auxiliary files containing computer code to verify the calculations in this paper, as well as
+some formulas omitted for lack of space, are at http://arxiv.org/e-print/1409.2931.
+The file at this URL is a tar archive, which can be extracted to produce not only the
+LATEX file for this paper, but also the computer code. The text file README.txt briefly
+describes the various auxiliary files.
+1.3. Acknowledgements
+Kumar was supported in part by NSF CAREER grant DMS-0952486, and by a grant
+from the Solomon Buchsbaum Research Fund. Kuwata was partially supported by JSPS
+Grant-in-Aid for Scientific Research (C) Grant Number 23540028, and by the Chuo
+University Grant for Special Research. We thank Tetsuji Shioda for helpful discussions,
+and Noam Elkies, Remke Kloosterman and Matthias Schütt for useful comments on an
+earlier draft of the paper. The computer algebra systems Magma, sage, gp/PARI, Maxima
+and Maple were used in the calculations for this paper.
+
+
+    2. Elliptic surfaces associated with the product of elliptic curves
+
+Throughout this paper the base field k is assumed to be a number field.
+2.1. Kummer surfaces of product type, the Inose fibration and the Inose
+     surface
+Let E1 and E2 be two elliptic curves over k. Later in this paper, we will be concerned
+with fields of definition of the Mordell-Weil groups of various elliptic fibrations. Here, we
+give a summary of Kummer surfaces and related constructions, being careful about the
+field of definition.
+Let Km(E1 × E2 ) be the Kummer surface associated with the product abelian surface
+E1 × E2 , namely the minimal desingularization of the quotient surface E1 × E2 /{±1}. If
+E1 and E2 are defined by the equations
+                                    E1 : y 2 = x3 + ax + b,
+(2.1)
+                                    E2 : y 2 = x3 + cx + d,
+an affine singular model of Km(E1 × E2 ) may be given as the hypersurface in A3 defined
+by the equation
+(2.2)                         x32 + cx2 + d = t22 (x31 + ax1 + b).
+Then the map Km(E1 ×E2 ) → P1 induced by (x1 , x2 , t2 ) 7→ t2 is an elliptic fibration, which
+is sometimes called the Kummer pencil. This elliptic fibration has obvious geometric
+sections (i.e., sections defined over k̄), but they are defined only over the extension
+k(E1 [2], E2 [2])/k obtained by adjoining the coordinates of points of order 2.
+Take a parameter t6 such that t2 = t36 , and consider (2.2) as a family of cubic curves in P2
+over the field k(t6 ). Then, this family has a rational point (1 : t26 : 0) (cf. Mestre [Me] and
+    ELLIPTIC K3 SURFACES ASSOCIATED WITH THE PRODUCT OF TWO ELLIPTIC CURVES                          5
+
+Kuwata-Wang [KwW]). Using this point, we convert (2.2) to the Weierstrass form:
+                2      3             1      6             ∆E2 
+(2.3)          Y = X − 3 ac X +         ∆E1 t6 + 864 bd + 6 ,
+                                    64                      t6
+where ∆E1 and ∆E2 are the discriminants of E1 and E2 respectively:
+                     ∆E1 = −16(4a3 + 27b2 ),          ∆E2 = −16(4c3 + 27d2 ).
+The change of coordinates between (2.2) and (2.3) are given by
+                −t26 (2at46 − c)x1 − 3(bt66 − d) − (at46 − 2c)x2
+        
+         X  =                                                        ,
+                                  t26 (t26 x1 − x2 )
+        
+        
+(2.4)
+              6(at46 − c)(bt66 − d) + 6(at46 − c)(at66 x1 − cx2 ) − 9(bt66 − d)(t46 x21 − x22 )
+        Y =
+                                                                                                .
+                                                 2t36 (t26 x1 − x2 )2
+Note that if we choose other models of E1 and E2 , we still obtain an isomorphic equation.
+Indeed, if we replace the equations of E1 and E2 by
+                                  E1 : y 2 = x3 + (k 4 a)x + (k 6 b),
+                                  E2 : y 2 = x3 + (l4 c)x + (l6 d),
+then replacing (X, Y, t6 ) by (l4 X, l6 Y, (l/k)t6 ), we recover equation (2.3).
+It is easy to see that equation (2.3) is invariant under the two automorphisms of t6 -
+line:
+                σ : t6 7→ ζ6 t6 , where ζ6 is a primitive sixth root of unity,
+(2.5)
+                τ : t6 7→ δ/t6 , where δ is a chosen sixth root of ∆2 /∆1 .
+Taking the quotient by the action of σ, or equivalently, setting t1 = t66 , we obtain an
+                                                            (1)
+elliptic curve over the field k(t1 ), which we denote by FE1 ,E2 :
+                   (1)      2      3             1                   ∆E2 
+(2.6)            FE1 ,E2 : Y = X − 3 ac X +         ∆E1 t1 + 864 bd +       .
+                                                64                     t1
+                                                                              (1)
+Definition 2.1. The Kodaira-Néron model of the elliptic curve FE1 ,E2 over k(t1 ) defined
+by (2.6) is called the Inose surface associated with E1 and E2 , and it is denoted by
+Ino(E1 , E2 ).
+Remark 2.2. In [SI], what we call the Inose surface in this article was originally constructed
+as a double cover of Km(E1 × E2 ). Shioda and Inose then showed that the following
+diagram of rational maps, called a Shioda-Inose structure, induces an isomorphism of
+integral Hodge structures on the transcendental lattices of E1 × E2 and Ino(E1 , E2 ).
+
+                                   E1 × E2             Ino(E1 , E2 )
+
+                                            π0           π1
+                                                  
+                                         Km(E1 × E2 )
+
+                                            (2)
+Since the Kodaira-Néron model of FE1 ×E2 is isomorphic over k to Km(E1 × E2 ) (with t2
+being the elliptic parameter of the Inose fibration [I2]), we have another quotient map
+from Km(E1 × E2 ) to Ino(E1 , E2 ). Thus, we have a “Kummer sandwich” diagram:
+                                       π2                      π1
+                     Km(E1 × E2 )            / Ino(E1 , E2 )        / Km(E1 × E2 )
+6                         ABHINAV KUMAR AND MASATO KUWATA
+
+(cf. Shioda [Sh4]). However, with our definition of Ino(E1 , E2 ), the quotient map π1 may
+not be defined over the base field k itself, but rather only over k(E1 [2], E2 [2]) (or an
+extension of k including some of the 2-torsion of E1 and E2 ).
+Definition 2.3. For n = 1, . . . , 6, let tn be a parameter satisfying tnn = t1 . Define the
+                (n)
+elliptic curve FE1 ,E2 over k(tn ) by
+                    (n)                          1                   ∆E 
+                FE1 ,E2 : Y 2 = X 3 − 3 ac X +      ∆E1 tnn + 864 bd + n 2 .
+                                                64                     tn
+
+When E1 and E2 are understood, we write F (n) for short.
+                                               (n)
+Remark 2.4. The Kodaira-Néron model of FE1 ,E2 is a K3 surface for n = 1, . . . , 6, but not
+for n ≥ 7.
+
+By Inose’s theorem ([I1, Cor. 1.2]), the Picard number of the K3 surface F (n) does not
+depend on n, and equals the Picard number of Km(E1 × E2 ). It is therefore at least 18.
+These surfaces are clearly of geometric and arithmetic interest, being closely related
+to abelian surfaces which are the product of two elliptic curves. We now summarize
+what is known about the geometric Picard and Mordell-Weil groups of these elliptic K3
+surfaces.
+Define R(t) and S(t) by letting the Inose surface as in equation (2.6) be Y 2 = X 3 +
+R(t)X + S(t), and let h = rank Hom(E1 , E2 ), so that 0 ≤ h ≤ 4. The table below lists the
+minimal Weierstrass equations, the configuration of singular fibers, and the Mordell-Weil
+rank in the “generic” case j(E1 ) 6= j(E2 ) and j(Ei ) 6= 0. In the other cases, which will
+not be relevant to this paper, we refer the reader to [Kw2, Th. 4.1] for the analogous
+data.
+
+              The surfaces F (n) in the case j(Ei ) are nonzero and unequal.
+
+                n         Minimal equation             Singular fibers   Rank
+                1   Y 2 = X 3 + t4 R(t)X + t5 S(t)       2II∗ , 4I1         h
+                2   Y 2 = X 3 + t4 R(t)X + t4 S(t2 )     2IV∗ , 8I1      4+h
+                3   Y 2 = X 3 + t4 R(t)X + t3 S(t3 )     2I∗0 , 12I1     8+h
+                4   Y 2 = X 3 + t4 R(t)X + t2 S(t4 )     2IV, 16I1       12 + h
+                5   Y 2 = X 3 + t4 R(t)X + tS(t5 )       2II, 20I1       16 + h
+                6   Y 2 = X 3 + t4 R(t)X + S(t6 )          24I1          16 + h
+
+The Néron-Severi and transcendental lattices were further analyzed by Shioda [Sh3, Sh5,
+Sh7], culminating in the following theorems, which are stated in the geometric situation
+k = C. In this case we may scale x, y, t to work with a simpler equation of F (n) , as in
+[I1, Sh3]:
+                              p                 1    p
+                 Y 2 = X 3 − 3 3 J1 J2 X + tn + n − 2 (1 − J1 )(1 − J2 ),
+                                               t
+where Ji = j(Ei )/1728.
+Theorem 2.5 (Shioda [Sh5]). There is a lattice isomorphism T (F (n) ) ∼  = T (F (1) )hni. In
+particular, det T (F (n) ) = det T (F (1) ) · nλ , where λ = 4 − h. The Mordell-Weil group
+MW(F (n) ) is torsion-free, except when j(E1 ) = j(E2 ) = 0 and n = 2, 4, 6, or j(E1 ) =
+j(E2 ) = 1728 and n = 3, 6.
+    ELLIPTIC K3 SURFACES ASSOCIATED WITH THE PRODUCT OF TWO ELLIPTIC CURVES                     7
+
+Remark 2.6. The notation hni means that the pairing of the lattice is multiplied by n.
+
+Theorem 2.7 (Shioda [Sh7]). There is a natural isomorphism of lattices
+
+                                 Hom(E1 , E2 ) ∼
+                                               = F (1) (k(t)).
+
+In particular, we can compute the Mordell-Weil rank as follows:
+
+Proposition 2.8. [Sh3] For elliptic curves E1 and E2 , and for 1 ≤ n ≤ 6, we have
+                                                 
+                                                 0   if j(E1 ) 6= j(E2 ),
+        (n)                                     
+  rank FE1 ,E2 (k̄(tn )) = h + min 4(n − 1), 16 − n if j(E1 ) = j(E2 ) 6= 0, 1728,
+                                                 
+                                                 2n if j(E ) = j(E ) = 0 or 1728,
+                                                            1         2
+
+
+where h = rank Hom(E1 , E2 ).
+
+In particular, the largest possible Mordell-Weil rank is 18, and we have the following.
+
+Proposition 2.9. Let E1 and E2 be two elliptic curves over k satisfying the following
+two conditions.
+     (i) E1 and E2 are isogenous but not isomorphic over k.
+    (ii) E1 and E2 have complex multiplication.
+
+Then, the Mordell-Weil groups F (5) (k(t5 )) and F (6) (k(t6 )) have rank 18.
+
+Shioda further analyzed the surface F (5) for the CM elliptic curves y 2 = x3 − 1 and
+y 2 = x3 − 15x + 22, which are 2-isogenous to each other, and determined its Mordell-Weil
+group [Sh6]. For the same pair of elliptic curves, F (6) was studied in [CMT] and generators
+for its Mordell-Weil group were computed.
+In this article, we will generalize these results further, to obtain explicit descriptions of
+the Mordell-Weil lattices of the surfaces F (n) . Our main results are the following.
+
+Theorem 2.10. Suppose the two elliptic curves E1 and E2 are not isogenous (over k).
+
+     (i) The field of definition of the Mordell-Weil group of F (n) (i.e. the smallest field over
+         which all the sections are defined) is contained in k(E1 [n], E2 [n]), the compositum
+         of the n-torsion fields of E1 and E2 .
+    (ii) An explicit basis for MW(F n ) is described by the corresponding results: Proposition
+         3.3, Theorem 4.8, Theorem 5.1 and Theorem 5.3, Theorem 6.4, Theorem 7.1 and
+         Theorem 7.11.
+
+Theorem 2.11. In the general case when E1 and E2 are allowed to be isogenous, there
+is a finite index sublattice MW(F n ) for which all the sections can be defined over the
+compositum of k(E1 [n], E2 [n]) and the field of definition of Hom(E1 , E2 ).
+
+Remark 2.12. It is possible that the field of definition of MW(F n ) in the general case
+coincides with the above compositum. However, we have not generated sufficient numerical
+evidence to formally state this as a conjecture.
+8                                           ABHINAV KUMAR AND MASATO KUWATA
+
+2.2. Galois correspondence of sublattices
+The Mordell-Weil lattice of the surface F (6) has a particularly rich structure, with sublat-
+tices induced from the Mordell-Weil lattices of several quotients which are elliptic rational
+or K3 surfaces. As we saw in (2.5), a dihedral group D6 generated by σ and τ acts on
+F (6) . We define
+                                                 (ζ6−i δ)6/n
+(2.7)                      sn,i = tn +                                n = 1, 2, 3, 6, i = 0, 1, . . . , n − 1.
+                                                     tn
+Recall that tnn = t1 = t66 . Then sn,i is invariant under σ n and τ σ i . Write S = s1,0 =
+t1 + (∆E2 /∆E1 )t−1
+                 1 for simplicity. Then, the extension k(t6 )/k(S) is a Galois extension,
+and its Galois group is D6 = hσ, τ i. Our basic idea is to consider the elliptic surface
+                                                        1     1
+                                        FS : Y 2 = X 3 − A X + (∆E1 S + C),
+                                                        3     64
+where A and C are as in (2.8), and view F (6) (k̄(t6 )) as the Mordell-Weil group of FS over
+the extension k̄(t6 )/k̄(S). In other words, we regard F (6) (k̄(t6 )) = FS (k̄(t6 )).
+Write M (tn ) = FS (k̄(tn )) and M (sn,i ) = FS (k̄(sn,i )). Between k(t6 ) and k(S) there
+are fourteen intermediate fields. Corresponding to these we have a relation among the
+Mordell-Weil groups M (tn ) and M (sn,i ).
+
+                                                M (t6 ) = F (6) (k̄(t6 ))
+
+
+
+                                    3                 2       2                                                2
+
+
+                                        F (3) (k̄(t3 ))               M (s6,0 ) M (s6,1 ) M (s6,2 ) M (s6,3 ) M (s6,4 ) M (s6,5 )
+
+
+    F (2) (k̄(t2 )) = M (t2 )                                                                                      3
+
+                                        3                 3       2                                                    2
+
+                       2
+                                                                           M (s3,0 )        M (s3,1 )      M (s3,2 )
+
+    F (1) (k̄(t1 )) = M (t1 ) M (s2,0 ) M (s2,1 )
+                                                                       3          3            3
+
+                                2           2     2
+
+
+
+                                                M (S )
+
+
+For later use, let us write a more general formula for F (n) . If E1 and E2 are given by
+                                                 E1 : y 2 = x3 + a2 x2 + a4 x + a6 ,
+                                                 E2 : y 2 = x3 + a02 x2 + a04 x + a06 ,
+                                    (n)
+then the equation of FE1 ,E2 is given by
+                                                                                                          
+                                 (n)                 1                             1                  D
+                                FE1 ,E2 : Y 2 = X 3 − A X +                                B tnn + C + n       ,
+                                                                      3           64                  tn
+   ELLIPTIC K3 SURFACES ASSOCIATED WITH THE PRODUCT OF TWO ELLIPTIC CURVES                    9
+
+where          
+                                      2
+               
+               
+                A = (a22 − 3a4 )(a02 − 3a04 ),
+                B = 16(a22 a24 − 4a32 a6 + 18a2 a4 a6 − 4a34 − 27a26 ) = ∆E1 ,
+               
+               
+               
+(2.8)                32                                3
+                C = (2a32 − 9a2 a4 + 27a6 )(2a02 − 9a02 a04 + 27a06 ),
+                     27
+               
+               
+               
+               
+                D = 16(a0 2 a0 2 − 4a0 3 a0 + 18a0 a0 a0 − 4a0 3 − 27a0 2 ) = ∆ .
+               
+                          2 4           2 6        2 4 6       4         6      E2
+
+
+
+                   3. The Mordell-Weil groups of F (1) and F (2)
+
+In this section we summarize the description of the Mordell-Weil lattices F (1) (k(t1 )) and
+F (2) (k(t2 )) for completeness.
+3.1. F (1) for isogenous case
+The Mordell-Weil lattice of F (1) (k(t1 )) for generic E1 and E2 is trivial, and we have
+nothing to do. If E1 and E2 are isogenous but not isomorphic over k, we have the following
+interpretation of the Mordell-Weil lattice by Hom(E1 , E2 ).
+Proposition 3.1 (Shioda [Sh5]). Let E1 and E2 be two elliptic curves not isomorphic
+to each other over k. Then, the Mordell-Weil lattice of F (1) (k(t1 )) is isomorphic to the
+lattice Hom(E1 , E2 )h2i, where the pairing of Hom(E1 , E2 ) is given by
+                       1                            
+            (ϕ, ψ) = deg(ϕ + ψ) − deg ϕ − deg ψ ϕ, ψ ∈ Hom(E1 , E2 ).
+                       2
+
+For a given ϕ ∈ Hom(E1 , E2 ), we would like to compute the section corresponding to ϕ
+explicitly. To do so, we consider the inclusion
+                                  (1)                                      (6)
+           Hom(E1 , E2 )h2i ' FE1 ,E2 (k̄(t1 )) ,→ Hom(E1 , E2 )h12i ⊂ FE1 ,E2 (k̄(t6 ))
+                                                         (6)
+induced by t1 7→ t66 , and we look for a section in FE1 ,E2 (k̄(t6 )).
+Suppose E1 and E2 are given in the form of (2.1). By replacing t2 by t36 in the equation
+of Kummer surface (2.2), we regard it as a cubic curve over k(t6 ). More precisely, we
+consider the cubic curve in the projective plane over k(t6 ) with coordinates (x1 : x2 : z)
+defined by
+                     Ct6 : x32 + cx2 z 2 + dz 3 = t66 x31 + ax1 z 2 + bz 3 .
+                                                                          
+(3.1)
+Suppose ϕ is an isogeny of degree d. Then, ϕ can be written in the form
+                                                                         
+                      ϕ : (x1 , y1 ) 7→ (x2 , y2 ) = ϕx (x1 ), ϕy (x1 )y1 .
+Consider the curve of degree d given by x2 = ϕx (x1 ). The intersection of these two
+curves
+                          3
+                           x2 + cx2 + d = t66 (x31 + ax1 + b),
+(3.2)
+                           x2 = ϕx (x1 ),
+gives a divisor of degree 3d in Ct6 . Since we have ϕx (x1 )3 + cϕx (x1 ) + d = ϕy (x1 )2 y12 =
+ϕy (x1 )2 (x31 + ax1 + b), the first equation reduces to
+                           ϕy (x1 ) − t36 ϕy (x1 ) + t36 (x31 + ax1 + b) = 0.
+                                                       
+(3.3)
+Proposition 3.2. Let ϕ : E1 → E2 be an isogeny of degree d defined over k. Let Dϕ+
+(resp. Dϕ− ) be the divisor on the cubic curve (3.1) defined by the equation ϕy (x1 ) = t36
+(resp. ϕy (x1 ) = −t36 ).
+10                           ABHINAV KUMAR AND MASATO KUWATA
+
+        (i) The divisor Dϕ+ (resp. Dϕ− ) determines a k(t6 )-rational point Pϕ+ (resp. Pϕ− ) in
+            F (6) (k(t6 )).
+
+     (ii) Pϕ+ − Pϕ− is in the image of F (1) (k(t1 )) → F (6) (k(t6 )). The height of its pre-image
+          in F (1) (k(t1 )) is 2d.
+
+
+Proof. (i) If d is odd, the denominator of ϕy (x1 ) and x31 + ax1 + b are relatively prime.
+So, the degree of ϕy (x1 ) = ±t36 in x1 equals (3d − 3)/2. If d is even, a cancellation occurs
+between the denominator of ϕy (x1 ) and x31 + ax1 + b at the x1 coordinate of one of the
+2-torsion points of E1 . So, the degree of ϕy (x1 ) = ±t36 equals (3d − 2)/2. In any case, let
+r be the degree of ϕy (x1 ) = ±t36 .
+
+Write Dϕ+ = Q+                  +                    +
+                 1 + · · · + Qr . (Note that the Qi are defined over an algebraic closure of
+k̄(t6 ).) Recall that we chose (x1 : x2 : z) = (1 : t26 : 0) as the origin O of the group law
+                           (6)
+on Ct6 . We identify FE1 ,E2 (k(t6 )) with the divisor class group Pic0k(t6 ) (Ct6 ) by the usual
+map which associates a section with its generic fiber minus O. Let Q+         ϕ be the point in Ct6
+such that Dϕ+ − rO ∼ Q+       ϕ − O. Since Dϕ
+                                             +
+                                               and    O   are defined  over  k(t            +
+                                                                                6 ), so is Qϕ . Thus,
+                                             0                 (6)
+we have a point Pϕ+ = [Q+       ϕ − O] ∈ Pick(t6 ) (Ct6 ) = FE1 ,E2 (k(t6 )). Similarly, we obtain
+           (6)
+Pϕ− ∈ FE1 ,E2 (k(t6 )) from Dϕ− .
+                                    (1)                                        (6)
+(ii) By definition, the surface FE1 ,E2 is obtained as the quotient of FE1 ,E2 by the action
+(X, Y, t6 ) 7→ (X, Y, ζ6 t6 ) on (2.3), where ζ6is a sixth root of unity. However, the action
+σ : (x1 : x2 : z), t6 7→ (x1 : x2 : z), ζ6 t6 on Ct6 does not correspond to (X, Y, t6 ) 7→
+(X, Y, ζ6 t6 ) since the quotient of the former gives a rational surface. As a matter of fact,
+calculations show that the action σ corresponds to the action (X, Y, t6 ) 7→ (X, −Y, ζ6 t6 ).
+
+By construction, the involution σ 3 interchanges between the points Q+              −
+                                                                           ϕ and Qϕ in Ct6 .
+                                                                       (6)
+Thus, the corresponding involution (X, Y, t6 ) 7→ (X, −Y, −t6 ) on FE1 ,E2 sends Pϕ+ to Pϕ− .
+This implies that Pϕ+ − Pϕ− is invariant under the involution (X, Y, t6 ) 7→ (X, Y, −t6 ).
+Moreover, since Q±                                                    2
+                   ϕ are both invariant under the automorphism σ by construction, Pϕ
+                                                                                            ±
+
+are also invariant under the corresponding action. We thus conclude that Pϕ+ − Pϕ− is
+                                                                                (1)
+invariant under (X, Y, t6 ) 7→ (X, Y, ζ6 t6 ), and it belongs to the image of FE1 ,E2 (k(t6 ))
+under the map t1 7→ t66 .
+
+It remains to calculate the height of this point, but the calculation is essentially the same
+as in [Sh5, Proposition 3.1].                                                               
+
+
+To compute Pϕ± explicitly, we need to find a curve in the plane passing through the points
+in the divisor Dϕ± , and this is in principle just an exercise in linear algebra. We shall
+illustrate it using a concrete example (see Example 9.2).
+
+3.2. F (2) for generic case
+
+Suppose two elliptic cuves are given by
+
+                                    Eλ : y 2 = x(x − 1)(x − λ),
+(3.4)
+                                    Eµ : y 2 = x(x − 1)(x − µ)
+    ELLIPTIC K3 SURFACES ASSOCIATED WITH THE PRODUCT OF TWO ELLIPTIC CURVES 11
+
+                         (2)
+for λ, µ ∈ k. Then, FEλ ,Eµ is given by the Weierstrass equation
+                 (2)                    1
+               FEλ ,Eµ : Y 2 = X 3 − (µ2 − µ + 1)(λ2 − λ + 1)X
+                                        3
+                                   1 2                µ2 (µ − 1)2
+(3.5)                            + λ (λ − 1)2 t2 +
+                                   4                       4t2
+                                    1
+                                 + (2µ − 1)(µ − 2)(µ + 1)(2λ − 1)(λ − 2)(λ + 1).
+                                   54
+Here, we wrote t2 = t for simplicity. Note that in this case the equation of Kummer
+surface x2 (x2 − 1)(x2 − µ) = t22 x1 (x1 − 1)(x1 − λ) can be converted over k(λ, µ) to the
+Weierstrass form F (2) using the point (x1 , x2 ) = (0, 0). Then we can obtain sections from
+2-torsion points of Eλ and Eµ . In the following proposition, P1 , . . . , P4 are obtained from
+(x1 , x2 ) = (1, 1), (λ, µ), (1, µ), (λ, 1), respectively.
+Proposition 3.3. Suppose Eλ and Eµ are not isogenous over k̄. Then the following
+                                                  (2)
+sections form a basis of the Mordell-Weil group FEλ ,Eµ (k̄(t))
+                                                                        
+                         1                     1                µ(µ − 1)
+                P1 =       (−2λµ + λ + µ + 1), λ(λ − 1)t +
+                         3                     2                   2t
+                                                                        
+                         1                     1                µ(µ − 1)
+                P2 =       (λµ + λ + µ − 2),     λ(λ − 1)t +
+                         3                     2                   2t
+                                                                        
+                         1                     1                µ(µ − 1)
+                P3 =       (λµ − 2λ + µ + 1),    λ(λ − 1)t −
+                         3                     2                   2t
+                                                                        
+                         1                     1                µ(µ − 1)
+                P4 =       (λµ + λ − 2µ + 1),    λ(λ − 1)t −
+                         3                     2                   2t
+
+Moreover, the height pairing of these sections is given by
+                                                      
+                                       2 −1 0 0
+                                2 −1 2 0 0  .
+                                                       
+                                3     0 0 2 −1 
+                                       0 0 −1 2
+                (2)
+As a lattice FEλ ,Eµ (k̄(t)) ' A∗2 h2i ⊕ A∗2 h2i.
+
+Proof. This follows from standard and straightforward calculations.                            
+Corollary 3.4. Let E1 and E2 be elliptic curves over k. Suppose E1 and E2 are not
+                                             (2)
+isogenous. Then, the Mordell-Weil lattice FE1 ,E2 (k̄(t2 )) is defined over k(E1 [2], E2 [2]), the
+field over which all the 2-torsion points of E1 and E2 are defined.
+
+If E1 and E2 are isogenous but not isomorphic, then Hom(E1 , E2 )h4i ⊕ A∗2 h2i ⊕ A∗2 h2i is a
+sublattice of the Mordell-Weil lattice of index 2h , where h = rank Hom(E1 , E2 ) (see [Sh5,
+Theorem 1.2]).
+
+                           4. The Mordell-Weil group of F (3)
+
+In the case of F (2) , it is evident that if E1 and E2 are given in the Legendre normal form,
+the sections are defined over the base field. This is because all the 2-torsion points are
+defined over the base field. In the case of F (3) , it is not so evident that 3-torsion points of
+12                        ABHINAV KUMAR AND MASATO KUWATA
+
+E1 and E2 have something to do with the field of definition of the sections. However, it
+turns out that this is the case, as we will show in this section.
+4.1. Elliptic modular surface associated with Γ(3)
+Let us begin with the Hesse cubic x3 + y 3 + z 3 = 3µxyz. Using the point (−1 : 1 : 0), we
+convert it to the Weierstrass form (see [RS1]):
+(4.1)                  y 2 = x3 − 27µ(µ3 + 8)x + 54(µ6 − 20µ3 − 8).
+This elliptic curve has nine 3-torsion points that are defined over k(ω), where ω is a
+primitive cube root of unity.
+The group of 3-torsion points is generated by
+    T1 = 3(µ + 2)2 , 36(µ2 + µ + 1)     and T2 = −9µ2 , 12(2ω + 1)(µ2 + µ + 1) .
+                                                                             
+
+Let                                              
+                                  1 1            0 1
+                              θ=       and ρ =        .
+                                  0 1           −1 0
+be generators for G = SL2 (F3 ). Consider the following representation π of G on the
+projective line P1µ by fractional linear transformations, which factors through PSL2 (F3 ) ∼
+                                                                                           =
+A4 .
+                                                           µ+2
+                             π(θ) : µ 7→ ωµ, π(ρ) : µ 7→         .
+                                                           µ−1
+The j-invariant of (4.1) is given by
+                                          27µ3 (µ + 8)3
+                                     j=                 ,
+                                            (µ3 − 1)3
+and is invariant under the action of π(SL2 (F3 )).
+Now we regard (4.1) as an elliptic surface. In other words, consider the elliptic modular
+surface EΓ(3) → X(3) ' P1µ whose generic fiber at µ is given by (4.1).
+Lemma 4.1. The action of G = SL2 (F3 ) on the base P1µ extends to a compatible faithful
+action πe on the surface EΓ(3) . It is given by the formulas
+(4.2)
+                                                              (2ω + 1)2 (2ω + 1)3 µ + 2
+                                                                                         
+                       2
+ e(θ) : (x, y, µ) 7→ (ω x, y, ωµ),
+ π                                      e(ρ) : (x, y, µ) 7→
+                                        π                               x,         y,       .
+                                                               (µ − 1)2    (µ − 1)3 µ − 1
+The action π e in turn induces an action Π of G on the group of sections EΓ(3) (k(µ)) of
+the elliptic surface as follows. For a section s : P1µ → EΓ(3) given by rational functions
+µ 7→ P (µ) = (x(µ), y(µ)), Π(γ)(s) for γ ∈ G is defined to be µ 7→ P 0 (µ) where
+                                P 0 (µ) = π
+                                          e(γ) P (π(γ −1 )(µ) .
+                                                             
+
+The action of G by Π on the subgroup of 3-torsion sections EΓ(3) (k(µ))[3] is equivalent to
+the usual linear action of SL2 (F3 ) on F23 (and identifies G as the automorphism group of
+the 3-torsion subgroup equipped with the Weil pairing). More precisely, we have
+                                                          
+                           T1 7→ T1 − T2                     T1 7→ T2
+                  Π(θ) :                      ,    Π(ρ) :                 .
+                           T2 7→ T2                          T2 7→ −T1
+Remark 4.2. We have π̃(ρ)2 = [−1], the multiplication by (−1) map, and thus the action
+of G = SL2 (F3 ) does not factor through the quotient PSL2 (F3 ).
+    ELLIPTIC K3 SURFACES ASSOCIATED WITH THE PRODUCT OF TWO ELLIPTIC CURVES 13
+
+4.2. F (3) for universal families
+Now, take two copies of (4.1),
+                       Eu : y12 = x31 − 27u(u3 + 8)x1 + 54(u6 − 20u3 − 8),
+                       Ev : y22 = x32 − 27v(v 3 + 8)x2 + 54(v 6 − 20v 3 − 8),
+                                                         (3)
+and construct Ino(Eu , Ev ), and in turn, FEu ,Ev :
+          (3)
+(4.3) FEu ,Ev : Y 2 = X 3 − 27uv(u3 + 8)(v 3 + 8)X
+                                                                                               1728(v 3 − 1)3
+                   + 1728(u3 − 1)3 t33 + 54(u6 − 20u3 − 8)(v 6 − 20v 3 − 8) +                                 .
+                                                                                                    t33
+Here, since ∆E1 = 212 · 39 (µ3 − 1)3 , and so forth, we scaled X and Y differently from (2.8);
+the difference is a Weierstrass transformation over Q.
+Let Eu → P1u and Ev → P1v be the elliptic modular surfaces associated with Eu and Ev
+respectively. Also let Gu = hθu , ρu i and Gv = hθv , ρv i be groups of automorphisms of Eu
+and Ev described above, respectively. We consider (4.3) as the family of elliptic surfaces
+  (3)
+FEu ,Ev → P1u × P1v parametrized by u and v. The total space is a fourfold.
+                                                            e on the fourfold F (3)
+Proposition 4.3. The actions of Gu and Gv induce the action Π                  Eu ,Ev
+given by the following formulas.
+                           e u ) : (X, Y, t3 , u, v) 7→ (ω 2 X, Y, ωt3 , ωu, v)
+                          Π(θ
+                         e v ) : (X, Y, t3 , u, v) 7→ (ω 2 X, Y, ω 2 t3 , u, ωv),
+                         Π(θ
+                                        (2ω + 1)2       (2ω + 1)3       (u − 1)2
+                                                                                                 
+                                                                                         u+2
+        Π(ρu ) : (X, Y, t3 , u, v) 7→
+        e                                            X,             Y,              t3 ,       ,v ,
+                                         (u − 1)2        (u − 1)3      (2ω + 1)2 u − 1
+                                                   2              3               2
+                                                                                                 
+        e v ) : (X, Y, t3 , u, v) 7→    (2ω +   1)      (2ω +  1)      (2ω   + 1)           v + 2
+        Π(ρ                                          X,             Y,              t3 , u,         .
+                                         (v − 1)2        (v − 1)3       (v − 1)2            v−1
+
+Proof. Recall that F (6) is, by definition, birationally equivalent to x32 + cx2 + d = t66 (x31 +
+ax1 + b), where a, b, c, d are appropriate functions of u, v. (Note also that F (3) is not
+birationally equivalent to x32 + cx2 + d = t33 (x31 + ax1 + b), the latter being a rational
+surface.) The action on Eu or Ev induces the action on (X, Y, t6 ) through the change of
+variables (2.4). The change of variables also depends on the choice of the rational point
+(1 : t26 : 0).
+Since θu acts as (x1 , y1 , u) 7→ (ω 2 x1 , y1 , ωu), it stabilizes the equation x32 + cx2 + d =
+t66 (x31 + ax1 + b), but it moves the rational point (1 : t26 : 0) to (ω 2 : t26 : 0) = 1 : (ω 2 t6 )2 : 0 .
+                                                                                                          
+
+Therefore, t6 7→ ω 2 t6 under this transformation. Using (2.4), we see that X is mapped to
+ω 2 X and Y remains invariant. Thus, θu acts as (X, Y, t6 , u, v) 7→ (ω 2 X, Y, ω 2 t6 , ωu, v) on
+F (6) . This action descends to the above expression for Π(θ     e u ) on F (3) .
+                                                                                 Eu ,Ev
+
+As for ρu , the action
+                                                 (2ω + 1)2
+                                                                                              
+                                                                      (u − 1)      (u + 2)
+                  (x1 , x2 , t6 , u, v) 7→               2
+                                                           x1 , x2 ,          t6 ,         v
+                                                  (u − 1)            (2ω + 1) (u − 1)
+stabilizes the equation, and by following the change of coordinates (2.4), we obtain the
+desired formula. Similarly, we obtain the expressions for θv and ρv .                 
+14                            ABHINAV KUMAR AND MASATO KUWATA
+
+For clarity of notation, we will henceforth use just γ instead of π(γ), π             e(γ), Π(γ), Π(γ),
+                                                                                                  e
+with the action being understood.
+                                                                                     (3)             
+Corollary 4.4. The group Gu × Gv acts on the group of sections FEu ,Ev k̄(u, v)(t3 ) .
+                                                    (3)                
+More precisely, if γ ∈ Gu × Gv and s ∈ FEu ,Ev k̄(u, v)(t3 ) is given by X(t3 , u, v) and
+Y (t3 , u, v), then γ · s is given by
+                       γX γ −1 t3 , γ −1 u, γ −1 v and γY γ −1 t3 , γ −1 u, γ −1 v .
+                                                                                 
+
+
+From the action of D6 on F (6) (see (2.5)), we see that hσ 2 , τ i ' D3 ' S3 acts on F (3) . We
+summarize the action on a section (X(t3 , u, v), Y (t3 , u, v)) as follows.
+  σ 2 X(t3 , u, v), Y (t3 , u, v) = X(ω 2 t3 , u, v), Y (ω 2 t3 , u, v)
+                                                                       
+
+  τ X(t3 , u, v), Y (t3 , u, v) = X(δ 2 /t3 , u, v), Y (δ 2 /t3 , u, v)
+                                                                        
+
+  θu X(t3 , u, v), Y (t3 , u, v) = ω 2 X(ω 2 t3 , ω 2 u, v), Y (ω 2 t3 , ω 2 u, v)
+                                                                                 
+
+  θv X(t3 , u, v), Y (t3 , u, v) = ω 2 X(ωt3 , u, ω 2 v), Y (ωt3 , u, ω 2 v)
+                                                                               
+                                 
+  ρu X(t3 , u, v), Y (t3 , u, v)
+              (u − 1)2  (u − 1)2                            (u − 1)3  (u − 1)2
+                                                                                                        
+                                              u+2                                             u+2 
+       =                  X              t3 ,       ,v ,−                  Y              t3 ,       ,v
+             (2ω + 1)2         (2ω + 1)2 u − 1              (2ω + 1)3           (2ω + 1)2 u − 1
+                                 
+  ρv X(t3 , u, v), Y (t3 , u, v)
+              (v − 1)2  (2ω + 1)2                           (v − 1)3  (2ω + 1)2
+                                                                                                        
+                                                 v + 2                                           v + 2
+       =                  X              t3 , u,        ,−                 Y              t3 , u,
+             (2ω + 1)2          (v − 1)2         v−1        (2ω + 1)3            (v − 1)2         v−1
+We may expect that the orbit of a section by these automorphisms generates the whole
+Mordell-Weil group, and it turns out that it is the case. To show this we must find one
+section, and we will do this in the following subsections.
+4.3. Computation of M (s3,0 )
+As we modified the equation of F (3) from the one in §2, we also change the definition of
+s3,i to
+                                                 v3 − 1 
+                             s3,i = 4 (u3 − 1)t3 + i      .
+                                                    ω t3
+In what follows we denote s3,0 simply by s. Then, (4.3) becomes
+
+(4.4) Rs(3) : Y 2 = X 3 − 27uv(u3 + 8)(v 3 + 8)X
+                        + 27 s3 − 48(u3 − 1)(v 3 − 1)s + 2(u6 − 20u3 − 8)(v 6 − 20v 3 − 8) .
+                                                                                          
+
+  (3)
+Rs is a rational elliptic surface over k(u, v) that has a singular fiber of type I∗0 at s = ∞.
+As a consequence, its Mordell-Weil lattice is of type D4∗ (type no 9 in the Oguiso-Shioda
+[OS] classification). The Mordell-Weil lattice of a rational elliptic surfrace is generated by
+the section of the form (c2 s2 + c1 s + c0 , d3 s3 + d2 s2 + d1 s + d0 ). An easy calculation shows
+that the fact that our elliptic surface has a singular fiber of type I∗0 at s = ∞ implies
+c2 = d3 = d2 = 0. Some further calculations show that we have a point P0 given by
+                                                                                               
+P0 = −3s − 9(uv + 2)2 , (2ω + 1)3 3(uv + 2)s + 4(u3 − 1)(v 3 − 1) + 36(u2 v 2 + uv + 1) .
+                                                              (3)
+The actions of θu and θv do not leave M (s3,0 ) = Rs (k(s)) invariant, but θ̄u := σ 4 ◦ θu
+and θ̄v := σ 2 ◦ θv do. In fact, it is easily verified that the action of θ̄u and θ̄v on F (3) fix s.
+On the other hand, ρu and ρv leave M (s3,0 ) invariant; they take s to (2ω + 1)2 /(u − 1)2 s
+   ELLIPTIC K3 SURFACES ASSOCIATED WITH THE PRODUCT OF TWO ELLIPTIC CURVES 15
+
+and (2ω + 1)2 /(v − 1)2 respectively. The actions of θ̄u , θ̄v , ρu and ρv on M (s3,0 ) are given
+as follows.
+            θ̄u X(s, u, v), Y (s, u, v) = ω 2 X(s, ω 2 u, v), Y (s, ω 2 u, v)
+                                                                            
+
+            θ̄v X(s, u, v), Y (s, u, v) = ω 2 X(s, u, ω 2 v), Y (s, u, ω 2 v)
+                                                                            
+
+                                            (u − 1)2  (2ω + 1)2 u + 2 
+                                         
+                                       
+            ρu X(s, u, v), Y (s, u, v) =               X                 s,        ,v ,
+                                           (2ω + 1)2         (u − 1)2 u − 1
+                                               (u − 1)3  (2ω + 1)2 u + 2 
+                                                                                         
+                                           −              Y                 s,       ,v
+                                              (2ω + 1)3        (u − 1)2 u − 1
+                                            (v − 1)2  (2ω + 1)2
+                                         
+                                                                              v + 2
+            ρv X(s, u, v), Y (s, u, v) =               X                 s, u,         ,
+                                           (2ω + 1)2         (v − 1)2          v−1
+                                               (v − 1)3  (2ω + 1)2
+                                                                                         
+                                                                                  v + 2
+                                           −              Y                 s, u,
+                                              (2ω + 1)3        (v − 1)2           v−1
+                                                              (3)             (3)
+Proposition 4.5. The group of sections M (s3,0 ) = Rs (k̄(s)) ⊂ FEu ,Ev (k̄(t3 )) is invariant
+under the automorphisms θ̄u , θ̄v , ρu , ρv . The group hθ̄u , θ̄v , ρu , ρv i acts on the lattice
+M (s3,0 ), and M (s3,0 ) is generated by
+                       P0 ,   θ̄u (P0 ),   (θ̄u ρu )(P0 ), and (ρ−1
+                                                                 u θ̄u ρu )(P0 ).
+
+Furthermore, the height pairing matrix with respect to these sections is given by
+                                                     
+                                      2 −1 −1 −1
+                                1 −1 2 0 0  .
+                                                      
+                                2  −1 0 2 0 
+                                    −1 0 0 2
+All the twenty-four sections of minimal height 1 are obtained from P0 by the automorphism
+group hθ̄u , ρu i.
+
+Proof. First of all, we verify that s3,0 is invariant under the action of the group hθ̄u , ρu i.
+We then check that the order of the group hθ̄u , ρu i is 24. Then, by calculation, we verify
+that the orbit of P0 contains 24 different sections. We then choose four sections whose
+height matrix coincides with the desired form.                                              
+Remark 4.6. The X-coordinates of four sections above are as follows.
+                              X(P0 ) = −3s − 9(uv + 2)2 ,
+                        X(θ̄u (P0 )) = −3ω 2 s − 9(uv + 2ω)2 ,
+                   X (θ̄u ρu )(P0 ) = −3ω 2 s + 3(uv + 2u + 2ωv − 2ω)2 ,
+                                    
+
+                 X (ρ−1                    2              2     2        2
+                                    
+                     u θ̄u ρu )(P0 ) = −3ω s + 3(uv + 2ω u + 2ω v − 2ω) .
+
+The Y -coordinates are a little more complicated and we omit them here2.
+
+4.4. F (3) (k(t3 )) in the generic case
+If we consider Eu and Ev as universal curves with independent variables u and v, they
+are not isogenous curves. Looking at the diagram at the end of §2, F (3) (k̄(t3 )) contains
+four sublattices, F (1) (k̄(t1 )), M (s3,0 ), M (s3,1 ) and M (s3,2 ). In our case F (1) (k̄(t1 )) is
+trivial.
+  2Any explicitly omitted expressions may be found in the auxiliary computer files.
+16                             ABHINAV KUMAR AND MASATO KUWATA
+
+Lemma 4.7. The lattice M (s3,1 ) is the image of M (s3,0 ) by the automorphism σ 2 of
+F (3) (k̄(t3 )), and M (s3,2 ) is the image of M (s3,0 ) by σ 4 . In particular M (s3,0 ), M (s3,1 )
+and M (s3,2 ) are all isomorphic.
+
+Proof. From the identity
+             3
+                         1 3       1        1
+           s − 3s = t +         −3 t+    = t3 + 3
+                          t           t         t
+                       3    1         1 3     2
+                                                    1
+                   =t +        3
+                                 = t+       − 3ω t +    = s31 − 3ω 2 s1 ,
+                         (ωt)         ωt             ωt
+we see that the lattice M (s3,1 ) is the Mordell-Weil lattice of the elliptic curve given by
+the equation obtained by replacing s by ω 2 s3,1 in (4.4). The assertion is now clear from
+                                                (v 3 − 1)
+                                                         
+                                    3     2
+                    s3,1 = 4ω (u − 1)ω t3 +                 = ωσ 2 (s3,0 ).
+                                                  ω 2 t3
+Similarly for M (s3,2 ).                                                                         
+Theorem 4.8. Let u, v ∈ k be such that Eu and Ev are not isogenous. The Mordell-Weil
+        (3)                                       (3)
+group FEu ,Ev (k̄(t3 )) for the elliptic curve FEu ,Ev over k(u, v) defined by (4.3) is generated
+                                              (3)
+by M (s3,0 ) and M (s3,1 ). As a lattice, FEu ,Ev (k̄(t3 )) is generated by
+                             (ρ−1
+                               u θu ρu )(P0 )    (θu ρu )(P0 ),   θu (P0 ),   P0 ,
+                σ 2 (P0 ),    (σ 2 θu )(P0 ),   (σ 2 θu ρu )(P0 ), and (σ 2 ρ−1
+                                                                             u θu ρu )(P0 )
+
+with the height pairing matrix
+                              4 0 0 1 −2 0 0 −2
+                                               
+                           0 4 0 1 −2 0 −2 0 
+                           0 0 4 1 −2 −2 0 0 
+                                               
+                        1  1 1 1 4 −2 1 1 1 
+                          
+                                                .
+                                                
+                        2  −2 −2 −2 −2 4 1 1 1 
+                          
+                           0 0 −2 1 1 4 0 0 
+                                               
+                           0 −2 0 1 1 0 4 0 
+                            −2 0 0 1 1 0 0 4
+
+Proof. We calculate the height pairing matrix with respect to the basis of M (s3,0 ) in
+Proposition 4.5 together with it image under σ 2 , and verify that its determinant equals
+34 /24 , which coincides with the value given in [Sh7].                                
+Remark 4.9. The x- and y-coordinates for this basis of sections may be easily computed
+from the group action, starting with P0 . We do not list them here for brevity, but they
+may be found in the auxiliary files. The same holds for any complicated or lengthy
+expressions suppressed in the body of the text.
+Corollary 4.10. Let E1 and E2 be elliptic curves over k. Suppose E1 and E2 are not
+                                             (3)
+isogenous. Then, the Mordell-Weil lattice FE1 ,E2 (k̄(t3 )) is defined over k(E1 [3], E2 [3]), the
+field over which all the 3-torsion points of E1 and E2 are defined.
+
+Proof. Over the field K = k(E1 [3], E2 [3]), E1 and E2 are isomorphic to Eu and Ev for
+suitable choices of u and v, respectively. By Theorem 4.8, the Mordell-Weil lattice
+  (3)
+FEu ,Ev (k̄(t3 )) is defined over K(ω), but ω is contained in K by the Weil pairing. Thus,
+  (3)
+FE1 ,E2 (k̄(t3 )) is defined over K.                                                    
+      ELLIPTIC K3 SURFACES ASSOCIATED WITH THE PRODUCT OF TWO ELLIPTIC CURVES 17
+
+                            5. Mordell-Weil group of F (4)
+
+5.1. Elliptic modular surface associated with Γ(4)
+The elliptic modular surface over the modular curve X(4) is given by
+                       Eσ : y 2 = x x + (σ 2 + 1)2 x + (σ 2 − 1)2 .
+                                                                
+(5.1)
+(cf. [Sh1]). The subgroup of 4-torsion points are generated by
+          (−σ 4 + 1, 2σ 4 − 2) and (−(σ 2 − 1)(σ + i)2 , −2σ(σ 2 − 1)(σ + i)2 ),
+         √
+where i = −1. The j-invariant of (5.1) is given by
+                                        16(σ 8 + 14σ 4 + 1)3
+                                   j=                        .
+                                           σ 4 (σ 4 − 1)4
+Let                                                    
+                                    1 1               0 1
+                             θ=            and ρ =          .
+                                    0 1             −1 0
+be generators for G = SL2 (Z/4Z). Consider the following representation π of G
+on the projective line P1σ by fractional linear transformations, which factors through
+PSL2 (Z/4Z).
+                                                        σ+1
+                            π(θ) : σ 7→ iσ, π(ρ) : σ 7→       .
+                                                        σ−1
+The j-invariant is invariant under the action of π(SL2 (Z/4Z)).
+We take two copies of the elliptic modular surface (5.1):
+                     Eu : y12 = x1 x1 + (u2 + 1)2 x1 + (u2 − 1)2 ,
+                                                                 
+
+                     Ev : y22 = x2 x2 + (v 2 + 1)2 x2 + (v 2 − 1)2 .
+                                                                 
+
+                   (4)
+We then obtain FEu ,Ev :
+      (4)
+ FEu ,Ev : Y 2 = X 3 − 27(u8 + 14u4 + 1)(v 8 + 14v 4 + 1)X
+                                                                            54v 4 (v 4 − 1)4 
++ 54 54u4 (u4 − 1)4 t4 + (u12 − 33u8 − 33u4 + 1)(v 12 − 33v 8 − 33v 4 + 1) +
+                                                                                    t4
+5.2. Rational elliptic surfaces
+As before we set
+                                            v(v 4 − 1)
+                                sj = ij u(u4 − 1)t +   .
+         √                                       t
+where i = −1. Then we may write the equation of F (4) as
+                   Rs(4)
+                      j
+                         : Y 2 = X 3 − AX + 4(s4j − 4ij Bs2j + 2i2j B 2 ) + C,
+where                     8      4        8     4
+                  A = 27(u + 14u + 1)(v + 14v + 1)
+                 
+                   B = uv(u4 − 1)(v 4 − 1)
+                 
+                   C = 54(u12 − 33u8 − 33u4 + 1)(v 12 − 33v 8 − 33v 4 + 1).
+                 
+
+This is a rational elliptic surface over P1sj , with a IV fiber over sj = ∞. Generically, this
+is the only reducible fiber, and the Mordell-Weil lattice is therefore E6∗ . To describe the
+                                                  (4)                               
+sections, note that it suffices to do so for Rs0 , since X(u, v, s0 ), Y (u, v, s0 ) is a section
+     (4)                                                                (4)
+of Rs0 if and only if X(ij u, v, si ), Y (ij u, v, si ) is a section of Rsj .
+18                            ABHINAV KUMAR AND MASATO KUWATA
+
+                                       (4)
+There are fifty-four sections of Rs0 of minimal height, with twenty-seven sections inter-
+secting each non-identity component of the IV fiber.
+To solve for the sections intersecting one of these, we set
+                             X = x0 + x1 s,        Y = y0 + y1 s + 54s2 ,
+(where we have written s = s0 for ease of notation) and substitute into the Weierstrass
+equation. It is then easy to solve for the remaining coefficients. We obtain a basis of
+sections; we list the x-coordinates here for brevity. (The full sections may be found in the
+auxiliary files).
+     x(P1 ) = −18(1 + i)(uv + i)s − 3(5u4 v 4 − u4 − v 4 + 24iu3 v 3 − 24u2 v 2 − 24iuv + 5),
+     x(P2 ) = 18(1 + i)(uv + i)s − 3(5u4 v 4 − u4 − v 4 + 24iu3 v 3 − 24u2 v 2 − 24iuv + 5),
+     x(P3 ) = 18(1 − i)(uv − i)s − 3(5u4 v 4 − u4 − v 4 − 24iu3 v 3 − 24u2 v 2 + 24iuv + 5),
+     x(P4 ) = 18(1 − i)(u + iv)s + 3(u4 v 4 − 5u4 − 5v 4 − 24iu3 v + 24u2 v 2 + 24iuv 3 + 1),
+     x(P5 ) = −18(1 + i)(u − iv)s + 3(u4 v 4 − 5u4 − 5v 4 + 24iu3 v + 24u2 v 2 − 24iuv 3 + 1),
+     x(P6 ) = 3(u4 v 4 + u4 + v 4 + 6u4 v 2 + 6u2 v 4 − 12u2 v 2 + 6u2 + 6v 2 + 1).
+
+5.3. The Mordell-Weil group in the generic case
+                                                           (4)
+Let P1 , . . . , P6 be the sections obtained from Rs0 , and P10 , . . . , P60 the corresponding
+                    (4)
+sections from Rs1 (obtained by substituting iu for u in Pi ). Together, they do not quite
+span the whole Mordell-Weil lattice of F (4) . We define
+                                Q1 = −(P1 − P3 + P4 − P5 + P6 )/2,
+                                Q01 = −(P10 − P30 + P40 − P50 + P60 )/2;
+expressions for these sections may be obtained from the computer files. Note that they are
+well-defined by the equation above, since MW(F (4) ) is torsion-free by Theorem 2.5.
+Theorem 5.1. Let u, v ∈ k be such that Eu and Ev are not isogenous. The sections
+                                                                                         (4)
+P1 , . . . , P5 , Q1 , P10 , . . . , P50 , Q01 form a basis of the Mordell-Weil lattice FEu ,Ev (k(t4 )).
+
+Proof. The height pairing matrix of these sections has discriminant 44 /32 , which is the
+discriminant of the Mordell-Weil lattice in the generic case.                          
+Corollary 5.2. Let E1 and E2 be elliptic curves over k. Suppose E1 and E2 are not
+                                             (4)
+isogenous. Then, the Mordell-Weil lattice FE1 ,E2 (k̄(t4 )) is defined over k(E1 [4], E2 [4]), the
+field over which all the 4-torsion points of E1 and E2 are defined.
+
+5.4. F (4) as a quartic surface
+                                             (4)
+The minimal nonsingular model of FEu ,Ev is isomorphic to the quartic surface defined
+by
+(5.2) S4 : ZW Z +(v 2 +1)2 W Z +(v 2 −1)2 W = XY X +(u2 +1)2 Y X +(u2 −1)2 Y .
+                                                                                
+
+  (4)
+FEu ,Ev corresponds to the elliptic fibration on S4 defined by the elliptic parameter t4 =
+Y /W . Generically, this quartic surface contains sixteen lines (cf. [Se, I1, Kw1]). They are
+obtained as the intersection of one of the four planes
+                 X = 0,    Y = 0,     X + (u2 + 1)2 Y = 0,       X + (u2 − 1)2 Y = 0
+    ELLIPTIC K3 SURFACES ASSOCIATED WITH THE PRODUCT OF TWO ELLIPTIC CURVES 19
+
+and one of the four planes
+              Z = 0,    W = 0,      Z + (v 2 + 1)2 W = 0,     Z + (v 2 − 1)2 W = 0.
+We identify S4 and F (4) by choosing X = Z = 0 as the 0-section. Let L1 , . . . , L4 be four
+lines defined by
+                         L1 : X + (u2 + 1)2 Y = Z + (v 2 + 1)2 W = 0,
+                         L2 : X + (u2 − 1)2 Y = Z + (v 2 − 1)2 W = 0,
+                         L3 : X + (u2 + 1)2 Y = Z + (v 2 − 1)2 W = 0,
+                         L4 : X + (u2 − 1)2 Y = Z + (v 2 + 1)2 W = 0.
+                                                                                          (4)
+By an abuse of notation, we also denote by Li the corresponding section of FEu ,Ev .
+S4 may be considered as a family of the intersection of two quadrics. Namely, consider
+the map S4 → P1 given by
+                  ν : (X : Y : Z : W ) 7→ XY + (u2 + 1)Y 2 : ZW
+                                                                  
+
+Over the point (p : q) ∈ P1 , the fiber of ν is the intersection of two quadrics
+             (
+               rZW = Y (X + (u2 + 1)2 Y ),
+                 (Z + (v 2 + 1)2 W )(Z + (v 2 − 1)2 W ) = rX(X + (u2 − 1)2 Y )
+where r = p/q. The intersection is a curve of genus 1 for each r, except the following
+eight values:
+                          ±2i         ±2i        ±2iv 2     ±2iv 2
+                   r=            ,           ,           ,          .
+                        (u + 1)2    (u − 1)2    (u + 1)2   (u − 1)2
+At each of these values of r, the intersection degenerates and becomes a union of two
+plane conics.
+Let R1 , . . . , R4 be one of the plane conics at each of the values
+              r = 2i/(u + 1)2 ,    −2i/(u + 1)2 ,    2i/(u − 1)2 ,    2iv 2 /(u − 1)2 ,
+respectively. Similarly, in the family
+              (
+                rZ(Z + (v 2 − 1)2 W ) = (X + (u2 + 1)2 Y )(X + (u2 − 1)2 Y ),
+                 W (Z + (v 2 + 1)2 W ) = rXY,
+let R5 , R6 be one of the conics at the value r = ±2i/(v + 1)2 , and let R7 be one of the
+conics at r = (u + 1)2 /(v + 1)2 in the family
+                      (
+                        rZ(Z + (v 2 − 1)2 W ) = X(X + (u2 − 1)2 Y ),
+                          W (Z + (v 2 + 1)2 W ) = rY (X + (u2 + 1)2 Y ).
+Explicit choices for R1 , . . . , R7 are made in the computer files. Finally, let R8 be the
+section obtained by letting u 7→ iu in R1 .
+Theorem 5.3. The sections L1 , . . . , L4 , R1 , . . . , R8 form a basis of the Mordell-Weil lattice
+ (4)
+FEu ,Ev (k(t4 )).
+
+Proof. As in Theorem 5.1, it suffices to verify that the height pairing matrix of these
+sections has discriminant 44 /32 .                                                   
+Remark 5.4. In [Kw1], it is shown that the lines and conics contained in S4 generate a
+subgroup of finite index in NS(S4 ).
+20                        ABHINAV KUMAR AND MASATO KUWATA
+
+Proposition 5.5. The basis in Theorem 5.1 and that of Theorem 5.3 are related as
+follows.
+                  L1 = −P1 + P3 − P4 + P5 − 2Q1 ,
+                  L2 = −2P1 − P2 + P3 − P4 + P5 − 2Q1 ,
+                  L3 = −2P10 − P20 + P30 − P40 + P50 − 2Q01 ,
+                  L4 = −P10 + P30 − P40 + P50 − 2Q01 ,
+                  R1 = −P1 + P3 − Q1 − P40 − Q01 ,
+                  R2 = P3 − P4 − Q1 − P10 − P40 + P50 − Q01 ,
+                  R3 = −P1 + P3 − P4 + P5 − Q1 − P10 − P20 + P50 − Q01 ,
+                  R4 = −P4 + P5 − Q1 − P10 − P20 + P30 − Q01 ,
+                  R5 = P2 − P4 − Q1 − P40 + P50 − Q01 ,
+                  R6 = −P1 + P3 − Q1 + P20 − P40 − Q01 ,
+                  R7 = −P4 − Q1 − 2P10 − P20 + P30 − P40 + 2P50 − 2Q01 ,
+                  R8 = −P1 − Q1 + P30 − P40 − Q01 .
+
+                           6. Mordell-Weil group of F (5)
+
+6.1. Elliptic modular surface associated with Γ(5)
+We begin with the elliptic modular surface over Γ(5), which is described in [RS1] for
+instance.
+
+
+               y 2 = x3 − 27(µ20 − 228µ15 + 494µ10 + 228µ5 + 1)x
+(6.1)
+                    + 54(µ30 + 522µ25 − 10005µ20 − 10005µ10 − 522µ5 + 1).
+
+This elliptic curve has full 5-torsion defined over Q(ζ)(µ), where ζ√is a fifth root of unity.
+Let η = ζ + ζ −1 , which can be taken to be the golden ratio (1 + 5)/2. A basis for the
+5-torsion is given by
+     T1 = 3(µ10 + 12µ8 − 12µ7 + 24µ6 + 30µ5 + 60µ4 + 36µ3 + 24µ2 + 12µ + 1),
+           108µ(µ4 − 3µ3 + 4µ2 − 2µ + 1)(µ4 + 2µ3 + 4µ2 + 3µ + 1)2
+                                                                   
+         
+     T2 = − 3((12η + 19)µ10 + 66(2η − 1)µ5 − 12η + 31)/5,
+                                                                                 
+           108(3ζ 3 − ζ 2 + 2ζ + 1) µ15 + (−5η + 19)µ10 + (−55η + 87)µ5 + 5η − 8 /5 .
+Let                                                      
+                                    1 1                 0 1
+                             θ=            and ρ =            .
+                                    0 1                −1 0
+be generators for G = SL2 (F5 ), and let π be the representation of G on P1µ as follows.
+                            π(θ) : µ 7→ ζµ,   π(ρ) : µ 7→ −1/µ.
+The j-invariant of (4.1) is given by
+                              (µ20 − 228µ15 + 494µ10 + 228µ5 + 1)3
+                       j=−
+                                       µ5 (µ10 + 11µ5 − 1)5
+and is invariant under the action of the icosahedral group π(SL2 (F5 )) ∼
+                                                                        = A5 .
+   ELLIPTIC K3 SURFACES ASSOCIATED WITH THE PRODUCT OF TWO ELLIPTIC CURVES 21
+
+As before, there is a compatible action of G on the universal elliptic curve, given by
+            θ : (x, y, µ) → (x, y, ζµ),       ρ : (x, y, µ) → (x/µ10 , y/µ15 , −1/µ),
+and therefore an action on the Mordell-Weil group EΓ(5) (k(µ)) by (γP )(µ) = γ P (γ −1 µ) .
+                                                                                         
+On the 5-torsion sections, we have
+                                                 
+                          T1 7→ T1 + T2              T1 7→ 2T1
+                    θ:                   ,     ρ:                   .
+                          T2 7→ T2                   T2 7→ −2T2
+This action is conjugate to the usual linear action of PSL2 (F5 ) (since −1 is a square
+modulo 5, the usual action of ρ is diagonalizable).
+6.2. F (5) for universal families
+Now, take two copies of (6.1)
+        Eu : y12 = x31 − 27(u20 − 228u15 + 494u10 + 228u5 + 1)x1
+                          + 54(u30 + 522u25 − 10005u20 − 10005u10 − 522u5 + 1),
+        Ev : y22 = x32 − 27(v 20 − 228v 15 + 494v 10 + 228v 5 + 1)x2
+                          + 54(v 30 + 522v 25 − 10005v 20 − 10005v 10 − 522v 5 + 1).
+Computing Ino(Eu , Ev ) by (2.6) and base changing, we get the following Weierstrass
+              (5)
+equation for FEu ,Ev :
+            (5)
+(6.2)     FEu ,Ev : Y 2 = X 3 − 27(u20 − 228u15 + 494u10 + 228u5 + 1)
+                                    × (v 20 − 228v 15 + 494v 10 + 228v 5 + 1)X
+                                                         26 36 v 5 (v 10 + 11v 5 − 1)5
+                            − 26 36 u5 (u10 + 11u5 − 1)5 t55 −
+                                                                         t55
+                            + 54(u30 + 522u25 − 10005u20 − 10005u10 − 522u5 + 1)
+                                 × (v 30 + 522v 25 − 10005v 20 − 10005v 10 − 522v 5 + 1).
+(Here we have scaled X and Y by 9 and 27 respectively, to make the coefficients
+smaller.)
+As before, let Eu → P1u and Ev → P1v be elliptic modular surfaces associated with Eu and
+Ev respectively. Also let Gu = hθu , ρu i and Gv = hθv , ρv i be groups of automorphisms
+of Eu and Ev described above, respectively. We consider (6.2) as the family of elliptic
+           (5)
+surfaces FEu ,Ev → P1u × P1v parametrized by u and v. The total space is a fourfold.
+Analogously to 4.3, we have an action of Gu × Gv on this variety, with the corresponding
+expressions being somewhat simpler:
+                       θu : (X, Y, t5 , u, v) → (X, Y, t5 , ζu, v)
+                       θv : (X, Y, t5 , u, v) → (X, Y, t5 , u, ζv)
+                                                                           
+                                                  X Y              6   1
+                       ρu : (X, Y, t5 , u, v) →       ,      , t5 u , − , v
+                                                  u10 u15              u
+                                                                         
+                                                  X Y t5                1
+                       ρv : (X, Y, t5 , u, v) →       ,     , , u, −        .
+                                                  v 10 v 15 v 6         v
+
+There is also the action of the dihedral group D10 on F (5) . Let D10 = hσ, τ i, with
+σ 5 = 1, τ 2 = 1 and στ = τ σ −1 . Then σ acts by twisting t5 by ζ and τ by taking it to δ/t,
+22                          ABHINAV KUMAR AND MASATO KUWATA
+
+where
+                          δ = v(v 10 + 11v 5 − 1)/ u(u10 + 11u5 − 1) .
+                                                                              
+
+Consequently, we have the following result, which describes the action of these groups on
+the sections.
+                                                                                       (5)       
+Proposition 6.1. The group D10 ×Gu ×Gv acts on the group of sections FEu ,Ev k̄(u, v)(t5 )
+as follows:
+        σ X(t5 , u, v), Y (t5 , u, v) = X(ζ −1 t5 , u, v), Y (ζ −1 t5 , u, v)
+                                                                             
+                                                                         
+        τ X(t5 , u, v), Y (t5 , u, v) = X(δ/t5 , u, v), Y (δ/t5 , u, v)
+        θu X(t5 , u, v), Y (t5 , u, v) = X(t5 , ζ −1 u, v), Y (t5 , ζ −1 u, v)
+                                                                              
+
+        θv X(t5 , u, v), Y (t5 , u, v) = X(t5 , u, ζ −1 v), Y (t5 , u, ζ −1 v)
+                                                                              
+
+        ρu X(t5 , u, v), Y (t5 , u, v) = u10 X(t5 u6 , −1/u, v), −u15 Y (t5 u6 , −1/u, v)
+                                                                                            
+
+        ρv X(t5 , u, v), Y (t5 , u, v) = v 10 X(t5 /v 6 , u, −1/v), −v 15 Y (t5 /v 6 , u, −1/v)
+                                                                                              
+
+
+
+6.3. The rational elliptic surface
+Set
+                                  10       5v(v 10 + 11v 5 − 1)
+                     s = u(u + 11u − 1)t5 +                     .
+                                                     t5
+Then the equation for F (5) transforms to
+                      Y 2 = X 3 − 27AX − 26 36 (s5 − 5Bs3 + 5B 2 s) + C,
+where
+      A = (u20 − 228u15 + 494u10 + 228u5 + 1)(v 20 − 228v 15 + 494v 10 + 228v 5 + 1),
+   
+   
+   
+   
+    B = uv(u10 + 11u5 − 1)(v 10 + 11v 5 − 1),
+   
+
+      
+      
+       C = 54(u30 + 522u25 − 10005u20 − 10005u10 − 522u5 + 1)
+                     × (v 30 + 522v 25 − 10005v 20 − 10005v 10 − 522v 5 + 1).
+      
+      
+
+                                                          (5)
+This equation defines a rational elliptic surface Rs over K = k(u, v), fibered over P1s ,
+with the property that its base change to P1t is F (5) . It has a singular fiber of additive
+reduction (generically type II) at s = ∞, so using Shioda’s specialization technique, we
+can readily determine an equation of degree 240 whose roots give all the specializations of
+the minimal vectors of the Mordell-Weil lattice, which is generically E8 . As before, we
+obtain an action of PSL2 (F5 ) on the sections by the following lemma, whose (easy) proof
+is omitted.
+Lemma 6.2. The automorphisms θu θv and ρu ρv induce automorphisms of the Mordell-
+Weil group R(s) (K(s)), given by
+θu θv : X(s, u, v), Y (s, u, v) 7→ X(ζ −1 s, ζ −1 u, ζ −1 v), Y (ζ −1 s, ζ −1 u, ζ −1 v) ,
+                                                                                       
+                                             s                                                  
+                                       10                 1 1             15
+                                                                                   s        1 1
+ρu ρv : X(s, u, v), Y (s, u, v) 7→ (uv) X              , − , − , (uv) Y                    ,− ,−    .
+                                                (uv)6 u v                           (uv)6 u v
+
+For the rational elliptic surface R(5) , it follows from general structural results (see [Sh2])
+that the Mordell-Weil lattice is E8 , and is spanned by the 240 smallest vectors. These
+correspond to sections of the form
+                 X(s), Y (s) = (x2 s2 + x1 s + x0 , y3 s3 + y2 s2 + y1 s + y0 ).
+                              
+    ELLIPTIC K3 SURFACES ASSOCIATED WITH THE PRODUCT OF TWO ELLIPTIC CURVES 23
+
+The specialization of such a section at s = ∞ is z = x2 /y3 ∈ Ga . Substituting the above
+expression for X and Y into the Weierstrass equation, we obtain a system of equations,
+in which we can eliminate all variables but z. The resulting equation has degree 240,
+and it splits over the field k(u, v) into linear factors. The variables x2 , . . . , y0 are rational
+functions of z with coefficients polynomials in the Weierstrass coefficients. As a result,
+every section is defined over the field k(u, v). In the result below, we will just write down
+the specializations of the relevant sections (the entire expression can be found in the
+auxiliary source files).
+Proposition 6.3. Let P0 and Q0 be sections whose specializations are given by
+               z(P0 ) = (ζ + 1) uv − (ζ 2 + 1)u − ζ 2 (ζ 2 + 1)v − ζ 4 /6,
+                                                                      
+
+                   z(Q0 ) = ζ 3 (ζ − 1)(u − ζ 3 v)/6.
+Then P0 , θ(P0 ), θ−1 (P0 ), ρ(P0 ), θ3 (P0 ), θρ(P0 ), Q0 , ρ(Q0 ) form a basis of the Mordell-Weil
+           (5)
+group of Rs .
+
+Proof. By direct calculation, the intersection matrix of these sections is
+                                 2 1 1 0 0 1 1 0
+                                                         
+                               1 2 0 −1 0 0 1 0 
+                              1 0 2 1 1 1 1 0
+                                                         
+                               0 −1 1 2 1 1 0 1 
+                                                         
+                              0 0 1 1 2 0 1 0
+                                                         
+                              1 0 1 1 0 2 0 1
+                                                         
+                              1 1 1 0 1 0 2 0
+                                 0 0 0 1 0 1 0 2
+Therefore, they span an even unimodular eight-dimensional lattice, which must be E8 .
+Hence, these sections are a basis of the entire Mordell-Weil group.               
+
+6.4. F (5) (k(t5 )) in the generic case
+We now describe the Mordell-Weil group of F (5) in the generic case, when Eu and Ev are
+not isogenous.
+Theorem 6.4. Let Pi , i = 1, . . . , 8 be the basis of Proposition 6.3. By abuse of notation,
+we let Pi denote their base change to the elliptic K3 surface F (5) . Let u, v ∈ k be such
+that Eu and Ev are not isogenous. Then the sixteen sections Pi , σ(Pi ) form a basis of the
+                      (5)
+Mordell-Weil group FEu ,Ev (k(t5 )).
+
+Proof. By explicit calculation, the intersection matrix (listed in the auxiliary files) has
+determinant 625 = 54 . Since this number agrees with the discriminant of the full Néron-
+Severi lattice as computed by Shioda, the listed sections form a basis.                  
+Corollary 6.5. Let E1 and E2 be elliptic curves over k. Suppose E1 and E2 are not
+                                             (5)
+isogenous. Then, the Mordell-Weil lattice FE1 ,E2 (k̄(t5 )) is defined over k(E1 [5], E2 [5]), the
+field over which all the 5-torsion points of E1 and E2 are defined.
+
+                             7. Mordell-Weil group of F (6)
+
+In this section we determine the generators of the Mordell-Weil group F (6) (k̄(t6 )) in two
+different ways. Both methods use rational elliptic surfaces arising as the quotient of F (6)
+by some involutions.
+24                             ABHINAV KUMAR AND MASATO KUWATA
+
+7.1. Elliptic modular surface associated with Γ(6)
+The modular curve X(6) associated with the congruence subgroup Γ(6) is known to be a
+curve of genus 1 and its affine model is given by r2 = f 3 + 1, and the elliptic modular
+surface associated with it is given by
+(7.1)                     y 2 = x3 − 2(f 6 + 20f 3 − 8)x2 + f 3 (f 3 − 8)3 x.
+(cf. [RS2]). The subgroup of 3-torsion points are generated by
+                   f 2 (f 2 + 2f + 4)2 , 4f 2 (f 2 − f + 1)(f 2 + 2f + 4)2
+                                                                             
+                                                                                 and
+                   −(f 3 − 8)2 /3, 4(2ω + 1)(f 3 + 1)(f 3 − 8)2 /9 ,
+                                                                     
+
+and the points of order 2 are given by
+                                 (r + 1)(r − 3)3 , 0 ,     (r + 1)(r − 3)3 , 0 .
+                                                                             
+                     (0, 0),
+The j-invariant of (7.1) is given by
+                                 (f 3 + 4)3 (f 9 + 228f 6 + 48f 3 + 64)3
+                            j=                                           .
+                                         f 6 (f 3 + 1)3 (f 3 − 8)6
+Note that the curve (7.1) can be written in terms of r:
+                   y 2 = x x − (r + 1)(r − 3)3 x − (r − 1)(r + 3)3 ,
+                                                                 
+(7.2)
+and after scaling x and y it is transformed to
+                                                                        (r + 1)(r − 3)3
+            (r − 1)(r + 3)y 2 = x(x − 1)(x − λ),         where λ =                      .
+                                                                        (r − 1)(r + 3)3
+If we view (7.1) as an elliptic surface over P1f , it is an elliptic modular surface corresponding
+to Γ(3) ∩ Γ1 (2), whereas (7.2) as an elliptic surface over P1r is an elliptic modular surface
+corresponding to Γ(2) ∩ Γ1 (3). Note that the map to X(2) is just (r, f ) → λ, whereas the
+map to X(3) is (r, f ) → µ = (f 3 + 4)/3f 2 .
+7.2. F (6) for universal family
+We take two copies of the modular curve X(6)
+                                    r2 = f 3 + 1,    q 2 = g 3 + 1,
+and the elliptic modular surface (7.1):
+                    Er,u : y12 = x31 − 2(f 6 + 20f 3 − 8)x21 + f 3 (f 3 − 8)3 x1 .
+                    Eq,v : y22 = x32 − 2(g 6 + 20g 3 − 8)x22 + g 3 (g 3 − 8)3 x2 .
+                    (6)
+We then obtain FEr,f ,Eq,g
+(7.3)
+   Y 2 = X 3 − 27(f 12 + 232f 9 + 960f 6 + 256f 3 + 256)
+                    × (g 12 + 232g 9 + 960g 6 + 256g 3 + 256)X
+                                        864g 6 (g 3 + 1)3 (g 3 − 8)6
+         + 54 864f 6 (f 3 + 1)3 (f 3 − 8)6 t6 +
+                                                       t6
+                  + (f − 516f − 12072f − 24640f − 30720f 6 + 6144f 3 + 4096)
+                      18     15       12             9
+                                                                                         
+                    × (g 18 − 516g 15 − 12072g 12 − 24640g 9 − 30720g 6 + 6144g 3 + 4096) .
+    ELLIPTIC K3 SURFACES ASSOCIATED WITH THE PRODUCT OF TWO ELLIPTIC CURVES 25
+
+7.3. Rational elliptic surfaces with parameter s6,i
+As before, we have several rational elliptic surfaces arising as quotients of F (6) . Namely,
+for 0 ≤ i ≤ 6, let
+                                                         qg(g 3 − 8)
+                          s6,i = si = ζ6 rf (f 3 − 8)t +             ,
+                                                              t
+where ζ6 = −ω is a primitive sixth root of unity. Then the equation tranforms to the
+rational elliptic surface
+
+
+                  Rs(6) : Y 2 = X 3 − AX + 66 (s6 − 6Bs4 + 9B 2 s2 − 2B 3 ) + C
+where s = s0 = s6,0 and
+     A = 27(f 12 + 232f 9 + 960f 6 + 256f 3 + 256)(g 12 + 232g 9 + 960g 6 + 256g 3 + 256)
+  
+  
+  
+  
+   B = qrf g(f 3 − 8)(g 3 − 8)
+  
+
+  
+  
+   C = 54(f 18 − 516f 15 − 12072f 12 − 24640f 9 − 30720f 6 + 6144f 3 + 4096)
+           × (g 18 − 516g 15 − 12072g 12 − 24640g 9 − 30720g 6 + 6144g 3 + 4096).
+  
+  
+
+The Mordell-Weil lattice of this elliptic surface is generically E8 . It has generically twelve
+I1 fibers, none of them defined over the ground field k(u, v). Therefore, one has to proceed
+by brute force in order to enumerate these. Taking X to be a quadratic polynomial
+in s, and Y cubic, with undetermined coefficients, we obtain a system of equations for
+the coefficients. The 240 solutions give the sections of minimal height. Since these are
+complicated to write down, we will not do so here. The formulas may be found in the
+auxiliary files. Instead, we will give a more conceptual description below, in terms of
+sections arising from F (3) and its twist, the cubic surface.
+We may also form the rational elliptic surface in terms of s1 : the equation becomes (with
+the same values of A, B, C as above):
+               Rs(6)
+                  1
+                     : Y 2 = X 3 − AX + 66 (s61 − 6ζBs41 + 9ζ 2 B 2 s21 − 2ζ 3 B 3 ) + C.
+A similar calculation gives the 240 minimal height sections for this elliptic surface. Let
+                                             (6)                                 (6)
+P1 , . . . , P8 be the sections coming from Rs and P10 , . . . , P80 those from Rs1 .
+Theorem 7.1. Let (r, f ), (q, g) ∈ X(6)(k) be such that Er,f and Eq,g are not isogenous.
+The sections P1 , . . . , P8 , P10 , . . . , P80 form a basis for the Mordell-Weil group of F (6) (k(t6 )).
+
+Proof. By direct calculation of the height pairing, we find that the discriminant of the
+sublattice of the Mordell-Weil group spanned by these sections is 64 . Therefore it must be
+the full group.                                                                          
+Corollary 7.2. Let E1 and E2 be elliptic curves over k. Suppose E1 and E2 are not
+                                             (6)
+isogenous. Then, the Mordell-Weil lattice FE1 ,E2 (k̄(t6 )) is defined over k(E1 [6], E2 [6]), the
+field over which all the 6-torsion points of E1 and E2 are defined.
+
+7.4. F (6) as a double cover of a cubic surface
+Now we describe a different method to compute the Mordell-Weil group of F (6) , going
+through its quotient F (3) and a quadratic twist of this quotient, which is a rational surface.
+In the remainder of this subsection, we will let λ and µ be parameters on X(2). For an
+elliptic curve E over k(t), we denote by tE its quadratic twist.
+26                          ABHINAV KUMAR AND MASATO KUWATA
+
+Lemma 7.3. Let E1 and E2 be given as in (2.1). The Kodaira-Néron model of the
+                   (3)
+quadratic twist t3FE1 ,E2 is birationally equivalent to the cubic surface given by
+                           Z 3 + cZW 2 + dW 3 = X 3 + aXY 2 + bY 3 .
+
+Proof. The equation of t3F (3) is given by
+                                                1                   ∆E 
+(7.4)                t3 Y 2 = X 3 − 3 ac X +       ∆E1 t33 + 864 bd + 3 2 .
+                                               64                     t3
+Since t3 = t26 , this equation can be written as
+                                               1                   ∆E 
+(7.5)                (t6 Y )2 = X 3 − 3 ac X +    ∆E1 t66 + 864 bd + 6 2 .
+                                               64                    t6
+Rewriting the change of coordinates (2.4) using t26 = t3 , we see that X and t6 Y are written
+in terms of t3 :
+              −t3 (2at23 − c)x1 − 3(bt33 − d) − (at23 − 2c)x2
+      
+      X =                                                            ,
+      
+      
+                                  t3 (t3 x1 − x2 )
+                6(at23 − c)(bt33 − d) + 6(at23 − c)(at33 x1 − cx2 ) − 9(bt33 − d)(t23 x21 − x22 )
+       t6 Y =
+                                                                                                  .
+                                                   2t3 (t3 x1 − x2 )2
+Plugging these back into (7.5), we obtain the equation
+                               x32 + cx2 + d = t33 (x31 + ax1 + b).
+Now, if we let x1 = X/Y , x2 = Z/W and t3 = Y /W , we obtain the desired homogenous
+cubic equation.                                                                  
+Lemma 7.4. Let E be an elliptic curve over k(T ), and TE√its quadratic twist by T . Then
+E(k(T )) ⊕ TE(k(T )) is a subgroup of finite index of E(k( T )).
+
+We will use the following well-known lemma to put together the sections from the quotients
+F (3) and t3F (3) .
+                                √       √
+Proof. Let ι be the automorphism T 7→ − T . Then the composition of the maps
+                     √                                     √
+                 E(k( T )) −→ E(k(T )) ⊕ TE(k(T )) −→ E(k( T ))
+                       P        7−→ (P + ι(P ), P − ι(P ))
+                                               (Q, R)          7−→     Q+R
+is the multiplication-by-2 map [2]. Since the image of [2] is a subgroup of finite index, the
+assertion follows.                                                                         
+
+In order to compute t3F (3) (k̄(t3 )), we find the twenty-seven lines contained in the cubic
+surface. To state the results clearly, we take E1 and E2 to be in Legendre form as in (3.4),
+and consider the cubic surface
+(7.6)                   Z(Z − W )(Z − µW ) = X(X − Y )(X − λY ).
+
+As is well-known, the group generated by λ 7→ 1 − λ and λ 7→ 1/λ leave the j-invariant
+of y 2 = x(x − 1)(x − λ). As in Proposition 4.3, this action lifts to the family of cubic
+surfaces.
+   ELLIPTIC K3 SURFACES ASSOCIATED WITH THE PRODUCT OF TWO ELLIPTIC CURVES 27
+
+Proposition 7.5. There are automorphisms acting on the family of cubic surfaces (7.6)
+parametrized by (λ, µ):
+                                                                      
+              (X : Y : Z : W ), λ, µ 7→ (X − Y : −Y : Z : W ), 1 − λ, µ ,
+                                                                
+              (X : Y : Z : W ), λ, µ 7→ (X : λY : Z : W ), 1/λ, µ ,
+                                                                       
+              (X : Y : Z : W ), λ, µ 7→ (X : Y : Z − W : −W ), λ, 1 − µ ,
+                                                                
+              (X : Y : Z : W ), λ, µ 7→ (X : Y : Z : µW ), λ, 1/µ .
+
+
+These automorphisms act on the set of twenty-seven lines contained in (7.6)
+                                  1/3           1/3
+Let δ = (∆E2 /∆E1 )1/6 = µ(µ − 1)      / λ(λ − 1)     . Note δ 3 is invariant under λ → 1 − λ
+and µ → 1 − µ, whereas under λ → 1/λ, it is taken to −δ 3 /λ3 = (−δ/λ)3 . Therefore, we
+may extend the action of the group of automorphisms to δ in a natural way. The next
+result shows that all the twenty-seven lines are defined over the cubic extension field of
+k(λ, µ) defined by δ.
+Proposition 7.6. The twenty-seven lines contained in the cubic surface (7.6) are given
+as follows. In terms of homogeneous parameters (α : β) on P1 , the lines (X, Y, Z, W )
+belong to the following list:
+                       (0 : α : 0 : β), (α : α : 0 : β), (λα : α : 0 : β),
+                       (0 : α : β : β), (α : α : β : β), (λα : α : β : β),
+                      (0 : α : µβ : β), (α : α : µβ : β), (λα : α : µβ : β),
+   λ(µ − 1)α − δ 2 λ(λ − 1)β :
+                                                                                          
+                                  (µ − λ)α   : δλ(λ − 1)α − µ(λ − 1)β :        (µ − λ)β     ,
+              2
+                                                                                          
+       λα + δ λ(λ − 1)β      : (λ + µ − λµ)α :        δλ(λ − 1)α + µβ     : (λ + µ − λµ)β ,
+                  2  2
+                                                                                          
+  λ(µ − 1)α − ω δ λ(λ − 1)β :     (µ − λ)α   : ωδλ(λ − 1)α − µ(λ − 1)β :       (µ − λ)β     ,
+     λα + ω 2 δ 2 λ(λ − 1)β
+                                                                                          
+                             : (µ + λ − λµ)α :       ωδλ(λ − 1)α + µβ     : (λ + µ − λµ)β ,
+  λ(µ − 1)α − ωδ 2 λ(λ − 1)β :               : ω 2 δλ(λ − 1)α − µ(λ − 1)β :
+                                                                                          
+                                  (µ − λ)α                                     (µ − λ)β     ,
+               2                                      2
+                                                                                          
+      λα + ωδ λ(λ − 1)β      : (λ + µ − λµ)α :      ω δλ(λ − 1)α + µβ     : (λ + µ − λµ)β ,
+                   2
+                                                                                          
+   λ(µ − 1)α + δ λ(λ − 1)β : (λµ − 1)α : δλ(λ − 1)α + µ(λ − 1)β : (λµ − 1)β                 ,
+                  2  2
+                                                                                          
+  λ(µ − 1)α + ω δ λ(λ − 1)β : (λµ − 1)α : ωδλ(λ − 1)α + µ(λ − 1)β : (λµ − 1)β               ,
+                    2                            2
+                                                                                          
+  λ(µ − 1)α + ωδ λ(λ − 1)β : (λµ − 1)α : ω δλ(λ − 1)α + µ(λ − 1)β : (λµ − 1)β               ,
+               2
+                                                                                          
+      λµα − δ λ(λ − 1)β      : (λ + µ − 1)α :       −δλ(λ − 1)α + λµβ     : (λ + µ − 1)β ,
+      λµα + δ 2 λ(λ − 1)β
+                                                                                          
+                             : (λµ − λ + 1)α :      −δλ(λ − 1)α + µβ      : (λµ − λ + 1)β ,
+    λµα − ω 2 δ 2 λ(λ − 1)β
+                                                                                          
+                             : (λ + µ − 1)α : −ωδλ(λ − 1)α + λµβ : (λ + µ − 1)β ,
+    λµα + ω 2 δ 2 λ(λ − 1)β
+                                                                                          
+                             : (λµ − λ + 1)α :      −ωδλ(λ − 1)α + µβ     : (λµ − λ + 1)β ,
+     λµα − ωδ 2 λ(λ − 1)β    : (λ + µ − 1)α : −ω 2 δλ(λ − 1)α + λµβ : (λ + µ − 1)β ,
+                                                                                          
+
+     λµα + ωδ 2 λ(λ − 1)β                          −ω 2 δλ(λ − 1)α + µβ
+                                                                                          
+                             : (λµ − λ + 1)α :                            : (λµ − λ + 1)β ,
+       λα − δ 2 λ(λ − 1)β
+                                                                                          
+                             : (λµ − µ + 1)α :       δλ(λ − 1)α + λµβ     : (λµ − µ + 1)β ,
+     λα − ω 2 δ 2 λ(λ − 1)β
+                                                                                          
+                             : (λµ − µ + 1)α :      ωδλ(λ − 1)α + λµβ     : (λµ − µ + 1)β ,
+      λα − ωδ 2 λ(λ − 1)β                          ω 2 δλ(λ − 1)α + λµβ
+                                                                                          
+                             : (λµ − µ + 1)α :                            : (λµ − µ + 1)β .
+ They may be generated by taking the orbits of the first and the last three lines in the list,
+under the action of the automorphism group defined by Proposition 7.5.
+
+Proof. The first nine lines are obvious ones; they are obtained by letting one of the factors
+of the left hand side of the equation (7.6) equal 0 and one of the right hand side equal 0.
+The other eighteen lines are obtained as follows. Take a factor from the left hand side
+28                            ABHINAV KUMAR AND MASATO KUWATA
+
+and another from the right hand side, say Z − Y and X − λW . Take a parameter m and
+let Z − Y = m(X − λW ). We will take the intersections of the cubic surface with this
+family of planes. By construction, they always contain the line Z − Y = X − λW = 0.
+The family of residual conics will degenerate to pairs of lines at suitable values of m.
+Concretely, we replace Z by m(X − Y ) + W in the equation of the surface, and we obtain
+a family of conics in X, Y, W :
+(m3 − 1)X 2 − (µ − 1)mW 2 + m3 Y 2 − (µ − 2)m2 XW − (2m3 − λ)XY + (µ − 2)m2 Y W = 0.
+Writing this equation in matrix form:
+                                                              
+                        m3 − 1      −m3 + λ/2 −(µ − 1)m2 /2     X
+                           3                3             2
+         X Y W  −m + λ/2                m        (µ − 2)m /2   Y  = 0.
+                                                              
+                       −(µ − 1)m2 /2 (µ − 2)m2 /2 −(µ − 1)m      W
+We then calculate the determinant of this matrix:
+                   −(λ − 1)m(µm − λδ)(µm − ωλδ)(µm − ω 2 λδ)/(4µ).
+So, at m = 0, λδ/µ, ωλδ/µ, ω 2 λδ/µ, the conic becomes a pair of lines. We repeat this
+process, and eliminate the duplicates to obtain the list of all the twenty-seven lines. 
+
+                         (3)
+The elliptic surface t3 FEλ ,Eµ is obtained from the family of plane cubic curves
+
+                        x2 (x2 − z)(x2 − µz) = t33 x1 (x1 − z)(x1 − λz)
+and the rational point (x1 : x2 : z) = (1 : t3 : 0). Let us recall its equation (a specialization
+of (7.4), where the elliptic curves are given by (7.6)):
+               ty 2 = x3 − 27(λ2 − λ + 1)(µ2 − µ + 1)x
+                        + 729λ2 (λ − 1)2 t3 /4 + 729µ2 (µ − 1)2 /(4t3 )
+                        + 27(λ − 2)(λ + 1)(2λ − 1)(µ − 2)(µ + 1)(2µ − 1)/2
+
+There are two other rational points (1 : ωt3 : 0) and (1 : ω 2 t3 : 0), which become sections
+       (3)
+of t3 FEλ ,Eµ given by
+            
+     R1 = −3 ω 2 (λ2 − λ + 1)t2 + ω(µ2 − µ + 1) ,
+                                                  
+
+                                                                                    
+                       (2ω + 1) (λ + 1)(λ − 2)(2λ − 1)t3 − (µ + 1)(µ − 2)(2µ − 1) /2 ,
+            
+     R2 = −3 ω(λ2 − λ + 1)t2 + ω 2 (µ2 − µ + 1) ,
+                                                  
+
+                                                                                    
+                       (2ω + 1) (λ + 1)(λ − 2)(2λ − 1)t3 − (µ + 1)(µ − 2)(2µ − 1) /2 .
+
+                        (3)
+The elliptic surface t3 FEλ ,Eµ can be obtained by blowing up the cubic surface (7.6) at three
+points corresponding to these, namely, (X : Y : Z : W ) = (1 : 0 : 1 : 0), (1 : 0 : ω : 0), and
+(1 : 0 : ω 2 : 0).
+Theorem 7.7. Let λ, µ be such that Eλ and Eµ are not isomorphic over k̄. The Mordell-
+                 (3)
+Weil lattice t3 FEλ ,Eµ (k(t3 )) is of type E8 , and generated by R1 , R2 above and the sections
+coming from the the twenty-seven lines in the cubic surface.
+    ELLIPTIC K3 SURFACES ASSOCIATED WITH THE PRODUCT OF TWO ELLIPTIC CURVES 29
+
+                                      (3)
+Proof. For generic Eλ and Eµ , t3 FEλ ,Eµ is a rational elliptic surface with only irreducible
+singular fibers. Thus, its Mordell-Weil lattice is isomorphic to E8 . The Néron-Severi
+group of the cubic surface is generated by the classes of the twenty-seven lines, which
+form a lattice isometric to E6 (see Manin [Ma]). Therefore, the Néron-Severi group of
+                             (3)
+the rational surface t3 FEλ ,Eµ is generated by the exceptional divisors of blow-ups and the
+twenty-seven lines. Transforming to the elliptic model, we see that the Mordell-Weil lattice
+t3 (3)
+  FEλ ,Eµ (k̄(λ, µ)(t3 )) is generated by R1 , R2 and sections coming from the twenty-seven
+lines.                                                                                      
+Remark 7.8. The sections R1 and R2 above, along with the sections coming from lines
+1,2,4,5,10 and 12, form a basis of the Mordell-Weil lattice. Below, we display some of
+these sections; the remaining ones are omitted for lack of space. The formulas for the full
+basis may be obtained from the auxiliary files.
+
+                        
+              R3 := L1 = 3 3lt2 + (l + 1)(m + 1)t + 3m /t,
+                                                      
+
+                               − 27 l(l + 1)t3 + 2l(m + 1)t2
+                                                              
+                               + 2(l + 1)mt + m(m + 1) /(2t2 )
+                                                        
+                           
+                               − 3 3(l − 1)t2 − (l − 2)(m + 1)t − 3m /t,
+                                                                    
+              R4 := L2 =
+                          27 (l − 1)(l − 2)t3 + 2(l − 1)(m + 1)t2
+                                                           
+                          − 2(l − 2)mt − m(m + 1) /(2t2 )
+                                                     
+                        
+              R5 := L4 = 3 3lt2 + (l + 1)(m − 2)t − 3(m − 1) /t,
+                                                             
+
+                          − 27 l(l + 1)t3 + 2l(m − 2)t2 − 2(m − 1)(l + 1)t
+                                                   
+                          − (m − 1)(m − 2) /(2t2 )
+                                            
+                        
+              R6 := L5 = − 3 3(l − 1)t2 − (l − 2)(m − 2)t + 3(m − 1) /t,
+                                                                     
+
+                               27 (l − 1)(l − 2)t3 + 2(l − 1)(m − 2)t2
+                                                                           
+                               + 2(l − 2)(m − 1)t + (m − 1)(m − 2) /(2t2 )
+                                                                     
+
+Remark 7.9. The sections coming from the twenty-seven lines form a sublattice of type E7
+in the Mordell-Weil lattice, and the first nine lines in Proposition 7.6, which are defined
+over k, form a sublattice of type A5 . These nine lines together with the sections R1 and
+R2 from the blowup generate a sublattice of type E7 .
+Corollary 7.10. Let λ, µ ∈ k be such that Eλ and Eµ are not isomorphic over k. The
+                           (3)
+field of definition of t3 FEλ ,Eµ (k̄(t3 )) is k(λ, µ, δ, ω). If E1 and E2 are not isomorphic over
+                                            (3)
+k, then the field of definition of t3 FE1 ,E2 (k̄(t3 )) is k E1 [2], E2 [2], (∆E2 /∆E1 )1/6 , ω .
+                                                                                               
+
+
+7.5. F (6) (k(t6 )) in the generic case
+                                                                 (3)
+Let Q1 , . . . , Q8 be the basis of the Mordell-Weil group for FEu ,Ev described in Theorem 4.8.
+                                                                               (6)
+By abuse of notation, let Q1 , . . . , Q8 be their base change (pullback) to FEr,f ,Eq,g defined by
+(7.3), by the map λ = (r+1)(r−3)3 / (r−1)(r+3)3 and µ = (q+1)(q−3)3 / (q−1)(q+3)3 .
+                                                                                                 
+30                          ABHINAV KUMAR AND MASATO KUWATA
+
+                                                                        (3)
+Similarly, let R1 , . . . , R8 be the base change of the basis of t3 FEλ ,Eµ (k̄(t3 )). (R7 and R8
+are shown only in the auxiliary files.) Define
+
+                                S1 = (Q2 + Q3 + Q6 + Q8 + R1 )/2
+                                S2 = (Q1 + Q3 + Q7 + Q8 − R2 )/2
+                                S3 = (Q1 + Q3 + R1 − R7 + R8 )/2
+                                S4 = (Q2 + Q3 + R4 + R5 − R8 )/2.
+                          (6)
+These are sections of FEr,f ,Eq,g , i.e. the expressions in parentheses are (uniquely) divisibe
+by 2 in the Mordell-Weil group. Explicit formulas are also given in auxiliary files.
+
+Theorem 7.11. Let (r, f ), (q, g) ∈ X(6)(k) be such that Er,f and Eq,g are not isogenous.
+The sections Q1 , . . . , Q8 , R3 , R4 , R5 , R6 , S1 , S2 , S3 , S4 form a basis of the Mordell-Weil
+          (6)
+group of FEr,f ,Eq,g (k(t6 )).
+
+
+Proof. By construction and base change, the lattice spanned by the Qi ’s and the Ri ’s has
+discriminant (34 /24 ) · 28 · 1 · 28 = 64 · 28 . Since the lattice spanned by the new basis is
+an overlattice of index 16, it has discriminant 64 , which matches the discriminant of the
+Mordell-Weil lattice of F (6) , as computed by Shioda [Sh7]. Therefore it must be the full
+Mordell-Weil group.                                                                         
+
+Remark 7.12. We have described two different bases for the Mordell-Weil lattice F (6) (k(t6 )),
+obtained through two different methods: first by using rational elliptic surfaces parametrized
+by s6,i , and second by using F (3) and the cubic surface that is a twist of F (3) . The first
+method, though similar in spirit to that for F (4) and F (5) , is significantly more difficult to
+carry out computationally. The change of basis matrix for these two bases is also given in
+the auxiliary files.
+
+
+
+                                  8. Singular K3 surfaces
+
+In this section we consider K3 surfaces with Picard number 20. These surfaces are called
+singular K3 surfaces because they do not involve any moduli. We are interested in elliptic
+K3 surfaces defined over Q whose Mordell-Weil rank (over Q) is maximal 18. If the
+Mordell-Weil rank of an elliptic K3 surface is 18, the underlying K3 surface must be a
+singular K3 surface. Our goal in this section is to construct as many such elliptic K3
+surfaces as possible.
+Singular K3 surfaces are closely related to elliptic curves with complex multiplication. We
+use work of Shioda-Mitani [SM], Shioda-Inose [SI], Inose [I2], and the theory of complex
+multiplication (see for example [Co2]). Shioda and Inose [SI] show that a complex singular
+K3 surface X is what we call the Inose surface Ino(E1 , E2 ) for some elliptic curves E1 and
+E2 that have complex multiplication and are isogenous to each other. More specifically,
+we have
+
+Theorem 8.1 (Shioda-Inose [SI]). There is a one-to-one correspondence between the set
+of isomorphism classes of complex singular K3 surfaces and the set of equivalence classes
+of even positive definite Euclidean lattices, or equivalently, positive definite integral binary
+   ELLIPTIC K3 SURFACES ASSOCIATED WITH THE PRODUCT OF TWO ELLIPTIC CURVES 31
+
+quadratic forms, with respect to SL2 (Z):
+         {singular K3 surfaces over C}/C-isomorphisms
+                                                          
+           1:1     2a b                            2
+          ←→               a, b, c ∈ Z, a, c > 0, b − 4ac < 0   SL2 (Z)
+                    b 2c
+           1:1
+          ←→ {ax2 + bxy + cy 2 | a, b, c ∈ Z,    a, c > 0,   b2 − 4ac < 0}/ SL2 (Z)
+
+In fact,
+       Shioda-Inose
+                       [SI] construct a singular K3 surface X corresponding to the lattice
+       2a b
+Q=              , or the quadratic form ax2 + bxy + cy 2 , as follows. First, let τ1 and τ2 be
+         b 2c
+the points on the upper half plane H given by
+                               √                 √
+                        −b + D               b+ D
+(8.1)             τ1 =             , τ2 =           , where D = b2 − 4ac.
+                             2a                 2
+Let j(τ ) be the elliptic modular function defined on H, and let E1 and E2 be elliptic
+curves whose j-invariants are j(τ1 ) and j(τ2 ) respectively. For example, Ei can be given
+by
+                                       3j(τi )          2j(τi )
+                   Ei : y 2 = x3 −                x+               , i = 1, 2.
+                                    j(τi ) − 1728    j(τi ) − 1728
+Then, the Inose surface Ino(E1 , E2 ) is a singular K3 surface corresponding to Q.
+First, consider the case where ax2 + bxy + cy 2 is primitive, that is, √
+                                                                       gcd(a, b, c) = 1. Since
+b and D have the same √  parity, on the upper
+                                          √ half plane H, τ2 = (b + D)/2 represents the
+same point as the root D/2 or (−1 + D)/2 of the trivial form
+                                  −D 2
+                          
+                          x 2 +
+                                     y           if D ≡ 0 mod 4,
+                                    4
+                          x2 + xy + 1 − D y 2 if D ≡ 1 mod 4
+                          
+                                          4
+modulo the action of the modular group SL2 (Z). The lattice   √ O = h1, τ2 i spanned by 1
+and τ2 is an order in the imaginary quadratic field K = Q( D) (in fact, it is the unique
+order of discriminant D), and the lattice a = h1, τ1 i is a proper ideal of an order. It is
+well-known from the theory of complex multiplication that j(O) = j(τ1 ) and j(a) = j(τ2 )
+are conjugate roots of the class equation HO (X) = 0 (see [Co2, §13]). The degree of the
+class equation is the class number h(O) = hD .
+Theorem 8.2. Let D be a negative integer ≡ 0 or 1 mod 4. Suppose that its class number
+hD equals 2, and let ax2 + bxy + cy 2 be the nontrivial element of the class group Cl(D).
+Then, the Inose surface Ino(E1 , E2 ) corresponding to ax2 + bxy + cy 2 has a model defined
+                                                   (n)
+over Q. Furthermore, the Mordell-Weil lattices FE1 ,E2 (Q(tn )), n = 5, 6, constructed from
+Ino(E1 , E2 ) have rank 18.
+
+Proof. Since hD = 2, both j(τ1 ) and j(τ2 ) are conjugate elements of a quadratic extension
+of Q. If we take E1 and E2 to be conjugate to each other, then Lemma 8.3 below assures
+                            (N )
+that Ino(E1 , E2 ) and all FE1 ,E2 has a model over Q. Since ax2 + bxy + cy 2 corresponds to
+the nontrivial element, j(τ2 ) 6= j(τ1 ), and E1 and E2 are not isomorphic. But they are
+                                                                                (n)
+isogenous, as they come from ideals in the same quadratic field. Thus, FE1 ,E2 (Q(tm )),
+n = 5, 6 have rank 18 by Proposition 2.8.                                                 
+                                                                                 √
+Lemma 8.3. Let E1 be an elliptic curve defined over an quadratic field Q( d) and let
+                                                    (n)
+E2 be its conjugate. Then, the elliptic fibration FE1 ,E2 has a model defined over Q.
+32                            ABHINAV KUMAR AND MASATO KUWATA
+                                                       √
+Proof. Let E1 be given by y 2 = x3 √
+                                   + ax + b,√a, b ∈ Q( d). E2 is given by y 2 = x3 + āx + b̄,
+where ¯ stands for the conjugate d 7→ − d. Then the equation (2.3) can be written as
+                                        1                      ∆E1 ∆E1 
+                 Y 2 = X 3 − 3 aā X +      ∆E1 t66 + 864 bb̄ +           .
+                                        64                       ∆E1 t66
+                        1/6                           (6)
+Thus, if we let T = ∆E1 t6 , the equation of FE1 ,E2 is given by
+                                          1 6                   N (∆E1 ) 
+                 Y 2 = X 3 − 3 N (a) X +      T + 864 N (b) +               ,
+                                          64                        T6
+              √
+where N : Q( d) → Q is the norm.                                                                     
+Remark 8.4. The lemma also follows from the proof of Proposition 8.1 in [Sch].
+Remark 8.5. An elliptic curve E over the Hilbert class field H of an imaginary quadratic
+field K with complex multiplication by K is called a Q-curve (in the original sense) if E
+is isogenous over H to all its Galois conjugates. Theorem 8.2 shows that we can obtain
+elliptic K3 surfaces defined over Q with Mordell-Weil rank 18 from a Q-curve defined
+over a quadratic Hilbert class field. However, for our purpose, we do not need the isogeny
+between E and its Galois conjugate to be defined over H. In fact, we will see some
+examples of elliptic curves with complex multiplication by K such that they are isogenous
+to their Galois conjugates only over some extension of H.
+
+Next, consider the case where ax2 + bxy + cy 2 is not primitive. Write ax2 + bxy + cy 2 =
+m(a0 x2 + b0 xy + c0 y 2 ), where m > 1 and gcd(a0 , b0 , c0 ) = 1. Define
+                              √                    √
+                  0     −b0 + D0          0    b0 + D 0
+                 τ1 =             , and τ2 =              , where D0 = b02 − 4a0 c0 .
+                            2a0                    2
+Then, we have τ1 = τ10 and τ2 = mτ20 . Now, suppose that hD0 = 2. Then, j(τ10 ) belongs
+to some quadratic extension and j(τ20 ) is its conjugate. Since j(τ10 ) = j(τ1 ), in order for
+our method to work, we need that j(τ2 ) = j(mτ20 ) is conjugate to j(τ1 ). But, this implies
+j(τ20 ) = j(τ2 ) and thus the Inose surface corresponding to ax2 + bxy + cy 2 and that to
+a0 x2 + b0 xy + c0 y 2 are isomorphic. So, in the nonprimitive case we can reduce to the case
+of the primitive discriminant D, corresponding to the latter quadratic form.
+8.1. Class number 1 case
+It is well-known that there are thirteen discriminants of class number 1.
+     hD = 1 ⇐⇒ D = −3, −4, −7, −8, −11, −12, −16, −19, −27, −28, −43, −67, −163.
+(See for example
+         √        [Co2,
+                   √ Theorem√7.30] and its references.) From these we see that only the
+fields Q( −1), Q( −3) and Q( −7) possess non-maximal order of class number 1. In the
+following table, D is a discriminant with hD = 1, f is the conductor of the order, τ is the
+root of the quadratic form, and E is an example of E having j(τ ) as its j-invariant.
+       K      D     f   quadratic form            τ            j(τ )           example of E
+                          2              2
+                                                  √
+              −3    1    x + xy + y           (−1 + −3)/2        0       y = x3 + 1
+                                                                          2
+      √                                            √
+     Q( −3)   −12   2     x2 + 3x2                   −3        54000     y 2 = x3 − 15x + 22
+                                                     √
+              −27   3   x2 + xy + 7y 2       (−1 + 3 −3)/2   −12288000   y 2 = x3 + 18x2 − 12x + 2
+                                                   √
+       √      −4    1         x2 + y 2               −1        1728      y 2 = x3 − x
+     Q( −1)                                        √
+              −16   2      x2 + 4y 2              2 −1        287496     y 2 = x3 − 11x − 14
+                                                    √
+       √      −7    1   x2 + xy + 2y 2        (−1 + −7)/2     −3375      y 2 = x3 − 21x2 + 112x
+     Q( −7)                                        √
+              −28   2      x2 + 7y 2                 −7      16581375    y 2 = x3 + 42x2 − 7x
+   ELLIPTIC K3 SURFACES ASSOCIATED WITH THE PRODUCT OF TWO ELLIPTIC CURVES 33
+
+Theorem 8.6. Let E1 and E2 be the pair in the table below. Then, the Mordell-Weil
+         (n)
+lattice FE1 ,E2 (Q(tn )) for n = 5, 6 has rank 18.
+                                                                   (n)
+     K                   E1 ,   E2                               FE1 ,E2                       TIno(E1 ,E2 )
+             y12 = x31 + 1                                   tnn        4
+                                                                                                       
+                                                                                                   4 2
+                                                Y 2 = X3 +       − 11 − n
+             y22 = x32 − 15x2 + 22                            4        tn                          2 4
+
+             y12 = x31 − 432                                                9
+                                                                                                       
+     √                                                                                             6 3
+   Q( −3)                                       Y 2 = X 3 + tnn − 506 +
+             y22 = x32 − 108x22 − 432x2 − 432                              tnn                     3 6
+
+             y12 = x31 − 15x1 + 22                                                  4
+                                                                                                        
+                                                                                                 12 6
+                                                Y 2 = X 3 − 600X + 9tnn − 5566 −
+             y22 = x32 + 18x22 − 12x2 + 2                                          tnn            6 12
+
+     √       y12 = x31 − x1                                                  8
+                                                                                                       
+                                                                                                   4 0
+   Q( −1)                                       Y 2 = X 3 − 33X + tnn +
+             y22 = x32 − 11x2 − 14                                          tnn                    0 4
+
+     √       y12 = x31 − 21x21 + 112x1                                                   64
+                                                                                                       
+                                                                                                   4 2
+   Q( −7)                                       Y 2 = X 3 − 1275X + 64tnn − 21546 −
+             y22 = x32 + 42x22 − 7x2                                                     tnn       2 8
+
+Proof. Elliptic curves belonging to the same K in the previous table are isogenous to each
+other with complex multiplication in some order in K. They are not isomorphic since
+j-invariants are different. Thus, the Mordell-Weil rank of F (5) and F (6) are 18. Note that
+the choices of E1 and E2 are made so that the field of definition of isogeny is as small as
+possible.                                                                                 
+
+8.2. Class number 2 case
+It is also known that there are only finitely many negative discriminants D whose class
+number equals 2 (see for example [IR, pp. 358–361]). Table 1 at the end shows twenty-nine
+such D, together with j(τ1 ). Table 2 shows an example of E1 for each j(τ1 ), together with
+  (n)
+FE1 ,E2 where E2 is the Galois conjugate of E1 3. In these equations X and Y are rescaled
+so that the coefficients become simpler. However, t is the original parameter tn , and thus
+some equation contains a variable ε, which indicates the fundamental unit of the real
+quadratic field Q(j(τ1 )). By rescaling the elliptic parameter t suitably as in Lemma 8.3,
+we obtain elliptic K3 surfaces defined over Q.
+Theorem 8.7. The twenty-nine Inose surfaces shown in Table 2 are defined over Q and
+geometrically non-isomorphic. The elliptic fibrations F (5) and F (6) constructed from them
+have Mordell-Weil rank 18 over Q.
+Remark 8.8. As remarked earlier, the equation of the Inose surface may be given in the
+form                              p               1   p
+                     Y 2 = X 3 − 3 3 J1 J2 X + t + − 2 (1 − J1 )(1 − J2 ),
+                                           p      t
+                                           3
+where Ji = j(τi )/1728.
+                      p     Quite often j(τ1 )j(τ2 ) becomes a rational integer (see [Co2,
+§12]), and so does (1728 − j(τ1 ))(1728 − j(τ2 )). In that case the above equation gives
+a model of the Inose surface over Q. However, since that is not always the case, we
+uniformly started from (2.3). By doing so, we can also keep track of the field of definition
+     (n)
+of FE1 ,E2 (Q(tn )).
+
+
+
+  3Equations have also been given in [Ro].
+                                                                                                                                                                                         34
+
+
+
+
+       D               K        dK     f    quadratic form       HD                                                               j(τ1 )
+
+                       √                                           √                                                               √
+−15 = −3 × 5        Q( √−15)    −15    1     2x2 + xy + 2y 2    K(√5)                                           −191025/2 + 85995 5/2√
+−20 = −22 × 5        Q(√−5)     −20    1    2x2 + 2xy + 3y 2    K(√5)                                                632000 − 282880√5
+−24 = −23 × 3        Q(√−6)     −24    1        2x2 + 3y 2      K(√2)                                              2417472 − 1707264√2
+                                               2
+−32 = −25            Q(√ −2)     −8    2    3x + 2xy + 3y 2     K(√2)                                            26125000 − 18473000√2
+−35 = −5 × 7        Q( √−35)    −35    1     3x2 + xy + 3y 2    K(√5)                                          −58982400 + 26378240√5
+−36 = −22 × 32       Q(√ −1)     −4    3    2x2 + 2xy + 5y 2    K(√3)                                            76771008 − 44330496√3
+−40 = −23 × 5       Q( √−10)    −40    1        2x2 + 5y 2      K(√5)                                           212846400 − 95178240√5
+−48 = −24 × 3        Q(√ −3)     −3    4        3x2 + 4y 2      K(√ 3)                                        1417905000 − 818626500√ 3
+−51 = −3 × 17       Q(√−51)     −51    1    3x2 + 3xy + 5y 2    K(√17)                                     −2770550784 + 671956992√17
+−52 = −22 × 13      Q(√−13)     −52    1    2x2 + 2xy + 7y 2    K( √13)                                      3448440000 − 956448000√ 13
+−60 = −22 × 3 × 5   Q( √−15)    −15    2        3x2 + 5y 2      K(√5)                                 37018076625/2 − 16554983445 5/2√
+                                               2
+−64 = −26            Q(√−1)      −4    4    4x + 4xy + 5y 2     K(√2)                                      41113158120 − 29071392966√2
+−72 = −23 × 32       Q(√−2)      −8    3        2x2 + 9y 2      K(√6)                                     188837384000 + 77092288000√6
+                                               2
+−75 = −3 × 52        Q(√ −3)     −3    5    3x + 3xy + 7y 2     K(√5)                                  −327201914880 + 146329141248√5
+−88 = −23 × 11      Q(√−22)     −88    1       2x2 + 11y 2      K(√ 2)                                3147421320000 − 2225561184000√ 2
+                                               2
+−91 = −7 × 11       Q(√−91)     −91    1    5x + 3xy + 5y 2     K(√13)                             −5179536506880 + 1436544958464√13
+−99 = −32 × 11      Q( √−11)    −11    3     5x2 + xy + 5y 2    K( √33)                           −18808030478336 + 3274057859072 √33
+−100 = −22 × 52      Q(√−1)      −4    5    2x2 + 2xy + 13y 2   K(√5)                                22015749613248 − 9845745509376√5
+−112 = −24 × 7       Q(
+                      √ −7)      −7    4        4x2 + 7y 2      K(√7)                              137458661985000 − 51954490735875√7
+                                               2
+−115 = −5 × 23      Q(√−115)    −115   1    5x + 5xy + 7y 2     K(√ 5)                           −213932305612800 + 95673435586560  √ 5
+−123 = −3 × 41                  −123   1    3x2 + 3xy + 11y 2
+                                                                                                                                                                                         ABHINAV KUMAR AND MASATO KUWATA
+
+
+
+
+                    Q( √−123)                                   K(√41)                         −677073420288000 + 105741103104000√41
+−147 = −32 × 7       Q(√ −7)     −7    3    3x2 + 3xy + 13y 2   K(√21)                      −17424252776448000 + 3802283679744000√21
+                                                                                                                                           Table 1. Discriminants with class number 2.
+
+
+
+
+−148 = −22 × 37     Q(√ −37)    −148   1    2x2 + 2xy + 19y 2   K(√37)                        19830091900536000 − 3260047059360000√37
+−187 = −11 × 17     Q( √−187)   −187   1    7x2 + 3xy + 7y 2    K(√17)                  −2272668190894080000 + 551203000178688000√17
+−232 = −23 × 29     Q(√ −58)    −232   1       2x2 + 29y 2      K( √29)               302364978924945672000 − 56147767009798464000 √29
+                                              2
+−235 = −5 × 47      Q(√−235)    −235   1    5x + 5xy + 13y 2    K(√ 5)              −411588709724712960000 + 184068066743177379840  √ 5
+−267 = −3 × 89      Q(√−267)    −267   1    3x2 + 3xy + 23y 2   K(√89)           −9841545927039744000000 + 1043201781864732672000√89
+−403 = −13 × 31     Q(√−403)    −403   1   11x2 + 9xy + 11y 2   K(√31) −1226405694614665695989760000 + 340143739727246741938176000√13
+−427 = −7 × 61      Q( −427)    −427   1    7x2 + 7xy + 17y 2   K( 61) −7805727756261891959906304000 + 999421027517377348595712000 61
+                                                                                                                       (n)
+D                                             E1                                                                     FE1 ,E2
+
+                            √                  √
+−15    y 2 = x3 − 3(−3 + 2 √5)x2 − 24(−3 + 5)x                                              Y 2 = X 3 + 1485X − 1728ε2 tn − 29106 − 1728/(ε2 tn )
+−20    y 2 = x3 − 12x2 + 9( 5 +√   2)x                                                      Y 2 = X 3 − 1485X − 729ε3 tn − 45144 + 729/(ε3 tn )
+−24    y 2 = x3 − 12x2 + 6(3  + 2
+                           √ 2 2)x          √                                               Y 2 = X 3 − 459X − 27ε2 tn + 2484 − 27/(ε2 tn )
+−32    y 2 = x3 − 6(−3 + 2)x  √   + 9(3 + 2 √ 2)x                                           Y 2 = X 3 + 15525X − 5832ε3 tn − 1886598 + 5832/(ε3 tn )
+−35    y 2 = x3 + 84(−15 +√7 5)x − 98(115 √5 − 256)                                         Y 2 = X 3 + 423360X − √250047tn − 76366206 −√    250047/tn
+                                 2
+−36    y 2 = x3 + 12(−1
+                    √ + 3)x        + (3(3
+                                      √ + 2 3))x                                            Y 2 = X 3 − 6831X − 81 3tn /ε + 232848 + 81ε 3/tn
+         2    3               2
+−40    y = x − 6( √5 + 3)x + (55 5 +      √123)x                                            Y 2 = X 3 − 435X − tn + 3348 − 1/tn
+−48    y 2 = x3 − 6(3 3 − √ 7)x2 + 6(2 + 3)x √                                              Y 2 = X 3 − 9900X + 128tn + 190256 + 128/tn
+−51    y 2 = x3 + 12(−5 + 17)x√+ 14(−15 + 4 17)                                             Y 2 = X 3 − 384X + ε2 tn + 4606 + 1/(ε2 tn )
+                      2
+−52    y 2 = x3 − 12x√  + (18 + 5 13)x      √                                               Y 2 = X 3 − 1725X − ε3 tn − 27864 + 1/(ε3 tn )
+         2    3                                                                                                       4 n                   4 n
+−60    y = x − 6(5 √5 − 13)x2 − 6(7 + 3√ 5)x                                                Y 2 = X 3 − 17835X + 32ε
+                                                                                              2     3
+                                                                                                                   √ tn − 699622 + 32/(ε √ tn )
+−64    y 2 = x3 − (6(3 2 − √ 5))x2 + (3 + 2 2)x√                                            Y = X − 3243X − 16 2t − 320166 + 16 2/t
+−72                     + 6))x2 − 9(−5 + 2 6)x
+       y 2 = x3 − (42(2 √                                 √                                 Y 2 = X 3 − 115275X − 27εtn − 15043196 − 27/(εtn )
+−75    y 2 = x3 + 12(69 5 −√155)x − 2(−21760 √    + 9729 5)                                 Y 2 = X 3 − 10560X + 5tn − 460790 + 5/tn
+                                   2
+−88    y 2 = x3 − 132(−1 + 2)x  √ + 22(17 + 12 2)x          √                               Y 2 = X 3 − 52275X − tn − 4598748 − 1/tn
+         2    3
+−91    y = x + 28(−227 + 63 13)x     √  + 1078(−256 + 71 13) √                              Y 2 = X 3 + 3264X + tn − 137214 + 1/tn
+−99    y 2 = x3 + 108(−3751
+                        √     + 653 33)x + 7182(−19543 √     + 3402 33)                     Y 2 = X 3 + 71808X + 27t√n /ε + 2936374 + 27ε/t√n
+                                   2
+−100   y 2 = x3 − (12(3
+                    √     5 − 5))x   + (1/2)(105
+                                            √    +  47   5)x                                Y 2 = X 3 − 691185X − 5 5tn + 221205600 + 5 5/tn
+−112   y 2 = x3 + 6( 7 − 8)x2 + √ (127 + 48 7)x                √                            Y 2 = X 3 − 367275X + 64ε3 tn − 68796378 + 64/(ε3 tn )
+−115   y 2 = x3 + 92(−785 +√351 5)x + 1058(−9984 +      √  4465 5)                          Y 2 = X 3 − 10560X + tn + 1079298 + 1/tn
+−123   y 2 = x3 + 480(−8 + √ 41)x − 112(−951 + 160 41)           √                          Y 2 = X 3 − 110400X + ε2 tn + 14229502 + 1/(ε2 tn )
+−147   y 2 = x3 + 360(142 21 − 651)x  √  − 66(−935424 + 204125 21)                          Y 2 = X 3 − 1713600X − 7tn + 865686514 − 7/tn
+−148   y 2 = x3 − 84x2 + (882 +√145 37)x                     √                              Y 2 = X 3 − 4148925X − ε3 tn − 3252770136 + 1/(ε3 tn )
+−187   y 2 = x3 + 220(−51
+                       √    + 13 17)x + 242(−2765
+                                          √            + 676 17)                            Y 2 = X 3 + 326400X + tn + 73279998 + 1/tn
+−232   y 2 = x3 − 198( 29 −√5)x2 + (135 29 + 727)x                    √                     Y 2 = X 3 − 512317875X − tn − 4463313183252 − 1/tn
+−235   y 2 = x3 + 2068(3969 5 √  − 8875)x + 92778(−461312 +√    206305 5)                   Y 2 = X 3 − 4762560X + tn + 4231914498 + 1/tn
+−267   y 2 = x3 + 60(−625 + 53 89)x − 14(−232143        + 26500 89)                         Y 2 = X 3 − 168748800X + ε2 tn + 843767999998 + 1/(ε2 tn )
+                                                                                                                                                         Table 2. Q-curves over quadratic fields and associated K3 surfaces.
+
+
+
+
+                                             √                                       √
+−403   y 2 = x3 + 5580(−2809615 + 779247  √    13)x −  363258(−2941504000
+                                                                    √     + 815826423 13)   Y 2 = X 3 + 99470400X + tn + 2352019840002 + 1/tn
+−427   y 2 = x3 + 3080(−236674 + 30303 61)x − 2254(608549875 61 − 4752926464)               Y 2 = X 3 − 1119201600X + tn − 15615066773502 + 1/tn
+                                                                                                                                                                                                                               ELLIPTIC K3 SURFACES ASSOCIATED WITH THE PRODUCT OF TWO ELLIPTIC CURVES 35
+36                         ABHINAV KUMAR AND MASATO KUWATA
+
+                                         9. Examples
+
+In this section, we illustrate the techniques of this paper by working out the Mordell-Weil
+group explicitly for a few singular K3 surfaces defined over Q. We will use the set-up
+of the previous section, choosing a few small discriminants. The basic idea is to obtain
+a finite index sublattice of the Mordell-Weil lattice by combining the formulas in the
+generic case (when the elliptic curves are non-isogenous) with the extra sections coming
+from isogenies between the pair of CM curves. To obtain the full Mordell-Weil group, we
+saturate this sublattice. In practice, this will be most convenient for the surface F (6) , for
+which the Mordell-Weil lattice has sublattices induced from F (3) and its twist, enabling us
+to proceed in stages. One can also apply our methods to F (5) , which has the disadvantage
+that saturating the corresponding sublattice is computationally more expensive (but that
+may be offset by the fact that it is somewhat easier to calculate sections directly, owing
+to convenient specialization maps at t = 0 and ∞). For simplicity we restrict ourselves to
+F (6) here.
+
+Example 9.1. (cf. [Kw2, Example 4.5]) Let E1 and E2 be given by
+
+                                   E1 : y12 = x31 − x1 ,
+                                   E2 : y22 = x32 − 11x2 − 14.
+
+               (n)
+In this case FE1 ,E2 is given by
+
+                              (n)                              8
+                             FE1 ,E2 : Y 2 = X 3 − 33X + tnn + n .
+                                                              tn
+
+                                                                           (1)
+The matrix of the quadratic form associated with the Inose surface FE1 ,E2 is
+
+                                                  
+                                                4 0
+                                                     ,
+                                                0 4
+
+so we first identify two 2-isogenies from E1 to E2 . Then using the method described in
+§3.2, we obtain a basis of F (1) (Q(t1 )):
+                                                                         
+                  1 2                      1          2
+          P1 =       (s − 72s1,+ + 400),       s1,− (s1,+ − 108s1,+ + 2560 ,
+                 144 1,+                 1728
+                                                                            
+                    1 2                      i          2
+          P2 = −       (s + 72s1,+ + 400),       s1,− (s1,+ + 108s1,+ + 2560) .
+                   144 1,+                 1728
+
+where s1,+ = t1 + 8/t1 and s1,− = t1 − 8/t1 . Note that we have to extend the base field to
+k = Q(i) to define the isogenies.
+
+Next, we study F (3) in this example. The images of the above sections in F (3) (Q(t3 )) are
+of height 6. The splitting field of the 3-torsion points of E1 and E2 is
+                                                                        √
+              k(E1 [3], E2 [3]) = Q(i, ω, 121/4 ),    where ω = (−1 +    −3)/2.
+    ELLIPTIC K3 SURFACES ASSOCIATED WITH THE PRODUCT OF TWO ELLIPTIC CURVES 37
+         √                 √
+Let α = 3 = −i(2ω + 1), β = 2 and γ = 121/4 . The sections described in Theorem 4.8
+are given by
+
+                                                                      
+       P3 = −s3,+ − 9, 3iα(s3,+ + 4) ,    P4 = −s3,+ + 9, −3α(s3,+ − 4) ,
+                                                
+       P5 = −s3,+ + iα, γα(1 + i)/2(−s3,+ + 2iα) ,
+                                              
+       P6 = ω − s3,+ + 3ω(1 − i)γ/2 + 2α + 3i ,
+                                                                             
+               (ω − 1)iγ/2 + 3(ω − 1)(i + 1)/2 s3,+ + (7iα − 3)γ/2 + 3(i + 1)α ,
+       σ 2 (P6 ),   σ 2 (P5 ),        σ 2 (P4 ),    σ 2 (P3 ),
+
+
+where s3,+ = t3 + 2/t3 and s3,− = t3 − 2/t3 . The height paring matrix with respect to the
+above eight sections coincides with the one in Theorem (4.8). Knowing that there are
+sections of height smaller than 6 independent of the above sections, we search for sections
+and find the following:
+
+
+                        P7 = (3 − s3,+ , −3s3,− )                P8 = (−3 − s3,+ , −3is3,− )
+
+
+With respect to the basis P3 , P4 , P5 , P6 , σ 2 (P6 )σ 2 (P5 ), σ 2 (P4 ), σ 2 (P3 ), P7 , P8 the height
+matrix is
+
+                           4 0 0 −2 1 0 0 −2 0 0
+                                                   
+                         0 4 0 −2 1 0 −2 0 0 0 
+                         0 0 4 −2 1 −2 0 0 0 0 
+                                                   
+                         −2 −2 −2 4 −2 1 1 1 0 0 
+                                                   
+                         1 1 1 −2 4 −2 −2 −2 −1 −1 
+                                                   
+                                                    .
+                         0 0 −2 1 −2 4 0 0 0 0 
+                        
+                         0 −2 0 1 −2 0 4 0 0 2 
+                                                   
+                         −2 0 0 1 −2 0 0 4 2 0 
+                                                   
+                         0 0 0 0 −1 0 0 2 4 0 
+                           0 0 0 0 −1 0 2 0 0 4
+
+
+Note that the Mordell-Weil lattice F (3) (k̄(t3 )) is generated by sections of height 4 in this
+case.
+                                              (3)
+The rational elliptic surface t3 FE1 ,E2 is
+
+
+                                        (3)
+                                 t3
+                                      FE1 ,E2 : t3 Y 2 = X 3 − 33X + (t33 + 8/t33 )
+
+                                                     √                               √
+In this case Q(E1 [2]) = Q and Q(E2 [2]) = Q( 2), and ∆E2 /∆E1 = 29 /26 = ( 2)6 . So,
+                               (3)                  √
+the field of definition of t3 FE1 ,E2 (Q(t3 )) is Q( 2, ω). Following the recipe of Section 7.5,
+we can obtain a basis of the Mordell-Weil lattice. A small modification of the basis there
+38                           ABHINAV KUMAR AND MASATO KUWATA
+
+gives the following simpler basis:
+
+Q1 = − ω 2 (11t23 + 4ω 2 )/(2t3 ), −21β(2ω + 1)t3 /4
+                                                    
+
+Q2 = 2ω(4 − 3β)t3 − 3(1 − 2β) + 4ω 2 /t3 ,
+     3(11 − 8β)t3 − 12ω 2 (3 − 2β) + 6ω(4 − β)/t3 + 6β/t23
+                                                                          
+
+Q3 = (2t23 − 6t3 + 1)/t3 , −3(t33 − 4t23 + t3 − 1)/t23
+                                                       
+
+Q4 = 2t3 − 3(1 − 2β) + 4(4 − 3β)/t3 ,
+         − 3t3 + 6(1 − 2β) − 12(4 − 3β)/t3 + (96 − 66β)/t23
+                                                                      
+
+Q5 = − ωt3 + 4ω 2 (4 − 3β)/t3 , −3ω 2 (1 − 2β) + (96 − 66β)/t23
+                                                                              
+
+Q6 = 2t3 + 3(1 − 2β) + 4(4 − 3β)/t3 , 3t3 + 6(1 − 2β) + 12(4 − 3β)/t3 + (96 − 66β)/t23
+                                                                                                     
+
+Q7 = (2t23 + 6t3 + 1)/t3 , 3(t33 + 4t23 + t3 + 1)/t23
+                                                      
+
+Q8 = − t3 − 11/t3 , 21(1 + 2ω)/t23
+                                      
+
+
+
+
+which gives the height pairing matrix
+
+                              2 −1 0 0 0 0 0 0
+                                               
+                            −1 2 −1 0 0 0 0 0 
+                            0 −1 2 −1 0 0 0 0 
+                                               
+                            0 0 −1 2 −1 0 0 0 
+                                               
+                                                .
+                            0 0 0 −1 2 −1 0 −1 
+                           
+                            0 0 0 0 −1 2 −1 0 
+                                               
+                            0 0 0 0 0 −1 2 0 
+                              0 0 0 0 −1 0 0 2
+
+In order to find a basis for
+
+                               (6)
+                             FE1 ,E2 : Y 2 = X 3 − 33t46 X + (t12
+                                                               6 + 8),
+
+
+                                            (3)                 (3)                       (6)
+we have to fill the gap between L0 = FE1 ,E2 (k̄(t3 )) ⊕ t3 FE1 ,E2 (k̄(t3 )) and L = FE1 ,E2 (k̄(t6 )).
+The lattices differ by a power-of-two index. In principle, this is a routine calculation; we
+simply have to check whether non-trivial coset of L0 modulo 2L0 is twice an element of the
+Mordell-Weil group L, and this boils down to checking whether a suitable equation has a
+root in k̄(t6 ). However, there are 218 − 1 such cosets, and the number field involved is
+quite large, so we need to speed up the process by reducing the large number of possible
+candidate cosets.
+
+To do so, we apply the following useful procedure (a similar trick was used in [Sh6]).
+First reduce modulo a suitable prime p such that all the 6-torsion points are defined over
+Fp . In our case p = 193 will do, as x4 + 1 and x4 − 3 split into linear factors. Since
+arithmetic modulo p is cheap, we can do the search mentioned in the previous paragraph
+fairly quickly. This pins down the likely candidates, and now we may solve the equation
+back in the original number field k for each of them. We find new sections R1 , . . . , R5
+which satisfy the relations
+   ELLIPTIC K3 SURFACES ASSOCIATED WITH THE PRODUCT OF TWO ELLIPTIC CURVES 39
+
+
+
+
+        2R1 = P3 − P7 − Q3 − 2Q4 − 2Q5 − Q8
+        2R2 = −P3 − P5 − 2P6 − σ 2 (P3 ) + σ 2 (P4 ) + P7 − P8
+               + Q3 + 2Q4 + 2Q5 + 2Q6 + Q7 + Q8
+        2R3 = −P4 − P5 − σ 2 (P4 ) − σ 2 (P5 ) − P7 + P8 + Q3 + Q4 + Q5 + Q6 + Q7
+        2R4 = P3 − P4 − Q1 − Q2 − 2Q3 − 3Q4 − 4Q5 − 4Q6 − 2Q7 − 2Q8
+        2R5 = σ 2 (P3 ) − σ 2 (P4 ) + Q1 + 2Q2 + 2Q3 + 3Q4 + 3Q5 + Q6 + Q8 .
+                                                                       
+Recall that σ = σ6 is the map X(t6 ), Y (t6 ) 7→ X(t6 /ζ6 ), Y (t6 /ζ6 ) . The expressions for
+the x- and y-coordinates of these new sections may be found in the auxiliary files; apart
+from R1 , which is shown below, they are quite complicated.
+
+
+  R1 = −ωt26 + 3 + 6ωβ/t6 + 4ω 2 /t26 , −3ωt26 − 3ω 2 βt6 + 18ωβ/t6 + 24ω 2 /t26 + 6β/t36 ,
+                                                                                         
+
+
+The sections
+     P4 , P5 , P6 , σ 2 (P6 ), σ 2 (P5 ), P7 , P8 , Q1 , Q3 , Q4 , Q6 , Q7 , R1 , R2 , σ −1 (R2 ), R3 , R4 , R5 ,
+
+form a basis of the Mordell-Weil lattice F (6) (Q(t6 )). The height paring matrix with respect
+to this basis is
+
+
+      4  0 −2  1  0  0  0  0  0  0  0  0  0                                         1    −1   −1    −2     1
+                                                                                                            
+    0   4 −2  1 −2  0  0  0  0  0  0  0  0                                         0     0   −1     0     0
+    −2 −2  4 −2  1  0  0  0  0  0  0  0 −1                                        −2     1    1     0     0
+                                                                                                            
+    1   1 −2  4 −2 −1 −1  0  0  0  0  0  1                                         1    −2    1     0     0
+                                                                                                            
+    0 −2   1 −2  4  0  0  0  0  0  0  0  0                                         0     0   −1     0     0
+                                                                                                            
+    0   0  0 −1  0  4  0  0  0  0  0  0 −2                                         1     2   −2     0     1
+                                                                                                            
+    0   0  0 −1  0  0  4  0  0  0  0  0  0                                        −1    −1    1     0    −1 
+                                                                                                            
+    0   0  0  0  0  0  0  4  0  0  0  0  0                                         0     0    0    −1     0
+                                                                                                            
+    0   0  0  0  0  0  0  0  4 −2  0  0  0                                         0    −1    1     0    −1 
+                                                                                                            
+                                                                                                             .
+    0   0  0  0  0  0  0  0 −2  4  0  0 −1                                         1     0    0     0     1
+   
+    0   0  0  0  0  0  0  0  0  0  4 −2  2                                         1     0    0    −2    −1 
+                                                                                                            
+    0   0  0  0  0  0  0  0  0  0 −2  4  0                                         0    −1    1     0    −1 
+                                                                                                            
+    0   0 −1  1  0 −2  0  0  0 −1  2  0  4                                         0    −1    1     0    −2 
+                                                                                                            
+    1   0 −2  1  0  1 −1  0  0  1  1  0  0                                         4     0   −1    −1    −1 
+                                                                                                            
+    −1  0  1 −2  0  2 −1  0 −1  0  0 −1 −1                                         0     4   −2     1     1
+                                                                                                            
+    −1 −1  1  1 −1 −2  1  0  1  0  0  1  1                                        −1    −2    4     0    −1 
+                                                                                                            
+    −2  0  0  0  0  0  0 −1  0  0 −2  0  0                                        −1     1    0     4     0
+      1  0  0  0  0  1 −1  0 −1  1 −1 −1 −2                                        −1     1   −1     0     4
+
+
+Its determinant equals 576 = 26 32 , as expected. Note that this Mordell-Weil lattice is
+generated by sections
+                    √ of height
+                             √ 4. The
+                                    √ field   of definition for the Mordell-Weil lattice of
+  (6)           1/4                       1/4
+F is Q(i, ω, 12 , 2) = Q( −1, 2, 3 ).
+Example 9.2. Let E1 and E2 be given by
+                                       E1 : y12 = x31 − 21x21 + 112x1 ,
+                                       E2 : y22 = x32 + 42x22 − 7x2 .
+40                               ABHINAV KUMAR AND MASATO KUWATA
+                                               √
+They have complex multiplication by α = −7. The matrix of the quadratic form
+                                   (1)
+associated with the Inose surface FE1 ,E2 is
+                                              
+                                            4 2
+                                                 ,
+                                            2 8
+
+so there are 2- and 4-isogenies from E1 to E2 . The 2-isogeny ϕ : E1 → E2 is given by
+                                     2
+                                     x1 − 21x1 + 112 y1 (x21 − 112)
+                                                                    
+                      ϕ(x1 , y1 ) =                 ,
+                                            x1              x21
+Also, there is a 4-isogeny ψ : E1 → E2 given by ψ(x1 , y1 ) = (x2 , y2 ), where the x-coordinate
+is given by
+                               −(3 + α)x1 (2x1 − 21 − α)(x1 − 7 − α)2
+                          x2 =                                        .
+                                  8(x1 − 14 + 2α)2 (2x1 − 21 + α)
+For the 2-isogeny ϕ, the intersection (3.2) consists of the image of 2-torsion points and
+two effective divisors D± of degree 2 defined over Q(t2 ). Write Dϕ± = P1± + P2± , where
+P1± and P2± are points on the cubic curve defined over Q(t2 ). Let L± be the line passing
+through P1± and P2± . Then, each third point of intersection P3± is a Q(t2 ) rational point,
+given by
+                                                        21t22
+                                                               
+                         ±    ±           84
+                       (x1 , x2 ) = 2            ,−               .
+                                     t2 ± 4t2 + 8 t22 ± 4t2 + 8
+For the 4-isogeny ψ, the intersection (3.2) consists √              of the image of 2-torsion points and two
+effective divisors Dψ of degree 5 defined over Q( −7)(t2 ). Write Dψ± = Q±
+                              ±                                                                             ±
+                                                                                               1 + · · · + Q5 ,
+where Q±                   ±
+             1 , . . . , Q5 are points on the cubic curve defined over Q(t2 ). There exists conics
+C passing through these five points Q√±
+  ±                                                               ±
+                                                     1 , . . . , Q5 . Then, the sixth point of intersection
+Q±           ±
+  6 of C with the cubic curve is a Q( −7)(t2 )-rational point. The problem of finding
+the coordinates (x±              ±        ±
+                            1 , x2 ) of Q6 can be reduced to a linear algebra problem of determining
+the coefficients of C ± . Namely, let p(x1 ) be the quintic equation             √      satisfied by the x1 -
+coordinates of the five points Q±           i , with coefficients     in K  = Q(   −7)(t 2 ). We work in the
+field L = K[x1 ]/(p(x1 )). Then, we compute x2 in terms of x1 , which follows from the
+quartic equation ψy (x1 ) = ±t2 , and it is an element of L. So, now if we make the 5 by 6
+matrix whose columns are the coordinates of 1, x1 , x2 , x1 x2 , x21 , x22 in terms of the basis
+(1, x1 , x21 , x31 , x41 ) of L as a K-vector space, we just need to take the kernel of this matrix
+(which has coefficients in K). The 1-dimensional kernel gives us the coefficients of the
+conic. From there, by taking resultants and factoring it, we obtain the sixth point. It is
+given by (x±             ±        ±     ±   ±    ±
+                  1 , x2 ) = (x1,n /d , x2,n /d ), where
+
+     x±                            4
+      1,n = (±2t + 5 + α) (21 − α)t ± 2(91 − 15α)t
+                                                   3
+
+
+              + 2(259 − 11α)t2 ± 2(63 + 29α)t − 7 + 3α ,
+                                                      
+
+     x±                                           2
+      2,n = −3(±7t − α)(±2t − 5 − α)(±2t + 5 + α)t ,
+
+      d± = 2 ±2t5 + (23 − α)t4 ± (117 − 19α)t3 + (109 + 29α)t2 ∓ 2(1 − 9α)t − 5 + α .
+                                                                                   
+
+       √                                                     (n)
+Over Q( −7), the Weierstrass equation of the elliptic curve FE1 ,E2 is given by
+
+                           (n)                                                   64
+                         FE1 ,E2 : Y 2 = X 3 − 1275X + 64 tnn − 21546 −              .
+                                                                                 tnn
+   ELLIPTIC K3 SURFACES ASSOCIATED WITH THE PRODUCT OF TWO ELLIPTIC CURVES 41
+
+Using the construction of Proposition 3.2, the points obtained above yield points in
+F (1) (k̄(t1 ))
+                                                                               
+                  1 2                      4          
+                                                           2
+      (X, Y ) = −    4s1,− − 252s1,− + 1339 ,      αs1,+ 2s1,− − 189s1,− + 3977    ,
+                  63                          1323
+and (X, Y ) = (X0 /d2 , Y0 /d3 ), where
+      1 − α 4                        1 + α 4
+X0 =            s41,− + 16(33 − 4α)               s31,− + 36(1783 + 324α)s21,−
+         2                                2
+                                   1 + α 4                              1 + α 6
+       + 16(100923 + 3701α)                  s1,− + 64(12531 + 3413α)               ,
+                                    2                                      2
+               1 − α 6 5                        1 + α 2
+                                                            4      5
+                                                                                       1 + α 6
+Y0 = s1,+ −              s1,− − 96(33 − 4α)                s1,− + 2 (2531 + 1260α)               s31,−
+                   2                                 2                                    2
+                                  1 + α                                      1 + α 2
+       − 27 (18898 − 98053α)               s21,− − 210 (1735197 − 165636α)                s1,−
+                                      2                                          2
+                                   1 + α 6
+       −214 (58959 − 85160α)
+                                      2
+                                       
+ d = 6 (11 + 4α)s1,− − 4(1 − 11α) .
+
+Here we have used s1,+ = t1 + 1/t1 and s1,− = t1 − 1/t1 to condense the above formulae.
+These points form a basis of F (1) (k̄(t1 )), and the height matrix is given by
+                                                    
+                                               2 −1
+                                                       .
+                                            −1 4
+One can proceed to compute theMordell-Weil group of F (6)
+                                                         ; this is done in the auxiliary
+                                   √   √  q     √
+files. The field of definition is Q −1, 3, (3 + 21)/2 .
+
+Example 9.3. Discriminant ∆ = −15.
+The class number of ∆ = −15 is 2, and the non trivial quadratic form is represented by
+                                
+                              4 1
+                                   , or 2x2 + xy + 2y 2 .
+                              1 4
+                                   √                          √
+The Hilbert√class field of K = Q( √−15) equals H = K( 5). The value of j(τ ) for
+τ1 = (−1 + −15)/4 and τ2 = (1 + −15)/2 are given by
+                                             √
+                              −191025 + 85995 5
+                     j(τ1 ) =                    = η̄ 5 (3π5 π̄11 )3 ,
+                                      2      √
+                              −191025 − 85995 5
+                     j(τ2 ) =                    = −η 5 (3π5 π11 )3 ,
+                                      2
+               √                                                         √         √
+where η = (1√+ 5)/2 (the Golden ratio) is the fundamental unit of Q( 5), π5 = 5,
+π11 = (1 +√3 5)/2√is the generator of a prime ideal above 11, and ¯ indicates the
+conjugate 5 7→ − 5. We also have
+                                  j(τ1 ) − 1728 = −33 (η̄ 3 7π11 )2 ,
+                                  j(τ2 ) − 1728 = −33 (η 3 7π̄11 )2 .
+
+                                                                     √ i ) − 1728
+We remark that in this case j(τi ) are not perfect cubes in H. While j(τ      √ are√not
+perfect squares over K, they are perfect squares in H as H contains −3 = −15/ 5.
+42                          ABHINAV KUMAR AND MASATO KUWATA
+
+One of the elliptic curves whose j-invariant equals j(τ1 ) and j(τ2 ) are
+                                              √              √ 
+                       E1 : y 2 = x3 − 3 3 − 2 5 x2 + 24 3 − 5 x,
+                                              √              √ 
+                       E2 : y 2 = x3 − 3 3 + 2 5 x2 + 24 3 + 5 x.
+
+                                                            √
+There are two 2-isogenies between them, one defined over Q( 5) and the other defined over
+H. So, E1 and E2 are so-called Q-curves. Over H, the Inose surface can be transformed
+to
+                        (1)                                     64
+                      FE1 ,E2 : Y 2 = X 3 + 165X + 64t1 + 1078 + .
+                                                                t1
+                           (6)                                               √
+The Mordell-Weil lattice FE1 ,E2 (Q(t1 )) has rank 18, and is defined over H( 3 η, E1 [6], E2 [6]).
+                                                                √                         √
+The auxiliary files contain an explicit basis. Note that H( 3 η, E1 [6], E2 [6]) = H( 3 η) =
+  √    √
+Q( −3, 3 η).
+Example 9.4. Discriminant ∆ = −20.
+The class number of ∆ = −20 is 2, and the non trivial quadratic form is represented by
+                                 
+                               4 2
+                                    , or 2x2 + 2xy + 3y 2 .
+                               2 6
+                                   √                    √
+The Hilbert class field of K = Q( −5) equals H = √ K(      5). Using the same
+                                                                            √notation as
+in Example 9.3, the value of j(τ ) for τ1 = (−1 + −15)/4 and τ2 = (1 + −15)/2 are
+written as
+                                               √
+                       j(τ1 ) = 632000 − 282880 5 = (η̄ 3 22 π5 π̄11 )3 ,
+                                               √
+                       j(τ2 ) = 632000 + 282880 5 = (η 3 22 π̄5 π11 )3 ,
+and we also have
+                                 j(τ1 ) − 1728 = η 3 (24 π̄11 π19 )2 ,
+                                 j(τ2 ) − 1728 = η̄ 3 (24 π11 π̄19 )2 ,
+                 √
+where π19 = 1+2 5. As we can see in this example, j(τi ) are perfect cubes, but j(τi )−1728
+are not perfect squares.
+One of the elliptic curves whose j-invariant equals j(τ1 ) is given by
+                                                       √ 
+                            E1 : y 2 = x3 − 4x2 + 2 + 5 x.
+This elliptic curve is 2- and 3-isogenous to its Galois conjugate
+                                                         √ 
+                              E2 : y 2 = x3 − 4x2 + 2 − 5 x,
+                       √ √                     √ √       √
+not√over the field Q( 5, −1)  √ √ but   over Q(  5, −1,    2). In fact, no twist of E1 over
+Q( 5) is isogenous over Q( 5, −1) to the corresponding twist of E2 . So, E1 is not
+                                                                    (1)
+a Q-curve in a narrow sense. Nevertheless, the Inose surface FE1 ,E2 is isomorphic over
+   √
+Q( 5) to
+                                          55         1672     1
+                            Y 2 = X 3 − X − t1 −           + .
+                                           3           27     t1
+Considering
+   √ √        the fact that the E1 and E2 are at the same time 2- and 3-isogenous over
+              √
+Q( 5, −1, 2), we expect that√the√splitting   √ field of 6-torsion points of E1 and E2 is a
+relatively small extension of Q( 5, −1, 2). Indeed, on the modular curve X(6) we
+    ELLIPTIC K3 SURFACES ASSOCIATED WITH THE PRODUCT OF TWO ELLIPTIC CURVES 43
+                                                                                √
+discussed in §4, the elliptic curves corresponding to the point (η − 1)(1 + −1), (1 +
+ √                √      √                             √       √
+2 −1)η − (1 + 3 −1) η and its conjugate under 5 7→ − 5 are given by
+                              √       √ √                             √ 
+                 E10 : 3 2 + 3 −1 + 5 −1 y 2 = x3 − 4x2 + 2 + 5 x,
+                              √       √ √                             √ 
+                 E20 : 3 2 + 3 −1 − 5 −1 y 2 = x3 − 4x2 + 2 − 5 x.
+                                                                          √    √ √ √
+So, we see that all the 6-torsion points of E1 and E2 are defined over Q( −1, 2, 3, η),
+                                  (6)
+and the Mordell-Weil lattice FE1 ,E2 (Q(t6 )) is defined over this field. An explicit basis is
+given in the computer files.
+
+                                           References
+[AS-D] M. Artin and H. P. F. Swinnerton-Dyer, The Shafarevich-Tate conjecture for pencils of elliptic
+       curves on K3 surfaces, Invent. Math. 20 (1973), 249–266.
+[BT]   F. A. Bogomolov, and Y. Tschinkel, Density of rational points on elliptic K3 surfaces, Asian J.
+       Math. 4 (2000), no. 2, 351–368, arXiv:math/9902092.
+[CMT] J. Chahal, M. Meijer, and J. Top, Sections on certain j = 0 elliptic surfaces, Comment. Math.
+       Univ. St. Paul. 49 (2000), 79–89, arXiv:math/9911274.
+[Ch]   F. Charles, On the Picard number of K3 surfaces over number fields, Algebra Number Theory 8
+       (2014), no. 1, 1–17, arXiv:1111.4117.
+[Co1] D. A. Cox, Mordell-Weil groups of ellipitc curves over C(t) with pg = 0 or 1, Duke Math. J. 49
+       (1982), 677–689.
+[Co2] D. A. Cox, Primes of the form x2 + ny 2 . Fermat, class field theory and complex multiplication,
+       John Wiley & Sons, Inc., New York, 1989.
+[E]    N. D. Elkies, Elliptic curves of high rank over Q and Q(t), in preparation.
+[ES]   N. D. Elkies and M. Schütt, Modular forms and K3 surfaces, Adv. Math. 240 (2013), 106–131,
+       arXiv:0809.0830.
+[G]    B. H. Gross, Arithmetic on elliptic curves with complex multiplication, Lecture Notes in Mathe-
+       matics 776, Springer, Berlin, 1980, With an appendix by B. Mazur.
+[GS]   B. Gross, D. Zagier, On singular moduli, J. Reine Angew. Math. 355 (1985), 191–220.
+[I1]   H. Inose, On certain Kummer surfaces which can be realized as non-singular quartic surfaces in
+       P 3 , J. Fac. Sci. Univ. Tokyo Sect. IA Math. 23 (1976), no. 3, 545–560.
+[I2]   H. Inose, Defining equations of singular K3 surfaces and a notion of isogeny, Proceedings of
+       the International Symposium on Algebraic Geometry (Kyoto Univ., Kyoto, 1977) (Tokyo),
+       Kinokuniya Book Store, 1978, 495–502.
+[IR]   K. Ireland and M. Rosen, A Classical Introduction to Modern Number Theory, Springer-Verlag,
+       New York, 1993.
+[Kl1] R. Kloosterman, Elliptic K3 surfaces with geometric Mordell-Weil rank 15 , Canad. Math. Bull.
+       50 (2007), 215–226, arXiv:math/0502439.
+[Kl2] R. Kloosterman, Explicit sections on Kuwata’s elliptic surfaces, Comment. Math. Univ. St. Pauli
+       54 (2005), no. 1, 69–86, arXiv:math/0502017.
+[Km] A. Kumar, K3 surfaces associated with curves of genus two, Int. Math. Res. Not. IMRN 2008,
+       no. 6, Art. ID rnm165, 26 pp, arXiv:math/0701669.
+[KK] A. Kumar and M. Kuwata, Inose’s construction and elliptic K3 surfaces with Mordell-Weil rank
+       15 revisited , Contemp. Math. (to appear), arXiv:1604.00738.
+[KS]   M. Kuwata and T. Shioda, Elliptic parameters and defining equations for elliptic fibrations on
+       a Kummer surface, Algebraic geometry in East Asia—Hanoi 2005, 177–215, Adv. Stud. Pure
+       Math. 50, Math. Soc. Japan, Tokyo, 2008, arXiv:math/0609473.
+[Kw1] M. Kuwata, Elliptic fibrations on quartic K3 surfaces with large Picard numbers, Pacific J. Math.
+       171 (1995), no. 1, 231–243.
+[Kw2] M. Kuwata, Elliptic K3 surfaces with given Mordell-Weil rank, Comment. Math. Univ. St. Paul.
+       49 (2000), 91–100.
+[KwW] M. Kuwata and L. Wang, Topology of rational points on isotrivial elliptic surfaces, Internat.
+       Math. Res. Notices 1993, no. 4, 113–123.
+[Ma]   Manin, Yu. I., Cubic forms. Algebra, geometry, arithmetic. Translated from the Russian by M.
+       Hazewinkel. Second edition. North-Holland Mathematical Library, 4. North-Holland Publishing
+       Co., Amsterdam, 1986.
+44                            ABHINAV KUMAR AND MASATO KUWATA
+
+[Me]   Jean-François Mestre, Rang de courbes elliptiques d’invariant donné, C. R. Acad. Sci. Paris Sér.
+       I Math. 314 (1992), no. 12, 919–922.
+[Mo]   D. R. Morrison, On K3 surfaces with large Picard number , Invent. Math. 75 (1984) no. 1, 105–121.
+[O]    K. Oguiso, On Jacobian fibrations on the Kummer surface of the product of non-isogenous elliptic
+       curves, J. Math. Soc. Japan 41 (1989), 651–680.
+[OS]   K. Oguiso and T. Shioda, The Mordell-Weil lattice of a rational elliptic surface, Comment. Math.
+       Univ. St. Paul. 40 (1991), 83–99.
+[P-SS] I. Piatetski-Shapiro and I. R. Shafarevich, A Torelli theorem for algebraic surfaces of type K3 ,
+       Math. USSR Izv. 5 (1971), 547–587.
+[PTvL] B. Poonen, D. Testa and R. van Luijk, Computing Néron-Severi groups and cycle class groups,
+       Compos. Math. 151 (2015) no. 4, 713–734, arXiv:1210.3720.
+[Ro]   G. Robert, Nombres de Hurwitz et unités elliptiques. Un critère de régularité pour les extensions
+       abéliennes d’un corps quadratique imaginaire, Annales scientifiques de l’École Normale Supérieure
+       11 no. 3. Société mathématique de France, 1978.
+[RS1] K. Rubin and A. Silverberg, Families of elliptic curves with constant mod p representations.
+       Elliptic curves, modular forms, & Fermat’s last theorem, 148–161, Ser. Number Theory, I, Int.
+       Press, Cambridge, MA, 1995.
+[RS2] K. Rubin and A. Silverberg, Mod 6 representations of elliptic curves, Automorphic forms,
+       automorphic representations, and arithmetic (Fort Worth, TX, 1996), 213–220, Proc. Sympos.
+       Pure Math., 66, Part 1, Amer. Math. Soc., Providence, RI, 1999.
+[Sch]  M. Schütt, Fields of definition of singular K3 surfaces, Communications in Number Theory and
+       Physics 1 no. 2 (2007), 307-321, arXiv:math/0612396.
+[Se]   B. Segre, On arithmetical properties of quartic surfaces, Proc. London Math. Soc. (2) 49, (1947),
+       353–395.
+[Sh1] T. Shioda, On rational points of the generic elliptic curve with level N structure over the field of
+       modular functions of level N , J. Math. Soc. Japan 25 (1973), 1–167.
+[Sh2] T. Shioda, On the Mordell-Weil lattices, Comment. Math. Univ. St. Pauli 39 (1990), 211–240.
+[Sh3] T. Shioda, A note on K3 surfaces and sphere packings. Proc. Japan Acad. 76, Ser. A (2000),
+       51–82.
+[Sh4] T. Shioda, Kummer sandwich theorem of certain elliptic K3 surfaces, Proc. Japan Acad. 82, Ser.
+       A (2006), 137–140.
+[Sh5] T. Shioda, Correspondence of elliptic curves and Mordell-Weil lattices of certain elliptic K3
+       surfaces , in Algebraic Cycles and Motives, vol. 2, 319–339, Cambridge Univ. Press (2007).
+[Sh6] T. Shioda, The Mordell-Weil lattice of y 2 = x3 + t5 − 1/t5 − 11, Comment. Math. Univ. St. Paul.
+       56 (2007), 45–70.
+[Sh7] T. Shioda, K3 surfaces and sphere packings, J. Math. Soc. Japan 60 (2008), 1083–1105.
+[SI]   T. Shioda and H. Inose, On singular K3 surfaces, Complex analysis and algebraic geometry,
+       Iwanami Shoten, Tokyo, 1977, 119–136.
+[SM]   T. Shioda and N. Mitani, Singular abelian surfaces and binary quadratic forms, in “Classification
+       of Algebraic Varieties and Compact Complex Manifolds,” Lecture Notes in Mathematics 412,
+       Springer, Berlin, 1974, 259–287.
+[TdZ] J. Top and F. de Zeeuw, Explicit elliptic K3 surfaces with rank 15, Rocky Mountain J. of Math.
+       39 (2009), 1689–1698.
+
+Department of Mathematics, Massachusetts Institute of Technology, Cambridge, MA
+02139, USA
+Current address: Department of Mathematics, Stony Brook University, Stony Brook, NY 11794,
+USA
+E-mail address: thenav@gmail.com
+
+Faculty of Economics, Chuo University, 742-1 Higashinakano, Hachioji-shi, Tokyo 192-
+0393, Japan
+E-mail address: kuwata@tamacc.chuo-u.ac.jp
+

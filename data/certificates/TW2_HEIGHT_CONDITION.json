@@ -1,6 +1,6 @@
 {
   "checker": "checkers/check_TW2_height_condition.py",
-  "checker_sha256": "789d7befe4ff5f39aaaf968da813818a1be7aa56254d2d29f3d94c42fb396f9a",
+  "checker_sha256": "662ceb28462b414497149176a1f020b4c1088775893427c2f0badfd9023f0792",
   "work_package": "WP-TW2 step 0 (opened by D20', 2026-10-07)",
   "tier": "B (exact lattice arithmetic; Shioda-Tate and height formula from Schuett-Shioda, fetched and read; M_n from Dolgachev, pinned)",
   "result": {
@@ -45,6 +45,15 @@
     "e8_root_fibres_in_explicit_M7_model_by_locus": {
       "-1": 2,
       "1/27": 2
+    },
+    "step1_literature_cross_check": {
+      "statement": "MWL(F(1)) = Hom(E1, E2)<2>: the section attached to an isogeny phi has height 2 deg(phi)",
+      "sources_read": [
+        "Kumar-Kuwata arXiv:1409.2931 Prop. 3.1 (citing Shioda), hypothesis E1 not isomorphic to E2; Prop. 3.2 explicit construction, height 2d",
+        "Shioda, MPIM 2007-137 / JMSJ 60 (2008): norm 2 deg(phi) on the Inose surface, deg(phi) on the Kummer surface"
+      ],
+      "consequence": "a 7-isogeny gives h(P) = 14 = 2n, hence P.O = 5 -- the same number as the lattice derivation above, from an independent route",
+      "caveat": "Prop. 3.1 assumes E1 not isomorphic to E2; the A2 point (j = 0, E1 = E2) is outside its hypothesis; the class-number-1 CM loci are the natural place for an explicit construction (WP-TW2 step 2, not executed)"
     }
   },
   "not_claimed": [
