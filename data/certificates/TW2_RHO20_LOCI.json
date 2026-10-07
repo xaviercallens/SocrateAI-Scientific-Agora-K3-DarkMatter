@@ -1,0 +1,110 @@
+{
+  "checker": "checkers/check_TW2_rho20_loci.py",
+  "checker_sha256": "094177fbf4c657e091eb184a67512c5f802ad87c5a97683eb8bf63aa8ff94dcd",
+  "work_package": "WP-TW2 step 2a (D23', 2026-10-07)",
+  "tier": "B (exact lattice arithmetic from certificates; Shioda-Tate, eq. 22, height formula and torsion lemma from pinned, read sources)",
+  "result": {
+    "d(0)_from_T1_transcription": "(l1 - l2)**2*(l1*l2 - l1 + 1)**2*(l1*l2 - l2 + 1)**2",
+    "generic_member": {
+      "rho": 19,
+      "mordell_weil_rank": 1,
+      "height": "14",
+      "P_dot_O": 5,
+      "source": "check_TW2_height_condition.py (step 0)"
+    },
+    "loci": {
+      "-1": {
+        "locus": "-1",
+        "T_abc": [
+          1,
+          1,
+          2
+        ],
+        "abs_disc_T": 7,
+        "extra_root_order": 2,
+        "simple_roots": 2,
+        "rho": 20,
+        "resolution": {
+          "root_rank": 1,
+          "root_lattice": "A1",
+          "trivial_rank": 19,
+          "mordell_weil_rank": 1,
+          "abs_disc_trivial": 2,
+          "height": "7/2",
+          "P_dot_O_solutions": [
+            {
+              "contr": "1/2",
+              "P_dot_O": 0
+            }
+          ],
+          "consistent": true,
+          "torsion_free_by_height": true
+        },
+        "rejected_readings": [],
+        "D": -7
+      },
+      "1/27": {
+        "locus": "1/27",
+        "T_abc": [
+          1,
+          0,
+          7
+        ],
+        "abs_disc_T": 28,
+        "extra_root_order": 2,
+        "simple_roots": 2,
+        "rho": 20,
+        "resolution": {
+          "root_rank": 1,
+          "root_lattice": "A1",
+          "trivial_rank": 19,
+          "mordell_weil_rank": 1,
+          "abs_disc_trivial": 2,
+          "height": "14",
+          "P_dot_O_solutions": [
+            {
+              "contr": "0",
+              "P_dot_O": 5
+            }
+          ],
+          "consistent": true,
+          "torsion_free_by_height": true
+        },
+        "rejected_readings": [],
+        "D": -28
+      },
+      "infinity": {
+        "locus": "infinity",
+        "T_abc": [
+          1,
+          1,
+          1
+        ],
+        "abs_disc_T": 3,
+        "extra_root_order": 4,
+        "simple_roots": 0,
+        "rho": 20,
+        "resolution": {
+          "root_rank": 2,
+          "root_lattice": "A2",
+          "trivial_rank": 20,
+          "mordell_weil_rank": 0,
+          "abs_disc_trivial": 3,
+          "consistent": true,
+          "note": "no section: NS = U + E8^2 + R, |disc NS| must equal |disc T|"
+        },
+        "rejected_readings": [],
+        "D": -3
+      }
+    }
+  },
+  "not_claimed": [
+    "any Kodaira fibre type (ledger items 3, 10): only discriminant-root orders and root-lattice rank/determinant are used",
+    "that a section has been exhibited: the heights and P.O values are forced by the lattices, the sections are not written down (step 2b)",
+    "any statement at rho = 19 members beyond step 0 (generic_member block is a pointer)",
+    "anything physical (ledger item 4)"
+  ],
+  "generated_by": "Claude (Fable 5.1), Stream 2, 2026-10-07",
+  "verified_by": "checkers/test_TW2_rho20_loci_controls.py",
+  "reviewed_by": "N"
+}

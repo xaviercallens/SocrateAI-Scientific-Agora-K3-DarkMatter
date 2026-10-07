@@ -66,3 +66,34 @@ attempt at the full construction — and it is the first place the route can hon
 
 *Generated-by: Claude (Fable 5.1), Stream 2 | Verified-by: the certificate and its 9 controls; the pinned,
 read sources named per step (lines cited in `docs/literature/MANIFEST.md`) | Reviewed-by: N*
+
+---
+
+## 5. Step 2a (D23′, same day) — the three ρ = 20 loci, exactly (`checkers/check_TW2_rho20_loci.py`, `TW2_RHO20_LOCI.json`)
+
+At every ρ = 20 locus the Shioda–Inose partner has E₁ ≅ E₂ (the T forms (1,1,2), (1,0,7), (1,1,1) are the norm forms
+of End(E) for the orders of discriminant −7, −28, −3), so Prop. 3.1 of Kumar–Kuwata does not apply and the extra
+discriminant root recorded in `INOSE_FIBRATION_MULTIPLICITIES.json` changes the bookkeeping. With the trivial lattice
+U ⊕ E8² ⊕ R, Shioda–Tate, |disc NS| = |disc T| = |disc T_triv|·disc(MWL) (eq. 22, torsion-free by Shioda's Lemma 6.2
+for n = 1) and the height formula with Table-4 corrections, each locus resolves **uniquely**:
+
+| locus | D | |disc T| | extra root (order → root lattice) | MW rank | height | P̄·Ō |
+|---|---|---|---|---|---|---|
+| z = −1 | −7 | 7 | 2 → A₁ (pulled-back simple root of d(u) at u = 0) | 1 | **7/2** | **0**, meeting the non-identity component (contr ½) |
+| z = 1/27 | −28 | 28 | 2 → A₁ | 1 | **14** | **5** (contr 0) |
+| z = ∞ (AM-8 selected) | −3 | 3 | 4 → A₂ (rank 2 forced by ρ = 20) | **0** | — | **no section**: NS = U ⊕ E8² ⊕ A₂ |
+
+Controls: swapping the two T forms swaps the answers (data-driven, not typed); ρ = 19 at a ρ = 20 locus is refused;
+|disc T| = 3 with an A₁ root is refused (no admissible P̄·Ō); an order-4 root with |disc T| ≠ 3 is refused; reading
+the order-2 root as rank 0 changes the Mordell–Weil rank to 2; three order-10 roots are refused.
+
+**What this does to the TW2 constraint.** "P̄·Ō = 5" is the requirement at every ρ = 19 member and at z = 1/27. It is
+**not** the requirement at the selected point: the Weierstrass model of the AM-8 K3 (z = ∞, T = A₂) has **no**
+Mordell–Weil section at all — its extra Picard classes are the two components of an A₂ root fibre over an order-4
+discriminant root. A twisted-Weierstrass construction aimed at the selected K3 must therefore produce, on that
+fibre, a discriminant root of order 4 carrying an A₂ root lattice, in addition to the two order-10 roots. At z = −1
+the generator instead has height 7/2 and meets the zero section nowhere (P̄·Ō = 0), passing through the non-identity
+component of the A₁ fibre. Lattice and discriminant-order language only; no fibre type is named (items 3, 10).
+
+**Step 2b stays deferred:** the explicit section at z = 1/27 (E ≅ E with End of discriminant −28, φ = √−7 of degree 7)
+is the natural target; it needs Kuwata [Kw2, Th. 4.1] or a direct Vélu + Kumar–Kuwata (3.1)–(3.3) computation.
