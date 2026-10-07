@@ -204,7 +204,18 @@ def characterize_infinity(riemann):
     }
 
 
+REFUSAL_2026_10_07 = (
+    "REFUSED (2026-10-07): this checker's degree formula '(sum of exponents)/order' is a Fuchs-relation "
+    "tautology (it returns 1 for every 4-point order-2 Fuchsian operator) and cannot verify anything about "
+    "this family; it also omitted the MUM point z = 0. Superseded by checkers/check_TW0_hodge_degree_orbifold.py "
+    "and briefs/WP_TW0_HODGE_DEGREE_REEXAMINATION_2026_10_07.md. Exit 2; nothing computed."
+)
+
+
 def main():
+    if "--i-know-this-is-retracted" not in sys.argv:
+        print(REFUSAL_2026_10_07)
+        return 2
     try:
         print("\n" + "=" * 78)
         print("WP-TW0: HODGE BUNDLE DEGREE VERIFICATION FOR COOPER_S7")

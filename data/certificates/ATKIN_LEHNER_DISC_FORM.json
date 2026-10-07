@@ -1,11 +1,11 @@
 {
  "certificate": "ATKIN_LEHNER_DISC_FORM",
  "checker": "check_atkin_lehner_vs_disc_form.py",
- "code_identity": "40456e6",
+ "code_identity": "2cab124",
  "date": "2026-09-21",
  "families": {
   "cooper_s10": {
-   "advisory": true,
+   "advisory": false,
    "agrees_with_CM_POINTS_RHO20_certificate": true,
    "candidate": "cooper_s10",
    "comparison_working_dps": 150,
@@ -446,12 +446,10 @@
      "z_locus": "infinity"
     }
    ],
-   "flags": [
-    "LATTICE_CERT_DRAFT"
-   ],
+   "flags": [],
    "group": "Gamma_0(10)*",
-   "lattice_cert": "C2_cooper_s10_v4_DRAFT.json",
-   "lattice_cert_status": "DRAFT",
+   "lattice_cert": "C2_cooper_s10_v5.json",
+   "lattice_cert_status": "LIVE",
    "loci_fixed_by": {
     "w10": [
      "1/16"
@@ -1085,18 +1083,18 @@
  "inputs": {
   "note": "docs/literature/MANIFEST.md is deliberately NOT pinned here: no number in this certificate is computed from it, and it was modified and uncommitted in the working tree at emit time. code_identity is the HEAD at emit, which predates this checker; the checker and its controls are identified by the self-hashes below.",
   "sha256": {
-   "checkers/check_CM_points_rho20.py": "66ef850b7b4b44cae7fe6dc9c5b6fefc9e21ca18402919daec4e05a48636a8e2",
-   "checkers/check_T3_level_consistency.py": "62db82b635a863170199b7fba2ba39462ecd123593a6f7f38ff044ce3cffd296",
+   "checkers/check_CM_points_rho20.py": "5438718c391f5573fd0877e0074488a4711a4e4d8e83c758f5f666060aefa660",
+   "checkers/check_T3_level_consistency.py": "8381f56545a3a230c1370b11176723d8dc5b907a6623a3383e87fc4d047aa416",
    "checkers/check_U1_lattice.py": "d75bbb7719f37d85ef19df3f99fd635992ae8dc20ebb6c66044518e08de3583f",
    "checkers/check_atkin_lehner_vs_disc_form.py": "9d014072fcf705cbf294eed0737a08767891986790faeda928f1189caaf3e889",
-   "checkers/check_s10_hauptmodul_gamma010star.py": "3f8d034460d7d5b310cca0448bda9e8ebf44f8b50164a68651dc88e411fcc995",
+   "checkers/check_s10_hauptmodul_gamma010star.py": "0c547d38757e6ac0ac461ae9bd17c935e3fc7f0a71a6acb515d507dcc7dbe436",
    "checkers/test_atkin_lehner_vs_disc_form_controls.py": "2d67af5a883387953127b415f64ae9e23e7d745a250cf881b373627d17d9a26b",
    "data/certificates/C1_L3_cooper_s10.json": "503cfe63b7d20d78c53344ee091e4b39517bd2966181c1ff38a45e21f44721e8",
    "data/certificates/C1_L3_cooper_s7.json": "c9d82f76bef8eee279ce91540a2b7cfddd98d79965162e8598b29aee458edbfc",
-   "data/certificates/C2_cooper_s10_v4_DRAFT.json": "3558343b84751a0682cadc985a76272b50d7bc98b0f2d0f44a9c46edf9ae57ac",
+   "data/certificates/C2_cooper_s10_v5.json": "bc1f1ebc76dfedd27a9a9e0ae5d66ce3b5f2a2852105885ee329fb93db2f1e4e",
    "data/certificates/C2_cooper_s7_v5.json": "54565d3919f1bd5592618e8fd1cbfe7d807a29d010d99c308641bc5d253730f3",
-   "data/certificates/CM_POINTS_RHO20.json": "1ef6d622af22a6488316fad01503ed4381c1d742861f178b3d3ea9d76c220755",
-   "data/certificates/HAUPTMODUL_S10_GAMMA010STAR.json": "8cd79878b7d4828c44ef15e4881b2cf35a1344ded9057b3dd20458da5aca1e40",
+   "data/certificates/CM_POINTS_RHO20.json": "c549f71ed27cd2a4418cad3398f5ce8293307809f64185ffcbc7f66f59283993",
+   "data/certificates/HAUPTMODUL_S10_GAMMA010STAR.json": "7cc61f3d3dad62ca33e7527756fd455e986270b8a38435ade31615d8481f8d9a",
    "data/certificates/HAUPTMODUL_S7_GAMMA07PLUS.json": "c1f7bb0798eac4a3eac5aced9f535c3826444bd3bbd33592f4460b2cc73adcc1",
    "data/certificates/L3_RIEMANN_SCHEME.json": "b15dc064214b55685c892ac6de7fd751b72945b97defad9f151cf8c8007bf151",
    "refs/recurrences_v1.json": "f6c7ee9e34ba2c9b8d8132c6aa9109db951ab696de09f23aab3ef03ce8679a76"

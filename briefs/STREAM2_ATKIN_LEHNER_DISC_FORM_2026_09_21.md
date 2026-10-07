@@ -2,7 +2,7 @@
 
 **Status: RECORD, proposal stage.** Gate T3 is not adopted; `check_T3_level_consistency.py` is not edited; the rho = 20 cut is adopted (T0 D7', 2026-09-21) and read narrowly; nothing is scored or ranked. Every cooper_s10 statement is **ADVISORY** (flag `LATTICE_CERT_DRAFT`: `C2_cooper_s10_v4_DRAFT.json` is DRAFT by T0 ruling). This is lattice and modular arithmetic, Tier B at best, with no physical reading of any kind.
 
-Rendered from `data/certificates/ATKIN_LEHNER_DISC_FORM.json` by `python3 checkers/check_atkin_lehner_vs_disc_form.py --emit --brief`; numbers are looked up in the certificate, not typed. Code identity: 40456e6 (HEAD at emit; this checker is uncommitted and is identified by its self-hash in `inputs.sha256`). Verdict: `AL_ACTION_ON_DISC_FORM_EXPLICIT - PASS(30) over n for legs O and W; PASS(40) inherited for every z-locus identification`.
+Rendered from `data/certificates/ATKIN_LEHNER_DISC_FORM.json` by `python3 checkers/check_atkin_lehner_vs_disc_form.py --emit --brief`; numbers are looked up in the certificate, not typed. Code identity: 2cab124 (HEAD at emit; this checker is uncommitted and is identified by its self-hash in `inputs.sha256`). Verdict: `AL_ACTION_ON_DISC_FORM_EXPLICIT - PASS(30) over n for legs O and W; PASS(40) inherited for every z-locus identification`.
 
 **Orders of the finite checks.** Legs O and W: PASS(30) - finite sweep over n = 1..30; the rule m = -1 mod 2Q, +1 mod 2n/Q itself is symbolic in n (stage 0). Leg F: PASS(40) inherited - z is identified through the relation 1/z = alpha t + beta + gamma/t, fitted upstream to q-order 40 (check_CM_points_rho20); t and 1/z are Tier B numeric at 60 and 120 digits.
 
@@ -57,7 +57,7 @@ W(n) -> O(q_A): {'1': 1, '7': 13}; O(q_A) = [1, 13].
 Which w_Q fixes which locus: {'w7': ['-1', '1/27']}. Window: |a| <= 12, Im tau >= 1/20, |Re tau| <= 1/2; the list of fixed points is not claimed complete. Each vector is obtained exactly from the fixed-point polynomial AND recovered from the numerical tau alone by `CM.vectors_annihilating`.
 t at the fixed points against the Hauptmodul certificate's transformation constants {'w7': ['anti', '1/49']}: True (5 constraints that can fail are counted; a 't -> t' transformation constrains nothing at a fixed point and is recorded, not gated; z-locus identification PASS(40) inherited; Tier B numeric, 60 and 120 digits; closure checks: {'t-set of w7 fixed points closed under t -> 1/49/t (w7)': True}). Agreement with `CM_POINTS_RHO20.json` (same (-v^2, div v, D); its minimal polynomial of t vanishes at the t found here): True. Order of the fixing element = lcm of exponent denominators in `L3_RIEMANN_SCHEME.json`: True.
 
-**cooper_s10** - n = 10 (from `C2_cooper_s10_v4_DRAFT.json`, DRAFT), group Gamma_0(10)*. **ADVISORY - LATTICE_CERT_DRAFT on every row.**
+**cooper_s10** - n = 10 (from `C2_cooper_s10_v5.json`, LIVE), group Gamma_0(10)*.
 
 W(n) -> O(q_A): {'1': 1, '10': 19, '2': 11, '5': 9}; O(q_A) = [1, 9, 11, 19].
 
@@ -86,10 +86,10 @@ The family's own monodromy generators (`check_U1_lattice.py` stage 2, imported; 
 | cooper_s7 | product_of_the_three | order 3 |  |  | 1 |  |
 | cooper_s7 | z=-1 | True | -2 | 2 | 1 | [[-2, 2, 1]] |
 | cooper_s7 | z=1/27 | True | -2 | 1 | 1 | [[-2, 1, 1]] |
-| cooper_s10 (ADVISORY) | cusp_z=0 | False |  |  | 1 |  |
-| cooper_s10 (ADVISORY) | product_of_the_three | order 4 |  |  | 11 |  |
-| cooper_s10 (ADVISORY) | z=-1/4 | True | -4 | 2 | 11 | [[-4, 2, 11]] |
-| cooper_s10 (ADVISORY) | z=1/16 | True | -2 | 1 | 1 | [[-2, 1, 1]] |
+| cooper_s10 | cusp_z=0 | False |  |  | 1 |  |
+| cooper_s10 | product_of_the_three | order 4 |  |  | 11 |  |
+| cooper_s10 | z=-1/4 | True | -4 | 2 | 11 | [[-4, 2, 11]] |
+| cooper_s10 | z=1/16 | True | -2 | 1 | 1 | [[-2, 1, 1]] |
 
 Every monodromy reflection has the invariants of the fixed-point reflection found independently in section 4: True. cooper_s7: the monodromy acts on A through +-1: True. cooper_s10 (advisory): it does NOT: True - the loop around z = -1/4 acts by 11, and the product of the three loops has order 4 and multiplier 11 = m(w_2). Multipliers seen on the loop side: s7 [1], s10 [1, 11]. For s10 that is an index-2 subgroup of O(q_A): the loop at the w_5 fixed point acts by 11 = -m(w_5), numerically the same as m(w_2), so the loop action on A does not separate w_5 from w_2; a loop is matched to an Atkin-Lehner class only modulo +-1. The remaining values of O(q_A) are reached through the determinant +1 lift phi, not by any loop. (`implied_not_gated`: {'M_product_multiplier_is_in_image_of_W': True} - recorded, not part of the verdict, since it cannot fail once the generators are integral isometries.) Recorded as observed. What it would mean for the Neron-Severi side is not examined (section 8).
 

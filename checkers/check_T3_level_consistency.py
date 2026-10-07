@@ -106,16 +106,16 @@ CANDIDATES = {
         "al_action": {"verified": True, "evidence": "ATKIN_LEHNER_DISC_FORM.json", "pass_order_n": 30},
     },
     "cooper_s10": {
-        "lattice_cert": "C2_cooper_s10_v4_DRAFT.json",
-        "lattice_cert_status": "DRAFT",
+        "lattice_cert": "C2_cooper_s10_v5.json",   # LIVE since D15' (2026-09-29); value-identical to v4_DRAFT
+        "lattice_cert_status": "LIVE",
         "t1_cert": "HAUPTMODUL_S10_GAMMA010STAR.json",
         "t1_verdict_expected": "GAMMA010STAR_HAUPTMODUL",
         "group": "Gamma_0(10)*",
         # Was ATKIN_LEHNER_ACTION_UNVERIFIED (counts matched only, 4 = 4). RETIRED 2026-09-21:
         # W(n) -> O(q_A) is an explicit isomorphism, PASS(30) over n, built from the action on
-        # periods rather than counted (ATKIN_LEHNER_DISC_FORM.json; T0 D8', AM-4). The one open
-        # flag left on cooper_s10 is LATTICE_CERT_DRAFT, a PROCESS item -- the two are reported
-        # separately and must never be merged into one flag.
+        # periods rather than counted (ATKIN_LEHNER_DISC_FORM.json; T0 D8', AM-4). The former
+        # LATTICE_CERT_DRAFT flag (a PROCESS item) lifted with D15' (2026-09-29, v5 LIVE); the
+        # two flags were always reported separately and must never be merged into one.
         "al_action": {"verified": True, "evidence": "ATKIN_LEHNER_DISC_FORM.json", "pass_order_n": 30},
     },
 }
@@ -355,8 +355,9 @@ def main():
         "not_claimed": [
             "that the two legs are INDEPENDENT measurements -- they are two disjoint "
             "computational routes from the same operator/recurrence (see checker docstring)",
-            "that T(cooper_s10) is certified: C2_cooper_s10_v4_DRAFT.json is DRAFT (T0 D6', "
-            "2026-09-16), so the s10 row is advisory",
+            "that 'this lattice is T(cooper_s10)' is more than Tier B: C2_cooper_s10_v5.json is LIVE "
+            "(T0 D15', 2026-09-29, value-identical to v4_DRAFT), and the identification with T rests on "
+            "Dolgachev/Doran as for s7; no ranking of cooper_s7 over cooper_s10 (ledger items 8/9)",
             "that the Atkin-Lehner action of Gamma_0(10)* agrees with the isometries of the "
             "discriminant form of U+<20>: only the COUNTS match (4 = 4, "
             "spike_disc_form_vs_atkin_lehner.py). Referred to Deep Think, unanswered",

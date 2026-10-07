@@ -79,7 +79,7 @@ def verify(criteria_file, certs_dir):
         ok = (d["window_realizes_global_min"] and unique_on_curve and matches_claim)
         result[fam] = {"n": n, "recomputed": d, "unique_on_curve": unique_on_curve,
                        "matches_criteria_text": matches_claim, "ok": ok,
-                       "advisory": fam == "cooper_s10"}
+                       "advisory": bool(cm["families"][fam]["advisory"])}
         if not ok:
             raise Refuse(f"{fam}: AM-8 text does not match the recomputed SEL-D "
                          f"(window_realizes_global_min={d['window_realizes_global_min']}, "
@@ -115,8 +115,9 @@ def main(argv=None):
                       "('SEL-D: minimal |disc T|'), narrowing D7' (ledger item 8) to cross-family comparison "
                       "only. This certificate verifies the criteria text's two named lattices against a fresh "
                       "recomputation and CM_COMPLETENESS.json's curve-point count (not class number alone). "
-                      "cooper_s10's pick is ADVISORY: its lattice certificate stays DRAFT (D6'), untouched by "
-                      "this selection. No ranking of the two families; no physical reading (ledger item 4).",
+                      "cooper_s10's lattice certificate is LIVE (v5, D15' 2026-09-29; the ADVISORY label that rested "
+                      "on D6' lifted on that ground only), untouched by this selection. No ranking of the two "
+                      "families; no physical reading (ledger item 4).",
             "selected": {fam: {"T_reduced_form": r["recomputed"]["picked_row"]["T"], "D": r["recomputed"]["D"],
                                "z": "infinity", "v": r["recomputed"]["picked_row"]["v"],
                                "advisory": r["advisory"]} for fam, r in result.items()},

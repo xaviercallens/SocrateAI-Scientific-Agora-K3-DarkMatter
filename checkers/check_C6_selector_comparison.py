@@ -113,7 +113,7 @@ def run(verbose=True):
                                 and curve_row.get("verdict") == "COMPLETE")
         agree = (d["picked_row"] is not None and nn["unique"] and d["picked_row"]["v"] == nn["tied_rows"][0]["v"])
         out["families"][fam] = {
-            "n": n, "advisory": fam == "cooper_s10", "SEL-D": d, "SEL-N": nn,
+            "n": n, "advisory": bool(cm["families"][fam]["advisory"]), "SEL-D": d, "SEL-N": nn,
             "SEL-D_and_SEL-N_agree": agree,
             "d7prime_conflict": "SEL-D is a minimal-|D| rule; D7' (ledger item 8) states 'no minimum-|D| rule' without "
                                 "restricting that to cross-family comparison. Adopting SEL-D needs its own T0 text "
@@ -154,7 +154,8 @@ def main(argv=None):
             "checker_version": "1.0.0", "date": AUDIT_DATE, "tier": "B",
             "status": "RECORD, NOT A GATE, NOT AN ADOPTION. Neither SEL-D nor SEL-N is adopted by this certificate; "
                       "AM-6 requires the selector to be named by its own T0 text before any candidate is preferred. "
-                      "D7' is unchanged: no ranking of cooper_s7 over cooper_s10; cooper_s10 stays ADVISORY (D6').",
+                      "D7' is unchanged: no ranking of cooper_s7 over cooper_s10 (the ADVISORY label that rested on D6' "
+                      "lifted with D15', 2026-09-29; the no-ranking rule did not).",
             "result": res,
             "inputs": {"sha256": {"data/certificates/CM_POINTS_RHO20.json": sha(REPO / "data" / "certificates" / "CM_POINTS_RHO20.json"),
                                   "data/certificates/CM_COMPLETENESS.json": sha(REPO / "data" / "certificates" / "CM_COMPLETENESS.json")}},
