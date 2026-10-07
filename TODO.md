@@ -359,6 +359,8 @@
 5. **Numbers are computed, never typed.** ρ is derived at runtime as `b₂ − rank_V` from the step-A
    certificate; break that certificate and the number moves or the checker refuses.
 
+**CI record (rule 6):** post-merge runs on main — `2cab124` run 37673233682 GREEN; `bd576c1` run 37674696716 RED (Gate B: paper table fragment stale after the v5-chain re-emission — fixed by regenerating `papers/tables/`, paper correction item 6); `413220d` run 37679794858 RED for the same cause. No tag until the run on the fix is green.
+
 ## Regression — all green as of `v0.3.14-delegated-rulings-ci-green` (2026-09-29; all 40
 `checkers/test_*.py` suites green locally with `STREAM1_ROOT` set, and Gate B green in CI run `36524218006`;
 the former worktree-only false failures are fixed — see note below the block)
