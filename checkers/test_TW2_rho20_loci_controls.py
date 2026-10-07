@@ -54,6 +54,11 @@ def test_N5_additive_reading_of_the_order2_root_changes_everything():
     assert r["resolution"]["mordell_weil_rank"] == 2
 
 
+def test_P2_model_side_check_at_J0_is_a_triple_root_of_order_4():
+    mc = t.model_check_s0_at_J0()
+    assert mc["degeneration"] == "triple_root_additive" and mc["v_s_Delta"] == 4 and mc["root_lattice_rank"] == 2
+
+
 def test_N6_three_order10_roots_refused():
     with pytest.raises(t.Refuse):
         t.extra_root_orders({"a": 10, "b": 10, "c": 10})

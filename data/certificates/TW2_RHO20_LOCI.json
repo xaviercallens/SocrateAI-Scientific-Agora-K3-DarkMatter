@@ -1,6 +1,6 @@
 {
   "checker": "checkers/check_TW2_rho20_loci.py",
-  "checker_sha256": "094177fbf4c657e091eb184a67512c5f802ad87c5a97683eb8bf63aa8ff94dcd",
+  "checker_sha256": "54c892a31a0a922a67f4fffaab14554a171db7f013160cac7b4e0d1fac7034d4",
   "work_package": "WP-TW2 step 2a (D23', 2026-10-07)",
   "tier": "B (exact lattice arithmetic from certificates; Shioda-Tate, eq. 22, height formula and torsion lemma from pinned, read sources)",
   "result": {
@@ -96,7 +96,16 @@
         "rejected_readings": [],
         "D": -3
       }
-    }
+    },
+    "model_check_z_infinity": {
+      "root_multiplicities_at_s0": [
+        3
+      ],
+      "v_s_Delta": 4,
+      "degeneration": "triple_root_additive",
+      "root_lattice_rank": 2
+    },
+    "model_check_agrees_with_lattice_reading": true
   },
   "not_claimed": [
     "any Kodaira fibre type (ledger items 3, 10): only discriminant-root orders and root-lattice rank/determinant are used",

@@ -87,3 +87,18 @@ self-isogeny; `CM_POINTS_RHO20.json` forms (1,1,2), (1,0,7), (1,1,1) are the nor
 Prop. 3.1 does not apply and the explicit recipe needs Kuwata [Kw2, Th. 4.1] (not fetched); the lattice
 bookkeeping needs nothing beyond pinned, read sources. **Not decided:** opening WP-TW3 (a construction on a base);
 any change to K3_CRITERIA.md; anything physical.
+
+---
+
+## D24′ — cross-stream direction (2026-10-07, later; delegation renewed: "continue and take decsion on my behalf and inform and guide directions to others streams")
+
+**Decision.** (a) **Stream 1** is asked — no deadline, no reopening of its closed session required — to kernel-check the
+lattice arithmetic behind WP-TW2 steps 0 and 2a (determinants of U ⊕ E8² ⊕ R, the Shioda–Tate rank bookkeeping, the
+rank-1 discriminant identity, the height-formula integrality cases, and optionally the cleared polynomial identity
+of step 2b-i): `briefs/STREAM2_TO_STREAM1_TW2_LATTICE_ATTESTATION_REQUEST_2026_10_07.md`, untracked copy in their
+`briefs/`. Producer ≠ verifier as before. (b) **Stream 3** gets notice §11: nothing empirical changes; mirror the three
+TW2 certificates at the next refresh; the "no section" statement is NS-language only. (c) **LeanMaster** stays closed
+for this project (D18′ stands). (d) **WP-TW2 step 2b-ii** (descent to the K3 section) is the next Stream 2 item and is
+not delegated to any other stream. (e) **WP-TW3** (a construction on a base) is **not** opened: the constraint set for
+the selected K3 is now {two order-10 roots with E8 root lattices, one order-4 root with A₂, no section}, and TW3 should
+be scoped against that set by a T0 text, not inferred. Each item reversible by one T0 sentence.
