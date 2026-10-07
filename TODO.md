@@ -133,7 +133,12 @@
       yields h = 14, P̄·Ō = 5: the step-0 number from an independent route. KK Prop. 3.2 is the explicit
       isogeny→section recipe (step 2 design, not executed; Prop. 3.1 excludes E1 ≅ E2, so use the class-number-1
       loci z = −1, 1/27, not the A₂ point). Brief: `briefs/WP_TW2_HEIGHT_CONDITION_STEPS_0_1_2026_10_07.md`.
-      **Next:** WP-TW2 step 2 — exhibit or exclude a
+      **WP-TW2 step 2a DONE (D23′, same day):** `checkers/check_TW2_rho20_loci.py` (+7 controls, `TW2_RHO20_LOCI.json`) —
+      exact bookkeeping at the three ρ = 20 loci (E1 ≅ E2 at all three, so Prop. 3.1 is off): z = 1/27 (D −28): A₁
+      root, MW rank 1, h = 14, P̄·Ō = 5; z = −1 (D −7): A₁ root, MW rank 1, h = 7/2, P̄·Ō = 0 via the non-identity
+      component; **z = ∞ (AM-8 selected, D −3): A₂ root, MW rank 0 — no section at all.** The TW2 constraint for the
+      selected K3 is an order-4 discriminant root with A₂ root lattice, not a height-14 section.
+      **Next:** WP-TW2 step 2b — exhibit or exclude a
       section with P̄·Ō = 5 on a Weierstrass model with two E8-root fibres over the surviving bases.
 - [x] **WP-TW0 RE-EXAMINED (2026-10-07) — F6 disclosure filed, T0 escalation, ledger NOT edited.**
       `checkers/check_TW0_hodge_degree_orbifold.py` (+9 controls) recomputes the Hodge-bundle degree in

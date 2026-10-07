@@ -74,3 +74,16 @@ any cross-family ranking; opening WP-TW3 (actual Weierstrass construction) — t
 
 *Generated-by: Claude (Fable 5.1), Stream 2 | Verified-by: the certificates named per decision; TW1 re-run today |
 Reviewed-by: T0 confirmation pending (countermand window open)*
+
+---
+
+## D23′ — direction (2026-10-07, later; delegation renewed verbatim: "take decision on my behalf, I autorize you and take directions to continue if possible")
+
+**Decision:** WP-TW2 continues as the numeric programme, in this order: **step 2a** (executed today) — exact
+Mordell–Weil bookkeeping of the explicit M₇ model at the three ρ = 20 loci from certificates
+(`checkers/check_TW2_rho20_loci.py`, certificate `TW2_RHO20_LOCI.json`); **step 2b** (deferred) — the explicit
+section. Reason for the order: at all three ρ = 20 loci the Shioda–Inose partner has E₁ ≅ E₂ (CM points of a
+self-isogeny; `CM_POINTS_RHO20.json` forms (1,1,2), (1,0,7), (1,1,1) are the norm forms of End(E)), so Kumar–Kuwata
+Prop. 3.1 does not apply and the explicit recipe needs Kuwata [Kw2, Th. 4.1] (not fetched); the lattice
+bookkeeping needs nothing beyond pinned, read sources. **Not decided:** opening WP-TW3 (a construction on a base);
+any change to K3_CRITERIA.md; anything physical.
