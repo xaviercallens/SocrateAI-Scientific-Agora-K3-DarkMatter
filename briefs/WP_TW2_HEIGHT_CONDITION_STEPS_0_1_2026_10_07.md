@@ -120,3 +120,8 @@ What remains for a complete step 2b (**2b-ii, not done**): push the graph of √
 to a section of F⁽⁶⁾, descend to F⁽¹⁾, change coordinates to the pinned Kuwata–Shioda J9 model, and read off
 P̄·Ō = 5 and h = 14 with the A₁-fibre contact computed (step 2a predicts contr = 0 at this locus). That is a
 long but now fully specified computation; every input to it is on disk.
+
+**§5 addendum (model-side confirmation, same day).** The z = ∞ reading is now also checked on the explicit model:
+with l₁ = l₂ = λ, λ² − λ + 1 = 0, the cubic x³ + a₂x² + a₄x + a₆ at s = 0 has a **triple root** (x = λ) and
+v_s(Δ) = 4 with a₂, a₄, a₆ all non-vanishing — an additive degeneration whose root lattice has rank e − 2 = 2. The
+lattice-forced A₂ and the model agree (`model_check_z_infinity` in `TW2_RHO20_LOCI.json`; control P2).
