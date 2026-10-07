@@ -1,6 +1,6 @@
 # ✅ TODO — restart here
 
-**Last updated:** 2026-09-29 (D14′–D18′ taken on T0's behalf under explicit delegation — `briefs/T0_DECISIONS_2026_09_29_STREAM2_DELEGATED.md`: no Kodaira labels for the explicit model; `C2_cooper_s10_v5.json` LIVE; CI red-run diagnosis + fixes + standing rule 6; Stream 3 restarted by notice §9; LeanMaster closed for this project, MCP server kept. Paper: PR #70. Orientation block below dates from 2026-07-26) · **Release:** `v0.3.14-delegated-rulings-ci-green` (first green Agora CI Gate runs: PR `36523846615`, main `36524218006`) · **Previous TODO:** commit history
+**Last updated:** 2026-09-29 (D14′–D18′ taken on T0's behalf under explicit delegation — `briefs/T0_DECISIONS_2026_09_29_STREAM2_DELEGATED.md`: no Kodaira labels for the explicit model; `C2_cooper_s10_v5.json` LIVE; CI red-run diagnosis + fixes + standing rule 6; Stream 3 restarted by notice §9; LeanMaster closed for this project, MCP server kept. Paper: PR #70. Orientation block below dates from 2026-07-26) · **Release:** `v0.3.15-delegated-tw-decisions` (D19′–D22′; WP-TW0 closed, WP-TW1 LIVE, WP-TW2 step 0; v5 chain re-emitted; tagged only on a green post-merge run, rule 6) · **Previous TODO:** commit history
 
 > ## 30-second orientation
 >
@@ -359,7 +359,7 @@
 5. **Numbers are computed, never typed.** ρ is derived at runtime as `b₂ − rank_V` from the step-A
    certificate; break that certificate and the number moves or the checker refuses.
 
-**CI record (rule 6):** post-merge runs on main — `2cab124` run 37673233682 GREEN; `bd576c1` run 37674696716 RED (Gate B: paper table fragment stale after the v5-chain re-emission — fixed by regenerating `papers/tables/`, paper correction item 6); `413220d` run 37679794858 RED for the same cause. No tag until the run on the fix is green.
+**CI record (rule 6):** post-merge runs on main — `2cab124` run 37673233682 GREEN; `bd576c1` run 37674696716 RED (Gate B: paper table fragment stale after the v5-chain re-emission — fixed by regenerating `papers/tables/`, paper correction item 6); `413220d` run 37679794858 RED for the same cause. Fix `0adb074` run 37681111136 GREEN.
 
 ## Regression — all green as of `v0.3.14-delegated-rulings-ci-green` (2026-09-29; all 40
 `checkers/test_*.py` suites green locally with `STREAM1_ROOT` set, and Gate B green in CI run `36524218006`;
