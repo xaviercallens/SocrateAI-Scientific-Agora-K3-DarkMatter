@@ -1,6 +1,6 @@
 # ✅ TODO — restart here
 
-**Last updated:** 2026-09-29 (D14′–D18′ taken on T0's behalf under explicit delegation — `briefs/T0_DECISIONS_2026_09_29_STREAM2_DELEGATED.md`: no Kodaira labels for the explicit model; `C2_cooper_s10_v5.json` LIVE; CI red-run diagnosis + fixes + standing rule 6; Stream 3 restarted by notice §9; LeanMaster closed for this project, MCP server kept. Paper: PR #70. Orientation block below dates from 2026-07-26) · **Release:** `v0.3.15-delegated-tw-decisions` (D19′–D22′; WP-TW0 closed, WP-TW1 LIVE, WP-TW2 step 0; v5 chain re-emitted; tagged only on a green post-merge run, rule 6) · **Previous TODO:** commit history
+**Last updated:** 2026-09-29 (D14′–D18′ taken on T0's behalf under explicit delegation — `briefs/T0_DECISIONS_2026_09_29_STREAM2_DELEGATED.md`: no Kodaira labels for the explicit model; `C2_cooper_s10_v5.json` LIVE; CI red-run diagnosis + fixes + standing rule 6; Stream 3 restarted by notice §9; LeanMaster closed for this project, MCP server kept. Paper: PR #70. Orientation block below dates from 2026-07-26) · **Release:** `v0.3.16-tw2-steps-0-2bi` (D23′; WP-TW2 steps 0, 1, 2a, 2b-i: P̄·Ō = n − 2 generically; ρ = 20 loci resolved — the AM-8 K3 has an A₂ root fibre and no section; √−7 at z = 1/27 exhibited over Q; tagged only on a green post-merge run, rule 6) · **Previous TODO:** commit history
 
 > ## 30-second orientation
 >
