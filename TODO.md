@@ -119,6 +119,17 @@
       **SUPERSEDED 2026-09-29 (D15′, on T0's behalf under explicit delegation):**
       `C2_cooper_s10_v5.json` is LIVE, value-identical to v4_DRAFT; re-derivation 23/23 and witness
       check re-run before promotion. Record: `briefs/T0_DECISIONS_2026_09_29_STREAM2_DELEGATED.md`.
+- [x] **WP-TW0 RE-EXAMINED (2026-10-07) — F6 disclosure filed, T0 escalation, ledger NOT edited.**
+      `checkers/check_TW0_hodge_degree_orbifold.py` (+9 controls) recomputes the Hodge-bundle degree in
+      exponent language from the Tier-A operator tuple: L₂ has FOUR singular points (the 07-29 brief listed
+      three — z = 0, MUM, was omitted); the Γ₀(7)+ signature (0; 2,2,3; 1) is derived two independent ways
+      (exponents; group theory with class numbers counted) and they agree; orbifold degrees deg ω = 1/3,
+      deg ω² = 2/3; Deligne-extension integer degrees 0 / 1 by residue convention — **never 2 at family
+      level**. ℓ = 2 is reproduced only as χ(O_K3) = 2 (Noether, deg Δ = 24): a fact about any elliptic K3
+      with section, not about the family. The 07-29 formula "(Σ exponents)/order" is a Fuchs-relation
+      tautology (returns 1 for every 4-point order-2 operator; control N4). Record:
+      `briefs/WP_TW0_HODGE_DEGREE_REEXAMINATION_2026_10_07.md`; certificate `TW0_HODGE_DEGREE_ORBIFOLD.json`.
+      **T0 to rule:** which reading WP-TW1 (deg Δ = 48 on P³) needs; ledger item 6's wording.
 - [ ] **🟡 Re-emit the v5 chain (mechanical, any agent):** certificates emitted while v4_DRAFT was
       the lattice source still carry `LATTICE_CERT_DRAFT`/"ADVISORY" provenance wording (values
       unaffected). Order and list in the D15′ brief; also the four checkers that print the wording.
@@ -385,6 +396,8 @@ python3 checkers/test_C6_selector_adopted_controls.py         # 5 controls
 python3 scripts/render_paper_tables.py --check                # papers/tables/*.tex match the certificates (paper 2026-09-29)
 python3 checkers/test_render_paper_tables_controls.py         # 7 controls (tampered certificate changes the table; stale fragment fails --check)
 python3 scripts/check_tier_language.py papers/stream2_selection_geometry_2026_09_29.tex  # paper prose: 0 violations
+python3 checkers/check_TW0_hodge_degree_orbifold.py          # WP-TW0 re-examination: signatures agree; family-level degree != 2 (finding)
+python3 checkers/test_TW0_hodge_degree_orbifold_controls.py  # 9 controls (wrong level/operator disagree; irregular point refused; 07-29 formula non-discriminating)
 # slow (~70 s): python3 checkers/check_nodality_explicit_models.py   (Singular optional second CAS)
 # slow (~2.5 min), run before release: python3 checkers/check_CM_points_rho20.py
 ```
