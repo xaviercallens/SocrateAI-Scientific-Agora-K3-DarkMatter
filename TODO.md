@@ -119,6 +119,17 @@
       **SUPERSEDED 2026-09-29 (D15′, on T0's behalf under explicit delegation):**
       `C2_cooper_s10_v5.json` is LIVE, value-identical to v4_DRAFT; re-derivation 23/23 and witness
       check re-run before promotion. Record: `briefs/T0_DECISIONS_2026_09_29_STREAM2_DELEGATED.md`.
+- [x] **D19′–D22′ taken on T0's behalf (2026-10-07, delegation "take decision on my behalf and continue";
+      `briefs/T0_DECISIONS_2026_10_07_STREAM2_DELEGATED.md`).** D19′ WP-TW0 R-a: ledger item 6 amended (ℓ := χ(O_K3)
+      = 2 for the Weierstrass model; family-level degree 2/3), WP-TW0 CLOSED. D20′ WP-TW1 verified (re-run +
+      line-by-line read; ALL CONTROLS PASSED) and LIVE as a necessary-condition screen — P³ FAILS, P¹×P² and the
+      scroll family PASS; certificate `status` fields still say DRAFT (classifier refused the edit; brief note is
+      the in-band record). **WP-TW2 opened, step 0 done:** `checkers/check_TW2_height_condition.py` (+9 controls,
+      `TW2_HEIGHT_CONDITION.json`): with two E8-root fibres and ρ = 19, Shioda–Tate forces MW rank 1 and
+      NS = M_n forces h(P) = 2n, so the generator meets the zero section with **P̄·Ō = n − 2 (= 5 for s7)**;
+      Schütt–Shioda fetched, read, pinned. D21′ E2 HELD unpinned (Home PRs #5/#6 merged). D22′ phantom Lean
+      workflows RETIRED on record; deletion is T0's (classifier). **Next:** WP-TW2 proper — exhibit or exclude a
+      section with P̄·Ō = 5 on a Weierstrass model with two E8-root fibres over the surviving bases.
 - [x] **WP-TW0 RE-EXAMINED (2026-10-07) — F6 disclosure filed, T0 escalation, ledger NOT edited.**
       `checkers/check_TW0_hodge_degree_orbifold.py` (+9 controls) recomputes the Hodge-bundle degree in
       exponent language from the Tier-A operator tuple: L₂ has FOUR singular points (the 07-29 brief listed
@@ -408,6 +419,10 @@ python3 checkers/test_render_paper_tables_controls.py         # 7 controls (tamp
 python3 scripts/check_tier_language.py papers/stream2_selection_geometry_2026_09_29.tex  # paper prose: 0 violations
 python3 checkers/check_TW0_hodge_degree_orbifold.py          # WP-TW0 re-examination: signatures agree; family-level degree != 2 (finding)
 python3 checkers/test_TW0_hodge_degree_orbifold_controls.py  # 9 controls (wrong level/operator disagree; irregular point refused; 07-29 formula non-discriminating)
+python3 checkers/check_TW1_two_e8_feasibility.py             # WP-TW1 LIVE (D20'): P3 FAIL, P1xP2 / scroll PASS (necessary-condition screen)
+python3 checkers/test_TW1_two_e8_feasibility_controls.py      # 5 controls
+python3 checkers/check_TW2_height_condition.py               # WP-TW2 step 0: P.O = n - 2 (5 for s7); two order-10 roots per locus cross-checked
+python3 checkers/test_TW2_height_condition_controls.py        # 9 controls
 # slow (~70 s): python3 checkers/check_nodality_explicit_models.py   (Singular optional second CAS)
 # slow (~2.5 min), run before release: python3 checkers/check_CM_points_rho20.py
 ```

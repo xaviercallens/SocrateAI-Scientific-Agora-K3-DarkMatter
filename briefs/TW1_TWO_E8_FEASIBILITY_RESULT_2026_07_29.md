@@ -206,3 +206,12 @@ Provenance: Generated-by: Sonnet 5 (Stream 2, WP-TW1 session 2026-07-29) | Verif
 `checkers/check_TW1_two_e8_feasibility.py` structural assertions +
 `checkers/test_TW1_two_e8_feasibility_controls.py` + coordinator independent hand-derivation
 (2026-07-29, separate session) | Reviewed-by: pending T0 (Xavier)
+
+---
+**PROMOTED TO LIVE 2026-10-07 (D20′, on T0's behalf under explicit delegation;
+`briefs/T0_DECISIONS_2026_10_07_STREAM2_DELEGATED.md`).** Re-run and read line by line by Stream 2 the same day
+(checker exit 0, summary identical; ALL CONTROLS PASSED). Scope unchanged: a necessary-condition screen; nothing
+about the existence of the M₇-polarized family on any base. **Dated wording note (D14′, 2026-09-29):** this
+document's "Kodaira type II*" phrasing predates D14′; Stream 2 prose from today describes these loci by their Tate
+orders (v(f), v(g), v(Δ)) = (4, 5, 10) and root lattice E8. Text above unchanged. Next: WP-TW2 (a section with
+P̄·Ō = n − 2; `checkers/check_TW2_height_condition.py`).

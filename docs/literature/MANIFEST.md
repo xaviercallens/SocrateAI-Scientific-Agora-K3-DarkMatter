@@ -56,3 +56,9 @@ Generated-by: Stream 2 (Claude Fable 5.1), 2026-09-27 | Verified-by: sha256sum w
 | arxiv_math_0609473.pdf | 5676cefc8b7d18bd2f940661afb953f2378ea2b942884bf39634692b7a8a857f | arXiv:math/0609473v3 (Kuwata–Shioda, *Elliptic parameters and defining equations for elliptic fibrations on a Kummer surface*) — located through the arXiv API by author query, not from memory (a remembered id was wrong and was discarded unread) | 2026-09-27 | READ IN PART (§1.4 p.4–5: Inose's pencil; Example 1.3 — the type J₉ pencil has II*, I₀*, I₀* and its degree-2 base change is the elliptic K3 with two II* fibres; §5.3 p.27–28: the J₉ Weierstrass equation (lines 1413–1415 of the text extraction), Δ = u⁶(u−1)¹⁰d(u), deg d = 2, disc d = 16λ₁²λ₂²(λ₁−1)²(λ₂−1)²(λ₁²−λ₁+1)³(λ₂²−λ₂+1)³ (line 1418); Table 1 header; rest NOT read) |
 
 Generated-by: Stream 2 (Claude Fable 5.1), 2026-09-27 (row appended to the addendum above) | Verified-by: sha256sum written by script | Reviewed-by: N
+
+## Addendum 2026-10-07 — WP-TW2 step 0 source (appended, rows above untouched)
+
+| file | sha256 | source | fetched | read status |
+|---|---|---|---|---|
+| schuett_shioda_0907.0298.pdf (+ .txt, pdftotext) | eeac47d53b52e96a1d2457a131dcce474332dd6b226e4dcd944575e995aa44b1 | arXiv:0907.0298 (Schütt–Shioda, *Elliptic surfaces*) | 2026-10-07 | READ for: Noether 12χ = K² + e (txt l.1172); deg Δ = e = 12χ (l.1670); Shioda–Tate Cor. 6.13 (l.1255–1262); height pairing Thm 11.5, h(P) = 2χ + 2P̄·Ō − Σ contr_v(P) (l.2184–2206); Table 4 correction terms (l.2249; fibres with a unique simple component carry no entry, contr = 0); eq. (22)/(23) disc(NS) = −disc(T)·h(P) at MW rank 1 (l.2270–2275). Used by `checkers/check_TW2_height_condition.py`; Noether also backs `check_TW0_hodge_degree_orbifold.py`'s surface reading. |

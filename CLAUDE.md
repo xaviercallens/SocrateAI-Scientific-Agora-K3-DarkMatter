@@ -52,11 +52,16 @@ contradicts it, the document carries (or needs) a dated correction note.
    T0_COUNTERMAND_R2_2026_07_29.md`). Tier B structural negative: no strict-pullback
    Calabi-Yau realization of the cooper_s7 family exists over K²≠0 bases (G1-a, in-house
    exact, LIVE) nor via any even-ramification escape on K²=0 bases (O2/O3, hand-verified —
-   S3 `DEEPTHINK_DEBRIEF_AUDIT_2026_07_29.md`). The Hodge-bundle degree ℓ = 2 is ratified
-   **Tier B-external** (T0s derivation via the Tier-A Sym² theorem; in-house verification
-   WP-TW0 pending — if it lands ≠ 2, F6 disclosure + T0 escalation). Do not spend compute on
-   G1-b or any strict-pullback geometry. Twisted-Weierstrass is the PRIMARY route; its gate
-   is the two-E8 degree-feasibility check (WP-TW1; use deg Δ = 48 on P³, not 144).
+   S3 `DEEPTHINK_DEBRIEF_AUDIT_2026_07_29.md`). **ℓ, amended D19′ (2026-10-07, on T0's behalf
+   under explicit delegation; `briefs/T0_DECISIONS_2026_10_07_STREAM2_DELEGATED.md`):** ℓ := χ(O_K3) = 2
+   is the fundamental-line-bundle degree of the Weierstrass model (Tier A, Noether, deg Δ = 24);
+   the family-level Hodge-bundle degree over X₀(7)+ is 2/3 (Tier B, `TW0_HODGE_DEGREE_ORBIFOLD.json`),
+   so "ℓ = 2 via the Sym² theorem" was a conflation of two readings — WP-TW0 CLOSED (F6 brief
+   `WP_TW0_HODGE_DEGREE_REEXAMINATION_2026_10_07.md`). Do not spend compute on G1-b or any
+   strict-pullback geometry. Twisted-Weierstrass is the PRIMARY route; its gate, the two-E8
+   degree-feasibility screen (WP-TW1, deg Δ = 48 on P³), is **LIVE (D20′)**: P³ as given FAILS
+   (forced collision), P¹×P² and P(O⊕O(n))/P² PASS as a necessary condition only; next is WP-TW2
+   (M₇-polarization: a section with P̄·Ō = 5, `check_TW2_height_condition.py`).
 7. **"AutoEvolve R2 Hypothesis Foundry" / K3-T2-Chameleon / DarkMatterK3@Home track is an
    EXPLORATORY SANDBOX** (T0 ruling, 2026-08-01, same standing as rule 4's Route-A-adjacent
    discipline and mirroring the identical S3 CLAUDE.md rule 7). Covers

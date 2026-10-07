@@ -1,0 +1,59 @@
+{
+  "checker": "checkers/check_TW2_height_condition.py",
+  "checker_sha256": "789d7befe4ff5f39aaaf968da813818a1be7aa56254d2d29f3d94c42fb396f9a",
+  "work_package": "WP-TW2 step 0 (opened by D20', 2026-10-07)",
+  "tier": "B (exact lattice arithmetic; Shioda-Tate and height formula from Schuett-Shioda, fetched and read; M_n from Dolgachev, pinned)",
+  "result": {
+    "cooper_s7_n7": {
+      "n": 7,
+      "chi": 2,
+      "fibres": [
+        "E8",
+        "E8"
+      ],
+      "trivial_lattice_rank": 18,
+      "mordell_weil_rank": 1,
+      "disc_trivial_lattice": -1,
+      "target_abs_disc_NS": 14,
+      "ns_is_M_n_shape": true,
+      "height_h_P": 14,
+      "sum_contr": "0",
+      "P_dot_O": 5,
+      "formula": "h(P) = 2chi + 2 P.O - sum contr_v(P)  (Schuett-Shioda Thm 11.5); |disc NS| = -disc(T_triv) h(P) (eq. 23)"
+    },
+    "cooper_s10_n10_as_instance": {
+      "n": 10,
+      "chi": 2,
+      "fibres": [
+        "E8",
+        "E8"
+      ],
+      "trivial_lattice_rank": 18,
+      "mordell_weil_rank": 1,
+      "disc_trivial_lattice": -1,
+      "target_abs_disc_NS": 20,
+      "ns_is_M_n_shape": true,
+      "height_h_P": 20,
+      "sum_contr": "0",
+      "P_dot_O": 8,
+      "formula": "h(P) = 2chi + 2 P.O - sum contr_v(P)  (Schuett-Shioda Thm 11.5); |disc NS| = -disc(T_triv) h(P) (eq. 23)"
+    },
+    "general": {
+      "P_dot_O": "n - chi = n - 2",
+      "h_P": "2n"
+    },
+    "e8_root_fibres_in_explicit_M7_model_by_locus": {
+      "-1": 2,
+      "1/27": 2
+    }
+  },
+  "not_claimed": [
+    "that a section with P.O = n - 2 exists on any particular base or model: this is the constraint, not its realization (WP-TW2 proper)",
+    "any Kodaira fibre type anywhere (ledger items 3, 10): fibres are named by their root lattice and discriminant order only",
+    "anything about cooper_s10 beyond its use as the n = 10 instance of the same formula",
+    "any physical statement (ledger item 4)"
+  ],
+  "generated_by": "Claude (Fable 5.1), Stream 2, 2026-10-07",
+  "verified_by": "checkers/test_TW2_height_condition_controls.py",
+  "reviewed_by": "N"
+}
