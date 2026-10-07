@@ -138,7 +138,13 @@
       root, MW rank 1, h = 14, P̄·Ō = 5; z = −1 (D −7): A₁ root, MW rank 1, h = 7/2, P̄·Ō = 0 via the non-identity
       component; **z = ∞ (AM-8 selected, D −3): A₂ root, MW rank 0 — no section at all.** The TW2 constraint for the
       selected K3 is an order-4 discriminant root with A₂ root lattice, not a height-14 section.
-      **Next:** WP-TW2 step 2b — exhibit or exclude a
+      **WP-TW2 step 2b-i DONE (same day):** `checkers/check_TW2_sqrt_m7_endomorphism.py` (+7 controls,
+      `TW2_SQRT_M7_ENDOMORPHISM.json`) — the degree-7 endomorphism √−7 of the z = 1/27 curve (j read from the
+      fibration certificate; model y² = x³ − 1551893875x + 23529814932750) exhibited over Q by Vélu from the unique
+      rational cubic factor of ψ₇; codomain ≅ E via c² = −1/7; **φ∘φ = [−7] proved exactly** (60/60 rational points,
+      degree bound 49). Sign-slip in c² caught live → negative control.
+      **Next:** WP-TW2 step 2b-ii — push the graph of √−7 through Kumar–Kuwata (3.1)–(3.3) to F(6), descend to F(1),
+      change to the pinned J9 model and read P̄·Ō = 5, h = 14 with the A₁ contact computed; or exclude a
       section with P̄·Ō = 5 on a Weierstrass model with two E8-root fibres over the surviving bases.
 - [x] **WP-TW0 RE-EXAMINED (2026-10-07) — F6 disclosure filed, T0 escalation, ledger NOT edited.**
       `checkers/check_TW0_hodge_degree_orbifold.py` (+9 controls) recomputes the Hodge-bundle degree in
