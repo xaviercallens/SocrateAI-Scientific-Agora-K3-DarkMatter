@@ -129,7 +129,13 @@ def main(argv=None):
     a = ap.parse_args(argv)
     res = {"cooper_s7_n7": height_condition(7), "cooper_s10_n10_as_instance": height_condition(10),
            "general": {"P_dot_O": "n - chi = n - 2", "h_P": "2n"},
-           "e8_root_fibres_in_explicit_M7_model_by_locus": e8_fibre_count_from_inose_certificate()}
+           "e8_root_fibres_in_explicit_M7_model_by_locus": e8_fibre_count_from_inose_certificate(),
+           "step1_literature_cross_check": {
+               "statement": "MWL(F(1)) = Hom(E1, E2)<2>: the section attached to an isogeny phi has height 2 deg(phi)",
+               "sources_read": ["Kumar-Kuwata arXiv:1409.2931 Prop. 3.1 (citing Shioda), hypothesis E1 not isomorphic to E2; Prop. 3.2 explicit construction, height 2d",
+                                "Shioda, MPIM 2007-137 / JMSJ 60 (2008): norm 2 deg(phi) on the Inose surface, deg(phi) on the Kummer surface"],
+               "consequence": "a 7-isogeny gives h(P) = 14 = 2n, hence P.O = 5 -- the same number as the lattice derivation above, from an independent route",
+               "caveat": "Prop. 3.1 assumes E1 not isomorphic to E2; the A2 point (j = 0, E1 = E2) is outside its hypothesis; the class-number-1 CM loci are the natural place for an explicit construction (WP-TW2 step 2, not executed)"}}
     for k in ("cooper_s7_n7", "cooper_s10_n10_as_instance"):
         r = res[k]
         print(f"{k}: trivial rank {r['trivial_lattice_rank']}, MW rank {r['mordell_weil_rank']}, h(P) = {r.get('height_h_P')}, P.O = {r.get('P_dot_O')}")

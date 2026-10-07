@@ -128,7 +128,12 @@
       `TW2_HEIGHT_CONDITION.json`): with two E8-root fibres and ρ = 19, Shioda–Tate forces MW rank 1 and
       NS = M_n forces h(P) = 2n, so the generator meets the zero section with **P̄·Ō = n − 2 (= 5 for s7)**;
       Schütt–Shioda fetched, read, pinned. D21′ E2 HELD unpinned (Home PRs #5/#6 merged). D22′ phantom Lean
-      workflows RETIRED on record; deletion is T0's (classifier). **Next:** WP-TW2 proper — exhibit or exclude a
+      workflows RETIRED on record; deletion is T0's (classifier). **WP-TW2 step 1 DONE (same day):** Kumar–Kuwata arXiv:1409.2931 Prop. 3.1 (Shioda) and
+      Shioda MPIM 2007-137, fetched and read, give MWL(F(1)) ≅ Hom(E1,E2)⟨2⟩ — height 2·deg φ — so a 7-isogeny
+      yields h = 14, P̄·Ō = 5: the step-0 number from an independent route. KK Prop. 3.2 is the explicit
+      isogeny→section recipe (step 2 design, not executed; Prop. 3.1 excludes E1 ≅ E2, so use the class-number-1
+      loci z = −1, 1/27, not the A₂ point). Brief: `briefs/WP_TW2_HEIGHT_CONDITION_STEPS_0_1_2026_10_07.md`.
+      **Next:** WP-TW2 step 2 — exhibit or exclude a
       section with P̄·Ō = 5 on a Weierstrass model with two E8-root fibres over the surviving bases.
 - [x] **WP-TW0 RE-EXAMINED (2026-10-07) — F6 disclosure filed, T0 escalation, ledger NOT edited.**
       `checkers/check_TW0_hodge_degree_orbifold.py` (+9 controls) recomputes the Hodge-bundle degree in

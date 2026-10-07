@@ -1,0 +1,1077 @@
+               K3 surfaces and sphere packings
+                                   Tetsuji Shioda∗
+            To Professor F. Hirzebruch for his 80th birthday
+
+
+                                        Abstract
+            We determine the structure of the Mordell-Weil lattice, Néron-
+        Severi lattice and the lattice of transcendental cycles for certain elliptic
+        K3 surfaces. We find that such questions from algebraic geometry are
+        closely related to the sphere packing problem, and a key ingredient is
+        the use of the sphere packing bounds in establishing geometric results.
+
+
+Contents
+1 Introduction                                                                          2
+
+2 The main results                                                                      3
+
+3 Preliminaries                                                                         5
+  3.1 About NS(X) and T(X) . . . . . . . . . . . . . . . . . . . . .                    5
+  3.2 Mordell-Weil lattices . . . . . . . . . . . . . . . . . . . . . . .               7
+                                                         (n)
+4 Review on the elliptic K3 surfaces Fα,β                                               8
+                                         (n)+
+5 Rational elliptic surfaces Fα,β                                                      10
+
+6 Proof of Theorems 2.1, 2.2, 2.3, 2.4                                                 11
+  6.1 Step 1: Case h = 0 . . . . . . . . . . . . . . . . . . . . . . . .               12
+  6.2 Step 2: General case . . . . . . . . . . . . . . . . . . . . . . .               14
+  6.3 Supplementary remarks . . . . . . . . . . . . . . . . . . . . . .                15
+  ∗
+      Grant-in-Aid for Scientific Research No.17540044
+
+                                             1
+7 Explicit generators and structure of lattices                             17
+  7.1 Review of the case n = 1, 2 . . . . . . . . . . . . . . . . . . . .   17
+  7.2 Proof of Theorem 2.5 for n > 2 . . . . . . . . . . . . . . . . .      18
+  7.3 Proof of Theorem 2.6 for n > 2 . . . . . . . . . . . . . . . . .      20
+
+8 Application to singular K3 surfaces                                       20
+
+
+1    Introduction
+Let X be a complex smooth projective K3 surface. We consider three kind
+of lattices attached to the surface X:
+                           NS(X), T(X), MW(X).                            (1.1)
+The Néron-Severi lattice NS(X) is the sublattice of H 2 (X, Z) consisting of
+algebraic cycles. The lattice of transcendental cycles T(X) is, by definition,
+its orthogonal complement in H 2 (X, Z).
+    The third lattice MW(X) is defined when X = (X, f ) is an elliptic surface
+given with an elliptic fibration f : X → P1 with a section, and MW(X)
+denotes the group of sections of f , or equivalently, the group E(k(t)) of
+k(t)-rational points of the generic fibre E of f . (Throughout the paper,
+we let k = C, the field of complex numbers, unless otherwise mentioned.)
+The height pairing h, i defines the structure of a positive-definite lattice on
+MW(X) modulo torsion, which is the Mordell-Weil lattice (MWL) of X. By
+abuse of language, we often call MW(X) itself the “Mordell-Weil lattice” of
+X = (X, f ), by which we mean the pair (MW(X), h, i). We refer to [11] for
+the basic facts on MWL.
+    In this paper, we study the structure of three lattices (1.1) by taking X
+                                (n)
+to be the elliptic K3 surface Fα,β defined by the Weierstrass equation:
+                      (n)                          1
+                    Fα,β : y 2 = x3 − 3αx + (tn + n − 2β)                (1.2)
+                                                  t
+where α, β are arbitrary complex numbers and n = 1, 2, . . . , 6. The main
+results will be stated in the next section, which will settle the questions in
+our previous paper [13] in an improved form.
+                                   (2)
+    It is known (Inose [3]) that Fα,β is isomorphic to the Kummer surface of
+the product of two elliptic curves C1 , C2 :
+                            Fα,β ∼
+                              (2)
+                                 = Km(C1 × C2 )                           (1.3)
+
+                                      2
+where (α, β) and the absolute invariants j1 , j2 of C1 , C2 are related by
+
+                            α 3 = j 1 j2 ,    β 2 = (1 − j1 )(1 − j2 ).        (1.4)
+
+[N.B. The absolute invariant j is normalized so that j = 1 for y 2 = x3 − x
+and j = 0 for y 2 = x3 − 1.]
+                      (n)                                 (n)       (n)
+    The rank r (n) = rα,β of the Mordell-Weil lattice MW(Fα,β ) = Fα,β (k(t))
+is given by the following formula (see §4, cf.[6], [13]):
+                                                      
+                                                       0
+                                                 if j1 6= j2
+                                                      
+            (n)
+        r         = h + M in{4(n − 1), 16} − n if j1 = j2 6= 0, 1              (1.5)
+                                              2n if j1 = j2 = 0 or 1
+                                            
+                                            
+
+
+where
+                                      h = rk Hom(C1 , C2 );                    (1.6)
+we have h = 0, 1 or 2 when k = C.
+    Notation Throughout the paper, we keep the above notation. Further,
+given a lattice L = (L, h, i) and a nonzero rational number m, L[m] denotes
+the lattice (L, mh, i). We denote by det L the absolute value of the determi-
+nant of the Gram matrix for L; thus we have det L[m] = (det L)mr if r is
+the rank of L and m > 0. For general facts on lattices and sphere packings,
+we refer to the standard book of Conway-Sloane [1].
+    For the singular fibres of an elliptic surface, we use freely the results from
+[5] and [17].
+
+
+2     The main results
+Theorem 2.1 For any α, β and any n ≤ 6, we have a lattice isomorphism:
+
+                                      T (Fα,β ) ∼
+                                          (n)         (1)
+                                                = T (Fα,β )[n].                (2.1)
+
+In particular, we have
+                                (n)                   (1)
+                       det T (Fα,β ) = det T (Fα,β ) · nλ ,       λ = 4 − h.   (2.2)
+
+Theorem 2.2
+                                        (n)
+                          det NS(Fα,β ) = det Hom(C1 , C2 ) · nλ .             (2.3)
+
+
+                                                  3
+    In the above, Hom(C1 , C2 ) is viewed as a positive-definite even integral
+lattice by defining the norm of ϕ : C1 → C2 to be 2 deg(ϕ).
+                                                             (n)
+Theorem 2.3 The Mordell-Weil group MW(Fα,β ) is torsion-free except for
+the cases (a) and (b) below, and then we have
+
+                                    (n)      det Hom(C1 , C2 ) · nλ
+                       det MW(Fα,β ) =                                                (2.4)
+                                                   c(n)2 dn
+where c(n) ∈ {1, 3, 4} and d ∈ {1, 2, 3, 4} are defined by (4.11) in §4.
+     The exception is: (a) j1 = j2 = 0 and n = 2, 4, 6, and (b) j1 = j2 = 1 and
+n = 3, 6. In case (a) [or (b)], the RHS of (2.4) is to be multiplied by 32 [or
+                                                                  (n)
+42 ] which is the square of the order of the torsion part MW(Fα,β )tor .
+
+Theorem 2.4 Assume that C1 , C2 are not isogenous, i.e. h = 0. Then the
+                         (n)
+lattice structure of MW(Fα,β ) is independent of α, β and depends only on n;
+                         (n)         (n)                 (n)
+let us denote it by MW(Fgen  ) or Mgen   . This lattice Mgen has the invariants
+in Table 1 (where µ and δ denote the minimal norm and the center density
+of a lattice.)
+
+                     n    1       2          3         4        5     6
+                    rk    0       4          8       12        16     16
+                    det   1    24 /32     34 /42    44 /32     54     64
+                     µ    -     4/3          2       8/3        4     4
+                     δ    -    1/12       1/62      22 /35    1/52   1/62
+
+                                                      (n)
+                              Table 1: Invariants of Mgen
+
+
+Theorem 2.5 Assume that h = 0. Then, for any n ≤ 6, the Mordell-Weil
+lattice MW(Fα,β ) ∼
+               (n)      (n)
+                   = Mgen   is generated by the k(t)-rational points P = (x, y)
+of the following form :
+
+      A 0 + A 1 t + A 2 t2 + A 3 t3 + A 4 t4       B 0 + B 1 t + B 2 t2 + · · · + B 6 t6
+   x=                                        , y =                                       .
+                        t2                                         t3
+                                                                                       (2.5)
+More precisely, if n = 2, a set of generators is given by
+                                       1                     1
+                                (γ, t + ),         (γ 0 , t − )                       (2.6)
+                                       t                     t
+                                              4
+where γ (or γ 0 ) runs over the 3 roots of the cubic equation:
+            x3 − 3αx − 2 − 2β = 0 (or x3 − 3αx + 2 − 2β = 0).                   (2.7)
+                           (n)+                                                 (n)
+If n > 2, let L = MW(Fα,β ) be the sublattice of half rank in M = MW(Fα,β ),
+                                           (n)+
+obtained from a rational elliptic surface Fα,β over the s-line where s = t+1/t
+(cf. (5.2), (5.3), Lemma 5.1). Then M is generated by L and Lσ for a
+suitable automorphism σ of M . In other words, M is generated by {Pi } and
+{Piσ }, if we take a set of generators {Pi = (x, y)} of L of the form
+               x = a 0 + a 1 s + a 2 s2 , y = b 0 + b 1 s + b 2 s2 + b 3 s3 .   (2.8)
+Theorem 2.6 For any α, β such that j1 6= j2 and for any n ≤ 6, the Mordell-
+                      (n)
+Weil lattice M = MW(Fα,β ) contains a direct sum M0 ⊕ M1 as a sublattice
+of finite index where
+                    M0 := MW(Fα,β )[n] ∼
+                              (1)
+                                       = Hom(C1 , C2 )[n]                       (2.9)
+and where M1 ∼        (n)
+                 = Mgen   has a set of generators induced from the sections of
+rational elliptic surfaces.
+
+
+3     Preliminaries
+Let us recall some general results on the relationship of the lattices in (1.1).
+
+3.1    About NS(X) and T(X)
+First suppose that X is a complex smooth projective surface with torsion-
+free H 2 (X, Z). Then it is wellknown that the lattice H 2 (X, Z) (with respect
+to cup-product pairing) is unimodular by the Poincare duality. NS(X) is a
+primitive sublattice of H 2 (X, Z), since the exponential sequence induces an
+injection of the quotient group H 2 (X, Z)/NS(X) into H 2 (X, OX ). Further
+T(X) is also a primitive sublattice of H 2 (X, Z) (as the orthogonal comple-
+ment of NS(X) in H 2 (X, Z)), and we have
+                              det T(X) = det NS(X).                             (3.1)
+The rank of T(X) is called the Lefschetz number, denoted by λ(X). Obvi-
+ously we have
+                          λ(X) = b2 (X) − ρ(X)                     (3.2)
+where ρ(X) = rkNS(X) is the Picard number of X.
+
+                                             5
+Lemma 3.1 (i) The lattice T(X) is a birational invariant of a surface X.
+(ii) T(X) ⊗ Q is the smallest Q-subHodge structure of H 2 (X, Q) such that
+T(X) ⊗ C contains H 2,0 (X) = H 0 (X, Ω2 ).
+
+Proof (i) It is easy to show that, if β : X 0 → X is a blowing-up of X at
+one point, then β ∗ : H 2 (X, Z) → H 2 (X 0 , Z) induces a lattice isomorphism of
+T(X) onto T(X 0 ). This implies the assertion (i), since any birational map is
+composed of finitely many blowing-up and blowing-down by surface theory.
+[N.B. It follows that one can speak of the lattice of transcendental cycles
+T(Z) on any irreducible surface Z which may not be smooth nor projective.]
+   (ii) NS(X)⊗Q is the largest Q-subHodge structure of H 2 (X, Q) contained
+in H 1,1 by the Lefschetz-Hodge theorem. Taking the orthogonal complement,
+one gets the assertion (ii).                                               q.e.d.
+
+Lemma 3.2 Suppose π : X → Y is a rational map of finite degree between
+surfaces with the same geometric genus pg (X) = pg (Y ) > 0. Then we have
+λ(X) = λ(Y ), and there exist natural homomorphisms π ∗ : T(Y ) → T(X)
+and π∗ : T(X) → T(Y ) satisfying the two-way projection formulas
+
+                    π∗ ◦ π ∗ = deg(π),        π ∗ ◦ π∗ = deg(π).           (3.3)
+
+Moreover we have
+
+             π ∗ T(Y ) ∼
+                       = T(Y )[deg(π)],       π∗ T(X) ∼
+                                                      = T(X)[deg(π)]       (3.4)
+
+Proof (cf. Inose [2, Prop.1.1]). Given a rational map π : X → Y , there is a
+birational morphism ψ : X 0 → X such that π ◦ ψ : X 0 → Y is a morphism.
+By (i) of Lemma 3.1, we can identify T(X) = T(X 0 ), and hence, by replacing
+X by X 0 , we can assume π : X → Y is a morphism of finite degree. Then
+we consider the restriction of the standard homomorphisms π ∗ , π∗ between
+H 2 (X, Z) and H 2 (Y, Z) to T(Y ) or T(X). Observe that π ∗ T(Y ) ⊗ C con-
+tains π ∗ H 2,0 (Y ) which coincides with H 2,0 (X) by assumption. Hence, by
+(ii), we have π ∗ T(Y ) ⊗ Q = T(X) ⊗ Q. It follows that λ(X) = λ(Y ) and
+π ∗ T(Y ) ⊂ T(X), π∗ T(X) ⊂ T(Y ). Now the first projection formula of (3.3)
+is obvious (as restriction), while the second one easily follows from the first
+one since π ∗ T(Y ) has finite index in T(X). (3.4) follows immediately from
+(3.3).                                                                  q.e.d.
+
+
+
+                                          6
+Lemma 3.3 Suppose {Xw } is a smooth family of surfaces parametrized by
+an irreducible variety W . Let w be a generic point of W . Then, for any point
+w0 ∈ W , there is an inclusion of lattices:
+
+              NS(Xw ) ,→ NS(Xw0 ) ⊂ H 2 (Xw0 , Z) ∼
+                                                  = H 2 (Xw , Z)          (3.5)
+
+In particular, if ρ(Xw0 ) = ρ(Xw ), then we have NS(Xw ) ∼
+                                                         = NS(Xw0 ) and
+       ∼
+T(Xw ) = T(Xw0 ).
+
+Proof By choosing a specialization Xw → Xw0 and considering the spe-
+cialization of cycles, we have an injection NS(Xw ) ,→ NS(Xw0 ) preserving
+intersection pairing, hence the first assertion. The second assertion follows
+from the primitivity of NS(Xw ) in H 2 (Xw , Z).                       q.e.d.
+
+3.2    Mordell-Weil lattices
+Next suppose that X = (X, f ) is an elliptic surface with a section. Then the
+Mordell-Weil group MW(X) is isomorphic to a quotient group of NS(X) (cf.
+[11, Th.1.3]) :
+                      MW(X) ∼    = NS(X)/Triv(X)                        (3.6)
+where Triv(X) is the trivial sublattice of NS(X) which is generated by the
+zero-section (O) and all the irreducible components of fibres of f . In partic-
+ular, the rank r of MW(X) is given by
+
+                           r = ρ(X) − rk Triv(X).                         (3.7)
+
+    The structure of the Mordell-Weil lattice is defined by sending MW(X)
+naturally into the orthogonal complement of Triv(X) in NS(X) ⊗ Q, and
+the height pairing is defined by using the intersection theory on the elliptic
+surface X (see [11, §8]). In particular, we have
+Lemma 3.4 The determinant of the Mordell-Weil lattice is given by
+                  det(MW(X)/MW(X)tor )   det NS(X)
+                                   2
+                                       =             .                    (3.8)
+                       |MW(X)tor |       det Triv(X)
+If MW(X) is torsion-free, this simplifies to:
+                                           det NS(X)
+                         det MW(X) =                  .                   (3.9)
+                                          det Triv(X)
+
+                                      7
+Proof This follows easily from [11, Th.8.7].                                  q.e.d.
+
+Lemma 3.5 Suppose {Xw } is a smooth family of (smooth) elliptic surfaces
+parametrized by an irreducible variety W . Let w be a generic point of W .
+Then, for any point w0 ∈ W such that the trivial lattice stays the same
+under the specialization w → w0 i.e. Triv(Xw ) ∼= Triv(Xw0 ) compatibly with
+NS(Xw ) ,→ NS(Xw0 ), there is an inclusion of lattices:
+
+                            MW(Xw ) ,→ MW(Xw0 )                               (3.10)
+
+If, in addition, the rank of MW(Xw0 ) is equal to that of MW(Xw ) [equiva-
+lently, if ρ(Xw0 ) = ρ(Xw )], then we have MW(Xw ) ∼
+                                                   = MW(Xw0 ).
+
+Proof This follows from Lemma 3.3 by using the relation (3.6) of NS and
+MW as groups and by noting that the structure of MW(X) as lattice is
+completely determined by the embedding of Triv(X) into NS(X) as recalled
+above.                                                            q.e.d.
+
+                                                                        (n)
+4     Review on the elliptic K3 surfaces Fα,β
+For a K3 surface X, we have
+
+                    H 2 (X, Z) ∼
+                               = U ⊕3 ⊕ E8 [−1]2 ,      b2 = 22                (4.1)
+
+where U is an even unimodular lattice of rank 2 and E8 is the root lattice of
+rank 8 (the unique positive-definite even unimodular lattice of rank 8) (cf.
+[1]). Thus the signature of H 2 (X, Z) is (3, 19), while that of the Néron-Severi
+lattice NS(X) is (1, ρ − 1) by the Hodge index theorem.
+    If X = Km(C1 ×C2 ) is a Kummer surface of the product of elliptic curves,
+then
+                       ρ(X) = h + 18, λ(X) = 4 − h                           (4.2)
+where h is the rank of Hom(C1 , C2 ).
+                                                            (n)
+   Now let us consider the elliptic K3 surfaces F (n) = Fα,β (n ≤ 6) defined
+by (1.2). Clearly F (n) is obtained from F (1) by the base change t → tn ; in
+other words, there is a rational map from F (n) to F (1) of degree n
+
+                 π = πn : F (n) → F (1) ,   (x, y, t) 7→ (x, y, tn ).          (4.3)
+
+
+                                        8
+Similarly, for any divisor m of n, there is a rational map πn,m of degree n/m:
+
+                  πn,m : F (n) → F (m) ,    (x, y, t) 7→ (x, y, tn/m ).            (4.4)
+
+   Applying Lemma 3.1 to this situation, it follows from (1.3) and (4.2) that
+ (n)
+Fα,β have the same Lefschetz number λ = 4 − h for all n ≤ 6. Hence we have:
+                     (n)                        (n)
+                 ρ(Fα,β ) = h + 18,       λ(Fα,β ) = 4 − h (n ≤ 6).                (4.5)
+                                                                                 (n)
+    On the other hand, the singular fibres of the elliptic surface Fα,β are
+determined as follows. For n = 1, there are two reducible fibres of type II ∗
+at t = 0 and t = ∞, and (i) no other reducible fibres if
+
+                      D(α, β) := (1 + α3 − β 2 )2 − 4α3 6= 0;                      (4.6)
+
+in case D(α, β) = 0, (ii) a reducible fibre of type I2 at t = 1 if α · β 6= 0; (iii)
+a reducible fibre of type IV at t = 1 if α = 0; (iv) two reducible fibres of
+type I2 at t = 1, −1 if β = 0.
+    Note that the above conditions for (α, β) are respectively equivalent to
+the following conditions on j1 , j2 in view of the relation (1.4):
+
+     (i)j1 6= j2 , (ii)j1 = j2 , 6= 0, 1, (iii)j1 = j2 = 0, or(iv)j1 = j2 = 1.     (4.7)
+
+For n > 1, note that the base change t → tn is ramified only at t = 0 and
+                                    (n)
+t = ∞, which implies that Fα,β has, at t = 0 and t = ∞, fibres of type
+IV ∗ , I0∗ , IV, II, I0 according as n = 2, . . . , 6. At t 6= 0, ∞ where t → tn is
+unramified, any fibre of F (1) induces n fibres of the same type on F (n) . Hence
+                            (n)
+the trivial lattice of Fα,β (cf. [13, §1]) is given as follows:
+   For any n ≤ 6, we have
+                                    (n)
+                            Triv(Fα,β ) = U ⊕ V (n) [−1]                           (4.8)
+
+where V (n) is a sum of the root lattices: in case (i) (i.e. if j1 6= j2 ), then
+
+                       V (n) = E8⊕2 , E6⊕2 , D4⊕2 , A⊕2
+                                                     2 , {0}, {0}                  (4.9)
+
+according as n = 1, . . . , 6. Further V (n) has an additional factor A⊕n
+                                                                       1 in case
+(ii), A⊕n
+       2  in case (iii), and   A ⊕2n
+                                 1   in case  (iv).
+     Therefore the determinant of the trivial lattice is given by the following
+formula:
+                                          (n)
+                              det Triv(Fα,β ) = c(n)2 dn                  (4.10)
+
+                                            9
+where c(n) and d are integers defined as follows according to the cases:
+                                                  1
+                                         if j1 6= j2
+                                                
+              
+               1
+               (n = 1, 5, 6)
+                                                
+                                                
+                                                2
+                                         if j1 = j2 6= 0, 1
+                                                
+     c(n) = 3 (n = 2, 4)     and d =                                           (4.11)
+                                       3 if j1 = j2 = 0
+             4 (n = 3)
+           
+                                    
+                                     
+                                     
+                                       4 if j1 = j2 = 1 .
+                                     
+
+    The rank formula (1.5) stated in Introduction follows immediately from
+(3.7), (4.5) and the above information about the trivial lattices.
+
+                                                         (n)+
+5     Rational elliptic surfaces Fα,β
+Let us introduce auxiliary rational elliptic surfaces, to be denoted below by
+ (n)+
+Fα,β (n ≤ 6). Since we know the MWL of rational elliptic surfaces quite
+                                                                      (n)
+well, it can be used for studying the MWL of elliptic K3 surfaces Fα,β .
+   Letting s = t + 1t , we have
+                                   s2 − 2
+                                 
+                                 
+                                               (n = 2)
+                                    3
+                                 
+                                  s − 3s       (n = 3)
+                                 
+                                 
+                           1
+                                 
+                      tn + n =  (s2 − 2)2 − 2 (n = 4)                          (5.1)
+                          t    
+                               
+                               
+                                s5 − 5s3 + 5s (n = 5)
+                                (s3 − 3s)2 − 2 (n = 6)
+                               
+
+            (n)+
+Let E = Fα,β /k(s) denote the elliptic curve:
+                    (n)+
+            E = Fα,β : y 2 = x3 − 3αx + (sn − nsn−2 + · · · − 2β),              (5.2)
+
+such that E ⊗k(s) k(t) ∼
+                           (n)
+                       = Fα,β . For all n ≤ 6, this defines a rational elliptic
+                                        (n)+
+surface, denoted by the same symbol Fα,β . We let
+                                              (n)+              (n)
+                    L := E(k(s)) = MW(Fα,β ) ⊂ MW(Fα,β )                        (5.3)
+be its Mordell-Weil lattice.
+Lemma 5.1 Assume j1 6= j2 . Then
+                    L = MW(Fα,β ) ∼
+                            (n)+
+                                  = {0}, A∗2 , D4∗ , E6∗ , E8 .E8               (5.4)
+according as n = 1, 2, 3, 4, 5, 6 (A∗2 indicates the dual lattice of root lattice A2 ,
+                                                                                 (n)
+etc). The minimal norm of L[2], i.e. L viewed as a sublattice of MW(Fα,β ),
+is equal to 34 , 2, 83 , 4, 4 according as n = 2, 3, 4, 5, 6.
+
+                                         10
+Proof The MWL of a rational elliptic surface (with a section) is determined
+by the trivial lattice and its embedding into E8 (see [10]). In the case under
+consideration, the trivial lattice is given by the “half” of V (n) in (4.9), which
+immediately implies (5.4).                                                  q.e.d.
+                                                                                  (n)
+Lemma 5.2 Assume j1 6= j2 . Then, for any non-zero P ∈ MW(Fα,β ), we
+have
+                                 4     8
+                    hP, P i ≥ 4, , 2, , 4, 4                   (5.5)
+                                 3     3
+                                                               (n)
+according as n = 1, 2, 3, 4, 5, 6. In particular, MW(Fα,β ) is torsion-free.
+
+Proof By the height formula ([11, Th.8.6]), we have
+                                                    X
+                       hP, P i = 2χ + 2(P O) −           contrv (P )                    (5.6)
+                                                     v
+
+where χ = 2 for a K3 surface and the summation runs over v such that
+the fibre over v is a reducible fibre. Under the assumption j1 6= j2 , we can
+have reducible fibres only at t = 0 and t = ∞, and they are both of type
+II ∗ , IV ∗ , I0∗ , IV, II, I0 according as n = 1, 2, . . . , 6 as recalled in the previous
+section. The local contribution for these types, if non-zero, are respectively
+given by
+                              contrv (P ) = 0, 4/3, 1, 2/3, 0, 0,                     (5.7)
+hence the assertion follows since the intersection number (P O) of the two
+sections (P ), (O) is a non-negative integer for P 6= O.            q.e.d.
+
+                                                                                    (n)
+Corollary 5.3 Assume j1 6= j2 . Then the minimal norm of MW(Fα,β ) is
+given as follows:
+
+            (n)     4                   8
+      µ(MW(Fα,β )) = (n = 2), 2(n = 3), (n = 4), 4(n = 5, 6).                           (5.8)
+                    3                   3
+
+6     Proof of Theorems 2.1, 2.2, 2.3, 2.4
+                                            (n)                      (1)
+Fix n(n ≤ 6), and let X = F (n) = Fα,β , Y = F (1) = Fα,β , and consider the
+rational map π : X → Y of degree n given by (4.3). By Lemma 3.2, we have
+
+                T(X) ⊃ π ∗ T(Y ) ⊃ nT(X),          π ∗ T(Y ) ' T(Y )[n].                (6.1)
+
+                                            11
+Letting ν = ν(n, α, β) be the index of π ∗ T(Y ) in T (X), we have
+
+                     det T(X) = det T(Y ) · nλ /ν 2 ,    ν|nλ              (6.2)
+
+Theorem 2.1 is equivalent to the claim:
+
+                              ν = ν(n, α, β) = 1                           (6.3)
+
+for any n, α, β.
+
+6.1    Step 1: Case h = 0
+First let us prove the claim (6.3) assuming h = 0. In this case, we have λ = 4
+and T(F (1) ) ∼
+              = U ⊕2 . The formula (6.2) becomes
+
+                             det T(F (n) ) = n4 /ν 2 .                     (6.4)
+
+By (3.1), (3.9) and (4.9), this is equivalent to
+
+                        det MW(F n ) = (n4 /c(n)2 )/ν 2                    (6.5)
+
+where c(n) is given by (4.11).
+    Therefore we see that Theorems 2.1, 2.2, 2.3 are mutually equivalent to
+each other and to the claim ν = 1, under the assumption h = 0. (Actually
+the equivalence holds true without this assumption. See §6.3 below.)
+    Now we prove ν = 1, separately for each n ≤ 6. The key is to look at the
+                                                                  (n)
+density of the sphere packing by the Mordell-Weil lattice MW(Fgen     ). This
+idea has been used in [13, §3, Remark] for the case n = 5, and we adapt it
+to other cases as follows.
+
+   The center density of a positive-definite lattice L is defined by
+                                       1√ r √
+                            δ(L) = (     µ) / det L                        (6.6)
+                                       2
+where r is the rank, µ is the minimal norm of L (see [1]). Hence, if L0 is
+a sublattice of L of finite index (say ν) such that µ(L0 ) = µ(L), then δ(L)
+is equal to ν · δ(L0 ), since det L = det L0 /ν 2 . Thus the value of δ in Table
+1 (Theorem 2.4) is to be multiplied by ν at the moment, since the value of
+minimal norm µ given there is correct by Corollary 5.3. Thus we have the
+
+                                        12
+             n    1  2           3       4               5        6
+             rk   0  4           8      12               16      16
+              δ   - ν/12        ν/6 ν · 22 /35
+                                   2
+                                                        ν/5 2
+                                                                ν/62
+             βr   - 1/8         1/16 0.06559          0.11774 0.11774
+
+                                                    (n)
+                        Table 2: Center density of Mgen
+
+
+modified Table 2 where βr in the last row denotes the sphere packing bound
+in dimension r copied from [1, Table 1.2].
+    Now, for each n, we should have
+
+                                δ ≤ βr     and ν|nλ .                          (6.7)
+
+   n = 2, 3, 5 In these cases, if ν > 1, then the center density δ would
+exceed the bound βr as Table 2 shows. This gives the required conclusion
+ν = 1. (N.B. The case n = 2 is classically wellknown from the theory of
+Kummer surfaces, cf. [2], [15].)
+   The above argument is not sufficient in the remaining cases n = 4 and
+n = 6. In fact, it shows only that ν ≤ 2 in case n = 4, and ν ≤ 3 in case
+n = 6. Thus we need a different approach.
+
+    n = 6 In this case, the rational map π : F (6) → F (1) factors through
+F (3) on one hand, and through F (2) on the other hand. We apply Lemma
+3.2 here. Via the first factorization, we have the inclusion of lattices:
+
+              T (F (6) ) ⊃ T (F (3) )[2] = T (F (1) )[3][2] = T (F (1) )[6]    (6.8)
+
+of index a power of 2 (= the degree of the rational map π6,3 : F (6) → F (3) ),
+where the first equality follows from the case n = 3 proven above. Similarly,
+via the second factorization, we have the inclusion of lattices:
+
+              T (F (6) ) ⊃ T (F (2) )[3] = T (F (1) )[2][3] = T (F (1) )[6]    (6.9)
+
+of index a power of 3 (= the degree of the rational map π6,2 : F (6) → F (2) ),
+with the first equality following from the case n = 2. Since 2 and 3 are
+relatively prime, we conclude that
+
+                               T (F (6) ) ∼
+                                          = T (F (1) )[6],                    (6.10)
+
+                                           13
+which proves the assertion for n = 6.
+    n = 4 To exclude the possibility ν = 2, we directly show that the lattice
+   (4)
+Mgen is “2-primitive”, i.e. it has no overlattice of index 2 preserving the min-
+imal norm. We omit the computation here, and refer to Usui [18, IV] where
+this is treated in the special case α = β = 0. In view of the independence
+result in Theorem 2.4, this is in fact sufficient. (The independence will be
+shown below in Step 2.)
+    This completes the proof of Theorems 2.1, 2.2, 2.3 under the assumption
+h = 0.
+
+6.2    Step 2: General case
+Now we prove Theorem 2.1 for any α, β and any n ≤ 6. For this, we use a
+specialization (or deformation) argument. Take and fix any α0 , β0 .
+                                               (n)     (n)
+    We can specialize (or deform) a general Fα,β to Fα0 ,β0 in a smooth family.
+In fact, we have a smooth family {Xw |w ∈ W } of smooth elliptic surfaces such
+              (n)                (n)
+that Xw = Fα,β and Xw0 = Fα0 ,β0 where W is a smooth irreducible variety.
+This follows from the existence of simultaneous resolution of rational double
+points, due to Brieskorn and others (cf. [12] and the references therein).
+Namely, if an elliptic surface is given by a Weierstrass equation, then we can
+consider two models of the surface: the Weierstrass model and the Kodaira-
+Néron model (a smooth elliptic surface). The former is the surface defined
+naturally by the given Weierstrass equation, which is a normal surface with
+rational double points (corresponding to the reducible fibres), and the latter is
+obtained as the minimal resolution of the former. The theory of simultaneous
+resolution assures that, given a family of Weierstrass models, a suitable finite
+base change of the parameter space gives a smooth family of Kodaira-Néron
+models.
+    Applying Lemma 3.3 to the specialization w → w0 , we obtain
+              NS(Xw ) ,→ NS(Xw ) ⊂ H 2 (Xw , Z) ∼
+                                  0            0    = H 2 (Xw , Z)        (6.11)
+    A digression: we insert here the proof of Theorem 2.4. In the above
+situation, assume for a moment that Triv(Xw ) ∼
+                                              = Triv(Xw0 ). Then Lemma
+3.5 gives an inclusion of lattices:
+                           MW(Xw ) ,→ MW(Xw0 ).                           (6.12)
+In particular, if the rank of MW(Xw0 ) is equal to that of MW(Xw ), then we
+have MW(Xw ) ∼    = MW(Xw0 ), which proves the independence statement in
+
+                                       14
+Theorem 2.4. The rest of Theorem 2.4 has been already shown in Step 1.
+This completes the proof of Theorems 2.1 - 2.4.
+   Going back to (6.11) and considering the orthogonal complement, we have
+
+                        T(Xw0 ) ⊂ T(Xw ) ⊂ H 2 (Xw , Z)                   (6.13)
+
+where both inclusions are obviously primitive.
+   In particular, letting n = 1, we have a primitive embedding:
+                                       (1)         (1)
+                                T(Fα0 ,β0 ) ⊂ T(Fα,β ).                   (6.14)
+
+This implies that, for any n ≤ 6, the inclusion in the first row of the following
+diagram is primitive:
+                                 (1)                 (1)
+                             T(Fα0 ,β0 )[n] ⊂ T(Fα,β )[n]
+                                                 k                        (6.15)
+                                 T
+                                  (n)              (n)
+                              T(Fα0 ,β0 ) ⊂ T(Fα,β )
+
+The equality on the right is true by Step 1. Therefore the inclusion on the
+left
+                               (1)           (n)
+                         T(Fα0 ,β0 )[n] ⊂ T(Fα0 ,β0 )                 (6.16)
+is also primitive. Since this inclusion is of finite index for any α0 , β0 (see
+                                                                (n)
+(6.1)), it must be an equality. This proves Theorem 2.1 for Fα0 ,β0 . q.e.d.
+
+6.3    Supplementary remarks
+The equivalence of Theorem 2.1 and 2.2 in general is a consequence of the
+following:
+
+Lemma 6.1
+                                   (1)
+                        det T(Fα,β ) = det Hom(C1 , C2 ).                 (6.17)
+
+                       (1)
+Proof Recall that Fα,β is a double cover of the Kummer surface Km(A)
+(A = C1 × C2 ), not only a degree two quotient of Fα,β ∼
+                                                        (2)
+                                                            = Km(A) (see [14]).
+By [4] (cf. [8]), this implies that there are isomorphisms of lattices (and also
+of Hodge structures):
+
+                  T(Fα,β ) ∼                 T(Km(A)) ∼
+                     (1)
+                           = T(A),                    = T(A)[2].          (6.18)
+
+                                             15
+Hence we have
+                (1)
+       det T(Fα,β ) = det T(A) = det NS(A) = det Hom(C1 , C2 ),           (6.19)
+
+where the second equality results from (3.1) and the last one from the
+wellknown fact that Hom(C1 , C2 ) is the orthogonal complement of T0 =
+{C1 × pt, pt × C2 } in NS(A)[−1] (cf. [15, (14.22)]. Note that, in [15], the
+norm of φ ∈ Hom(C1 , C2 ) was defined by deg(φ) instead of 2 deg(φ) as in the
+present paper.)                                                       q.e.d.
+   The equivalence of Theorem 2.2 and 2.3 easily follows from §3 and §4,
+except for the statement about torsion.
+                                                 (n)
+Lemma 6.2 The Mordell-Weil group MW(Fα,β ) is torsion-free, except for
+the following cases: (a) α = 0, β = ±1 (i.e. j1 = j2 = 0) and n = 2, 4, 6,
+and (b) α3 = 1, β = 0 (i.e. j1 = j2 = 1) and n = 3, 6. The torsion subgroup
+        (n)
+MW(Fα,β )tor is Z/3Z in case (a), and (Z/2Z)⊕2 in case (b).
+
+Proof In Lemma 5.2, the torsion-freeness is proven in case (i) j1 6= j2 by
+means of the height formula (5.6). In case (ii) j1 = j2 6= 0, 1, it is similarly
+proven, so we omit it.
+    Let us consider the remaining cases (iii) j1 = j2 = 0 and (iv) j1 = j2 = 1.
+                                         (n)
+    In case (iii), the elliptic surface Fα,β has n singular fibres of type IV at
+t 6= 0, ∞, and the height formula gives (cf. the proof of Lemma 5.2)
+
+                                        (n)            2
+                        hP, P i ≥ µ(MW(Fgen )) −         ·n               (6.20)
+                                                       3
+where the value of µ is given by (5.8). If P 6= O is a torsion section, we have
+hP, P i = 0, which implies that n = 2, 4, 6 or n = 3. But n = 3 is impossible,
+because if P 6= O is a torsion then P 0 = 2P should satisfy hP 0 , P 0 i = 0 too;
+writing down the height formula for P 0 , we find easily a contradiction.
+    Thus a non-trivial torsion in case (iii) can occur only for the case (a), and
+similarly, a non-trivial torsion in case (iv) can occur only for the case (b).
+Moreover the torsion subgroup, if any, must be as stated in the lemma.
+    Conversely, we exhibit the torsion points. First, for (a), n = 2:
+
+                         (2)                    1
+                        F0,1 : y 2 = x3 + (t2 + 2 − 2),                   (6.21)
+                                               t
+
+
+                                       16
+we have 3-torsion points ±(0, t − 1t ). Next, for (b), n = 3:
+                            (3)                         1
+                           F1,0 : y 2 = x3 − 3x + (t3 + 3 ),              (6.22)
+                                                       t
+we have a 2-torsion point (−(t + 1t ), 0) and two more by replacing t by ωt
+with cube roots of unity ω. This completes the proof of Lemma 6.2. q.e.d.
+
+
+7     Explicit generators and structure of lat-
+      tices
+In this section, we consider the structure and generators of the Mordell-Weil
+                 (n)            (n)
+lattices MW(Fgen     ) and MW(Fα,β ), and prove Theorems 2.5 and 2.6.
+
+7.1    Review of the case n = 1, 2
+In our previous paper [15], we have studied the case n = 1, 2 in detail (over
+any algebraically closed base field k of characteristic different from 2 and 3).
+Recall [15, Th. 1.1, 1.2, 6.1]:
+Theorem 7.1 Assume j1 6= j2 . Then
+                             MW(Fα,β ) ∼
+                                 (1)
+                                       = Hom(C1 , C2 ),                    (7.1)
+(where the norm of φ ∈ Hom(C1 , C2 ) is 2 deg(φ)), and
+                             (2)
+            M = MW(Fα,β ) ⊃ M0 ⊕ M1 ,            [M : M0 ⊕ M1 ] = 2h       (7.2)
+                     (1)                         (1)
+where M0 = MW(Fα,β )[2] and M1 = MW(Eα,β )[2]. Here
+                    (1)
+                  Eα,β : y 2 = x3 − 3αt2 x + t2 (t2 − 2βt + 1)             (7.3)
+
+is a rational elliptic surface with MW(Eα,β ) ∼
+                                        (1)
+                                              = (A∗2 )⊕2 . In particular, we have
+                      (1)                     (2) ∼
+                  MW(Fgen ) = {0},        MW(Fgen ) = A∗2 [2]⊕2 .          (7.4)
+   The generators (2.6) given in Theorem 2.5 for n = 2 are, up to sign,
+the minimal vectors of norm 4/3 of two copies of A∗2 [2] which are similar to
+hexagonal lattices.
+   Note that both E (1) and F (1) above become isomorphic to F (2) by the
+quadratic base change t → t2 , i.e. they are the twist of each other with
+respect to the quadratic extension.
+
+                                          17
+7.2    Proof of Theorem 2.5 for n > 2
+Assume 2 < n ≤ 6. With the notation in Theorem 2.5 or 2.6, we consider
+                         (n)                  (n)+               (1)
+              M = MW(Fα,β ), L = MW(Fα,β ), M0 = MW(Fα,β )               (7.5)
+
+By introducing the elliptic curve E/k(w):
+
+                        E : y 2 = x3 − 3αx + w − 2β,                     (7.6)
+
+and letting
+                         1                                 1
+                     s=t+ ,        T = tn ,     w=T +        ,           (7.7)
+                         t                                 T
+we have
+               M = E(k(t)),     L = E(k(s)),         M0 = E(k(T )).      (7.8)
+We note that E ∼
+                      (1)+
+                 = Fα,β . Note also (cf. [16]) that k(t)/k(w) is a Galois
+extension with the Galois group G = hσ, τ i where
+                                                       1
+                          σ : t → ζn · t,     τ :t→                      (7.9)
+                                                       t
+(ζn a primitive n-th root of unity). Since k(T ) corresponds to hσi and k(s)
+to hτ i by Galois theory, we have also M hσi = M0 and M hτ i = L.
+
+Lemma 7.2 L ∩ M0 = {0} and L ⊕ M0 is an orthogonal direct sum.
+
+Proof Since L ∩ M0 = E(k(s) ∩ k(T )) and k(s) ∩ k(T ) = k(w) by Galois
+theory, the first assertion follows from E(k(w)) = {0}. The latter holds
+because E/k(w) defines a rational elliptic surface with a singular fibre of
+type II ∗ at w = ∞.
+   Next take any P ∈ L and Q ∈ M0 , and let hP, Qi = a. Applying τ ,
+we have hP τ , Qτ i = a too, since the height pairing is invariant under an
+automorphism ([11, Prop.8.13]). It follows that hP, Q + Qτ i = 2a. But, since
+Q + Qτ belongs to L ∩ M0 = {0}, we have 2a = 0, implying a = 0. This
+proves the second assertion.                                          q.e.d.
+
+Lemma 7.3 Let L0 ⊂ M be the image of L under σ; in other words, let
+L0 = E(k(s0 )) where s0 = sσ = ζn t + 1/(ζn t). Then L ∩ L0 is equal to {0} in
+case n is odd, and to MW(F (2)+ ) in case n is even.
+
+
+                                       18
+Proof We have L ∩ L0 = E(k(s) ∩ k(s0 )), and k(s) ∩ k(s0 ) corresponds to
+H = hτ, τ 0 i ⊂ G where τ 0 = σ −1 τ σ. By rewriting τ 0 = σ −2 τ , we see that
+H = hτ, σ −2 i is equal to hτ, σi = G if n is odd, but H is of index 2 in G if
+n is even. It follows that L ∩ L0 = E(k(w)) = {0} in case n is odd and that
+L ∩ L0 ∼
+       = MW(F (2)+ ) in case n is even.                                  q.e.d.
+
+Lemma 7.4 Assume h = 0 and let n = 3 or n = 5. Then det(L + L0 ) is
+equal to 34 /42 (n = 3) or 54 (n = 5), and we have M = L + L0 .
+
+Proof By Lemma 7.3, L + L0 has the same rank as M under the assumption.
+If we admit the assertion about the determinant, then L + L0 = M ∼    = Mgen(n)
+
+follows in view of Theorem 2.4. This will prove the lemma and hence The-
+orem 2.5 for n = 3 or n = 5. Thus the proof is reduced to computing the
+determinant of the height matrix, which we omit here but it is similar to that
+given in [16] or [18].                                                  q.e.d.
+
+    To cover the case n = 4, 6, we can modify the above argument as follows.
+First, by Theorem 2.4, we may assume that α = β = 0, since this corresponds
+to the case where j1 = 0, j2 = 1, i.e. C1 : y 2 = x3 − 1 and C2 : y 2 = x3 − x,
+which are non-isogenous elliptic curves (h = 0). In this case, the elliptic
+surface
+                              (n)                  1
+                            F0,0 : y 2 = x3 + tn + n                     (7.10)
+                                                  t
+for any n has an automorphism
+                                          √
+                        (x, y, t) → (−x, −1y, ζ2n · t).                  (7.11)
+
+Let σ̃ be the automorphism of M = MW(F0,0 ) ∼
+                                             (n)  (n)
+                                            = MW(Fgen ) and redefine L0
+as the image of L under σ̃.
+
+Lemma 7.5 Assume h = 0 and let n = 4 or n = 6. Then the intersection
+L ∩ L0 = {0}, and det(L + L0 ) is equal to 44 /32 (n = 4) or 64 (n = 6).
+
+    As before, Lemma 7.5 will complete the proof of Theorem 2.5 for all
+n ≤ 6 in view of Theorem 2.4. The lemma can be proven by computing the
+height determinant. We refer to Usui’s paper in preparation [18, IV] for more
+detail, who uses such results for the determination of Mordell-Weil lattice of
+y 2 = x3 + tm + 1 for all m.
+
+
+                                      19
+7.3    Proof of Theorem 2.6 for n > 2
+Now we assume only the condition j1 6= j2 (which is weaker than h = 0) in
+                                                            (n)
+the situation of §7.2. For n fixed, the trivial lattice of Fα,β is the same as
+that for general parameter α, β, and hence the argument in §6.2 applies. By
+the inclusion (6.12), we have
+                      (n) ∼                     (n)
+                  MW(Fgen ) = M1 = L + L0 ⊂ MW(Fα,β ).                   (7.12)
+                                  (1)                                        (n)
+On the other hand, M0 = MW(Fα,β )[n] is orthogonal to M1 in M = MW(Fα,β )
+by Lemma 7.2. Hence, comparing the rank, we see that M0 ⊕ M1 is of finite
+index in M . This proves Theorem 2.6.                             q.e.d.
+
+    N.B. Actually we have shown in the above that L + L0 has the right rank,
+only in case n is odd (Lemma 7.2), since we have omitted the proof of lemma
+7.4. In order to make the proof of Theorem 2.6 self-contained, we note an
+alternative proof in case n = 4, 6 similar to the case n = 2 mentioned in §7.1.
+    Namely, if n = 2m, then we have
+                           (n)               (m)           (m)
+              M = MW(Fα,β ) ⊃ MW(Fα,β )[2] ⊕ MW(Eα,β )[2]                (7.13)
+as a sublattice of finite index, where E (m) is the quadratic twist of F (m) for
+m = 2 or 3 given by
+                    (2)
+                  Eα,β : y 2 = x3 − 3αt2 x + t(t4 − 2βt2 + 1),           (7.14)
+                    (3)
+                  Eα,β : y 2 = x3 − 3αt2 x + (t6 − 2βt3 + 1).            (7.15)
+Since Theorem 2.6 is proven for m = 2, 3, it suffices to note that E (m) is a
+rational elliptic surface for m = 2, 3 (e.g. with MWL of type E8 for general
+values of α, β; cf. [11, §10]). This proves Theorem 2.6.              q.e.d.
+
+
+8     Application to singular K3 surfaces
+Let X be a singular K3 surface, i.e. a complex K3 surface with maximal
+Picard number ρ(X) = 20, and let T (X) denote the lattice of transcendental
+cycles on X, given with the natural orientation. Let QX denote the Gram
+matrix of T (X) with respect to an oriented basis:
+                                                   !
+                                        2a b
+                              QX =                     .                   (8.1)
+                                         b 2c
+
+                                        20
+      Let us recall the following:
+(1) The correspondence X → QX defines a bijection from the set of singular
+K3 surfaces (up to isomorphisms) to the set of positive-definite even integral
+matrices up to SL2 (Z)-equivalence (see [4]).
+                                                                             (1)
+(2) Every singular K3 surface X is isomorphic to an elliptic surface Fα,β for
+some α, β (not necessarily unique) ([4], [14]).
+      Now suppose X ∼
+                              (1)                                 (2)
+                         = Fα,β . Then X has a double cover Fα,β which is iso-
+morphic to a Kummer surface Km(C1 × C2 ) such that the absolute invariants
+j1 , j2 of C1 , C2 are given by (1.4). We have ρ(X) = 20 iff C1 , C2 are isogenous
+elliptic curves with complex multiplications. As a special case of Theorem
+2.1, we have the following result:
+
+Theorem 8.1 If a singular K3 surface X ∼
+                                           (1)
+                                       = Fα,β corresponds to the matrix
+                                         (n)
+QX above, then for each n ≤ 6, X (n) = Fα,β is the singular K3 surface
+corresponding to                               !
+                                       2a b
+                     QX (n) = nQX = n            .                (8.2)
+                                        b 2c
+
+Example 8.1 Let j1 = j2 = 0, i.e. α = 0, β = ±1; we choose β = 1. Then
+      (1)
+X = F0,1 with!the defining equation: y 2 = x3 + t + 1/t − 2 corresponds to
+        2 1                         (n)
+QX =          . By Theorem 8.1, F0,1 : y 2 = x3 + tn + 1/tn − 2 corresponds
+        1 2
+to nQX for any n ≤ 6. In particular, we have
+                           (n)               (n)
+                  det T(F0,1 ) = det NS(F0,1 ) = 3n2 (n ≤ 6).
+
+Example 8.2 Let j1 = j2 = 1, so that !   we can take α = 1, β = 0. Then
+        (1)                         2 0                        (n)
+X = F1,0 corresponds to QX =              . By Theorem 8.1, F0,1 : y 2 =
+                                    0 2
+x3 − 3x + tn + 1/tn corresponds to nQX , and we have
+                           (n)               (n)
+                  det T(F1,0 ) = det NS(F1,0 ) = 4n2 (n ≤ 6).
+
+    N.B. In the above example, the elliptic curve C1 with j1 = 1 has a defining
+                                   (2)
+equation y 2 = x4 − 1. Then F1,0 is isomorphic to the Kummer surface
+Km(C1 × C1 ) with the defining equation (x41 − 1)t2 = x42 − 1, where t is the
+“elliptic parameter” giving the elliptic fibration F (2) (cf. [7], [15, §5]). Since
+        (4)                  (2)
+Y = F1,0 is obtained from F1,0 by the base change t = u2 , it is birational to
+
+                                        21
+(x41 − 1)u4 = x42 − 1. Hence Y is isomorphic to the Fermat quartic surface
+and we see that QY = 4QX with det = 64 (as is wellknown). This argument
+is applicable to more general situation (cf. [2]).
+
+Example 8.3 (cf. [16]) Next take
+
+   C1 : y 2 = x3 − 1 (j1 = 0),   C2 : y 2 = x3 − 15x + 22 (j2 = 53 /4).       (8.3)
+
+(There is a 2-isogeny ϕ : C1 → C2 , and C2 is a unique elliptic curve
+                                                                  √ with this
+property up to isomorphism.) Then we have α = 0, β = ±11/2 −1, and a
+                                                            (n)
+simple coordinate change makes the defining equation of Fα,β to be:
+
+                                           1
+                           y 2 = x3 + tn − n − 11.                            (8.4)
+                                          t
+                                                                          !
+                             (n)                          2 1
+The singular K3 surface X = Fα,β corresponds to QX = 2n         . The
+                                                          1 2
+case n = 5 has been studied in detail in [16]: the Mordell-Weil lattice
+      (5)
+MW(Fα,β ) of rank 18 and det = 3 · 102 .
+
+    In closing, we remark that the method in this paper has some application
+to supersingular K3 surfaces, which will be discussed elsewhere.
+
+    Acknowledgments – During the preparation of this work (which covers
+a fairly long period since [13]), we have had helpful discussion and correspon-
+dence with many people: M. Kuwata, K. Nishiyama, K. Oguiso, M. Schütt,
+I. Shimada, H. Usui. The main results have been reported at the Nagoya
+conference (organized by S. Kondo, Aug. 2007) where we have also had use-
+ful discussions with N. Elkies and B. van Geemen. We would like to thank
+all these people.
+    The paper has been partly completed during my visit to Max-Planck-
+Institut für Mathematik, Bonn in June 2007. It is my pleasure to dedicate
+this paper to Professor F. Hirzebruch for his 80th birthday.
+
+
+References
+ [1] Conway, J., Sloane, N.: Sphere Packings, Lattices and Groups, Springer-
+     Verlag (1988); 2nd ed.(1993); 3rd ed.(1999).
+
+                                      22
+ [2] Inose, H.: On certain Kummer surfaces which can be realized as non-
+     singular quartic surfaces in P3 , J. Fac. Sci. Univ. Tokyo 23, 545–560
+     (1976).
+
+ [3] — : Defining equations of singular K3 surfaces and a notion of isogeny,
+     Intl. Symp. on Algebraic Geometry/ Kyoto, 495–502 (1977).
+
+ [4] Inose, H. and Shioda, T.: On singular K3 surfaces, in: Complex Analysis
+     and Algebraic Geometry, Iwanami Shoten and Cambridge Univ. Press,
+     119–136 (1977).
+
+ [5] Kodaira, K.: On compact analytic surfaces II-III, Ann. of Math. 77,
+     563-626(1963); 78, 1-40(1963); Collected Works, III, 1269-1372, Iwanami
+     Shoten and Princeton Univ. Press (1975).
+
+ [6] Kuwata, M.: Elliptic K3 surfaces with given Mordell-Weil rank, Com-
+     ment. Math. Univ. St. Pauli 49, 91–100 (2000).
+
+ [7] Kuwata, M., Shioda, T.: Elliptic parameters and defining equations for
+     elliptic fibrations on a Kummer surface, (to appear in Adv. Studies Pure
+     Math).
+
+ [8] Morrison, D. : On K3 surfaces with large Picard number, Invent. Math.
+     75, 105-121 (1984).
+
+ [9] Nishiyama, K.: Examples of Jacobian fibrations on some K3 surfaces
+     whose Mordell-Weil lattices have the maximal rank 18, Comment. Math.
+     Univ. St. Pauli 44, 219–223 (1995).
+
+[10] Oguiso, K. and Shioda, T.: The Mordell–Weil lattice of a rational elliptic
+     surface, Comment. Math. Univ. St. Pauli 40, 83–99 (1991).
+
+[11] Shioda, T.: On the Mordell-Weil lattices, Comment. Math. Univ. St.
+     Pauli 39, 211- 240 (1990).
+
+[12] —: Mordell-Weil lattices of type E8 and deformation of singularities, in:
+     Lecture Notes in Math. 1468, 177–202 (1991).
+
+[13] —: A note on K3 surfaces and sphere packings, Proc. Japan Acad. 76A,
+     68–72 (2000).
+
+
+
+                                      23
+[14] —: Kummer sandwich theorem of certain elliptic K3 surfaces, Proc.
+     Japan Acad. 82A, 137-140 (2006).
+
+[15] —: Correspondence of elliptic curves and Mordell-Weil lattices of cer-
+     tain elliptic K3 surfaces, Algebraic Cycles and Motives, vol. 2, 319–339,
+     Cambridge Univ. Press (2007).
+
+[16] —: The Mordell-Weil lattice of y 2 = x3 + t5 − 1/t5 − 11, Comment.
+     Math. Univ. St. Pauli 56, 45–70 (2007).
+
+[17] Tate, J: Algorithm for determining the type of a singular fiber in an
+     elliptic pencil, SLN 476, 33-52 (1975).
+
+[18] Usui, H.: On the Mordell-Weil lattice of the elliptic curve y 2 = x3 +
+     tm + 1, I, II, III, Comment. Math. Univ. St. Pauli 49, 71–78 (2000); 50,
+     65–87 (2001); 55, 173–194 (2006); IV (in preparation).
+
+Rikkyo University, Department of Mathematics
+3-34-1 Nishi-Ikebukuro Toshima-ku, Tokyo 171-8501, Japan
+(shioda@rikkyo.ac.jp)
+
+
+
+
+                                     24
+
