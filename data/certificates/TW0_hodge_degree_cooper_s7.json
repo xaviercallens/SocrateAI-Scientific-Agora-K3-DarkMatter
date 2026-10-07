@@ -1,4 +1,10 @@
 {
+  "RETRACTED_AS_FAMILY_LEVEL_STATEMENT_2026_10_07": {
+    "why": "formula (sum exponents)/order is a Fuchs-relation tautology; MUM point z=0 omitted; orbifold correction asserted not computed",
+    "superseded_by": "data/certificates/TW0_HODGE_DEGREE_ORBIFOLD.json",
+    "brief": "briefs/WP_TW0_HODGE_DEGREE_REEXAMINATION_2026_10_07.md",
+    "values_below_unchanged": true
+  },
   "checker": "check_TW0_hodge_degree.py",
   "date": "2026-07-29",
   "family": "cooper_s7",

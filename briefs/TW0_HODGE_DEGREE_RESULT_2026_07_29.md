@@ -1,3 +1,13 @@
+> **CORRECTION NOTE, 2026-10-07 (standing rule 3, in band).** This draft's result does not stand as a
+> family-level statement. (1) It lists three singular points; L₂ has four (z = 0, MUM, exponents {0,0}).
+> (2) Its formula "deg ℒ_ell = (Σ exponents)/order = 1" has no cited source and is a Fuchs-relation tautology
+> (returns 1 for every 4-point order-2 Fuchsian operator, including cooper_s10). (3) The "orbifold correction
+> 0" is asserted, not computed. Exact recomputation: the K3 Hodge line bundle of the family has orbifold
+> degree 2/3 (Deligne-extension integer degree 0 or 1); ℓ = 2 holds only as χ(O_K3) = 2 for the Weierstrass
+> model (Noether). See `briefs/WP_TW0_HODGE_DEGREE_REEXAMINATION_2026_10_07.md`,
+> `checkers/check_TW0_hodge_degree_orbifold.py`, `data/certificates/TW0_HODGE_DEGREE_ORBIFOLD.json`.
+> `checkers/check_TW0_hodge_degree.py` now refuses to run. T0 ruling (R-a / R-b) pending. Text below unchanged.
+
 # WP-TW0: Hodge-Bundle Degree Verification for Cooper_S7
 
 **Date**: 2026-07-29  

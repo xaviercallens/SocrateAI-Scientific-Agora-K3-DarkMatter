@@ -160,8 +160,9 @@ NOT_CLAIMED = [
     "(14,-14,5) corresponds to the order-3 elliptic point of X_0(7)",
     "that the per-discriminant form lists are complete: they record what the stated box and the "
     "constructed witnesses contain. Only the discriminant criterion covers all v",
-    "anything certified about T(cooper_s10): C2_cooper_s10_v4_DRAFT.json is DRAFT by T0 ruling; "
-    "the s10 negative is arithmetic of U + <20> as that draft records it, and is advisory",
+    "that 'this lattice is T(cooper_s10)' is more than Tier B: C2_cooper_s10_v5.json is LIVE (T0 D15', "
+    "2026-09-29, value-identical to v4_DRAFT); the s10 negative is arithmetic of U + <20> as that "
+    "certificate records it; no ranking of cooper_s7 over cooper_s10 follows (ledger items 8/9)",
     "any Kodaira fibre type at any locus (CLAUDE.md ledger item 3); elliptic points are treated "
     "only as elliptic points of the modular curve",
     "any physical reading whatsoever (VISION sec 1.3; Tier C blocked, F5b). The LeanMaster theorem "
@@ -953,7 +954,7 @@ def render_brief(c):
         w(f"**T_{f10['n']} = U + <{2 * f10['n']}> contains no such vector**: -3 mod "
           f"{4 * f10['n']} = {m10['D_mod_4n']} is not among the squares mod {4 * f10['n']}, "
           f"{m10['squares_mod_4n']}. The s10 statement is arithmetic of the lattice recorded in "
-          f"the DRAFT certificate `{f10['lattice_cert']}` and is advisory.")
+          f"`{f10['lattice_cert']}` ({T3.CANDIDATES['cooper_s10']['lattice_cert_status']}); it is a lattice fact, not a preference.")
     else:
         w(f"cooper_s10: verdict {m10['verdict']} (clause `{m10['fired']}`).")
     w("")

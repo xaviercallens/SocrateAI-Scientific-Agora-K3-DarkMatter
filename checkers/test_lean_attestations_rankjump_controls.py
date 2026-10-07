@@ -52,7 +52,12 @@ rows = la.build_rows(atts, cm, False)
 check("P0 six rows, all Tier A", len(rows) == 6 and all(r["lattice_tier"] == "A" for r in rows))
 two = [r for r in rows if r["candidate"] == "cooper_s7" and r["v"] in ([1, -1, 0], [2, -4, 1])]
 check("P0 the two s7 (-2)-rows have 2 independent files", all(r["independent_files_passing"] == 2 for r in two))
-check("P0 s10 rows flagged ADVISORY", all(r["advisory_family"] for r in rows if r["candidate"] == "cooper_s10"))
+# advisory_family must mirror the CM certificate's family flag (LIVE since D15' => False), never a hardcode
+check("P0 advisory_family mirrors CM_POINTS_RHO20.json per row",
+      all(r["advisory_family"] == bool(cm["families"][r["candidate"]]["advisory"]) for r in rows))
+_cm_adv = copy.deepcopy(cm); _cm_adv["families"]["cooper_s10"]["advisory"] = True
+check("N0 a CM certificate flagging s10 advisory flips advisory_family on every s10 row",
+      all(r["advisory_family"] for r in la.build_rows(atts, _cm_adv, False) if r["candidate"] == "cooper_s10"))
 present = {k: (la.SOURCE_ROOTS[g["repo"]] / g["file"]).exists() for k, g in GR.items()}
 if all(present.values()):
     rv = la.build_rows(atts, cm, True)

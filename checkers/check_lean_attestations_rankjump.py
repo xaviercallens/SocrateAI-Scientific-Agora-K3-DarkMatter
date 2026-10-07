@@ -195,7 +195,9 @@ def build_rows(atts, cm, verify_files):
     for att in atts["attestations"]:
         res = check_attestation(att, atts["gate_records"], cm, verify_files)
         key = (att["candidate"], tuple(att["v"]))
-        rows.setdefault(key, {"candidate": att["candidate"], "v": att["v"], "attestations": [], "advisory_family": bool(att.get("advisory_family"))})
+        # advisory status is read from the CM certificate (the lattice-certificate status lives there), never from the attestation record
+        rows.setdefault(key, {"candidate": att["candidate"], "v": att["v"], "attestations": [],
+                              "advisory_family": bool(cm["families"][att["candidate"]]["advisory"])})
         rows[key]["attestations"].append(res)
     out = []
     for (cand, v), r in rows.items():
@@ -258,7 +260,8 @@ def main(argv=None):
             "status": "OVERLAY on CM_POINTS_RHO20.json (unchanged): per-row lattice_tier granted from kernel-checked "
                       "statements after exact recomputation that each statement is about that row and after Stream 2's "
                       "own gate readings in each producer's worktree. The rho = 20 cut stays read narrowly (D7'); nothing "
-                      "ranks; cooper_s10 rows stay ADVISORY (D6') whatever their lattice tier.",
+                      "ranks; no cross-family comparison follows from any row's lattice tier (ledger items 8/9; "
+                      "the s10 ADVISORY label lifted with D15', 2026-09-29).",
             "rows": rows, "gate_records": atts["gate_records"], "not_proved_in_either_file": atts.get("not_proved_in_either_file", []),
             "inputs": {"sha256": {"refs/lean_attestations_rankjump_2026_09_27.json": sha(a.attestations),
                                   "data/certificates/CM_POINTS_RHO20.json": sha(a.cm)}},

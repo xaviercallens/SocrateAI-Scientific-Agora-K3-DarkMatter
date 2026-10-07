@@ -296,7 +296,7 @@ def main():
                        "Atkin-Lehner theory cited, not re-derived",
         "not_claimed": [
             "that the moduli space of the cooper_s10 family IS X_0(10)* (open, Deep Think brief sec 2.1)",
-            "anything about T(s10) or the value 20 (C2_cooper_s10_v4_DRAFT stays DRAFT, D6')",
+            "anything about T(s10) or the value 20 beyond what C2_cooper_s10_v5.json (LIVE, D15' 2026-09-29) records at Tier B",
             "identities beyond the stated order",
         ],
         "provenance": "Generated-by: Claude (Opus 5), Stream 2 | Verified-by: negative controls N1-N4 in this "

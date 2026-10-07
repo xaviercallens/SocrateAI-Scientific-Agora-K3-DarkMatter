@@ -130,7 +130,17 @@
       tautology (returns 1 for every 4-point order-2 operator; control N4). Record:
       `briefs/WP_TW0_HODGE_DEGREE_REEXAMINATION_2026_10_07.md`; certificate `TW0_HODGE_DEGREE_ORBIFOLD.json`.
       **T0 to rule:** which reading WP-TW1 (deg Δ = 48 on P³) needs; ledger item 6's wording.
-- [ ] **🟡 Re-emit the v5 chain (mechanical, any agent):** certificates emitted while v4_DRAFT was
+- [x] **v5 chain RE-EMITTED (2026-10-07).** `T3.CANDIDATES['cooper_s10']` → `C2_cooper_s10_v5.json` (LIVE);
+      re-emitted in dependency order: `CM_POINTS_RHO20` → `A2_MEMBERSHIP` (+ brief) → `CM_POINTS_RHO20_LATTICE_TIER`
+      → `C6_SELECTOR_COMPARISON` → `C6_SELECTED_CANDIDATE`; independently `ATKIN_LEHNER_DISC_FORM` (+ brief),
+      `HAUPTMODUL_S10_GAMMA010STAR`, `T3_LEVEL_CONSISTENCY`. Values unchanged (6/6 rows Tier A; AM-8 text still
+      verifies; 46/46, 25/25, 33/33 controls). Three checkers had `advisory` **hardcoded** as `fam == "cooper_s10"`
+      (C6 comparison, C6 adopted) or read from the static attestation record (lean attestations) — now read from
+      the CM certificate's family flag; one control that encoded the pre-D15′ state replaced by a mirror check +
+      a tamper control. §5 regenerated: K-s10 C6 cell no longer shows `LATTICE_CERT_DRAFT`. **Stream 3 must
+      re-mirror** these 8 certificates and re-pin `K3_CRITERIA.md` (their drift test asserts "every s10 row is
+      advisory" and will need the same update).
+- [x] **🟡 Re-emit the v5 chain (mechanical, any agent) — DONE above.** Original text: certificates emitted while v4_DRAFT was
       the lattice source still carry `LATTICE_CERT_DRAFT`/"ADVISORY" provenance wording (values
       unaffected). Order and list in the D15′ brief; also the four checkers that print the wording.
       Until done, §5's K-s10 C6 cell shows the flag next to a LIVE C2 cell — dated, not hidden.

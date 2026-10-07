@@ -154,8 +154,9 @@ NOT_CLAIMED = [
     "Thm 7.3 (pinned) removes the (-2)-walls from the ample locus, and those rows include C1 "
     "singular loci of the operator; 'T_X = v^perp' there refers at best to a pseudo-ample / "
     "resolved surface and is recorded as lattice arithmetic only",
-    "anything certified about T(cooper_s10): C2_cooper_s10_v4_DRAFT.json is DRAFT by T0 ruling; "
-    "every s10 row carries LATTICE_CERT_DRAFT and is advisory",
+    "that 'this lattice is T(cooper_s10)' is more than Tier B: C2_cooper_s10_v5.json is LIVE (T0 D15', "
+    "2026-09-29, value-identical to v4_DRAFT; the former LATTICE_CERT_DRAFT flag lifted on that ground only); "
+    "no ranking of cooper_s7 over cooper_s10 follows (ledger items 8/9)",
     "any Kodaira fibre type at any locus (CLAUDE.md ledger item 3): the loci are elliptic "
     "points of the modular curve and are treated only as such",
     "any physical reading whatsoever (VISION sec 1.3; Tier C blocked, F5b)",

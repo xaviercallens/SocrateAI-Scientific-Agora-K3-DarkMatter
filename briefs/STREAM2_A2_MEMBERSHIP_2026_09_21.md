@@ -2,7 +2,7 @@
 
 **Status: RECORD, NOT A GATE.** The rho = 20 cut was ADOPTED by T0 on 2026-09-21 (D7', briefs/T0_DECISIONS_2026_09_21_STREAM2.md), read narrowly: no ranking of candidates, no minimum-|D| rule, no physical reading. `K3_CRITERIA.md` is unchanged, nothing is scored, no candidate or family member is ranked or preferred. This is lattice / modular arithmetic, Tier B at best, with no physical reading.
 
-This file is rendered from `data/certificates/A2_MEMBERSHIP.json` by `python3 checkers/check_A2_membership.py --brief` (function `render_brief`); numbers are looked up in the certificate, not typed. Code identity: b344c73. The checker imports `checkers/check_CM_points_rho20.py` and does not duplicate it; the sha256 of every code and data file used is in the certificate under `inputs.sha256` (16 files).
+This file is rendered from `data/certificates/A2_MEMBERSHIP.json` by `python3 checkers/check_A2_membership.py --brief` (function `render_brief`); numbers are looked up in the certificate, not typed. Code identity: run on top of HEAD 2cab124; 4 code file(s) uncommitted or modified -- identify the code by inputs.sha256, not by this commit. The checker imports `checkers/check_CM_points_rho20.py` and does not duplicate it; the sha256 of every code and data file used is in the certificate under `inputs.sha256` (16 files).
 
 ## Question
 
@@ -13,10 +13,10 @@ LeanMaster's theorem `smallest_black_hole` (`DualScaleDyons/AttractorCharges.lea
 | family | n | A2 | clause that fired | scope |
 |---|---|---|---|---|
 | cooper_s7 | 7 | **PRESENT** | `explicit_vector_with_target_form` | existence (one explicit exact vector suffices) |
-| cooper_s10 (ADVISORY, lattice cert DRAFT) | 10 | **ABSENT** | `D_not_square_mod_4n` | ALL primitive v of negative norm (exact congruence, leg A) |
+| cooper_s10 | 10 | **ABSENT** | `D_not_square_mod_4n` | ALL primitive v of negative norm (exact congruence, leg A) |
 
 Cautious wording, Tier B: **the M_7-polarized family (Dolgachev moduli space X_0(7)+; cooper_s7 is its period operator) contains a point whose transcendental lattice is A2, and in the s7 coordinate that point is z = infinity** - a singular point of L3, where the explicit projective model is not examined (see Not claimed). The lattice statement is exact: T_7 contains the primitive vector v = (14, -14, -5) with -v^2 = 42, div(v) = 14, v^perp with Z-basis [[1, 1, 0], [0, 5, 1]] and Gram [[2, 5], [5, 14]], which Gauss-reduces to (1, 1, 1).
-**T_10 = U + <20> contains no such vector**: -3 mod 40 = 37 is not among the squares mod 40, [0, 1, 4, 9, 16, 20, 24, 25, 36]. The s10 statement is arithmetic of the lattice recorded in the DRAFT certificate `C2_cooper_s10_v4_DRAFT.json` and is advisory.
+**T_10 = U + <20> contains no such vector**: -3 mod 40 = 37 is not among the squares mod 40, [0, 1, 4, 9, 16, 20, 24, 25, 36]. The s10 statement is arithmetic of the lattice recorded in `C2_cooper_s10_v5.json` (LIVE); it is a lattice fact, not a preference.
 
 ### Why the n = 10 negative is not "not found within a bound"
 
@@ -116,7 +116,7 @@ R1 real known-negative A2 at n = 10 (`D_not_square_mod_4n`); R2 (1,0,1) at n = 7
 - that z = infinity IS the value at the A2 point: the statement rests on (a) the relation 1/z = alpha t + beta + gamma/t, certified by T3.modular_leg to a finite q-order only (PASS(N), N = relation_order_checked in the point record), and (b) |1/z| below 10^-(dps-20) at two precisions (Tier B numeric recognition), supported by an exact proportionality that itself rests on a numerically recognised minimal polynomial of t
 - that the singular-point reading of the hand estimate was unanticipated program-wide: the docstring of Stream 1's g3_fixes (ModularAction.lean, read as source) already says that (14,-14,5) corresponds to the order-3 elliptic point of X_0(7)
 - that the per-discriminant form lists are complete: they record what the stated box and the constructed witnesses contain. Only the discriminant criterion covers all v
-- anything certified about T(cooper_s10): C2_cooper_s10_v4_DRAFT.json is DRAFT by T0 ruling; the s10 negative is arithmetic of U + <20> as that draft records it, and is advisory
+- that 'this lattice is T(cooper_s10)' is more than Tier B: C2_cooper_s10_v5.json is LIVE (T0 D15', 2026-09-29, value-identical to v4_DRAFT); the s10 negative is arithmetic of U + <20> as that certificate records it; no ranking of cooper_s7 over cooper_s10 follows (ledger items 8/9)
 - any Kodaira fibre type at any locus (CLAUDE.md ledger item 3); elliptic points are treated only as elliptic points of the modular curve
 - any physical reading whatsoever (VISION sec 1.3; Tier C blocked, F5b). The LeanMaster theorem name is quoted as an identifier only
 
