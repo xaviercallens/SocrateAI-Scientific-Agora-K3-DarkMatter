@@ -132,3 +132,27 @@ z = 1/27 the cubic at s = 0 has a **double root** with v_s(Δ) = 2 (node → roo
 **triple root** with v_s(Δ) = 4 (rank 2, A₂). Every lattice-forced reading of the table above is reproduced by the
 explicit model (`model_checks` in `TW2_RHO20_LOCI.json`; controls P2, N7). The certificate also carries the three
 **specialized Weierstrass models** (a₂, a₄, a₆ reduced mod m_J) — the concrete input for step 2b-ii.
+
+---
+
+## 7. Step 2b-i completed (2026-10-08): the full map of curves, and a dated precision correction
+
+**Correction (standing rule 3).** §6 above says "φ∘φ = [−7] proved" from the x-coordinate identity. An identity of
+x-coordinates proves only **φ∘φ = ±[7]**. The sign is fixed by structure, not by the sampled identity: the locus
+z = 1/27 is a CM point of discriminant D = −28 (read from `CM_POINTS_RHO20.json`), so End(E)⊗ℚ is an imaginary
+quadratic field, in which no element squares to +7 — hence φ∘φ = [−7] (Tier B; recorded as `sign_of_square` in the
+certificate). The earlier statement stands with that qualifier.
+
+**New (exact, no sampling).** `y_map_check` in `check_TW2_sqrt_m7_endomorphism.py` verifies, as an identity of rational
+functions, that Vélu's map (x, y) ↦ (φ_x, y·φ_x′) composed with the isomorphism (X, Y) ↦ (c²X, c³Y), c³² = c²³ = −1/343,
+is a morphism E → E: c³²·φ_x′(x)²·f(x) = (c²φ_x)³ + A(c²φ_x) + B. The map is defined over ℚ(√−7) (c³ = ±√−7/49) while
+its x-part is defined over ℚ. Then φ_y(x) = c³·φ_x′(x) has numerator and denominator of degree 9, coprime, with
+denominator h³ — so φ_y(x₁) = ±t³ has degree **9 = (3d − 3)/2** for d = 7, exactly the count in Kumar–Kuwata
+Prop. 3.2(i). Controls (12 in all): wrong c³², wrong isomorphism constant, and the x-map of a kernel cubic off by
+one are all refused by the y-identity.
+
+**What this unlocks and what remains.** Everything Prop. 3.2 asks of φ is now explicit: the endomorphism over
+ℚ(√−7), the nine points of D⁺_φ as the roots of a degree-9 polynomial in x₁ for each t₆, and the cubic (3.1). The
+remaining step 2b-ii is the computation in Pic⁰ of that cubic over ℚ(√−7)(t₆) — reducing D⁺_φ − 9·O to a single
+point Q⁺ — and the descent to F⁽¹⁾; it is a function-field computation (resultants/Riemann–Roch over ℚ(√−7)(t)),
+not yet attempted.

@@ -128,6 +128,30 @@ def iso_constant(A, B, A2, B2):
     raise Refuse("no isomorphism constant c^2 with (c^2)^2 = A/A' and (c^2)^3 = B/B': the codomain is not isomorphic to E")
 
 
+def y_map_check(A, B, phi_x, c2, h, c3sq=None):
+    """The y-part of the endomorphism, exact. Velu's normalized isogeny is (x, y) -> (phi_x, y * phi_x'(x));
+    composed with the isomorphism (X, Y) -> (c2 X, c3 Y), c3^2 = c2^3, it is a morphism E -> E iff
+        c3^2 * phi_x'(x)^2 * f(x) == (c2 phi_x)^3 + A (c2 phi_x) + B      (f = x^3 + A x + B)
+    as rational functions -- an exact identity (no sampling, no sqrt: only c3^2 enters). Also returns the
+    degrees of phi_y(x) = c3 * phi_x'(x) as num/den, which Kumar-Kuwata Prop. 3.2 needs: for odd degree d
+    the equation phi_y(x1) = +/- t^3 has degree (3d - 3)/2 = 9 for d = 7."""
+    c3sq = c2 ** 3 if c3sq is None else c3sq
+    f = x ** 3 + A * x + B
+    dphi = sp.cancel(sp.diff(phi_x, x))
+    lhs = sp.cancel(c3sq * dphi ** 2 * f)
+    rhs = sp.cancel((c2 * phi_x) ** 3 + A * (c2 * phi_x) + B)
+    identity = sp.cancel(lhs - rhs) == 0
+    n, d = sp.fraction(dphi)
+    n, d = sp.Poly(n, x), sp.Poly(d, x)
+    g = sp.gcd(n, d)
+    return {"identity_curve_to_curve": bool(identity), "c3_squared": str(c3sq),
+            "phi_y_numerator_degree": int(n.degree()), "phi_y_denominator_degree": int(d.degree()),
+            "phi_y_num_den_coprime": g.degree() == 0,
+            "denominator_is_kernel_cubic_cubed": sp.simplify(d.monic().as_expr() - h.as_expr() ** 3) == 0,
+            "equation_degree_phi_y_eq_t3": int(max(n.degree(), d.degree())),
+            "kumar_kuwata_expected_degree": 9}
+
+
 def run(j=None, n_points=60):
     j = read_j() if j is None else j
     A, B = model_from_j(j)
@@ -158,8 +182,15 @@ def run(j=None, n_points=60):
             ok += int(sp.simplify(v2 - rhs) == 0)
         except ZeroDivisionError:
             continue
+    ymap = y_map_check(A, B, phi_x, c2, h)
+    cm = json.loads((CERTS / "CM_POINTS_RHO20.json").read_text())["families"]["cooper_s7"]["locus_hits"]["1/27"][0]
+    sign_note = {"D_of_locus_from_CM_certificate": cm["D"],
+                 "reasoning": ("x-coordinates give phi o phi = +/-[7]; End(E) tensor Q is the imaginary quadratic field of the CM discriminant D < 0, "
+                               "in which no element squares to +7 (that would put sqrt(7) in it); hence phi o phi = [-7]"),
+                 "tier": "B (uses that the locus is a CM point of discriminant D, from CM_POINTS_RHO20.json)"}
     return {"j": str(j), "model": {"A": str(A), "B": str(B)}, "kernel_cubic": str(h.as_expr()),
             "phi_x": {"num": str(num), "den": str(den), "degrees": list(degs), "den_is_kernel_cubic_squared": den_is_h2},
+            "phi_y": ymap, "sign_of_square": sign_note,
             "codomain": {"A2": str(A2), "B2": str(B2), "j_equal": True, "c2": str(c2)},
             "composition_phi_phi_equals_minus7": {"agreements": ok, "points": tried, "degree_bound": 49,
                                                    "is_identity": ok == tried and tried > 49}}
@@ -176,8 +207,15 @@ def main(argv=None):
     print(f"phi_x degrees {res['phi_x']['degrees']}, denominator = h^2: {res['phi_x']['den_is_kernel_cubic_squared']}; codomain isomorphic to E with c^2 = {res['codomain']['c2']}")
     cc = res["composition_phi_phi_equals_minus7"]
     print(f"phi o phi = [-7] on x-coordinates: {cc['agreements']}/{cc['points']} exact agreements (identity: {cc['is_identity']})")
-    ok = cc["is_identity"] and res["phi_x"]["den_is_kernel_cubic_squared"]
-    print("PASS: sqrt(-7) exhibited" if ok else "FAIL")
+    ym = res["phi_y"]
+    print(f"y-part: curve-to-curve identity (exact, rational functions): {ym['identity_curve_to_curve']}; phi_y = c3 phi_x' has numerator/denominator degrees "
+          f"{ym['phi_y_numerator_degree']}/{ym['phi_y_denominator_degree']}, coprime {ym['phi_y_num_den_coprime']}, denominator = h^3: {ym['denominator_is_kernel_cubic_cubed']}; "
+          f"degree of phi_y(x1) = t^3 equation: {ym['equation_degree_phi_y_eq_t3']} (Kumar-Kuwata: {ym['kumar_kuwata_expected_degree']})")
+    print(f"sign: locus D = {res['sign_of_square']['D_of_locus_from_CM_certificate']} < 0 => phi o phi = [-7], not [+7]")
+    ok = (cc["is_identity"] and res["phi_x"]["den_is_kernel_cubic_squared"] and ym["identity_curve_to_curve"] and ym["phi_y_num_den_coprime"]
+          and ym["denominator_is_kernel_cubic_cubed"] and ym["equation_degree_phi_y_eq_t3"] == ym["kumar_kuwata_expected_degree"]
+          and res["sign_of_square"]["D_of_locus_from_CM_certificate"] < 0)
+    print("PASS: sqrt(-7) exhibited as a morphism of curves" if ok else "FAIL")
     if a.emit and ok:
         cert = {"checker": "checkers/check_TW2_sqrt_m7_endomorphism.py", "checker_sha256": hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
                 "work_package": "WP-TW2 step 2b-i (D23', 2026-10-07)",
@@ -185,7 +223,7 @@ def main(argv=None):
                 "result": res,
                 "not_claimed": ["the section on the K3 itself (step 2b-ii, Kumar-Kuwata (3.1)-(3.3) descent, not done)",
                                 "anything about fibres of the K3 beyond step 2a; no Kodaira label anywhere",
-                                "the sign of the endomorphism (phi = +/- sqrt(-7); x-coordinates do not see it)",
+                                "which of +/- sqrt(-7) phi is (x-maps and the y-identity involve c3^2 only); the sign of phi o phi is fixed separately (sign_of_square, Tier B)",
                                 "any physical statement (ledger item 4)"],
                 "generated_by": "Claude (Fable 5.1), Stream 2, 2026-10-07", "verified_by": "checkers/test_TW2_sqrt_m7_endomorphism_controls.py", "reviewed_by": "N"}
         CERT.write_text(json.dumps(cert, indent=2) + "\n")
