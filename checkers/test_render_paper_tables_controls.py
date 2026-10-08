@@ -64,6 +64,45 @@ sc["result"]["families"]["cooper_s7"]["SEL-N"]["tied_rows"] = sc["result"]["fami
 (tmp / "C6_SELECTOR_COMPARISON.json").write_text(json.dumps(sc))
 tampered2 = rpt.render_selector_comparison()
 check("N2 tampered SEL-N tie count changes the selector_comparison fragment", tampered2 != base2)
+shutil.copy(orig_certs / "C6_SELECTOR_COMPARISON.json", tmp / "C6_SELECTOR_COMPARISON.json")
+
+# N4 (2026-10-08): the fibration orders are read, not typed -- a tampered locus order must change the table
+base4 = rpt.render_fibration_orders()
+fb = json.loads((tmp / "INOSE_FIBRATION_MULTIPLICITIES.json").read_text())
+fb["result"]["T5_s7_loci"]["-1"]["orders"]["s=0"] = 7
+(tmp / "INOSE_FIBRATION_MULTIPLICITIES.json").write_text(json.dumps(fb))
+t4 = rpt.render_fibration_orders()
+check("N4 tampered locus order changes the fibration_orders fragment", t4 != base4 and "7" in t4.split("z=-1")[1].split("\\\\")[0])
+fb["result"]["T3_generic_orders"]["roots_of_d_of_s2"] = "6 simple iff ..."
+(tmp / "INOSE_FIBRATION_MULTIPLICITIES.json").write_text(json.dumps(fb))
+check("N4b tampered generic root count changes the generic row", rpt.render_fibration_orders().count(",1") > t4.count(",1"))
+shutil.copy(orig_certs / "INOSE_FIBRATION_MULTIPLICITIES.json", tmp / "INOSE_FIBRATION_MULTIPLICITIES.json")
+
+# N5 (2026-10-08): the ADVISORY tag follows the certificate flag, not the family name
+tr = json.loads((tmp / "CM_POINTS_RHO20_LATTICE_TIER.json").read_text())
+check("N5a no ADVISORY tag while every advisory_family flag is false", "ADVISORY" not in rpt.render_rankjump_rows())
+for r in tr["rows"]:
+    if r["candidate"] == "cooper_s7":
+        r["advisory_family"] = True
+(tmp / "CM_POINTS_RHO20_LATTICE_TIER.json").write_text(json.dumps(tr))
+t5 = rpt.render_rankjump_rows()
+check("N5b setting the s7 flag tags exactly the s7 rows", t5.count("ADVISORY") == 3 and all("cooper\\_s7}\\,(ADVISORY)" in l for l in t5.splitlines() if "cooper\\_s7}" in l))
+shutil.copy(orig_certs / "CM_POINTS_RHO20_LATTICE_TIER.json", tmp / "CM_POINTS_RHO20_LATTICE_TIER.json")
+
+# N6 (2026-10-08): new-paper tables follow their certificates
+base6 = rpt.render_tw2_loci()
+lo = json.loads((tmp / "TW2_RHO20_LOCI.json").read_text())
+lo["result"]["loci"]["infinity"]["resolution"]["mordell_weil_rank"] = 1
+lo["result"]["loci"]["infinity"]["resolution"]["height"] = "3"
+lo["result"]["loci"]["infinity"]["resolution"]["P_dot_O_solutions"] = [{"P_dot_O": 9}]
+(tmp / "TW2_RHO20_LOCI.json").write_text(json.dumps(lo))
+t6 = rpt.render_tw2_loci()
+check("N6 a tampered MW rank at z=infinity removes 'no section'", "no section" in base6 and "no section" not in t6)
+idn = json.loads((tmp / "SELECTED_K3_IDENTIFICATION.json").read_text())
+base7 = rpt.render_identification()
+idn["points"][0]["determined_by_discriminant_alone"] = False
+(tmp / "SELECTED_K3_IDENTIFICATION.json").write_text(json.dumps(idn))
+check("N7 identification name is withheld when the certificate says det does not determine it", rpt.render_identification().count("not named") == base7.count("not named") + 1)
 
 rpt.CERTS = orig_certs
 
