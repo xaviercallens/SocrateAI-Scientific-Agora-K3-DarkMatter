@@ -168,6 +168,11 @@
       (its 10-07 build still printed 3 ADVISORY tags; renderer now reads `advisory_family`, fibration orders read not typed).
       Stream 3 note in Home `papers/stream3_status_note_2026_10_08.pdf`. Other streams' papers NOT edited; FYI brief
       `briefs/STREAM2_TO_ALL_STREAMS_PAPERS_2026_10_08.md`. Nothing submitted externally.
+      **D29′ (2026-10-08): K3×T² = Reading S (Shioda–Inose pairing), ledger item 12.** `checkers/check_K3xT2_reading_S.py` →
+      `K3xT2_READING_S.json`: T(E×E′) for a cyclic n-isogeny computed in ∧²Z⁴ is isometric to the certified T for n = 7 and n = 10,
+      with NS saturated and of signature (1,2), so Morrison 1984 is no longer needed. At the three s7 ρ=20 points, T(E×E) for
+      the computed CM order equals the certified row (forced; ledger 8). 9 controls. Paper section added (dated item 8). Open:
+      proposal decisions 2–4 (T3 hard gate, K3_CRITERIA edit, scoring).
       **Next:** WP-TW2 step 2b-ii — push the graph of √−7 through Kumar–Kuwata (3.1)–(3.3) to F(6), descend to F(1),
       change to the pinned J9 model and read P̄·Ō = 5, h = 14 with the A₁ contact computed; or exclude a
       section with P̄·Ō = 5 on a Weierstrass model with two E8-root fibres over the surviving bases.
@@ -463,6 +468,8 @@ python3 scripts/check_tier_language.py papers/stream2_selection_geometry_2026_09
 python3 scripts/check_tier_language.py papers/stream2_k3_identification_twisted_route_2026_10_08.tex  # paper prose: 0 violations
 python3 scripts/check_paper_tier_language.py --selftest       # 7 planted cases (verbs, fibre-type tokens, comments, name allowlist)
 python3 scripts/check_paper_tier_language.py papers/stream2_selection_geometry_2026_09_29.tex papers/stream2_k3_identification_twisted_route_2026_10_08.tex  # + no fibre-type token (item 10)
+python3 checkers/check_K3xT2_reading_S.py                     # D29': T(ExE') = certified U+<2n> (n=7,10) by witness; s7 rho=20 forced consistency
+python3 checkers/test_K3xT2_reading_S_controls.py             # 9 controls (wrong n, non-cyclic, orientation, tampered Gram, wrong order, ...)
 python3 checkers/check_TW0_hodge_degree_orbifold.py          # WP-TW0 re-examination: signatures agree; family-level degree != 2 (finding)
 python3 checkers/test_TW0_hodge_degree_orbifold_controls.py  # 9 controls (wrong level/operator disagree; irregular point refused; 07-29 formula non-discriminating)
 python3 checkers/check_TW1_two_e8_feasibility.py             # WP-TW1 LIVE (D20'): P3 FAIL, P1xP2 / scroll PASS (necessary-condition screen)

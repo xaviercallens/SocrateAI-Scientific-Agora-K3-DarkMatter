@@ -140,10 +140,42 @@ selection follows from it. Under the Shioda--Inose reading, ``$T^2$'' is the ell
 programme has certified: the order-three operator is the symmetric square of an order-two operator, and a
 member of Picard number $19$ is paired with a product $E\times E'$ of two elliptic curves related by a cyclic
 isogeny of degree $n$, with $T\cong U\oplus\langle 2n\rangle$. Selection then becomes a question about $n$,
-which can be checked. The 2026-09-16 proposal adopted this reading and the check below presupposes it, but
-the choice between the two readings has \emph{not} been ruled by the decision authority (see
-\cref{sec:corrections}, item 6). The isogeny statement is standard; its primary source (Morrison, 1984) was
-not fetched for this note.
+which can be checked. The choice between the two readings was ruled on 2026-10-08, after the first two
+releases of this note (\cref{sec:corrections}, items 6 and 8): for selection criteria, ``$K3\times T^2$''
+means the Shioda--Inose pairing. The ruling does not identify the $T^2$ of any physical compactification
+with $E$ or $E'$.
+
+\subsection{The lattice behind the reading, computed}\label{sec:readings}
+
+The reading rests on two facts. The first, $T(X)\cong T(E\times E')$ for an Inose surface $X$, is the
+Shioda--Inose structure (\tierL, Kumar--Kuwata Remark~2.2); for $s_7$ the family member is identified with an
+Inose surface through the explicit $M_7$-polarized model (\tierB), while for $s_{10}$, which has no explicit
+model here, the reading holds at the lattice level only. The second fact, $T(E\times E')\cong U\oplus\langle
+2n\rangle$ for curves without complex multiplication joined by a cyclic $n$-isogeny, is usually cited to
+Morrison (1984), which was not fetched. We computed it instead. Write $E\times E'=\mathbb{C}^2/\mathbb{Z}^4$;
+then $H^2(E\times E',\mathbb{Z})\cong\wedge^2\mathbb{Z}^4$ with the determinant pairing, the class of a
+two-dimensional subtorus spanned by $v_1,v_2$ is $v_1\wedge v_2$, and N\'eron--Severi is spanned by the two
+fibres and the graph of the isogeny (rank $3$ by the no-CM assumption, which is stated, not computed). The
+checker verifies that this span has signature $(1,2)$ and is saturated, computes its orthogonal complement,
+and finds it isometric to the certified lattice of each family by a stored basis change (\cref{tab:readings}).
+Nine controls must fail and do: a wrong $n$, a non-cyclic isogeny (caught by saturation), a reversed
+orientation (caught by the signature), a tampered certified lattice, a wrong CM order, and a $j$ that is not
+a class-number-one invariant, among others.
+
+At the three $\rho=20$ points of $s_7$ the two curves coincide. The explicit model gives their $j$-invariant;
+the CM order is identified by computation (class-number-one discriminants enumerated from reduced primitive
+forms, $j$ evaluated numerically and matched to the exact model value), and $T(E\times E)$ is computed from the
+four classes $A$, $B$, the diagonal and the graph of the CM generator. It equals the certified row at all
+three points. This agreement is forced by the Shioda--Inose structure and is recorded as consistency, not as
+corroboration. The $s_{10}$ points are not covered.
+
+\begin{table}[h]
+\centering\small
+\input{tables/reading_s.tex}
+\caption{Top: $T(E\times E')$ for a cyclic $n$-isogeny, computed in $\wedge^2\mathbb{Z}^4$, against each
+family's certified $T$. Bottom: $T(E\times E)$ at the $s_7$ points of Picard number $20$ (forced
+consistency).}\label{tab:readings}
+\end{table}
 
 The check adopted for this reading is unscored: it compares the level $n$ read from the lattice certificate
 (Gram determinant and a serialized $U$-splitting witness, both recomputed) with the level read from the
@@ -273,6 +305,11 @@ checks and a literature recount for a mixed fuzzy-dark-matter search window; it 
   (for the 2026-09-29 note since that date, and for this one), but the continuous-integration runner executes
   its own fixed list and never read them, so no paper had been linted in CI. The table check and the paper
   lint are now in the runner itself. The first release of this note was linted locally only.
+\item \emph{Dated update, 2026-10-08, after release \texttt{v0.3.18}.} The open question of item 6 was ruled
+  the same day (decision D29$'$, taken on the decision authority's behalf under explicit delegation):
+  ``$K3\times T^2$'' means the Shioda--Inose pairing for selection criteria. Item 6 stays as written; it was
+  true when released. The lattice fact the reading needs is now computed (\cref{sec:readings}) rather than
+  cited to an unfetched source.
 \end{enumerate}
 \end{correctionbox}
 

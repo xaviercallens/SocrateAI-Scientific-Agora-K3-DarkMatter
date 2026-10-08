@@ -157,6 +157,38 @@ The same sentence does not touch rules 3, 4, 8, 9, 10 of the ledger: no Kodaira 
 
 ---
 
+## D29′ — 2026-10-08: the K3×T² reading is Reading S (Shioda–Inose pairing)
+
+**T0, verbatim:** *"Decide on my behalf for the decision: whether the K3×T² reading is the Shioda–Inose pairing or the plain
+product. Continue the research work on this subject."* This answers decision 1 of
+`briefs/STREAM2_K3xT2_SELECTION_CRITERIA_PROPOSAL_2026_09_16.md`, the question named as open in the 2026-10-08 paper (item 6).
+
+**Ruling.** For selection criteria, "K3×T²" denotes the **Shioda–Inose pairing**: a family member X is paired with E×E′, where
+E and E′ are elliptic curves related by a cyclic isogeny of degree n, and T(X) ≅ T(E×E′) ≅ U⊕⟨2n⟩.
+
+**Why S and not P.** Under the plain product reading P, the T² factor is a fixed torus independent of X, so every K3 surface
+serves equally well and P supplies no candidate-dependent datum. That is a finding about P, not a test it fails. S is the only
+reading under which "which K3" is a checkable question, through n.
+
+**Computed, not cited.** The fact T(E×E′) ≅ U⊕⟨2n⟩ is usually cited to Morrison 1984 (doi:10.1007/BF01403093). That paper is
+paywalled and was not fetched. `checkers/check_K3xT2_reading_S.py` computes it exactly in ∧²Z⁴ for n = 7 and n = 10, with n read
+from the C2 certificates. NS has signature (1,2) and is saturated. T has signature (2,1) and is isometric to the certified Gram by
+a stored witness. The checker ships 9 controls. The isometry T(X) ≅ T(E×E′) is Tier L, from the pinned Kumar–Kuwata Remark 2.2.
+The identification of an s7 member with an Inose surface is Tier B, via `INOSE_MODEL_M7`. For s10, S holds at the lattice level
+only: no explicit Inose model exists, and its group is Γ₀(10)*. At the three s7 ρ = 20 points, the CM order computed from the
+model's j gives T(E×E) equal to the certified row. Under ledger item 8 that agreement is forced, so it is consistency, not
+corroboration. Certificate: `data/certificates/K3xT2_READING_S.json`.
+
+**Not decided.**
+- A physical compactification's T² is **not** identified with E or E′; the physical reading stays Tier C.
+- Proposal decisions 2–4 stay open: T3 as a hard gate, the K3_CRITERIA.md edit under the §6 protocol, and scoring.
+- The T3 wording in ledger items 8 and 9 is untouched.
+- Nothing here ranks s7 against s10.
+
+Reversible by one T0 sentence.
+
+---
+
 ## D22′ — EXECUTED (2026-10-08)
 
 T0 ran `scripts/retire_phantom_workflows.sh` from a fresh clone with a token carrying the `workflow` scope; the three phantom Lean

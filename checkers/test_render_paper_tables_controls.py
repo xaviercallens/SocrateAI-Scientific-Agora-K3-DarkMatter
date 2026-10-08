@@ -104,6 +104,15 @@ idn["points"][0]["determined_by_discriminant_alone"] = False
 (tmp / "SELECTED_K3_IDENTIFICATION.json").write_text(json.dumps(idn))
 check("N7 identification name is withheld when the certificate says det does not determine it", rpt.render_identification().count("not named") == base7.count("not named") + 1)
 
+# N8 (2026-10-08): the Reading S table follows K3xT2_READING_S.json
+rs = json.loads((tmp / "K3xT2_READING_S.json").read_text())
+base8 = rpt.render_reading_s()
+rs["result"]["generic"]["cooper_s7"]["verdict"] = "FAIL_NO_ISOMETRY_TO_CERTIFIED_GRAM"
+rs["result"]["rho20_cooper_s7"]["-1"]["agree"] = False
+(tmp / "K3xT2_READING_S.json").write_text(json.dumps(rs))
+t8 = rpt.render_reading_s()
+check("N8 a failed isometry and a disagreement both show as NO", t8 != base8 and t8.count("NO") == base8.count("NO") + 2)
+
 rpt.CERTS = orig_certs
 
 # N3: a stale on-disk fragment must fail --check
