@@ -173,6 +173,10 @@
       with NS saturated and of signature (1,2), so Morrison 1984 is no longer needed. At the three s7 ρ=20 points, T(E×E) for
       the computed CM order equals the certified row (forced; ledger 8). 9 controls. Paper section added (dated item 8). Open:
       proposal decisions 2–4 (T3 hard gate, K3_CRITERIA edit, scoring).
+      **ALL THREE STREAMS PUBLISHED (2026-10-08, T0: "publish the stream 1, stream 2 and stream 3 results as tex and pdf"):**
+      Stream 1 paper revision (dated addendum §12, v4 text unchanged; mirror re-pinned; release gates re-run by Stream 2, red
+      at gate 0 before the re-pin) → S1 PR #4 @ 8dbf438, tag `v0.27-paper-addendum-2026-10-08` only on a green gate run;
+      Stream 2 v0.3.19; Stream 3 note (Home v5.13.0). No Zenodo deposit (T0's step).
       **Next:** WP-TW2 step 2b-ii — push the graph of √−7 through Kumar–Kuwata (3.1)–(3.3) to F(6), descend to F(1),
       change to the pinned J9 model and read P̄·Ō = 5, h = 14 with the A₁ contact computed; or exclude a
       section with P̄·Ō = 5 on a Weierstrass model with two E8-root fibres over the surviving bases.
