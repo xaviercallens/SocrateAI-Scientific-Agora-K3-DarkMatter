@@ -136,11 +136,14 @@ structure and is reported as consistency, not as independent evidence.
 
 Two readings were put to the decision authority on 2026-09-16. Under the literal product reading, the
 $T^2$ factor is a fixed torus unrelated to the $K3$, and every $K3$ surface serves equally well, so no
-selection follows from it. Under the Shioda--Inose reading, which this programme uses, ``$T^2$'' is the
-elliptic side of the pairing the programme has certified: the order-three operator is the symmetric square
-of an order-two operator, and a member of Picard number $19$ is paired with a product $E\times E'$ of two
-elliptic curves related by a cyclic isogeny of degree $n$, with $T\cong U\oplus\langle 2n\rangle$. Selection
-then becomes a question about $n$, which can be checked.
+selection follows from it. Under the Shioda--Inose reading, ``$T^2$'' is the elliptic side of the pairing the
+programme has certified: the order-three operator is the symmetric square of an order-two operator, and a
+member of Picard number $19$ is paired with a product $E\times E'$ of two elliptic curves related by a cyclic
+isogeny of degree $n$, with $T\cong U\oplus\langle 2n\rangle$. Selection then becomes a question about $n$,
+which can be checked. The 2026-09-16 proposal adopted this reading and the check below presupposes it, but
+the choice between the two readings has \emph{not} been ruled by the decision authority (see
+\cref{sec:corrections}, item 6). The isogeny statement is standard; its primary source (Morrison, 1984) was
+not fetched for this note.
 
 The check adopted for this reading is unscored: it compares the level $n$ read from the lattice certificate
 (Gram determinant and a serialized $U$-splitting witness, both recomputed) with the level read from the
@@ -261,6 +264,15 @@ checks and a literature recount for a mixed fuzzy-dark-matter search window; it 
   named other authors; it was corrected from the paper's own header before any certificate was emitted.
 \item The TW1 certificates still read ``DRAFT -- pending'' although ruling D20$'$ made the screen live. They
   are left unchanged, as provenance; their status is the one the ledger records.
+\item \emph{Dated correction, 2026-10-08, after release \texttt{v0.3.17}.} The first release of this note
+  called the Shioda--Inose reading of $K3\times T^2$ the one ``which this programme uses''. That reading was
+  adopted by a proposal and is presupposed by the unscored T3 check, but the decision authority has not
+  ruled between it and the product reading; the 2026-09-21 ``decision 1'' concerned the $\rho=20$ cut, not
+  this choice. \Cref{sec:k3t2} now says so.
+\item \emph{Dated correction, 2026-10-08.} The repository's regression list contained paper-lint lines
+  (for the 2026-09-29 note since that date, and for this one), but the continuous-integration runner executes
+  its own fixed list and never read them, so no paper had been linted in CI. The table check and the paper
+  lint are now in the runner itself. The first release of this note was linted locally only.
 \end{enumerate}
 \end{correctionbox}
 

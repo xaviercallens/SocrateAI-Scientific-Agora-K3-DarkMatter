@@ -28,6 +28,11 @@ COMMANDS=(
   "checkers/independent_rederivation_C2_s10_v4_controls.py"
   "checkers/spike_disc_form_vs_atkin_lehner.py"
   "checkers/check_C1_mirror_integrality.py --order 30"
+  # papers (added 2026-10-08: the TODO regression block lists these, but this runner never read that block)
+  "scripts/render_paper_tables.py --check"
+  "scripts/check_paper_tier_language.py --selftest"
+  "scripts/check_paper_tier_language.py papers/stream2_selection_geometry_2026_09_29.tex papers/stream2_k3_identification_twisted_route_2026_10_08.tex"
+  "scripts/check_tier_language.py papers/stream2_selection_geometry_2026_09_29.tex papers/stream2_k3_identification_twisted_route_2026_10_08.tex"
 )
 for t in checkers/test_*.py; do
   COMMANDS+=("$t")
