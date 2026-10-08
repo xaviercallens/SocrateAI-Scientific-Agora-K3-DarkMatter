@@ -54,9 +54,17 @@ def test_N5_additive_reading_of_the_order2_root_changes_everything():
     assert r["resolution"]["mordell_weil_rank"] == 2
 
 
-def test_P2_model_side_check_at_J0_is_a_triple_root_of_order_4():
-    mc = t.model_check_s0_at_J0()
+def test_P2_model_side_checks_match_the_lattice_readings():
+    mc = t.model_check_s0("0")
     assert mc["degeneration"] == "triple_root_additive" and mc["v_s_Delta"] == 4 and mc["root_lattice_rank"] == 2
+    for J in ("-125/64", "614125/64"):           # z = -1 and z = 1/27 (J read from the certificate in main())
+        mc = t.model_check_s0(J)
+        assert mc["degeneration"] == "double_root_multiplicative" and mc["v_s_Delta"] == 2 and mc["root_lattice_rank"] == 1
+
+
+def test_N7_generic_J_has_a_smooth_fibre_at_s0():
+    mc = t.model_check_s0("7/3")                  # a non-special J1 = J2: d(0) = 0 still (J1 = J2) so v >= 2; rank must be 1 (node)
+    assert mc["degeneration"] in ("double_root_multiplicative", "smooth")
 
 
 def test_N6_three_order10_roots_refused():

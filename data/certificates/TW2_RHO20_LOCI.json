@@ -1,6 +1,6 @@
 {
   "checker": "checkers/check_TW2_rho20_loci.py",
-  "checker_sha256": "54c892a31a0a922a67f4fffaab14554a171db7f013160cac7b4e0d1fac7034d4",
+  "checker_sha256": "42693947774e46e75bf8a80217678d815409d8c899c196685730a814259d02b6",
   "work_package": "WP-TW2 step 2a (D23', 2026-10-07)",
   "tier": "B (exact lattice arithmetic from certificates; Shioda-Tate, eq. 22, height formula and torsion lemma from pinned, read sources)",
   "result": {
@@ -97,15 +97,50 @@
         "D": -3
       }
     },
-    "model_check_z_infinity": {
-      "root_multiplicities_at_s0": [
-        3
-      ],
-      "v_s_Delta": 4,
-      "degeneration": "triple_root_additive",
-      "root_lattice_rank": 2
-    },
-    "model_check_agrees_with_lattice_reading": true
+    "model_checks": {
+      "-1": {
+        "J": "-125/64",
+        "lambda_min_poly": "4*lam**6 - 12*lam**5 + 4911*lam**4/64 - 4271*lam**3/32 + 4911*lam**2/64 - 12*lam + 4",
+        "lambda_min_poly_degree": 6,
+        "v_s_Delta": 2,
+        "degeneration": "double_root_multiplicative",
+        "root_lattice_rank": 1,
+        "specialized_model_mod_mJ": {
+          "a2": "lam**2*s**4 - 2*lam**2*s**2 + lam**2 - 4*lam*s**4 + 8*lam*s**2 - 4*lam + s**4 - 2*s**2 + 1",
+          "a4": "-2*lam**3*s**8 + 8*lam**3*s**6 - 12*lam**3*s**4 + 8*lam**3*s**2 - 2*lam**3 + 5*lam**2*s**8 - 20*lam**2*s**6 + 30*lam**2*s**4 - 20*lam**2*s**2 + 5*lam**2 - 2*lam*s**8 + 8*lam*s**6 - 12*lam*s**4 + 8*lam*s**2 - 2*lam",
+          "a6": "-lam**4*s**10 + 5*lam**4*s**8 - 10*lam**4*s**6 + 10*lam**4*s**4 - 5*lam**4*s**2 + lam**4 + 2*lam**3*s**10 - 10*lam**3*s**8 + 20*lam**3*s**6 - 20*lam**3*s**4 + 10*lam**3*s**2 - 2*lam**3 - lam**2*s**10 + 5*lam**2*s**8 - 10*lam**2*s**6 + 10*lam**2*s**4 - 5*lam**2*s**2 + lam**2"
+        },
+        "agrees_with_lattice_reading": true
+      },
+      "1/27": {
+        "J": "614125/64",
+        "lambda_min_poly": "4*lam**6 - 12*lam**5 - 16579839*lam**4/64 + 16580479*lam**3/32 - 16579839*lam**2/64 - 12*lam + 4",
+        "lambda_min_poly_degree": 6,
+        "v_s_Delta": 2,
+        "degeneration": "double_root_multiplicative",
+        "root_lattice_rank": 1,
+        "specialized_model_mod_mJ": {
+          "a2": "lam**2*s**4 - 2*lam**2*s**2 + lam**2 - 4*lam*s**4 + 8*lam*s**2 - 4*lam + s**4 - 2*s**2 + 1",
+          "a4": "-2*lam**3*s**8 + 8*lam**3*s**6 - 12*lam**3*s**4 + 8*lam**3*s**2 - 2*lam**3 + 5*lam**2*s**8 - 20*lam**2*s**6 + 30*lam**2*s**4 - 20*lam**2*s**2 + 5*lam**2 - 2*lam*s**8 + 8*lam*s**6 - 12*lam*s**4 + 8*lam*s**2 - 2*lam",
+          "a6": "-lam**4*s**10 + 5*lam**4*s**8 - 10*lam**4*s**6 + 10*lam**4*s**4 - 5*lam**4*s**2 + lam**4 + 2*lam**3*s**10 - 10*lam**3*s**8 + 20*lam**3*s**6 - 20*lam**3*s**4 + 10*lam**3*s**2 - 2*lam**3 - lam**2*s**10 + 5*lam**2*s**8 - 10*lam**2*s**6 + 10*lam**2*s**4 - 5*lam**2*s**2 + lam**2"
+        },
+        "agrees_with_lattice_reading": true
+      },
+      "infinity": {
+        "J": "0",
+        "lambda_min_poly": "lam**2 - lam + 1",
+        "lambda_min_poly_degree": 2,
+        "v_s_Delta": 4,
+        "degeneration": "triple_root_additive",
+        "root_lattice_rank": 2,
+        "specialized_model_mod_mJ": {
+          "a2": "-3*lam*s**4 + 6*lam*s**2 - 3*lam",
+          "a4": "3*lam*s**8 - 12*lam*s**6 + 18*lam*s**4 - 12*lam*s**2 + 3*lam - 3*s**8 + 12*s**6 - 18*s**4 + 12*s**2 - 3",
+          "a6": "-s**10 + 5*s**8 - 10*s**6 + 10*s**4 - 5*s**2 + 1"
+        },
+        "agrees_with_lattice_reading": true
+      }
+    }
   },
   "not_claimed": [
     "any Kodaira fibre type (ledger items 3, 10): only discriminant-root orders and root-lattice rank/determinant are used",

@@ -121,26 +121,36 @@ def analyse_locus(name, abc, orders, rho=RHO_CM, d0_is_simple_root=True):
     return res
 
 
-def model_check_s0_at_J0():
-    """Model-side cross-check of the z = infinity reading: in the pinned Kuwata-Shioda model with
-    l1 = l2 = lam, lam^2 - lam + 1 = 0 (the j = 0 member), the cubic x^3 + a2 x^2 + a4 x + a6 at s = 0
-    must have a TRIPLE root (additive degeneration) with v_s(Delta) = 4, so the root lattice has
-    rank e - 2 = 2 (A2), not 3. A double root (node) would mean rank 3 (A3) and contradict rho = 20."""
+def model_check_s0(J):
+    """Model-side cross-check at a locus with J1 = J2 = J (E1 = E2): in the pinned Kuwata-Shioda model
+    set l1 = l2 = lam with lam a root of m_J(lam) = 4(lam^2 - lam + 1)^3 - 27 J lam^2 (lam - 1)^2
+    (J = j/1728; squarefree part taken), and reduce every coefficient modulo m_J -- exact arithmetic in
+    Q(lam) without choosing a root. At s = 0 the cubic x^3 + a2 x^2 + a4 x + a6 has: a repeated root
+    iff its discriminant is 0 mod m_J; a TRIPLE root iff moreover a2^2 = 3 a4 and a2^3 = 27 a6 mod m_J
+    (additive degeneration, root-lattice rank v(Delta) - 2); otherwise a double root (multiplicative,
+    rank v(Delta) - 1). Also returns the specialized coefficients (reduced mod m_J) for step 2b-ii."""
     import sympy as sp
-    s, x, l1, l2 = sp.symbols("s x l1 l2")
+    s, x, l1, l2, lam = sp.symbols("s x l1 l2 lam")
     m = json.loads((CERTS / "INOSE_FIBRATION_MULTIPLICITIES.json").read_text())["result"]["T2_K3_model"]
-    lam = sp.Rational(1, 2) + sp.sqrt(3) * sp.I / 2
-    A2_, A4_, A6_ = (sp.expand(sp.sympify(m[k], locals={"s": s, "l1": l1, "l2": l2}).subs({l1: lam, l2: lam})) for k in ("a2", "a4", "a6"))
-    c = [sp.simplify(A.coeff(s, 0)) for A in (A2_, A4_, A6_)]
-    cub = sp.Poly(x ** 3 + c[0] * x ** 2 + c[1] * x + c[2], x)
-    mults = sorted(sp.roots(cub, x).values(), reverse=True)
-    Delta = sp.expand(-4 * A2_ ** 3 * A6_ + A2_ ** 2 * A4_ ** 2 + 18 * A2_ * A4_ * A6_ - 4 * A4_ ** 3 - 27 * A6_ ** 2)
+    J = sp.Rational(J)
+    mJ = sp.Poly(sp.sqf_part(sp.expand(4 * (lam ** 2 - lam + 1) ** 3 - 27 * J * lam ** 2 * (lam - 1) ** 2)), lam)
+
+    def red(e):
+        return sp.rem(sp.Poly(sp.expand(e), lam), mJ).as_expr()
+
+    A = [sp.expand(sp.sympify(m[k], locals={"s": s, "l1": l1, "l2": l2}).subs({l1: lam, l2: lam})) for k in ("a2", "a4", "a6")]
+    c = [red(A_.coeff(s, 0)) for A_ in A]
+    disc0 = red(sp.discriminant(x ** 3 + c[0] * x ** 2 + c[1] * x + c[2], x))
+    triple = disc0 == 0 and red(c[0] ** 2 - 3 * c[1]) == 0 and red(c[0] ** 3 - 27 * c[2]) == 0
+    Delta = sp.expand(-4 * A[0] ** 3 * A[2] + A[0] ** 2 * A[1] ** 2 + 18 * A[0] * A[1] * A[2] - 4 * A[1] ** 3 - 27 * A[2] ** 2)
     v = 0
-    while v < 30 and sp.simplify(Delta.coeff(s, v)) == 0:
+    while v < 30 and red(Delta.coeff(s, v)) == 0:
         v += 1
-    kind = "triple_root_additive" if mults[0] == 3 else ("double_root_multiplicative" if mults[0] == 2 else "smooth")
-    rank = (v - 2) if kind == "triple_root_additive" else ((v - 1) if kind == "double_root_multiplicative" else 0)
-    return {"root_multiplicities_at_s0": mults, "v_s_Delta": v, "degeneration": kind, "root_lattice_rank": rank}
+    kind = "smooth" if disc0 != 0 else ("triple_root_additive" if triple else "double_root_multiplicative")
+    rank = 0 if kind == "smooth" else (v - 2 if kind == "triple_root_additive" else v - 1)
+    spec = {k: str(sp.Poly(red(A_), s, lam).as_expr()) for k, A_ in zip(("a2", "a4", "a6"), A)}
+    return {"J": str(J), "lambda_min_poly": str(mJ.as_expr()), "lambda_min_poly_degree": mJ.degree(),
+            "v_s_Delta": v, "degeneration": kind, "root_lattice_rank": rank, "specialized_model_mod_mJ": spec}
 
 
 def load_inputs():
@@ -172,13 +182,17 @@ def main(argv=None):
         extra = f"h = {s.get('height')}, P.O = {s['P_dot_O_solutions'][0]['P_dot_O']} (contr {s['P_dot_O_solutions'][0]['contr']})" if s["mordell_weil_rank"] == 1 else s.get("note")
         print(f"z = {z:>8} (D = {dat['D']:>3}, |disc T| = {r['abs_disc_T']:>2}): extra root order {r['extra_root_order']}, "
               f"R = {s['root_lattice']}, MW rank {s['mordell_weil_rank']}; {extra}")
-    mc = model_check_s0_at_J0()
-    out["model_check_z_infinity"] = mc
-    agree = mc["root_lattice_rank"] == out["loci"]["infinity"]["resolution"]["root_rank"]
-    out["model_check_agrees_with_lattice_reading"] = agree
-    print(f"model check at z = infinity (J = 0, s = 0): {mc['degeneration']}, v_s(Delta) = {mc['v_s_Delta']}, root-lattice rank {mc['root_lattice_rank']} -> agrees with lattice reading: {agree}")
-    if not agree:
-        raise Refuse("model-side root-lattice rank at s = 0 disagrees with the lattice reading forced by rho = 20")
+    fib = json.loads((CERTS / "INOSE_FIBRATION_MULTIPLICITIES.json").read_text())["result"]
+    Js = {"-1": fib["T5_s7_loci"]["-1"]["J"], "1/27": fib["T5_s7_loci"]["1/27"]["J"], "infinity": "0"}
+    out["model_checks"] = {}
+    for zname, J in Js.items():
+        mc = model_check_s0(J)
+        agree = mc["root_lattice_rank"] == out["loci"][zname]["resolution"]["root_rank"]
+        mc["agrees_with_lattice_reading"] = agree
+        out["model_checks"][zname] = mc
+        print(f"model check z = {zname:>8} (J = {J}, s = 0): {mc['degeneration']}, v_s(Delta) = {mc['v_s_Delta']}, root-lattice rank {mc['root_lattice_rank']} -> agrees: {agree}")
+        if not agree:
+            raise Refuse(f"{zname}: model-side root-lattice rank at s = 0 disagrees with the lattice reading forced by rho = 20")
     print("all loci resolved uniquely")
     if a.emit:
         cert = {"checker": "checkers/check_TW2_rho20_loci.py", "checker_sha256": hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),

@@ -125,3 +125,10 @@ long but now fully specified computation; every input to it is on disk.
 with l₁ = l₂ = λ, λ² − λ + 1 = 0, the cubic x³ + a₂x² + a₄x + a₆ at s = 0 has a **triple root** (x = λ) and
 v_s(Δ) = 4 with a₂, a₄, a₆ all non-vanishing — an additive degeneration whose root lattice has rank e − 2 = 2. The
 lattice-forced A₂ and the model agree (`model_check_z_infinity` in `TW2_RHO20_LOCI.json`; control P2).
+
+**§5 addendum 2 (2026-10-08, D25′) — all three loci model-confirmed.** Reducing the pinned model's coefficients
+exactly modulo the λ minimal polynomial m_J(λ) = 4(λ²−λ+1)³ − 27Jλ²(λ−1)² (no root chosen): at z = −1 and
+z = 1/27 the cubic at s = 0 has a **double root** with v_s(Δ) = 2 (node → root-lattice rank 1, A₁); at z = ∞ a
+**triple root** with v_s(Δ) = 4 (rank 2, A₂). Every lattice-forced reading of the table above is reproduced by the
+explicit model (`model_checks` in `TW2_RHO20_LOCI.json`; controls P2, N7). The certificate also carries the three
+**specialized Weierstrass models** (a₂, a₄, a₆ reduced mod m_J) — the concrete input for step 2b-ii.
