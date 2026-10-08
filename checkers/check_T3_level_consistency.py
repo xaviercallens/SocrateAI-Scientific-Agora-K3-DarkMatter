@@ -56,7 +56,10 @@ IMPORTED FROM STREAM 1 (Tier A-external; no Lean build was run from this repo)
   from TN_det plus the invariance of the Gram determinant under unimodular base change
   (-14 != -20), and it is what makes n_L an isometry invariant of the lattice leg.
 
-SCOPE.  This does NOT adopt T3.  Adopting it as a gate is T0 decision 2 of the proposal's
+SCOPE (dated correction 2026-10-08).  T3 was adopted as an unscored consistency gate on 2026-09-21
+(AM-4) and as a HARD gate on 2026-10-08 (AM-9, D30'): a T3_DISAGREE verdict triggers F1.  The
+paragraph below is the original 2026-09-21 scope text, kept as written.
+SCOPE (original).  This does NOT adopt T3.  Adopting it as a gate is T0 decision 2 of the proposal's
 sec 6, still open; K3_CRITERIA.md is untouched.  This is a proposal-stage consistency test
 with its own certificate.  cooper_s10 carries two separate open items, reported as two
 separate flags and never collapsed into one: its lattice certificate is DRAFT (T0, D6',
@@ -304,8 +307,8 @@ def main():
     keys = args.only or list(CANDIDATES)
 
     print("=" * 78)
-    print("T3 -- two-leg agreement on n (lattice leg vs modular leg).  Adopted as an")
-    print("UNSCORED consistency gate (K3_CRITERIA.md T3, AM-4, T0 D8' 2026-09-21). No scoring.")
+    print("T3 -- two-leg agreement on n (lattice leg vs modular leg).  A HARD GATE since")
+    print("2026-10-08 (K3_CRITERIA.md T3, AM-9, D30'): T3_DISAGREE triggers F1. Never scored.")
     print("=" * 78)
     results, ok = {}, True
     for key in keys:
@@ -343,11 +346,10 @@ def main():
         "checker": Path(__file__).name,
         "checker_version": "1.0.0",
         "date": "2026-09-21",
-        "status": "ADOPTED as an UNSCORED consistency gate -- K3_CRITERIA.md T3 (AM-4, T0 D8' "
-                  "2026-09-21, briefs/T0_DECISIONS_2026_09_21_STREAM2.md). Never scored; disagreement "
-                  "is a finding to escalate, not a removal. Wording re-emitted 2026-09-27 (T0 D9'); "
-                  "no computed value changed. The former text 'PROPOSAL STAGE -- not an adopted gate' "
-                  "was stale from 2026-09-21.",
+        "status": "HARD GATE since 2026-10-08 -- K3_CRITERIA.md T3 (AM-9, D30', taken on T0's behalf, "
+                  "briefs/T0_DECISIONS_2026_10_07_STREAM2_DELEGATED.md): a T3_DISAGREE verdict triggers F1, "
+                  "an absent certificate does not; never scored. Before that: an unscored consistency gate "
+                  "(AM-4, T0 D8' 2026-09-21). Wording re-emitted 2026-10-08; no computed value changed.",
         "claim": "For each candidate below, the n re-derived from its C2 lattice certificate "
                  "(Gram determinant and the serialized U-splitting witness, both recomputed) "
                  "equals the level at which its inverse mirror map is verified to uniformize "

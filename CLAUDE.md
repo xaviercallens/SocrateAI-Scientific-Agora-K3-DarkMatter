@@ -130,6 +130,11 @@ contradicts it, the document carries (or needs) a dated correction note.
     plain product reading P is recorded as supplying no candidate-dependent datum. A compactification's T² is **not** E or E′:
     the physical reading stays Tier C. T3 stays unscored, K3_CRITERIA.md is unedited, and nothing ranks s7 against s10.
     Reversible by one T0 sentence.
+13. **T3 is a HARD gate (AM-9, D30′, 2026-10-08, on T0's instruction "start T3").** This supersedes the "gate T3 still not
+    adopted" wording in items 8 and 9 (left as written, dated). A `T3_DISAGREE` certificate triggers F1; an absent one does not;
+    T3 never scores, and its stated limits stand (UNESTABLISHED power, directional). **Scoring was considered and NOT adopted
+    (D31′):** no ranking run is allowed before the v1.0 freeze, C4/C5 have no checkers, and s7/s10 tie on every hard gate.
+    `autoevolve/run_ranking.py`, named by the autoevolve skill, does not exist (rule 4). Reversible by one T0 sentence.
 
 ## Escalation
 Anything touching a pinned document, a frozen criterion, or this ledger is T0-owned
