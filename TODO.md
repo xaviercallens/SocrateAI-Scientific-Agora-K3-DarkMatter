@@ -152,6 +152,11 @@
       **2026-10-08:** step 2b-i completed as a morphism of curves — exact y-identity, deg φ_y(x₁)=t³ equation = 9 = (3d−3)/2
       (KK Prop 3.2(i)), and a dated precision correction: the x-identity proves φ∘φ=±[7]; the sign −7 is fixed by D=−28 < 0
       (Tier B). Brief §7.
+      **K3 IDENTIFIED (2026-10-08, T0: "identify the K3"):** `SELECTED_K3_IDENTIFICATION.json`, brief `SELECTED_K3_IDENTIFICATION_2026_10_08.md`.
+      s7 pick (z=∞, T=[[2,1],[1,2]]) = **X₃, Vinberg's most algebraic K3**; s10 pick (T=⟨2⟩⊕⟨2⟩) = **X₄**; s7 z=−1 = X₇; z=1/27 = the
+      T=⟨2⟩⊕⟨14⟩ surface (2 classes at det 28). Source: Takatsu arXiv:1903.03054 (table + uniqueness parsed from the pinned text; author
+      mis-attributed by a search snippet, corrected from the header). Determinants 3,4 = the two smallest attainable (computed). Tier B.
+      **D22′ EXECUTED (2026-10-08): phantom Lean workflows removed from `main` by T0, commit `684e382`.**
       **D27′ (2026-10-08): numeric evaluation with Dark Home** — guidance brief `STREAM2_TO_STREAM3_NUMERIC_EVALUATION_GUIDANCE_2026_10_08.md`;
       Home PR #9: E1b filed (2 in-band revisions), mirror 17 files, invariants 604 passed (`iminuit` missing on host). WP-E6 v2 Phase 0
       needs one T0 sentence — NOT signed off by Stream 2.
@@ -459,6 +464,8 @@ python3 checkers/check_TW2_sqrt_m7_endomorphism.py          # ~20 s: sqrt(-7) at
 python3 checkers/test_TW2_sqrt_m7_endomorphism_controls.py   # 12 controls (incl. exact y-identity, degree-9 count, wrong-constant refusals)
 python3 checkers/check_selected_k3_dossier.py               # D26: seven certificates agree on the AM-8 picks (fails closed otherwise)
 python3 checkers/test_selected_k3_dossier_controls.py        # 7 controls
+python3 checkers/check_selected_k3_identification.py         # identifies the AM-8 picks: s7 -> X_3, s10 -> X_4 (table parsed from pinned Takatsu text)
+python3 checkers/test_selected_k3_identification_controls.py  # 10 controls
 # slow (~70 s): python3 checkers/check_nodality_explicit_models.py   (Singular optional second CAS)
 # slow (~2.5 min), run before release: python3 checkers/check_CM_points_rho20.py
 ```

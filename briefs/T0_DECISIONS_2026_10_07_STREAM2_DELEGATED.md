@@ -137,3 +137,14 @@ covered Stream 2's own decisions and information flow, not authorizing a Stream 
 *"Approved: WP-E6 v2 Phase 0 only (literature re-survey); Phases 1–4 remain gated on their predecessors' filed artifacts and on the pin."*
 Nothing in the K3 selection feeds an observable (ledger item 4). Record: `briefs/STREAM2_TO_STREAM3_NUMERIC_EVALUATION_GUIDANCE_2026_10_08.md`;
 Home PR #9. Reversible/amendable by one T0 sentence.
+
+
+---
+
+## D22′ — EXECUTED (2026-10-08)
+
+T0 ran `scripts/retire_phantom_workflows.sh` from a fresh clone with a token carrying the `workflow` scope; the three phantom Lean
+workflows (`part4-proofs.yml`, `lean4-compile.yml`, `lean4-ci.yml`) are removed from `main` — commit **`684e382`**
+(`88c33fc..684e382`). `.github/workflows/` now holds `agora-ci-gate.yml`, `generate-pdf.yml`, `pdf-compilation.yml`, `stream1_b1.yml`.
+The Agora CI Gate (standing rule 6) is unchanged. Operational notes: the host's SSH deploy key is read-only; pushes touching
+`.github/workflows/` need the `workflow` scope even for deletions; a `GH_TOKEN` environment token cannot be refreshed with `gh auth refresh`.
