@@ -271,6 +271,13 @@ programme requires a retraction to be machine-visible, not a prose footnote.
   2026-10-07 and the two tables, which are generated from them, now show none. No value in any table changed.
   The prose sentences are left as written and are dated by this item; nothing in this paper ranks the two
   families, and that was never conditional on the flag.
+\item \emph{Dated correction, 2026-10-08.} Item 6 was itself partly false as built on 2026-10-07: the table
+  generator attached ``(ADVISORY)'' to the $s_{10}$ rows of \cref{tab:rows} by family name, not from a
+  certificate field, so that build still printed the tag on three rows. The generator now reads the
+  certificate's \texttt{advisory\_family} flag (false for every row) and has a control that fails if the tag
+  is keyed on anything else; this rebuild carries no tag. The same fix replaced typed discriminant-root orders
+  in the generator of \cref{tab:fibration} by values read from the certificate (the printed values were
+  right). The heading of this box says ``five errors''; items 6 and 7 were added later, as dated corrections.
 \end{enumerate}
 \end{correctionbox}
 

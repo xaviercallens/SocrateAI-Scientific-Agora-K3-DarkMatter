@@ -29,6 +29,7 @@ Generated-by: Claude (Sonnet 5), Stream 2 | Verified-by: checkers/test_render_pa
 """
 import argparse
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -50,6 +51,10 @@ def frac_or_int(x):
     return s
 
 
+def set_str(parts):
+    return "$\\{" + ",".join(str(x) for x in sorted((int(p) for p in parts if int(p) > 0), reverse=True)) + "\\}$"
+
+
 def gram_str(T):
     a, b, c = T
     return f"[{a},{b};{b},{c}]" if False else f"[[{2*a},{b}],[{b},{2*c}]]"
@@ -68,7 +73,9 @@ def render_rankjump_rows():
             tr = tier_rows.get((fam, tuple(h["v"])))
             src = tr["independent_files_passing"] if tr else 0
             tierlab = tr["lattice_tier"] if tr else "?"
-            adv = r"\,(ADVISORY)" if fam == "cooper_s10" else ""
+            if tr is None:
+                raise SystemExit(f"no lattice-tier row for {fam} {h['v']}: refusing to guess the advisory flag")
+            adv = r"\,(ADVISORY)" if tr["advisory_family"] else ""   # read from the certificate (2026-10-08 fix; was keyed on the family name)
             zdisp = r"$\infty$" if locus == "infinity" else f"${frac_or_int(locus)}$"
             a, b, c = h["T_X_reduced_form_abc"]
             lines.append(
@@ -109,10 +116,18 @@ def render_fibration_orders():
             parts.append(str(entry["order_at_infinity"]))
         return "$\\{" + ",".join(sorted(parts, key=int, reverse=True)) + "\\}$"
 
-    lines.append(r"Generic ($E_1\not\cong E_2$) & $\{10,10,1,1,1,1\}$ & --- \\")
+    # 2026-10-08 fix: the generic and locus orders were typed literals; they are now read from the certificate.
+    g = d["T3_generic_orders"]
+    m = re.match(r"^(\d+) simple", g["roots_of_d_of_s2"])
+    if not m:
+        raise SystemExit("T3_generic_orders.roots_of_d_of_s2 not in the expected '<k> simple ...' form")
+    gparts = [g["orders_at_s_plus_minus_1"]] * 2 + [1] * int(m.group(1)) + ([g["order_at_infinity"]] if g["order_at_infinity"] else [])
+    lines.append(f"Generic ($E_1\\not\\cong E_2$) & {set_str(gparts)} & --- \\\\")
     for fam_label, loc in (("cooper\\_s7, $z=-1$", "-1"), ("cooper\\_s7, $z=1/27$", "1/27")):
         row = d["T5_s7_loci"][loc]
-        lines.append(f"{fam_label} & $\\{{10,10,2,1,1\\}}$ & $J={esc(row['J'])}$ \\\\")
+        o = row["orders"]
+        parts = [o["s=+1"], o["s=-1"], o["s=0"]] + list(o["roots_of_e(s^2)"]) + ([o["s=infinity"]] if o["s=infinity"] else [])
+        lines.append(f"{fam_label} & {set_str(parts)} & $J={esc(row['J'])}$ \\\\")
     for k, label in (("J=1 (lam=-1)", "$J=1$ ($E_1\\cong E_2$)"), ("J=0 (lam^2-lam+1=0)", "$J=0$ ($E_i\\cong E_\\omega$)")):
         lines.append(f"{label} & {orders_str(d['T6_special_values'][k])} & --- \\\\")
     lines += [r"\bottomrule", r"\end{tabular}"]
@@ -132,7 +147,93 @@ def render_monodromy_diameters():
     return "\n".join(lines) + "\n"
 
 
+# ---- tables for papers/stream2_k3_identification_twisted_route_2026_10_08.tex (added 2026-10-08) ----
+def _pt(point):
+    fam, _, rest = point.partition(", ")
+    z = rest.replace("z = ", "").replace(" (AM-8 pick)", "")
+    z = r"$\infty$" if z == "infinity" else f"${z}$"
+    return fam, z, "(AM-8 pick)" in point
+
+
+def render_identification():
+    d = json.loads((CERTS / "SELECTED_K3_IDENTIFICATION.json").read_text())
+    lines = [r"\begin{tabular}{lllrrl}", r"\toprule",
+             r"Family & $z$ & $T$ (Gram) & $\det T$ & classes & Surface \\", r"\midrule"]
+    for p in d["points"]:
+        fam, z, pick = _pt(p["point"])
+        g = p["T_gram"]
+        name = p["identification"].split(" (")[0] if p["determined_by_discriminant_alone"] else r"not named by $\det T$ alone"
+        name = re.sub(r"X_(\d+)", r"$X_{\1}$", name)
+        lines.append(f"\\lean{{{esc(fam)}}} & {z}{'$^{*}$' if pick else ''} & $[{g[0][0]},{g[0][1]};{g[1][0]},{g[1][1]}]$ & "
+                     f"${p['determinant']}$ & ${p['number_of_classes']}$ & {name} \\\\")
+    lines += [r"\bottomrule", r"\end{tabular}"]
+    return "\n".join(lines) + "\n"
+
+
+def render_tw0_degrees():
+    d = json.loads((CERTS / "TW0_HODGE_DEGREE_ORBIFOLD.json").read_text())["result"]
+    deg = d["cooper_s7"]["degrees"]
+    sr = d["surface_reading"]
+    lines = [r"\begin{tabular}{ll}", r"\toprule", r"Quantity & Value \\", r"\midrule",
+             f"orbifold Euler characteristic of $X_0(7)^+$ & ${deg['chi_orb']}$ \\\\",
+             f"$\\deg\\omega$ (family Hodge bundle, $\\mathbb{{Q}}$-degree) & ${deg['deg_omega_Q']}$ \\\\",
+             f"$\\deg\\omega^{{2}}$ & ${deg['deg_omega2_Q']}$ \\\\",
+             f"$\\chi(\\mathcal{{O}}_{{K3}})$ (elliptic-surface reading of $\\ell$) & ${sr['chi_O']}$ \\\\",
+             f"$\\deg\\Delta$ of the Weierstrass model & ${sr['deg_Delta']}$ \\\\",
+             r"\bottomrule", r"\end{tabular}"]
+    return "\n".join(lines) + "\n"
+
+
+def render_tw1_screen():
+    rows = []
+    for key in ("P3", "P1xP2"):
+        r = json.loads((CERTS / f"TW1_two_e8_{key}.json").read_text())["result"]
+        rows.append((r["base"], r["overall_verdict"]))
+    b = json.loads((CERTS / "TW1_two_e8_P1bundle_P2.json").read_text())["result"]["symbolic_n"]
+    rows.append((b["base"].replace("(+)", r"$\oplus$"), b["overall_verdict"].split(" (")[0] + r" (degree budget all $n\ge0$; realizability checked $n\le18$)"))
+    lines = [r"\begin{tabular}{ll}", r"\toprule", r"Base $B_3$ & Two-divisor degree screen \\", r"\midrule"]
+    for base, v in rows:
+        base = base.replace("P^3", r"$\mathbb{P}^3$").replace("P^1 x P^2", r"$\mathbb{P}^1\times\mathbb{P}^2$").replace("O(n)", r"$\mathcal{O}(n)$").replace("P(O", r"$\mathbb{P}$($\mathcal{O}$").replace("over P^2", r"over $\mathbb{P}^2$")
+        lines.append(f"{base} & {v} \\\\")
+    lines += [r"\bottomrule", r"\end{tabular}"]
+    return "\n".join(lines) + "\n"
+
+
+def render_tw2_loci():
+    gen = json.loads((CERTS / "TW2_HEIGHT_CONDITION.json").read_text())["result"]["cooper_s7_n7"]
+    loci = json.loads((CERTS / "TW2_RHO20_LOCI.json").read_text())["result"]["loci"]
+    lines = [r"\begin{tabular}{lrrlrll}", r"\toprule",
+             r"$s_7$ member & $|\mathrm{disc}\,T|$ & $\rho$ & extra roots & MW rank & $h(P)$ & $\bar P\cdot\bar O$ \\", r"\midrule",
+             f"generic & ${gen['target_abs_disc_NS']}$ & $19$ & --- & ${gen['mordell_weil_rank']}$ & ${gen['height_h_P']}$ & ${gen['P_dot_O']}$ \\\\"]
+    for k in ("1/27", "-1", "infinity"):
+        v = loci[k]
+        r = v["resolution"]
+        z = r"$z=\infty$" if k == "infinity" else f"$z={k}$"
+        if r["mordell_weil_rank"] == 0:
+            h, po = "---", "no section"
+        else:
+            h = f"${r['height']}$"
+            po = ", ".join(f"${s['P_dot_O']}$" for s in r["P_dot_O_solutions"])
+        lines.append(f"{z} & ${v['abs_disc_T']}$ & ${v['rho']}$ & ${r['root_lattice'][0]}_{{{r['root_lattice'][1:]}}}$ & ${r['mordell_weil_rank']}$ & {h} & {po} \\\\")
+    lines += [r"\bottomrule", r"\end{tabular}"]
+    return "\n".join(lines) + "\n"
+
+
+def render_t3():
+    d = json.loads((CERTS / "T3_LEVEL_CONSISTENCY.json").read_text())["results"]
+    lines = [r"\begin{tabular}{llll}", r"\toprule", r"Family & $n$ from lattice & $n$ from modular side & Verdict \\", r"\midrule"]
+    for fam, v in d.items():
+        lines.append(f"\\lean{{{esc(fam)}}} & ${v['n_lattice']}$ & ${v['n_modular']}$ & {esc(v['verdict'])} \\\\")
+    lines += [r"\bottomrule", r"\end{tabular}"]
+    return "\n".join(lines) + "\n"
+
+
 TABLES = {
+    "identification.tex": render_identification,
+    "tw0_degrees.tex": render_tw0_degrees,
+    "tw1_screen.tex": render_tw1_screen,
+    "tw2_loci.tex": render_tw2_loci,
+    "t3_level.tex": render_t3,
     "rankjump_rows.tex": render_rankjump_rows,
     "selector_comparison.tex": render_selector_comparison,
     "fibration_orders.tex": render_fibration_orders,

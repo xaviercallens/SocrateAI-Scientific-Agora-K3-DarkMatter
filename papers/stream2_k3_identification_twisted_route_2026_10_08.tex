@@ -1,0 +1,302 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{geometry}
+\geometry{margin=1in}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{microtype}
+\usepackage{tcolorbox}
+
+\hypersetup{
+    colorlinks=true, linkcolor=blue, citecolor=red, urlcolor=cyan,
+    pdftitle={The Selected K3 Surfaces of the Cooper s7/s10 Families: Identification, the K3xT2 Reading, and the Twisted-Weierstrass Route},
+    pdfauthor={Xavier Callens and the SocrateAI Scientific Agora Collaboration}
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\tierA}{\colorbox{green!15}{\textsf{\scriptsize Tier A}}}
+\newcommand{\tierB}{\colorbox{yellow!20}{\textsf{\scriptsize Tier B --- derived, not measured}}}
+\newcommand{\tierL}{\colorbox{blue!10}{\textsf{\scriptsize Tier L --- literature}}}
+\newcommand{\tierC}{\colorbox{orange!15}{\textsf{\scriptsize Tier C --- blocked physics}}}
+\newcommand{\lean}[1]{\texttt{#1}}
+
+\newtcolorbox{headlinebox}{colback=red!4, colframe=red!45!black, boxrule=0.5pt, arc=1pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt, fonttitle=\bfseries\small, title={Headline result}}
+\newtcolorbox{scopebox}{colback=gray!5, colframe=gray!45, boxrule=0.4pt, arc=1pt,
+  left=6pt, right=6pt, top=3pt, bottom=3pt, fonttitle=\bfseries\small, title={What is not claimed}}
+\newtcolorbox{correctionbox}{colback=orange!6, colframe=orange!55!black, boxrule=0.5pt, arc=1pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt, fonttitle=\bfseries\small, title={Corrections recorded in band}}
+
+\title{\Large \textbf{The Selected $K3$ Surfaces of the Cooper $s_7$/$s_{10}$ Families:}\\[0.2em]
+\textbf{Identification, the $K3\times T^2$ Reading, and the Twisted-Weierstrass Route}}
+\author{\textbf{Xavier Callens} \and \textbf{SocrateAI Scientific Agora Collaboration} \\[0.3em]
+\textit{Stream 2 --- Selection \& Geometry (\texttt{SocrateAI-Scientific-Agora-K3-DarkMatter})}}
+\date{2026-10-08 \quad (preprint; not reviewed; continues the 2026-09-29 note)}
+
+\begin{document}
+\maketitle
+
+\begin{scopebox}
+This is a mathematics note. It makes no physical claim: no dark-matter identification, no dark-energy
+statement, no observable. No point of either family maps to any measurement, the flux/tadpole route stays
+blocked until a threefold base is specified, and the physical reading of ``$K3\times T^2$'' stays \tierC.
+Nothing here ranks the $s_7$ family against the $s_{10}$ family. No Kodaira fibre type is attached to any
+point of either family; we report discriminant-root orders and root lattices only.
+\end{scopebox}
+
+\begin{abstract}
+The 2026-09-29 note adopted, by an explicit ruling, a within-family selector on the $\rho=20$ points of
+the Cooper $s_7$ and $s_{10}$ Picard--Fuchs families: the point of minimal $|\operatorname{disc}T|$. This
+note records what happened next. First, the selected points are identified as named surfaces. Through the
+Shioda--Inose correspondence between singular $K3$ surfaces and even positive-definite binary forms, and
+Takatsu's tabulation, the $s_7$ pick ($T=A_2$, $\det T=3$) is the unique singular $K3$ surface $X_3$ and the
+$s_{10}$ pick ($\det T=4$) is the unique $X_4$. The pair is the one called ``Vinberg's two most algebraic $K3$
+surfaces'' in the Sch\"utt--Shioda survey. Second, we state the one reading of ``$K3\times T^2$'' under which
+a selection is meaningful, the Shioda--Inose pairing with a pair of $n$-isogenous elliptic curves, and
+report the unscored consistency check between the level read from the lattice and the level read from the
+modular side. Third, we record the twisted-Weierstrass route. A degree question that had conflated two
+quantities is resolved, a two-divisor degree screen on candidate threefold bases is reported, and the
+Mordell--Weil section required of the $M_7$-polarized member is computed. It has height $14$ and
+$\bar P\cdot\bar O=5$ generically and at $z=1/27$, and $\bar P\cdot\bar O=0$ at $z=-1$. The selected point
+$z=\infty$ has Mordell--Weil rank $0$ and carries no such section. At $z=1/27$ an explicit endomorphism of
+square $-7$ is written over $\mathbb{Q}$. Every table is generated from a certificate.
+\end{abstract}
+
+\tableofcontents
+
+\section{Scope}\label{sec:scope}
+
+Ledger rules of this programme bound everything below. The $\rho=20$ cut and the discriminant-floor
+selector are naming conventions inside one family, adopted by explicit rulings; they do not compare the
+two families. The agreement between the binary-form side and the modular side of any statement here is
+forced by the Shioda--Inose structure (an elliptic point of the modular curve is a CM point) and is never
+offered as corroboration. The $s_{10}$ lattice certificate is LIVE since 2026-09-29; that changes no value
+below and ranks nothing. The next step of the twisted-Weierstrass route that would involve a threefold
+(work package TW3) has not been opened, because no ruling specifies twist data over a threefold base.
+
+\section{The selection, in one table}\label{sec:recap}
+
+\Cref{tab:rows} repeats the six $\rho=20$ points of the 2026-09-29 note, regenerated from the current
+certificates. The lattice arithmetic of every row is kernel-checked in Lean~4 (\tierA); the identification
+of the orthogonal complement with the family's transcendental lattice $T$ is \tierB\ (Dolgachev \S7, Doran
+Thm.~5.13, \tierL). The selector picks, in each family, the row of minimal $|D|$: $z=\infty$ in both.
+
+\begin{table}[h]
+\centering
+\input{tables/rankjump_rows.tex}
+\caption{The six $\rho=20$ points. Compared with the 2026-09-29 build, the $s_{10}$ rows no longer carry an
+``(ADVISORY)'' tag; see \cref{sec:corrections}, item 1.}\label{tab:rows}
+\end{table}
+
+\section{Which surfaces were selected}\label{sec:identification}
+
+A singular $K3$ surface is one of Picard number $20$. Shioda and Inose, in the form we read in Shioda's
+survey and in Kumar--Kuwata (Thm.~8.1), give a bijection between singular $K3$ surfaces up to isomorphism
+and even positive-definite binary lattices up to $\mathrm{SL}_2(\mathbb{Z})$, the surface going to its
+transcendental lattice. A selected point is therefore named by its $T$. Takatsu's paper on the singular $K3$
+surfaces of discriminant $3$, $4$ and $7$ states that each of these discriminants carries exactly one
+surface, called $X_3$, $X_4$, $X_7$, and tabulates their models. Our checker parses that table and the
+uniqueness sentence from the pinned text and, independently, enumerates the reduced forms of each
+determinant.
+
+\begin{table}[h]
+\centering
+\input{tables/identification.tex}
+\caption{Identification of the $s_7$ points and the $s_{10}$ pick. $^{*}$: the point picked by the adopted
+selector. ``classes'': the number of reduced even positive-definite forms of that determinant, computed.
+At $z=1/27$ two classes share $\det T=28$, so the determinant alone names no surface there.}\label{tab:id}
+\end{table}
+
+\begin{headlinebox}
+The $s_7$ pick is the singular $K3$ surface $X_3$ ($T=A_2$, $\det T=3$); the $s_{10}$ pick is $X_4$
+($T=\langle2\rangle\oplus\langle2\rangle$, $\det T=4$). These are the two smallest determinants any even
+positive-definite binary lattice attains. The $s_{10}$ family cannot reach $\det 3$, because $A_2$ does not
+occur in it (a lattice fact recorded in an earlier certificate, not a preference). \tierB\ for the
+identification of $T$; \tierL\ for the bijection and Takatsu's table.
+\end{headlinebox}
+
+\begin{remark}
+The name ``Vinberg's two most algebraic $K3$ surfaces'' for the surfaces of discriminant $3$ and $4$ is
+taken from the Sch\"utt--Shioda survey (\tierL). Vinberg's 1983 paper itself was not fetched or read. The
+explicit $M_7$-polarized model of the 2026-09-29 note gives $E_\omega\times E_\omega$ at $z=\infty$, which
+matches Takatsu's construction of $X_3$ from $E_3\times E_3$; this match is forced by the Shioda--Inose
+structure and is reported as consistency, not as independent evidence.
+\end{remark}
+
+\section{What ``$K3\times T^2$'' can mean here}\label{sec:k3t2}
+
+Two readings were put to the decision authority on 2026-09-16. Under the literal product reading, the
+$T^2$ factor is a fixed torus unrelated to the $K3$, and every $K3$ surface serves equally well, so no
+selection follows from it. Under the Shioda--Inose reading, which this programme uses, ``$T^2$'' is the
+elliptic side of the pairing the programme has certified: the order-three operator is the symmetric square
+of an order-two operator, and a member of Picard number $19$ is paired with a product $E\times E'$ of two
+elliptic curves related by a cyclic isogeny of degree $n$, with $T\cong U\oplus\langle 2n\rangle$. Selection
+then becomes a question about $n$, which can be checked.
+
+The check adopted for this reading is unscored: it compares the level $n$ read from the lattice certificate
+(Gram determinant and a serialized $U$-splitting witness, both recomputed) with the level read from the
+modular side (an eta-quotient Hauptmodul for $\Gamma_0(n)^+$ or $\Gamma_0(n)^*$, with Newman's conditions
+and an Atkin--Lehner check). \Cref{tab:t3} gives the result. Its power to fail rests on real negative
+cases: four order-three entries of the same register fail the modular leg.
+
+\begin{table}[h]
+\centering
+\input{tables/t3_level.tex}
+\caption{Lattice level against modular level. An unscored consistency gate, never a ranking.}\label{tab:t3}
+\end{table}
+
+The physical reading of $K3\times T^2$ as a compactification is \tierC\ and is not used. A separately
+submitted document linking $K3\times T^2$ to Mathieu moonshine was checked claim by claim before this note
+was written: of twelve integer-sequence identifiers it cited, seven were fabricated or attached to the wrong
+object. Moonshine plays no part here; in any case the $K3$ elliptic genus is the same for every $K3$ surface,
+so it cannot separate candidates.
+
+\section{The twisted-Weierstrass route}\label{sec:tw}
+
+A strict-pullback realization of the $s_7$ family as a Calabi--Yau threefold over the bases tried was
+excluded earlier (a structural negative, \tierB). The route kept open is a twisted Weierstrass model whose
+$K3$ fibres carry the $M_7$ polarization. Three steps have results.
+
+\subsection{TW0: a degree question that conflated two quantities}
+
+An earlier plan set a fundamental line-bundle degree $\ell=2$ ``via the symmetric-square theorem''.
+Recomputing from the operator's Riemann scheme separates two numbers (\cref{tab:tw0}). The degree of the
+Weierstrass model's fundamental line bundle is $\chi(\mathcal{O}_{K3})=2$, from Noether's formula with
+$\deg\Delta=24$ (\tierA-level arithmetic, standard). The family-level Hodge bundle over the orbifold curve
+$X_0(7)^+$ has degree $1/3$, and its square has degree $2/3$ (\tierB). The earlier formula reproduced $1$
+from a Fuchs-relation identity. The rule now reads $\ell:=\chi(\mathcal{O}_{K3})=2$.
+
+\begin{table}[h]
+\centering
+\input{tables/tw0_degrees.tex}
+\caption{The two degrees that the earlier plan had merged, from the $s_7$ operator's exponents.}\label{tab:tw0}
+\end{table}
+
+\subsection{TW1: a necessary screen on threefold bases}
+
+The fibres of the generic member contain two $E_8$ root configurations. A twisted model over a threefold base
+$B_3$ needs two divisors carrying the corresponding Tate vanishing orders ($v(f)\ge4$, $v(g)\ge5$,
+$v(\Delta)=10$) inside the degree budget set by $-4K$, $-6K$ and $-12K$. \Cref{tab:tw1} lists the result.
+On $\mathbb{P}^3$ the budget alone is met, but any two effective divisors meet in a curve, along which the
+orders reach $(8,10,20)$ and the model is not minimal; the screen fails. On $\mathbb{P}^1\times\mathbb{P}^2$
+and on the projective bundles $\mathbb{P}(\mathcal{O}\oplus\mathcal{O}(n))$ over $\mathbb{P}^2$, two disjoint
+divisors exist and the screen passes. Passing is a necessary condition only: nothing here constructs a model.
+
+\begin{table}[h]
+\centering
+\input{tables/tw1_screen.tex}
+\caption{Two-divisor degree screen. The certificates were written on 2026-07-29 and their status string
+still reads ``DRAFT''; the screen was made live by ruling D20$'$ on 2026-10-07 (\cref{sec:corrections}).}\label{tab:tw1}
+\end{table}
+
+\subsection{TW2: the section that the $M_7$ polarization requires}
+
+On a $K3$ surface with an elliptic fibration having two $E_8$ root configurations, the trivial lattice has
+rank $18$ and discriminant $\pm1$. Reaching $|\operatorname{disc}\mathrm{NS}|=2n$ with Picard number $19$
+then needs one Mordell--Weil section $P$ with height $h(P)=2n$. The height formula (Sch\"utt--Shioda
+Thm.~11.5) gives $h(P)=2\chi+2\,\bar P\cdot\bar O-\sum\mathrm{contr}_v(P)$, so with $\chi=2$ and no
+contributions, $\bar P\cdot\bar O=n-2$: for $s_7$, $h=14$ and $\bar P\cdot\bar O=5$. Kumar--Kuwata give an
+independent route for $E\not\cong E'$: the section attached to an isogeny of degree $d$ has height $2d$,
+and $d=7$ gives the same $14$.
+
+At the three $\rho=20$ points the two curves become isomorphic and the count changes. Exact reduction of the
+explicit model at each point gives the extra root lattice; the height formula then fixes the section
+(\cref{tab:tw2}).
+
+\begin{table}[h]
+\centering
+\input{tables/tw2_loci.tex}
+\caption{The section required by the $M_7$ polarization: generic member and the three $\rho=20$ points of
+$s_7$. Root lattices from exact reduction of the explicit model; heights from Sch\"utt--Shioda
+Thm.~11.5 (\tierB).}\label{tab:tw2}
+\end{table}
+
+\begin{headlinebox}
+The section with $\bar P\cdot\bar O=5$ exists on the generic member and at $z=1/27$. At $z=-1$ the extra
+$A_1$ absorbs part of the height and $\bar P\cdot\bar O=0$. At $z=\infty$, the point the selector picked, the
+extra lattice is $A_2$, the Mordell--Weil rank is $0$ and there is no section at all. The selected surface
+$X_3$ therefore does not carry the twisted-route section; the selection and the route are separate questions.
+\end{headlinebox}
+
+At $z=1/27$ the elliptic curve has $j=16581375$ and complex multiplication by the order of discriminant
+$-28$. Using V\'elu's formulas over $\mathbb{Q}$ we wrote an explicit $7$-isogeny $\varphi$ from this curve to
+a curve with the same $j$, and checked $\varphi\circ\varphi$ against multiplication by $7$ at $60$ rational
+points, more than the degree bound of $49$. The $x$-coordinates fix $\varphi\circ\varphi$ only up to sign,
+$\pm[7]$. The sign is $-7$ because the endomorphism algebra is the imaginary quadratic field of discriminant
+$-28$, which has no element of square $+7$ (\tierB, through the CM certificate). The remaining step, carrying
+the graph of $\varphi$ through the Kumar--Kuwata construction down to the $K3$ surface and reading
+$\bar P\cdot\bar O=5$ on the pinned model, is specified but not done.
+
+\section{What this note gives the dark-matter stream}\label{sec:stream3}
+
+Nothing physical. The selected surfaces $X_3$ and $X_4$, the $K3\times T^2$ reading and the section
+computation are mathematics about lattices and elliptic surfaces; no CM point and no selected surface maps to
+any dark-matter observable, and no number here may be used as a prior, a parameter or a fit input. The
+companion Stream~3 note (repository \texttt{DarkMatterK3-Home.github.io}, 2026-10-08) reports calibration
+checks and a literature recount for a mixed fuzzy-dark-matter search window; it uses no result of this note.
+
+\section{Corrections recorded in band}\label{sec:corrections}
+
+\begin{correctionbox}
+\begin{enumerate}
+\item The table generator of the 2026-09-29 note attached ``(ADVISORY)'' to the $s_{10}$ rows by family
+  name. The PDF rebuilt on 2026-10-07 therefore still printed three tags, while its own dated correction said
+  the tables showed none. The generator now reads each row's \texttt{advisory\_family} flag (false for every
+  row), a control fails if the tag is keyed on anything else, and that note carries a dated item 7.
+\item The same generator typed the discriminant-root orders of its fibration table as literals, against the
+  rule that numbers are computed. The printed values were right; they are now read from the certificate, and
+  a tampered order changes the table (control).
+\item On 2026-10-07 a record stated that $\varphi\circ\varphi=[-7]$ was proved. The computation fixed only
+  $\pm[7]$; the sign comes from the CM discriminant. The record carries a dated correction.
+\item The author of the discriminant $3,4,7$ paper was first taken from a search-result snippet, which
+  named other authors; it was corrected from the paper's own header before any certificate was emitted.
+\item The TW1 certificates still read ``DRAFT -- pending'' although ruling D20$'$ made the screen live. They
+  are left unchanged, as provenance; their status is the one the ledger records.
+\end{enumerate}
+\end{correctionbox}
+
+\section{Reproducibility}
+
+Every table is generated from \texttt{data/certificates/} by \texttt{scripts/render\_paper\_tables.py},
+whose \texttt{--check} mode fails if any fragment drifts from its certificate; its controls include tampered
+inputs for every new table. The prose was linted by \texttt{scripts/check\_paper\_tier\_language.py}, which
+applies the programme's tier-language rules to the whole body and blocks Kodaira fibre-type tokens; it ships
+a self-test with planted violations. Decision records (D19$'$--D28$'$) and the identification brief:
+\begin{itemize}\small
+\item \nolinkurl{briefs/T0_DECISIONS_2026_10_07_STREAM2_DELEGATED.md}
+\item \nolinkurl{briefs/SELECTED_K3_IDENTIFICATION_2026_10_08.md}
+\end{itemize}
+
+\section*{Provenance}
+Generated-by: Claude (Opus~5.5), Stream~2 \textbar\ Verified-by: \texttt{render\_paper\_tables.py --check} and
+its controls; each cited checker's own controls \textbar\ Reviewed-by: N (preprint; not reviewed).
+
+\begin{thebibliography}{9}
+\bibitem{Takatsu} T.~Takatsu, ``On the geometry of singular $K3$ surfaces with discriminant 3, 4 and 7,''
+  \textit{arXiv:1903.03054}.
+\bibitem{Shioda} T.~Shioda, ``$K3$ surfaces and sphere packings,'' \textit{J. Math. Soc. Japan} \textbf{60}
+  (2008); MPIM preprint 2007-137.
+\bibitem{KK} A.~Kumar and M.~Kuwata, ``Elliptic $K3$ surfaces associated with the product of two elliptic
+  curves,'' \textit{arXiv:1409.2931}.
+\bibitem{SS} M.~Sch\"utt and T.~Shioda, ``Elliptic surfaces,'' \textit{arXiv:0907.0298}.
+\bibitem{Dolgachev} I.~Dolgachev, ``Mirror symmetry for lattice polarized $K3$ surfaces,''
+  \textit{arXiv:alg-geom/9502005}.
+\bibitem{Doran} C.~F.~Doran, ``Picard--Fuchs uniformization: modularity of the mirror map and
+  mirror-moonshine,'' \textit{arXiv:math/9812162}.
+\bibitem{CDLW} A.~Clingher, C.~F.~Doran, J.~Lewis, U.~Whitcher, ``Normal forms, $K3$ surface moduli, and
+  modular parametrizations,'' \textit{arXiv:0712.1880}.
+\bibitem{Prev} X.~Callens and the SocrateAI Scientific Agora Collaboration, ``Certified lattice data and a
+  within-family selector for the Cooper $s_7$/$s_{10}$ $K3$ families,'' Stream~2 note, 2026-09-29
+  (\texttt{papers/stream2\_selection\_geometry\_2026\_09\_29.pdf}).
+\end{thebibliography}
+
+\end{document}
