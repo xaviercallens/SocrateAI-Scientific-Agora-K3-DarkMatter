@@ -141,6 +141,22 @@ Home PR #9. Reversible/amendable by one T0 sentence.
 
 ---
 
+## D28′ — 2026-10-08 (T0: "I give you the sign-off and take decision on my behalf and continue")
+
+**Read narrowly.** The sentence answers the one Stream-3 sign-off offered in D27′: **WP-E6 v2 Phase 0 (literature re-survey) only**, the suggested
+text being "Approved: WP-E6 v2 Phase 0 only (literature re-survey); Phases 1–4 remain gated on their predecessors' filed artifacts and on the pin."
+Recorded in Home `briefs/T0_DECISIONS_2026_10_08.md` (D-g) so one T0 sentence can correct the reading. Not authorized: Phases 1–4, any PREDICTION v2 pin,
+any real-data comparison, any TEST/FIT label; proposal §8(a) and Q1–Q5 remain unanswered; E2 stays HELD.
+
+**Executed (Home, literature-table arithmetic only).** Decisive-and-open cells of the pre-flight grid: 221 → 182 (text-grade rows) / 152 (with figure
+reads). Stop condition P0 does not fire; the DESI DR1 P1D secondary trigger is answered NO. Report in Home
+`briefs/WP_E6_V2_PHASE0_RESURVEY_REPORT_2026_10_08.md`. Unaudited agent-reported items are recorded as one `unverified` row and applied nowhere.
+
+**WP-TW3 stays unopened.** The delegated sentence names no twist data over a threefold base, and no T0 text specifies it; opening it would need that text.
+The same sentence does not touch rules 3, 4, 8, 9, 10 of the ledger: no Kodaira label, no s7-over-s10 ranking, no physical reading.
+
+---
+
 ## D22′ — EXECUTED (2026-10-08)
 
 T0 ran `scripts/retire_phantom_workflows.sh` from a fresh clone with a token carrying the `workflow` scope; the three phantom Lean
