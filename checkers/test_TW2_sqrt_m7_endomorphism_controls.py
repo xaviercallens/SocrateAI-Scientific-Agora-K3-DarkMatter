@@ -79,6 +79,40 @@ def test_N4_non_CM_curve_has_no_rational_7_kernel():
         e.kernel_cubic(psi[7])
 
 
+def test_P3_y_part_is_an_exact_curve_to_curve_identity(setup):
+    j, A, B, psi, h, phi_x, A2, B2 = setup
+    c2 = e.iso_constant(A, B, A2, B2)
+    ym = e.y_map_check(A, B, phi_x, c2, h)
+    assert ym["identity_curve_to_curve"] and ym["phi_y_num_den_coprime"] and ym["denominator_is_kernel_cubic_cubed"]
+    assert ym["equation_degree_phi_y_eq_t3"] == 9 == ym["kumar_kuwata_expected_degree"]
+
+
+def test_N8_wrong_c3_squared_breaks_the_y_identity(setup):
+    j, A, B, psi, h, phi_x, A2, B2 = setup
+    c2 = e.iso_constant(A, B, A2, B2)
+    assert not e.y_map_check(A, B, phi_x, c2, h, c3sq=-c2 ** 3)["identity_curve_to_curve"]
+    assert not e.y_map_check(A, B, phi_x, c2, h, c3sq=c2 ** 3 * 2)["identity_curve_to_curve"]
+
+
+def test_N9_wrong_isomorphism_constant_breaks_the_y_identity(setup):
+    j, A, B, psi, h, phi_x, A2, B2 = setup
+    c2 = e.iso_constant(A, B, A2, B2)
+    assert not e.y_map_check(A, B, phi_x, -c2, h)["identity_curve_to_curve"]
+
+
+def test_N10_x_map_of_a_different_kernel_is_not_a_morphism_to_E(setup):
+    j, A, B, psi, h, phi_x, A2, B2 = setup
+    c2 = e.iso_constant(A, B, A2, B2)
+    other = sp.Poly(x ** 3 - 101745 * x ** 2 + 3158560475 * x - 30989768789876, x)   # kernel cubic off by one
+    phi_bad, _ = e.velu(A, B, other)
+    assert not e.y_map_check(A, B, phi_bad, c2, other)["identity_curve_to_curve"]
+
+
+def test_P4_sign_remark_uses_a_negative_discriminant_from_the_certificate():
+    r = e.run(n_points=51)
+    assert r["sign_of_square"]["D_of_locus_from_CM_certificate"] == -28
+
+
 def test_N5_j_0_or_1728_refused():
     with pytest.raises(e.Refuse):
         e.model_from_j(sp.Integer(0))
