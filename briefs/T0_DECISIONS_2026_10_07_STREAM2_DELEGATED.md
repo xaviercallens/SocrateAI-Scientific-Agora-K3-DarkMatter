@@ -123,3 +123,17 @@ families' picks by cross-checking seven existing certificates (selector, CM row,
 completeness, explicit model, TW2 NS structure) and **refusing on any disagreement**. It adopts nothing, ranks
 nothing, and carries tier labels per field. Streams 1/3 and the simulator should cite the dossier's source
 certificates through it. Reversible by one T0 sentence.
+
+---
+
+## D27′ — 2026-10-08 (T0 question: "could we run more numeric evaluation with Dark Home?")
+
+**Decision (information and direction only; no ruling taken on Stream 3's behalf).** Yes, in three bounded ways that need no new
+ruling — standing-invariant verification (done: 604 passed; **`iminuit` missing on the host, two modules uncollectable, recorded**),
+the E1b calibration layer (done, with two in-band revisions), and synthetic-only infrastructure — and one larger way that needs a single
+T0 sentence: **WP-E6 v2 Phase 0 only (literature re-survey)**. Stream 2 deliberately did **not** sign that off on T0's behalf: the proposal
+(`briefs/WP_E6_V2_PROPOSAL_LYA_P1D_2026_07_27.md` §8) reserves execution for a separate T0 sign-off, and the delegation of this session
+covered Stream 2's own decisions and information flow, not authorizing a Stream 3 empirical programme. Suggested text for T0:
+*"Approved: WP-E6 v2 Phase 0 only (literature re-survey); Phases 1–4 remain gated on their predecessors' filed artifacts and on the pin."*
+Nothing in the K3 selection feeds an observable (ledger item 4). Record: `briefs/STREAM2_TO_STREAM3_NUMERIC_EVALUATION_GUIDANCE_2026_10_08.md`;
+Home PR #9. Reversible/amendable by one T0 sentence.
