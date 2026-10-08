@@ -112,3 +112,14 @@ item and is **not** started piecemeal; today's continuation is the model-side cl
 ρ = 20 loci (`check_TW2_rho20_loci.py`: exact reduction modulo the λ minimal polynomial m_J, no root chosen) and the
 emission of the specialized Weierstrass models at those loci as the concrete input for 2b-ii. The phantom-workflow
 deletion stays with T0; the exact commands are in the session report of 2026-10-08. Reversible by one T0 sentence.
+
+---
+
+## D26′ — 2026-10-08 ("Continue on the K3 selection")
+
+**Decision.** The selection is complete at Tier B (AM-8) and is not re-litigated. What the selection lacked was a
+single citable record: `checkers/check_selected_k3_dossier.py` assembles `SELECTED_K3_DOSSIER.json` for both
+families' picks by cross-checking seven existing certificates (selector, CM row, lattice tier, A₂ membership,
+completeness, explicit model, TW2 NS structure) and **refusing on any disagreement**. It adopts nothing, ranks
+nothing, and carries tier labels per field. Streams 1/3 and the simulator should cite the dossier's source
+certificates through it. Reversible by one T0 sentence.
