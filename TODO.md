@@ -143,6 +143,12 @@
       fibration certificate; model y² = x³ − 1551893875x + 23529814932750) exhibited over Q by Vélu from the unique
       rational cubic factor of ψ₇; codomain ≅ E via c² = −1/7; **φ∘φ = [−7] proved exactly** (60/60 rational points,
       degree bound 49). Sign-slip in c² caught live → negative control.
+      **D26′ (2026-10-08): `SELECTED_K3_DOSSIER.json`** (`check_selected_k3_dossier.py`, +7 controls) — one citable record of both
+      AM-8 picks, assembled only by cross-checking seven certificates (selector, CM row, lattice tier, A₂ membership,
+      completeness, explicit model, TW2 NS structure); refuses on any disagreement; ranks nothing. Observation: the CM
+      certificate's s7 lattice pointer is still `C2_cooper_s7_v5.json` (v6 is value-identical, provenance-only).
+      **Regression-block repair (same day):** the TW2 step-2a, step-2b-i and dossier checkers had never been added to the
+      block (earlier guarded inserts silently skipped); now present, so Gate B covers them.
       **Next:** WP-TW2 step 2b-ii — push the graph of √−7 through Kumar–Kuwata (3.1)–(3.3) to F(6), descend to F(1),
       change to the pinned J9 model and read P̄·Ō = 5, h = 14 with the A₁ contact computed; or exclude a
       section with P̄·Ō = 5 on a Weierstrass model with two E8-root fibres over the surviving bases.
@@ -441,6 +447,12 @@ python3 checkers/check_TW1_two_e8_feasibility.py             # WP-TW1 LIVE (D20'
 python3 checkers/test_TW1_two_e8_feasibility_controls.py      # 5 controls
 python3 checkers/check_TW2_height_condition.py               # WP-TW2 step 0: P.O = n - 2 (5 for s7); two order-10 roots per locus cross-checked
 python3 checkers/test_TW2_height_condition_controls.py        # 9 controls
+python3 checkers/check_TW2_rho20_loci.py                    # WP-TW2 step 2a: rho=20 loci resolve uniquely (A1/A1/A2; MW 1/1/0), model-confirmed mod m_J
+python3 checkers/test_TW2_rho20_loci_controls.py             # 9 controls
+python3 checkers/check_TW2_sqrt_m7_endomorphism.py          # ~20 s: sqrt(-7) at z=1/27 exhibited over Q; phi o phi = [-7] exact
+python3 checkers/test_TW2_sqrt_m7_endomorphism_controls.py   # 7 controls
+python3 checkers/check_selected_k3_dossier.py               # D26: seven certificates agree on the AM-8 picks (fails closed otherwise)
+python3 checkers/test_selected_k3_dossier_controls.py        # 7 controls
 # slow (~70 s): python3 checkers/check_nodality_explicit_models.py   (Singular optional second CAS)
 # slow (~2.5 min), run before release: python3 checkers/check_CM_points_rho20.py
 ```
