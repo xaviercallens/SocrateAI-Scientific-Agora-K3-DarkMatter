@@ -228,7 +228,28 @@ def render_t3():
     return "\n".join(lines) + "\n"
 
 
+def render_reading_s():
+    d = json.loads((CERTS / "K3xT2_READING_S.json").read_text())["result"]
+    lines = [r"\begin{tabular}{llllll}", r"\toprule",
+             r"Family & $n$ & NS sig. & saturated & $T(E\times E')$ (Gram), sig. & $\cong$ certified $T$ \\", r"\midrule"]
+    for fam, v in d["generic"].items():
+        gtxt = ";".join(",".join(str(x) for x in row) for row in v["T_gram"])
+        lines.append(f"\\lean{{{esc(fam)}}} & ${v['n']}$ & $({v['NS_signature'][0]},{v['NS_signature'][1]})$ & "
+                     f"{'yes' if v['NS_saturated'] else 'no'} & $[{gtxt}]$, $({v['T_signature'][0]},{v['T_signature'][1]})$ & "
+                     f"{'yes' if v['verdict'] == 'ISOMETRIC_TO_CERTIFIED_T' else 'NO'} \\\\")
+    lines += [r"\midrule", r"$s_7$ point & model $j$ & CM disc. & $T(E\times E)$ & certified $T$ & agree \\", r"\midrule"]
+    for z, v in d["rho20_cooper_s7"].items():
+        zz = r"$\infty$" if z == "infinity" else f"${z}$"
+        a, b, c = v["T_reduced_abc"]
+        ca, cb, cc = v["certified_T_reduced_abc"]
+        lines.append(f"{zz} & ${v['j_from_model']}$ & ${v['cm_discriminant_by_computation']}$ & $[{2*a},{b};{b},{2*c}]$ & "
+                     f"$[{2*ca},{cb};{cb},{2*cc}]$ & {'yes (forced)' if v['agree'] else 'NO'} \\\\")
+    lines += [r"\bottomrule", r"\end{tabular}"]
+    return "\n".join(lines) + "\n"
+
+
 TABLES = {
+    "reading_s.tex": render_reading_s,
     "identification.tex": render_identification,
     "tw0_degrees.tex": render_tw0_degrees,
     "tw1_screen.tex": render_tw1_screen,

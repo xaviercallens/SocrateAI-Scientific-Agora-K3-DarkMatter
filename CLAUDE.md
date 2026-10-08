@@ -124,6 +124,12 @@ contradicts it, the document carries (or needs) a dated correction note.
     the identification with T is still Tier B (Dolgachev/Doran); certificates emitted before
     2026-09-29 keep their `LATTICE_CERT_DRAFT` flags until re-emitted (value-identical,
     provenance-stale). Reversible by one T0 sentence (v4_DRAFT retained unchanged).
+12. **"K3×T²" means Reading S, the Shioda–Inose pairing (D29′, 2026-10-08, on T0's behalf under explicit delegation;
+    `briefs/T0_DECISIONS_2026_10_07_STREAM2_DELEGATED.md`).** In selection criteria, X is paired with E×E′, E and E′ cyclically
+    n-isogenous, so T(X) ≅ U⊕⟨2n⟩. That isometry is computed in `K3xT2_READING_S.json`, so Morrison 1984 is not needed. The
+    plain product reading P is recorded as supplying no candidate-dependent datum. A compactification's T² is **not** E or E′:
+    the physical reading stays Tier C. T3 stays unscored, K3_CRITERIA.md is unedited, and nothing ranks s7 against s10.
+    Reversible by one T0 sentence.
 
 ## Escalation
 Anything touching a pinned document, a frozen criterion, or this ledger is T0-owned
