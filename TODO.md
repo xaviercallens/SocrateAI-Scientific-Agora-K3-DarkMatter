@@ -152,6 +152,9 @@
       **2026-10-08:** step 2b-i completed as a morphism of curves — exact y-identity, deg φ_y(x₁)=t³ equation = 9 = (3d−3)/2
       (KK Prop 3.2(i)), and a dated precision correction: the x-identity proves φ∘φ=±[7]; the sign −7 is fixed by D=−28 < 0
       (Tier B). Brief §7.
+      **D27′ (2026-10-08): numeric evaluation with Dark Home** — guidance brief `STREAM2_TO_STREAM3_NUMERIC_EVALUATION_GUIDANCE_2026_10_08.md`;
+      Home PR #9: E1b filed (2 in-band revisions), mirror 17 files, invariants 604 passed (`iminuit` missing on host). WP-E6 v2 Phase 0
+      needs one T0 sentence — NOT signed off by Stream 2.
       **Next:** WP-TW2 step 2b-ii — push the graph of √−7 through Kumar–Kuwata (3.1)–(3.3) to F(6), descend to F(1),
       change to the pinned J9 model and read P̄·Ō = 5, h = 14 with the A₁ contact computed; or exclude a
       section with P̄·Ō = 5 on a Weierstrass model with two E8-root fibres over the surviving bases.
