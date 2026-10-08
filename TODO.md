@@ -160,6 +160,9 @@
       **D27′ (2026-10-08): numeric evaluation with Dark Home** — guidance brief `STREAM2_TO_STREAM3_NUMERIC_EVALUATION_GUIDANCE_2026_10_08.md`;
       Home PR #9: E1b filed (2 in-band revisions), mirror 17 files, invariants 604 passed (`iminuit` missing on host). WP-E6 v2 Phase 0
       needs one T0 sentence — NOT signed off by Stream 2.
+      **D28′ (2026-10-08): T0 sign-off, read as WP-E6 v2 Phase 0 ONLY — executed in Home** (decisive-and-open 221 → 182 text-only / 152 with
+      figure reads; P0 does not fire; DESI DR1 secondary trigger NO). Phases 1–4, pin, §8(a)/Q1–Q5 NOT authorized. WP-TW3 stays unopened
+      (no T0 text specifies twist data over the threefold base). Record: `briefs/T0_DECISIONS_2026_10_07_STREAM2_DELEGATED.md` D28′.
       **Next:** WP-TW2 step 2b-ii — push the graph of √−7 through Kumar–Kuwata (3.1)–(3.3) to F(6), descend to F(1),
       change to the pinned J9 model and read P̄·Ō = 5, h = 14 with the A₁ contact computed; or exclude a
       section with P̄·Ō = 5 on a Weierstrass model with two E8-root fibres over the surviving bases.
