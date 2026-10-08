@@ -1,0 +1,859 @@
+                                             ON THE GEOMETRY OF SINGULAR K3 SURFACES WITH
+                                                        DISCRIMINANT 3, 4 AND 7
+
+
+                                                                                  TAIKI TAKATSU
+arXiv:1903.03054v1 [math.AG] 7 Mar 2019
+
+
+
+
+                                                   Abstract. We give construction of singular K3 surfaces with discriminant 3
+                                                   and 4 as double coverings over the projective plane. Focusing on the similar-
+                                                   ities in their branching loci, we can generalize this construction, and obtain
+                                                   a three dimensional moduli space of certain K3 surfaces which admit infinite
+                                                   automorphism groups. Moreover, we show that these K3 surfaces are charac-
+                                                   terized in terms of the configuration of the singular fibres and a global section,
+                                                   and also in terms of periods.
+
+
+
+
+                                                                                1. Introduction
+                                             A compact complex surface X is called a K3 surface if the canonical bundle is
+                                          trivial and the irregularity is zero. By Torelli theorem for K3 surfaces, lattice the-
+                                          ory can be applied to the classification of K3 surfaces, and also to the classification
+                                          of their automorphism groups.
+                                             For example, Shioda and Inose [6] showed that any singular K3 surface admits
+                                          an infinite automorphism group. Here, a K3 surface is said to be singular if its
+                                          Picard number is 20. Moreover, they proved the following theorem:
+                                          Theorem There exists a bijective map from the set of equivalence classes of sin-
+                                          gular K3 surfaces to the set of equivalence classes of positive definite oriented even
+                                          lattices of rank 2.
+                                             This map is given by X 7→ TX , where TX is the transcendental lattice of X. So
+                                          the transcendental lattices are important invariants for singular K3 surfaces. In this
+                                          way, singular K3 surfaces have been studied in detail, although there are, so far,
+                                          only eleven known cases where the automorphism groups are actually calculated.
+                                          TX is denoted by
+                                                                                                    
+                                                                                         a       b
+                                                                                                         .
+                                                                                         b       c
+
+                                          The transcendental lattices of these K3 surfaces are given by the following table:
+
+
+
+
+                                             2010 Mathematics Subject Classification. Primary 14J28; Secondary 14J50, 14J27.
+                                             Key words and phrases. K3 surfaces, singular K3 surfaces, Automorphism groups of K3 sur-
+                                          faces, Lattice theory.
+                                                                                             1
+2                                   TAIKI TAKATSU
+
+
+                        No.   [a,b,c]
+                          1   [2,1,2]            Vinberg [8]
+                          2   [2,0,2]            Vinberg [8]
+                          3   [2,1,4]            Ujikawa [9]
+                          4   [2,0,4]           Shimada [2]
+                          5   [2,1,6]           Shimada [2]
+                          6   [2,0,6]           Shimada [2]
+                          7   [4,2,4]   Keum and Kondo [10]
+                          8   [2,1,8]           Shimada [2]
+                          9   [4,1,4]           Shimada [2]
+                         10   [2,0,8]           Shimada [2]
+                         11   [4,0,4]   Keum and Kondo [10]
+
+Vinberg [8] calculated the automorphism groups of singular K3 surfaces for the
+cases of No.1 and 2. Ujikawa [9] calculated the automorphism group of a singular
+K3 surface for the case of No.3. Shimada [2] calculated the automorphism groups
+of singular K3 surfaces for the cases of No.4, 5, 6, 8, 9 and 10. Keum and Kondo
+[10] calculated the automorphism groups of singular K3 surfaces for the cases of
+No.7 and 11. For the cases of Keum and Kondo, these K3 surfaces are Kummer
+surfaces.
+    In this paper, we focus on the singular K3 surfaces with discriminant 3, 4 and
+7. This paper aims at finding common properties among these three K3 surfaces,
+which should give us clue to understand these surfaces more in depth.
+    In the case of discriminant 7, Naruki [1] has already obtained some constructions
+of it. One of the constructions is given by the double covering branched over a sextic
+curve. In particular, this double covering is obtained by the quotient of this K3
+surface by the involution associated to an elliptic fibration. Considering the action
+of the involution on the singular fibres, he characterized the singularities of the
+sextic curve and obtained the equation explicitly. In Section 5.2, we explain this
+construction. In the case of discriminant 3 and 4, we have similar constructions as
+double covering over the projective plane, which can be described explicitly, and
+it turns out that these three sextic curves have certain common properties in their
+singularities. For example, these three curves have only four singular points, and
+one of them is a D4 singularity. The lines passing through this point define an
+elliptic fibration on these K3 surfaces.
+    Then we can generalize these constructions of the three singular K3 surfaces
+as the double coverings over the projective plane. Branching loci of the double
+coverings are sextic curves. The sextic curves have only four singularities, and
+one of them is a D4 singularity. Hence the K3 surfaces obtained in this way have
+elliptic fibrations associated to the sextic curves, and this elliptic fibrations induce
+the sublattices of their Néron-Severi groups. Therefore, by lattice theory, we can
+also describe these K3 surfaces by means of a condition of their periods. Then we
+obtain a three dimensional moduli space, denoted in Section 7 by B \H. Moreover,
+applying the same argument as Naruki [1], we show that the constructions of these
+K3 surfaces by the double coverings over the projective plane, the elliptic fibrations
+and the condition of their periods are equivalent to each other.
+    The moduli space B\H is obtained from the constructions of K3 surfaces, which
+  ON THE GEOMETRY OF SINGULAR K3 SURFACES WITH DISCRIMINANT 3, 4 AND 7 3
+
+
+generalize the construction of the singular K3 surfaces with discriminant 3, 4 and
+7, and these three K3 surfaces admit infinite automorphism groups. Therefore we
+expect that any K3 surface included in B\H admits an infinite automorphism group.
+To confirm this, we can apply the same argument as Shioda and Inose [6]. On any
+singular K3 surface, they constructed an elliptic fibration which has infinitely many
+sections. These sections induce an infinite subgroup of their automorphism group.
+In the case of K3 surface X ∈ B\H, we can also construct such an elliptic fibration
+in the same way.
+
+Acknowledgments. The author would like to thank my advisor Fumiharu Kato
+for many helpful conversations and advices. He would also like to thank Professor
+Shigeyuki Kondo for very useful discussions.
+
+                                      2. Lattices
+   A lattice (L,h, i) is a free Z-module of finite rank with a non-degenerate symmetric
+bilinear form h , i : L × L → Z. The orthogonal group of L is the one consisting of
+isometries of L, denoted by O(L). The dual lattice HomZ (L, Z) is denoted by L∗ .
+Since h , i is non-degenerate, a map
+                                  L → L∗ : x 7→ hx, ·i
+is injective. Then we regard L as a sublattice of L∗ .
+For example, the hyperbolic lattice U is the lattice of rank 2 with the Gram matrix
+            
+       0 1
+               .
+       1 0
+
+Let (L, h , i) be a lattice. A sublattice of L is a subgroup S of L such that (S, h , i|S )
+is a lattice. A sublattice S of L is said to be primitive if the quotient group L/S has
+no torsion element. The orthogonal complement of S is denoted by S ⊥ . We denote
+by S(δ1 , δ2 , ..., δk ) the subgroup of L generated by S and δi ∈ L (i = 1, 2, ..., k).
+It is easy to show the following lemmata.
+Lemma 2.1. Let S be a sublattice of L, Then the following conditions are equiva-
+lent.
+   (i) S is a primitive sublattice of L.
+   (ii) There exist δi ∈ L (i = 1, 2, ... k) such that S(δ1 , δ2 , ..., δk ) = L.
+   Let {ei } (i = 1, 2, ...r) be a basis of a lattice L. We denote by d(L) the absolute
+value of determinant of a matrix (hei , ej i)i,j . This is well-defined.
+Lemma 2.2. Let L and S be lattices. Assume that L has a sublattice of finite
+index isomorphic to S. Then d(L) is given by the formula:
+                                 d(S) = d(L) × |L/S|2 .
+  A lattice L is called an even lattice if hx, xi is even for any element x of L. For
+an even lattice L, a quotient group L∗ /L is denoted by AL . The discriminant
+quadratic form of L is defined to be
+                   qL : AL → Q/2Z , qL (x + L) := hx, xi mod 2Z.
+The group O(qL ) is the one consisting of automorphisms of AL that preserves qL .
+In lattice theory, the following lemma is well-known ([11]).
+4                                  TAIKI TAKATSU
+
+
+Lemma 2.3. Let T be an indefinite even lattice with the signature (t+ , t− ), and
+let qT be the discriminant quadratic form of T . Assume that rank(T ) ≥ l(AT ) + 2,
+                                                              0
+where l(AT ) is the length of AT . Then any even lattices T with the signature
+(t+ , t− ) and qT 0 = qT is isomorphic to T . Moreover, a canonical map O(T ) →
+O(qT ) is surjective.
+   A element δ of L is called a (−2)-root if δ 2 = −2. A lattice is called a root
+lattice if it is a negative-definite even lattice and generated by (−2)-roots. Any root
+lattice is isomorphic to a sum of irreducible root lattices of types Al , Dm and En
+(l ≥ 1, m ≥ 4, n = 6, 7, 8).
+For a (−2)-root δ, the map sδ : L → L is defined to be
+                           sδ (x) = x + hx, δiδ for x ∈ L.
+By an easy calculation, it preserves the bilinear form of L, and satisfies
+                                       s2δ = 1.
+Hence this is an element of O(L) and a reflection with respect to the hyperplane
+r⊥ ∈ L ⊗ R. Let W (L) the subgroup of O(L) generated by all reflections.
+Let L be a unimodular even lattice, and S be a primitive sublattice of L. The
+orthogonal complement of S, denoted by T , is also a primitive sublattice of L. Let
+H be a quotient group L/S ⊕ T . We denote by pS (resp. pT ) the projection map
+from AS ⊕ AT to AS (resp. AT ). Then pS and pT satisfy the following Lemma.
+Lemma 2.4. pS |H : H → AS and pT |H : H → AT are bijective maps.
+Proof. It is enough to show the injectivity of pS and pT because |AS | · |AT | = |H|2 .
+Let (x mod S, y mod T ) ∈ H be an element of the kernel of ps |H, where x ∈ S ∗ ,
+y ∈ T ∗ . Since x + y ∈ L, x ∈ S ⊂ L, y ∈ L ∩ T ∗ and T is primitive, y ∈ T . Hence,
+(x mod S, y mod T ) = 0. In the same way, pT |H is injective.                       
+
+Hence the map
+                          rS,T = pT ◦ (pS |H)−1 : AS → AT
+is an isomorphism of groups.
+
+            3. K3 surfaces, elliptic fibrations and period map
+3.1. K3 surfaces. For a K3 surface X, the second cohomology group H 2 (X, Z)
+with the cup product is a unimodular even lattice with the signature (3, 19). Then
+H 2 (X, Z) is isomorphic to U ⊕3 ⊕ E8⊕2 . Let ωX be a nowhere vanishing holomorphic
+2-form of X. The Néron-Severi lattice N S(X) is defined by
+        N S(X) := {x ∈ H 2 (X, Z) | hx, ωX i = 0} = H 2 (X, Z) ∩ H 1,1 (X, R).
+The Néron-Severi lattice N S(X) is a lattice by the cup product, which is also
+denoted by SX . The rank of N S(X) is called the Picard number of X, denoted by
+ρ(X). The transcendental lattice TX of X is defined by N S(X)⊥ .
+By Riemann-Roch theorem and Serre duality, we get the following lemma.
+Lemma 3.1. Let X be a K3 surface, and let δ be an element of SX with δ 2 ≥ −2.
+Then δ or −δ is represented by an effective divisor.
+  ON THE GEOMETRY OF SINGULAR K3 SURFACES WITH DISCRIMINANT 3, 4 AND 7 5
+
+
+Proof. Let L be a line bundle on X which represents δ ∈ SX . By Riemann-Roch
+theorem and Serre duality, we have
+                     dimH 0 (X, O(L)) + dimH 2 (X, O(L))
+                      = dimH 0 (X, O(L)) + dimH 0 (X, O(−L))
+(1)
+                      ≥ 2 + δ 2 /2
+                      ≥ 1.
+Hence we have dimH 0 (X, O(L)) > 0 or dimH 0 (X, O(−L)) > 0, and δ or −δ is
+represented by an effective divisor.                                     
+  Let ∆(X) be the set
+                             ∆(X) = {δ ∈ SX | δ 2 = −2 },
+and let ∆(X)+ be the subset of ∆(X)
+         ∆(X)+ := {δ ∈ ∆(X) | δ is represented by an effective divisor }.
+We denote by P + (X) the irreducible component of the set
+                         P (X) = {x ∈ H 1,1 (X, R) | x2 > 0}
+which contains a Kähler class, and this is called the positive cone. The group
+W (X) acts on the space P + (X) in a canonical way. It is known that one of the
+fundamental domains is given by
+                  D(X) = {x ∈ P + (X) | hx, δi > 0, ∀δ ∈ ∆(X)+ }.
+This is called the Kähler cone.
+For a K3 surface X, the following theorem is well-known ([12, 13]).
+Theorem 3.1. (The Torelli theorem for K3 surfaces)
+           0
+Let X, X be K3 surfaces, and let ωX (resp.ωX 0 ) be a nowhere vanishing holo-
+                                  0
+morphic 2-form on X (resp.X ). Assume that the isomorphism φ : H 2 (X, Z) →
+      0
+H 2 (X , Z) satisfies the following conditions:
+                                     (a) φ(ωX ) ∈ CωX 0 ,
+                                                        0
+                              (b) φ(D(X)) = D(X ).
+Then there exists uniquely an isomorphism ψ : X 0 → X such that ψ ∗ = φ.
+3.2. Elliptic fibration. An elliptic K3 surface is the pair of a K3 surface X and
+an elliptic fibration f : X → P1 . Let f : X → P1 be an elliptic K3 surface with
+a global section g. We regard each smooth fibre as an elliptic curve with the zero
+element being the intersection with g. In particular, we have a rational selfmap of
+X given by inversion on each fiber. By the minimality of a K3 surface, this rational
+map extends to an automorphism of X. This automorphism is called the inversion
+involution.
+           Pmv i
+Let Fv = i=0     Cv (1 ≤ v ≤ k) be singular fibres of f , where Cvi is an irreducible
+component of Fv . We assume that a global section g intersects the rational curve Cv0 .
+By Kodaira’s classification of singular fibres, a lattice generated by Cvi (1 ≤ i ≤ mv )
+is isomorphic to the irreducible root lattice Lv . We denoted by E a line bundle
+represented by a general fibre of f , and by F a line bundle E +[g], where [g] is a line
+bundle represented by g. Since E 2 = F 2 = 0 and E ·F = 1, a lattice generated by E
+6                                    TAIKI TAKATSU
+
+
+and F is isomorphic to the hyperbolic lattice U . Since Cvi · E = Cvi · F = Cλi · Cµj = 0
+(λ 6= µ), these lattices are orthogonal to each other. Hence SX has a sublattice
+isomorphic to U ⊕ (⊕kv=1 Lv ). We call this sublattice the trivial sublattice, denoted
+by Lf . This means that Lf is determined by the types of singular fibres of f .
+3.3. Period map. Let L be a unimodular even lattice with the signature (3, 19).
+The period domain Ω is defined by
+                        Ω = {ω ∈ L ⊗ C | hω, ωi = 0, hω, ωi > 0}.
+Let X be a K3 surface, and let αX : H 2 (X, Z) → L be an isometry of lattices.
+The pair (X, αX ) is called a marked K3 surface. By Riemann condition, we have
+αX (ωX ) ∈ Ω.
+Let M be the set of equivelence classes of marked K3 surfaces. The period map of
+marked K3 surfaces is defined to be:
+                            λ : M → Ω, (X, αX ) → α(ωX ).
+It is known that this map is surjective ([14]).
+
+                        4. The result of Shioda and Inose
+                    1
+   Let Φ : X → P be an elliptic K3 surface, and let T be the trivial sublattice.
+The sections of Φ generate a group, called the Mordell-Weil group M W (Φ). The
+Mordell-Weil group M W (Φ) is a finitely generated group, and satisfies the following
+isomorphism ([5]):
+(2)                          M W (Φ) =  ∼ N S(X)/T
+We denote by r(Φ) the rank of M W (Φ). When r(Φ) = 0, let n(Φ) denote the order
+of M W (Φ).
+
+We will use the following theorem and lemmata by Shioda and Inose [6].
+Lemma 4.1. (Shioda and Inose [4], lemma 1.1)
+Assume that an effective divisor D on a K3 surface X has the same type as a simple
+singular fibre of an elliptic surface in the sense of Kodaira [3] §6. Then there is a
+unique elliptic pencil Φ : X → P1 of which D is a singular fibre. Moreover, any
+irreducible curve C on X with (CD) = 1 defines a (holomorphic) section of Φ.
+Lemma 4.2. (Shioda and Inose [4], lemma 1.2)
+If a divisor D on an elliptic surface has its support contained in a (simple) singular
+fibre, then the self-intersection number D2 is non-positive, and D2 = 0 if and only
+if D is a multiple of a singular fibre.
+Lemma 4.3. (Shioda and Inose [4], lemma 1, 3)
+Let Φ : X → P1 denote an elliptic K3 surface, and Dv = Φ−1 (tv ) (1 ≤ v ≤ k)
+                                                      (1)
+be the singular fibres of Φ. We denote by mv and mv respectively the number
+of irreducible components of Dv , and the number of components of Dv of which
+multiplicity is 1. Assume that Φ has a section. Then
+(i) The Picard number ρ(X) of X is given by the following formula:
+                            Pk
+(4.1)    ρ(X) = r(Φ) + 2 + v=1 (mv − 1).
+
+(ii) When r(Φ) = 0, we have
+                                   Qk    (1)
+(4.2)   | det TX | = | det SX | = ( v=1 mv )/n(Φ)2 .
+  ON THE GEOMETRY OF SINGULAR K3 SURFACES WITH DISCRIMINANT 3, 4 AND 7 7
+
+
+  As in introduction, they showed the theorem.
+Theorem 4.1. (Shioda and Inose [4])
+There exists a bijective map from the set S of equivalence classes of singular K3
+surfaces to the set T of equivalence classes of positive definite oriented even lattices
+of rank 2.
+   The map is defined to be X 7→ TX . By Torelli theorem for K3 surfaces, it is easy
+to show the injectivity of this map. For the surjectivity, Shioda and Inose explicitly
+constructed singular K3 surfaces.
+Moreover they gave another construction for singular K3 surfaces with discriminant
+3 and 4. We will explain this construction in the next section.
+
+                    5. The construction of X3 , X4 and X7
+   Let T be a set of equivalence classes of positive definite oriented even lattice
+of rank 2. There is the classification table of T in terms of discriminants in [3].
+According to this table, there exists uniquely an element of T with discriminant 3,
+4 and 7, respectively. This means the singular K3 surfaces with discriminant d is
+unique up to isomorphisms for d = 3, 4, 7, so we denoted by Xd these K3 surfaces,
+respectively.
+Remark 1. In general, there exist singular K3 surfaces which have the same dis-
+criminant, but is not isomorphic to each other.
+5.1. The construction of X3 and X4 . This construction is given by Shioda and
+Inose ([6]).
+                                                             √
+(i) Let E3 be an elliptic curve C/Z + Zω, where ω = exp(2π −1/3), and let
+A = E3 × E3 . The automorphism of A is defined to be:
+                           σ : A → A, σ(x, y) = (ωx, ω 2 y).
+Then the minimal resolution Y3 of the quotient A/σ is a singular K3 surface iso-
+morphic to X3 .
+                                                    √
+(ii) Let E4 be an elliptic curve C/Z + Zi, where i = −1, and let A = E4 × E4 .
+The automorphism of A is defined to be:
+                            σ : A → A, σ(x, y) = (ix, −iy).
+Then the minimal resolution Y4 of the quotient A/σ is a singular K3 surface iso-
+morphic to X4 .
+   Shioda and Inose constructed an elliptic fibration on Yk (k = 3, 4) for which the
+trivial lattice associated to is of rank 20. Hence Yk is a singular K3 surface. By the
+formula (4.2), they calculated the discriminant of Yk , respectively.
+
+5.2. The construction of X7 (the result of Naruki). Here we give the result
+of Naruki [1].   √
+We denote exp(2π −1/7) by ζ. Let p be a principal ideal of the cyclotomic field
+Q(ζ) generated by 1 − ζ which includes 7.
+Naruki defined a Hermitian form H7 :
+            H7 (z) = z1 z1 + z2 z2 + (ζ + ζ)z3 z3 for z = (z1 , z2 , z3 ) ∈ C3 .
+8                                      TAIKI TAKATSU
+
+
+Let B7 be the set
+
+                          B7 := {(z1 : z2 : z3 ) ∈ P2 | H7 (z) < 0}.
+
+Since the signature of H7 is (2,1), B7 is isomorphic to the complex 2-ball. Let SU7
+be the group consisting of (3, 3)-matrices with determinant 1 which is unitary with
+respect to H7 . The group SU7 acts B7 . Let Γ7 be the subgroup of SU7 consisting
+                                                         0         00
+of elements whose entries are integers of Q(ζ), and let Γ7 (resp. Γ7 ) be a subgroup
+of Γ7 consisting of elements which are congruent to identity modulo p (resp. p2 ).
+Then Naruki’s main result is as follows:
+
+Theorem 5.1. (Naruki [1], theorem 1)
+                          0
+The quotient surface B7 /Γ7 is a singular K3 surface isomorphic to X7 . The branch-
+                  00        0
+ing locus of B7 /Γ7 → B7 /Γ7 consists of twenty-eight rational curves, and the group
+  00  0
+Γ7 /Γ7 acts on these curves as permutations.
+                                                                       0
+    Moreover, Naruki obtained another constructions of B7 /Γ7 as follows. Let S(7)
+be the elliptic modular surface of level 7 ([7]). This surface has an elliptic fibration
+                                                                                       0
+F : S(7) → X(7), where X(7) is the Klein quartic curve. Naruki showed that B7 /Γ7
+                                                                                    0
+is a quotient of S(7), and the fibration F induces an elliptic fibration f : B7 /Γ7 →
+P1 , which has three singular fibres of types I7 and others are of type I1 .
+
+                                               F
+                                     S(7) −−−−→ X(7)
+                                                
+                                                
+                                      y          y
+                                          0     f
+                                    B7 /Γ7 −−−−→          P1
+                                                      0
+Let ι be the involution associated to f : B7 /Γ7 → P1 . Blowing down (−1)-curves
+                                 0
+of the quotient surface of B7 /Γ7 by ι, Naruki obtained a construction of X7 by
+the double covering branched over projective plane. The branching locus of this is
+given by the equation as follows:
+
+    (x20 x1 + x21 x2 + x22 x0 − 3x0 x1 x2 )2 − 4x0 x1 x2 (x0 − x1 )(x1 − x2 )(x2 − x0 ) = 0,
+
+which has a D4 singularity at (1,1,1) and A4 singularities at (1,0,0), (0,1,0) and
+(0,0,1).
+
+
+
+                  6. The double plane model of a K3 surface
+6.1. Sextic curves with a D4 singularity and elliptic fibrations. Let C be
+a sextic curve on P2 . We assume its singular points are of ADE-type. Moreover
+we assume C has a singularity, denoted by p, of type D4 . We denote by XC the
+minimal resolution of the double covering branched over C. Then XC is a K3
+surface. We call C the branching locus of XC . We denote by Pf2 the surface given
+                 2                                     2
+by blowing up P at p, E the exceptional divisor on P and C
+                                                      f      e the inverse image
+of C. A canonical projection from P to E, denoted by φ : P2 → E, induces the
+                                    e 2                     e
+projective bundle on E (∼
+                        = P1 ) as given Figures 1 and 2.
+  ON THE GEOMETRY OF SINGULAR K3 SURFACES WITH DISCRIMINANT 3, 4 AND 7 9
+
+
+
+
+                                                       projection
+
+
+
+
+                  Figure 1.                          Figure 2.
+
+   Since the general lines passing through p intersects C three times outside the
+triple point p, the inverse image of these lines are elliptic curves on XC . We
+denote by g the rational curve on XC corresponding to E. Since these elliptic
+curves intersect g, these family of elliptic curves defines an elliptic fibration of
+XC associated to C, denoted by Φ : XC → P1 , and g is a global section of
+Φ. Considering a natural correspondence from XC to P     e2 , we have a diagram as
+follows:
+                                         2:1   e2
+                                  XC −−−−→ P
+                                              
+                                              
+                                              φyprojection
+                                  Φy
+                                          ∼
+                                          =
+                                   P1 −−−−→ E
+Let l0 be a line on P2 passing through p and let le0 be the strict transform l0 under
+the blowing-up π : XC → P2 . We assume that le0 intersects a singular point of C.  e
+                                      −1                          −1
+Since the number of components of π (l0 ) is larger than 1, π (l0 ) is a singular
+fibre of Φ.
+
+
+
+
+                                                       a general line
+
+                    Figure 3. C and lines passing through p
+
+6.2. Singular K3 surfaces with discriminant 3, 4, and 7. We denote by Xd
+the singular K3 surface of discriminant d and by Cd a branching locus if it can be
+constructed by the double covering f : X → P2 . As in 5.2, for the case d = 7,
+10                                      TAIKI TAKATSU
+
+
+Naruki obtained the branching locus in [1]. C7 is given by the equation:
+     (x20 x1 + x21 x2 + x22 x0 − 3x0 x1 x2 )2 − 4x0 x1 x2 (x0 − x1 )(x1 − x2 )(x2 − x0 ) = 0.
+Since C7 has a D4 singularity at (1, 1, 1), there exist an elliptic fibration f : X → P1
+                                                                           0
+associated to C. As in 5.2, this fibration equals the fibration f : B7 /Γ7 → P1 , which
+has three singular fibres of types I7 and others are of type I1 . Then the trivial
+sublattice is isomorphic to U ⊕ A⊕3 6 , denoted by Lf , and the Néron-Severi lattice
+N S(X7 ) has a sublattice of finite index isomorphic to Lf . In the case of d = 3 and
+4, we have similarly the following results.
+Proposition 6.1. Xd (d = 3, 4) can be constructed by the double covering.
+(i) C3 is given by the equation
+(x0 − x1 )(x1 − x2 )(x2 − x0 ){(x0 + x1 + x2 )3 + (x0 − x1 )(x1 − x2 )(x2 − x0 )} = 0,
+which has a D4 singularity at (1, 1, 1) and A5 singularities at the intersections of
+lines and elliptic curve of components of C3 . In particular, N S(X3 ) has a sublattice
+of finite index isomorphic to U ⊕ E6⊕3
+(ii) C4 is given by the equation
+                          x0 x1 x2 (x0 − x1 )(x1 − x2 )(x2 − x0 ) = 0,
+which has D4 singularities at intersections of six lines. In particular, N S(X4 ) has
+a sublattice of finite index isomorphic to U ⊕ D6⊕3 .
+Proof. By an easy calculation, it is easy to show these sextic curves have singularity
+                                                           0
+as above and are smooth elsewhere. We denote by Xd (d = 3, 4) the K3 surface
+which are double covering branching over these sextic curves. Since Cd have a D4
+singularity at (1, 1, 1), they have an elliptic fibration associated to C, denoted by
+  0    0
+Φd : Xd → P1 . We define P           fd and π : X 0 → P2 in the same way as 6.1. We
+                             e2 , E, C
+                                                   d
+have a diagram as follows:
+                                        0  2:1    e2
+                                     Xd −−−−→ P
+                                                 
+                                     0           
+                                    Φd y         φyprojection
+                                                ∼
+                                                =
+                                    P1 −−−−→ E
+The lines lij given by xi − xj = 0 (i 6= j) are components of a branching locus. we
+denote by lfij the strict transform of lij under the blowing-up. These curves pass
+through singular points of C fd . Hence π −1 (lij ) is a singular fibre of Φ0 .
+                                                                            d
+In the case where d is 3, there are two singular points pij and qij of C       f3 on lf
+                                                                                      ij as
+given in Figure 4.
+
+
+
+
+                                          Figure 4.
+  ON THE GEOMETRY OF SINGULAR K3 SURFACES WITH DISCRIMINANT 3, 4 AND 7 11
+
+
+Here, pij (resp. qij ) is an intersection of lfij and E (resp. the elliptic curve of
+component of Cf3 ). Since Cf3 has an A1 (resp. A5 ) singularity at pij (resp. qij ), the
+dual graph of components of π −1 (lij ) is given by Figure 5:
+
+
+
+
+                                      Figure 5.
+
+
+Here, white circles are obtained by resolution at qij and Pij is obtained by resolution
+                                                                           0
+at pij . Hence we conclude types of π −1 (lij ) (i 6= j) are IV ∗ . Since X3 has a global
+                                               ∗
+section and three singular fibres of type IV , the trivial sublattice is isomorphic to
+                             0                                      0               0
+U ⊕ E6⊕3 . In particular, X3 is a singular K3 surface and r(Φ3 ) = 0. Now, X3 has
+three global sections. One of them is denoted by g corresponding to E, and others
+are obtained by the inverse image of the equation: x0 + x1 + x2 = 0. From the
+formula (4,2), we deduce that
+
+                                                  27
+                               | det TX 0 | =      0    = 3.
+                                        3       n(Φ3 )2
+
+By [3], the binary quadratic form of discriminant 3 is unique. By Torelli theorem,
+                 0
+we conclude X3 is isomorphic to X3 .
+In the case of d is 4, there are three singular points of C
+                                                          f4 on lf
+                                                                 ij , denoted by pij , qij
+and rij , as given in Figure 6.
+
+
+
+
+                                      Figure 6.
+
+
+C
+f4 has A1 singularities at pij and rij , and a D4 singularity at qij . Hence the dual
+graph of components of π −1 (lij ) is given by Figure 7:
+12                                       TAIKI TAKATSU
+
+
+
+
+                                           Figure 7.
+
+Here, white circles are obtained by resolution at qij and Pij (resp. Rij ) is obtained
+by resolution at pij (resp. qij ). Hence we conclude types of π −1 (lij ) (i 6= j) are I2∗ .
+                                                           0
+Since the trivial sublattice is isomorphic to U ⊕ D6⊕3 , X4 is a singular K3 surface.
+        0
+Now, X4 has four global sections. One of them is denoted by g corresponding to E,
+and others are obtained by the inverse image of the equation: xi = 0 (i = 1, 2, 3).
+From the formula (4.2), we deduce that
+                                                64
+                               | det TX 0 | =    0    = 4.
+                                       4      n(Φ4 )2
+                                                               0
+By the same reason of the case d is 3, we conclude X4 is isomorphic to X4 .                      
+
+                       7. Generalization of the construction
+   In this section, we generalize a construction of 6.2 in terms of singularity of
+branching locus.
+
+Let C be a sextic curve and pi (i = 1, 2, 3) and q are points in P2 . We denote by li
+the line passing through pi and q. Now, we consider the conditions as follows:
+(i)      {pi , q| i = 1, 2, 3} is in general position.
+(ii) C has a D4 singularity at q and an A3 singularity at pi , and is smooth
+elsewhere.
+(iii)     The multiplicity of C and li at pi (resp. q) is 2 (resp. 4)
+Example 1. Let Dµ (µ 6= 0, −4) be a sextic curve given by the equation:
+      (x20 x1 + x21 x2 + x22 x0 − 3x0 x1 x2 )2 + µx0 x1 x2 (x0 − x1 )(x1 − x2 )(x2 − x0 ) = 0.
+Let pi (i = 1, 2, 3) be vertices of the triangle x0 x1 x2 = 0, and let q be (1, 1, 1). Then
+Dµ , pi and q satisfy the conditions as above.
+Remark 2. For the case of µ = −4 (resp. µ = ∞), D−4 = C7 (resp. D∞ = C4 ),
+where Cd (d = 4, 7) is a branching locus of Xd .
+Lemma 7.1. Let X be a K3 surface. The following conditions are equivalent.
+(1) X is isomorphic to XC and r(ΦC ) = 0 and n(ΦC ) = 1, where C satisfies the
+conditions (i), (ii) and (iii) as above.
+(2) There exists an elliptic fibration f : X → P1 such that f has three singular
+fibres of types I6 , and others are I1 or II, and r(f ) = 0 and n(f ) = 1.
+Proof. (1)⇒(2): Since C has a D4 singularity at q, there exists an elliptic fibration
+f : XC → P1 . We define P   e2 , E, C
+                                    e and π : XC → P2 in the same way as 6.1. We
+denote by li the line passing through pi and q, and lei the strict transform of li under
+  ON THE GEOMETRY OF SINGULAR K3 SURFACES WITH DISCRIMINANT 3, 4 AND 7 13
+
+
+the blowing-up π : XC → P1 . Let pei (resp. qei ) be the inverse image of pi (resp. the
+intersection of lei and E). By the condition (ii) and (iii), C    e has an A1 singularity
+at qei and an A3 singularity at pei . Hence π −1 (li ) is a singular fibre of type I6 .
+
+
+
+
+                     2:1             the resolution
+
+
+
+
+                                      Figure 8.
+
+Let l be a line passing through q with l 6= li , and e
+                                                     l the strict transform of l under
+the blowing-up π : XC → P1 . Since el does not meet C   e at singular points of C,
+                                                                                 e the
+                           −1
+number of component of π (l) is 1. Hence, if it is a singular fibre, it is of types I1
+or II.
+(2)⇒(1): The same argument as Naruki [1] can be applied. Let ι : X → X be a
+inversion involution. X/ι has the canonical projection p : X/ι → P1 . On the surface
+X/ι, we have three configurations of the following figures coming from fibres of type
+I6 :
+
+
+
+
+                                      Figure 9.
+
+Here, ai , bi , ci and di are the curves, and −1, −2, −4 are the self-intersection num-
+bers. We blow down ai and di (i = 1, 2, 3), and then the image of bi is exceptional
+curve. Blowing down the image of bi , we obtain a P1 -bundle over P1 . Since the
+self-intersection number of the image of g is −1, it is a tautological bundle. Hence
+if we blow down the image of g, we obtain the projective plane P2 and the map
+from X to P2 , denoted by π : X → P2 . Now we define pi and q as follows:
+                            pi = π(ai ) = π(bi ), q = π(g).
+14                                 TAIKI TAKATSU
+
+
+   By the configuration of three singular fibres, the branching locus C is a curve on
+P2 which has a D4 singularity at q and an A3 singularity at pi . The image of fibres
+of f are lines passing through q. Let l be a general line passing through q. Since
+an elliptic curve π −1 (l) intersects the fixed locus of ι exactly three times outside
+a global section g, the line l intersects the branching locus C exactly three times
+outside triple point q. By Bezout theorem, C is a sextic curve.
+If {pi |i = 1, 2, 3} is not in general position, X has three global sections. This
+contradicts n(f ) = 1. Therefore, {pi |i = 1, 2, 3} is in general position. Hence X is
+isomorphic to the minimal resolution of the double covering branched over C which
+satisfies the condition (i), (ii) and (iii).                                        
+
+Corollary 7.1. If X satisfies the conditions (1) and (2) of Lemma 7.1, we have
+N S(X) = U ⊕ A⊕3
+               5 .
+
+Proof. This is an immediate consequence of (2) of Lemma 7.1 and the equation
+(2).                                                                       
+
+Lemma 7.2. Let L be a unimodular even lattice with the signature (3, 19). There
+exists a primitive sublattice of L, denoted by T , with the signature (2, 3) such that
+qT = −q(U ⊕A⊕3 ) .
+             5
+
+
+Proof. Let ri (i = 1, 2, ...n) be the basis of the lattice An which correspond to
+vertices of the Dynkin diagram An . It is obvious that
+                     An−1 ,→ An : ri 7→ ri (i = 1, 2..., n − 1).
+is a primitive embedding. This induces a primitive embedding:
+                               U ⊕ A⊕3        ⊕3
+                                    5 ,→ U ⊕ A6 .
+
+We consider the case of X7 . We can find the desired lattice T as a sublattice of
+H 2 (X7 , Z)(∼
+             = L) as follows. The lattice U ⊕ A⊕3 6 is of finite index in N S(X7 ). By
+lemma 2.1, the lattice U ⊕ A⊕3    5 is primitive in N S(X7 ). Then, U ⊕ A⊕3  5 is also
+primitive in H 2 (X7 , Z). We denote by T the orthogonal complement of U ⊕ A⊕3      5
+in H 2 (X7 , Z). T satisfies the conditions.                                         
+
+Lemma 7.3. Let L be a unimodular even lattice with the signature (3, 19), and let
+T be a lattice as in Lemma 7.2. Then there exists uniquely up to O(L) a primitive
+embedding T ,→ L.
+Proof. Let Ti (i = 1, 2) be a primitive sublattice of L which is isomorphic to T , and
+let Si = Ti⊥ . By Lemma 2.3, Si is isomorphic to U ⊕ A⊕3                 ∼
+                                                            5 . Since T1 = T2 , there
+exists an isomorphism f : T1 → T2 . f induces the map f : AT1 → AT2 . We define
+a map φ : AS1 → AS2 as follows:
+                                          f
+                                   AT1 −−−−→ AT2
+                                                 
+                             rT1 ,S1 
+                                     y    rT1 ,S1 
+                                                  y
+                                          φ
+                                  AS1 −−−−→ AS2
+By Lemma 2.3, there exists g : S1 → S2 such that g = φ. It is obvious
+                             (g, f ) : S1 ⊕ T1 → S2 ⊕ T2
+  ON THE GEOMETRY OF SINGULAR K3 SURFACES WITH DISCRIMINANT 3, 4 AND 7 15
+
+
+extends to an isomorphism from S1∗ ⊕ T1∗ to S2∗ ⊕ T2∗ . Since (g, f ) preserves L,
+(g, f )|L is an isometry of L, and the image of T1 by (g, f ) is T2 . Hence we conclude
+the consequence of Lemma 7.3.                                                        
+
+  We define a period domain B as follows:
+
+                   B := {ω ∈ P(T ⊗ C)| hω, ωi = 0, hω, ωi > 0}.
+
+Let X be a K3 surface of which a nowhere vanishing 2-form corresponds to ω. If
+there exists an element δ ∈ T such that hδ, ωi = 0, δ is an element of SX . Then TX
+is a proper subset of T . This is not a general case. To exclude this case, we define
+Hδ and H as follows:
+
+                        Hδ := {ω ∈ B| hω, δi = 0} for δ ∈ T,
+
+                                     H := ∪Hδ .
+
+Theorem 7.1. Let (X, αX ) be a marked K3 surface and ωX be a nowhere vanishing
+holomorphic 2-form of X. Then the following conditions are equivalent.
+(i) The condition (1) of Lemma 7.1,
+(ii) The condition (2) of Lemma 7.1,
+(iii) αX (ωX ) ∈ B \H.
+
+Proof. (i)⇔(ii): This is Lemma 7.1.
+(ii)⇒(iii): This is an immediate consequence of Corollary 7.1 , lemmas 2.3, 7.2 and
+7.3.
+(iii)⇒(ii): By αX (ωX ) ∈ B \H, we have N S(X) = U ⊕ A⊕3    5 and TX = T . Now, we
+denote by E and F the basis of the hyperbolic lattice U and by Θki (i = 1, ..., 5; k =
+                                                                    P5
+1, 2, 3) the basis of k-th component of A⊕3                 k
+                                         5 , and define Θ0 as E −
+                                                                              k
+                                                                       i=1 Θi . There
+                               0                                           0
+exists σ ∈ W (X) such that E = σ(E) ∈ D(X) and the linear system |E | contains
+an elliptic curve. By lemma 3.1, σ(Θki ) is represented by an effective divisor Dik .
+By Bertini’s theorem, we obtain an elliptic fibration φ|E 0 | : X → P1 . It is obvious
+             P5             0
+that Fk := i=1 Dik ∈ |E | is a singular fibre. Since the number of the components
+of Fk is larger than six, the type of Fk is either In or In∗ (n ≥ 6). Let m1k be the
+number of irreducible component of Fk . We deduce from the formula (4.1) that
+m1 + m2 + m3 ≤ 18. Therefore, mk = 6 and r(φ|E 0 | ) = 0. By the formula (4.2), we
+deduced that the condition (ii).                                                     
+
+Theorem 7.2. Let ωXd (d = 3, 4, 7) be a nowhere vanishing holomorphic 2-forms
+of Xd .
+Then ωXd ∈ H ⊂ B.
+
+Proof. It is enough to show that there exists a primitive embedding:
+
+                                 TXd ⊂ T (d = 4, 7).
+
+In the case where d = 7, this is an immediate consequence of the proof of Lemma
+7.2. In the same way, we can find a sublattice of D6 (resp. E6 ) isomorphic to A5 :
+16                                  TAIKI TAKATSU
+
+
+
+
+                                     Figure 10.
+
+Here, the black circles consist the Dynkin diagram of type A5 . Hence, in the same
+way of Lemma 7.2, we have primitive embeddings:
+                             U ⊕ A⊕3
+                                  5 ,→ N S(X3 ) ,→ L
+(3)
+                             U ⊕ A⊕3
+                                  5 ,→ N S(X4 ) ,→ L
+
+If we take the orthogonal complements of these lattices in L, we have the desired
+primitive embeddings TXd ⊂ T (d = 3, 4).                                        
+
+                         8. The automorphism group
+Theorem 8.1. Let X be a K3 surface which satisfies the conditions of theorem
+7.1. Then its automorphism group Aut(X) is an infinite group.
+Proof. The same argument as Shioda and Inose [6] can be applied. Let f : X → P1
+be an elliptic K3 surface. If r(f ) is larger than 1, by the equation (2), there are
+infinitely many sections of f . Then the automorphism group of X is an infinite
+group.
+So it is enough to show that there exists an elliptic fibration f : X → P1 with
+r(f ) ≥ 1. By proposition 7.1, X has an elliptic fibration Φ which satisfies the
+condition (ii) of Lemma 7.1. The elliptic fibration Φ has a global section g and the
+three singular fibre of type I6 . The components of a fibre of type I6 is denoted by
+Θkl (k = 1, 2, 3: l = 0, 1, ..., 5) which satisfies the following conditions:
+                                   hΘkl , Θkl+1 i = 1,
+
+                                     hΘk0 , gi = 1.
+Now, we define an effective divisor E and Ek as follows:
+                  E := 3g + 2(Θ10 + Θ20 + Θ30 ) + (Θ11 + Θ21 + Θ31 ),
+                               Ek := E − (Θk3 + Θk4 ).
+By Lemma 4.2, X has an elliptic fibration f : X → P1 with a singular fibre E. The
+type of E is IV ∗ . By Lemma 4.2, Θk2 are global sections of f . We consider the
+three divisors:
+                             Θk3 + Θk4 (k = 1, 2, 3).
+These divisors do not intersect the fibre E of f . Hence, the image f (Θk3 + Θk4 ) is
+a point tk of P, and (−2)-curves Θk3 and Θk4 are the components of a singular fibre
+f −1 (tk ).
+Now, let S be a lattice generated by the following divisors:
+                       Θkl (k = 1, 2, 3 , l = 0, 1, 3, 4) and Θ12 .
+  ON THE GEOMETRY OF SINGULAR K3 SURFACES WITH DISCRIMINANT 3, 4 AND 7 17
+
+
+Let the divisors Θk be Θk1 + 2Θk2 + Θk3 − Θk5 . By an easy calculation, it is shown
+that a lattice S ⊥ which is the orthogonal complement of S in N S(X) is generated
+by these three divisors:
+                                    A = 2E + Θ1 ,
+                                      Θ2 and Θ3 .
+Moreover, the lattice S ⊥ is a lattice with the Gram matrix
+                                                 
+                                    −6 0       0
+                                 0 −6 0  .
+                                     0    0 −6
+
+Hence the elliptic fibration f has the singular fibres E, f −1 (tk ), and others are I1
+or II because the lattice S ⊥ does not have (−2)-roots. The types of singular fibres
+f −1 (tk ) are A2 , A3 or D4 for the same reason. If r(f ) = 0, the trivial sublattice is
+isomorphic to U ⊕ E6 ⊕ A⊕3   3 or U ⊕ A2 ⊕ A3 ⊕ D4 . Here,
+                                       d(N S(X))
+                                     d(U ⊕ E6 ⊕ A33 )
+                                            d(U ⊕ A35 )
+(4)                                  =
+                                        d(U ⊕ E6 ⊕ A33 )
+                                          63
+                                     =
+                                        3 · 43
+In the same way,
+                               d(N S(X))            63
+                                               =
+                         d(U ⊕ A2 ⊕ A3 ⊕ D4 )     3 · 42
+These are not squares, and contradict the formula of Lemma 2.2.                                
+
+                                         References
+ [1] I. Naruki.: On a K3 surface which is a ball quotient.
+ [2] I. Shimada,: An algorithm to compute automorphism groups of K3 surfaces and an applica-
+     tion to singular K3 surfaces. Int. Math. Res. Not. IMRN (2015), no. 22, 11961–12014.
+ [3] J. H. Conway and N. J. A.Sloane, (1999): Sphere Packings, Lattices and Groups., Springer–
+     Varlag, New York.
+ [4] Kodaira, K.: On compact analytic surfaces II -III, Ann. of Math. 77 (1963), 563-636; 78
+     (1963), 1-40.
+ [5] Shioda, T., On the Mordell-Weil lattices, Comment, Math. Univ. St. Pauli, 39 (1990), 211-
+     240.
+ [6] Shioda, T., Inose, H. On Singular K3 Surfaces, in Complex analysis and algebraic geometry,
+     119-136, Iwatani Shoten, Tokyo, 1977.
+ [7] T. Shioda, On elliptic modular surfaces, J. Math. Soc. Japan 24 (1972), 20-59
+ [8] Vinberg, .B.: ”The Two Most Algebraic K3 Surfaces..” Mathematische Annalen 265 (1983):
+     1-22.
+ [9] M, Ujikawa.: The Automorphism Group of the Singular K3 Surface of Discriminant 7.
+     Comment. Math. Univ. St. Pauli 62 (2013), no. 1, 11-29
+[10] J.H. Keum, S. Kondo, The automorphism groups of Kummer surfaces associated with the
+     product of two elliptic curves, Trans. Amer. Math. Soc. 353 (2001), 1469-1487.
+[11] V. V. Nikulin, Integral symmetric bilinear forms and some of their applications, Math. USSR
+     Izv., 14 (1980), 103-167.
+[12] Burns D and Rapoport M, On the Torelli problem for Kählerian K3-surfaces Ann. Sci. ENS
+     8 (1975) 235-74
+[13] Piatetskii-Shapiro I and Shafarevich I R, A Torelli theorem for algebraic surfaces of type K3
+     Math. USSR Izv. 5 (1971) 547-87
+18                                     TAIKI TAKATSU
+
+
+[14] Todorov A N, Applications of the Kähler-Einstein-Calabi-Yau metric to moduli of K3 surfaces
+     Invent. Math. 61 (1980) 251-65
+
