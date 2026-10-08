@@ -102,3 +102,13 @@ for this project (D18′ stands). (d) **WP-TW2 step 2b-ii** (descent to the K3 s
 not delegated to any other stream. (e) **WP-TW3** (a construction on a base) is **not** opened: the constraint set for
 the selected K3 is now {two order-10 roots with E8 root lattices, one order-4 root with A₂, no section}, and TW3 should
 be scoped against that set by a T0 text, not inferred. Each item reversible by one T0 sentence.
+
+---
+
+## D25′ — 2026-10-08 (delegation renewed: "take decision on my behalf and conitnue")
+
+**Decision.** WP-TW2 step 2b-ii (the Kumar–Kuwata descent of the √−7 graph to the K3 section) is a dedicated-session
+item and is **not** started piecemeal; today's continuation is the model-side closure of step 2a at **all three**
+ρ = 20 loci (`check_TW2_rho20_loci.py`: exact reduction modulo the λ minimal polynomial m_J, no root chosen) and the
+emission of the specialized Weierstrass models at those loci as the concrete input for 2b-ii. The phantom-workflow
+deletion stays with T0; the exact commands are in the session report of 2026-10-08. Reversible by one T0 sentence.
