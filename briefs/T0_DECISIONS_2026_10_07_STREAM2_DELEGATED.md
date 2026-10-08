@@ -189,6 +189,38 @@ Reversible by one T0 sentence.
 
 ---
 
+## D30′ — 2026-10-08: T3 is a hard gate (AM-9)
+
+**T0, verbatim:** *"publish Zenodo stream 1 new papers, concider score candidate, and start T3, do not use opowkflow for the
+momement. continue the necessaary work to validate the K3*T2 theory …"*. **Reading:** "start T3" answers proposal decision 2
+(the open item listed in this session's previous report: "whether T3 becomes a hard gate"). The other possible reading, opening
+**WP-TW3** (the threefold step of the twisted route), is **not** taken; TW3 stays unopened, because no T0 text specifies twist
+data over a threefold base. One T0 sentence can switch the reading.
+
+**Ruling (AM-9, `K3_CRITERIA.md` v0.1f).** A `T3_DISAGREE` certificate removes the candidate (F1) and is escalated as a finding.
+An absent T3 certificate is not a failure (§4 rule). T3's stated limits are kept: its discriminating power is UNESTABLISHED and
+its teeth are directional. It never scores. **Impact:** both two-leg candidates are `T3_AGREE`, so no current candidate is removed
+and no ordering is created. The checker's wording was updated and the certificate re-emitted; the `results` block is identical.
+
+## D31′ — 2026-10-08: candidate scoring considered, NOT adopted
+
+The instruction asked to *consider* scoring. Considered:
+1. `K3_CRITERIA.md` permits no ranking run before the v1.0 freeze, and the score formula and soft weights are TBD-AT-FREEZE.
+   Fixing them needs the §7 sign-offs: two models and T0's signature.
+2. The soft criteria C4 and C5 have **no checkers**. C4's requirements await the EFT matching, which is blocked (F5b, Tier C).
+3. So any score definable today reduces to the hard-gate vector. On it, cooper_s7 and cooper_s10 **both pass** C1, C2, C3 and T3
+   (§5 table, generated from certificates): a tie. cooper_s18 lacks C2, C3 and T3 certificates, which is not a failure.
+4. Ledger items 8 and 9 bar any cross-family ordering; "consider" does not lift that bar.
+
+**Phantom artifact (standing rule 4).** The `autoevolve-harness` skill names `autoevolve/run_ranking.py` and
+`scripts/render_selection_report.py`. **Neither exists** in this repo. They were not written, because a harness built to fill
+the gap would be a ranking run before the freeze. Recorded here.
+
+**What would make scoring possible:** a C4/C5 checker with thresholds derived from a non-blocked source, the §7 freeze
+sign-offs, and an explicit T0 sentence lifting ledger items 8 and 9 if a cross-family order is wanted.
+
+---
+
 ## D22′ — EXECUTED (2026-10-08)
 
 T0 ran `scripts/retire_phantom_workflows.sh` from a fresh clone with a token carrying the `workflow` scope; the three phantom Lean
