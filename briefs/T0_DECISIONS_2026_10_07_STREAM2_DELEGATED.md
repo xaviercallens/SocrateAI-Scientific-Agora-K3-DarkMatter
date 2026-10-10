@@ -228,3 +228,16 @@ workflows (`part4-proofs.yml`, `lean4-compile.yml`, `lean4-ci.yml`) are removed 
 (`88c33fc..684e382`). `.github/workflows/` now holds `agora-ci-gate.yml`, `generate-pdf.yml`, `pdf-compilation.yml`, `stream1_b1.yml`.
 The Agora CI Gate (standing rule 6) is unchanged. Operational notes: the host's SSH deploy key is read-only; pushes touching
 `.github/workflows/` need the `workflow` scope even for deletions; a `GH_TOKEN` environment token cannot be refreshed with `gh auth refresh`.
+
+---
+
+## D32′ — 2026-10-10: WP-TW3 opened on B₃ = P¹×P² (twist data and degree gate only)
+
+**T0's instruction, verbatim:** "implement on my behalf" with the list item "WP-TW3's twist data."
+
+**Decision (taken under that delegation).** WP-TW3 is opened with base B₃ := P¹×P², the n = 0 member of P(O⊕O(n))/P², which passed
+TW1 (`TW1_two_e8_P1xP2.json`, `TW1_two_e8_P1bundle_P2.json`). The two E8 divisors are D₁ = {0}×P² and D₂ = {∞}×P², class (1,0),
+set-theoretically disjoint. Twist data: f ∈ H⁰(−4K) = O(8,12) and g ∈ H⁰(−6K) = O(12,18) with vanishing orders (4,5) along D₁ and
+D₂. The next gate is TW3-G2: sections α, β with α³ = π(z(y)), β² = π − σ + 1 for a rational map z: P² ⇢ P¹, with the exact
+degree-feasibility necessary condition. Opening this work package lifts nothing in ledger items 3, 4, 6, 10: no fibre type is
+attached, the tadpole is not posed (F5b), and no physical reading is made. Reversible by one T0 sentence.
