@@ -519,3 +519,14 @@ Publishable on its own merits, independent of any dark-sector claim:
 - **s7-partner integrality mechanism** — `X₇ = η₁³η₇³/z₇³` is a *normalized* integral uniformizer;
   normalization is the load-bearing property, not "η-quotients are integral".
 - Exact Riemann schemes, Fuchs Σ = 6, MUM at 0, W(L₃) = W(L₂)³; A–vS explicit projective K3 models.
+
+## 📄 K3×T² numerics paper PREPARED 2026-10-10 (T0: "prepare a publication on the numeric results of the K3*T2 theory and simulation")
+
+`papers/stream2_k3t2_numerics_2026_10_10.{tex,pdf}` (7 pp.): the Reading S lattice, T3, the z=1/27 section (exact, over-determined),
+and the simulator stream's cross-check ledger **as that stream's own counts** (mirrored in `refs/simulator_k3t2_ledger_counts_v3.json`,
+recounted from its rows, pinned to source sha256 and commit 3adda92; NOT re-verified here). Tables from certificates via
+`render_paper_tables.py --check` (10 table controls). The physical K3×T² dual-scale theory is stated as NOT validated (Tier C).
+**Restructured around the method** on T0's instruction (factual results; the approach reusable to falsify and readapt): six-part
+method, a falsification table, and `check_K3xT2_reading_S_level_sweep.py` (levels 1..24: 24/24 diagonal, 0/552 off-diagonal;
+6 checks; the runner uses `--n-max 8`). **Merged and released on T0's word** ("merge and release after"). New:
+`scripts/extract_simulator_ledger_counts.py` (+8 controls). The paper lint lines in `ci_ledger_regression.sh` include this paper.

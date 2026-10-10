@@ -1,0 +1,340 @@
+{
+  "certificate": "K3xT2_READING_S_LEVEL_SWEEP",
+  "checker": "checkers/check_K3xT2_reading_S_level_sweep.py",
+  "checker_sha256": "dbcb791967d48c31d377e595ff5bc2f5682a6f8cb0a0a8d47f40894e2dd54832",
+  "date": "2026-10-10",
+  "tier": "B (exact lattice arithmetic over Z; the no-CM assumption of K3xT2_READING_S is unchanged)",
+  "result": {
+    "n_max": 24,
+    "pairs_tested": 576,
+    "diagonal_isometric": 24,
+    "off_diagonal_isometric": 0,
+    "off_diagonal_total": 552,
+    "diagonal_all": true,
+    "off_diagonal_none": true,
+    "per_level": {
+      "1": {
+        "NS_signature": [
+          1,
+          2
+        ],
+        "NS_saturated": true,
+        "T_det": -2,
+        "T_signature": [
+          2,
+          1
+        ],
+        "verdict": "ISOMETRIC_TO_CERTIFIED_T"
+      },
+      "2": {
+        "NS_signature": [
+          1,
+          2
+        ],
+        "NS_saturated": true,
+        "T_det": -4,
+        "T_signature": [
+          2,
+          1
+        ],
+        "verdict": "ISOMETRIC_TO_CERTIFIED_T"
+      },
+      "3": {
+        "NS_signature": [
+          1,
+          2
+        ],
+        "NS_saturated": true,
+        "T_det": -6,
+        "T_signature": [
+          2,
+          1
+        ],
+        "verdict": "ISOMETRIC_TO_CERTIFIED_T"
+      },
+      "4": {
+        "NS_signature": [
+          1,
+          2
+        ],
+        "NS_saturated": true,
+        "T_det": -8,
+        "T_signature": [
+          2,
+          1
+        ],
+        "verdict": "ISOMETRIC_TO_CERTIFIED_T"
+      },
+      "5": {
+        "NS_signature": [
+          1,
+          2
+        ],
+        "NS_saturated": true,
+        "T_det": -10,
+        "T_signature": [
+          2,
+          1
+        ],
+        "verdict": "ISOMETRIC_TO_CERTIFIED_T"
+      },
+      "6": {
+        "NS_signature": [
+          1,
+          2
+        ],
+        "NS_saturated": true,
+        "T_det": -12,
+        "T_signature": [
+          2,
+          1
+        ],
+        "verdict": "ISOMETRIC_TO_CERTIFIED_T"
+      },
+      "7": {
+        "NS_signature": [
+          1,
+          2
+        ],
+        "NS_saturated": true,
+        "T_det": -14,
+        "T_signature": [
+          2,
+          1
+        ],
+        "verdict": "ISOMETRIC_TO_CERTIFIED_T"
+      },
+      "8": {
+        "NS_signature": [
+          1,
+          2
+        ],
+        "NS_saturated": true,
+        "T_det": -16,
+        "T_signature": [
+          2,
+          1
+        ],
+        "verdict": "ISOMETRIC_TO_CERTIFIED_T"
+      },
+      "9": {
+        "NS_signature": [
+          1,
+          2
+        ],
+        "NS_saturated": true,
+        "T_det": -18,
+        "T_signature": [
+          2,
+          1
+        ],
+        "verdict": "ISOMETRIC_TO_CERTIFIED_T"
+      },
+      "10": {
+        "NS_signature": [
+          1,
+          2
+        ],
+        "NS_saturated": true,
+        "T_det": -20,
+        "T_signature": [
+          2,
+          1
+        ],
+        "verdict": "ISOMETRIC_TO_CERTIFIED_T"
+      },
+      "11": {
+        "NS_signature": [
+          1,
+          2
+        ],
+        "NS_saturated": true,
+        "T_det": -22,
+        "T_signature": [
+          2,
+          1
+        ],
+        "verdict": "ISOMETRIC_TO_CERTIFIED_T"
+      },
+      "12": {
+        "NS_signature": [
+          1,
+          2
+        ],
+        "NS_saturated": true,
+        "T_det": -24,
+        "T_signature": [
+          2,
+          1
+        ],
+        "verdict": "ISOMETRIC_TO_CERTIFIED_T"
+      },
+      "13": {
+        "NS_signature": [
+          1,
+          2
+        ],
+        "NS_saturated": true,
+        "T_det": -26,
+        "T_signature": [
+          2,
+          1
+        ],
+        "verdict": "ISOMETRIC_TO_CERTIFIED_T"
+      },
+      "14": {
+        "NS_signature": [
+          1,
+          2
+        ],
+        "NS_saturated": true,
+        "T_det": -28,
+        "T_signature": [
+          2,
+          1
+        ],
+        "verdict": "ISOMETRIC_TO_CERTIFIED_T"
+      },
+      "15": {
+        "NS_signature": [
+          1,
+          2
+        ],
+        "NS_saturated": true,
+        "T_det": -30,
+        "T_signature": [
+          2,
+          1
+        ],
+        "verdict": "ISOMETRIC_TO_CERTIFIED_T"
+      },
+      "16": {
+        "NS_signature": [
+          1,
+          2
+        ],
+        "NS_saturated": true,
+        "T_det": -32,
+        "T_signature": [
+          2,
+          1
+        ],
+        "verdict": "ISOMETRIC_TO_CERTIFIED_T"
+      },
+      "17": {
+        "NS_signature": [
+          1,
+          2
+        ],
+        "NS_saturated": true,
+        "T_det": -34,
+        "T_signature": [
+          2,
+          1
+        ],
+        "verdict": "ISOMETRIC_TO_CERTIFIED_T"
+      },
+      "18": {
+        "NS_signature": [
+          1,
+          2
+        ],
+        "NS_saturated": true,
+        "T_det": -36,
+        "T_signature": [
+          2,
+          1
+        ],
+        "verdict": "ISOMETRIC_TO_CERTIFIED_T"
+      },
+      "19": {
+        "NS_signature": [
+          1,
+          2
+        ],
+        "NS_saturated": true,
+        "T_det": -38,
+        "T_signature": [
+          2,
+          1
+        ],
+        "verdict": "ISOMETRIC_TO_CERTIFIED_T"
+      },
+      "20": {
+        "NS_signature": [
+          1,
+          2
+        ],
+        "NS_saturated": true,
+        "T_det": -40,
+        "T_signature": [
+          2,
+          1
+        ],
+        "verdict": "ISOMETRIC_TO_CERTIFIED_T"
+      },
+      "21": {
+        "NS_signature": [
+          1,
+          2
+        ],
+        "NS_saturated": true,
+        "T_det": -42,
+        "T_signature": [
+          2,
+          1
+        ],
+        "verdict": "ISOMETRIC_TO_CERTIFIED_T"
+      },
+      "22": {
+        "NS_signature": [
+          1,
+          2
+        ],
+        "NS_saturated": true,
+        "T_det": -44,
+        "T_signature": [
+          2,
+          1
+        ],
+        "verdict": "ISOMETRIC_TO_CERTIFIED_T"
+      },
+      "23": {
+        "NS_signature": [
+          1,
+          2
+        ],
+        "NS_saturated": true,
+        "T_det": -46,
+        "T_signature": [
+          2,
+          1
+        ],
+        "verdict": "ISOMETRIC_TO_CERTIFIED_T"
+      },
+      "24": {
+        "NS_signature": [
+          1,
+          2
+        ],
+        "NS_saturated": true,
+        "T_det": -48,
+        "T_signature": [
+          2,
+          1
+        ],
+        "verdict": "ISOMETRIC_TO_CERTIFIED_T"
+      }
+    },
+    "signature_all_1_2": true,
+    "saturated_all": true
+  },
+  "not_claimed": [
+    "any physical reading",
+    "that every n is realized by a family the programme carries (only 7 and 10 are)",
+    "the no-CM hypothesis: assumed, not computed"
+  ],
+  "generated_by": "Claude (Fable 5.1), Stream 2, 2026-10-10",
+  "verified_by": "checkers/test_K3xT2_reading_S_level_sweep_controls.py",
+  "reviewed_by": "N"
+}
