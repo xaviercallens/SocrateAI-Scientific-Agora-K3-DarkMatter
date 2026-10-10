@@ -177,9 +177,15 @@
       Stream 1 paper revision (dated addendum §12, v4 text unchanged; mirror re-pinned; release gates re-run by Stream 2, red
       at gate 0 before the re-pin) → S1 PR #4 @ 8dbf438, tag `v0.27-paper-addendum-2026-10-08` only on a green gate run;
       Stream 2 v0.3.19; Stream 3 note (Home v5.13.0). No Zenodo deposit (T0's step).
-      **Next:** WP-TW2 step 2b-ii — push the graph of √−7 through Kumar–Kuwata (3.1)–(3.3) to F(6), descend to F(1),
-      change to the pinned J9 model and read P̄·Ō = 5, h = 14 with the A₁ contact computed; or exclude a
-      section with P̄·Ō = 5 on a Weierstrass model with two E8-root fibres over the surviving bases.
+      **WP-TW2 step 2b-ii DONE (2026-10-10):** `checkers/check_TW2_section_descent.py` → `TW2_SECTION_DESCENT.json`, 14 controls.
+      Kumar–Kuwata Prop. 3.2 executed exactly at 52 specializations; X′(t) = N/D², deg N = 14, D = (t+1)·(irreducible quartic),
+      unique 26-unknown fit (44 points) agreeing at 8 held-out points; **P̄·Ō = 5, contr = 0 (P meets O inside the A₁ fibre),
+      h = 14**, equal to step 0, step 2a, KK's 2d and the fibration orders {10,10,2,1,1}, all read from their certificates; section
+      defined over Q on its branch. Scoping brief `STREAM2_K3xT2_DUAL_SCALE_SCOPING_2026_10_10.md`: the physical K3×T² dual-scale
+      theory is Tier C and cannot be validated; no tr G + tr G⁻¹ on CM tori (not GL(2,Z)-invariant, needs a typed Kähler modulus,
+      D29′/D31′ bar it). Stream 1 request addended (kernel check of the Reading S lattice; statement must carry set equality).
+      **Released** `v0.3.20-am9-t3-hard-gate` (run 37844601329). **Next:** WP-TW2 at z = −1 (P̄·Ō = 0; 2-isogeny, own Vélu
+      step); WP-TW3 needs T0 text (unopened).
 - [x] **WP-TW0 RE-EXAMINED (2026-10-07) — F6 disclosure filed, T0 escalation, ledger NOT edited.**
       `checkers/check_TW0_hodge_degree_orbifold.py` (+9 controls) recomputes the Hodge-bundle degree in
       exponent language from the Tier-A operator tuple: L₂ has FOUR singular points (the 07-29 brief listed
@@ -474,6 +480,8 @@ python3 scripts/check_paper_tier_language.py --selftest       # 7 planted cases 
 python3 scripts/check_paper_tier_language.py papers/stream2_selection_geometry_2026_09_29.tex papers/stream2_k3_identification_twisted_route_2026_10_08.tex  # + no fibre-type token (item 10)
 python3 checkers/check_K3xT2_reading_S.py                     # D29': T(ExE') = certified U+<2n> (n=7,10) by witness; s7 rho=20 forced consistency
 python3 checkers/test_K3xT2_reading_S_controls.py             # 9 controls (wrong n, non-cyclic, orientation, tampered Gram, wrong order, ...)
+python3 checkers/check_TW2_section_descent.py                 # WP-TW2 2b-ii: KK Prop 3.2 section at z=1/27, P.O=5, contr=0, h=14 (exact, over-determined)
+python3 checkers/test_TW2_section_descent_controls.py          # 14 controls (tampered Velu, wrong normalization, too few points, 2P, twist, extra pole, ...)
 python3 checkers/check_TW0_hodge_degree_orbifold.py          # WP-TW0 re-examination: signatures agree; family-level degree != 2 (finding)
 python3 checkers/test_TW0_hodge_degree_orbifold_controls.py  # 9 controls (wrong level/operator disagree; irregular point refused; 07-29 formula non-discriminating)
 python3 checkers/check_TW1_two_e8_feasibility.py             # WP-TW1 LIVE (D20'): P3 FAIL, P1xP2 / scroll PASS (necessary-condition screen)

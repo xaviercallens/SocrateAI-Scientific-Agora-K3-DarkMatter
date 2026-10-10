@@ -1,0 +1,80 @@
+{
+  "certificate": "TW2_SECTION_DESCENT",
+  "work_package": "WP-TW2 step 2b-ii (2026-10-10)",
+  "checker": "checkers/check_TW2_section_descent.py",
+  "checker_sha256": "9ada466c2bcb224b722eb746348b72adeb63d8eab5d7cd75ef1ea3d503578d54",
+  "tier": "B (exact rational arithmetic; the construction is Kumar-Kuwata Prop. 3.2, Tier L, pinned text; the section is reconstructed from exact specializations, over-determined, and verified at held-out points)",
+  "result": {
+    "j": "16581375",
+    "E1": [
+      -1551893875,
+      23529814932750
+    ],
+    "E2": [
+      -76042799875,
+      -8070726521933250
+    ],
+    "alpha": "7225/16",
+    "beta": "614061/64",
+    "kappa": "1/343",
+    "branch": 1,
+    "n_fit_points": 44,
+    "n_unknowns": 26,
+    "nullspace_dim": 1,
+    "n_heldout": 8,
+    "X_numerator": "t**14/7584516 - 17503*t**13/3792258 + 9248299*t**12/1896129 - 282943324381*t**11/7584516 - 66285653689621*t**10/30338064 - 1501039298797123*t**9/7584516 - 2188993921228879*t**8/2528172 - 15272503339206197*t**7/5056344 - 2188993921228879*t**6/2528172 - 1501039298797123*t**5/7584516 - 66285653689621*t**4/30338064 - 282943324381*t**3/7584516 + 9248299*t**2/1896129 - 17503*t/3792258 + 1/7584516",
+    "X_denominator": "t**10 + 885*t**9 + 14307185*t**8/68 + 110027915*t**7/17 + 17253674815*t**6/289 + 61775001281*t**5/578 + 17253674815*t**4/289 + 110027915*t**3/17 + 14307185*t**2/68 + 885*t + 1",
+    "deg_N": 14,
+    "deg_D2": 10,
+    "heldout_agree": true,
+    "t_to_minus_t_invariant": true,
+    "y_square_check": {
+      "all_multiplicities_even": true,
+      "constant": "1/1745193580658727600384",
+      "square_class_of_constant": 1,
+      "reading": "Y' lies in Q(sqrt(square_class)) * Q(t); a square class of 1 means the section is defined over Q"
+    },
+    "discriminant_orders": [
+      "10",
+      "10",
+      2,
+      1,
+      1
+    ],
+    "P_dot_O": 5,
+    "contr_A1": "0",
+    "contact_reading": "P meets O inside the A_1 fibre (pole of X' at t = -1), hence the identity component",
+    "height": "14",
+    "pole_at_t0": false,
+    "pole_at_infinity": false,
+    "poles_finite": [
+      "t + 1^2",
+      "34*t**4 + 15011*t**3 + 233079*t**2 + 15011*t + 34^2"
+    ],
+    "verdict": "SECTION_READ"
+  },
+  "cross_check_against_earlier_steps": {
+    "step0_P_dot_O": 5,
+    "step0_height": 14,
+    "step2a_P_dot_O": 5,
+    "step2a_contr": "0",
+    "fibration_certificate_orders": [
+      10,
+      10,
+      2,
+      1,
+      1
+    ],
+    "kumar_kuwata_height_2d": 14,
+    "agree": true
+  },
+  "not_claimed": [
+    "any Kodaira label (ledger items 3, 10): the A_1 is the root lattice of step 2a; only the section's contact with it is read",
+    "that this section generates the full Mordell-Weil group beyond height 14 = 2*7 (KK Prop. 3.2(ii) and the lattice side both give 14; no index computation is made here)",
+    "anything physical; the K3 is a model surface (ledger item 4)",
+    "z = -1 and z = infinity: this is the z = 1/27 locus only"
+  ],
+  "generated_by": "Claude (Fable 5.1), Stream 2, 2026-10-10",
+  "verified_by": "checkers/test_TW2_section_descent_controls.py",
+  "reviewed_by": "N"
+}

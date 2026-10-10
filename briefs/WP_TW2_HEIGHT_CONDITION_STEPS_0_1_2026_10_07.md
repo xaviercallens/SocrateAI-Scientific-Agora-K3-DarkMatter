@@ -156,3 +156,48 @@ one are all refused by the y-identity.
 remaining step 2b-ii is the computation in Pic⁰ of that cubic over ℚ(√−7)(t₆) — reducing D⁺_φ − 9·O to a single
 point Q⁺ — and the descent to F⁽¹⁾; it is a function-field computation (resultants/Riemann–Roch over ℚ(√−7)(t)),
 not yet attempted.
+
+---
+
+## 8. Step 2b-ii (2026-10-10) — the section is built, descended and read: P̄·Ō = 5, contr = 0, h = 14
+(`checkers/check_TW2_section_descent.py`, `TW2_SECTION_DESCENT.json`, 14 controls in `test_TW2_section_descent_controls.py`)
+
+**Inputs verified before execution (standing rule 4).** This brief's §6; the kernel cubic, Vélu map and codomain of step 2b-i;
+Kumar–Kuwata (pinned text) l.460–548 for (3.1)–(3.3) and Prop. 3.2, and l.296–303 for the simple normal form of F⁽¹⁾. The
+"pinned J9 model" is Kuwata–Shioda's pencil already transcribed in `check_inose_fibration_multiplicities.py`; here it appears as
+`Y² = X³ − 3α t⁴ X + t⁵(t² − 2β t + 1)`, the same pencil as Stream 1's open question 6.
+
+**What was computed (exact, no floats).**
+1. The cubic C_t of (3.1) with E₁ = (A, B), E₂ = (A₂, B₂) (the Vélu codomain). With s = x₂ − t²x₁ it is quadratic in x₁; its
+   discriminant is a quartic with the rational point O = (s, w) = (0, q). Mordell's map gives a Weierstrass model E_t. The map
+   is **verified by identity on the actual nine divisor points** (an exact check in the residue field), and j(E_t) is verified
+   against the quartic's own invariants I, J.
+2. D^± = the nine points with φ_y(x₁) = ±t³ (roots of a degree-9 polynomial, as Prop. 3.2(i) predicts). Q^± is found by
+   Riemann–Roch: the unique g in L(10·O) vanishing on D^± has a tenth zero R, and Q = −R. The norm identity N(x) = c·Nm(x)·(x − X_R)
+   holds exactly.
+3. P(t) = Q⁺ − Q⁻ on E_t, mapped to the simple normal form. **Normalization is calibrated, then asserted:** E_t matches
+   `Y² = X³ − 3αX + (t_s + 1/t_s − 2β)` exactly in j with α = (J₁J₂)^{1/3} = 7225/16, β = J − 1 and t_s = t⁶/343 (343 =
+   √(Δ_E₁/Δ_E₂) is computed). The j-match and the twist constant are asserted at every one of the 52 specializations. The other
+   branch (β = 1 − J, t_s = −t⁶/343) also matches in j; it is the quadratic twist by −1 (control N6).
+4. X′(t_s) is reconstructed as N/D² from 44 specializations for **26 unknowns** (so over-determined by 18); the fit is unique
+   (nullspace dimension 1), agrees at 8 held-out points, and Y′² is a constant square class (+1: the section is defined over ℚ on
+   this branch) times a square in ℚ(t).
+
+**Result.** deg N = 14 and D = (t + 1)·(quartic), degree 5.
+- **P̄·Ō = 5**: the poles of X′ (a simple one at the A₁ node t = −1 and four at the roots of an irreducible quartic), none at
+  t = 0 or ∞ (the two E₈ fibres).
+- **contr = 0**: P meets O inside the A₁ fibre, so it lies on the identity component.
+- **h = 2χ + 2·P̄·Ō − contr = 4 + 10 − 0 = 14**, which equals Kumar–Kuwata's 2·deg φ = 14, the lattice value of step 0 and the
+  prediction of step 2a, all read from their certificates. The discriminant orders of the model, {10,10,2,1,1}, equal the
+  fibration certificate's (the same surface).
+
+**Not claimed.** That this section generates the whole Mordell–Weil group beyond height 14 (no index computation was made; the
+lattice side forces rank 1 and height 14 and KK Prop. 3.2(ii) gives 2d, so the generator reading is the natural one, not a proof
+here). Anything at z = −1 or z = ∞. Any Kodaira label (the A₁ is the root lattice of step 2a). Anything physical.
+
+**Note, a robustness fact found by a control.** P̄·Ō is conserved when poles move to t = ∞: it equals (deg N − 4)/2 = 5 whatever
+the denominator. So the quantity read here is determined by the degree of N together with the weight; the pole *locations* carry
+the contact information (the A₁ contact above).
+
+**What step 2 does not yet give.** The twisted-Weierstrass route's next gate is WP-TW3 (twist data over a threefold base), which no
+T0 text specifies. It stays unopened.
