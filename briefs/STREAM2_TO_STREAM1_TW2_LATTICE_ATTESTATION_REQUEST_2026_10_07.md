@@ -38,3 +38,28 @@ fails in Lean, that is a finding against our certificate and we want to hear it 
 
 *Generated-by: Claude (Fable 5.1), Stream 2 | Verified-by: the three certificates and their controls (9 + 8 + 7) |
 Reviewed-by: N*
+
+---
+
+## Addendum 2026-10-10 — a second item for the same request: the lattice of E×E′ (Reading S)
+
+Still no deadline, still producer ≠ verifier (Stream 2 will re-gate whatever you ship in your own build tree before citing it).
+
+**What Stream 2 computed** (`data/certificates/K3xT2_READING_S.json`, `checkers/check_K3xT2_reading_S.py`, 9 controls): in
+H²(E×E′, ℤ) = ∧²ℤ⁴ with the determinant pairing (the coefficient of e₁∧e₂∧e₃∧e₄ in u∧w), the classes A = e₃∧e₄, B = e₁∧e₂ and
+the graph Γ_M = (e₁ + Me₁)∧(e₂ + Me₂) of a cyclic isogeny of degree n = det M span a saturated sublattice NS of signature (1,2),
+and its orthogonal complement T is isometric to U ⊕ ⟨2n⟩ — for n = 7 and n = 10 — by an explicit unimodular basis change
+(stored in the certificate as `isometry_witness_rows`).
+
+**What a faithful kernel statement has to carry** (your `LL.md` §1): exhibiting vectors with the right Gram matrix does **not**
+prove they span the complement. The statement should say, for the explicit M = diag(1, n): (i) the Gram of (A, B, Γ_M); (ii) its
+signature; (iii) saturation (the gcd of the maximal minors is 1); (iv) the complement **as a set**, `{v | ⟨v, A⟩ = ⟨v, B⟩ = ⟨v, Γ_M⟩ = 0}`,
+equals the ℤ-span of the exhibited basis (an iff, not two orthogonal vectors), and (v) the Gram, determinant and the integral
+isometry to `TNR n` (`![0,1,0;1,0,0;0,0,2n]`). A statement that omits (iv) proves less than its name says.
+
+**What this is not.** It does not claim the CM or no-CM hypothesis (the computation assumes ρ(E×E′) = 3, i.e. no CM, and states
+that); it identifies no torus of any physical model with E or E′ (D29′); and the Shioda–Inose isometry T(X) ≅ T(E×E′) is cited
+(Kumar–Kuwata Remark 2.2), not asked of you.
+
+**Also new, for information only.** WP-TW2 step 2b-ii (`TW2_SECTION_DESCENT.json`) read the section at z = 1/27 exactly:
+P̄·Ō = 5, contr = 0, h = 14, consistent with the lattice arithmetic you were asked to check in the first part of this request.

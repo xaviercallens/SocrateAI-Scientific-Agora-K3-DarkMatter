@@ -29,6 +29,7 @@ COMMANDS=(
   "checkers/spike_disc_form_vs_atkin_lehner.py"
   "checkers/check_C1_mirror_integrality.py --order 30"
   "checkers/check_K3xT2_reading_S.py"
+  "checkers/check_TW2_section_descent.py"
   # papers (added 2026-10-08: the TODO regression block lists these, but this runner never read that block)
   "scripts/render_paper_tables.py --check"
   "scripts/check_paper_tier_language.py --selftest"
