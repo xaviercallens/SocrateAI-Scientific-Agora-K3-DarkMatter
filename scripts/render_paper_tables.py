@@ -291,7 +291,22 @@ def render_sim_ledger():
     return "\n".join(lines) + "\n"
 
 
+def render_level_sweep():
+    r = json.loads((CERTS / "K3xT2_READING_S_LEVEL_SWEEP.json").read_text())["result"]
+    rows = [("levels run", f"$1,\\dots,{r['n_max']}$"),
+            ("(computed lattice, offered target) pairs", f"${r['pairs_tested']}$"),
+            ("isometric on the diagonal (same level)", f"${r['diagonal_isometric']}$ of ${r['n_max']}$"),
+            ("isometric off the diagonal (wrong level)", f"${r['off_diagonal_isometric']}$ of ${r['off_diagonal_total']}$"),
+            ("N\\'eron--Severi of signature $(1,2)$ and saturated at every level",
+             "yes" if r["signature_all_1_2"] and r["saturated_all"] else "NO")]
+    lines = [r"\begin{tabular}{lr}", r"\toprule", r"Level sweep (exact; assumes no CM) & Result \\", r"\midrule"]
+    lines += [f"{a} & {b} \\\\" for a, b in rows]
+    lines += [r"\bottomrule", r"\end{tabular}"]
+    return "\n".join(lines) + "\n"
+
+
 TABLES = {
+    "level_sweep.tex": render_level_sweep,
     "section_descent.tex": render_section_descent,
     "sim_ledger.tex": render_sim_ledger,
     "reading_s.tex": render_reading_s,

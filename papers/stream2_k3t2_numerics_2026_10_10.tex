@@ -14,27 +14,26 @@
 \usepackage{tcolorbox}
 
 \hypersetup{colorlinks=true, linkcolor=blue, citecolor=red, urlcolor=cyan,
-  pdftitle={Exact Computations on the K3xT2 Reading of the Cooper s7/s10 Families, and What the Simulation Cross-Checks Do and Do Not Show},
+  pdftitle={A Falsification-Ready Method for the K3xT2 Reading of the Cooper s7/s10 Families: Exact Computations, Formal Verification, and Controls},
   pdfauthor={Xavier Callens and the SocrateAI Scientific Agora Collaboration}}
 
 \theoremstyle{remark}
 \newtheorem{remark}{Remark}[section]
-\newcommand{\tierA}{\colorbox{green!15}{\textsf{\scriptsize Tier A}}}
+\newcommand{\lean}[1]{\texttt{#1}}
 \newcommand{\tierB}{\colorbox{yellow!20}{\textsf{\scriptsize Tier B --- derived, not measured}}}
 \newcommand{\tierL}{\colorbox{blue!10}{\textsf{\scriptsize Tier L --- literature}}}
 \newcommand{\tierC}{\colorbox{orange!15}{\textsf{\scriptsize Tier C --- blocked physics}}}
-\newcommand{\lean}[1]{\texttt{#1}}
 
 \newtcolorbox{scopebox}{colback=gray!5, colframe=gray!45, boxrule=0.4pt, arc=1pt, left=6pt, right=6pt, top=3pt, bottom=3pt,
-  fonttitle=\bfseries\small, title={What is not claimed}}
+  fonttitle=\bfseries\small, title={Scope}}
 \newtcolorbox{headlinebox}{colback=red!4, colframe=red!45!black, boxrule=0.5pt, arc=1pt, left=6pt, right=6pt, top=4pt, bottom=4pt,
-  fonttitle=\bfseries\small, title={Headline result}}
+  fonttitle=\bfseries\small, title={Result}}
 \newtcolorbox{correctionbox}{colback=orange!6, colframe=orange!55!black, boxrule=0.5pt, arc=1pt, left=6pt, right=6pt, top=4pt, bottom=4pt,
   fonttitle=\bfseries\small, title={Corrections recorded in band}}
 
-\title{\Large \textbf{Exact Computations on the $K3\times T^2$ Reading}\\[0.2em]
-\textbf{of the Cooper $s_7$/$s_{10}$ Families, and What the}\\[0.2em]
-\textbf{Simulation Cross-Checks Do and Do Not Show}}
+\title{\Large \textbf{A Falsification-Ready Method for the $K3\times T^2$ Reading}\\[0.2em]
+\textbf{of the Cooper $s_7$/$s_{10}$ Families:}\\[0.2em]
+\textbf{Exact Computations, Formal Verification, and Controls}}
 \author{\textbf{Xavier Callens} \and \textbf{SocrateAI Scientific Agora Collaboration} \\[0.3em]
 \textit{Stream 2 --- Selection \& Geometry} \\
 \textit{(with the simulator stream's ledger, as reported by that stream)}}
@@ -44,28 +43,51 @@
 \maketitle
 
 \begin{scopebox}
-This is a report on exact and numerical \emph{mathematics}. It contains no physical claim and no observable. The physical reading of
-``$K3\times T^2$'' as a compactification, and any statement about a dark sector, are \tierC\ and are not tested, validated or
-supported by anything here. No torus of any physical model is identified with an elliptic curve $E$ or $E'$. Nothing ranks the $s_7$
-family against the $s_{10}$ family. No Kodaira fibre type is attached to any point of either family.
+This report is about method and exact mathematics. Its object is the Shioda--Inose reading of $K3\times T^2$ for two families of
+$K3$ surfaces. Results are stated at the tier of their evidence. The physical reading of $K3\times T^2$ as a compactification, and any
+dark-sector observable, are \tierC\ and are outside what is computed here.
 \end{scopebox}
 
 \begin{abstract}
-We collect the numerical results the programme has obtained for the Shioda--Inose reading of $K3\times T^2$ and say, for each, what
-it is worth. Every table is generated from a certificate. The transcendental lattice of $E\times E'$ for a cyclic $n$-isogeny is
-computed exactly in $\wedge^2\mathbb{Z}^4$ and is isometric to each family's certified lattice, for $n=7$ and $n=10$. At the three
-Picard-number-$20$ points of $s_7$ the lattice of $E\times E$ for the computed CM order equals the certified row; that agreement is
-forced by theory and is not evidence. A level-consistency gate between the lattice and modular legs holds for both families. At
-$z=1/27$ the Mordell--Weil section demanded by the $M_7$ polarization is constructed by the Kumar--Kuwata isogeny graph, reconstructed
-as a rational function from $52$ exact specializations (an over-determined fit with held-out points), and read: $\bar P\cdot\bar O=5$,
-contact $0$ with the $A_1$ fibre, height $14$, equal to the lattice prediction. We then report, with counts and without re-deriving
-them, what the DualScaleSimulator stream's own cross-check ledger records, and what its level experiments have and have not
-established. The physical theory is not validated, and we state what a validation would require.
+We describe, and exercise on two families, a method for turning a geometric hypothesis into claims that can fail. Each claim is
+reduced to a statement an exact checker or a proof kernel can decide; each checker ships controls that must fail on tampered input;
+every number in a paper is read from a certificate by a script that refuses on drift; and a failing certificate has a stated
+consequence. Applied to the Shioda--Inose reading of $K3\times T^2$ it gives the following. The transcendental lattice of
+$E\times E'$ for a cyclic $n$-isogeny is computed exactly and is isometric to $U\oplus\langle 2n\rangle$ at every level $n\le24$ and to
+no other $U\oplus\langle 2m\rangle$ (24 of 24 on the diagonal, 0 of 552 off it). It equals the certified lattice of each family at
+$n=7$ and $n=10$. The level read from the lattice agrees with the level read from the modular side. At $z=1/27$ the section required
+by the $M_7$ polarization is constructed exactly, reconstructed from $52$ specializations by an over-determined fit, and read:
+$\bar P\cdot\bar O=5$, contact $0$ with the $A_1$ fibre, height $14$, equal to the lattice value. We list what would falsify each
+claim and how the pipeline is re-pointed at a new candidate by changing one integer.
 \end{abstract}
 
 \tableofcontents
 
-\section{What is computed, and the tier of each result}\label{sec:map}
+\section{The approach}\label{sec:approach}
+
+The programme's hypothesis has a mathematical core (a family of $K3$ surfaces with a symmetric-square structure, a lattice, a
+modular coordinate) and a physical superstructure. The method keeps the two apart and makes the core falsifiable. It has six parts.
+
+\begin{enumerate}
+\item \textbf{Every claim carries its tier.} Kernel-checked statements (Tier A), exact derivations (Tier B), literature (Tier L) and
+  blocked physics (Tier C) are never written in one another's language. A prose lint applies the same forbidden-verb and conjecture
+  rules to the whole body of each paper, and blocks fibre-type tokens that the programme's ruling forbids.
+\item \textbf{Numbers are read, not typed.} Each table is generated from a certificate by one script. Its \texttt{--check} mode exits
+  non-zero if a fragment drifts, and its controls tamper with the certificates and require the table to change.
+\item \textbf{Exact arithmetic, over-determined.} Lattices, intersection numbers and heights are computed in exact integer or rational
+  arithmetic. Where a function must be reconstructed from specializations, the number of points exceeds the number of unknowns, the
+  solution must be unique, and further points are held out and tested.
+\item \textbf{Controls that must fail.} Every checker ships negative controls: a wrong level, a non-cyclic isogeny, a reversed
+  orientation, a tampered lattice, a wrong normalization, too few points, a different section. A control that cannot fail is not a
+  control.
+\item \textbf{Formal verification where it reaches.} The symmetric-square factorization, the action of $\Gamma_0(N)^+$ on
+  $U\oplus\langle2N\rangle$ and the rank-jump lattice rows are kernel-checked in Lean~4 by the theory stream, with a second
+  independent development for six of the rows. Release gates (build, absence of \texttt{sorry}, axiom audit, statement lock,
+  producer $\ne$ verifier) are run by a session that did not write the code. The recorded rule is that the claim must live in the
+  statement: a theorem can be true and compile while proving less than its name says.
+\item \textbf{Removal and correction rules.} A failed hard gate removes a candidate; an absent certificate does not; consistency gates
+  never score; and any correction is dated and machine-visible, not a footnote.
+\end{enumerate}
 
 \begin{table}[h]
 \centering\footnotesize
@@ -74,141 +96,146 @@ established. The physical theory is not validated, and we state what a validatio
 Result & Tier & Source of the number \\
 \midrule
 $T(E\times E')\cong U\oplus\langle 2n\rangle$, $n=7,10$ & B (exact computation) & \nolinkurl{K3xT2_READING_S.json} \\
-$T(E\times E)$ at the three $s_7$ points of $\rho=20$ & B, forced & same \\
+The same, for every $n\le24$ against every target & B & \nolinkurl{K3xT2_READING_S_LEVEL_SWEEP.json} \\
+$T(E\times E)$ at the three $s_7$ points of $\rho=20$ & B, forced & \nolinkurl{K3xT2_READING_S.json} \\
 Level consistency, lattice $n$ = modular $n$ & B (hard gate) & \nolinkurl{T3_LEVEL_CONSISTENCY.json} \\
 The section at $z=1/27$: $\bar P\cdot\bar O$, contact, height & B (exact; construction L) & \nolinkurl{TW2_SECTION_DESCENT.json} \\
 Counts of the simulator stream's cross-check ledger & mirrored, not verified here & \nolinkurl{refs/simulator_k3t2_ledger_counts_v3.json} \\
 Identification of the $T^2$ of a compactification with $E$ & C, not made & --- \\
-Any dark-sector mass, coupling or exclusion & C, blocked & --- \\
 \bottomrule
 \end{tabular}
-\caption{Scope of this report. B: derived, not measured. L: literature. C: blocked physics.}\label{tab:map}
+\caption{What this report computes and where each number comes from. B: derived, not measured. L: literature. C: blocked physics.}\label{tab:map}
 \end{table}
 
-\section{The lattice of $E\times E'$}\label{sec:lattice}
+\section{Results}\label{sec:results}
 
-Let $E\times E'=\mathbb{C}^2/\mathbb{Z}^4$. Then $H^2(E\times E',\mathbb{Z})\cong\wedge^2\mathbb{Z}^4$ with the pairing
-$\langle u,w\rangle=$ the coefficient of $e_1\wedge e_2\wedge e_3\wedge e_4$ in $u\wedge w$, and a two-dimensional subtorus spanned
-by $v_1,v_2$ has class $v_1\wedge v_2$. For curves without complex multiplication (an assumption, stated and not computed), the
-N\'eron--Severi lattice is spanned by the two fibres and the graph of the isogeny. The checker verifies that this span has signature
-$(1,2)$ and is saturated, computes its orthogonal complement as an integral basis, and finds an explicit unimodular basis change onto
-the certified lattice. Controls that must fail do: a wrong level, a non-cyclic isogeny (caught by saturation), a reversed
-orientation (caught by the signature), a tampered lattice, a wrong CM order, and a $j$-invariant that is not a class-number-one value.
+\subsection{The lattice of $E\times E'$, and a sweep over levels}\label{sec:lattice}
+
+Let $E\times E'=\mathbb{C}^2/\mathbb{Z}^4$. Then $H^2(E\times E',\mathbb{Z})\cong\wedge^2\mathbb{Z}^4$ with the pairing given by the
+coefficient of $e_1\wedge e_2\wedge e_3\wedge e_4$ in $u\wedge w$, and a two-dimensional subtorus spanned by $v_1,v_2$ has class
+$v_1\wedge v_2$. For curves without complex multiplication (an assumption that is stated, not computed), the N\'eron--Severi lattice is
+spanned by the two fibres and the graph of the isogeny. The checker verifies signature $(1,2)$ and saturation, computes the
+orthogonal complement as an integral basis, and finds an explicit unimodular basis change onto the target.
 
 \begin{table}[h]
 \centering\scriptsize\setlength{\tabcolsep}{3pt}
 \input{tables/reading_s.tex}
 \caption{Top: the computed $T(E\times E')$ against each family's certified $T$. Bottom: $T(E\times E)$ at the $s_7$ points of Picard
 number $20$, with the CM order identified by computation from the model's $j$. The bottom agreement is forced (an elliptic point of
-the modular curve is a CM point); it is consistency, not corroboration.}\label{tab:readings}
+the modular curve is a CM point), so it is a consistency check.}\label{tab:readings}
 \end{table}
 
-The Shioda--Inose isometry $T(X)\cong T(E\times E')$ for an Inose surface $X$ is cited (\tierL, Kumar--Kuwata Remark~2.2), not
-recomputed. For $s_7$ the family member is identified with an Inose surface through the explicit $M_7$-polarized model; for $s_{10}$,
-which has no explicit model here, the reading holds at the lattice level only. The rows of $s_{10}$ at $\rho=20$ are not covered.
+\begin{table}[h]
+\centering\small
+\input{tables/level_sweep.tex}
+\caption{The same code at every level: each computed lattice is compared with every target $U\oplus\langle2m\rangle$. The isometry
+exists exactly when $m=n$.}\label{tab:sweep}
+\end{table}
 
-\section{Level consistency}\label{sec:t3}
+The sweep is the evidence that the two carried levels, $7$ and $10$, are not special cases: a wrong level is rejected by the code that
+accepts the right one, at every one of the 576 pairs.
+
+\subsection{Level consistency}\label{sec:t3}
 
 \begin{table}[h]
 \centering\small
 \input{tables/t3_level.tex}
 \caption{The level $n$ read from the lattice certificate against the level read from the modular side (an eta-quotient Hauptmodul
-with Newman's conditions and an Atkin--Lehner check). Both legs start from the same operator, so agreement is not an independent
-measurement. The gate has real negative controls (four other order-three entries fail its modular leg) and its power against a
-genuine two-leg candidate that disagrees is unestablished.}\label{tab:t3}
+with Newman's conditions and an Atkin--Lehner check). Both legs start from the same operator, so agreement is a consistency check and
+not an independent measurement.}\label{tab:t3}
 \end{table}
 
-\section{The section at $z=1/27$}\label{sec:section}
-
-At the three $\rho=20$ points of $s_7$ the two curves of the Inose model become isomorphic and the count of
-\cref{tab:tw2} follows from exact reduction of the model and the height formula $h(P)=2\chi+2\,\bar P\cdot\bar O-\sum\mathrm{contr}$.
+\subsection{The section at $z=1/27$}\label{sec:section}
 
 \begin{table}[h]
 \centering\small
 \input{tables/tw2_loci.tex}
-\caption{The generic member and the three $\rho=20$ points of $s_7$. The point $z=\infty$ has Mordell--Weil rank $0$: there is no
-section there.}\label{tab:tw2}
+\caption{The generic member and the three $\rho=20$ points of $s_7$ (lattice arithmetic and exact reduction of the model). At
+$z=\infty$ the Mordell--Weil rank is $0$.}\label{tab:tw2}
 \end{table}
 
-For $z=1/27$ the section is the one attached to the degree-$7$ endomorphism $\sqrt{-7}$ of $E$. We constructed it, rather than
-inferring it from the lattice, by the following exact procedure.
+For $z=1/27$ the section is the one attached to the degree-$7$ endomorphism $\sqrt{-7}$ of $E$. It is constructed, not inferred:
 \begin{enumerate}
-\item The Vélu isogeny $\varphi\colon E_1\to E_2$ of degree $7$ is written over $\mathbb{Q}$ (kernel cubic, codomain), and
-  $\varphi_y=\varphi_x'$ is checked exactly against the curve equation.
-\item The cubic $C_t$ of Kumar--Kuwata (3.1) is reduced, through $s=x_2-t^2x_1$, to a quartic with a rational point, and mapped to a
-  Weierstrass model $E_t$ by Mordell's formulas. The map is verified by identity on the actual divisor points, and $j(E_t)$ by the
-  quartic's own invariants.
-\item The divisors $D^{\pm}$ ($\varphi_y(x_1)=\pm t^3$, nine points) are summed by Riemann--Roch: the function in $L(10\,O)$ vanishing
-  on $D^{\pm}$ has one further zero $R$, and $Q^{\pm}=-R$. The section is $P=Q^{+}-Q^{-}$.
-\item $E_t$ is matched to the simple normal form $Y^2=X^3-3\alpha X+t_s+t_s^{-1}-2\beta$ ($\alpha=(J_1J_2)^{1/3}$, $\beta=J-1$,
-  $t_s=t^6/343$, the constant $343=\sqrt{\Delta_{E_1}/\Delta_{E_2}}$ computed); the $j$-match and the twist constant are asserted at
-  every specialization.
-\item $X'(t_s)$ is reconstructed as a rational function from exact specializations and \emph{read}.
+\item The V\'elu isogeny $\varphi\colon E_1\to E_2$ of degree $7$ is written over $\mathbb{Q}$, and $\varphi_y=\varphi_x'$ is checked
+  exactly against the curve equation.
+\item The cubic $C_t$ of Kumar--Kuwata (3.1) is reduced through $s=x_2-t^2x_1$ to a quartic with a rational point and mapped to a
+  Weierstrass model by Mordell's formulas, verified by identity on the actual divisor points and by the quartic's own invariants.
+\item The nine-point divisors $D^{\pm}$ ($\varphi_y(x_1)=\pm t^3$) are summed by Riemann--Roch: the function in $L(10\,O)$ vanishing on
+  $D^{\pm}$ has one further zero $R$, and $Q^{\pm}=-R$. The section is $P=Q^{+}-Q^{-}$.
+\item The model is matched to the simple normal form $Y^2=X^3-3\alpha X+t_s+t_s^{-1}-2\beta$, with $t_s=t^6/343$ and
+  $343=\sqrt{\Delta_{E_1}/\Delta_{E_2}}$ computed; the $j$-match and the twist constant are asserted at every specialization.
+\item $X'(t_s)$ is reconstructed as a rational function and read.
 \end{enumerate}
 
 \begin{table}[h]
 \centering\small
 \input{tables/section_descent.tex}
-\caption{The reconstruction and what is read from it. The fit is over-determined and agrees at held-out points. The cross-check row
-compares with the earlier lattice steps and with the fibration certificate, all read from their own files.}\label{tab:descent}
+\caption{The reconstruction and what is read from it. The cross-check row compares with the lattice steps and the fibration
+certificate, each read from its own file.}\label{tab:descent}
 \end{table}
 
 \begin{headlinebox}
-The explicit section at $z=1/27$ meets $O$ five times, once inside the $A_1$ fibre (hence on its identity component) and four times
-at the roots of an irreducible quartic. Its height is $14=2\cdot7$, the value the lattice arithmetic and the Kumar--Kuwata theorem
-both give. The two $E_8$ fibres carry no contact. \tierB.
+The section meets $O$ five times: once inside the $A_1$ fibre (so on its identity component) and four times at the roots of an
+irreducible quartic. The two $E_8$ fibres carry no contact. Its height is $14=2\cdot7$, equal to the value from the lattice arithmetic
+and from the Kumar--Kuwata theorem. \tierB.
 \end{headlinebox}
 
 \begin{remark}
-A control found a robustness fact worth recording: $\bar P\cdot\bar O$ equals $(\deg N-4)/2$ whatever the denominator, because poles
-that leave the finite line reappear at infinity. The \emph{count} is fixed by the degree of the numerator; the pole \emph{locations}
-carry the contact information. Doubling the section does not fit the same shape, as it should (its height is four times larger).
+A control found a structural fact: $\bar P\cdot\bar O=(\deg N-4)/2$ for any denominator, since poles that leave the finite line
+reappear at infinity. The count is fixed by the degree of the numerator; the pole locations carry the contact information. Doubling
+the section does not fit the same shape, as expected from its height.
 \end{remark}
 
-What this does not establish: that the section generates the whole Mordell--Weil group (no index computation was made; the lattice
-side and the literature both give height $14$, which is the natural reading, not a proof here); anything at $z=-1$ (where the lattice
-count has $\bar P\cdot\bar O=0$) or at $z=\infty$; or any physical statement.
+The section is a height-$14$ element; whether it generates the full Mordell--Weil group is the one question left open by this
+computation (no index is computed; the lattice and the literature both give $14$).
 
-\section{The simulation side: what the cross-check ledger records}\label{sec:sim}
+\subsection{The simulator stream's ledger}\label{sec:sim}
 
-The DualScaleSimulator stream maintains a ledger (its \texttt{k3t2\_rigidity\_v3} audit) comparing, for $332$ sealed targets of the
-Lean library, values it computed in a separately written pipeline against the values stated in Lean. We report its \emph{counts},
-recounted from its row-level data by a script that refuses on any mismatch, pinned to the source file's hash. We did not re-derive
-its rows: nothing in \cref{tab:ledger} is verified by this stream, and the source's own header places its computations at tier~B at
-best and its physical identifications at tiers~L and~C.
+The DualScaleSimulator stream compares, for $332$ sealed targets of the Lean library, values from a separately written pipeline with
+the values stated in Lean. We mirror its counts, recounted from its row data by a script that refuses on mismatch and pinned to the
+source file's hash. We report them as that stream's record; the rows are not re-derived here.
 
 \begin{table}[h]
 \centering\small
 \input{tables/sim_ledger.tex}
-\caption{The simulator stream's ledger, mirrored (source commit and hash pinned in \texttt{refs/}). ``Rigid'' there means that a
-selecting condition which never mentions the target value was scanned for one parameter; it is not a statement about the
-universe.}\label{tab:ledger}
+\caption{The simulator stream's ledger, mirrored (source commit and hash pinned in \texttt{refs/}). ``Rigid'' there means a selecting
+condition that never mentions the target value was scanned for one parameter.}\label{tab:ledger}
 \end{table}
 
-Two features of the table matter for how it may be used. First, most targets are not computed: the ledger is a map of what remains,
-not a verdict on the library. Second, a fifth of the inputs it declares were typed from memory; the ledger says so itself, and a
-number resting on such an input is only as good as the memory. Of the rigidity entries, three are confirmed, two are disputed
-between its two reviewers and the rest are self-reported and unreviewed.
+Most targets are not computed, so the ledger is a map of what remains. A fifth of the inputs it declares were typed from memory, which
+the ledger records. The same stream's note records that its implemented model sits at level $12$ through a hard-coded constant, that
+under the potential actually integrated no observable depends on the level, that an opt-in modular potential does read the level, and
+that its level experiment (item~L5) ran only partially.
 
-\paragraph{Its level experiments.} Quoting the simulator stream's own note (\texttt{audit/K3\_SELECTION.md}, not recomputed here):
-the implemented model sits at level $12$ because a constant is hard-coded, so level $12$ is fitted, not forced; under the potential
-actually integrated no observable depends on the level, so no level can be falsified; and a modular potential that does read the
-level exists but is opt-in and not adopted. Its estimate is that, in one of its two modes, about three quarters of the apparent level
-dependence of that potential is a stretched axis and not structure (over $14$ random points). The test that would show whether the
-level reaches a reported observable through the dynamics (its item~L5) ran only partially and is neither met nor refuted.
+\section{Falsification and re-adaptation}\label{sec:falsify}
 
-\section{What cannot be concluded, and what would be needed}\label{sec:limits}
+The value of the method is that a change of hypothesis is a change of input, and that each claim has a named way to fail.
 
-The physical theory is not validated. There is no worked matching from the geometric data to a four-dimensional effective theory,
-the flux and tadpole route is blocked until a threefold base is specified, and the pre-registered prediction carries no derived
-quantity. A validation would require, in order: a worked matching; a quantitative prediction that differs from $\Lambda$CDM; a
-pre-registered pin; and survival against public data. None of the first link exists. The mathematics reported here is groundwork
-for that chain and says nothing about whether it can be completed.
+\begin{table}[h]
+\centering\footnotesize\renewcommand{\arraystretch}{1.35}
+\begin{tabular}{p{4.2cm}p{4.4cm}p{5.4cm}}
+\toprule
+Claim & Would be falsified by & Exercised by \\
+\midrule
+$T(E\times E')\cong U\oplus\langle2n\rangle$ at level $n$ & a level where the computed lattice is not isometric to its target, or is isometric to a different target & the 24-level sweep: 576 pairs, diagonal only; controls: wrong $n$, non-cyclic isogeny, reversed orientation, tampered Gram \\
+A family's certified lattice has the level its modular coordinate has & a certificate with lattice $n\ne$ modular $n$ (removes the candidate) & four other register entries fail the modular leg; 25 controls \\
+The $M_7$ polarization needs a section of height $2n$ with $\bar P\cdot\bar O=n-2$ & no such section, or one of a different height, at a locus where the lattice allows it & the explicit construction at $z=1/27$; the rank-$0$ locus $z=\infty$ has none, as the lattice step says \\
+An isogeny of degree $d$ gives a section of height $2d$ & a graph whose reconstructed height differs & the doubled section fails the shape; 14 controls \\
+A lattice or rank-jump statement of the theory & a failing gate of the Lean release run, or a statement that omits what its name claims & kernel build, axiom audit, statement lock, producer $\ne$ verifier \\
+\bottomrule
+\end{tabular}
+\caption{What would falsify each claim, and what already exercises it.}\label{tab:falsify}
+\end{table}
 
-We did not compute $\operatorname{tr}G+\operatorname{tr}G^{-1}$ on the tori of the CM points. The Lean-proved dual-scale bound is a
-statement about all positive-definite metrics; evaluating it at special points would need a typed K\"ahler modulus, is not invariant
-under change of basis without an orbit minimum, would identify the torus of an elliptic curve with a physical torus, and would
-order the two families. None of these is available.
+\paragraph{Re-pointing the pipeline.} A new candidate needs: its certified lattice (from the lattice checker); its level from the
+modular side; the level-consistency gate; and, if its lattice carries a Picard-number-$20$ point, the section construction at that
+point, which takes the isogeny degree and the curve as input. The sweep table reports that the lattice step runs unchanged at every level tried.
+A failed gate has a stated consequence (removal, or a dated correction), and every table in a new paper is regenerated by the same
+renderer, whose controls fail if a number is typed.
+
+\paragraph{What the method can and cannot decide.} It decides the mathematical core. It does not by itself connect that core to
+physics: that connection needs a worked effective-theory matching, a quantitative prediction, a pre-registered pin and a test against
+public data, and none of those links exists yet. The method is the same one that would be applied to them.
 
 \section{Corrections recorded in band}\label{sec:corrections}
 
@@ -218,30 +245,30 @@ order the two families. None of these is available.
   ruled on 2026-10-08 (decision D29$'$, taken on the decision authority's behalf under explicit delegation) and is a convention for
   selection criteria only.
 \item The first reconstruction of the section used a transcription of the Weierstrass form from a garbled line of the source. The
-  exact $j$-match test refused it, and the simple normal form of the same source was used instead; the constant $t_s=t^6/343$ was
-  then calibrated on three points and is asserted at all fifty-two.
+  exact $j$-match test refused it, and the source's simple normal form was used; the constant $t_s=t^6/343$ was calibrated on three
+  points and is asserted at all fifty-two.
 \item A first sensitivity control for the read-off passed for the wrong reason (removing the quartic moves its poles to infinity,
   leaving the total unchanged). It was replaced by one that adds a genuine pole.
 \item A note elsewhere in the programme said the host lacked a numerical library and that two test modules were ignored. That was a
-  property of the system interpreter; under the project's own environment the full suite runs. Corrected 2026-10-10.
-\item One continuous-integration run of the simulator failed once on a tolerance of $10^{-12}$ in an ODE-solve comparison and passed
-  on re-run of the same commit; the tolerance is hardware-sensitive and was not changed.
+  property of the system interpreter; under the project's own environment the full suite runs.
+\item One continuous-integration run of the simulator failed once on a $10^{-12}$ tolerance in an ODE-solve comparison and passed on
+  re-run of the same commit; the tolerance is hardware-sensitive and was not changed.
 \end{enumerate}
 \end{correctionbox}
 
 \section{Reproducibility}
 
-Every number in \cref{tab:readings,tab:t3,tab:tw2,tab:descent,tab:ledger} is read from a certificate or a pinned mirror by
-\nolinkurl{scripts/render_paper_tables.py}, whose \texttt{--check} mode fails on drift and whose controls include tampered inputs for
-each table. The checkers and their controls:
+Every number in \cref{tab:readings,tab:sweep,tab:t3,tab:tw2,tab:descent,tab:ledger} is read from a certificate or a pinned mirror by
+\nolinkurl{scripts/render_paper_tables.py}. Checkers and their controls:
 \begin{itemize}\small
 \item \nolinkurl{checkers/check_K3xT2_reading_S.py} (9 controls);
+\item \nolinkurl{checkers/check_K3xT2_reading_S_level_sweep.py} (6 checks);
 \item \nolinkurl{checkers/check_T3_level_consistency.py} (25 controls);
 \item \nolinkurl{checkers/check_TW2_section_descent.py} (14 controls);
 \item \nolinkurl{scripts/extract_simulator_ledger_counts.py} (recount; 8 controls).
 \end{itemize}
-Decision records: \nolinkurl{briefs/T0_DECISIONS_2026_10_07_STREAM2_DELEGATED.md} (D29$'$--D31$'$) and
-\nolinkurl{briefs/STREAM2_K3xT2_DUAL_SCALE_SCOPING_2026_10_10.md}.
+Decision records: \nolinkurl{briefs/T0_DECISIONS_2026_10_07_STREAM2_DELEGATED.md} (D29$'$--D31$'$);
+Lean release-gate record: Stream~1 \nolinkurl{briefs/STREAM2_REVERIFICATION_2026_10_08.md}.
 
 \section*{Provenance}
 Generated-by: Claude (Fable~5.1 and Sonnet~5.5), Stream~2 \textbar\ Verified-by: \texttt{render\_paper\_tables.py --check} and its
@@ -254,8 +281,7 @@ controls; each cited checker's own controls \textbar\ Reviewed-by: N (preprint; 
 \bibitem{Takatsu} T.~Takatsu, ``On the geometry of singular $K3$ surfaces with discriminant 3, 4 and 7,'' \textit{arXiv:1903.03054}.
 \bibitem{Dolgachev} I.~Dolgachev, ``Mirror symmetry for lattice polarized $K3$ surfaces,'' \textit{arXiv:alg-geom/9502005}.
 \bibitem{Prev} X.~Callens and the SocrateAI Scientific Agora Collaboration, ``The selected $K3$ surfaces of the Cooper $s_7$/$s_{10}$
-  families: identification, the $K3\times T^2$ reading, and the twisted-Weierstrass route,'' Stream~2 note, 2026-10-08
-  (\texttt{papers/stream2\_k3\_identification\_twisted\_route\_2026\_10\_08.pdf}).
+  families: identification, the $K3\times T^2$ reading, and the twisted-Weierstrass route,'' Stream~2 note, 2026-10-08.
 \end{thebibliography}
 
 \end{document}

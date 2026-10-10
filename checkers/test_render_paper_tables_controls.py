@@ -123,6 +123,15 @@ sd["cross_check_against_earlier_steps"]["agree"] = False
 t9 = rpt.render_section_descent()
 check("N9 a tampered P.O/height/cross-check changes the descent table and shows NO", t9 != base9 and "NO" in t9 and "$16$" in t9)
 
+# N11 (2026-10-10): the level-sweep table follows its certificate
+ls = json.loads((tmp / "K3xT2_READING_S_LEVEL_SWEEP.json").read_text())
+base11 = rpt.render_level_sweep()
+ls["result"]["off_diagonal_isometric"] = 3
+ls["result"]["signature_all_1_2"] = False
+(tmp / "K3xT2_READING_S_LEVEL_SWEEP.json").write_text(json.dumps(ls))
+t11 = rpt.render_level_sweep()
+check("N11 a tampered off-diagonal count and signature flag change the sweep table", t11 != base11 and "$3$ of" in t11 and "NO" in t11)
+
 # N10: the simulator-ledger table follows the mirrored counts
 orig_repo = rpt.REPO
 mirror = json.loads((orig_repo / "refs" / "simulator_k3t2_ledger_counts_v3.json").read_text())

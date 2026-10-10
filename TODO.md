@@ -526,5 +526,7 @@ Publishable on its own merits, independent of any dark-sector claim:
 and the simulator stream's cross-check ledger **as that stream's own counts** (mirrored in `refs/simulator_k3t2_ledger_counts_v3.json`,
 recounted from its rows, pinned to source sha256 and commit 3adda92; NOT re-verified here). Tables from certificates via
 `render_paper_tables.py --check` (10 table controls). The physical K3×T² dual-scale theory is stated as NOT validated (Tier C).
-**Not merged or released** pending T0's word (publishing to public repos). New: `scripts/extract_simulator_ledger_counts.py`
-(+8 controls). The paper lint lines in `ci_ledger_regression.sh` now include this paper.
+**Restructured around the method** on T0's instruction (factual results; the approach reusable to falsify and readapt): six-part
+method, a falsification table, and `check_K3xT2_reading_S_level_sweep.py` (levels 1..24: 24/24 diagonal, 0/552 off-diagonal;
+6 checks; the runner uses `--n-max 8`). **Merged and released on T0's word** ("merge and release after"). New:
+`scripts/extract_simulator_ledger_counts.py` (+8 controls). The paper lint lines in `ci_ledger_regression.sh` include this paper.
