@@ -248,7 +248,52 @@ def render_reading_s():
     return "\n".join(lines) + "\n"
 
 
+def render_section_descent():
+    d = json.loads((CERTS / "TW2_SECTION_DESCENT.json").read_text())
+    r, x = d["result"], d["cross_check_against_earlier_steps"]
+    rows = [("fit points / unknowns / held out", f"${r['n_fit_points']}$ / ${r['n_unknowns']}$ / ${r['n_heldout']}$"),
+            ("nullspace dimension (1 = unique)", f"${r['nullspace_dim']}$"),
+            ("$\\deg N$, $\\deg D^2$ of $X'=N/D^2$", f"${r['deg_N']}$, ${r['deg_D2']}$"),
+            ("held-out points agree", "yes" if r["heldout_agree"] else "NO"),
+            ("$\\bar P\\cdot\\bar O$ (read)", f"${r['P_dot_O']}$"),
+            ("contact with the $A_1$ fibre, contr (read)", f"${r['contr_A1']}$"),
+            ("height $h=2\\chi+2\\bar P\\cdot\\bar O-\\mathrm{contr}$ (read)", f"${r['height']}$"),
+            ("earlier steps and literature, read from their certificates",
+             f"step 0: $h={x['step0_height']}$; step 2a: $\\bar P\\cdot\\bar O={x['step2a_P_dot_O']}$, contr $={x['step2a_contr']}$; "
+             f"Kumar--Kuwata: $h={x['kumar_kuwata_height_2d']}$"),
+            ("discriminant orders (model; fibration certificate)",
+             "$\\{" + ",".join(str(o) for o in r["discriminant_orders"]) + "\\}$ ; $\\{" + ",".join(str(o) for o in x["fibration_certificate_orders"]) + "\\}$"),
+            ("cross-check agrees", "yes" if x["agree"] else "NO")]
+    lines = [r"\begin{tabular}{p{5.6cm}p{8.6cm}}", r"\toprule", r"Quantity & Value \\", r"\midrule"]
+    lines += [f"{a} & {b} \\\\" for a, b in rows]
+    lines += [r"\bottomrule", r"\end{tabular}"]
+    return "\n".join(lines) + "\n"
+
+
+def render_sim_ledger():
+    m = json.loads((REPO / "refs" / "simulator_k3t2_ledger_counts_v3.json").read_text())
+    c = m["counts"]
+    st = c["comparison"]["final_status_counts"]
+    di, rg, cnd, ch = c["declared_inputs"], c["rigidity"], c["could_not_do"], c["chain"]
+    rows = [("sealed targets compared", c["comparison"]["total_rows"]),
+            ("\\quad AGREE", st.get("AGREE", 0)),
+            ("\\quad SAME\\_DECLARED\\_INPUT (downgraded)", st.get("SAME_DECLARED_INPUT", 0)),
+            ("\\quad NOT\\_COMPUTED", st.get("NOT_COMPUTED", 0)),
+            ("\\quad DISAGREE", st.get("DISAGREE", 0)),
+            ("rows with two or more independent routes", c["comparison"]["rows_with_2plus_routes"]),
+            ("declared inputs (of which typed from memory)", f"{di['total']} ({di['n_from_memory']})"),
+            ("rigidity entries: confirmed / disputed / unreviewed", f"{rg['genuinely_rigid_confirmed']} / {rg['disputed']} / {rg['self_reported_unreviewed']}"),
+            ("chain links consistent; independent corroborations", f"{ch['n_links']} ({'all' if ch['all_consistent'] else 'not all'}); {ch['n_independent_corroborations']}"),
+            ("items its authors could not do", cnd["total"])]
+    lines = [r"\begin{tabular}{lr}", r"\toprule", r"Count in the simulator stream's ledger & Value \\", r"\midrule"]
+    lines += [f"{a} & {b} \\\\" for a, b in rows]
+    lines += [r"\bottomrule", r"\end{tabular}"]
+    return "\n".join(lines) + "\n"
+
+
 TABLES = {
+    "section_descent.tex": render_section_descent,
+    "sim_ledger.tex": render_sim_ledger,
     "reading_s.tex": render_reading_s,
     "identification.tex": render_identification,
     "tw0_degrees.tex": render_tw0_degrees,

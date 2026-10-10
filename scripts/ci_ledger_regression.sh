@@ -33,8 +33,8 @@ COMMANDS=(
   # papers (added 2026-10-08: the TODO regression block lists these, but this runner never read that block)
   "scripts/render_paper_tables.py --check"
   "scripts/check_paper_tier_language.py --selftest"
-  "scripts/check_paper_tier_language.py papers/stream2_selection_geometry_2026_09_29.tex papers/stream2_k3_identification_twisted_route_2026_10_08.tex"
-  "scripts/check_tier_language.py papers/stream2_selection_geometry_2026_09_29.tex papers/stream2_k3_identification_twisted_route_2026_10_08.tex"
+  "scripts/check_paper_tier_language.py papers/stream2_selection_geometry_2026_09_29.tex papers/stream2_k3_identification_twisted_route_2026_10_08.tex papers/stream2_k3t2_numerics_2026_10_10.tex"
+  "scripts/check_tier_language.py papers/stream2_selection_geometry_2026_09_29.tex papers/stream2_k3_identification_twisted_route_2026_10_08.tex papers/stream2_k3t2_numerics_2026_10_10.tex"
 )
 for t in checkers/test_*.py; do
   COMMANDS+=("$t")
