@@ -177,6 +177,11 @@
       Stream 1 paper revision (dated addendum §12, v4 text unchanged; mirror re-pinned; release gates re-run by Stream 2, red
       at gate 0 before the re-pin) → S1 PR #4 @ 8dbf438, tag `v0.27-paper-addendum-2026-10-08` only on a green gate run;
       Stream 2 v0.3.19; Stream 3 note (Home v5.13.0). No Zenodo deposit (T0's step).
+      **WP-TW3 OPENED (D32′, 2026-10-10, on T0's "implement on my behalf … WP-TW3's twist data"):** B₃ = P¹×P², E8 divisors
+      {0}×P², {∞}×P²; f = s⁴t⁴f′, g = s⁵t⁵g′, f′ ∈ O(0,12), g′ ∈ O(2,18); `checkers/check_TW3_twist_data_degrees.py` →
+      `TW3_TWIST_DATA_DEGREES.json`. Next gate **TW3-G2** = a rational map z: P² ⇢ P¹ with α³ = π(z), β² = π−σ+1: necessary
+      condition e ≤ 3 (12e ≤ deg ac = 36), explicit exact constructions for e = 1, 2, 3. Smoothness/minimality (G3) NOT done;
+      no tadpole/χ (F5b). Brief `WP_TW3_OPENING_2026_10_10.md`.
       **WP-TW2 step 2b-ii DONE (2026-10-10):** `checkers/check_TW2_section_descent.py` → `TW2_SECTION_DESCENT.json`, 14 controls.
       Kumar–Kuwata Prop. 3.2 executed exactly at 52 specializations; X′(t) = N/D², deg N = 14, D = (t+1)·(irreducible quartic),
       unique 26-unknown fit (44 points) agreeing at 8 held-out points; **P̄·Ō = 5, contr = 0 (P meets O inside the A₁ fibre),
@@ -482,6 +487,8 @@ python3 checkers/check_K3xT2_reading_S.py                     # D29': T(ExE') = 
 python3 checkers/test_K3xT2_reading_S_controls.py             # 9 controls (wrong n, non-cyclic, orientation, tampered Gram, wrong order, ...)
 python3 checkers/check_TW2_section_descent.py                 # WP-TW2 2b-ii: KK Prop 3.2 section at z=1/27, P.O=5, contr=0, h=14 (exact, over-determined)
 python3 checkers/test_TW2_section_descent_controls.py          # 14 controls (tampered Velu, wrong normalization, too few points, 2P, twist, extra pole, ...)
+python3 checkers/check_TW3_twist_data_degrees.py                # WP-TW3 opening (D32'): twist data on P^1 x P^2, gate G2 necessary condition, e=1..3 exact
+python3 checkers/test_TW3_twist_data_degrees_controls.py        # 19 controls (wrong class, non-disjoint, Tate (5,5), wrong K, tampered a/b/pi, e=4)
 python3 checkers/check_TW0_hodge_degree_orbifold.py          # WP-TW0 re-examination: signatures agree; family-level degree != 2 (finding)
 python3 checkers/test_TW0_hodge_degree_orbifold_controls.py  # 9 controls (wrong level/operator disagree; irregular point refused; 07-29 formula non-discriminating)
 python3 checkers/check_TW1_two_e8_feasibility.py             # WP-TW1 LIVE (D20'): P3 FAIL, P1xP2 / scroll PASS (necessary-condition screen)
