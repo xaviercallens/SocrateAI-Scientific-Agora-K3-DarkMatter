@@ -1,0 +1,198 @@
+{
+  "certificate": "TW3_TWIST_DATA_DEGREES",
+  "work_package": "WP-TW3 (opened by D32', 2026-10-10)",
+  "checker": "checkers/check_TW3_twist_data_degrees.py",
+  "checker_sha256": "1926842aa68c7be2f22d9b32170c1c1d71ee8807f9f332786231a42068b88326",
+  "tier": "B (exact integer/rational arithmetic; pencil invariants derived and verified on exact instances; the sigma, pi laurent series are INOSE_MODEL_M7.json's, Tier B)",
+  "result": {
+    "base": "P^1 x P^2",
+    "K": [
+      -2,
+      -3
+    ],
+    "D1": [
+      1,
+      0
+    ],
+    "D2": [
+      1,
+      0
+    ],
+    "disjoint_necessary_condition": true,
+    "budgets": {
+      "f": {
+        "bound": [
+          8,
+          12
+        ],
+        "need": [
+          8,
+          0
+        ],
+        "residual": [
+          0,
+          12
+        ],
+        "ok": true
+      },
+      "g": {
+        "bound": [
+          12,
+          18
+        ],
+        "need": [
+          10,
+          0
+        ],
+        "residual": [
+          2,
+          18
+        ],
+        "ok": true
+      },
+      "Delta": {
+        "bound": [
+          24,
+          36
+        ],
+        "need": [
+          20,
+          0
+        ],
+        "residual": [
+          4,
+          36
+        ],
+        "ok": true
+      }
+    },
+    "tw1_margins_agree": true,
+    "h0_residuals": {
+      "f'": 91,
+      "g'": 570
+    },
+    "invariant_derivation_exact_agreements": [
+      6,
+      6
+    ],
+    "pi": {
+      "constant": "1/2985984",
+      "numerator_factors": [
+        [
+          "448*z**2 + 224*z + 1",
+          3
+        ]
+      ],
+      "pole_order_at_0": 8,
+      "order_at_infinity": 2
+    },
+    "W": {
+      "constant": "1/2985984",
+      "numerator_factors": [
+        [
+          "1728*z**4 + 5120*z**3 + 9024*z**2 + 528*z - 1",
+          2
+        ]
+      ],
+      "pole_order_at_0": 8,
+      "order_at_infinity": 0
+    },
+    "G2": {
+      "sum_x_per_unit_e": 12,
+      "components": [
+        {
+          "component": "z = 0",
+          "o_pi": -8,
+          "o_W": -8,
+          "x_min": 8
+        },
+        {
+          "component": "z = infinity",
+          "o_pi": 2,
+          "o_W": 0,
+          "x_min": 4
+        },
+        {
+          "component": "roots of a degree-2 factor of the numerator of pi",
+          "multiplicity": 3,
+          "n_roots": 2,
+          "x_min_per_root": 0
+        },
+        {
+          "component": "roots of a degree-4 factor of the numerator of W",
+          "multiplicity": 2,
+          "n_roots": 4,
+          "x_min_per_root": 0
+        }
+      ],
+      "deg_ac": 36,
+      "e_max": 3,
+      "condition": "e * sum_x <= deg(a c)",
+      "constructions": {
+        "1": {
+          "delta_deg_omega": 4,
+          "split_a_c": [
+            0,
+            2,
+            4
+          ],
+          "section_degrees": {
+            "f'": 12,
+            "a": 18,
+            "c": 18,
+            "b": 18
+          },
+          "alpha3_identity_exact": true,
+          "beta2_identity_exact": true,
+          "pullback_points_agree": true
+        },
+        "2": {
+          "delta_deg_omega": 2,
+          "split_a_c": [
+            0,
+            3,
+            6
+          ],
+          "section_degrees": {
+            "f'": 12,
+            "a": 18,
+            "c": 18,
+            "b": 18
+          },
+          "alpha3_identity_exact": true,
+          "beta2_identity_exact": true,
+          "pullback_points_agree": true
+        },
+        "3": {
+          "delta_deg_omega": 0,
+          "split_a_c": [
+            2,
+            4,
+            0
+          ],
+          "section_degrees": {
+            "f'": 12,
+            "a": 18,
+            "c": 18,
+            "b": 18
+          },
+          "alpha3_identity_exact": true,
+          "beta2_identity_exact": true,
+          "pullback_points_agree": true
+        }
+      },
+      "e_max_plus_1_refused": true
+    },
+    "verdict": "TWIST_DATA_DEGREES_CONSISTENT; G2 NECESSARY CONDITION MET (constructions exact)"
+  },
+  "not_claimed": [
+    "that the Weierstrass fibration these sections define is smooth or minimal (gate G3)",
+    "anything about a Calabi-Yau fourfold, its Euler characteristic or a tadpole (ledger item 4; F5b stays)",
+    "any Kodaira type: only vanishing orders and root lattices are used (ledger items 3, 10)",
+    "that e in 1..e_max are the only maps z: P^2 -> P^1; only that these are the ones the degree budget allows for this divisibility structure",
+    "anything physical"
+  ],
+  "generated_by": "Claude (Sonnet 5.5, fork of Fable 5.1 session), Stream 2, 2026-10-10",
+  "verified_by": "checkers/test_TW3_twist_data_degrees_controls.py",
+  "reviewed_by": "N"
+}
